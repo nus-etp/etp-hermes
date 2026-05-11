@@ -4,7 +4,7 @@ Hosts a [hermes-agent](https://hermes-agent.nousresearch.com) deployment on GitH
 
 ## Setup
 
-1. **Author your watchlist.** Edit `data/companies.json` — array of `{name, aliases?, exclude?}` objects. `aliases` add extra search/match terms; `exclude` is a case-insensitive substring blocklist applied to title + description + source (use it to kill ticker collisions, sub-brand bleed, and known junk sources).
+1. **Author your watchlist.** Edit `data/companies.json` — array of `{name, aliases?, description}` objects. `aliases` add extra substring patterns for the triage match. `description` is a one- or two-sentence company description that the agent uses to judge whether a candidate item is genuinely about the company (the "LLM relevance pass" — see Pipeline below). Use the description to explicitly call out unrelated entities to exclude (other companies with the same name, ticker collisions, etc.).
 2. **Add the secret.** Repo Settings → Secrets and variables → Actions → New secret: `DEEPSEEK_API_KEY` (from platform.deepseek.com). The bootstrap script rewrites it as `OPENAI_API_KEY` in `~/.hermes/.env` because Hermes' "custom" provider reads that name.
 3. **Test.** Push, then Actions tab → `hermes-sync` → **Run workflow**.
 
@@ -21,8 +21,8 @@ hermes/                             # mirror of ~/.hermes/ (Hermes runtime tree)
 prompts/                            # repo-only: prompts fed to `hermes -z`
   news.md
 data/                               # repo-only: inputs read by prompts
-  companies.json                    # watchlist: name + aliases + exclude rules
-  feeds.json                        # feed sources (search + firehose)
+  companies.json                    # watchlist: name + aliases + description
+  feeds.json                        # firehose RSS feeds
 signals/                            # repo-only: outputs committed each run
   news/
     seen-urls.txt                   # dedup state, appended across runs
@@ -32,6 +32,16 @@ signals/                            # repo-only: outputs committed each run
 The split between `hermes/` and `prompts/` + `data/` is intentional: `hermes/` is exactly what `bootstrap-hermes.sh` copies into `~/.hermes/`. Everything outside `hermes/` stays repo-side and is referenced by the prompt's path expressions.
 
 What we don't mirror to `~/.hermes/`: `auth.json` (OAuth, not used with API-key auth), `sessions/`, `logs/` (runtime/ephemeral), `cron/` (we bypass the internal scheduler — GH Actions cron is the timer).
+
+## Pipeline
+
+The news prompt runs three phases each day:
+
+1. **Triage.** Fetch each firehose feed in `data/feeds.json`, walk new items (≤7 days, not in `seen-urls.txt`), and substring-match titles and descriptions against `name + aliases` of every company in `data/companies.json`. Cheap, high-recall, lots of false positives.
+2. **Relevance pass.** The agent (an LLM) reads each candidate's `(headline, source, description)` and judges, using the company's `description`, whether the item is genuinely about that company. Bias is toward dropping. This is what makes the digest readable with a 100+ company watchlist — the prior exclude-rule approach didn't scale past a handful of generic-named companies. The triage match keeps the LLM budget tractable; the LLM keeps the precision high.
+3. **Write.** Surviving candidates get grouped by company and written to `signals/news/<UTC-date>.md`. *Both* surviving and dropped URLs are appended to `seen-urls.txt` so we don't re-judge the same junk every day.
+
+Search feeds (Google News, HN) are intentionally absent: at 100+ companies they create N×search HTTP calls per run and rate-limit fast. The firehose-only model scales by company count for free — adding a 200th company costs nothing in fetch volume, only in LLM judgment tokens.
 
 ## Agent learning across runs
 
