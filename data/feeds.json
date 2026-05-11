@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Google News (SG)",
+    "type": "search",
+    "url_template": "https://news.google.com/rss/search?q=%22{q}%22&hl=en-SG&gl=SG&ceid=SG:en"
+  },
+  {
+    "name": "Vulcan Post",
+    "type": "firehose",
+    "url": "https://vulcanpost.com/feed/"
+  },
+  {
+    "name": "Tech in Asia",
+    "type": "firehose",
+    "url": "https://www.techinasia.com/feed"
+  }
+]
