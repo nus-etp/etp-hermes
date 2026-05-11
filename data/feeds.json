@@ -5,6 +5,12 @@
     "url_template": "https://news.google.com/rss/search?q=%22{q}%22&hl=en-SG&gl=SG&ceid=SG:en"
   },
   {
+    "name": "Hacker News",
+    "type": "search",
+    "format": "hn_algolia",
+    "url_template": "https://hn.algolia.com/api/v1/search_by_date?query=%22{q}%22&tags=story"
+  },
+  {
     "name": "Vulcan Post",
     "type": "firehose",
     "url": "https://vulcanpost.com/feed/"
@@ -13,5 +19,20 @@
     "name": "Tech in Asia",
     "type": "firehose",
     "url": "https://www.techinasia.com/feed"
+  },
+  {
+    "name": "TechCrunch",
+    "type": "firehose",
+    "url": "https://techcrunch.com/feed/"
+  },
+  {
+    "name": "Business Times SG",
+    "type": "firehose",
+    "url": "https://www.businesstimes.com.sg/rss/companies-markets"
+  },
+  {
+    "name": "Channel News Asia",
+    "type": "firehose",
+    "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml"
   }
 ]

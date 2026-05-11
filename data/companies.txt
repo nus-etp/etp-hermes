@@ -1,6 +1,0 @@
-# One company name per line. Lines starting with # are comments.
-# Use the exact public name (what you'd google), not the legal entity name.
-# Examples — replace with your actual watchlist:
-Carousell
-Patsnap
-Horizon Quantum Computing

@@ -31,6 +31,26 @@ jobs:
       - name: Run news digest
         run: hermes -z "$(cat prompts/news.md)"
 
+      - name: Stage run logs
+        if: always()
+        run: |
+          # Copy Hermes' per-run logs + session transcripts into the workspace
+          # so upload-artifact can grab them. We don't commit these (audit/debug
+          # artifacts, not learning), but uploading lets us inspect failures
+          # without sshing into a runner. Exclude .env and auth.json — secrets.
+          mkdir -p run-logs
+          cp -r ~/.hermes/logs run-logs/ 2>/dev/null || true
+          cp -r ~/.hermes/sessions run-logs/ 2>/dev/null || true
+
+      - name: Upload run logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hermes-logs-${{ github.run_id }}
+          path: run-logs/
+          if-no-files-found: ignore
+          retention-days: 3
+
       - name: Persist agent memory
         run: |
           # Round-trip declarative memory (MEMORY.md, USER.md) so the agent's

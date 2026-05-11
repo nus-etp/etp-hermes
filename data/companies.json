@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Carousell",
+    "aliases": [],
+    "exclude": ["portalcantagalo", "fountain pen", "kaweco"]
+  },
+  {
+    "name": "Patsnap",
+    "aliases": ["PatSnap"],
+    "exclude": []
+  },
+  {
+    "name": "Horizon Quantum Computing",
+    "aliases": ["Horizon Quantum"],
+    "exclude": ["MarketBeat", "NASDAQ:HQ", "$HQ", "Pte. (HQ)", "earnings call transcript"]
+  }
+]
