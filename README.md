@@ -32,6 +32,15 @@ The split between `hermes/` and `prompts/` + `data/` is intentional: `hermes/` i
 
 What we don't mirror to `~/.hermes/`: `auth.json` (OAuth, not used with API-key auth), `sessions/`, `logs/` (runtime/ephemeral), `cron/` (we bypass the internal scheduler — GH Actions cron is the timer).
 
+## Agent learning across runs
+
+The workflow rsyncs `~/.hermes/memories/` and `~/.hermes/skills/` back to `hermes/memories/` and `hermes/skills/` after each run, then commits. This makes the agent's learning durable:
+
+- **Memory** (`hermes/memories/MEMORY.md`, `USER.md`) — declarative facts the agent decides to remember via the `memory` tool. Loaded into the system prompt at session start.
+- **Skills** (`hermes/skills/<name>/SKILL.md` + supporting files) — procedural how-tos the agent authors via `skill_manage` when it solves something reusable.
+
+Sessions, logs, and `state.db` are deliberately not persisted — they're audit/debug artifacts, not learning. Hermes can still search past sessions on demand via the `session_search` tool *within* a run, but cross-run session search would need `state.db` committed too (not done; SQLite-in-git diffs poorly).
+
 ## Local dry run
 
 ```bash
