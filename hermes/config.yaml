@@ -1,0 +1,18 @@
+model:
+  provider: custom
+  base_url: "https://api.deepseek.com/v1"
+  default: deepseek-v4-flash
+
+terminal:
+  backend: local
+  timeout: 180
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+
+agent:
+  max_turns: 90
+  # DeepSeek V4 thinking mode is enabled by default server-side; reasoning_effort
+  # controls how much it thinks. Set high for news dedup/summarization quality.
+  reasoning_effort: high
