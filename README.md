@@ -34,12 +34,13 @@ What we don't mirror to `~/.hermes/`: `auth.json` (OAuth, not used with API-key 
 
 ## Agent learning across runs
 
-The workflow rsyncs `~/.hermes/memories/` and `~/.hermes/skills/` back to `hermes/memories/` and `hermes/skills/` after each run, then commits. This makes the agent's learning durable:
+The workflow rsyncs `~/.hermes/memories/` back to `hermes/memories/` after each run, then commits. This makes the agent's declarative memory durable:
 
-- **Memory** (`hermes/memories/MEMORY.md`, `USER.md`) — declarative facts the agent decides to remember via the `memory` tool. Loaded into the system prompt at session start.
-- **Skills** (`hermes/skills/<name>/SKILL.md` + supporting files) — procedural how-tos the agent authors via `skill_manage` when it solves something reusable.
+- **Memory** (`hermes/memories/MEMORY.md`, `USER.md`) — facts the agent decides to remember via the `memory` tool. Loaded into the system prompt at session start.
 
-Sessions, logs, and `state.db` are deliberately not persisted — they're audit/debug artifacts, not learning. Hermes can still search past sessions on demand via the `session_search` tool *within* a run, but cross-run session search would need `state.db` committed too (not done; SQLite-in-git diffs poorly).
+**Skills are not auto-synced.** Hermes' `~/.hermes/skills/` contains both user-authored skills AND the bundled skill library (~530 skills, ~145k lines), with no clean separator beyond `.bundled_manifest`. A blind rsync would balloon the repo on every run. If you author a skill via `skill_manage` and want to keep it, copy it manually from `~/.hermes/skills/<your-skill>/` into `hermes/skills/`.
+
+Sessions, logs, and `state.db` are also not persisted — they're audit/debug artifacts, not learning. Hermes can still search past sessions on demand via the `session_search` tool *within* a run, but cross-run search would need `state.db` committed (avoided; SQLite-in-git diffs poorly).
 
 ## Local dry run
 

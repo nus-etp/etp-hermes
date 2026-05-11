@@ -31,22 +31,21 @@ jobs:
       - name: Run news digest
         run: hermes -z "$(cat prompts/news.md)"
 
-      - name: Persist agent learning
+      - name: Persist agent memory
         run: |
-          # Round-trip memory + skills so anything the agent wrote during this
-          # run (via the `memory` or `skill_manage` tools) survives to the next
-          # run. --delete keeps the repo in lock-step with ~/.hermes/ so removals
-          # propagate too. Sessions/logs/state.db are intentionally excluded —
-          # they're runtime audit/debug, not learning artifacts.
-          mkdir -p hermes/memories hermes/skills
+          # Round-trip declarative memory (MEMORY.md, USER.md) so the agent's
+          # curated facts survive to the next run. Skills are NOT auto-synced:
+          # ~/.hermes/skills/ also contains Hermes' bundled skill library, and
+          # blindly rsyncing it would commit ~145k lines of upstream artifacts.
+          # If/when you author skills, commit them manually under hermes/skills/.
+          mkdir -p hermes/memories
           rsync -a --delete ~/.hermes/memories/ hermes/memories/
-          rsync -a --delete ~/.hermes/skills/   hermes/skills/
 
       - name: Commit and push
         run: |
-          git config user.name  "hermes-bot"
-          git config user.email "hermes-bot@users.noreply.github.com"
-          git add signals/news/ hermes/memories/ hermes/skills/
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add signals/news/ hermes/memories/
           if git diff --cached --quiet; then
             echo "nothing to commit"
           else
