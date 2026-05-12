@@ -58,6 +58,18 @@ jobs:
         if: steps.layers.outputs.run_l3 == 'true'
         run: hermes -z "$(cat prompts/synthesis.md)"
 
+      - name: Usage insights
+        if: always()
+        run: |
+          # Hermes-native usage report (tokens, tools, sessions) for today's run.
+          # Surfaced in the Actions job summary; not committed.
+          {
+            echo '## Hermes insights'
+            echo '```'
+            hermes insights --days 1 --source cli || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Stage run logs
         if: always()
         run: |
