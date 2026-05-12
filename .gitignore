@@ -3,6 +3,7 @@
 !.env.example
 
 *.log
+*.lock
 .DS_Store
 
 .hermes/
