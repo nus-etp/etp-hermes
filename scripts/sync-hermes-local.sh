@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
 # Two-way sync between ~/.hermes/ and hermes/ subtree in this repo.
 #
-# Pull direction (repo → local): sync memories + repo-tracked skills
-# Push direction (local → repo): sync memories + user-authored skills
+# Sync scope:
+#   Pull (repo → local): memories + repo-tracked skills + config
+#   Push (local → repo): memories only (skills excluded by design)
 #
-# Config is NOT synced — the repo's hermes/config.yaml is a minimal
-# distribution template, while ~/.hermes/config.yaml is the full expanded
-# config. They are different by design. If you change the repo config
-# meaningfully, run bootstrap-hermes.sh to re-apply.
+# Config is NOT synced in either direction — the repo's hermes/config.yaml
+# is a minimal distribution template, while ~/.hermes/config.yaml is the
+# full expanded config. They are different by design.
 #
-# Bundled Hermes skills (tracked in .bundled_manifest) are excluded from
-# push — only user-authored skills are committed back.
+# Skills are NOT auto-synced to the repo because ~/.hermes/skills/ contains
+# ~145k lines of Hermes' bundled skill library. The GHA workflow has the
+# same constraint. When you author a custom skill, commit it manually:
+#   cp -a ~/.hermes/skills/<name> hermes/skills/<name>/
 #
-# Ephemeral/sensitive items excluded: sessions/, logs/, cron/, auth.json,
-# .env, state.db, *.lock, *.pid, audio_cache/, image_cache/
+# Ephemeral/sensitive items excluded from both directions: sessions/, logs/,
+# cron/, auth.json, .env, state.db, *.lock, *.pid, audio_cache/, image_cache/
 #
 # Usage: bash scripts/sync-hermes-local.sh
 
@@ -24,6 +26,14 @@ HERMES_HOME="${HERMES_HOME:-$HOME/.hermes}"
 BRANCH="main"
 
 cd "$REPO_DIR"
+
+# Stash any pending changes so git pull --rebase doesn't choke
+STASH_MSG="hermes-sync-auto-stash-$(date +%s)"
+was_dirty=false
+if ! git diff --quiet HEAD 2>/dev/null || ! git diff --cached --quiet 2>/dev/null; then
+  git stash push --include-untracked --message "$STASH_MSG" 2>/dev/null || true
+  was_dirty=true
+fi
 
 # ── Pull direction: repo → local ───────────────────────────────────────────
 echo "=== Pull: repo → local ==="
@@ -58,60 +68,23 @@ if [ -d "$HERMES_HOME/memories" ]; then
   echo "  Synced memories: local → repo"
 fi
 
-# User-authored skills: skip Hermes-bundled skills using .bundled_manifest.
-# The skills directory has category folders (apple/, creative/) containing
-# individual skill dirs (apple-notes/, ascii-art/). The manifest lists
-# individual skill names. We scan two levels deep to find authordable skills.
-BUNDLED_MANIFEST="$HERMES_HOME/skills/.bundled_manifest"
-bundled_skills=""
-if [ -f "$BUNDLED_MANIFEST" ]; then
-  bundled_skills=$(cut -d: -f1 "$BUNDLED_MANIFEST")
+# Skills: NOT automatically synced to the repo.
+# The Hermes bundled skill library (~145k lines across 87+ skills) lives in
+# ~/.hermes/skills/ but should NOT be committed to this repo. If you author
+# a custom skill via skill_manage, commit it manually:
+#   cp -a ~/.hermes/skills/<name> hermes/skills/<name>/
+#   git add hermes/skills/<name>/
+#   git commit -m "feat(hermes): add custom skill <name>"
+#   git push
+# This follows the same convention as the GHA workflow's hermes-sync.yml
+# which also excludes skills from auto-sync. See scripts/bootstrap-hermes.sh
+# for the pull-direction setup.
+
+# Restore any pre-existing local changes we stashed earlier
+if [ "$was_dirty" = true ]; then
+  git stash pop 2>/dev/null || true
+  echo "  Restored local changes from stash"
 fi
-
-is_bundled() {
-  local name="$1"
-  echo "$bundled_skills" | grep -qxF "$name" 2>/dev/null
-}
-
-# Scan top-level skill dirs (standalone skills like dogfood/)
-for skill_dir in "$HERMES_HOME/skills/"*/; do
-  [ -d "$skill_dir" ] || continue
-  skill_name="$(basename "$skill_dir")"
-  case "$skill_name" in .*) continue ;; esac
-
-  # Check if this contains sub-skills (category folder) or is a skill itself
-  has_subskills=false
-  for sub in "$skill_dir"*/; do
-    [ -d "$sub" ] && has_subskills=true && break
-  done
-
-  if [ "$has_subskills" = true ]; then
-    # Category folder — scan individual skills within it
-    skills_to_sync=""
-    for sub_dir in "$skill_dir"*/; do
-      [ -d "$sub_dir" ] || continue
-      sub_name="$(basename "$sub_dir")"
-      case "$sub_name" in .*) continue ;; esac
-      if ! is_bundled "$sub_name"; then
-        skills_to_sync="$skills_to_sync $sub_name"
-      fi
-    done
-    if [ -n "$skills_to_sync" ]; then
-      mkdir -p "hermes/skills/$skill_name"
-      for sub_name in $skills_to_sync; do
-        rsync -a --delete "${skill_dir}${sub_name}/" "hermes/skills/$skill_name/$sub_name/"
-        echo "  Synced skill '$skill_name/$sub_name': local → repo"
-      done
-    fi
-  else
-    # Standalone skill — check against manifest
-    if ! is_bundled "$skill_name"; then
-      mkdir -p "hermes/skills/$skill_name"
-      rsync -a --delete "$skill_dir" "hermes/skills/$skill_name/"
-      echo "  Synced skill '$skill_name': local → repo"
-    fi
-  fi
-done
 
 # ── Commit and push ────────────────────────────────────────────────────────
 echo "=== Commit ==="
