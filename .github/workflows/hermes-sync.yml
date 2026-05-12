@@ -107,7 +107,14 @@ jobs:
           git add signals/ hermes/memories/
           if git diff --cached --quiet; then
             echo "nothing to commit"
-          else
-            git commit -m "chore(hermes): sync $(date -u +%F)"
-            git push
+            exit 0
           fi
+          git commit -m "chore(hermes): sync $(date -u +%F)"
+          # Rebase-and-retry on non-fast-forward. Dated signals/ files and
+          # memory updates rarely conflict, so the rebase usually clean-applies.
+          for attempt in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push attempt ${attempt} rejected; rebasing..." >&2
+            git pull --rebase || { git rebase --abort; exit 1; }
+          done
+          exit 1
