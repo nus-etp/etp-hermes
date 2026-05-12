@@ -2,8 +2,8 @@
 # Two-way sync between ~/.hermes/ and hermes/ subtree in this repo.
 #
 # Sync scope:
-#   Pull (repo → local): memories + repo-tracked skills + config
-#   Push (local → repo): memories only (skills excluded by design)
+#   Pull (repo → local): memories + cron config + repo-tracked skills
+#   Push (local → repo): memories + cron config (skills excluded by design)
 #
 # Config is NOT synced in either direction — the repo's hermes/config.yaml
 # is a minimal distribution template, while ~/.hermes/config.yaml is the
@@ -15,7 +15,8 @@
 #   cp -a ~/.hermes/skills/<name> hermes/skills/<name>/
 #
 # Ephemeral/sensitive items excluded from both directions: sessions/, logs/,
-# cron/, auth.json, .env, state.db, *.lock, *.pid, audio_cache/, image_cache/
+# auth.json, .env, state.db, *.lock, *.pid, audio_cache/, image_cache/,
+# cron/output/
 #
 # Usage: bash scripts/sync-hermes-local.sh
 
@@ -58,6 +59,13 @@ if [ -d "hermes/skills" ]; then
   done
 fi
 
+# Cron config: sync repo-tracked jobs.json into local
+if [ -f "hermes/cron/jobs.json" ]; then
+  mkdir -p "$HERMES_HOME/cron"
+  cp hermes/cron/jobs.json "$HERMES_HOME/cron/jobs.json"
+  echo "  Synced cron config: repo → local"
+fi
+
 # ── Push direction: local → repo ───────────────────────────────────────────
 echo "=== Push: local → repo ==="
 
@@ -66,6 +74,13 @@ if [ -d "$HERMES_HOME/memories" ]; then
   mkdir -p hermes/memories
   rsync -a --delete "$HERMES_HOME/memories/" hermes/memories/
   echo "  Synced memories: local → repo"
+fi
+
+# Cron config: persist cron jobs.json to repo
+if [ -f "$HERMES_HOME/cron/jobs.json" ]; then
+  mkdir -p hermes/cron
+  cp "$HERMES_HOME/cron/jobs.json" hermes/cron/jobs.json
+  echo "  Synced cron config: local → repo"
 fi
 
 # Skills: NOT automatically synced to the repo.
