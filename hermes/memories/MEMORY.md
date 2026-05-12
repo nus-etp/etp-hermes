@@ -1,0 +1,1 @@
+Hermes venv at ~/.hermes/hermes-agent/venv/ ships without pip. To install packages into it, use `uv pip install <pkg> --python ~/.hermes/hermes-agent/venv/bin/python` — NOT `uvx --python ... pip install` (uvx installs into a temp ephemeral env, not the target venv). This is the common root cause for "No adapter available for telegram/discord/slack" errors in gateway logs.

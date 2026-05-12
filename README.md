@@ -4,7 +4,7 @@ Hosts a [hermes-agent](https://hermes-agent.nousresearch.com) deployment on GitH
 
 ## Setup
 
-1. **Author your watchlist.** Edit `data/companies.json` — array of `{name, aliases?, description}` objects. `aliases` add extra substring patterns for the triage match. `description` is a one- or two-sentence company description that the agent uses to judge whether a candidate item is genuinely about the company (the "LLM relevance pass" — see Pipeline below). Use the description to explicitly call out unrelated entities to exclude (other companies with the same name, ticker collisions, etc.).
+1. **Author your watchlist.** Edit `data/companies.json` — array of `{name, aliases?, description, sources?, identifiers?}` objects. `aliases` add extra substring patterns for the triage match. `description` is a one- or two-sentence company description that the agent uses to judge whether a candidate item is genuinely about the company (the "LLM relevance pass" — see Pipeline below). Use the description to explicitly call out unrelated entities to exclude (other companies with the same name, ticker collisions, etc.). `sources` (optional) is a per-company list of curated feeds (RSS, GitHub org Atom, Lever jobs JSON, HTML newsroom pages); see Pipeline phase 2.5 and the source-type taxonomy in `prompts/news.md`. `identifiers` (optional) is carry-only metadata (LinkedIn URL, ACRA UEN, etc.) — not fetched in this pipeline.
 2. **Add the secret.** Repo Settings → Secrets and variables → Actions → New secret: `DEEPSEEK_API_KEY` (from platform.deepseek.com). The bootstrap script rewrites it as `OPENAI_API_KEY` in `~/.hermes/.env` because Hermes' "custom" provider reads that name.
 3. **Test.** Push, then Actions tab → `hermes-sync` → **Run workflow**.
 
@@ -35,13 +35,14 @@ What we don't mirror to `~/.hermes/`: `auth.json` (OAuth, not used with API-key 
 
 ## Pipeline
 
-The news prompt runs three phases each day:
+The news prompt runs four phases each day:
 
-1. **Triage.** Fetch each firehose feed in `data/feeds.json`, walk new items (≤7 days, not in `seen-urls.txt`), and substring-match titles and descriptions against `name + aliases` of every company in `data/companies.json`. Cheap, high-recall, lots of false positives.
-2. **Relevance pass.** The agent (an LLM) reads each candidate's `(headline, source, description)` and judges, using the company's `description`, whether the item is genuinely about that company. Bias is toward dropping. This is what makes the digest readable with a 100+ company watchlist — the prior exclude-rule approach didn't scale past a handful of generic-named companies. The triage match keeps the LLM budget tractable; the LLM keeps the precision high.
-3. **Write.** Surviving candidates get grouped by company and written to `signals/news/<UTC-date>.md`. *Both* surviving and dropped URLs are appended to `seen-urls.txt` so we don't re-judge the same junk every day.
+1. **Firehose triage.** Fetch each firehose feed in `data/feeds.json`, walk new items (≤7 days, not in `seen-urls.txt`), and substring-match titles and descriptions against `name + aliases` of every company in `data/companies.json`. Cheap, high-recall, lots of false positives.
+2. **Per-company collection (pilot).** For each company with a non-empty `sources` array, fetch its curated sources directly — RSS, GitHub org Atom (`https://github.com/<org>.atom`), Lever jobs JSON, and HTML newsroom pages — and emit candidates already-bound to that company (no substring match needed). Source taxonomy and dedup-key rules live in `prompts/news.md`. Currently active on 5 pilot companies (Carousell, Patsnap, Horizon Quantum Computing, NEU Battery Materials, polybee).
+3. **Relevance pass.** The agent (an LLM) reads each candidate's `(headline, source, description)` and judges, using the company's `description`, whether the item is genuinely about that company. Bias for firehose candidates: drop. Bias for per-company candidates (already curated and company-scoped): keep, with explicit drop rules for bot/chore GitHub events, evergreen Lever reqs, arXiv version-revisions, and cross-source duplicates. This is what makes the digest readable with a 100+ company watchlist — the prior exclude-rule approach didn't scale past a handful of generic-named companies. The triage match keeps the LLM budget tractable; the LLM keeps the precision high.
+4. **Write.** Surviving candidates get grouped by company and written to `signals/news/<UTC-date>.md`. *Both* surviving and dropped dedup keys are appended to `seen-urls.txt` so we don't re-judge the same junk every day.
 
-Search feeds (Google News, HN) are intentionally absent: at 100+ companies they create N×search HTTP calls per run and rate-limit fast. The firehose-only model scales by company count for free — adding a 200th company costs nothing in fetch volume, only in LLM judgment tokens.
+Search feeds (Google News, HN) are intentionally absent: at 100+ companies they create N×search HTTP calls per run and rate-limit fast. The firehose-only model scales by company count for free — adding a 200th company costs nothing in fetch volume. Per-company sources do cost N fetches per company that opts in, which is why the pilot is small and we don't enrol the whole watchlist until the noise/signal tradeoff is validated.
 
 ## Agent learning across runs
 

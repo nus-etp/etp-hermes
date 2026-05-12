@@ -1,7 +1,37 @@
 [
-  { "name": "Carousell", "aliases": [], "description": "Singapore-headquartered online classifieds and consumer marketplace platform; the group also operates OneShift, Mudah, and Cho Tot." },
-  { "name": "Patsnap", "aliases": ["PatSnap"], "description": "Singapore-headquartered IP intelligence and innovation analytics SaaS company." },
-  { "name": "Horizon Quantum Computing", "aliases": [], "description": "Singapore-based privately-held quantum computing software startup. Distinct from any publicly-traded company sharing a similar name (NASDAQ:HQ ticker, Horizon Quantum Holdings, earnings releases, ticker-aggregator coverage from Zacks/TipRanks/MarketBeat/etc. must be excluded)." },
+  { "name": "Carousell", "aliases": [], "description": "Singapore-headquartered online classifieds and consumer marketplace platform; the group also operates OneShift, Mudah, and Cho Tot.",
+    "sources": [
+      { "type": "rss",        "label": "blog",   "url": "https://blog.carousell.com/feed/" },
+      { "type": "github_org", "label": "github", "url": "https://github.com/carousell.atom" }
+    ],
+    "identifiers": {
+      "linkedin":   "https://www.linkedin.com/company/carousellgroup",
+      "crunchbase": "https://www.crunchbase.com/organization/carousell"
+    }
+  },
+  { "name": "Patsnap", "aliases": ["PatSnap"], "description": "Singapore-headquartered IP intelligence and innovation analytics SaaS company.",
+    "sources": [
+      { "type": "github_org", "label": "github",  "url": "https://github.com/patsnap.atom" },
+      { "type": "lever_jobs", "label": "careers", "url": "https://api.lever.co/v0/postings/patsnap?mode=json" }
+    ],
+    "identifiers": {
+      "linkedin":   "https://www.linkedin.com/company/patsnap",
+      "crunchbase": "https://www.crunchbase.com/organization/patsnap"
+    }
+  },
+  { "name": "Horizon Quantum Computing", "aliases": [], "description": "Singapore-based privately-held quantum computing software startup. Distinct from any publicly-traded company sharing a similar name (NASDAQ:HQ ticker, Horizon Quantum Holdings, earnings releases, ticker-aggregator coverage from Zacks/TipRanks/MarketBeat/etc. must be excluded).",
+    "sources": [
+      { "type": "rss",         "label": "arxiv-fitzsimons", "url": "https://arxiv.org/a/fitzsimons_j_1.atom2" },
+      { "type": "html_scrape", "label": "newsroom",         "url": "https://www.horizonquantum.com/resources/newsroom",
+        "hint": "Newsroom page lists press releases and media coverage as vertically-stacked cards. Each card has a headline (h4), descriptive text, a 'See more' link, and a publication date. Relative links resolve against https://www.horizonquantum.com/." }
+    ],
+    "identifiers": {
+      "linkedin":   "https://www.linkedin.com/company/horizon-quantum-computing/",
+      "crunchbase": "https://www.crunchbase.com/organization/horizon-quantum-computing",
+      "sginnovate": "https://www.sginnovate.com/investments/horizon-quantum-computing",
+      "uen":        "201802755E"
+    }
+  },
 
   { "name": "1cool", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "8VERLINK", "aliases": ["Overlink"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
@@ -97,7 +127,19 @@
   { "name": "MuSigPro", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "nbrane", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "ndots", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "NEU Battery Materials", "aliases": ["NEU Battery"], "description": "NUS GRIP-incubated Singapore battery-materials startup. Drop unrelated companies sharing the same name." },
+  { "name": "NEU Battery Materials", "aliases": ["NEU Battery"], "description": "NUS GRIP-incubated Singapore battery-materials startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "newsroom", "url": "https://www.neumaterials.com/news",
+        "hint": "News listing is vertically-stacked article cards; each card has a headline, publication date, brief description, and 'Read more' link. Relative links resolve against https://www.neumaterials.com/." }
+    ],
+    "identifiers": {
+      "linkedin":   "https://sg.linkedin.com/company/neu-battery-materials",
+      "crunchbase": "https://www.crunchbase.com/organization/neu-battery-materials",
+      "sginnovate": "https://www.sginnovate.com/investments/neu-battery-materials",
+      "nus_cde":    "https://cde.nus.edu.sg/research/industry-partnership/neu-battery-materials/",
+      "uen":        "202119965Z"
+    }
+  },
   { "name": "NewGen GAS", "aliases": ["NewGen Gas"], "description": "NUS GRIP-incubated Singapore energy-storage startup. Drop unrelated companies sharing the same name." },
   { "name": "NodeSeer", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Nova", "aliases": [], "description": "NUS GRIP-incubated Singapore ophthalmology-AI startup. Highly generic name — drop any item not clearly about the Singapore ophthalmology startup." },
@@ -109,7 +151,18 @@
   { "name": "Only Technologies", "aliases": [], "description": "NUS GRIP-incubated Singapore driving-data analytics startup. Highly generic name — drop any item not clearly about this specific company." },
   { "name": "PharLyfe+", "aliases": ["PharLyfe"], "description": "NUS GRIP-incubated Singapore healthcare-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Picopoint Genomics", "aliases": ["Picopoint"], "description": "NUS GRIP-incubated Singapore genomics startup. Drop unrelated companies sharing the same name." },
-  { "name": "polybee", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name." },
+  { "name": "polybee", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "github_org",  "label": "github", "url": "https://github.com/Polybee-SG.atom" },
+      { "type": "html_scrape", "label": "blog",   "url": "https://polybee.co/blog",
+        "hint": "Blog index lists posts as clickable cards; cards may not display a publish date inline — extract title and link, and treat missing date as 'within window' rather than dropping. Relative links resolve against https://polybee.co/." }
+    ],
+    "identifiers": {
+      "linkedin":   "https://sg.linkedin.com/company/polybee",
+      "crunchbase": "https://www.crunchbase.com/organization/polybee",
+      "uen":        "201930630R"
+    }
+  },
   { "name": "Power Facade", "aliases": [], "description": "NUS GRIP-incubated Singapore building-tech startup. Drop unrelated mentions of 'power facade' as descriptive phrasing." },
   { "name": "PrimeGROWTH Technologies", "aliases": ["PrimeGROWTH"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "ProlegoMiR", "aliases": [], "description": "NUS GRIP-incubated Singapore oncology-tech startup. Drop unrelated companies sharing the same name." },

@@ -10,22 +10,42 @@ Produce a daily company-news digest for the watchlist in `data/companies.json`, 
   - `name` (string, required) — canonical name, used as the company label in output.
   - `aliases` (array of strings, optional, default `[]`) — additional names. Both `name` and every alias are used as case-insensitive substring patterns for the initial triage match against item title/description.
   - `description` (string, required) — one- or two-sentence description of the company. This is what you use during the relevance pass to judge whether a candidate item is actually about this company. It may explicitly call out unrelated entities to exclude (other companies with the same name, ticker collisions, etc.).
+  - `sources` (array of source objects, optional, default `[]`) — per-company curated feeds. See "Per-company source types" below. When present, these are fetched in Step 2.5 and bypass the substring triage in Step 2.
+  - `identifiers` (object, optional) — carry-only metadata (LinkedIn URL, Crunchbase URL, ACRA UEN, etc.). Do not fetch or otherwise act on these in this pipeline; they exist for future use.
 
   Call the array `C[]`. For each company `c`, define `c.terms = [c.name, ...c.aliases]`.
 
 - `data/feeds.json` — array of feed definitions. Each has `name`, `type` (always `firehose` in the current config), and `url`. Feeds are standard RSS/Atom.
 
-- `signals/news/seen-urls.txt` — newline-delimited URLs already reported. Hold as a set `SEEN`.
+- `signals/news/seen-urls.txt` — newline-delimited dedup keys already reported. Hold as a set `SEEN`. Entries are typically article URLs from firehose feeds; per-company sources may add synthetic keys (e.g. `lever://patsnap/<posting_id>`, `github-atom://<entry_id>`, or the scraped item's absolute URL) — see Step 2.5.
+
+## Per-company source types
+
+Each entry in `c.sources` has `type`, `label` (short string used in output's `source` field), and `url`. Type-specific behavior:
+
+- `rss` — standard RSS/Atom feed. Dedup key = item `<link>`.
+- `github_org` — GitHub org Atom feed (`https://github.com/<org>.atom`). Dedup key = entry `<id>`. Keep only human-meaningful events: `ReleaseEvent`, `CreateEvent` with `ref_type=repository`, and `PushEvent` whose head commit message is not a bot signature (skip Dependabot, renovate-bot, `[bot]` accounts) and not a trivial chore (`Bump`, `Update README`, version tag pushes alone). Synthesize the item's headline as `<repo>: <event summary>` (e.g. `<repo>: new release v1.2.3`, `<repo>: <commit subject>`); set `link` to the entry URL.
+- `lever_jobs` — Lever JSON endpoint (`https://api.lever.co/v0/postings/<slug>?mode=json`). Dedup key = `lever://<slug>/<posting.id>`. For each posting whose `createdAt` is within the last 30 days and whose synthetic key is not in `SEEN`, synthesize an item: headline `<title> — <team>`, link `<hostedUrl>`, pubDate from `createdAt`.
+- `html_scrape` — plain `GET` of an HTML page. The source entry has an additional `hint` field describing the page structure. Fetch the page, parse the HTML, and extract a list of items (title + absolute link + optional date) by reasoning about the structure described in `hint`. Dedup key = absolute item URL. Resolve any relative links to absolute against the source URL's origin.
+
+If a single per-company source fetch fails, log and continue — do not fail the whole run.
 
 ## Steps
 
 1. Read `data/companies.json`, `data/feeds.json`, `signals/news/seen-urls.txt`.
 
-2. **Collect candidates.** For each feed `F` in `data/feeds.json`:
+2. **Collect firehose candidates.** For each feed `F` in `data/feeds.json`:
    - Fetch `F.url`. Parse the RSS/Atom feed.
    - For each `<item>` whose `<pubDate>` (or `<published>`) is within the last 7 days AND whose `<link>` is NOT in `SEEN`:
      - Build `haystack = lower(<title> + " " + <description>)`.
-     - For each company `c` in `C`: if any `t` in `c.terms` (lowercased) is a substring of `haystack`, append a candidate `(c, item)` — where `item = {headline=<title>, description=<description>, source=F.name, pubDate, link}`. One item can produce multiple candidates if multiple companies match.
+     - For each company `c` in `C`: if any `t` in `c.terms` (lowercased) is a substring of `haystack`, append a candidate `(c, item)` — where `item = {headline=<title>, description=<description>, source=F.name, pubDate, link, source_kind="firehose"}`. One item can produce multiple candidates if multiple companies match.
+
+2.5. **Collect per-company candidates.** For each company `c` in `C` with a non-empty `c.sources`:
+   - For each source `s` in `c.sources`:
+     - Fetch and parse `s.url` per its `type` (see "Per-company source types" above). For each extracted item whose dedup key is NOT in `SEEN` and whose date (if known) is within the last 14 days:
+       - Append a candidate `(c, item)` where `item = {headline, description, source = "<c.name> · <s.label>", pubDate, link, source_kind = s.type}`.
+       - **Skip the substring triage** — per-company sources are already company-scoped. The candidate is bound to `c` regardless of headline content.
+   - If `s` is an `html_scrape` and you cannot reliably extract a structured item list from the page (e.g. JS-only render, page structure changed), log and continue — do not fabricate items.
 
 3. **Relevance pass.** This is the critical step that justifies the architecture — without it, the digest is unusable.
 
@@ -40,13 +60,19 @@ Produce a daily company-news digest for the watchlist in `data/companies.json`, 
 
    Keep a candidate when the headline and source make it clear the article is genuinely about the watchlisted company — funding rounds, product launches, hiring, customer announcements, partnerships, regulatory news, founder interviews, etc.
 
-   Bias toward dropping. A small clean digest is the goal; false negatives are recoverable next run, false positives are noise.
+   For candidates whose `source_kind != "firehose"` (i.e. they came from a per-company source), shift the bias slightly toward keeping — the source is already curated and company-scoped. But still drop:
+   - **Duplicate of an item already kept this run from a different source** (e.g. the same product-launch announcement on both the company blog and AgFunder News firehose; keep one, drop the other).
+   - **Bot / chore GitHub events** that slipped past the Step 2.5 filter — Dependabot bumps, README typo fixes, version-tag-only pushes.
+   - **Lever job postings whose role is clearly a long-open evergreen req** (generic title, no team specified, low information).
+   - **arXiv submissions that are revisions of prior papers** rather than new work (look for `[v2]`, `[v3]` markers in the title or the typical "comments: ..." block).
+
+   Default bias for firehose candidates remains: drop. A small clean digest is the goal; false negatives are recoverable next run, false positives are noise.
 
 4. **Write outputs.** Let `K[]` be the candidates that passed the relevance pass.
    - If `K[]` is empty: write nothing. Final stdout: `no new items`.
    - Otherwise:
-     - Append the `link` of every item in `K[]` (deduped — one append per unique URL even if the item matched multiple companies) to `signals/news/seen-urls.txt`. Append only — do not rewrite.
-     - Also append the links of any candidates that were *dropped* in step 3 to `seen-urls.txt`. We don't want to spend LLM budget re-judging the same junk every day.
+     - Append the dedup key (item `link` for firehose / rss / html_scrape; synthetic key for github_org / lever_jobs as defined in "Per-company source types") of every item in `K[]` to `signals/news/seen-urls.txt`. Dedupe across multiple matches per item. Append only — do not rewrite.
+     - Also append the dedup keys of any candidates that were *dropped* in step 3 to `seen-urls.txt`. We don't want to spend LLM budget re-judging the same junk every day.
      - Write `signals/news/<YYYY-MM-DD>.md` (UTC date) containing the kept items, grouped by company (use `c.name` as the heading). Format per item:
        ```
        - **<headline>** — <source> · <pubDate>

@@ -23,5 +23,10 @@
     "name": "Channel News Asia",
     "type": "firehose",
     "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml"
+  },
+  {
+    "name": "AgFunder News",
+    "type": "firehose",
+    "url": "https://agfundernews.com/feed"
   }
 ]
