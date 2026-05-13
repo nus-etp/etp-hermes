@@ -20,6 +20,7 @@
     }
   },
   { "name": "Horizon Quantum Computing", "aliases": [], "description": "Singapore-based privately-held quantum computing software startup. Distinct from any publicly-traded company sharing a similar name (NASDAQ:HQ ticker, Horizon Quantum Holdings, earnings releases, ticker-aggregator coverage from Zacks/TipRanks/MarketBeat/etc. must be excluded).",
+    "exclude_terms": ["nasdaq", "dmy", "spac", "ticker", "irish-founded", "earnings", "pipe financing", "trading on nasdaq", "lists on nasdaq", "go public", "going public", "stocktitan", "tipranks", "zacks", "marketbeat", "yahoo finance", "investing.com", "barron"],
     "sources": [
       { "type": "rss",         "label": "arxiv-fitzsimons", "url": "https://arxiv.org/a/fitzsimons_j_1.atom2" },
       { "type": "html_scrape", "label": "newsroom",         "url": "https://www.horizonquantum.com/resources/newsroom",

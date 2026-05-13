@@ -54,6 +54,14 @@ jobs:
         continue-on-error: true
         run: hermes -z "$(cat prompts/agent_supplement.md)"
 
+      - name: Filter exclusions
+        # Deterministic post-filter: drops items whose headline matches a
+        # company's `exclude_terms` in data/companies.json. Runs before
+        # synthesis so Layer 3 reads cleaned files. Idempotent; no-op when
+        # nothing matches.
+        if: steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true'
+        run: python3 scripts/filter_exclusions.py
+
       - name: Layer 3 — synthesis
         if: steps.layers.outputs.run_l3 == 'true'
         run: hermes -z "$(cat prompts/synthesis.md)"
