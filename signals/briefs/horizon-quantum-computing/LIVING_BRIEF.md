@@ -1,8 +1,8 @@
 # Horizon Quantum Computing — LIVING BRIEF
-_Last updated: 2026-05-12 15:58 UTC_
+_Last updated: 2026-05-14 15:29 UTC_
 
 ## Thesis
-Horizon Quantum Computing is a Singapore-based privately-held quantum computing software startup focused on bridging the gap between quantum hardware and practical software tooling. Its partnership with AQT (Alpine Quantum Technologies) on software-hardware integration signals a push toward real-world interoperability rather than purely theoretical research, positioning the company as a middleware-layer player in the quantum computing stack.
+Singapore-based privately-held quantum computing software startup developing programming tools and infrastructure for quantum computers. The company's publication of its first-quarter 2026 financial results suggests a posture of transparency consistent with a maturing venture positioning itself for the next stage of growth in the quantum software space.
 
 ## Profile
 - Sector: Quantum computing software
@@ -10,11 +10,12 @@ Horizon Quantum Computing is a Singapore-based privately-held quantum computing 
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/horizon-quantum-computing/), [Crunchbase](https://www.crunchbase.com/organization/horizon-quantum-computing), [SGInnovate](https://www.sginnovate.com/investments/horizon-quantum-computing), UEN: 201802755E
 
 ## Recent signals
-- **2026-05-12** — Horizon Quantum and AQT partner to integrate quantum software tooling with AQT's trapped-ion hardware platform — [thequantuminsider.com](https://news.google.com/rss/articles/CBMimAFBVV95cUxNcGdOMzFqSFBOaTNXS0ZTX2ZWZ0ZldzRUNDdYanNONWdaSGR1R3RaNy1pTG1iNkN4OENxY2FaZl9UZzRtNzlMM2JQLVRQeFM3SEVlWGFVMlplQ2ZJbWpWVzVQclFpWGg2OU5LTmd6dTBDb2huLXkwNnRYM2lRcFhQamxVY1Q1TW40X193VS05bmRJekdJV3RWcQ?oc=5)
+- **2026-05-14** — Horizon Quantum Computing published its Q1 2026 financial results via its newsroom, marking a voluntary public disclosure of financial standing for the privately-held startup — [newsroom](https://www.horizonquantum.com/resources/newsroom/horizon-quantum-announces-first-quarter-2026-financial-results)
 
 ## Older signals
 _none_
 
 ## Open questions
-- Does the AQT partnership extend beyond integration to co-development or go-to-market?
-- What is Horizon Quantum's current funding stage and runway?
+- What do the disclosed Q1 2026 results reveal about revenue, burn rate, and cash runway?
+- Is the voluntary financial disclosure a prelude to a new funding round or a strategic partnership?
+- Are there notable product or engineering milestones underpinning the quarter's performance?
