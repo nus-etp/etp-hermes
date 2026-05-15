@@ -29,11 +29,10 @@ Your job is to run **timestamped, dynamic web/browser searches** to plug those g
 2. **Read inputs.** Load `data/companies.json` and `signals/seen-urls.txt`. Glob `signals/updates/*.md` and select files whose filename date is within the last 7 UTC days (inclusive of today).
 
 3. **Compute cohorts.**
-   - For each company `c` in `data/companies.json`, scan the last-7-days `signals/updates/*.md` files. A company is "covered" if its `c.name` appears as an `## ` H2 heading in any of those files. Build `COVERED_7D` = set of covered company names.
-   - **Gap-fill** = `{ c : c.name ∉ COVERED_7D }`.
+   - **Gap-fill** is pre-selected for you by `scripts/select_gapfill_queue.py`, which runs before this layer. Read `signals/agent-queue.txt` — one canonical company name per line, ordered by ascending last-queried date (least-recently-queried first). This is the **authoritative** gap-fill cohort for this run — do not expand it with other companies from `data/companies.json`. If the file is missing or empty, treat gap-fill as empty for this run.
    - **Deepen** = `{ c : c.name appears as ## heading in signals/updates/<today>.md }` (empty if today's file doesn't exist).
 
-4. **Budget.** You have a hard cap of **50 search/fetch operations total** across both cohorts. Prefer gap-fill over deepen when allocating — gap-fill companies are otherwise invisible. Within gap-fill, prefer companies whose `c.description` clearly disambiguates them from common-name collisions; skip any company where you cannot construct a high-confidence query (e.g. one-word generic name with no aliases or sector hints).
+4. **Budget.** You have a hard cap of **50 search/fetch operations total** across both cohorts. Prefer gap-fill over deepen when allocating — gap-fill companies are otherwise invisible. **Process the gap-fill queue in file order** (top-to-bottom in `signals/agent-queue.txt`) and stop when budget runs low; the ordering already encodes fairness. Within that order, you may still **skip** a company where you cannot construct a high-confidence query (e.g. one-word generic name with no aliases or sector hints) — skipping is fine; reordering is not.
 
 5. **For each company in cohort order (gap-fill first, then deepen):**
 

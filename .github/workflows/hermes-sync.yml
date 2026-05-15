@@ -49,10 +49,26 @@ jobs:
         if: steps.layers.outputs.run_l1 == 'true'
         run: hermes -z "$(cat prompts/ingest.md)"
 
+      - name: Build gap-fill queue (fairness rotation)
+        # Deterministic pre-step: writes signals/agent-queue.txt with the N
+        # least-recently-queried gap-fill companies, ordered by ascending
+        # last_queried date. The Layer 2 prompt consumes this as its
+        # authoritative gap-fill cohort so the agent doesn't re-hit the same
+        # prefix of companies.json every run.
+        if: steps.layers.outputs.run_l2 == 'true'
+        run: python3 scripts/select_gapfill_queue.py
+
       - name: Layer 2 — agent supplement
         if: steps.layers.outputs.run_l2 == 'true'
         continue-on-error: true
         run: hermes -z "$(cat prompts/agent_supplement.md)"
+
+      - name: Record gap-fill queue as queried
+        # Deterministic post-step: stamps every name in signals/agent-queue.txt
+        # as queried today in signals/agent-queue-state.json. Backs the
+        # fairness rotation read by select_gapfill_queue.py on the next run.
+        if: steps.layers.outputs.run_l2 == 'true'
+        run: python3 scripts/update_gapfill_state.py
 
       - name: Filter exclusions
         # Deterministic post-filter: drops items whose headline matches a
