@@ -18,7 +18,52 @@ permissions:
   contents: write
 
 jobs:
-  run:
+  # ---------------------------------------------------------------------------
+  # Metrics: deterministic, stdlib + matplotlib, independent of Hermes. Runs in
+  # parallel with the `hermes` job. Writes data/metrics/<slug>.jsonl and
+  # signals/metrics/<slug>.png and hands them to the `commit` job as an
+  # artifact.
+  # ---------------------------------------------------------------------------
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install chart dependencies
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          "$HOME/.local/bin/uv" pip install --system --quiet matplotlib
+
+      - name: Collect public metrics
+        # Appends today's snapshot per company to data/metrics/<slug>.jsonl.
+        # Idempotent per UTC day. continue-on-error: don't fail the job over a
+        # flaky upstream endpoint.
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/collect_metrics.py
+
+      - name: Render metric charts
+        continue-on-error: true
+        run: python3 scripts/render_metrics.py
+
+      - name: Upload metrics artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: metrics-output
+          path: |
+            data/metrics/
+            signals/metrics/
+          if-no-files-found: ignore
+          retention-days: 1
+
+  # ---------------------------------------------------------------------------
+  # Hermes: the news pipeline (Layers 1–3 plus fairness rotation and exclusion
+  # filtering). Same logic as before, just emits its output as an artifact for
+  # the `commit` job instead of committing in-place.
+  # ---------------------------------------------------------------------------
+  hermes:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -115,6 +160,7 @@ jobs:
           retention-days: 3
 
       - name: Persist agent memory
+        if: always()
         run: |
           # Round-trip declarative memory (MEMORY.md, USER.md) so the agent's
           # curated facts survive to the next run. Skills are NOT auto-synced:
@@ -122,13 +168,55 @@ jobs:
           # blindly rsyncing it would commit ~145k lines of upstream artifacts.
           # If/when you author skills, commit them manually under hermes/skills/.
           mkdir -p hermes/memories
-          rsync -a --delete ~/.hermes/memories/ hermes/memories/
+          rsync -a --delete ~/.hermes/memories/ hermes/memories/ || true
+
+      - name: Upload hermes artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hermes-output
+          path: |
+            signals/agent/
+            signals/updates/
+            signals/briefs/
+            signals/seen-urls.txt
+            signals/agent-queue.txt
+            signals/agent-queue-state.json
+            hermes/memories/
+          if-no-files-found: ignore
+          retention-days: 1
+
+  # ---------------------------------------------------------------------------
+  # Commit: single committer that merges both artifacts back into a fresh
+  # checkout and pushes one commit per day. Runs even if one of the upstream
+  # jobs failed, so a metrics-only or hermes-only day still produces a commit.
+  # ---------------------------------------------------------------------------
+  commit:
+    needs: [metrics, hermes]
+    if: always() && (needs.metrics.result == 'success' || needs.hermes.result == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download metrics artifact
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: metrics-output
+          path: .
+
+      - name: Download hermes artifact
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: hermes-output
+          path: .
 
       - name: Commit and push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add signals/ hermes/memories/
+          git add signals/ data/metrics/ hermes/memories/
           if git diff --cached --quiet; then
             echo "nothing to commit"
             exit 0
