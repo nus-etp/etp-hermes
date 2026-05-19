@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-05-15 15:31 UTC_
+_Last updated: 2026-05-19 02:04 UTC_
 
 ## Thesis
 Patsnap is a Singapore-headquartered IP intelligence and innovation analytics SaaS company that helps organizations manage patents, trademarks, and R&D intelligence. The company is in an active growth phase, hiring across its AI Agent Platform (product growth, product marketing, engineering), life sciences vertical (account executives, support, SDRs, marketing interns), and semiconductor/material verticals — suggesting a multi-sector SaaS expansion beyond its core IP analytics base.
@@ -13,6 +13,7 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 - **2026-05-15** — New Account Executive posting for Connected Innovation Solutions Sales — [Patsnap · careers](https://jobs.lever.co/patsnap/20d8ae88-d16c-4c80-aeb1-d68daa6fbfdf)
 - **2026-05-15** — Patsnap publishes thought leadership on companion animal biotech innovation and patents — [patsnap.com](https://www.patsnap.com/resources/blog/the-man-who-refused-to-let-his-dog-die/)
 - **2026-05-15** — Patsnap publishes analysis on China as the next GLP-1 drug development frontier — [patsnap.com](https://www.patsnap.com/resources/blog/when-obesity-isnt-the-driver-why-china-signals-the-next-glp-1-frontier/)
+- **2026-05-13** — Strategic partnership with CAS (Chemical Abstracts Service) to combine CAS's scientific content database with Patsnap's AI-powered innovation analytics platform — [Devdiscourse](https://www.devdiscourse.com/article/agency-wire/930997-cas-and-patsnap-forge-strategic-partnership-that-unites-market-leading-scientific-content-and-ai-powered-technology-to-accelerate-global-innovation)
 - **2026-05-12** — Hiring Lead / Staff Engineer for AI Agent Platform (Search & Algorithm) — [Patsnap](https://jobs.lever.co/patsnap/3b8e49d4-dc8b-485e-9b46-415b155969e3)
 - **2026-05-12** — Hiring Account Executive for Life Sciences Sales — [Patsnap](https://jobs.lever.co/patsnap/91674214-6d6c-41c2-b743-f40327fe134c)
 - **2026-05-12** — Hiring Product Support Specialist (Life Sciences) — [Patsnap](https://jobs.lever.co/patsnap/e990d3dc-4298-487b-9a1e-ef33db46a22f)
@@ -33,3 +34,5 @@ _none_
 ## Open questions
 - Is the AI Agent Platform a new product line or an evolution of existing IP analytics? How does it differ from the core Patsnap offering?
 - Is the life sciences hiring push related to a specific product launch or market expansion in pharma R&D?
+- What is the commercial structure of the CAS-Patsnap partnership — is CAS data being integrated into Patsnap's platform, resold as a standalone dataset, or something else?
+- Does the CAS partnership signal a strategic expansion beyond patent/IP analytics into the broader scientific and R&D content analytics market?
