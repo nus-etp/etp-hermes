@@ -37,7 +37,12 @@
   { "name": "1cool", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "8VERLINK", "aliases": ["Overlink"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Actly", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Ailytics", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "Ailytics", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://www.ailytics.ai/news",
+        "hint": "Webflow CMS listing under div.collection-list-wrapper-2.w-dyn-list. Each item is a div.div-block-78 containing a category label in div.category, a headline in div.text-block-27 (treat as the title), and a date as plain text in div.text-block-29 (e.g. 'April 28, 2026'). About 6 items shown in reverse chronological order. Resolve relative item links against https://www.ailytics.ai/." }
+    ]
+  },
   { "name": "AIWater", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Akesis Biologics", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Aleph", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from Aleph Alpha (German AI), Aleph (US software company), or any other unrelated company sharing this name." },
@@ -50,24 +55,61 @@
   { "name": "ARMAS TEC", "aliases": ["ARMAS"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "aruvii", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Atlastream", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Aurora Food", "aliases": [], "description": "NUS GRIP-incubated Singapore food-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "Aurora Food", "aliases": [], "description": "NUS GRIP-incubated Singapore food-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://aurorafoodsg.com/news/",
+        "hint": "WordPress site rendered with Elementor. News entries appear as Elementor icon-box widgets with headline in h3.elementor-icon-box-title and the date displayed as a plain-text label (e.g. 'September 12th, 2022') directly above each headline; descriptive body text follows. Roughly 4 items, ordered newest-first. Note that the most recent item is from 2022, so the feed may be stale. Resolve any relative links against https://aurorafoodsg.com/." }
+    ]
+  },
   { "name": "Auxetica", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "BAE", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from BAE Systems (defence) or any other unrelated company sharing this name." },
-  { "name": "BEEX", "aliases": [], "description": "NUS GRIP-incubated Singapore autonomous-systems startup. Drop unrelated companies sharing the same name." },
+  { "name": "BEEX", "aliases": [], "description": "NUS GRIP-incubated Singapore autonomous-systems startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "press", "url": "https://beex.sg/in-the-press/",
+        "hint": "BeeX 'In The Press' listing of press items in reverse chronological order. Each item is a card with a thumbnail image, source/publication name, headline text and a date below the headline (e.g. '7 Oct 2025'). Resolve relative links against https://beex.sg/." },
+      { "type": "html_scrape", "label": "blog", "url": "https://beex.sg/blogs/",
+        "hint": "BeeX blog listing. Each post is a card with a featured image, author byline ('BeeX Team'), an h3-style headline link and a publication date below the headline (e.g. 'May 13, 2024'). Resolve relative links against https://beex.sg/." }
+    ]
+  },
   { "name": "BiocharCorp", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "BioTrack", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name (e.g. cannabis traceability software)." },
   { "name": "brain|pool", "aliases": ["brainpool"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Casa Medico", "aliases": [], "description": "NUS GRIP-incubated Singapore medical-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "CBE Eco-Solutions", "aliases": ["CBE Eco"], "description": "NUS GRIP-incubated Singapore eco-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "CBE Eco-Solutions", "aliases": ["CBE Eco"], "description": "NUS GRIP-incubated Singapore eco-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://www.cbeecosolutions.com/news",
+        "hint": "CBE Eco-Solutions 'Our News' listing. Items are vertically stacked rows (no card border) with a heading-style (h2/h3) clickable headline linking out to external articles or LinkedIn posts; brief description below. No publication dates shown inline. Resolve relative links against https://www.cbeecosolutions.com/." }
+    ]
+  },
   { "name": "Cell2Mix", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Cellivate Technologies", "aliases": ["Cellivate"], "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name." },
+  { "name": "Cellivate Technologies", "aliases": ["Cellivate"], "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "press", "url": "https://www.cellivatetech.com/recognition",
+        "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/." }
+    ]
+  },
   { "name": "Circrete", "aliases": [], "description": "NUS GRIP-incubated Singapore construction-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Codaveri", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "ConcreteAI", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Cornucopia", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English noun — drop any item not clearly referring to the Singapore startup." },
-  { "name": "Craft Health", "aliases": [], "description": "NUS GRIP-incubated Singapore health-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "CRecTech", "aliases": ["Carbon Recycle Technologies"], "description": "NUS GRIP-incubated Singapore carbon-recycling tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Curated Culture", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic phrase — drop any item not clearly referring to the Singapore startup." },
+  { "name": "Craft Health", "aliases": [], "description": "NUS GRIP-incubated Singapore health-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://www.crafthealth.me/newsletter",
+        "hint": "Craft Health 'Latest News' page is a chronological press/achievements timeline organised by year and month headers (e.g. '2021', then 'January 2021'). Each entry is a bullet line of plain text describing a media mention or award, often with an inline '[<Read_More>]' or named hyperlink to an external article. Dates come from the month/year section headings, not per-item. Resolve relative links against https://www.crafthealth.me/." }
+    ]
+  },
+  { "name": "CRecTech", "aliases": ["Carbon Recycle Technologies"], "description": "NUS GRIP-incubated Singapore carbon-recycling tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://crectech.net/news",
+        "hint": "CRecTech news page: card layout listing roughly 6-7 stories with a 'Load More' button. Each card has a thumbnail image, a publication date in 'Month D, YYYY' format (e.g. 'April 2, 2026') above the headline; the featured story uses h2 and subsequent items use h3. Resolve relative links against https://crectech.net/." }
+    ]
+  },
+  { "name": "Curated Culture", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic phrase — drop any item not clearly referring to the Singapore startup.",
+    "sources": [
+      { "type": "html_scrape", "label": "press", "url": "https://curatedculture.sg/pages/in-the-news",
+        "hint": "Curated Culture 'In The News' press listing on Shopify. Each item is a card with a featured image, headline, publication name and date, a short excerpt and a 'Read More' or 'Listen Here' link to the external source. Roughly 8 features from 2022 to 2025. Resolve relative links against https://curatedculture.sg/." }
+    ]
+  },
   { "name": "Cycfield", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "CycloMeds", "aliases": [], "description": "NUS GRIP-incubated Singapore medical-tech startup (lymphatic). Drop unrelated companies sharing the same name." },
   { "name": "DolphinLink", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
@@ -80,23 +122,48 @@
   { "name": "Emerge", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English word — drop any item not clearly referring to the Singapore startup." },
   { "name": "Emerstat", "aliases": [], "description": "NUS GRIP-incubated Singapore medical-device startup (bleeding control). Drop unrelated companies sharing the same name (e.g. Emerstat thermostat brand)." },
   { "name": "ENBED", "aliases": [], "description": "NUS GRIP-incubated Singapore energy-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "enlipsium", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "enlipsium", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://www.enlipsium.com/general-5",
+        "hint": "News listing on Wix-hosted site at https://www.enlipsium.com. Each item is a block with a Month-Year text label (e.g. 'Aug 2024'), an h3 headline, a short description, and an external 'Link' anchor. Dates are plain text (no <time> tag). Resolve relative links against https://www.enlipsium.com." }
+    ]
+  },
   { "name": "FACI-FI", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "FathomX", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "FitSight", "aliases": [], "description": "NUS GRIP-incubated Singapore myopia-management health-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Florisense", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Forte Biotech", "aliases": [], "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name." },
-  { "name": "FRONKA", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "Forte Biotech", "aliases": [], "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://www.fortebio.tech/news",
+        "hint": "News listing at https://www.fortebio.tech/news. Each item is an <article>-style block with a category label and date in format 'Category | Year' or 'Category | Month YYYY' (e.g. 'Press | November 2025') rendered as plain text before the headline. Headlines are <h3>. A short description and 'Read more' link follow. Filterable categories: Awards, Press, Publications, Events, Announcements. Resolve relative links against https://www.fortebio.tech." }
+    ]
+  },
+  { "name": "FRONKA", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://fronkatech.com/news/",
+        "hint": "WordPress news listing at https://fronkatech.com/news/. Each item has an <h3> headline followed by an <h6> or <em> line containing the date and location (e.g. '06/15/2021, Singapore'). Body paragraphs and embedded images follow. Only ~3 items, dating from 2020-2021. Resolve relative links against https://fronkatech.com." }
+    ]
+  },
   { "name": "GenVoice", "aliases": [], "description": "NUS GRIP-incubated Singapore voice-tech startup. Drop items where 'gen voice' is incidental phrasing ('next-gen voice', 'generation voice', etc.) rather than the company name." },
   { "name": "GeoCore", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name (e.g. geology/mining firms named GeoCore)." },
   { "name": "GranuSmart", "aliases": [], "description": "NUS GRIP-incubated Singapore food-tech startup (granular food quality control). Drop unrelated companies sharing the same name." },
-  { "name": "Green COP", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated mentions ('green' + 'COP' summit/conference of parties)." },
+  { "name": "Green COP", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated mentions ('green' + 'COP' summit/conference of parties).",
+    "sources": [
+      { "type": "html_scrape", "label": "press", "url": "https://www.greencop.sg/news-1",
+        "hint": "Wix-hosted press release listing at https://www.greencop.sg/news-1. Each item is a card block with a plain-text date in 'DD Mon YYYY' format (e.g. '26 Feb 2026') above an <h2>/<h3> headline, a placeholder image, and a 'Read More' link. Items are reverse-chronological. Resolve relative links against https://www.greencop.sg." }
+    ]
+  },
   { "name": "GrowLights", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop generic horticulture-product mentions of 'grow lights'." },
   { "name": "Guardly", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from the US mobile-security firm Guardly or any other unrelated company sharing this name." },
   { "name": "H2C", "aliases": [], "description": "NUS GRIP-incubated Singapore energy-efficiency startup (heat-to-cool). Drop unrelated mentions of H2C as a chemical or other acronym." },
   { "name": "Hamlit", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Heseed", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "HiCura", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "HiCura", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "press", "url": "https://hicuramedical.com/press-release/",
+        "hint": "WordPress (Yoast SEO) press-release page on hicuramedical.com. Each item is a row containing a publisher logo/thumbnail, a bolded headline (in <strong> tags rather than h2/h3), a short description, and a 'View Article' link to an external publisher URL. No explicit per-item date elements; dates only appear inline within some headlines (e.g. '2023'). Resolve relative links against https://hicuramedical.com/." }
+    ]
+  },
   { "name": "hilibbie", "aliases": ["hi libbie"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "hiomi", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup focused on online child safety. Drop unrelated companies sharing the same name." },
   { "name": "HiSEPOR", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
@@ -104,11 +171,31 @@
   { "name": "Hivebotics", "aliases": [], "description": "NUS GRIP-incubated Singapore robotics startup. Drop unrelated companies sharing the same name." },
   { "name": "HOMEPAL", "aliases": [], "description": "NUS GRIP-incubated Singapore care-tech startup. Distinct from Homepal the Italian proptech firm or any other unrelated company sharing this name." },
   { "name": "Hybrique", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "insightic", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "INVIGILO", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "insightic", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "blog", "url": "https://insightic.io/blog",
+        "hint": "Card-based blog listing on insightic.io. Each card contains a thumbnail image (from /img/), a category badge ('insightic research', 'community resource', 'new partnership'), a clickable headline that links to the individual post URL, and a publication date in 'Day Mon DD YYYY' format (e.g. 'Tue Oct 31 2023') displayed below the headline. Resolve relative links against https://insightic.io/." }
+    ]
+  },
+  { "name": "INVIGILO", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "blog", "url": "https://www.invigilo.ai/blog",
+        "hint": "Wix-built site (canonical content lives at invigilo.sg but invigilo.ai is the active marketing domain). Card-based blog listing; each card is a linked container with a thumbnail image, a category label above the title (e.g. 'Oil & Gas Safety Insights'), an <h3> headline, a short excerpt, and a 'Read more' link. No publication date is shown on the listing view. Individual post URLs follow the pattern /post/<slug>; resolve relative links against https://www.invigilo.ai/ (Wix renders /post/<slug> there too)." }
+    ]
+  },
   { "name": "Keptan", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "KleenSoil", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name." },
-  { "name": "lalia", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "KleenSoil", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://www.kleensoil.com/news",
+        "hint": "Wix-hosted news listing on kleensoil.com (NUS chemistry spin-off, Singapore). The page lists multiple news items covering deployments, awards, and partnerships (e.g. China refinery slag-free deployment 2024, AFTEA competition with Republic Polytechnic, Eco-Innovation Green Action finals). Each item is a card/section with a heading and short body paragraph; dates typically appear inline in the body (e.g. 'August 2024'). Resolve relative links against https://www.kleensoil.com/." }
+    ]
+  },
+  { "name": "lalia", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "press", "url": "https://read.lalia.com.sg/press",
+        "hint": "Card-based press listing for Lalia Pte Ltd (Singapore). Each card has a thumbnail image, an <h3> headline (often in Japanese), a secondary line with the source URL, and a publication date in 'YYYY/MM/DD' format below it. Each card wraps in an <a> tag linking to the full article (often external publishers). Resolve relative links against https://read.lalia.com.sg/." }
+    ]
+  },
   { "name": "LEXIKAT", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Liloss", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Lincore", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from the Lincore welding-consumables brand or any other unrelated company sharing this name." },
@@ -122,7 +209,13 @@
   { "name": "Metalivi", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Metallica", "aliases": [], "description": "NUS GRIP-incubated Singapore precious-metals startup. Distinct from the heavy-metal band Metallica or any other unrelated entity sharing this name." },
   { "name": "Metasense", "aliases": [], "description": "NUS GRIP-incubated Singapore climate-intelligence startup. Drop unrelated companies sharing the same name." },
-  { "name": "Microtube Technologies", "aliases": ["Microtube"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "Microtube Technologies", "aliases": ["Microtube"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "rss", "label": "news", "url": "https://microtube.tech/feed/" },
+      { "type": "html_scrape", "label": "news", "url": "https://microtube.tech/category/news-awards/",
+        "hint": "WordPress category archive listing 'News & Awards' posts as stacked cards. Each card has a featured image, a category badge, a headline as a linked heading (h2), an author byline ('By delta'), publication date (format 'DD Month, YYYY'), an excerpt, and a 'Read More' link. Relative links resolve against https://microtube.tech/." }
+    ]
+  },
   { "name": "Mindful Drinks", "aliases": [], "description": "NUS GRIP-incubated Singapore consumer-tech startup. Drop generic 'mindful drinks' wellness articles unrelated to the Singapore startup." },
   { "name": "MoneyMoves", "aliases": [], "description": "NUS GRIP-incubated Singapore fintech startup. Drop generic 'money moves' financial-advice content unrelated to the Singapore startup." },
   { "name": "MuSigPro", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
@@ -145,12 +238,20 @@
   { "name": "NodeSeer", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Nova", "aliases": [], "description": "NUS GRIP-incubated Singapore ophthalmology-AI startup. Highly generic name — drop any item not clearly about the Singapore ophthalmology startup." },
   { "name": "NuSoil", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name." },
-  { "name": "NuSPACE", "aliases": ["NuSpace"], "description": "NUS GRIP-incubated Singapore space-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "NuSPACE", "aliases": ["NuSpace"], "description": "NUS GRIP-incubated Singapore space-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "rss", "label": "news", "url": "https://nuspace.sg/feed/" }
+    ]
+  },
   { "name": "nusmetics", "aliases": ["NUS metics"], "description": "NUS GRIP-incubated Singapore cosmetics/beauty-science startup. Drop unrelated companies sharing the same name." },
   { "name": "Ocular Labs", "aliases": [], "description": "NUS GRIP-incubated Singapore ophthalmology AI startup. Drop unrelated companies sharing the same name." },
   { "name": "Oleum Lev", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Only Technologies", "aliases": [], "description": "NUS GRIP-incubated Singapore driving-data analytics startup. Highly generic name — drop any item not clearly about this specific company." },
-  { "name": "PharLyfe+", "aliases": ["PharLyfe"], "description": "NUS GRIP-incubated Singapore healthcare-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "PharLyfe+", "aliases": ["PharLyfe"], "description": "NUS GRIP-incubated Singapore healthcare-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "rss", "label": "news", "url": "https://pharlyfeplus.com/news-update/f.rss" }
+    ]
+  },
   { "name": "Picopoint Genomics", "aliases": ["Picopoint"], "description": "NUS GRIP-incubated Singapore genomics startup. Drop unrelated companies sharing the same name." },
   { "name": "polybee", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
     "sources": [
@@ -174,35 +275,77 @@
   { "name": "reActo", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "ReoMex Technologies", "aliases": ["ReoMex", "REOMEx"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "RightCode", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "RO+", "aliases": [], "description": "NUS GRIP-incubated Singapore automation startup. Very short brand — drop any item not clearly about this specific Singapore startup." },
+  { "name": "RO+", "aliases": [], "description": "NUS GRIP-incubated Singapore automation startup. Very short brand — drop any item not clearly about this specific Singapore startup.",
+    "sources": [
+      { "type": "rss", "label": "blog", "url": "https://www.roplus.sg/feed/" },
+      { "type": "html_scrape", "label": "news", "url": "https://www.roplus.sg/category/all/news/",
+        "hint": "WordPress news listing under category /all/news/. Each post is rendered as an article block: headline in an <h2> link (e.g. 'RoPlus Shortlisted as TOP100 startup of X-PITCH 2023'), byline 'By roplus' followed by the published date in 'Month Day, Year' format (e.g. 'November 5, 2023'). Relative links resolve against https://www.roplus.sg." }
+    ]
+  },
   { "name": "RoamAssist", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "SafeLight", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Scent Analytics", "aliases": [], "description": "NUS GRIP-incubated Singapore scent-analytics startup. Drop unrelated companies sharing the same name." },
   { "name": "SCPscan", "aliases": [], "description": "NUS GRIP-incubated Singapore surveillance/IoT startup. Drop unrelated companies sharing the same name." },
-  { "name": "seamless", "aliases": ["seemless"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English word — drop any item not clearly about this specific Singapore startup." },
+  { "name": "seamless", "aliases": ["seemless"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English word — drop any item not clearly about this specific Singapore startup.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://www.seamless.sg/news",
+        "hint": "Seamless XR (NUS spin-off) news page. Each entry is a link block: headline text directly followed by the publication date in 'Mon DD, YYYY' format (e.g. 'Nov 30, 2025'). No dedicated <article> tag; items appear as anchor links with the date bundled inline after the title. A 'Load More' button loads additional items. Resolve relative links against https://www.seamless.sg." },
+      { "type": "html_scrape", "label": "blog", "url": "https://www.seamless.sg/blog",
+        "hint": "Seamless XR blog index. Each post is a link element with the headline followed by the date in 'Mon DD, YYYY' format and a path like /blog/<slug>. About 11 entries listed, dated through Mar 2026. Resolve relative links against https://www.seamless.sg." }
+    ]
+  },
   { "name": "sensAi", "aliases": [], "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name." },
   { "name": "SenseMor", "aliases": [], "description": "NUS GRIP-incubated Singapore sensor-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "SENSORi", "aliases": ["SENSORi Pioneering Science"], "description": "NUS GRIP-incubated Singapore sensor/medical-tech startup. Drop unrelated mentions where 'sensor i' is incidental." },
+  { "name": "SENSORi", "aliases": ["SENSORi Pioneering Science"], "description": "NUS GRIP-incubated Singapore sensor/medical-tech startup. Drop unrelated mentions where 'sensor i' is incidental.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://www.sensorihealthcare.com/h-col-157.html",
+        "hint": "SENSORI Healthcare news listing. Each item is an anchor (<a>) wrapping the entry with the headline rendered as an <h4> (e.g. 'SENSORI Healthcare Wins Third Prize at Two Innovation and Entrepreneurship Competitions') and the date below in YYYY-MM-DD format (e.g. '2025-12-03'). Items are tagged 'News' and ordered newest-first. Resolve relative links against https://www.sensorihealthcare.com." }
+    ]
+  },
   { "name": "SHARPEN.AI", "aliases": ["Sharpen AI"], "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name." },
   { "name": "SinGENE", "aliases": [], "description": "NUS GRIP-incubated Singapore genomics startup. Drop unrelated companies sharing the same name." },
-  { "name": "SINGROW", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name." },
+  { "name": "SINGROW", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "media", "url": "https://www.singrow.com/media",
+        "hint": "Wix-hosted media/press listing for SINGROW (NUS agritech spin-off). Items are <div> grid tiles (no semantic <article>); each tile has the headline in <h4>, the publication date in <h4> below the title in 'DD Month YYYY' format, then a 'By <Publication Name>' attribution and a 'Read More' link. About 25+ external news items aggregated, newest-first. Resolve relative links against https://www.singrow.com." }
+    ]
+  },
   { "name": "Singnovel ChemTech", "aliases": ["Singnovel"], "description": "NUS GRIP-incubated Singapore chemistry-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "SkyTrek", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Softlabs", "aliases": [], "description": "NUS GRIP-incubated Singapore touch-tech startup. Very generic name — drop any item not clearly about this specific Singapore startup." },
   { "name": "SOLEMETRIX", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "SOLV8", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Soynergy", "aliases": ["Synergy"], "description": "NUS GRIP-incubated Singapore food-tech startup. 'Synergy' is highly generic — drop any item not clearly about this specific Singapore startup." },
+  { "name": "Soynergy", "aliases": ["Synergy"], "description": "NUS GRIP-incubated Singapore food-tech startup. 'Synergy' is highly generic — drop any item not clearly about this specific Singapore startup.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://www.soynergy.com/category/news/",
+        "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com." }
+    ]
+  },
   { "name": "Space Match", "aliases": ["SpaceMatch"], "description": "NUS GRIP-incubated Singapore space/real-estate-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "spacejot", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "spacejot", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "blog", "url": "https://www.spacejot.app/blog",
+        "hint": "Blog listing on Spacejot's web app. Each post is rendered with an h3 headline that links to /blog/<slug>, with the publication date (e.g. 'Jul 06, 2024') displayed adjacent to the title. Resolve relative links against https://www.spacejot.app/." }
+    ]
+  },
   { "name": "spotics", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Synectify", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "Synectify", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "html_scrape", "label": "news", "url": "https://www.synectify.com/news.html",
+        "hint": "Synectify newsroom listing multiple dated entries (14+ items, Sep 2021 onward). Each item appears as a div block with an h3 title and a date string shown above or near it (e.g. 'January, 9th 2023'). Resolve relative links against https://www.synectify.com/." }
+    ]
+  },
   { "name": "TANNGENT", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "TEREDO Analytics", "aliases": ["TEREDO"], "description": "NUS GRIP-incubated Singapore analytics startup. Drop unrelated companies sharing the same name." },
   { "name": "TuSense", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "UnoMove", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "UpperMed", "aliases": [], "description": "NUS GRIP-incubated Singapore medical-tech startup. Drop unrelated companies sharing the same name." },
   { "name": "Verazt Security", "aliases": ["Verazt"], "description": "NUS GRIP-incubated Singapore cybersecurity startup. Drop unrelated companies sharing the same name." },
-  { "name": "Vilota", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
+  { "name": "Vilota", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      { "type": "github_org", "label": "github", "url": "https://github.com/vilota-dev.atom" }
+    ]
+  },
   { "name": "VIR-POP", "aliases": ["VIR POP", "VIRPOP"], "description": "NUS GRIP-incubated Singapore deep-tech startup ('populations in the cloud'). Drop unrelated companies sharing the same name." },
   { "name": "Virtu AI", "aliases": ["VirtuAI"], "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name." },
   { "name": "WasteViz", "aliases": ["WIZ WasteViz"], "description": "NUS GRIP-incubated Singapore waste-management tech startup. Drop unrelated companies sharing the same name." },
