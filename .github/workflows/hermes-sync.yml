@@ -29,11 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install chart dependencies
-        run: |
-          curl -LsSf https://astral.sh/uv/install.sh | sh
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
-          "$HOME/.local/bin/uv" pip install --system --quiet matplotlib
+      - uses: astral-sh/setup-uv@v6
 
       - name: Collect public metrics
         # Appends today's snapshot per company to data/metrics/<slug>.jsonl.
@@ -42,11 +38,13 @@ jobs:
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/collect_metrics.py
+        run: uv run scripts/collect_metrics.py
 
       - name: Render metric charts
+        # matplotlib is the only non-stdlib dep; uv run --with provides it
+        # ad-hoc in an ephemeral venv (PEP 668-safe on Ubuntu 24.04).
         continue-on-error: true
-        run: python3 scripts/render_metrics.py
+        run: uv run --with matplotlib scripts/render_metrics.py
 
       - name: Upload metrics artifact
         uses: actions/upload-artifact@v4
