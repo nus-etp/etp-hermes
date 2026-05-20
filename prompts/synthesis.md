@@ -15,7 +15,7 @@ The briefs are the durable, per-company unit of analysis. Daily digests get buri
 
 - `signals/updates/<UTC-date>.md` — today's Layer 1 output (may be absent or contain only "no new items").
 - `signals/agent/<UTC-date>.md` — today's Layer 2 output (may be absent or contain "no agent items").
-- `data/companies.json` — watchlist. For each touched company `c`, pull `c.name`, `c.description`, `c.aliases`, `c.identifiers` for the brief's profile section.
+- `data/companies.json` — watchlist. For each touched company `c`, pull `c.name`, `c.description`, `c.aliases`, `c.identifiers` for the brief's profile section, and `c.funding_rounds` (+ optional `c.funding_notes`) for the brief's funding history section.
 - Existing `signals/briefs/<slug>/LIVING_BRIEF.md` per touched company (may not exist on first touch).
 
 ## Slug derivation
@@ -43,6 +43,7 @@ The briefs are the durable, per-company unit of analysis. Daily digests get buri
       - **Header**: `# <c.name> — LIVING BRIEF` and `_Last updated: <UTC-timestamp>_`.
       - **Thesis**: 2–3 sentences derived from `c.description` and today's signals. Frame what the company is and the trajectory the signals suggest.
       - **Profile**: bullets pulled from `c.description` (sector, region, what they do) plus `c.identifiers` (LinkedIn, Crunchbase, UEN, website if present). Include only fields that are actually present in `companies.json` — don't invent.
+      - **Funding history**: render from `c.funding_rounds` (see "Funding history rendering rules" below). Omit the section entirely if `c.funding_rounds` is empty or absent.
       - **Recent signals**: today's `NEW_SIGNALS[c.name]` as bullets, most recent first, in the format `- **<UTC-date>** — <one-line summary> — [<source-short>](<url>)`. The summary must be your own one-line synthesis, NOT a copy of the headline.
       - **Older signals**: empty section (`_none_`).
       - **Open questions**: 1–3 questions that today's signals raise but don't answer (e.g. "What's the round's valuation?", "Who led?", "Is the new hire replacing a departure?"). Skip the section if you have nothing concrete to ask.
@@ -51,6 +52,7 @@ The briefs are the durable, per-company unit of analysis. Daily digests get buri
       - **Header**: update the `_Last updated:_` line to `<UTC-timestamp>`. Keep the H1 verbatim.
       - **Thesis**: keep verbatim *unless* today's signals materially shift the company's trajectory (new market, new funding stage, pivot, major exec change, acquisition, shutdown). If you rewrite, the new thesis must implicitly justify itself by referencing the kind of signal that drove the change — but write naturally, not as a list of citations.
       - **Profile**: touch only when a today's signal contradicts or extends a field (e.g. funding round → stage/valuation; new office → region; founder departure → key people). Otherwise keep verbatim.
+      - **Funding history**: re-render the section from `c.funding_rounds` (see "Funding history rendering rules" below). `companies.json` is authoritative — if the rendered section differs from what's on disk (e.g. a new round was added to the JSON), replace the existing section with the freshly rendered one. If `c.funding_rounds` is empty/absent, drop the section. Do **not** add rounds inferred from today's signals into the brief here — that belongs in `data/companies.json` first, then it flows into the brief on the next run.
       - **Recent signals**: prepend today's `NEW_SIGNALS[c.name]` bullets to the existing list. If a today's URL is already present in `Recent signals` or `Older signals`, skip it (URL-level dedup against the existing brief). Then enforce the cap: if `Recent signals` now has more than 20 bullets, move the oldest excess down into `Older signals` (still bulleted, same format, oldest at the bottom of `Older signals`).
       - **Open questions**: append new questions raised by today's signals; remove any existing question that today's signals clearly answer. If after editing the section is empty, replace it with `_none open_`.
 
@@ -77,6 +79,12 @@ _Last updated: <YYYY-MM-DD HH:MM UTC>_
 - Key people: …
 - Identifiers: <LinkedIn URL>, <Crunchbase URL>, <UEN>, <website>
 
+## Funding history
+- **<date>** — <stage>, <amount> — <lead>; <other investors> — [source](<url>)
+- **<date>** — <stage>, <amount> — <lead>; <other investors> — [source](<url>)
+
+_Total disclosed: <sum of amount_usd as $X.XM>._  <!-- optional, omit if no amounts -->
+
 ## Recent signals
 - **<YYYY-MM-DD>** — <one-line synthesis, your own words> — [<source-short>](<url>)
 - **<YYYY-MM-DD>** — … — [<source-short>](<url>)
@@ -89,7 +97,17 @@ _none_
 - <question>
 ```
 
-Omit Profile bullets for fields you don't have. If `Older signals` is empty render it as `_none_`. If `Open questions` is empty render it as `_none open_`.
+Omit Profile bullets for fields you don't have. Omit the entire **Funding history** section if `c.funding_rounds` is empty or absent. If `Older signals` is empty render it as `_none_`. If `Open questions` is empty render it as `_none open_`.
+
+## Funding history rendering rules
+
+`c.funding_rounds` is an array of objects with: `date` (`YYYY-MM-DD` | `YYYY-MM` | `YYYY` | null), `stage`, `amount` (display string, may be null), `amount_usd` (number, may be null), `lead_investors` (array of strings, may be empty), `investors` (array of strings, may be empty), `source` (URL, required).
+
+- **Order**: oldest at the top, most recent at the bottom (chronological). Treat null `date` as oldest-known and place last among null-dated entries.
+- **Bullet format**: `- **<date-or-"date unknown">** — <stage>, <amount-or-"undisclosed"> — <lead-investors-comma-joined>; <other-investors-comma-joined> — [source](<url>)`. If `lead_investors` is empty, drop the leading "; " prefix and just render the investors. If both lists are empty, write "investors undisclosed". Truncate the investor list to the first 5 names and append "et al." if longer.
+- **Source label**: derive a short host label from the URL (e.g. `techcrunch.com`, `pier71.sg`, `nus.edu.sg`). Use the bare host, no `www.`.
+- **Total line**: after the bullet list, sum `amount_usd` across all rounds (skip nulls) and render `_Total disclosed: $<X>M._` (one decimal place, rounded). If every round's `amount_usd` is null, omit the total line.
+- **`funding_notes`**: if `c.funding_notes` is present and the company has rounds, ignore it (the rounds speak for themselves). If `c.funding_notes` is present and `c.funding_rounds` is empty, also omit the section — the notes are diagnostic and not for the brief.
 
 ## Constraints
 

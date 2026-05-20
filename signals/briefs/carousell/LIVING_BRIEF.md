@@ -9,6 +9,19 @@ Carousell is a Singapore-headquartered online classifieds and consumer marketpla
 - Region: Southeast Asia (Singapore, Malaysia, Indonesia, Philippines, Taiwan, Hong Kong, Vietnam)
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/carousellgroup), [Crunchbase](https://www.crunchbase.com/organization/carousell)
 
+## Funding history
+- **2013-11** — Seed, $800K — Rakuten Ventures; Golden Gate Ventures, 500 Global, QuestVC — [en.wikipedia.org](https://en.wikipedia.org/wiki/Carousell_(company))
+- **2014-11** — Series A, $6M — Sequoia Capital India; Rakuten Ventures, Golden Gate Ventures, 500 Global — [en.wikipedia.org](https://en.wikipedia.org/wiki/Carousell_(company))
+- **2016-08-01** — Series B, $35M — Rakuten Ventures; Sequoia Capital India, Golden Gate Ventures, 500 Startups — [techcrunch.com](https://techcrunch.com/2016/08/01/southeast-asia-based-carousell-raises-35m-for-its-social-commerce-app/)
+- **2017-10-27** — Series C, $70M-$80M — Rakuten Ventures, EDBI; Sequoia Capital India, Golden Gate Ventures, 500 Startups, DBS — [techcrunch.com](https://techcrunch.com/2017/10/27/carousell-series-c/)
+- **2018-05-13** — Series C, $85M — Rakuten Ventures, EDBI; Sequoia Capital India, Golden Gate Ventures, 500 Startups, DBS — [techcrunch.com](https://techcrunch.com/2018/05/13/carousell-raises-85m/)
+- **2019-04-10** — Series D, $56M — Naspers (OLX Group) — [techcrunch.com](https://techcrunch.com/2019/04/10/carousell-naspers-olx/)
+- **2020-09-15** — Series D, $80M — Naver; Mirae Asset-Naver Asia Growth Fund, NH Investment & Securities, Rakuten Ventures, Steamboat Ventures — [press.carousell.com](https://press.carousell.com/2020/09/15/carousell-continues-growth-momentum-with-navers-us80-million-investment/)
+- **2021-09-15** — Series E, $100M — STIC Investments; Sequoia Capital India, Golden Gate Ventures, Naver, EDBI — [bloomberg.com](https://www.bloomberg.com/news/articles/2021-09-15/singapore-s-carousell-raises-100-million-at-1-1-billion-value)
+- **2023-09-04** — Strategic, $2.8M — GoTo Group — [aimgroup.com](https://aimgroup.com/2023/09/04/goto-invests-2-8m-in-singapore-based-carousell/)
+
+_Total disclosed: $440.6M._
+
 ## Recent signals
 - **2026-05-15** — Philippines-specific release of Carousell's Scam Trends Report 2025 — [press.carousell.com](https://press.carousell.com/2026/05/13/ph-carousells-regional-scam-trends-report-2025-records-over-99-scam-free-transactions-despite-evolving-scam-trends/)
 - **2026-05-15** — Carousell publishes Scam Trends Report 2025 data showing >99% scam-free rate — [press.carousell.com](https://press.carousell.com/2026/04/28/carousells-regional-scam-trends-report-2025-records-over-99-scam-free-transactions-despite-evolving-scam-trends/)

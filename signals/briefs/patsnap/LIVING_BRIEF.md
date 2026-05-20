@@ -9,6 +9,15 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 - Region: Singapore (global operations)
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/patsnap), [Crunchbase](https://www.crunchbase.com/organization/patsnap)
 
+## Funding history
+- **2014** — Series A, $3.6M — Vertex Ventures — [e27.co](https://e27.co/patsnap-raises-us3-6m-funding-led-by-vertex-venture-holdings-20140901/)
+- **2015-10-20** — Series B, $10M — Summit Partners; Vertex Ventures — [summitpartners.com](https://www.summitpartners.com/news/patsnap-secures-10-million-in-growth-financing-from-summit-partners)
+- **2016-11-21** — Series C, undisclosed — Sequoia Capital China; Shunwei Capital, Qualgro — [prnewswire.com](https://www.prnewswire.com/news-releases/innovation-intelligence-platform-patsnap-closes-series-c-funding-led-by-sequoia-capital-china-300366521.html)
+- **2018-06-14** — Series D, $38M — Sequoia Capital China, Shunwei Capital; Qualgro — [techcrunch.com](https://techcrunch.com/2018/06/14/patsnap-picks-up-38m/)
+- **2021-03-16** — Series E, $300M — SoftBank Vision Fund 2, Tencent; Sequoia Capital China, CICC Capital, Vertex Growth — [tech.eu](https://tech.eu/2021/03/16/singapore-london-based-patsnap-snaps-up-300-million-in-series-e-funding/)
+
+_Total disclosed: $351.6M._
+
 ## Recent signals
 - **2026-05-15** — New Account Executive posting for Connected Innovation Solutions Sales — [Patsnap · careers](https://jobs.lever.co/patsnap/20d8ae88-d16c-4c80-aeb1-d68daa6fbfdf)
 - **2026-05-15** — Patsnap publishes thought leadership on companion animal biotech innovation and patents — [patsnap.com](https://www.patsnap.com/resources/blog/the-man-who-refused-to-let-his-dog-die/)

@@ -1,357 +1,2605 @@
 [
-  { "name": "Carousell", "aliases": [], "description": "Singapore-headquartered online classifieds and consumer marketplace platform; the group also operates OneShift, Mudah, and Cho Tot.",
+  {
+    "name": "Carousell",
+    "aliases": [],
+    "description": "Singapore-headquartered online classifieds and consumer marketplace platform; the group also operates OneShift, Mudah, and Cho Tot.",
     "sources": [
-      { "type": "rss",        "label": "blog",   "url": "https://blog.carousell.com/feed/" },
-      { "type": "github_org", "label": "github", "url": "https://github.com/carousell.atom" }
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://blog.carousell.com/feed/"
+      },
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/carousell.atom"
+      }
     ],
     "identifiers": {
-      "linkedin":   "https://www.linkedin.com/company/carousellgroup",
+      "linkedin": "https://www.linkedin.com/company/carousellgroup",
       "crunchbase": "https://www.crunchbase.com/organization/carousell"
-    }
+    },
+    "funding_rounds": [
+      {
+        "date": "2013-11",
+        "stage": "Seed",
+        "amount": "$800K",
+        "amount_usd": 800000,
+        "lead_investors": [
+          "Rakuten Ventures"
+        ],
+        "investors": [
+          "Rakuten Ventures",
+          "Golden Gate Ventures",
+          "500 Global",
+          "QuestVC"
+        ],
+        "source": "https://en.wikipedia.org/wiki/Carousell_(company)"
+      },
+      {
+        "date": "2014-11",
+        "stage": "Series A",
+        "amount": "$6M",
+        "amount_usd": 6000000,
+        "lead_investors": [
+          "Sequoia Capital India"
+        ],
+        "investors": [
+          "Sequoia Capital India",
+          "Rakuten Ventures",
+          "Golden Gate Ventures",
+          "500 Global"
+        ],
+        "source": "https://en.wikipedia.org/wiki/Carousell_(company)"
+      },
+      {
+        "date": "2016-08-01",
+        "stage": "Series B",
+        "amount": "$35M",
+        "amount_usd": 35000000,
+        "lead_investors": [
+          "Rakuten Ventures"
+        ],
+        "investors": [
+          "Rakuten Ventures",
+          "Sequoia Capital India",
+          "Golden Gate Ventures",
+          "500 Startups"
+        ],
+        "source": "https://techcrunch.com/2016/08/01/southeast-asia-based-carousell-raises-35m-for-its-social-commerce-app/"
+      },
+      {
+        "date": "2017-10-27",
+        "stage": "Series C",
+        "amount": "$70M-$80M",
+        "amount_usd": 75000000,
+        "lead_investors": [
+          "Rakuten Ventures",
+          "EDBI"
+        ],
+        "investors": [
+          "Rakuten Ventures",
+          "EDBI",
+          "Sequoia Capital India",
+          "Golden Gate Ventures",
+          "500 Startups",
+          "DBS"
+        ],
+        "source": "https://techcrunch.com/2017/10/27/carousell-series-c/"
+      },
+      {
+        "date": "2018-05-13",
+        "stage": "Series C",
+        "amount": "$85M",
+        "amount_usd": 85000000,
+        "lead_investors": [
+          "Rakuten Ventures",
+          "EDBI"
+        ],
+        "investors": [
+          "Rakuten Ventures",
+          "EDBI",
+          "Sequoia Capital India",
+          "Golden Gate Ventures",
+          "500 Startups",
+          "DBS"
+        ],
+        "source": "https://techcrunch.com/2018/05/13/carousell-raises-85m/"
+      },
+      {
+        "date": "2019-04-10",
+        "stage": "Series D",
+        "amount": "$56M",
+        "amount_usd": 56000000,
+        "lead_investors": [
+          "Naspers (OLX Group)"
+        ],
+        "investors": [
+          "Naspers (OLX Group)"
+        ],
+        "source": "https://techcrunch.com/2019/04/10/carousell-naspers-olx/"
+      },
+      {
+        "date": "2020-09-15",
+        "stage": "Series D",
+        "amount": "$80M",
+        "amount_usd": 80000000,
+        "lead_investors": [
+          "Naver"
+        ],
+        "investors": [
+          "Naver",
+          "Mirae Asset-Naver Asia Growth Fund",
+          "NH Investment & Securities",
+          "Rakuten Ventures",
+          "Steamboat Ventures"
+        ],
+        "source": "https://press.carousell.com/2020/09/15/carousell-continues-growth-momentum-with-navers-us80-million-investment/"
+      },
+      {
+        "date": "2021-09-15",
+        "stage": "Series E",
+        "amount": "$100M",
+        "amount_usd": 100000000,
+        "lead_investors": [
+          "STIC Investments"
+        ],
+        "investors": [
+          "STIC Investments",
+          "Sequoia Capital India",
+          "Golden Gate Ventures",
+          "Naver",
+          "EDBI"
+        ],
+        "source": "https://www.bloomberg.com/news/articles/2021-09-15/singapore-s-carousell-raises-100-million-at-1-1-billion-value"
+      },
+      {
+        "date": "2023-09-04",
+        "stage": "Strategic",
+        "amount": "$2.8M",
+        "amount_usd": 2800000,
+        "lead_investors": [
+          "GoTo Group"
+        ],
+        "investors": [
+          "GoTo Group"
+        ],
+        "source": "https://aimgroup.com/2023/09/04/goto-invests-2-8m-in-singapore-based-carousell/"
+      }
+    ],
+    "funding_notes": "Total funding ~$376M across 9 rounds; achieved unicorn status in Sept 2021 at $1.1B valuation."
   },
-  { "name": "Patsnap", "aliases": ["PatSnap"], "description": "Singapore-headquartered IP intelligence and innovation analytics SaaS company.",
+  {
+    "name": "Patsnap",
+    "aliases": [
+      "PatSnap"
+    ],
+    "description": "Singapore-headquartered IP intelligence and innovation analytics SaaS company.",
     "sources": [
-      { "type": "github_org", "label": "github",  "url": "https://github.com/patsnap.atom" },
-      { "type": "lever_jobs", "label": "careers", "url": "https://api.lever.co/v0/postings/patsnap?mode=json" }
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/patsnap.atom"
+      },
+      {
+        "type": "lever_jobs",
+        "label": "careers",
+        "url": "https://api.lever.co/v0/postings/patsnap?mode=json"
+      }
     ],
     "identifiers": {
-      "linkedin":   "https://www.linkedin.com/company/patsnap",
+      "linkedin": "https://www.linkedin.com/company/patsnap",
       "crunchbase": "https://www.crunchbase.com/organization/patsnap"
-    }
+    },
+    "funding_rounds": [
+      {
+        "date": "2014",
+        "stage": "Series A",
+        "amount": "$3.6M",
+        "amount_usd": 3600000,
+        "lead_investors": [
+          "Vertex Ventures"
+        ],
+        "investors": [
+          "Vertex Ventures"
+        ],
+        "source": "https://e27.co/patsnap-raises-us3-6m-funding-led-by-vertex-venture-holdings-20140901/"
+      },
+      {
+        "date": "2015-10-20",
+        "stage": "Series B",
+        "amount": "$10M",
+        "amount_usd": 10000000,
+        "lead_investors": [
+          "Summit Partners"
+        ],
+        "investors": [
+          "Summit Partners",
+          "Vertex Ventures"
+        ],
+        "source": "https://www.summitpartners.com/news/patsnap-secures-10-million-in-growth-financing-from-summit-partners"
+      },
+      {
+        "date": "2016-11-21",
+        "stage": "Series C",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "Sequoia Capital China"
+        ],
+        "investors": [
+          "Sequoia Capital China",
+          "Shunwei Capital",
+          "Qualgro"
+        ],
+        "source": "https://www.prnewswire.com/news-releases/innovation-intelligence-platform-patsnap-closes-series-c-funding-led-by-sequoia-capital-china-300366521.html"
+      },
+      {
+        "date": "2018-06-14",
+        "stage": "Series D",
+        "amount": "$38M",
+        "amount_usd": 38000000,
+        "lead_investors": [
+          "Sequoia Capital China",
+          "Shunwei Capital"
+        ],
+        "investors": [
+          "Sequoia Capital China",
+          "Shunwei Capital",
+          "Qualgro"
+        ],
+        "source": "https://techcrunch.com/2018/06/14/patsnap-picks-up-38m/"
+      },
+      {
+        "date": "2021-03-16",
+        "stage": "Series E",
+        "amount": "$300M",
+        "amount_usd": 300000000,
+        "lead_investors": [
+          "SoftBank Vision Fund 2",
+          "Tencent"
+        ],
+        "investors": [
+          "SoftBank Vision Fund 2",
+          "Tencent",
+          "Sequoia Capital China",
+          "CICC Capital",
+          "Vertex Growth"
+        ],
+        "source": "https://tech.eu/2021/03/16/singapore-london-based-patsnap-snaps-up-300-million-in-series-e-funding/"
+      }
+    ],
+    "funding_notes": "Total ~$352M across 5 rounds; became Singapore unicorn in 2021 Series E at >$1B valuation."
   },
-  { "name": "Horizon Quantum Computing", "aliases": [], "description": "Singapore-based privately-held quantum computing software startup. Distinct from any publicly-traded company sharing a similar name (NASDAQ:HQ ticker, Horizon Quantum Holdings, earnings releases, ticker-aggregator coverage from Zacks/TipRanks/MarketBeat/etc. must be excluded).",
-    "exclude_terms": ["nasdaq", "dmy", "spac", "ticker", "irish-founded", "earnings", "pipe financing", "trading on nasdaq", "lists on nasdaq", "go public", "going public", "stocktitan", "tipranks", "zacks", "marketbeat", "yahoo finance", "investing.com", "barron"],
+  {
+    "name": "Horizon Quantum Computing",
+    "aliases": [],
+    "description": "Singapore-based privately-held quantum computing software startup. Distinct from any publicly-traded company sharing a similar name (NASDAQ:HQ ticker, Horizon Quantum Holdings, earnings releases, ticker-aggregator coverage from Zacks/TipRanks/MarketBeat/etc. must be excluded).",
+    "exclude_terms": [
+      "nasdaq",
+      "dmy",
+      "spac",
+      "ticker",
+      "irish-founded",
+      "earnings",
+      "pipe financing",
+      "trading on nasdaq",
+      "lists on nasdaq",
+      "go public",
+      "going public",
+      "stocktitan",
+      "tipranks",
+      "zacks",
+      "marketbeat",
+      "yahoo finance",
+      "investing.com",
+      "barron"
+    ],
     "sources": [
-      { "type": "rss",         "label": "arxiv-fitzsimons", "url": "https://arxiv.org/a/fitzsimons_j_1.atom2" },
-      { "type": "html_scrape", "label": "newsroom",         "url": "https://www.horizonquantum.com/resources/newsroom",
-        "hint": "Newsroom page lists press releases and media coverage as vertically-stacked cards. Each card has a headline (h4), descriptive text, a 'See more' link, and a publication date. Relative links resolve against https://www.horizonquantum.com/." }
+      {
+        "type": "rss",
+        "label": "arxiv-fitzsimons",
+        "url": "https://arxiv.org/a/fitzsimons_j_1.atom2"
+      },
+      {
+        "type": "html_scrape",
+        "label": "newsroom",
+        "url": "https://www.horizonquantum.com/resources/newsroom",
+        "hint": "Newsroom page lists press releases and media coverage as vertically-stacked cards. Each card has a headline (h4), descriptive text, a 'See more' link, and a publication date. Relative links resolve against https://www.horizonquantum.com/."
+      }
     ],
     "identifiers": {
-      "linkedin":   "https://www.linkedin.com/company/horizon-quantum-computing/",
+      "linkedin": "https://www.linkedin.com/company/horizon-quantum-computing/",
       "crunchbase": "https://www.crunchbase.com/organization/horizon-quantum-computing",
       "sginnovate": "https://www.sginnovate.com/investments/horizon-quantum-computing",
-      "uen":        "201802755E"
-    }
+      "uen": "201802755E"
+    },
+    "funding_rounds": [
+      {
+        "date": "2018",
+        "stage": "Seed",
+        "amount": "SGD 1.2M",
+        "amount_usd": 860000,
+        "lead_investors": [
+          "SGInnovate"
+        ],
+        "investors": [
+          "SGInnovate",
+          "Abies Ventures",
+          "DCVC",
+          "Summer Capital"
+        ],
+        "source": "https://www.horizonquantum.com/updates/news/horizon-closes-seed-funding-round"
+      },
+      {
+        "date": "2020-06",
+        "stage": "Seed",
+        "amount": "$3.23M",
+        "amount_usd": 3230000,
+        "lead_investors": [
+          "Sequoia Capital India"
+        ],
+        "investors": [
+          "Sequoia Capital India",
+          "SGInnovate",
+          "Abies Ventures",
+          "DCVC",
+          "Qubit Protocol",
+          "Summer Capital",
+          "Posa CV"
+        ],
+        "source": "https://kr-asia.com/quantum-computing-startup-bags-usd-3-23-million-in-a-sequoia-led-seed-plus-round"
+      },
+      {
+        "date": "2023-03-31",
+        "stage": "Series A",
+        "amount": "$18.1M",
+        "amount_usd": 18100000,
+        "lead_investors": [
+          "Sequoia Capital India"
+        ],
+        "investors": [
+          "Sequoia Capital India",
+          "Tencent",
+          "SGInnovate",
+          "Pappas Capital",
+          "Expeditions Fund"
+        ],
+        "source": "https://technode.global/2023/04/01/singapores-horizon-quantum-computing-raises-18-1m-series-a-funding-from-sequoia-capital-india-tencent-and-others/"
+      }
+    ],
+    "funding_notes": "Total raised ~$21.3M across 3 rounds; Singapore quantum software company founded 2018."
   },
-
-  { "name": "1cool", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "8VERLINK", "aliases": ["Overlink"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Actly", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Ailytics", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://www.ailytics.ai/news",
-        "hint": "Webflow CMS listing under div.collection-list-wrapper-2.w-dyn-list. Each item is a div.div-block-78 containing a category label in div.category, a headline in div.text-block-27 (treat as the title), and a date as plain text in div.text-block-29 (e.g. 'April 28, 2026'). About 6 items shown in reverse chronological order. Resolve relative item links against https://www.ailytics.ai/." }
-    ]
+  {
+    "name": "1cool",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (dew-point cooler tech); likely received NUS GRIP seed grant (~SGD 250K) but no public equity round announced."
   },
-  { "name": "AIWater", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Akesis Biologics", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Aleph", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from Aleph Alpha (German AI), Aleph (US software company), or any other unrelated company sharing this name." },
-  { "name": "Algno", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Alpha", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic name — drop any item not clearly referring to a Singapore deep-tech startup of this exact name." },
-  { "name": "Ambient Systems", "aliases": [], "description": "NUS GRIP-incubated Singapore climate-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "AProxy", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "AquaShield Solutions", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "AquaViolet", "aliases": [], "description": "NUS GRIP-incubated Singapore UV/water-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "ARMAS TEC", "aliases": ["ARMAS"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "aruvii", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Atlastream", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Aurora Food", "aliases": [], "description": "NUS GRIP-incubated Singapore food-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://aurorafoodsg.com/news/",
-        "hint": "WordPress site rendered with Elementor. News entries appear as Elementor icon-box widgets with headline in h3.elementor-icon-box-title and the date displayed as a plain-text label (e.g. 'September 12th, 2022') directly above each headline; descriptive body text follows. Roughly 4 items, ordered newest-first. Note that the most recent item is from 2022, so the feed may be stale. Resolve any relative links against https://aurorafoodsg.com/." }
-    ]
+  {
+    "name": "8VERLINK",
+    "aliases": [
+      "Overlink"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (battery-free wireless IoT sensors); likely received NUS GRIP seed grant (~SGD 250K) but no public equity round announced."
   },
-  { "name": "Auxetica", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "BAE", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from BAE Systems (defence) or any other unrelated company sharing this name." },
-  { "name": "BEEX", "aliases": [], "description": "NUS GRIP-incubated Singapore autonomous-systems startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "press", "url": "https://beex.sg/in-the-press/",
-        "hint": "BeeX 'In The Press' listing of press items in reverse chronological order. Each item is a card with a thumbnail image, source/publication name, headline text and a date below the headline (e.g. '7 Oct 2025'). Resolve relative links against https://beex.sg/." },
-      { "type": "html_scrape", "label": "blog", "url": "https://beex.sg/blogs/",
-        "hint": "BeeX blog listing. Each post is a card with a featured image, author byline ('BeeX Team'), an h3-style headline link and a publication date below the headline (e.g. 'May 13, 2024'). Resolve relative links against https://beex.sg/." }
-    ]
+  {
+    "name": "Actly",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No publicly verifiable funding information found; NUS GRIP affiliation not strongly evidenced in search results."
   },
-  { "name": "BiocharCorp", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "BioTrack", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name (e.g. cannabis traceability software)." },
-  { "name": "brain|pool", "aliases": ["brainpool"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Casa Medico", "aliases": [], "description": "NUS GRIP-incubated Singapore medical-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "CBE Eco-Solutions", "aliases": ["CBE Eco"], "description": "NUS GRIP-incubated Singapore eco-tech startup. Drop unrelated companies sharing the same name.",
+  {
+    "name": "Ailytics",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://www.cbeecosolutions.com/news",
-        "hint": "CBE Eco-Solutions 'Our News' listing. Items are vertically stacked rows (no card border) with a heading-style (h2/h3) clickable headline linking out to external articles or LinkedIn posts; brief description below. No publication dates shown inline. Resolve relative links against https://www.cbeecosolutions.com/." }
-    ]
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.ailytics.ai/news",
+        "hint": "Webflow CMS listing under div.collection-list-wrapper-2.w-dyn-list. Each item is a div.div-block-78 containing a category label in div.category, a headline in div.text-block-27 (treat as the title), and a date as plain text in div.text-block-29 (e.g. 'April 28, 2026'). About 6 items shown in reverse chronological order. Resolve relative item links against https://www.ailytics.ai/."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2022-04-01",
+        "stage": "Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "Huang Shao-Ning"
+        ],
+        "investors": [
+          "Huang Shao-Ning",
+          "National University of Singapore",
+          "AngelCentral"
+        ],
+        "source": "https://ailytics.ai/ailytics-announces-seed-investment/"
+      },
+      {
+        "date": "2024",
+        "stage": "Pre-Seed",
+        "amount": "$2.7M",
+        "amount_usd": 2700000,
+        "lead_investors": [
+          "Tin Men Capital"
+        ],
+        "investors": [
+          "Tin Men Capital",
+          "Aurum Investments",
+          "AngelCentral"
+        ],
+        "source": "https://www.prnewswire.com/apac/news-releases/ailytics-raises-us2-7m-to-power-next-generation-scenario-based-ai-monitoring-for-heavy-industries-302105965.html"
+      }
+    ],
+    "funding_notes": "Pre-A round (labeled as Pre-A by company) of $2.7M led by Tin Men Capital. Seed round amount undisclosed."
   },
-  { "name": "Cell2Mix", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Cellivate Technologies", "aliases": ["Cellivate"], "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "press", "url": "https://www.cellivatetech.com/recognition",
-        "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/." }
-    ]
+  {
+    "name": "AIWater",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (AI for wastewater treatment optimization); likely received NUS GRIP seed grant (~SGD 250K) but no public equity round announced."
   },
-  { "name": "Circrete", "aliases": [], "description": "NUS GRIP-incubated Singapore construction-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Codaveri", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "ConcreteAI", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Cornucopia", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English noun — drop any item not clearly referring to the Singapore startup." },
-  { "name": "Craft Health", "aliases": [], "description": "NUS GRIP-incubated Singapore health-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://www.crafthealth.me/newsletter",
-        "hint": "Craft Health 'Latest News' page is a chronological press/achievements timeline organised by year and month headers (e.g. '2021', then 'January 2021'). Each entry is a bullet line of plain text describing a media mention or award, often with an inline '[<Read_More>]' or named hyperlink to an external article. Dates come from the month/year section headings, not per-item. Resolve relative links against https://www.crafthealth.me/." }
-    ]
+  {
+    "name": "Akesis Biologics",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS spin-off biotech (gut health, DUSP10 enzyme/MastGut); supported by NUS GRIP but no public equity funding rounds announced."
   },
-  { "name": "CRecTech", "aliases": ["Carbon Recycle Technologies"], "description": "NUS GRIP-incubated Singapore carbon-recycling tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://crectech.net/news",
-        "hint": "CRecTech news page: card layout listing roughly 6-7 stories with a 'Load More' button. Each card has a thumbnail image, a publication date in 'Month D, YYYY' format (e.g. 'April 2, 2026') above the headline; the featured story uses h2 and subsequent items use h3. Resolve relative links against https://crectech.net/." }
-    ]
+  {
+    "name": "Aleph",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from Aleph Alpha (German AI), Aleph (US software company), or any other unrelated company sharing this name.",
+    "funding_rounds": [
+      {
+        "date": "2025-01",
+        "stage": "Seed",
+        "amount": "$750K",
+        "amount_usd": 750000,
+        "lead_investors": [
+          "Cocoon Capital"
+        ],
+        "investors": [
+          "Cocoon Capital",
+          "Graiden Gorge Investments"
+        ],
+        "source": "https://cocooncap.com/aleph-funding/"
+      }
+    ],
+    "funding_notes": "NUS GRIP spin-off (Aleph Digital Technologies); AI-driven digital twin platform for process manufacturing."
   },
-  { "name": "Curated Culture", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic phrase — drop any item not clearly referring to the Singapore startup.",
-    "sources": [
-      { "type": "html_scrape", "label": "press", "url": "https://curatedculture.sg/pages/in-the-news",
-        "hint": "Curated Culture 'In The News' press listing on Shopify. Each item is a card with a featured image, headline, publication name and date, a short excerpt and a 'Read More' or 'Listen Here' link to the external source. Roughly 8 features from 2022 to 2025. Resolve relative links against https://curatedculture.sg/." }
-    ]
+  {
+    "name": "Algno",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (algae control / nutrient removal); likely received NUS GRIP seed grant (~SGD 250K) but no public equity round announced."
   },
-  { "name": "Cycfield", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "CycloMeds", "aliases": [], "description": "NUS GRIP-incubated Singapore medical-tech startup (lymphatic). Drop unrelated companies sharing the same name." },
-  { "name": "DolphinLink", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "DRAVAM", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Ecobinder", "aliases": [], "description": "NUS GRIP-incubated Singapore battery-materials startup. Drop unrelated companies sharing the same name." },
-  { "name": "EEA", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Very common acronym — drop any item not clearly about the Singapore startup (NOT the European Environment Agency, European Economic Area, etc.)." },
-  { "name": "EGGOL", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Eigen Sensor", "aliases": [], "description": "NUS GRIP-incubated Singapore sensor-tech startup. Drop unrelated companies sharing the same name and any items where 'eigen' refers to eigenvalues/eigenvectors in physics or math." },
-  { "name": "EmaCare", "aliases": [], "description": "NUS GRIP-incubated Singapore health-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Emerge", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English word — drop any item not clearly referring to the Singapore startup." },
-  { "name": "Emerstat", "aliases": [], "description": "NUS GRIP-incubated Singapore medical-device startup (bleeding control). Drop unrelated companies sharing the same name (e.g. Emerstat thermostat brand)." },
-  { "name": "ENBED", "aliases": [], "description": "NUS GRIP-incubated Singapore energy-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "enlipsium", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://www.enlipsium.com/general-5",
-        "hint": "News listing on Wix-hosted site at https://www.enlipsium.com. Each item is a block with a Month-Year text label (e.g. 'Aug 2024'), an h3 headline, a short description, and an external 'Link' anchor. Dates are plain text (no <time> tag). Resolve relative links against https://www.enlipsium.com." }
-    ]
+  {
+    "name": "Alpha",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic name — drop any item not clearly referring to a Singapore deep-tech startup of this exact name.",
+    "funding_rounds": [],
+    "funding_notes": "Generic name; unable to disambiguate or verify funding for the specific NUS GRIP entity. No verifiable funding information found."
   },
-  { "name": "FACI-FI", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "FathomX", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "FitSight", "aliases": [], "description": "NUS GRIP-incubated Singapore myopia-management health-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Florisense", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Forte Biotech", "aliases": [], "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://www.fortebio.tech/news",
-        "hint": "News listing at https://www.fortebio.tech/news. Each item is an <article>-style block with a category label and date in format 'Category | Year' or 'Category | Month YYYY' (e.g. 'Press | November 2025') rendered as plain text before the headline. Headlines are <h3>. A short description and 'Read more' link follow. Filterable categories: Awards, Press, Publications, Events, Announcements. Resolve relative links against https://www.fortebio.tech." }
-    ]
+  {
+    "name": "Ambient Systems",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore climate-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Incorporated July 2021 with pre-seed support from NUS GRIP; graduated NUS Deep Tech Incubator 2021. No public equity funding round announced beyond NUS GRIP grant."
   },
-  { "name": "FRONKA", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://fronkatech.com/news/",
-        "hint": "WordPress news listing at https://fronkatech.com/news/. Each item has an <h3> headline followed by an <h6> or <em> line containing the date and location (e.g. '06/15/2021, Singapore'). Body paragraphs and embedded images follow. Only ~3 items, dating from 2020-2021. Resolve relative links against https://fronkatech.com." }
-    ]
+  {
+    "name": "AProxy",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (point-of-care immunoassay / SimpleProx); likely received NUS GRIP seed grant but no public equity round announced."
   },
-  { "name": "GenVoice", "aliases": [], "description": "NUS GRIP-incubated Singapore voice-tech startup. Drop items where 'gen voice' is incidental phrasing ('next-gen voice', 'generation voice', etc.) rather than the company name." },
-  { "name": "GeoCore", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name (e.g. geology/mining firms named GeoCore)." },
-  { "name": "GranuSmart", "aliases": [], "description": "NUS GRIP-incubated Singapore food-tech startup (granular food quality control). Drop unrelated companies sharing the same name." },
-  { "name": "Green COP", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated mentions ('green' + 'COP' summit/conference of parties).",
-    "sources": [
-      { "type": "html_scrape", "label": "press", "url": "https://www.greencop.sg/news-1",
-        "hint": "Wix-hosted press release listing at https://www.greencop.sg/news-1. Each item is a card block with a plain-text date in 'DD Mon YYYY' format (e.g. '26 Feb 2026') above an <h2>/<h3> headline, a placeholder image, and a 'Read More' link. Items are reverse-chronological. Resolve relative links against https://www.greencop.sg." }
-    ]
+  {
+    "name": "AquaShield Solutions",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS spin-off (water quality monitoring), incorporated Sept 2023 with NUS research project support; no public equity funding round announced."
   },
-  { "name": "GrowLights", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop generic horticulture-product mentions of 'grow lights'." },
-  { "name": "Guardly", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from the US mobile-security firm Guardly or any other unrelated company sharing this name." },
-  { "name": "H2C", "aliases": [], "description": "NUS GRIP-incubated Singapore energy-efficiency startup (heat-to-cool). Drop unrelated mentions of H2C as a chemical or other acronym." },
-  { "name": "Hamlit", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Heseed", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "HiCura", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "press", "url": "https://hicuramedical.com/press-release/",
-        "hint": "WordPress (Yoast SEO) press-release page on hicuramedical.com. Each item is a row containing a publisher logo/thumbnail, a bolded headline (in <strong> tags rather than h2/h3), a short description, and a 'View Article' link to an external publisher URL. No explicit per-item date elements; dates only appear inline within some headlines (e.g. '2023'). Resolve relative links against https://hicuramedical.com/." }
-    ]
+  {
+    "name": "AquaViolet",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore UV/water-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2022",
+        "stage": "Pre-Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS GRIP"
+        ],
+        "source": "https://cde.nus.edu.sg/cee/news/aquaviolet/"
+      }
+    ],
+    "funding_notes": "NUS GRIP spin-off (UV-LED disinfection); pre-seed grant from NUS GRIP confirmed; specific amount not disclosed (NUS GRIP typically up to SGD 250K)."
   },
-  { "name": "hilibbie", "aliases": ["hi libbie"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "hiomi", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup focused on online child safety. Drop unrelated companies sharing the same name." },
-  { "name": "HiSEPOR", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "HiTransfer", "aliases": [], "description": "NUS GRIP-incubated Singapore semiconductor startup (heterogeneous integration). Drop unrelated mentions of 'hi transfer' as generic phrasing." },
-  { "name": "Hivebotics", "aliases": [], "description": "NUS GRIP-incubated Singapore robotics startup. Drop unrelated companies sharing the same name." },
-  { "name": "HOMEPAL", "aliases": [], "description": "NUS GRIP-incubated Singapore care-tech startup. Distinct from Homepal the Italian proptech firm or any other unrelated company sharing this name." },
-  { "name": "Hybrique", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "insightic", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "blog", "url": "https://insightic.io/blog",
-        "hint": "Card-based blog listing on insightic.io. Each card contains a thumbnail image (from /img/), a category badge ('insightic research', 'community resource', 'new partnership'), a clickable headline that links to the individual post URL, and a publication date in 'Day Mon DD YYYY' format (e.g. 'Tue Oct 31 2023') displayed below the headline. Resolve relative links against https://insightic.io/." }
-    ]
+  {
+    "name": "ARMAS TEC",
+    "aliases": [
+      "ARMAS"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (AireLevate body-assist apparel) founded 2021; likely received NUS GRIP seed grant but no public equity round announced."
   },
-  { "name": "INVIGILO", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "blog", "url": "https://www.invigilo.ai/blog",
-        "hint": "Wix-built site (canonical content lives at invigilo.sg but invigilo.ai is the active marketing domain). Card-based blog listing; each card is a linked container with a thumbnail image, a category label above the title (e.g. 'Oil & Gas Safety Insights'), an <h3> headline, a short excerpt, and a 'Read more' link. No publication date is shown on the listing view. Individual post URLs follow the pattern /post/<slug>; resolve relative links against https://www.invigilo.ai/ (Wix renders /post/<slug> there too)." }
-    ]
+  {
+    "name": "aruvii",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP Run 1 spin-off (Industrial AI / smart manufacturing), founded 2018. Tracxn indicates 1 institutional investor / 1 round but amounts undisclosed; no verifiable public source for amount or date."
   },
-  { "name": "Keptan", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "KleenSoil", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://www.kleensoil.com/news",
-        "hint": "Wix-hosted news listing on kleensoil.com (NUS chemistry spin-off, Singapore). The page lists multiple news items covering deployments, awards, and partnerships (e.g. China refinery slag-free deployment 2024, AFTEA competition with Republic Polytechnic, Eco-Innovation Green Action finals). Each item is a card/section with a heading and short body paragraph; dates typically appear inline in the body (e.g. 'August 2024'). Resolve relative links against https://www.kleensoil.com/." }
-    ]
+  {
+    "name": "Atlastream",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS-linked video streaming startup; no public funding announcement found. Company appears to have ceased operations."
   },
-  { "name": "lalia", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+  {
+    "name": "Aurora Food",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore food-tech startup. Drop unrelated companies sharing the same name.",
     "sources": [
-      { "type": "html_scrape", "label": "press", "url": "https://read.lalia.com.sg/press",
-        "hint": "Card-based press listing for Lalia Pte Ltd (Singapore). Each card has a thumbnail image, an <h3> headline (often in Japanese), a secondary line with the source URL, and a publication date in 'YYYY/MM/DD' format below it. Each card wraps in an <a> tag linking to the full article (often external publishers). Resolve relative links against https://read.lalia.com.sg/." }
-    ]
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://aurorafoodsg.com/news/",
+        "hint": "WordPress site rendered with Elementor. News entries appear as Elementor icon-box widgets with headline in h3.elementor-icon-box-title and the date displayed as a plain-text label (e.g. 'September 12th, 2022') directly above each headline; descriptive body text follows. Roughly 4 items, ordered newest-first. Note that the most recent item is from 2022, so the feed may be stale. Resolve any relative links against https://aurorafoodsg.com/."
+      }
+    ],
+    "funding_rounds": [],
+    "funding_notes": "NUS-founded food-tech (AuroraFood, est. 2019, low-GI bakery / YU cookies); listed as VC-backed on PitchBook but specific funding amounts and investors not publicly disclosed in non-paywalled sources."
   },
-  { "name": "LEXIKAT", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Liloss", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Lincore", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from the Lincore welding-consumables brand or any other unrelated company sharing this name." },
-  { "name": "M.I.Cloud Technologies", "aliases": ["MI Cloud", "M.I. Cloud"], "description": "NUS GRIP-incubated Singapore cloud-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Magloy Tech", "aliases": ["Magloy"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Mall Nautics", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Marino Solar", "aliases": [], "description": "NUS GRIP-incubated Singapore solar-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Matchapreneur", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Medicert", "aliases": [], "description": "NUS GRIP-incubated Singapore medical-tech startup (anti-counterfeit medication). Drop unrelated companies sharing the same name." },
-  { "name": "MediVR", "aliases": [], "description": "NUS GRIP-incubated Singapore medical-VR startup. Drop unrelated companies sharing the same name." },
-  { "name": "Metalivi", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Metallica", "aliases": [], "description": "NUS GRIP-incubated Singapore precious-metals startup. Distinct from the heavy-metal band Metallica or any other unrelated entity sharing this name." },
-  { "name": "Metasense", "aliases": [], "description": "NUS GRIP-incubated Singapore climate-intelligence startup. Drop unrelated companies sharing the same name." },
-  { "name": "Microtube Technologies", "aliases": ["Microtube"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "rss", "label": "news", "url": "https://microtube.tech/feed/" },
-      { "type": "html_scrape", "label": "news", "url": "https://microtube.tech/category/news-awards/",
-        "hint": "WordPress category archive listing 'News & Awards' posts as stacked cards. Each card has a featured image, a category badge, a headline as a linked heading (h2), an author byline ('By delta'), publication date (format 'DD Month, YYYY'), an excerpt, and a 'Read More' link. Relative links resolve against https://microtube.tech/." }
-    ]
+  {
+    "name": "Auxetica",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company developing Brain Protection System (BPS) with auxetic meta-material helmet liners. No publicly announced funding rounds beyond NUS GRIP incubation found."
   },
-  { "name": "Mindful Drinks", "aliases": [], "description": "NUS GRIP-incubated Singapore consumer-tech startup. Drop generic 'mindful drinks' wellness articles unrelated to the Singapore startup." },
-  { "name": "MoneyMoves", "aliases": [], "description": "NUS GRIP-incubated Singapore fintech startup. Drop generic 'money moves' financial-advice content unrelated to the Singapore startup." },
-  { "name": "MuSigPro", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "nbrane", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "ndots", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "NEU Battery Materials", "aliases": ["NEU Battery"], "description": "NUS GRIP-incubated Singapore battery-materials startup. Drop unrelated companies sharing the same name.",
+  {
+    "name": "BAE",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from BAE Systems (defence) or any other unrelated company sharing this name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company developing wireless charging tech for wearables. No publicly announced funding rounds found beyond NUS GRIP incubation."
+  },
+  {
+    "name": "BEEX",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore autonomous-systems startup. Drop unrelated companies sharing the same name.",
     "sources": [
-      { "type": "html_scrape", "label": "newsroom", "url": "https://www.neumaterials.com/news",
-        "hint": "News listing is vertically-stacked article cards; each card has a headline, publication date, brief description, and 'Read more' link. Relative links resolve against https://www.neumaterials.com/." }
+      {
+        "type": "html_scrape",
+        "label": "press",
+        "url": "https://beex.sg/in-the-press/",
+        "hint": "BeeX 'In The Press' listing of press items in reverse chronological order. Each item is a card with a thumbnail image, source/publication name, headline text and a date below the headline (e.g. '7 Oct 2025'). Resolve relative links against https://beex.sg/."
+      },
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://beex.sg/blogs/",
+        "hint": "BeeX blog listing. Each post is a card with a featured image, author byline ('BeeX Team'), an h3-style headline link and a publication date below the headline (e.g. 'May 13, 2024'). Resolve relative links against https://beex.sg/."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2021-11",
+        "stage": "Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "Cap Vista"
+        ],
+        "investors": [
+          "Cap Vista",
+          "Quest Ventures",
+          "IMC Ventures",
+          "SEEDS Capital",
+          "NUS Technology Holdings"
+        ],
+        "source": "https://www.questventures.com/press/sg-based-underwater-robot-maker-beex-bags-seed-funding/"
+      },
+      {
+        "date": "2023-11-15",
+        "stage": "Bridge",
+        "amount": "$2M",
+        "amount_usd": 2000000,
+        "lead_investors": [
+          "Earth Venture Capital",
+          "ShipsFocus Ventures"
+        ],
+        "investors": [
+          "Earth Venture Capital",
+          "ShipsFocus Ventures",
+          "SEEDS Capital",
+          "NUS Technology Holdings",
+          "Infinita VC"
+        ],
+        "source": "https://technode.global/2023/11/15/singapores-beex-raises-2m-in-funding-led-by-earth-venture-capital-shipsfocus-ventures/"
+      },
+      {
+        "date": "2025-09-25",
+        "stage": "Series A",
+        "amount": "$7.76M",
+        "amount_usd": 7760000,
+        "lead_investors": [
+          "ShipFocus Ventures",
+          "Earth Venture Capital"
+        ],
+        "investors": [
+          "ShipFocus Ventures",
+          "Earth Venture Capital",
+          "NUS Technology Holdings",
+          "SEEDS Capital",
+          "Infinita VC"
+        ],
+        "source": "https://technode.global/2025/09/25/singapores-beex-launches-7-76m-series-a-funding-round-to-fuel-global-expansion/"
+      }
+    ],
+    "funding_notes": "Series A announced Sept 2025; amount reported variously as SGD 10M / $7.4M / $7.76M across sources."
+  },
+  {
+    "name": "BiocharCorp",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2019-12",
+        "stage": "Grant",
+        "amount": "SGD 100K",
+        "amount_usd": 75000,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS GRIP"
+        ],
+        "source": "https://www.nus.edu.sg/grip/news/run-3-lift-off-12-december-2019/"
+      }
+    ],
+    "funding_notes": "NUS GRIP Run 3 company; received up to S$100,000 seed funding via NUS GRIP."
+  },
+  {
+    "name": "BioTrack",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name (e.g. cannabis traceability software).",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company developing portable 12-lead AI-enabled ECG device. No publicly announced funding rounds found beyond NUS GRIP incubation."
+  },
+  {
+    "name": "brain|pool",
+    "aliases": [
+      "brainpool"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2020-09",
+        "stage": "Seed",
+        "amount": "SGD 900K",
+        "amount_usd": 660000,
+        "lead_investors": [
+          "ABC Dream Ventures"
+        ],
+        "investors": [
+          "ABC Dream Ventures"
+        ],
+        "source": "https://brain-pool-tech.prezly.com/during-the-pandemic-these-neuroscientists-grew-a-deep-tech-drone-company-and-closed-a-total-of-s900000-in-funding"
+      }
+    ],
+    "funding_notes": "Brain Pool Tech closed a total of S$900K in funding during the pandemic, led by ABC Dream Ventures."
+  },
+  {
+    "name": "Casa Medico",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore medical-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company; personalized physiotherapy aid for knee osteoarthritis. No publicly announced funding rounds found."
+  },
+  {
+    "name": "CBE Eco-Solutions",
+    "aliases": [
+      "CBE Eco"
+    ],
+    "description": "NUS GRIP-incubated Singapore eco-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.cbeecosolutions.com/news",
+        "hint": "CBE Eco-Solutions 'Our News' listing. Items are vertically stacked rows (no card border) with a heading-style (h2/h3) clickable headline linking out to external articles or LinkedIn posts; brief description below. No publication dates shown inline. Resolve relative links against https://www.cbeecosolutions.com/."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2022-05",
+        "stage": "Seed",
+        "amount": "$1.83M",
+        "amount_usd": 1830000,
+        "lead_investors": [
+          "Sembcorp Industries",
+          "Juniper Capital"
+        ],
+        "investors": [
+          "Sembcorp Industries",
+          "Juniper Capital"
+        ],
+        "source": "https://tracxn.com/d/companies/cbeecosolutions/__jcBVEJ09k3YjQyE60of1FuidEmjZ_JV7124svm6AUj0/funding-and-investors"
+      },
+      {
+        "date": "2024",
+        "stage": "Series A",
+        "amount": "SGD 5.5M",
+        "amount_usd": 4000000,
+        "lead_investors": [],
+        "investors": [],
+        "source": "https://cde.nus.edu.sg/research/industry-partnership/cbe-eco-solutions/"
+      }
+    ],
+    "funding_notes": "May 2022 seed round valued company at USD 7M post-money. Pre-Series A of S$5.5M completed alongside Jurong demonstration plant in November 2024; specific investors not publicly disclosed."
+  },
+  {
+    "name": "Cell2Mix",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company; biopharmaceutical manufacturing filter. No publicly announced funding rounds found."
+  },
+  {
+    "name": "Cellivate Technologies",
+    "aliases": [
+      "Cellivate"
+    ],
+    "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "press",
+        "url": "https://www.cellivatetech.com/recognition",
+        "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2023-05-08",
+        "stage": "Seed",
+        "amount": "$1M",
+        "amount_usd": 1000000,
+        "lead_investors": [],
+        "investors": [],
+        "source": "https://tracxn.com/d/companies/cellivate-technologies/__STEWRtMsUEC9zuOjnxV20iW44UzVUcAK4dUUOmaEPts/funding-and-investors"
+      },
+      {
+        "date": "2023",
+        "stage": "Seed",
+        "amount": "SGD 4.15M",
+        "amount_usd": 3300000,
+        "lead_investors": [
+          "Rigel-Farro Capital"
+        ],
+        "investors": [
+          "Rigel-Farro Capital",
+          "Antler",
+          "Hatcher+",
+          "Venture Catalysts",
+          "We Founder Circle"
+        ],
+        "source": "https://cultivated-x.com/investments-finance/cellivate-technologies-wins-3-3m-cnas-the-big-spark-slaughter-free-solutions/"
+      },
+      {
+        "date": "2024-08",
+        "stage": "Seed",
+        "amount": "$1M",
+        "amount_usd": 1000000,
+        "lead_investors": [
+          "Antler"
+        ],
+        "investors": [
+          "Antler",
+          "Venture Catalysts",
+          "Hatcher+",
+          "We Founder Circle"
+        ],
+        "source": "https://entrackr.com/2024/08/bio-tech-startup-cellivate-technologies-raises-1-mn-in-seed-round/"
+      },
+      {
+        "date": "2025-04",
+        "stage": "Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [],
+        "investors": [
+          "Inflection Point Ventures"
+        ],
+        "source": "https://tracxn.com/d/companies/cellivate-technologies/__STEWRtMsUEC9zuOjnxV20iW44UzVUcAK4dUUOmaEPts/funding-and-investors"
+      }
+    ],
+    "funding_notes": "Multiple seed rounds reported. Total funding reported variously as $2M to $4.12M depending on source. Won CNA's The Big Spark business reality show with SGD 4.15M led by Rigel-Farro Capital."
+  },
+  {
+    "name": "Circrete",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore construction-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company / NUS spin-off producing green cement from marine clay. No publicly announced external funding rounds found."
+  },
+  {
+    "name": "Codaveri",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "AI programming tutor startup spun out from NUS AI Centre for Educational Technologies (AICET). Listed as 'Unfunded' on Tracxn."
+  },
+  {
+    "name": "ConcreteAI",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2022",
+        "stage": "Seed",
+        "amount": "$560K",
+        "amount_usd": 560000,
+        "lead_investors": [],
+        "investors": [
+          "Feedback Ventures",
+          "The Gear",
+          "Shell StartUp Engine",
+          "Iterative Accelerator",
+          "NUS GRIP"
+        ],
+        "source": "https://www.cbinsights.com/company/concreteai"
+      }
+    ],
+    "funding_notes": "NUS spin-off. Total reported funding ~$560K with multiple early-stage investors including Iterative Accelerator and Shell. Exact round dates/breakdowns not publicly disclosed."
+  },
+  {
+    "name": "Cornucopia",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English noun — drop any item not clearly referring to the Singapore startup.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company; biofertilizer products for sustainable agriculture. No publicly announced funding rounds found."
+  },
+  {
+    "name": "Craft Health",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore health-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.crafthealth.me/newsletter",
+        "hint": "Craft Health 'Latest News' page is a chronological press/achievements timeline organised by year and month headers (e.g. '2021', then 'January 2021'). Each entry is a bullet line of plain text describing a media mention or award, often with an inline '[<Read_More>]' or named hyperlink to an external article. Dates come from the month/year section headings, not per-item. Resolve relative links against https://www.crafthealth.me/."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2022-08",
+        "stage": "Pre-Seed",
+        "amount": "SGD 1.42M",
+        "amount_usd": 1030000,
+        "lead_investors": [
+          "Mistletoe Singapore"
+        ],
+        "investors": [
+          "Mistletoe Singapore",
+          "Arkray 4U",
+          "Jenny Chen",
+          "Chang-Hung Tseng"
+        ],
+        "source": "https://3dprint.com/293411/3d-printed-pharma-firm-craft-health-receives-1m-from-investors-including-jenny-chen/"
+      },
+      {
+        "date": "2024-05-13",
+        "stage": "Series A",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "Valuence Ventures"
+        ],
+        "investors": [
+          "Valuence Ventures",
+          "Mistletoe Singapore"
+        ],
+        "source": "https://namic.sg/news/craft-health-secures-pre-series-a2-funding-to-revolutionize-compounding-pharmacy-with-3d-printing-technology/"
+      }
+    ],
+    "funding_notes": "May 2024 round described as 'Pre-Series A2'. 2022 round sometimes characterized as Pre-Series A; total raised reported S$2.4M (~$1.7M) before 2024 round. 2024 round amount not publicly disclosed."
+  },
+  {
+    "name": "CRecTech",
+    "aliases": [
+      "Carbon Recycle Technologies"
+    ],
+    "description": "NUS GRIP-incubated Singapore carbon-recycling tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://crectech.net/news",
+        "hint": "CRecTech news page: card layout listing roughly 6-7 stories with a 'Load More' button. Each card has a thumbnail image, a publication date in 'Month D, YYYY' format (e.g. 'April 2, 2026') above the headline; the featured story uses h2 and subsequent items use h3. Resolve relative links against https://crectech.net/."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2024",
+        "stage": "Grant",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "Breakthrough Energy Fellows"
+        ],
+        "investors": [
+          "Breakthrough Energy",
+          "Temasek",
+          "Enterprise Singapore",
+          "SGInnovate"
+        ],
+        "source": "https://www.temasek.com.sg/en/news-and-resources/news-room/news/2024/BEF-SEA_announce_first_cohort"
+      }
+    ],
+    "funding_notes": "Selected as one of two inaugural projects in Breakthrough Energy Fellows - Southeast Asia (2024). Also received Startup SG Founder Grant from Enterprise Singapore. No equity funding rounds publicly disclosed."
+  },
+  {
+    "name": "Curated Culture",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic phrase — drop any item not clearly referring to the Singapore startup.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "press",
+        "url": "https://curatedculture.sg/pages/in-the-news",
+        "hint": "Curated Culture 'In The News' press listing on Shopify. Each item is a card with a featured image, headline, publication name and date, a short excerpt and a 'Read More' or 'Listen Here' link to the external source. Roughly 8 features from 2022 to 2025. Resolve relative links against https://curatedculture.sg/."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2023",
+        "stage": "Pre-Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [],
+        "investors": [],
+        "source": "https://vulcanpost.com/886777/curated-culture-singaporean-probiotics-drinks-nus/"
+      }
+    ],
+    "funding_notes": "Closed first angel investment round; amount and investor names not publicly disclosed. NUS GRIP-incubated spin-off from NUS Food Science and Technology department."
+  },
+  {
+    "name": "Cycfield",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company / NUS spin-off (2022); CycPowder material for water treatment. No publicly announced funding rounds found."
+  },
+  {
+    "name": "CycloMeds",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore medical-tech startup (lymphatic). Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company developing LIPITRAP for lymphedema treatment. No publicly announced funding rounds found."
+  },
+  {
+    "name": "DolphinLink",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company; hospital patient bed task management system. No publicly announced funding rounds found."
+  },
+  {
+    "name": "DRAVAM",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2019",
+        "stage": "Grant",
+        "amount": "SGD 50K",
+        "amount_usd": 37000,
+        "lead_investors": [
+          "Maritime and Port Authority of Singapore (MPA)"
+        ],
+        "investors": [
+          "MPA",
+          "PIER71"
+        ],
+        "source": "https://dravam.com/2021/04/twelve-start-ups-from-pier71s-smart-port-challenge-awarded-s600000-to-bring-innovative-solutions-to-maritime-market/"
+      }
+    ],
+    "funding_notes": "Winner of 2019 PIER71 Smart Port Challenge; received MPA grant. Also received NUS GRIP support and ESG support per company About page. Tracxn/CBInsights list ~US$40K total raised."
+  },
+  {
+    "name": "Ecobinder",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore battery-materials startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP Run 3 (Dec 2019) portfolio company. Eligible for up to S$100K seed from NUS GRIP, but no publicly verifiable funding round announcement found."
+  },
+  {
+    "name": "EEA",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Very common acronym — drop any item not clearly about the Singapore startup (NOT the European Environment Agency, European Economic Area, etc.).",
+    "funding_rounds": [],
+    "funding_notes": "No publicly verifiable funding round found. Name is too generic to disambiguate from NUS GRIP catalog alone."
+  },
+  {
+    "name": "EGGOL",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (automated egg-cooking machine). No publicly announced funding round found."
+  },
+  {
+    "name": "Eigen Sensor",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore sensor-tech startup. Drop unrelated companies sharing the same name and any items where 'eigen' refers to eigenvalues/eigenvectors in physics or math.",
+    "funding_rounds": [],
+    "funding_notes": "No publicly verifiable funding round found in Crunchbase/Tracxn/news."
+  },
+  {
+    "name": "EmaCare",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore health-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (employee mental wellness via Emotion AI). No publicly announced funding round found."
+  },
+  {
+    "name": "Emerge",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English word — drop any item not clearly referring to the Singapore startup.",
+    "funding_rounds": [],
+    "funding_notes": "Generic name; no funding round verifiable for the NUS GRIP entity in public sources."
+  },
+  {
+    "name": "Emerstat",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore medical-device startup (bleeding control). Drop unrelated companies sharing the same name (e.g. Emerstat thermostat brand).",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (non-adherent hemostatic device). No publicly announced funding round found."
+  },
+  {
+    "name": "ENBED",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore energy-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly announced funding round found."
+  },
+  {
+    "name": "enlipsium",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.enlipsium.com/general-5",
+        "hint": "News listing on Wix-hosted site at https://www.enlipsium.com. Each item is a block with a Month-Year text label (e.g. 'Aug 2024'), an h3 headline, a short description, and an external 'Link' anchor. Dates are plain text (no <time> tag). Resolve relative links against https://www.enlipsium.com."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2024",
+        "stage": "Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "NextCorps Luminate"
+        ],
+        "investors": [
+          "NextCorps Luminate",
+          "NUS Graduate Research Innovation Programme",
+          "Leave A Nest Singapore",
+          "UntroD",
+          "Plug and Play Tech Center"
+        ],
+        "source": "https://luminate.org/optics-startup-harnesses-the-power-of-light-to-improve-radiation-therapies-for-cancer-patients/"
+      }
+    ],
+    "funding_notes": "NUS GRIP spin-off (2020). PitchBook/CB Insights aggregate total raised between US$100K–US$245K. Joined Luminate NY cohort 7 in 2024."
+  },
+  {
+    "name": "FACI-FI",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (FACIFI — AI-powered facial re-enactment / synthetic media). No publicly announced funding round found."
+  },
+  {
+    "name": "FathomX",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2021-04",
+        "stage": "Seed",
+        "amount": "SGD 500K",
+        "amount_usd": 350000,
+        "lead_investors": [],
+        "investors": [
+          "Singapore-MIT Alliance for Research and Technology (SMART)",
+          "National Health Innovation Centre (NHIC)",
+          "Enterprise Singapore",
+          "National University of Singapore"
+        ],
+        "source": "https://www.mobihealthnews.com/news/asia/singaporean-startup-fathomx-scores-almost-2m-hasten-breast-cancer-ai-development"
+      },
+      {
+        "date": "2022-09",
+        "stage": "Series A",
+        "amount": "SGD 2.24M",
+        "amount_usd": 2000000,
+        "lead_investors": [],
+        "investors": [
+          "National Health Innovation Centre (NHIC)",
+          "Enterprise Singapore",
+          "National University of Singapore",
+          "Singapore-MIT Alliance for Research and Technology (SMART)"
+        ],
+        "source": "https://femtechinsider.com/fathomx-per-series-a/"
+      }
+    ],
+    "funding_notes": "AI breast cancer imaging spin-off from NUS/NUHS. The 2022 round is described variously as Pre-Series A in press; Crunchbase logs it as Seed (2022-09-01). Aggregate ~US$1.95M–US$2.55M across databases."
+  },
+  {
+    "name": "FitSight",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore myopia-management health-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly announced funding round found."
+  },
+  {
+    "name": "Florisense",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (smell-sensing tech for flavour/fragrance QC). No publicly announced funding round found."
+  },
+  {
+    "name": "Forte Biotech",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.fortebio.tech/news",
+        "hint": "News listing at https://www.fortebio.tech/news. Each item is an <article>-style block with a category label and date in format 'Category | Year' or 'Category | Month YYYY' (e.g. 'Press | November 2025') rendered as plain text before the headline. Headlines are <h3>. A short description and 'Read more' link follow. Filterable categories: Awards, Press, Publications, Events, Announcements. Resolve relative links against https://www.fortebio.tech."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2023-12",
+        "stage": "Grant",
+        "amount": "SGD 200K",
+        "amount_usd": 150000,
+        "lead_investors": [
+          "Temasek Foundation"
+        ],
+        "investors": [
+          "Temasek Foundation",
+          "Net Zero Challenge 2023"
+        ],
+        "source": "https://technode.global/2023/12/08/alterno-forte-biotech-and-airx-carbon-win-630000-in-grant-funding-from-net-zero-challenge-2023/"
+      }
+    ],
+    "funding_notes": "NUS spin-off (aquaculture diagnostics, RAPID system). Other investors per PitchBook/Crunchbase include COMEUP STARS, Sopoong, Touchstone Partners, NUS GRIP. PitchBook reports ~US$630K total raised; specific other rounds (amounts/dates) not publicly itemized."
+  },
+  {
+    "name": "FRONKA",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://fronkatech.com/news/",
+        "hint": "WordPress news listing at https://fronkatech.com/news/. Each item has an <h3> headline followed by an <h6> or <em> line containing the date and location (e.g. '06/15/2021, Singapore'). Body paragraphs and embedded images follow. Only ~3 items, dating from 2020-2021. Resolve relative links against https://fronkatech.com."
+      }
+    ],
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly announced funding round found."
+  },
+  {
+    "name": "GenVoice",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore voice-tech startup. Drop items where 'gen voice' is incidental phrasing ('next-gen voice', 'generation voice', etc.) rather than the company name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (ADHD voice-based assessment). No publicly announced funding round found."
+  },
+  {
+    "name": "GeoCore",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name (e.g. geology/mining firms named GeoCore).",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (geotechnical real-time seawall monitoring). No publicly announced funding round found beyond GRIP programme support."
+  },
+  {
+    "name": "GranuSmart",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore food-tech startup (granular food quality control). Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No publicly verifiable funding round found."
+  },
+  {
+    "name": "Green COP",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated mentions ('green' + 'COP' summit/conference of parties).",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "press",
+        "url": "https://www.greencop.sg/news-1",
+        "hint": "Wix-hosted press release listing at https://www.greencop.sg/news-1. Each item is a card block with a plain-text date in 'DD Mon YYYY' format (e.g. '26 Feb 2026') above an <h2>/<h3> headline, a placeholder image, and a 'Read More' link. Items are reverse-chronological. Resolve relative links against https://www.greencop.sg."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2024-02",
+        "stage": "Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "Ken Energy"
+        ],
+        "investors": [
+          "Ken Energy"
+        ],
+        "source": "https://e27.co/green-cop-secures-investment-to-launch-a-pilot-biofuels-plant-20240214/"
+      }
+    ],
+    "funding_notes": "NUS GRIP alumnus; sustainable biofuels from biowaste. Closed an undisclosed angel/seed round Feb 2024 with corporate investor Ken Energy. Teo Teng Seng appointed Chairman as part of round. Also won top 3 PIER71 Smart Port Challenge 2022."
+  },
+  {
+    "name": "GrowLights",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore agritech startup. Drop generic horticulture-product mentions of 'grow lights'.",
+    "funding_rounds": [],
+    "funding_notes": "Listed in NUS GRIP portfolio; no specific funding rounds publicly verified beyond programme participation."
+  },
+  {
+    "name": "Guardly",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from the US mobile-security firm Guardly or any other unrelated company sharing this name.",
+    "funding_rounds": [],
+    "funding_notes": "Singapore NUS GRIP-incubated AI safety startup (distinct from Canadian Guardly safety platform). No external public funding rounds found."
+  },
+  {
+    "name": "H2C",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore energy-efficiency startup (heat-to-cool). Drop unrelated mentions of H2C as a chemical or other acronym.",
+    "funding_rounds": [],
+    "funding_notes": "Waste heat recovery startup in NUS GRIP portfolio. No external funding announcement found."
+  },
+  {
+    "name": "Hamlit",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": null,
+        "stage": "Pre-Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS Graduate Research Innovation Programme"
+        ],
+        "source": "https://www.nus.edu.sg/grip/portfolio/"
+      }
+    ],
+    "funding_notes": "Two-wheeler blind-spot ML hardware. Publicly described as having raised pre-seed funding from NUS-GRIP; specific amount and date not disclosed."
+  },
+  {
+    "name": "Heseed",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "HESEED PTE. LTD. (Singapore, incorporated 2019-06-28; UEN 201920853E) is currently struck off per sgpbusiness/recordowl. No public funding rounds found."
+  },
+  {
+    "name": "HiCura",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "press",
+        "url": "https://hicuramedical.com/press-release/",
+        "hint": "WordPress (Yoast SEO) press-release page on hicuramedical.com. Each item is a row containing a publisher logo/thumbnail, a bolded headline (in <strong> tags rather than h2/h3), a short description, and a 'View Article' link to an external publisher URL. No explicit per-item date elements; dates only appear inline within some headlines (e.g. '2023'). Resolve relative links against https://hicuramedical.com/."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2019",
+        "stage": "Grant",
+        "amount": "SGD 50K",
+        "amount_usd": null,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS Graduate Research Innovation Programme"
+        ],
+        "source": "https://news.nus.edu.sg/hitting-the-market-anaesthesia-system-for-less-pain-in-childbirth/"
+      },
+      {
+        "date": null,
+        "stage": "Grant",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "NHIC"
+        ],
+        "investors": [
+          "National Health Innovation Centre Singapore (I2D / I2I schemes)"
+        ],
+        "source": "https://www.nhic.sg/nhic-enters-its-second-decade-advancing-healthcare-transformation-through-tech-and-innovation/"
+      }
+    ],
+    "funding_notes": "Received initial NUS GRIP S$50K seed tranche. Technology development supported by NHIC I2D and clinical application by I2I schemes. JumpStart programme also referenced."
+  },
+  {
+    "name": "hilibbie",
+    "aliases": [
+      "hi libbie"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No public funding information found. Insufficient public footprint to verify any funding round."
+  },
+  {
+    "name": "hiomi",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup focused on online child safety. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Digital safety platform for children's online activity. NUS GRIP portfolio; no other public funding rounds found."
+  },
+  {
+    "name": "HiSEPOR",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No public funding information found in startup databases or news."
+  },
+  {
+    "name": "HiTransfer",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore semiconductor startup (heterogeneous integration). Drop unrelated mentions of 'hi transfer' as generic phrasing.",
+    "funding_rounds": [],
+    "funding_notes": "No public funding information found for this NUS GRIP-incubated startup."
+  },
+  {
+    "name": "Hivebotics",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore robotics startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": null,
+        "stage": "Pre-Seed",
+        "amount": "$1M",
+        "amount_usd": 1000000,
+        "lead_investors": [],
+        "investors": [
+          "The Gear",
+          "Feedback Ventures",
+          "Maple Exports",
+          "NUS Graduate Research Innovation Programme",
+          "BLOCK71"
+        ],
+        "source": "https://pitchbook.com/profiles/company/509315-32"
+      }
+    ],
+    "funding_notes": "NUS spin-off (founded 2022) building autonomous toilet/restroom cleaning robots (Abluo). Pre-seed reported up to ~US$1M with the named investors per CB Insights and PitchBook; total raised across rounds reported around US$6.14M (PitchBook). Specific dates not disclosed in public sources."
+  },
+  {
+    "name": "HOMEPAL",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore care-tech startup. Distinct from Homepal the Italian proptech firm or any other unrelated company sharing this name.",
+    "funding_rounds": [],
+    "funding_notes": "Privacy-preserving monitoring for seniors. NUS GRIP portfolio; no other public funding rounds found."
+  },
+  {
+    "name": "Hybrique",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "AI-enabled e-Sourcing platform for electronics BOM. NUS GRIP portfolio listing; no other public funding rounds found."
+  },
+  {
+    "name": "insightic",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://insightic.io/blog",
+        "hint": "Card-based blog listing on insightic.io. Each card contains a thumbnail image (from /img/), a category badge ('insightic research', 'community resource', 'new partnership'), a clickable headline that links to the individual post URL, and a publication date in 'Day Mon DD YYYY' format (e.g. 'Tue Oct 31 2023') displayed below the headline. Resolve relative links against https://insightic.io/."
+      }
+    ],
+    "funding_rounds": [],
+    "funding_notes": "No public funding information found."
+  },
+  {
+    "name": "INVIGILO",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.invigilo.ai/blog",
+        "hint": "Wix-built site (canonical content lives at invigilo.sg but invigilo.ai is the active marketing domain). Card-based blog listing; each card is a linked container with a thumbnail image, a category label above the title (e.g. 'Oil & Gas Safety Insights'), an <h3> headline, a short excerpt, and a 'Read more' link. No publication date is shown on the listing view. Individual post URLs follow the pattern /post/<slug>; resolve relative links against https://www.invigilo.ai/ (Wix renders /post/<slug> there too)."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": null,
+        "stage": "Seed",
+        "amount": "$490K",
+        "amount_usd": 490000,
+        "lead_investors": [],
+        "investors": [
+          "NUS Graduate Research Innovation Programme",
+          "NVIDIA Inception",
+          "BLOCK71"
+        ],
+        "source": "https://pitchbook.com/profiles/company/509812-57"
+      }
+    ],
+    "funding_notes": "Construction-safety AI video analytics (Singapore). PitchBook records total raised of US$490K with named investors (NUS GRIP, NVIDIA Inception, BLOCK71). Tracxn references an M&A offer in April 2025 (unconfirmed)."
+  },
+  {
+    "name": "Keptan",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No public funding information found."
+  },
+  {
+    "name": "KleenSoil",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.kleensoil.com/news",
+        "hint": "Wix-hosted news listing on kleensoil.com (NUS chemistry spin-off, Singapore). The page lists multiple news items covering deployments, awards, and partnerships (e.g. China refinery slag-free deployment 2024, AFTEA competition with Republic Polytechnic, Eco-Innovation Green Action finals). Each item is a card/section with a heading and short body paragraph; dates typically appear inline in the body (e.g. 'August 2024'). Resolve relative links against https://www.kleensoil.com/."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": null,
+        "stage": "Grant",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "National Environment Agency"
+        ],
+        "investors": [
+          "NEA Closing the Waste Loop Funding Initiative"
+        ],
+        "source": "https://www.kleensoil.com/about-us"
+      }
+    ],
+    "funding_notes": "NUS GRIP spin-off (founded 2019) in environmental waste remediation. Partnered with NSL Chemicals on a three-year NEA Closing the Waste Loop project; specific grant amount/date not publicly disclosed."
+  },
+  {
+    "name": "lalia",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "press",
+        "url": "https://read.lalia.com.sg/press",
+        "hint": "Card-based press listing for Lalia Pte Ltd (Singapore). Each card has a thumbnail image, an <h3> headline (often in Japanese), a secondary line with the source URL, and a publication date in 'YYYY/MM/DD' format below it. Each card wraps in an <a> tag linking to the full article (often external publishers). Resolve relative links against https://read.lalia.com.sg/."
+      }
+    ],
+    "funding_rounds": [],
+    "funding_notes": "Culture-aware English learning platform (NUS GRIP portfolio). Crunchbase profile exists but no funding round details surfaced."
+  },
+  {
+    "name": "LEXIKAT",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": null,
+        "stage": "Grant",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS Graduate Research Innovation Programme",
+          "Lean Launchpad Singapore"
+        ],
+        "source": "https://www.linkedin.com/pulse/nus-spinoff-company-lexikat-signs-cooperation-ukdw-jennifer-dodgson"
+      }
+    ],
+    "funding_notes": "NUS spin-off in AI-driven text analytics. Supported by NUS GRIP and Lean Launchpad Singapore; no external equity funding rounds publicly disclosed."
+  },
+  {
+    "name": "Liloss",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Functional food ingredients to reduce fat absorption (NUS GRIP portfolio). No external public funding rounds found."
+  },
+  {
+    "name": "Lincore",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from the Lincore welding-consumables brand or any other unrelated company sharing this name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS spin-off in Li-ion battery recycling. Selected for Breakthrough Energy Fellows SEA 2024 and 2025 cohorts (technical support / non-equity fellowship). No publicly-announced priced funding round found. See https://www.eco-business.com/news/as-lithium-reserves-dwindle-singapore-ev-battery-recycling-startup-aims-to-plug-supply-gap/"
+  },
+  {
+    "name": "M.I.Cloud Technologies",
+    "aliases": [
+      "MI Cloud",
+      "M.I. Cloud"
+    ],
+    "description": "NUS GRIP-incubated Singapore cloud-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS startup developing Magnetic Interference Cloud technology for sleep/healthcare. Won healthcare vertical at Shenzhen Innovation and Entrepreneurship International competition (shared USD$26,000 prize pool; not a funding round). No publicly-announced venture funding round found."
+  },
+  {
+    "name": "Magloy Tech",
+    "aliases": [
+      "Magloy"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2021",
+        "stage": "Pre-Seed",
+        "amount": "SGD 200K",
+        "amount_usd": 150000,
+        "lead_investors": [],
+        "investors": [
+          "NUS GRIP",
+          "Origgin Ventures"
+        ],
+        "source": "https://news.nus.edu.sg/nus-grip-magloy-tech-innovation/"
+      },
+      {
+        "date": "2021",
+        "stage": "Grant",
+        "amount": "SGD 500K",
+        "amount_usd": 370000,
+        "lead_investors": [
+          "Enterprise Singapore"
+        ],
+        "investors": [
+          "Enterprise Singapore (Startup SG Tech Grant)"
+        ],
+        "source": "https://news.nus.edu.sg/nus-grip-magloy-tech-innovation/"
+      }
+    ],
+    "funding_notes": "Combined SGD 200K NUS GRIP/Origgin investment and a SGD 500K Startup SG Tech Grant. Dates approximate (announcement in 2021)."
+  },
+  {
+    "name": "Mall Nautics",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP Run 5 (June 2021) participant — indoor positioning/footfall analytics for shopping malls. No publicly-announced venture funding round found."
+  },
+  {
+    "name": "Marino Solar",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore solar-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (floating solar for green ports). Featured in GRIP Run 6 Lift-off Day booklet. No publicly-announced priced funding round found beyond standard GRIP support."
+  },
+  {
+    "name": "Matchapreneur",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Singapore startup community platform incorporated 16 May 2016 (UEN 201613194E); company status is currently 'struck off' per ACRA records. No publicly-announced funding round found."
+  },
+  {
+    "name": "Medicert",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore medical-tech startup (anti-counterfeit medication). Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No verifiable public information found for an NUS GRIP-incubated startup specifically named 'Medicert'. No funding round announcement located."
+  },
+  {
+    "name": "MediVR",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore medical-VR startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2021",
+        "stage": "Grant",
+        "amount": "SGD 50K",
+        "amount_usd": 37000,
+        "lead_investors": [
+          "Enterprise Singapore"
+        ],
+        "investors": [
+          "Enterprise Singapore (SGFounder Grant)"
+        ],
+        "source": "https://nusenterprise.medium.com/voices-of-venture-building-9659480bfa29"
+      }
+    ],
+    "funding_notes": "Now rebranded as InteractAI. Won SGD 50K Startup SG Founder Grant via Founder IGNITE pitch 2021. PitchBook/Tracxn list SMU Business Incubator, NUS GRIP and PIXEL as backers, but no priced equity round is publicly disclosed."
+  },
+  {
+    "name": "Metalivi",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP Run 9 (2023) participant developing AI-driven emotionally intelligent virtual pets. No publicly-announced funding round found beyond GRIP programme support."
+  },
+  {
+    "name": "Metallica",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore precious-metals startup. Distinct from the heavy-metal band Metallica or any other unrelated entity sharing this name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company developing bio-metallurgical recycling of Platinum Group Metals. Likely operates as 'BioMetallica' (founded 2022, NUS spin-off, Deep Tech Pioneer by Hello Tomorrow). No specifically-announced priced funding round amount located in public sources."
+  },
+  {
+    "name": "Metasense",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore climate-intelligence startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company; hyperlocal climate-risk intelligence platform for real estate. No publicly-announced funding round amount or investor list found."
+  },
+  {
+    "name": "Microtube Technologies",
+    "aliases": [
+      "Microtube"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://microtube.tech/feed/"
+      },
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://microtube.tech/category/news-awards/",
+        "hint": "WordPress category archive listing 'News & Awards' posts as stacked cards. Each card has a featured image, a category badge, a headline as a linked heading (h2), an author byline ('By delta'), publication date (format 'DD Month, YYYY'), an excerpt, and a 'Read More' link. Relative links resolve against https://microtube.tech/."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2022-03-27",
+        "stage": "Seed",
+        "amount": "SGD 1.1M",
+        "amount_usd": 810000,
+        "lead_investors": [
+          "Oriza Greenwillow Technology Fund"
+        ],
+        "investors": [
+          "Oriza Greenwillow Technology Fund (Greenwillow Capital Management)"
+        ],
+        "source": "https://microtube.tech/microtube-technologies-completes-its-seed-funding-of-sg1-1m-led-by-oriza-greenwillow-technology-fund/"
+      }
+    ],
+    "funding_notes": "NUS spin-off building wearable stretchable microfiber sensors. Latest publicly-announced round is the SGD 1.1M Seed; no Series A announced as of search."
+  },
+  {
+    "name": "Mindful Drinks",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore consumer-tech startup. Drop generic 'mindful drinks' wellness articles unrelated to the Singapore startup.",
+    "funding_rounds": [],
+    "funding_notes": "Singapore F&B startup upcycling spent coffee grounds; launched 2024. No publicly-announced venture funding round found."
+  },
+  {
+    "name": "MoneyMoves",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore fintech startup. Drop generic 'money moves' financial-advice content unrelated to the Singapore startup.",
+    "funding_rounds": [],
+    "funding_notes": "No verifiable public information found for an NUS GRIP-incubated fintech named 'MoneyMoves'. No funding round announcement located."
+  },
+  {
+    "name": "MuSigPro",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS spin-off — automated singing-quality assessment platform — funded by NUS GRIP programme support. No publicly-announced external venture round found."
+  },
+  {
+    "name": "nbrane",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No verifiable public information found for an NUS GRIP startup named 'nbrane'. No funding round announcement located."
+  },
+  {
+    "name": "ndots",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No verifiable public information found for an NUS GRIP startup named 'ndots'. No funding round announcement located."
+  },
+  {
+    "name": "NEU Battery Materials",
+    "aliases": [
+      "NEU Battery"
+    ],
+    "description": "NUS GRIP-incubated Singapore battery-materials startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "newsroom",
+        "url": "https://www.neumaterials.com/news",
+        "hint": "News listing is vertically-stacked article cards; each card has a headline, publication date, brief description, and 'Read more' link. Relative links resolve against https://www.neumaterials.com/."
+      }
     ],
     "identifiers": {
-      "linkedin":   "https://sg.linkedin.com/company/neu-battery-materials",
+      "linkedin": "https://sg.linkedin.com/company/neu-battery-materials",
       "crunchbase": "https://www.crunchbase.com/organization/neu-battery-materials",
       "sginnovate": "https://www.sginnovate.com/investments/neu-battery-materials",
-      "nus_cde":    "https://cde.nus.edu.sg/research/industry-partnership/neu-battery-materials/",
-      "uen":        "202119965Z"
-    }
+      "nus_cde": "https://cde.nus.edu.sg/research/industry-partnership/neu-battery-materials/",
+      "uen": "202119965Z"
+    },
+    "funding_rounds": [
+      {
+        "date": "2022-06-24",
+        "stage": "Seed",
+        "amount": "SGD 800K",
+        "amount_usd": 590000,
+        "lead_investors": [],
+        "investors": [
+          "Momentum Venture Capital (SMRT Corporation)",
+          "Se-cure Waste Management",
+          "Angel investors",
+          "NUS GRIP"
+        ],
+        "source": "https://www.eco-business.com/press-releases/nus-grip-deep-tech-start-up-neu-battery-materials-raises-s800000-in-seed-funding/"
+      },
+      {
+        "date": "2023-07-05",
+        "stage": "Seed",
+        "amount": "$3.7M",
+        "amount_usd": 3700000,
+        "lead_investors": [
+          "SGInnovate"
+        ],
+        "investors": [
+          "SGInnovate",
+          "ComfortDelGro Ventures",
+          "Shift4Good",
+          "Paragon Ventures I",
+          "Angel investors"
+        ],
+        "source": "https://www.prnewswire.com/news-releases/neu-battery-materials-concludes-oversubscribed-us3-7m-seed-funding-round-301869909.html"
+      },
+      {
+        "date": "2026-01-06",
+        "stage": "Series A",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "SGInnovate",
+          "Shift4Good"
+        ],
+        "investors": [
+          "SGInnovate",
+          "Shift4Good",
+          "CJIC (Central Japan Innovation Capital)",
+          "M7 Holdings",
+          "Existing shareholders",
+          "Founders"
+        ],
+        "source": "https://www.neumaterials.com/news/neu-battery-materials-closes-pre-series-a-to-scale-novel-lfp-battery-recycling-technology"
+      }
+    ],
+    "funding_notes": "Three publicly-announced rounds. The Jan 2026 round is labelled 'Pre-Series A first close'. Tracxn lists $5.14M total to date."
   },
-  { "name": "NewGen GAS", "aliases": ["NewGen Gas"], "description": "NUS GRIP-incubated Singapore energy-storage startup. Drop unrelated companies sharing the same name." },
-  { "name": "NodeSeer", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Nova", "aliases": [], "description": "NUS GRIP-incubated Singapore ophthalmology-AI startup. Highly generic name — drop any item not clearly about the Singapore ophthalmology startup." },
-  { "name": "NuSoil", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name." },
-  { "name": "NuSPACE", "aliases": ["NuSpace"], "description": "NUS GRIP-incubated Singapore space-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "rss", "label": "news", "url": "https://nuspace.sg/feed/" }
-    ]
+  {
+    "name": "NewGen GAS",
+    "aliases": [
+      "NewGen Gas"
+    ],
+    "description": "NUS GRIP-incubated Singapore energy-storage startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2019",
+        "stage": "Pre-Seed",
+        "amount": "SGD 50K",
+        "amount_usd": 37000,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS Graduate Research Innovation Programme (GRIP)"
+        ],
+        "source": "https://news.nus.edu.sg/highlights/nus-invests-15m-15-deep-tech-start-ups"
+      }
+    ],
+    "funding_notes": "Received SGD 50K first-tranche GRIP seed funding (one of 15 teams sharing NUS' SGD 1.5M GRIP allocation announced in 2019). Eligible for SGD 50K second tranche subject to external match."
   },
-  { "name": "nusmetics", "aliases": ["NUS metics"], "description": "NUS GRIP-incubated Singapore cosmetics/beauty-science startup. Drop unrelated companies sharing the same name." },
-  { "name": "Ocular Labs", "aliases": [], "description": "NUS GRIP-incubated Singapore ophthalmology AI startup. Drop unrelated companies sharing the same name." },
-  { "name": "Oleum Lev", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Only Technologies", "aliases": [], "description": "NUS GRIP-incubated Singapore driving-data analytics startup. Highly generic name — drop any item not clearly about this specific company." },
-  { "name": "PharLyfe+", "aliases": ["PharLyfe"], "description": "NUS GRIP-incubated Singapore healthcare-tech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      { "type": "rss", "label": "news", "url": "https://pharlyfeplus.com/news-update/f.rss" }
-    ]
+  {
+    "name": "NodeSeer",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No verifiable public information found for an NUS GRIP startup named 'NodeSeer'. No funding round announcement located."
   },
-  { "name": "Picopoint Genomics", "aliases": ["Picopoint"], "description": "NUS GRIP-incubated Singapore genomics startup. Drop unrelated companies sharing the same name." },
-  { "name": "polybee", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
+  {
+    "name": "Nova",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore ophthalmology-AI startup. Highly generic name — drop any item not clearly about the Singapore ophthalmology startup.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company developing autonomous remote cataract monitoring tool. No publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "NuSoil",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2019",
+        "stage": "Seed",
+        "amount": "SGD 100K",
+        "amount_usd": null,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS GRIP"
+        ],
+        "source": "https://news.nus.edu.sg/nus-invests-15m-in-15-deep-tech-start-ups/"
+      },
+      {
+        "date": "2021",
+        "stage": "Grant",
+        "amount": "SGD 250K",
+        "amount_usd": null,
+        "lead_investors": [
+          "Enterprise Singapore"
+        ],
+        "investors": [
+          "Enterprise Singapore"
+        ],
+        "source": "https://nusenterprise.medium.com/repurposing-food-waste-to-grow-wonders-cb7e52eb401e"
+      }
+    ],
+    "funding_notes": "Both rounds reported across NUS Enterprise and Medium publications."
+  },
+  {
+    "name": "NuSPACE",
+    "aliases": [
+      "NuSpace"
+    ],
+    "description": "NUS GRIP-incubated Singapore space-tech startup. Drop unrelated companies sharing the same name.",
     "sources": [
-      { "type": "github_org",  "label": "github", "url": "https://github.com/Polybee-SG.atom" },
-      { "type": "html_scrape", "label": "blog",   "url": "https://polybee.co/blog",
-        "hint": "Blog index lists posts as clickable cards; cards may not display a publish date inline — extract title and link, and treat missing date as 'within window' rather than dropping. Relative links resolve against https://polybee.co/." }
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://nuspace.sg/feed/"
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2019-10",
+        "stage": "Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "BEENEXT"
+        ],
+        "investors": [
+          "BEENEXT"
+        ],
+        "source": "https://e27.co/space-tech-company-nuspace-raises-funding-to-bring-iot-connectivity-to-remote-places-20191003/"
+      }
+    ],
+    "funding_notes": "PitchBook indicates total funding ~$1.64M across multiple investors (Luna Capital, PlanetSpark, NUS GRIP, BEENEXT, Sunbo Angel Partners) but only the BEENEXT-led 2019 seed round has individual press coverage. BEENEXT amount was undisclosed."
+  },
+  {
+    "name": "nusmetics",
+    "aliases": [
+      "NUS metics"
+    ],
+    "description": "NUS GRIP-incubated Singapore cosmetics/beauty-science startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2019",
+        "stage": "Grant",
+        "amount": "SGD 180K",
+        "amount_usd": null,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS GRIP"
+        ],
+        "source": "https://www.nusmetics.com/innovation"
+      }
+    ],
+    "funding_notes": "Also received NAMIC POC grant (undisclosed amount) for 3D-printed drug development. Was a finalist in L'Oreal Innovation Runway 2018."
+  },
+  {
+    "name": "Ocular Labs",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore ophthalmology AI startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Listed in NUS GRIP portfolio but no publicly-announced funding round with verifiable source found."
+  },
+  {
+    "name": "Oleum Lev",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Listed in NUS GRIP portfolio but no publicly-announced funding round with verifiable source found."
+  },
+  {
+    "name": "Only Technologies",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore driving-data analytics startup. Highly generic name — drop any item not clearly about this specific company.",
+    "funding_rounds": [],
+    "funding_notes": "Listed in NUS GRIP portfolio (auto-insurance behavioral data platform) but no publicly-announced funding round with verifiable source found."
+  },
+  {
+    "name": "PharLyfe+",
+    "aliases": [
+      "PharLyfe"
+    ],
+    "description": "NUS GRIP-incubated Singapore healthcare-tech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://pharlyfeplus.com/news-update/f.rss"
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2023-01",
+        "stage": "Pre-Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS GRIP"
+        ],
+        "source": "https://enterprise.nus.edu.sg/startup-story/pharlyfe/"
+      }
+    ],
+    "funding_notes": "Founders received NUS GRIP funding in January 2023 (GRIP Run 8) before incorporation in Feb 2023. Specific amount not disclosed; GRIP standard is up to S$250k."
+  },
+  {
+    "name": "Picopoint Genomics",
+    "aliases": [
+      "Picopoint"
+    ],
+    "description": "NUS GRIP-incubated Singapore genomics startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP Run 9 (2023) participant developing RNA sequencing platform Picoception. No publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "polybee",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
+    "sources": [
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/Polybee-SG.atom"
+      },
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://polybee.co/blog",
+        "hint": "Blog index lists posts as clickable cards; cards may not display a publish date inline — extract title and link, and treat missing date as 'within window' rather than dropping. Relative links resolve against https://polybee.co/."
+      }
     ],
     "identifiers": {
-      "linkedin":   "https://sg.linkedin.com/company/polybee",
+      "linkedin": "https://sg.linkedin.com/company/polybee",
       "crunchbase": "https://www.crunchbase.com/organization/polybee",
-      "uen":        "201930630R"
-    }
+      "uen": "201930630R"
+    },
+    "funding_rounds": [
+      {
+        "date": "2026-02",
+        "stage": "Seed",
+        "amount": "$4.3M",
+        "amount_usd": 4300000,
+        "lead_investors": [
+          "Paspalis Capital",
+          "elev8 VC"
+        ],
+        "investors": [
+          "Paspalis Capital",
+          "elev8 VC",
+          "SEEDS Capital",
+          "Jorge Heraud"
+        ],
+        "source": "https://agfundernews.com/polybee-raises-4-3m-to-automate-yield-forecasting-and-pollination-with-physical-ai-agents"
+      }
+    ],
+    "funding_notes": "Founder Siddharth Jadhav also acknowledged earlier pre-seed funding from NUS and additional backing from Temasek Foundation per The Peak Singapore interview, but specific amounts/dates not publicly disclosed. PitchBook/Crunchbase list Elev8.vc, SEEDS Capital, Temasek Holdings, NUS Endowment, and DBS Bank as investors."
   },
-  { "name": "Power Facade", "aliases": [], "description": "NUS GRIP-incubated Singapore building-tech startup. Drop unrelated mentions of 'power facade' as descriptive phrasing." },
-  { "name": "PrimeGROWTH Technologies", "aliases": ["PrimeGROWTH"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "ProlegoMiR", "aliases": [], "description": "NUS GRIP-incubated Singapore oncology-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "ProniaBioTech", "aliases": ["Pronio BioTech", "PronioBioTech"], "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name." },
-  { "name": "QSIGNAGE", "aliases": ["Q Signage"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "RDM", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Very generic three-letter acronym — drop any item not clearly about the Singapore startup." },
-  { "name": "Reachbots Automation", "aliases": ["Reachbots"], "description": "NUS GRIP-incubated Singapore robotics-automation startup. Drop unrelated companies sharing the same name." },
-  { "name": "reActo", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "ReoMex Technologies", "aliases": ["ReoMex", "REOMEx"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "RightCode", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "RO+", "aliases": [], "description": "NUS GRIP-incubated Singapore automation startup. Very short brand — drop any item not clearly about this specific Singapore startup.",
+  {
+    "name": "Power Facade",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore building-tech startup. Drop unrelated mentions of 'power facade' as descriptive phrasing.",
+    "funding_rounds": [
+      {
+        "date": "2022",
+        "stage": "Pre-Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS GRIP"
+        ],
+        "source": "https://www.powerfacade.net"
+      },
+      {
+        "date": "2023",
+        "stage": "Grant",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "EMA-Shell Startup Grant"
+        ],
+        "investors": [
+          "EMA-Shell Startup Grant"
+        ],
+        "source": "https://www.seris.nus.edu.sg/research/seris-spin-off-power-facade/"
+      }
+    ],
+    "funding_notes": "SERIS spin-off. Was 4th EMA-Shell Startup Grant recipient in 2023. Specific grant amounts not publicly disclosed."
+  },
+  {
+    "name": "PrimeGROWTH Technologies",
+    "aliases": [
+      "PrimeGROWTH"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio (cultivated meat cell priming tech). No publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "ProlegoMiR",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore oncology-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio (cancer diagnostics, miRNA biomarkers). No publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "ProniaBioTech",
+    "aliases": [
+      "Pronio BioTech",
+      "PronioBioTech"
+    ],
+    "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Listed in NUS GRIP portfolio but no publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "QSIGNAGE",
+    "aliases": [
+      "Q Signage"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Not clearly confirmed in NUS GRIP public materials; no publicly-announced funding round with verifiable source found."
+  },
+  {
+    "name": "RDM",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Very generic three-letter acronym — drop any item not clearly about the Singapore startup.",
+    "funding_rounds": [],
+    "funding_notes": "Generic name; no NUS GRIP-specific RDM startup funding announcement with verifiable source found."
+  },
+  {
+    "name": "Reachbots Automation",
+    "aliases": [
+      "Reachbots"
+    ],
+    "description": "NUS GRIP-incubated Singapore robotics-automation startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS spin-off (founded 2021 by Tan Yan Zhi and Rayner Tan) developing modular mobile robots. Tracxn explicitly reports no funding raised."
+  },
+  {
+    "name": "reActo",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio (electrochemistry wastewater treatment). No publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "ReoMex Technologies",
+    "aliases": [
+      "ReoMex",
+      "REOMEx"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Participated in NUS GRIP Run 3 (December 2019). 8 of 15 Run 3 teams received up to S$100k seed funding but ReoMex not explicitly named as a recipient in publicly available sources."
+  },
+  {
+    "name": "RightCode",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Participated in NUS GRIP Run 3 (December 2019). 8 of 15 Run 3 teams received up to S$100k seed funding but RightCode not explicitly named as a recipient in publicly available sources."
+  },
+  {
+    "name": "RO+",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore automation startup. Very short brand — drop any item not clearly about this specific Singapore startup.",
     "sources": [
-      { "type": "rss", "label": "blog", "url": "https://www.roplus.sg/feed/" },
-      { "type": "html_scrape", "label": "news", "url": "https://www.roplus.sg/category/all/news/",
-        "hint": "WordPress news listing under category /all/news/. Each post is rendered as an article block: headline in an <h2> link (e.g. 'RoPlus Shortlisted as TOP100 startup of X-PITCH 2023'), byline 'By roplus' followed by the published date in 'Month Day, Year' format (e.g. 'November 5, 2023'). Relative links resolve against https://www.roplus.sg." }
-    ]
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://www.roplus.sg/feed/"
+      },
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.roplus.sg/category/all/news/",
+        "hint": "WordPress news listing under category /all/news/. Each post is rendered as an article block: headline in an <h2> link (e.g. 'RoPlus Shortlisted as TOP100 startup of X-PITCH 2023'), byline 'By roplus' followed by the published date in 'Month Day, Year' format (e.g. 'November 5, 2023'). Relative links resolve against https://www.roplus.sg."
+      }
+    ],
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (RoPlus - soft robotic gripping for manufacturing/e-commerce). No publicly verifiable funding round disclosures beyond GRIP seed support."
   },
-  { "name": "RoamAssist", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "SafeLight", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Scent Analytics", "aliases": [], "description": "NUS GRIP-incubated Singapore scent-analytics startup. Drop unrelated companies sharing the same name." },
-  { "name": "SCPscan", "aliases": [], "description": "NUS GRIP-incubated Singapore surveillance/IoT startup. Drop unrelated companies sharing the same name." },
-  { "name": "seamless", "aliases": ["seemless"], "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English word — drop any item not clearly about this specific Singapore startup.",
+  {
+    "name": "RoamAssist",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (robotic guide dogs for the visually impaired). No publicly announced funding rounds found."
+  },
+  {
+    "name": "SafeLight",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP Run 3 portfolio company (visible light disinfection). No separately announced round with a verifiable source URL and disclosed amount."
+  },
+  {
+    "name": "Scent Analytics",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore scent-analytics startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (volatile chemical detection for crop disease/pest monitoring). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "SCPscan",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore surveillance/IoT startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (HVAC fault detection software). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "seamless",
+    "aliases": [
+      "seemless"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English word — drop any item not clearly about this specific Singapore startup.",
     "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://www.seamless.sg/news",
-        "hint": "Seamless XR (NUS spin-off) news page. Each entry is a link block: headline text directly followed by the publication date in 'Mon DD, YYYY' format (e.g. 'Nov 30, 2025'). No dedicated <article> tag; items appear as anchor links with the date bundled inline after the title. A 'Load More' button loads additional items. Resolve relative links against https://www.seamless.sg." },
-      { "type": "html_scrape", "label": "blog", "url": "https://www.seamless.sg/blog",
-        "hint": "Seamless XR blog index. Each post is a link element with the headline followed by the date in 'Mon DD, YYYY' format and a path like /blog/<slug>. About 11 entries listed, dated through Mar 2026. Resolve relative links against https://www.seamless.sg." }
-    ]
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.seamless.sg/news",
+        "hint": "Seamless XR (NUS spin-off) news page. Each entry is a link block: headline text directly followed by the publication date in 'Mon DD, YYYY' format (e.g. 'Nov 30, 2025'). No dedicated <article> tag; items appear as anchor links with the date bundled inline after the title. A 'Load More' button loads additional items. Resolve relative links against https://www.seamless.sg."
+      },
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.seamless.sg/blog",
+        "hint": "Seamless XR blog index. Each post is a link element with the headline followed by the date in 'Mon DD, YYYY' format and a path like /blog/<slug>. About 11 entries listed, dated through Mar 2026. Resolve relative links against https://www.seamless.sg."
+      }
+    ],
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (haptic feedback for the Metaverse). No publicly verifiable funding round announcements found."
   },
-  { "name": "sensAi", "aliases": [], "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name." },
-  { "name": "SenseMor", "aliases": [], "description": "NUS GRIP-incubated Singapore sensor-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "SENSORi", "aliases": ["SENSORi Pioneering Science"], "description": "NUS GRIP-incubated Singapore sensor/medical-tech startup. Drop unrelated mentions where 'sensor i' is incidental.",
+  {
+    "name": "sensAi",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "SenseMor",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore sensor-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "SENSORi",
+    "aliases": [
+      "SENSORi Pioneering Science"
+    ],
+    "description": "NUS GRIP-incubated Singapore sensor/medical-tech startup. Drop unrelated mentions where 'sensor i' is incidental.",
     "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://www.sensorihealthcare.com/h-col-157.html",
-        "hint": "SENSORI Healthcare news listing. Each item is an anchor (<a>) wrapping the entry with the headline rendered as an <h4> (e.g. 'SENSORI Healthcare Wins Third Prize at Two Innovation and Entrepreneurship Competitions') and the date below in YYYY-MM-DD format (e.g. '2025-12-03'). Items are tagged 'News' and ordered newest-first. Resolve relative links against https://www.sensorihealthcare.com." }
-    ]
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.sensorihealthcare.com/h-col-157.html",
+        "hint": "SENSORI Healthcare news listing. Each item is an anchor (<a>) wrapping the entry with the headline rendered as an <h4> (e.g. 'SENSORI Healthcare Wins Third Prize at Two Innovation and Entrepreneurship Competitions') and the date below in YYYY-MM-DD format (e.g. '2025-12-03'). Items are tagged 'News' and ordered newest-first. Resolve relative links against https://www.sensorihealthcare.com."
+      }
+    ],
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (non-contact vital signs monitoring - Sensori VSM). No publicly verifiable funding round announcements found."
   },
-  { "name": "SHARPEN.AI", "aliases": ["Sharpen AI"], "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name." },
-  { "name": "SinGENE", "aliases": [], "description": "NUS GRIP-incubated Singapore genomics startup. Drop unrelated companies sharing the same name." },
-  { "name": "SINGROW", "aliases": [], "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
+  {
+    "name": "SHARPEN.AI",
+    "aliases": [
+      "Sharpen AI"
+    ],
+    "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "SinGENE",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore genomics startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (genomics). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "SINGROW",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
     "sources": [
-      { "type": "html_scrape", "label": "media", "url": "https://www.singrow.com/media",
-        "hint": "Wix-hosted media/press listing for SINGROW (NUS agritech spin-off). Items are <div> grid tiles (no semantic <article>); each tile has the headline in <h4>, the publication date in <h4> below the title in 'DD Month YYYY' format, then a 'By <Publication Name>' attribution and a 'Read More' link. About 25+ external news items aggregated, newest-first. Resolve relative links against https://www.singrow.com." }
-    ]
+      {
+        "type": "html_scrape",
+        "label": "media",
+        "url": "https://www.singrow.com/media",
+        "hint": "Wix-hosted media/press listing for SINGROW (NUS agritech spin-off). Items are <div> grid tiles (no semantic <article>); each tile has the headline in <h4>, the publication date in <h4> below the title in 'DD Month YYYY' format, then a 'By <Publication Name>' attribution and a 'Read More' link. About 25+ external news items aggregated, newest-first. Resolve relative links against https://www.singrow.com."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2020",
+        "stage": "Seed",
+        "amount": "SGD 1.6M",
+        "amount_usd": 1200000,
+        "lead_investors": [],
+        "investors": [
+          "AgFunder",
+          "SEEDS Capital (Enterprise Singapore)",
+          "Easternwind",
+          "NUS Technology Holdings",
+          "Pasudeco & Co",
+          "Ritz Venture Capital"
+        ],
+        "source": "https://www.compasslist.com/insights/singrow-to-start-selling-singapore-grown-strawberries-in-march-plans-15m-series-a-this-year"
+      },
+      {
+        "date": "2025-10-15",
+        "stage": "Series A",
+        "amount": "$4.5M",
+        "amount_usd": 4500000,
+        "lead_investors": [
+          "Cyanhill Capital (Cyan Hill Partners)",
+          "Finc International (Finc Pte. Ltd.)"
+        ],
+        "investors": [
+          "Cyanhill Capital",
+          "Finc Pte. Ltd.",
+          "Pasudeco",
+          "Eastern Wind International",
+          "Ritz Venture Partners",
+          "AgFunder"
+        ],
+        "source": "https://agfundernews.com/singrow-will-take-its-seed-breeding-and-vertical-farming-business-beyond-asia-after-new-funding"
+      }
+    ],
+    "funding_notes": "Series A announcement corroborated by 36Kr and Hortidaily. Series A date 2025-10-15 per 36Kr; AgFunderNews article published 2025-08-18."
   },
-  { "name": "Singnovel ChemTech", "aliases": ["Singnovel"], "description": "NUS GRIP-incubated Singapore chemistry-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "SkyTrek", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Softlabs", "aliases": [], "description": "NUS GRIP-incubated Singapore touch-tech startup. Very generic name — drop any item not clearly about this specific Singapore startup." },
-  { "name": "SOLEMETRIX", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "SOLV8", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Soynergy", "aliases": ["Synergy"], "description": "NUS GRIP-incubated Singapore food-tech startup. 'Synergy' is highly generic — drop any item not clearly about this specific Singapore startup.",
+  {
+    "name": "Singnovel ChemTech",
+    "aliases": [
+      "Singnovel"
+    ],
+    "description": "NUS GRIP-incubated Singapore chemistry-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (PDH catalysts for petrochemical industry, product 'Singdro-1'). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "SkyTrek",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "Softlabs",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore touch-tech startup. Very generic name — drop any item not clearly about this specific Singapore startup.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (haptic VR gloves). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "SOLEMETRIX",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (sports performance/stride tracking for sprinters). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "SOLV8",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (organic solvent nanofiltration membrane technology). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "Soynergy",
+    "aliases": [
+      "Synergy"
+    ],
+    "description": "NUS GRIP-incubated Singapore food-tech startup. 'Synergy' is highly generic — drop any item not clearly about this specific Singapore startup.",
     "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://www.soynergy.com/category/news/",
-        "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com." }
-    ]
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.soynergy.com/category/news/",
+        "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com."
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2020-11-22",
+        "stage": "Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [
+          "Glocalink Singapore"
+        ],
+        "investors": [
+          "Glocalink Singapore"
+        ],
+        "source": "https://sg.glocalink.com/2020/11/22/soynergy2020/"
+      }
+    ],
+    "funding_notes": "PitchBook/Crunchbase aggregate total of ~$449K across multiple small rounds with investors Graduate Investment, 144 Ventures, Origgin, NUS Endowment, and NUS. Only the November 2020 Glocalink seed investment has a primary-source dated announcement."
   },
-  { "name": "Space Match", "aliases": ["SpaceMatch"], "description": "NUS GRIP-incubated Singapore space/real-estate-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "spacejot", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+  {
+    "name": "Space Match",
+    "aliases": [
+      "SpaceMatch"
+    ],
+    "description": "NUS GRIP-incubated Singapore space/real-estate-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (SpaceMatch - AI matching of remote workers to unutilized office space). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "spacejot",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "sources": [
-      { "type": "html_scrape", "label": "blog", "url": "https://www.spacejot.app/blog",
-        "hint": "Blog listing on Spacejot's web app. Each post is rendered with an h3 headline that links to /blog/<slug>, with the publication date (e.g. 'Jul 06, 2024') displayed adjacent to the title. Resolve relative links against https://www.spacejot.app/." }
-    ]
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.spacejot.app/blog",
+        "hint": "Blog listing on Spacejot's web app. Each post is rendered with an h3 headline that links to /blog/<slug>, with the publication date (e.g. 'Jul 06, 2024') displayed adjacent to the title. Resolve relative links against https://www.spacejot.app/."
+      }
+    ],
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (AI interior visualisation web app for designers). No publicly verifiable funding round announcements found."
   },
-  { "name": "spotics", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Synectify", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+  {
+    "name": "spotics",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company developing mid-infrared multi-gas detector (SPOT 3000). No publicly-announced funding round with verifiable date/amount/source found."
+  },
+  {
+    "name": "Synectify",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "sources": [
-      { "type": "html_scrape", "label": "news", "url": "https://www.synectify.com/news.html",
-        "hint": "Synectify newsroom listing multiple dated entries (14+ items, Sep 2021 onward). Each item appears as a div block with an h3 title and a date string shown above or near it (e.g. 'January, 9th 2023'). Resolve relative links against https://www.synectify.com/." }
-    ]
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.synectify.com/news.html",
+        "hint": "Synectify newsroom listing multiple dated entries (14+ items, Sep 2021 onward). Each item appears as a div block with an h3 title and a date string shown above or near it (e.g. 'January, 9th 2023'). Resolve relative links against https://www.synectify.com/."
+      }
+    ],
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP spin-off (RootChain, later pivoted to renewable-energy-powered HPC). Crunchbase/PitchBook list Tech Planter, Shell StartUp Engine (2021 cohort 5), NUS GRIP, BLOCK71, and Solar Impulse as backers, but no specific publicly-announced funding round with date+amount+source found."
   },
-  { "name": "TANNGENT", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "TEREDO Analytics", "aliases": ["TEREDO"], "description": "NUS GRIP-incubated Singapore analytics startup. Drop unrelated companies sharing the same name." },
-  { "name": "TuSense", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "UnoMove", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "UpperMed", "aliases": [], "description": "NUS GRIP-incubated Singapore medical-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Verazt Security", "aliases": ["Verazt"], "description": "NUS GRIP-incubated Singapore cybersecurity startup. Drop unrelated companies sharing the same name." },
-  { "name": "Vilota", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+  {
+    "name": "TANNGENT",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No publicly indexed funding announcements located."
+  },
+  {
+    "name": "TEREDO Analytics",
+    "aliases": [
+      "TEREDO"
+    ],
+    "description": "NUS GRIP-incubated Singapore analytics startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP spin-off (founded 2019) for acoustic pipeline leak detection. Tracxn/PitchBook list NUS, Imagine H2O and Ripple2Wave as institutional investors and the company won the Digital Water Hackathon @ SIWW 2021, but no publicly-announced funding round with specific date/amount/source was found."
+  },
+  {
+    "name": "TuSense",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Incorporated 2019 at NUS Enterprise Centre; ACRA status reported as struck off. No publicly-announced funding round located."
+  },
+  {
+    "name": "UnoMove",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio (Run 9-era). Won BRICS-SG Entrepreneurship Competition 2023. No specific publicly-announced funding round with verifiable date/amount/source found."
+  },
+  {
+    "name": "UpperMed",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore medical-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": null,
+        "stage": "Seed",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [],
+        "investors": [
+          "Artesian Venture Partners"
+        ],
+        "source": "https://www.crunchbase.com/organization/uppermed"
+      }
+    ],
+    "funding_notes": "NUS GRIP medtech (peritoneal-dialysis device PD Care). Crunchbase records a seed round with Artesian VC participation; round size and date not publicly disclosed in indexed sources."
+  },
+  {
+    "name": "Verazt Security",
+    "aliases": [
+      "Verazt"
+    ],
+    "description": "NUS GRIP-incubated Singapore cybersecurity startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP blockchain smart-contract security startup (founded 2022, based at NUS COM3). No publicly-announced funding round located."
+  },
+  {
+    "name": "Vilota",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "sources": [
-      { "type": "github_org", "label": "github", "url": "https://github.com/vilota-dev.atom" }
-    ]
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/vilota-dev.atom"
+      }
+    ],
+    "funding_rounds": [
+      {
+        "date": "2021",
+        "stage": "Grant",
+        "amount": null,
+        "amount_usd": null,
+        "lead_investors": [],
+        "investors": [
+          "Maritime and Port Authority of Singapore",
+          "PIER71",
+          "NUS Enterprise"
+        ],
+        "source": "https://pier71.sg/startup/vilota/"
+      },
+      {
+        "date": "2025",
+        "stage": "Grant",
+        "amount": "US$10K",
+        "amount_usd": 10000,
+        "lead_investors": [
+          "Qualcomm"
+        ],
+        "investors": [
+          "Qualcomm AI Program for Innovators (QAIPI)"
+        ],
+        "source": "https://www.prnewswire.com/apac/news-releases/qualcomm-highlights-edge-ai-innovation-at-qualcomm-ai-program-for-innovators-qaipi-2025--apac-demo-day-and-sets-the-stage-for-2026-302635154.html"
+      }
+    ],
+    "funding_notes": "Computer vision / SLAM (vilota.ai). PIER71 lists Vilota in the Smart Port Challenge 2021 batch. Vilota was a shortlisted QAIPI 2025 APAC participant; QAIPI 2025 docs state each shortlisted startup receives up to US$10K. Equity rounds not publicly disclosed."
   },
-  { "name": "VIR-POP", "aliases": ["VIR POP", "VIRPOP"], "description": "NUS GRIP-incubated Singapore deep-tech startup ('populations in the cloud'). Drop unrelated companies sharing the same name." },
-  { "name": "Virtu AI", "aliases": ["VirtuAI"], "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name." },
-  { "name": "WasteViz", "aliases": ["WIZ WasteViz"], "description": "NUS GRIP-incubated Singapore waste-management tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "WAVEBOOST", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "WiSe", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Very generic — drop any item not clearly about this specific Singapore startup." },
-  { "name": "Xavoury Foods", "aliases": ["Xavoury"], "description": "NUS GRIP-incubated Singapore food-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "XFolio", "aliases": [], "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name." },
-  { "name": "Zoe Botanicals", "aliases": [], "description": "NUS GRIP-incubated Singapore botanicals/wellness startup. Drop unrelated companies sharing the same name." }
+  {
+    "name": "VIR-POP",
+    "aliases": [
+      "VIR POP",
+      "VIRPOP"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup ('populations in the cloud'). Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No publicly indexed information located for a NUS GRIP startup by this exact name."
+  },
+  {
+    "name": "Virtu AI",
+    "aliases": [
+      "VirtuAI"
+    ],
+    "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "No publicly indexed information matching a NUS GRIP Singapore startup named 'Virtu AI'. Distinct from the US-based 'Virtue AI'."
+  },
+  {
+    "name": "WasteViz",
+    "aliases": [
+      "WIZ WasteViz"
+    ],
+    "description": "NUS GRIP-incubated Singapore waste-management tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio (WasteBoard recycling-bin computer-vision device). No publicly-announced funding round located."
+  },
+  {
+    "name": "WAVEBOOST",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Listed in NUS Enterprise startup stories and PitchBook with NUS GRIP listed as an investor, but no specific publicly-announced funding round with verifiable date/amount/source was found."
+  },
+  {
+    "name": "WiSe",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Very generic — drop any item not clearly about this specific Singapore startup.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP medtech (wireless implantable sensing platform, WiSeCue for post-colorectal-surgery monitoring). No publicly-announced funding round with verifiable date/amount/source found."
+  },
+  {
+    "name": "Xavoury Foods",
+    "aliases": [
+      "Xavoury"
+    ],
+    "description": "NUS GRIP-incubated Singapore food-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP foodtech spin-off (incorporated 2022) repurposing meat by-products. No publicly-announced funding round located."
+  },
+  {
+    "name": "XFolio",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio (diabetic-foot exfoliation safety device). No publicly-announced funding round located."
+  },
+  {
+    "name": "Zoe Botanicals",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore botanicals/wellness startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "Incorporated 2019 at 3 Research Link, Singapore; ACRA records show current operating status as struck off. No publicly-announced funding round located."
+  }
 ]
