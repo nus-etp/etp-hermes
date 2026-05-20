@@ -71,6 +71,30 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
+      - name: Restore previous backup from cache
+        # Round-trips ~/.hermes/ state across runs via a hermes-native zip.
+        # restore-keys prefix-matches the most recent prior cache; a cold
+        # first run misses gracefully (no zip on disk) and bootstrap still
+        # seeds from the committed hermes/ tree.
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/hermes-state.zip
+          key: hermes-state-${{ github.run_id }}
+          restore-keys: |
+            hermes-state-
+
+      - name: Import previous backup
+        # Populates ~/.hermes/ with the prior run's memories, state.db,
+        # kanban, channel directory, etc. Runs BEFORE bootstrap so the
+        # repo's committed hermes/ tree still wins on overlay.
+        run: |
+          if [ -f /tmp/hermes-state.zip ]; then
+            hermes import --force /tmp/hermes-state.zip
+          else
+            echo "no prior backup; cold start"
+          fi
+
       - name: Bootstrap config
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -160,13 +184,56 @@ jobs:
       - name: Persist agent memory
         if: always()
         run: |
-          # Round-trip declarative memory (MEMORY.md, USER.md) so the agent's
-          # curated facts survive to the next run. Skills are NOT auto-synced:
-          # ~/.hermes/skills/ also contains Hermes' bundled skill library, and
-          # blindly rsyncing it would commit ~145k lines of upstream artifacts.
-          # If/when you author skills, commit them manually under hermes/skills/.
+          # Belt-and-suspenders: still commit declarative memory (MEMORY.md,
+          # USER.md) to the repo so a lost backup cache doesn't cold-start
+          # the agent. The hermes backup zip below is the primary persistence
+          # path; this is the fallback. Skills are NOT auto-synced — see the
+          # backup strip list and scripts/bootstrap-hermes.sh.
           mkdir -p hermes/memories
           rsync -a --delete ~/.hermes/memories/ hermes/memories/ || true
+
+      - name: Create hermes backup
+        if: always()
+        run: hermes backup -o /tmp/hermes-state.zip
+
+      - name: Strip secrets and ephemera from backup
+        if: always()
+        run: |
+          # Drop secrets, large regenerable state, and the bundled skills
+          # library so the cached zip stays small and never carries
+          # credentials. .env is re-injected on every run by bootstrap from
+          # the DEEPSEEK_API_KEY secret. Missing globs are fine — `zip -d`
+          # exits non-zero only on archive errors, which we don't expect.
+          zip -d /tmp/hermes-state.zip \
+            '.env' \
+            'auth.json' \
+            'auth.lock' \
+            'gateway.lock' \
+            'gateway.pid' \
+            'gateway_state.json' \
+            '.hermes_history' \
+            'interrupt_debug.log' \
+            'models_dev_cache.json' \
+            'config.yaml.bak.*' \
+            'logs/*' \
+            'sessions/*' \
+            'state-snapshots/*' \
+            'checkpoints/*' \
+            'skills/*' \
+            'bin/*' \
+            'audio_cache/*' \
+            'image_cache/*' \
+            'cache/*' \
+            'sandboxes/*' \
+            || true
+          ls -lh /tmp/hermes-state.zip
+
+      - name: Save backup to cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/hermes-state.zip
+          key: hermes-state-${{ github.run_id }}
 
       - name: Upload hermes artifact
         if: always()

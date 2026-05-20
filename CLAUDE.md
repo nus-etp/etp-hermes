@@ -36,7 +36,7 @@ Tune behavior by editing the prompt and per-company `description` strings (that'
 ## Non-obvious
 
 - API key: `bootstrap-hermes.sh` writes the `DEEPSEEK_API_KEY` secret into `~/.hermes/.env` as `OPENAI_API_KEY` (what Hermes' `custom` provider reads). Don't rename the secret.
-- Memory roundtrip: the workflow rsyncs `~/.hermes/memories/` → `hermes/memories/` and commits.
+- State roundtrip: each workflow run restores the prior `hermes backup` zip from GitHub Actions cache (`hermes-state-*`), imports it with `hermes import --force`, runs the layers, then re-runs `hermes backup` and saves the (sanitized) zip back to the cache. The `~/.hermes/memories/` → `hermes/memories/` rsync + commit is still done as a belt-and-suspenders fallback so a lost cache doesn't cold-start the agent. `scripts/sync-hermes-local.sh` mirrors the same pattern with a gitignored `.hermes-state.zip` in the repo root.
 - Skills are **not** rsynced — `~/.hermes/skills/` mixes user skills with Hermes' ~145k-line bundled library. Copy authored skills into `hermes/skills/` manually.
 - Sessions/logs: uploaded as a `hermes-logs-<run_id>` artifact (3-day retention), never committed.
 - `seen-urls.txt` is append-only. No search feeds (Google News, HN) — intentional, doesn't scale.

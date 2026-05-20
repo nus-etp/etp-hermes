@@ -1,22 +1,36 @@
 #!/usr/bin/env bash
-# Two-way sync between ~/.hermes/ and hermes/ subtree in this repo.
+# Two-way sync between ~/.hermes/ and this repo, using Hermes' native
+# `hermes backup` / `hermes import` as the primary state round-trip and
+# the `hermes/memories/` rsync as a belt-and-suspenders fallback.
 #
-# Sync scope:
-#   Pull (repo → local): memories + cron config + repo-tracked skills
-#   Push (local → repo): memories + cron config (skills excluded by design)
+# Pull direction (repo + local cache → ~/.hermes/):
+#   1. git pull --rebase
+#   2. If $REPO_DIR/.hermes-state.zip exists, hermes import --force it.
+#   3. bash scripts/bootstrap-hermes.sh overlays the repo's hermes/ tree
+#      (config.yaml, SOUL.md, skills/, committed memories/) on top so the
+#      repo wins on static config drift.
 #
-# Config is NOT synced in either direction — the repo's hermes/config.yaml
+# Push direction (~/.hermes/ → repo + local cache):
+#   1. hermes backup → /tmp/hermes-state.zip
+#   2. Strip secrets, large regenerable state, and the bundled skills
+#      library from the zip (same list as the GHA workflow).
+#   3. Move the stripped zip to $REPO_DIR/.hermes-state.zip (gitignored).
+#   4. rsync ~/.hermes/memories/ → hermes/memories/ as the git-visible
+#      fallback so a lost local zip doesn't cold-start the agent.
+#
+# Config is NOT round-tripped via the zip — the repo's hermes/config.yaml
 # is a minimal distribution template, while ~/.hermes/config.yaml is the
-# full expanded config. They are different by design.
+# full expanded config. Bootstrap intentionally clobbers the latter with
+# the former so the repo stays the source of truth for static config.
 #
-# Skills are NOT auto-synced to the repo because ~/.hermes/skills/ contains
-# ~145k lines of Hermes' bundled skill library. The GHA workflow has the
-# same constraint. When you author a custom skill, commit it manually:
+# Skills are NOT included in the zip — ~/.hermes/skills/ also contains
+# Hermes' bundled skill library (~9 MB). If you author a custom skill via
+# skill_manage, commit it manually:
 #   cp -a ~/.hermes/skills/<name> hermes/skills/<name>/
-#
-# Ephemeral/sensitive items excluded from both directions: sessions/, logs/,
-# auth.json, .env, state.db, *.lock, *.pid, audio_cache/, image_cache/,
-# cron/output/
+#   git add hermes/skills/<name>/
+#   git commit -m "feat(hermes): add custom skill <name>"
+#   git push
+# This matches the GHA workflow's hermes-sync.yml exclusion rationale.
 #
 # Usage: bash scripts/sync-hermes-local.sh
 
@@ -25,6 +39,8 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 HERMES_HOME="${HERMES_HOME:-$HOME/.hermes}"
 BRANCH="main"
+LOCAL_ZIP="$REPO_DIR/.hermes-state.zip"
+TMP_ZIP="/tmp/hermes-state.zip"
 
 cd "$REPO_DIR"
 
@@ -36,64 +52,63 @@ if ! git diff --quiet HEAD 2>/dev/null || ! git diff --cached --quiet 2>/dev/nul
   was_dirty=true
 fi
 
-# ── Pull direction: repo → local ───────────────────────────────────────────
-echo "=== Pull: repo → local ==="
+# ── Pull direction: repo + local zip → ~/.hermes/ ──────────────────────────
+echo "=== Pull: repo + local zip → ~/.hermes/ ==="
 
 git pull --rebase origin "$BRANCH"
 
-# Memories: sync repo-tracked memories into local
-if [ -d "hermes/memories" ] && [ "$(ls -A hermes/memories 2>/dev/null)" ]; then
-  mkdir -p "$HERMES_HOME/memories"
-  rsync -a hermes/memories/ "$HERMES_HOME/memories/"
-  echo "  Synced memories: repo → local"
+if [ -f "$LOCAL_ZIP" ]; then
+  hermes import --force "$LOCAL_ZIP"
+  echo "  Imported $LOCAL_ZIP into $HERMES_HOME"
+else
+  echo "  No local zip at $LOCAL_ZIP; skipping import"
 fi
 
-# Skills: sync repo-tracked skills into local (individual skill dirs only)
-if [ -d "hermes/skills" ]; then
-  for skill_dir in hermes/skills/*/; do
-    [ -d "$skill_dir" ] || continue
-    skill_name="$(basename "$skill_dir")"
-    mkdir -p "$HERMES_HOME/skills/$skill_name"
-    rsync -a "$skill_dir" "$HERMES_HOME/skills/$skill_name"
-    echo "  Synced skill '$skill_name': repo → local"
-  done
-fi
+bash "$REPO_DIR/scripts/bootstrap-hermes.sh"
+echo "  Bootstrapped repo overlay onto $HERMES_HOME"
 
-# Cron config: sync repo-tracked jobs.json into local
-if [ -f "hermes/cron/jobs.json" ]; then
-  mkdir -p "$HERMES_HOME/cron"
-  cp hermes/cron/jobs.json "$HERMES_HOME/cron/jobs.json"
-  echo "  Synced cron config: repo → local"
-fi
+# ── Push direction: ~/.hermes/ → repo + local zip ──────────────────────────
+echo "=== Push: ~/.hermes/ → repo + local zip ==="
 
-# ── Push direction: local → repo ───────────────────────────────────────────
-echo "=== Push: local → repo ==="
+hermes backup -o "$TMP_ZIP"
 
-# Memories: persist agent memory back to repo
+# Strip secrets, large regenerable state, and the bundled skills library
+# so the cached zip stays small and never carries credentials. Same list
+# as the GHA workflow.
+zip -d "$TMP_ZIP" \
+  '.env' \
+  'auth.json' \
+  'auth.lock' \
+  'gateway.lock' \
+  'gateway.pid' \
+  'gateway_state.json' \
+  '.hermes_history' \
+  'interrupt_debug.log' \
+  'models_dev_cache.json' \
+  'config.yaml.bak.*' \
+  'logs/*' \
+  'sessions/*' \
+  'state-snapshots/*' \
+  'checkpoints/*' \
+  'skills/*' \
+  'bin/*' \
+  'audio_cache/*' \
+  'image_cache/*' \
+  'cache/*' \
+  'sandboxes/*' \
+  || true
+
+mv "$TMP_ZIP" "$LOCAL_ZIP"
+echo "  Wrote stripped backup to $LOCAL_ZIP"
+ls -lh "$LOCAL_ZIP"
+
+# Belt-and-suspenders: still rsync committed memory back to the repo so
+# a lost $LOCAL_ZIP doesn't cold-start the agent on a fresh clone.
 if [ -d "$HERMES_HOME/memories" ]; then
   mkdir -p hermes/memories
   rsync -a --delete "$HERMES_HOME/memories/" hermes/memories/
-  echo "  Synced memories: local → repo"
+  echo "  Synced memories: ~/.hermes/ → repo (fallback)"
 fi
-
-# Cron config: persist cron jobs.json to repo
-if [ -f "$HERMES_HOME/cron/jobs.json" ]; then
-  mkdir -p hermes/cron
-  cp "$HERMES_HOME/cron/jobs.json" hermes/cron/jobs.json
-  echo "  Synced cron config: local → repo"
-fi
-
-# Skills: NOT automatically synced to the repo.
-# The Hermes bundled skill library (~145k lines across 87+ skills) lives in
-# ~/.hermes/skills/ but should NOT be committed to this repo. If you author
-# a custom skill via skill_manage, commit it manually:
-#   cp -a ~/.hermes/skills/<name> hermes/skills/<name>/
-#   git add hermes/skills/<name>/
-#   git commit -m "feat(hermes): add custom skill <name>"
-#   git push
-# This follows the same convention as the GHA workflow's hermes-sync.yml
-# which also excludes skills from auto-sync. See scripts/bootstrap-hermes.sh
-# for the pull-direction setup.
 
 # Restore any pre-existing local changes we stashed earlier
 if [ "$was_dirty" = true ]; then
