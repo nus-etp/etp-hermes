@@ -24,6 +24,16 @@ Produce a daily company-news digest for the watchlist in `data/companies.json`, 
 
 - `data/feeds.json` — array of feed definitions. Each has `name`, `type` (always `firehose` in the current config), and `url`. Feeds are standard RSS/Atom.
 
+- `data/changed-sources.json` — **container-level change whitelist**, written by `scripts/preflight-feeds.py` before this prompt runs. Schema:
+  ```json
+  {
+    "generated_at": "<ISO8601 UTC>",
+    "firehose":  ["<feed-url>", ...],
+    "per_company": { "<company-name>": ["<source-url>", ...], ... }
+  }
+  ```
+  The preflight sends conditional HTTP requests (ETag/Last-Modified + body-hash fallback) against every preflightable URL and only lists those that have changed since the last run. **Only fetch URLs listed in this file.** Treat sources whose URL is absent as unchanged-since-last-run (no new items possible) and skip them entirely — do not fetch, do not parse, do not include in the relevance pass. `html_scrape` sources are always listed (preflight passes them through), so behavior for those is unchanged. If the file is missing, fall back to fetching everything (cold-start behavior).
+
 - `signals/seen-urls.txt` — newline-delimited dedup keys already reported. Hold as a set `SEEN`. Entries are typically article URLs from firehose feeds; per-company sources may add synthetic keys (e.g. `lever://patsnap/<posting_id>`, `github-atom://<entry_id>`, or the scraped item's absolute URL) — see Step 2.5. Layer 2 (agent supplement) reads and appends to the same file, so anything you write here is also off-limits for the agent's web searches.
 
 ## Per-company source types
@@ -39,16 +49,16 @@ If a single per-company source fetch fails, log and continue — do not fail the
 
 ## Steps
 
-1. Read `data/companies.json`, `data/feeds.json`, `signals/seen-urls.txt`.
+1. Read `data/companies.json`, `data/feeds.json`, `data/changed-sources.json` (if present), `signals/seen-urls.txt`.
 
-2. **Collect firehose candidates.** For each feed `F` in `data/feeds.json`:
+2. **Collect firehose candidates.** Let `CHANGED_FIREHOSE` be the set of URLs in `data/changed-sources.json`'s `firehose` array (or, if the file is missing, every `F.url` in `data/feeds.json`). If `CHANGED_FIREHOSE` is empty, skip this whole step. Otherwise, for each feed `F` in `data/feeds.json` whose `F.url` is in `CHANGED_FIREHOSE`:
    - Fetch `F.url`. Parse the RSS/Atom feed.
    - For each `<item>` whose `<pubDate>` (or `<published>`) is within the last 7 days AND whose `<link>` is NOT in `SEEN`:
      - Build `haystack = lower(<title> + " " + <description>)`.
      - For each company `c` in `C`: if any `t` in `c.terms` (lowercased) is a substring of `haystack`, append a candidate `(c, item)` — where `item = {headline=<title>, description=<description>, source=F.name, pubDate, link, source_kind="firehose"}`. One item can produce multiple candidates if multiple companies match.
 
-2.5. **Collect per-company candidates.** For each company `c` in `C` with a non-empty `c.sources`:
-   - For each source `s` in `c.sources`:
+2.5. **Collect per-company candidates.** Let `CHANGED_PER_COMPANY` be the `per_company` object in `data/changed-sources.json` (or, if the file is missing, treat every per-company source as changed). If `CHANGED_PER_COMPANY` is empty, skip this whole step. Otherwise, for each company `c` in `C` whose `c.name` is a key in `CHANGED_PER_COMPANY`:
+   - For each source `s` in `c.sources` whose `s.url` is in `CHANGED_PER_COMPANY[c.name]`:
      - Fetch and parse `s.url` per its `type` (see "Per-company source types" above). For each extracted item whose dedup key is NOT in `SEEN` and whose date (if known) is within the last 14 days:
        - Append a candidate `(c, item)` where `item = {headline, description, source = "<c.name> · <s.label>", pubDate, link, source_kind = s.type}`.
        - **Skip the substring triage** — per-company sources are already company-scoped. The candidate is bound to `c` regardless of headline content.

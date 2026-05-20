@@ -9,3 +9,7 @@
 .hermes/
 .hermes-local/
 .hermes-state.zip
+
+# preflight (scripts/preflight-feeds.py) outputs — derived state, GHA cache is source of truth
+data/feed-cache.json
+data/changed-sources.json

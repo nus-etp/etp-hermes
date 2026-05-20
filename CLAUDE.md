@@ -35,6 +35,7 @@ Tune behavior by editing the prompt and per-company `description` strings (that'
 
 ## Non-obvious
 
+- Change-detection preflight: `scripts/preflight-feeds.py` runs before Layer 1 and sends conditional HTTP requests (ETag/Last-Modified + body-SHA256 fallback) against every preflightable source URL. It writes `data/feed-cache.json` (per-URL state, gitignored, kept across runs via the GHA `feed-cache-*` cache key) and `data/changed-sources.json` (the URL whitelist the ingest prompt is allowed to fetch). `html_scrape` sources are not preflighted — they're always listed as changed. For local runs, invoke `python3 scripts/preflight-feeds.py` before `hermes -z` to get the same skip behavior.
 - API key: `bootstrap-hermes.sh` writes the `DEEPSEEK_API_KEY` secret into `~/.hermes/.env` as `OPENAI_API_KEY` (what Hermes' `custom` provider reads). Don't rename the secret.
 - State roundtrip: each workflow run restores the prior `hermes backup` zip from GitHub Actions cache (`hermes-state-*`), imports it with `hermes import --force`, runs the layers, then re-runs `hermes backup` and saves the (sanitized) zip back to the cache. The `~/.hermes/memories/` → `hermes/memories/` rsync + commit is still done as a belt-and-suspenders fallback so a lost cache doesn't cold-start the agent. `scripts/sync-hermes-local.sh` mirrors the same pattern with a gitignored `.hermes-state.zip` in the repo root.
 - Skills are **not** rsynced — `~/.hermes/skills/` mixes user skills with Hermes' ~145k-line bundled library. Copy authored skills into `hermes/skills/` manually.
