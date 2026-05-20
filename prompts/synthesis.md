@@ -40,7 +40,7 @@ The briefs are the durable, per-company unit of analysis. Daily digests get buri
    b. Compute `slug = slug(c.name)`. Brief path = `signals/briefs/<slug>/LIVING_BRIEF.md`.
 
    c. **If the brief does not exist**, this is the first-time write. Generate all sections from scratch:
-      - **Header**: `# <c.name> — LIVING BRIEF` and `_Last updated: <UTC-timestamp>_`.
+      - **Header**: `# <c.name> — LIVING BRIEF`, then `_Last updated: <UTC-timestamp>_`, then `![Infographic](infographic.png)` on its own line. The image line is unconditional — Layer 4 generates the PNG later in the run; if it hasn't yet (or fails), GitHub renders a broken-image placeholder until the next infographic run fills it in.
       - **Thesis**: 2–3 sentences derived from `c.description` and today's signals. Frame what the company is and the trajectory the signals suggest.
       - **Profile**: bullets pulled from `c.description` (sector, region, what they do) plus `c.identifiers` (LinkedIn, Crunchbase, UEN, website if present). Include only fields that are actually present in `companies.json` — don't invent.
       - **Funding history**: render from `c.funding_rounds` (see "Funding history rendering rules" below). Omit the section entirely if `c.funding_rounds` is empty or absent.
@@ -49,7 +49,7 @@ The briefs are the durable, per-company unit of analysis. Daily digests get buri
       - **Open questions**: 1–3 questions that today's signals raise but don't answer (e.g. "What's the round's valuation?", "Who led?", "Is the new hire replacing a departure?"). Skip the section if you have nothing concrete to ask.
 
    d. **If the brief already exists**, read it and merge:
-      - **Header**: update the `_Last updated:_` line to `<UTC-timestamp>`. Keep the H1 verbatim.
+      - **Header**: update the `_Last updated:_` line to `<UTC-timestamp>`. Keep the H1 verbatim. Ensure the line `![Infographic](infographic.png)` is present immediately after the `_Last updated:_` line; if absent (legacy briefs written before Layer 4 existed), insert it.
       - **Thesis**: keep verbatim *unless* today's signals materially shift the company's trajectory (new market, new funding stage, pivot, major exec change, acquisition, shutdown). If you rewrite, the new thesis must implicitly justify itself by referencing the kind of signal that drove the change — but write naturally, not as a list of citations.
       - **Profile**: touch only when a today's signal contradicts or extends a field (e.g. funding round → stage/valuation; new office → region; founder departure → key people). Otherwise keep verbatim.
       - **Funding history**: re-render the section from `c.funding_rounds` (see "Funding history rendering rules" below). `companies.json` is authoritative — if the rendered section differs from what's on disk (e.g. a new round was added to the JSON), replace the existing section with the freshly rendered one. If `c.funding_rounds` is empty/absent, drop the section. Do **not** add rounds inferred from today's signals into the brief here — that belongs in `data/companies.json` first, then it flows into the brief on the next run.
@@ -67,6 +67,7 @@ The briefs are the durable, per-company unit of analysis. Daily digests get buri
 ```markdown
 # <Company name> — LIVING BRIEF
 _Last updated: <YYYY-MM-DD HH:MM UTC>_
+![Infographic](infographic.png)
 
 ## Thesis
 <2–3 sentences. Rolling assessment of what this company is and where it's going.>

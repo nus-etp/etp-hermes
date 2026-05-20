@@ -30,6 +30,7 @@ hermes -z "$(cat prompts/news.md)"
 2. **Per-company collection** — fetch curated `sources` (rss / github_org / lever_jobs / html_scrape) for opted-in companies.
 3. **LLM relevance pass** — judge each candidate against `c.description`. Firehose bias: drop. Per-company bias: keep.
 4. **Write** — group kept items into `signals/news/<UTC-date>.md`; append both kept *and* dropped dedup keys to `seen-urls.txt`.
+5. **Infographic generation** — `prompts/infographics.md` runs after synthesis. For every brief modified or created in this run (computed from `git diff` against `HEAD` plus untracked-file enumeration), invoke the bundled `creative-baoyu-infographic` skill and copy the resulting PNG to `signals/briefs/<slug>/infographic.png`. Capped at 8 per run. Skill intermediates under `infographic/` are gitignored.
 
 Tune behavior by editing the prompt and per-company `description` strings (that's where ticker collisions, same-name entities, and generic-word disambiguation are encoded).
 
@@ -42,3 +43,4 @@ Tune behavior by editing the prompt and per-company `description` strings (that'
 - Sessions/logs: uploaded as a `hermes-logs-<run_id>` artifact (3-day retention), never committed.
 - `seen-urls.txt` is append-only. No search feeds (Google News, HN) — intentional, doesn't scale.
 - `identifiers` in `companies.json` is carry-only metadata; not fetched.
+- Briefs embed `![Infographic](infographic.png)` directly under the `_Last updated:_` line. Synthesis writes this line unconditionally; if Layer 4 didn't run (or failed for that slug), the image renders as a 404 placeholder until the next successful infographic run. This decouples Layer 3 from Layer 4's success — synthesis never waits on `image_generate`.

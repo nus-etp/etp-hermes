@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       layers:
-        description: 'Comma-separated layers to run (1=ingest, 2=agent supplement, 3=synthesis). Default: 1,2,3.'
+        description: 'Comma-separated layers to run (1=ingest, 2=agent supplement, 3=synthesis, 4=infographics). Default: 1,2,3,4.'
         required: false
-        default: '1,2,3'
+        default: '1,2,3,4'
 
 concurrency:
   group: hermes-sync
@@ -106,11 +106,12 @@ jobs:
           # Schedule cron always runs all three layers. workflow_dispatch can
           # override via the `layers` input (e.g. "3" to re-synthesize only).
           layers="${{ github.event.inputs.layers }}"
-          layers="${layers:-1,2,3}"
+          layers="${layers:-1,2,3,4}"
           echo "layers=$layers" >> "$GITHUB_OUTPUT"
           case ",$layers," in (*,1,*) echo "run_l1=true" >> "$GITHUB_OUTPUT" ;; esac
           case ",$layers," in (*,2,*) echo "run_l2=true" >> "$GITHUB_OUTPUT" ;; esac
           case ",$layers," in (*,3,*) echo "run_l3=true" >> "$GITHUB_OUTPUT" ;; esac
+          case ",$layers," in (*,4,*) echo "run_l4=true" >> "$GITHUB_OUTPUT" ;; esac
 
       - name: Restore feed cache
         if: steps.layers.outputs.run_l1 == 'true'
@@ -164,6 +165,16 @@ jobs:
       - name: Layer 3 — synthesis
         if: steps.layers.outputs.run_l3 == 'true'
         run: hermes -z "$(cat prompts/synthesis.md)"
+
+      - name: Layer 4 — infographic generation
+        # Generates a baoyu infographic PNG next to every brief that Layer 3
+        # just created or modified. Gated on Layer 3 having run because the
+        # input is the working-tree diff Layer 3 produced. continue-on-error:
+        # image_generate is slow/flaky; a bad run must not block the daily
+        # sync — same precedent as Layer 2.
+        if: steps.layers.outputs.run_l4 == 'true' && steps.layers.outputs.run_l3 == 'true'
+        continue-on-error: true
+        run: hermes -z "$(cat prompts/infographics.md)"
 
       - name: Usage insights
         if: always()

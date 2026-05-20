@@ -13,3 +13,7 @@
 # preflight (scripts/preflight-feeds.py) outputs — derived state, GHA cache is source of truth
 data/feed-cache.json
 data/changed-sources.json
+
+# creative-baoyu-infographic skill working tree (intermediates only; the
+# final PNG is copied into signals/briefs/<slug>/ by prompts/infographics.md)
+/infographic/
