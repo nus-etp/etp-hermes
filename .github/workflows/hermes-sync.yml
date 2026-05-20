@@ -113,11 +113,6 @@ jobs:
           case ",$layers," in (*,3,*) echo "run_l3=true" >> "$GITHUB_OUTPUT" ;; esac
 
       - name: Restore feed cache
-        # Container-level change-detection cache: per-feed ETag/Last-Modified/
-        # body-hash so the preflight can mark unchanged sources as skip-and-do-
-        # not-fetch. Parallel pattern to the hermes-state cache above. Cold
-        # first run misses gracefully — preflight then marks everything as
-        # changed.
         if: steps.layers.outputs.run_l1 == 'true'
         id: feed-cache-restore
         uses: actions/cache/restore@v4
@@ -128,9 +123,8 @@ jobs:
             feed-cache-
 
       - name: Preflight feeds (conditional GET + body hash)
-        # Writes data/feed-cache.json (refreshed per-URL state) and
-        # data/changed-sources.json (whitelist of URLs the Layer 1 prompt is
-        # allowed to fetch). Stdlib-only; no third-party deps.
+        # Emits data/changed-sources.json — the whitelist Layer 1 reads to
+        # skip unchanged sources. Stdlib-only, so no uv setup needed.
         if: steps.layers.outputs.run_l1 == 'true'
         run: python3 scripts/preflight-feeds.py
 
@@ -258,9 +252,6 @@ jobs:
           key: hermes-state-${{ github.run_id }}
 
       - name: Save feed cache
-        # Persist the refreshed container-level change-detection state for the
-        # next run. Only meaningful when Layer 1 actually ran (preflight is
-        # what writes the file).
         if: always() && steps.layers.outputs.run_l1 == 'true'
         uses: actions/cache/save@v4
         with:

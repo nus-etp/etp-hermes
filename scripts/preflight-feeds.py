@@ -1,24 +1,13 @@
 #!/usr/bin/env python3
-"""Conditional preflight for the ingest pipeline.
+"""Preflight HTTP conditional-GET against ingest sources.
 
-Sends HTTP conditional GETs (If-None-Match + If-Modified-Since) against every
-URL in data/feeds.json and every rss/github_org/lever_jobs source in
-data/companies.json. Falls back to body SHA-256 comparison when the server
-ignores conditional headers.
-
-Outputs:
-- data/feed-cache.json     — per-URL change-detection state, kept across runs.
-- data/changed-sources.json — whitelist consumed by prompts/ingest.md. Lists
-  only URLs that have changed since the last run; the agent skips everything
-  else.
-
-html_scrape sources are not preflighted — page bodies often contain dynamic
-chrome that defeats hashing — so they are emitted as always-changed and the
-agent fetches them on every run.
-
-stdlib-only; no third-party deps. Exits 0 even on per-URL failures: a failed
-URL is recorded with last_status<=0 and emitted as "changed" so the agent
-retries it during the run.
+Reads data/feeds.json + rss/github_org/lever_jobs entries from
+data/companies.json. Writes data/feed-cache.json (per-URL ETag /
+Last-Modified / body-SHA256) and data/changed-sources.json (whitelist of
+URLs the ingest prompt is allowed to fetch). html_scrape sources are
+emitted as always-changed since dynamic page chrome defeats hashing. Any
+per-URL failure is recorded and emitted as changed so the agent retries
+with its own fetcher.
 """
 
 from __future__ import annotations
@@ -55,7 +44,6 @@ def load_cache() -> dict[str, Any]:
         with CACHE_FILE.open("r", encoding="utf-8") as f:
             return json.load(f)
     except json.JSONDecodeError:
-        # corrupt cache — start fresh rather than fail the run
         return {}
 
 
@@ -100,13 +88,11 @@ def check_url(url: str, cache_entry: dict[str, Any] | None) -> tuple[bool, dict[
             entry["last_status"] = 304
             entry["last_run"] = now
             return False, entry
-        # Other HTTP error — treat as changed so the agent retries the URL.
         entry = dict(cache_entry or {})
         entry["last_status"] = e.code
         entry["last_run"] = now
         return True, entry
     except (error.URLError, TimeoutError, OSError) as e:
-        # Network failure — treat as changed so the agent retries.
         entry = dict(cache_entry or {})
         entry["last_status"] = -1
         entry["last_error"] = str(e)[:200]
@@ -157,7 +143,6 @@ def main() -> int:
                 summary["html_scrape_passthrough"] += 1
                 continue
             if stype not in PREFLIGHTED_TYPES:
-                # Unknown type — be safe, emit as changed so the agent handles it.
                 changed_for_company.append(url)
                 continue
             summary["checked"] += 1
