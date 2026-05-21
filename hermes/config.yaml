@@ -16,3 +16,11 @@ agent:
   # DeepSeek V4 thinking mode is enabled by default server-side; reasoning_effort
   # controls how much it thinks. Set high for news dedup/summarization quality.
   reasoning_effort: high
+
+image_gen:
+  # GPT-Image-2: text rendering is the bottleneck for Layer 4 infographics
+  # (FLUX-klein, the catalog default, hallucinates gibberish labels). At the
+  # 8-images/day cap this stays under ~$0.27/day.
+  model: fal-ai/gpt-image-2
+  provider: fal
+  use_gateway: false
