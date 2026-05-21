@@ -1,23 +1,29 @@
 # CRecTech — LIVING BRIEF
-_Last updated: 2026-05-15 15:31 UTC_
+_Last updated: 2026-05-21 01:41 UTC_
+![Infographic](infographic.png)
 
 ## Thesis
-CRecTech is an NUS GRIP-incubated Singapore carbon-recycling technology startup. The company has signed an MoU with Pertamina to explore a pilot biogas-to-biomethanol facility in Indonesia's Special Economic Zone, signaling early commercial traction and an Indonesia-centered market entry strategy.
+NUS GRIP-incubated Singapore carbon-recycling tech startup developing green maritime fuel and sustainable chemical production. A recent MOU with Pertamina for a Sumatra bio-methanol pilot and seed funding signal growing commercial traction and partnership momentum.
 
 ## Profile
-- Sector: Carbon-recycling / clean energy tech
-- Region: Singapore (NUS deep-tech), Indonesia market entry
-- Stage / funding: NUS GRIP-incubated startup
+- Sector: Carbon-recycling / green maritime fuel
+- Region: Singapore
 
 ## Funding history
 - **2024** — Grant, undisclosed — Breakthrough Energy Fellows; Breakthrough Energy, Temasek, Enterprise Singapore, SGInnovate — [temasek.com.sg](https://www.temasek.com.sg/en/news-and-resources/news-room/news/2024/BEF-SEA_announce_first_cohort)
 
 ## Recent signals
-- **2026-05-15** — Signed MoU with Pertamina for pilot biogas-to-biomethanol facility in Indonesian SEZ — [Hydrocarbon Processing](https://news.google.com/rss/articles/CBMi4gFBVV95cUxPZzc0ZWdVU2NlQUNVY3dhUi10dXZjSVRYQUZ3M050QlVFZUNxSWkwZ21OX2NjQWlyLWdTYl8xS1FoWk9qeDdrNlpQb3hna3oxRHhuUlNYcElRWTlWNTkzcThCZE5hZjRvX3JnQzhDbGxoRm9GcnBFVXdQMk5xWVZWSjVLTEkzMndBcTRTLXZjbGk3RWtZS29fUElTN2xWTy1WZ080djJfZHNkN2xuU3pVN2NFYkhNT1kxUG1tX05aRlE5bmhkZUtKUDYyeVFvLWpER0NlOXJLSkFyclQ2aXhYRVFR)
+- **2026-05-21** — raised seed funding for green maritime fuel and sustainable chemical production — [crectech.net](https://crectech.net/news/crectech-receives-seed-funding)
+- **2026-05-21** — signed MOU with Pertamina for Sumatra bio-methanol pilot — [crectech.net](https://crectech.net/news/pertamina-power-indonesia-crectech-sumatra-bio-methanol-pilot)
+- **2026-05-21** — showcased integrated pre-pilot system — [crectech.net](https://crectech.net/news/crectech-showcases-integrated-pre-pilot-system)
+- **2026-05-21** — profiled on CNBC — [crectech.net](https://crectech.net/news/crectech-featured-on-cnbc)
+- **2026-05-21** — won IES Sustainability Award 2025 — [crectech.net](https://crectech.net/news/ies-sustainability-award-2025)
+- **2026-05-21** — won Best Disruptive Startup at iPitch@ACES — [crectech.net](https://crectech.net/news/ipitch-aces-award-best-disruptive-startup)
+- **2026-05-21** — featured in Manifold Times — [crectech.net](https://crectech.net/news/feature-on-manifold-times)
 
 ## Older signals
 _none_
 
 ## Open questions
-- Is this MoU with Pertamina CRecTech's first commercial partnership, or are there existing deployments?
-- What is the scale and timeline of the proposed pilot biogas-to-biomethanol facility?
+- What is the size and valuation of the seed funding round?
+- Who led the seed round and who are the other investors?
