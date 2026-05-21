@@ -98,6 +98,7 @@ jobs:
       - name: Bootstrap config
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_KEY }}
         run: bash scripts/bootstrap-hermes.sh
 
       - name: Resolve layers to run

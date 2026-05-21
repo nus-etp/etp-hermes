@@ -37,6 +37,12 @@ umask 077
 # Hermes' "custom" provider reads OPENAI_API_KEY; rename happens here so the
 # GitHub Secrets name matches what the user actually has.
 echo "OPENAI_API_KEY=${DEEPSEEK_API_KEY}" > "$HERMES_HOME/.env"
+# Layer 4 (infographics) calls Hermes' image_generate, which reads FAL_KEY.
+# Optional — if unset, Layer 4 fails gracefully (continue-on-error in the
+# workflow) and the brief renders without an image.
+if [ -n "${FAL_KEY:-}" ]; then
+  echo "FAL_KEY=${FAL_KEY}" >> "$HERMES_HOME/.env"
+fi
 chmod 600 "$HERMES_HOME/.env"
 
 echo "bootstrapped $HERMES_HOME from $SRC_DIR"
