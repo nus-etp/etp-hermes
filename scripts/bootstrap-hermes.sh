@@ -43,6 +43,15 @@ echo "OPENAI_API_KEY=${DEEPSEEK_API_KEY}" > "$HERMES_HOME/.env"
 if [ -n "${FAL_KEY:-}" ]; then
   echo "FAL_KEY=${FAL_KEY}" >> "$HERMES_HOME/.env"
 fi
+# Web-search backends used by Layer 2 (agent supplement). Active backend is
+# ddgs (search) + tavily (extract), set in hermes/config.yaml. EXA_API_KEY is
+# seeded for future use / quick swap without touching the workflow.
+if [ -n "${TAVILY_API_KEY:-}" ]; then
+  echo "TAVILY_API_KEY=${TAVILY_API_KEY}" >> "$HERMES_HOME/.env"
+fi
+if [ -n "${EXA_API_KEY:-}" ]; then
+  echo "EXA_API_KEY=${EXA_API_KEY}" >> "$HERMES_HOME/.env"
+fi
 chmod 600 "$HERMES_HOME/.env"
 
 echo "bootstrapped $HERMES_HOME from $SRC_DIR"

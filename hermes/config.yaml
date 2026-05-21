@@ -24,3 +24,11 @@ image_gen:
   model: fal-ai/gpt-image-2
   provider: fal
   use_gateway: false
+
+web:
+  # Per-capability split for Layer 2 (agent supplement). ddgs is keyless and
+  # unmetered; tavily handles the rarer extract path within its 1k/mo free
+  # tier. EXA_API_KEY is seeded in .env as a hot spare — swap by changing
+  # extract_backend to "exa".
+  search_backend: ddgs
+  extract_backend: tavily

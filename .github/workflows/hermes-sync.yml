@@ -99,7 +99,17 @@ jobs:
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
         run: bash scripts/bootstrap-hermes.sh
+
+      - name: Install ddgs into hermes venv
+        # Layer 2's search_backend (ddgs) requires the `ddgs` PyPI package
+        # importable from hermes' Python interpreter. The plugin does NOT
+        # lazy-install — see plugins/web/ddgs/provider.py:65 — so without
+        # this step, Layer 2 falls back to whichever extract backend has a
+        # key (tavily) for search too, doubling Tavily quota usage.
+        run: $HOME/.hermes/hermes-agent/venv/bin/pip install --quiet ddgs
 
       - name: Resolve layers to run
         id: layers
