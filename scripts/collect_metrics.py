@@ -47,6 +47,9 @@ METRICS_DIR = REPO_ROOT / "data" / "metrics"
 USER_AGENT = "etp-hermes-metrics/1.0 (+https://github.com)"
 HN_PAUSE_S = 0.3
 GDELT_PAUSE_S = 5.5  # GDELT enforces ~one request per 5s per IP.
+GDELT_TIMEOUT_S = 45  # GDELT's tail latency is high; give it more headroom than other endpoints.
+GDELT_BACKOFF_S = 12  # Initial backoff after a 429/rate-limit signal; doubled each retry.
+GDELT_MAX_ATTEMPTS = 3
 GITHUB_PAUSE_S = 0.1
 HTTP_TIMEOUT_S = 20
 
@@ -139,32 +142,50 @@ def hn_mentions_30d(name: str, now: dt.datetime) -> int | None:
 
 
 def gdelt_articles_7d(name: str) -> int | None:
-    # GDELT enforces ~one request per 5s per IP and signals violations by
-    # returning a plaintext "Please limit requests" page (HTTP 200, not JSON).
-    # We catch that, sleep the documented window, and retry once.
+    # GDELT signals rate-limit violations two ways: an HTTP 429, or a plaintext
+    # "Please limit requests" page served with HTTP 200. Both get exponential
+    # backoff and multiple retries. Socket timeouts are also retried (with the
+    # standard inter-request pause). JSON-parse failures on a non-rate-limit
+    # body — e.g. "The specified phrase is too short." for 2-char names — are
+    # treated as permanent and not retried.
     q = urllib.parse.quote(f'"{name}"')
     url = (
         f"https://api.gdeltproject.org/api/v2/doc/doc"
         f"?query={q}&mode=ArtList&maxrecords=250&timespan=7d&format=json"
     )
-    for attempt in range(2):
+    backoff = GDELT_BACKOFF_S
+    for attempt in range(GDELT_MAX_ATTEMPTS):
+        last = attempt == GDELT_MAX_ATTEMPTS - 1
         try:
             req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-            with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT_S) as resp:
+            with urllib.request.urlopen(req, timeout=GDELT_TIMEOUT_S) as resp:
                 body = resp.read().decode("utf-8", errors="replace")
-            if "Please limit requests" in body:
-                if attempt == 0:
-                    time.sleep(GDELT_PAUSE_S)
-                    continue
-                return None
-            data = json.loads(body) if body.strip() else {}
-            articles = data.get("articles") or []
-            return len(articles)
-        except Exception:
-            if attempt == 0:
-                time.sleep(GDELT_PAUSE_S)
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and not last:
+                time.sleep(backoff)
+                backoff *= 2
                 continue
             return None
+        except (urllib.error.URLError, TimeoutError):
+            if last:
+                return None
+            time.sleep(GDELT_PAUSE_S)
+            continue
+        except Exception:
+            return None
+
+        if "Please limit requests" in body:
+            if last:
+                return None
+            time.sleep(backoff)
+            backoff *= 2
+            continue
+        try:
+            data = json.loads(body) if body.strip() else {}
+        except json.JSONDecodeError:
+            return None
+        articles = data.get("articles") or []
+        return len(articles)
     return None
 
 
