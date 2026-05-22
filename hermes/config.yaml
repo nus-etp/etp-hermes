@@ -1,6 +1,5 @@
 model:
-  provider: custom
-  base_url: "https://api.deepseek.com/v1"
+  provider: deepseek
   default: deepseek-v4-flash
 
 terminal:
