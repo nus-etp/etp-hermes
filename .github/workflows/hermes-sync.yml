@@ -109,7 +109,9 @@ jobs:
         # lazy-install — see plugins/web/ddgs/provider.py:65 — so without
         # this step, Layer 2 falls back to whichever extract backend has a
         # key (tavily) for search too, doubling Tavily quota usage.
-        run: $HOME/.hermes/hermes-agent/venv/bin/pip install --quiet ddgs
+        # The hermes installer builds the venv with uv and doesn't seed pip,
+        # so we install via `uv pip` against the existing interpreter.
+        run: uv pip install --quiet --python "$HOME/.hermes/hermes-agent/venv/bin/python" ddgs
 
       - name: Resolve layers to run
         id: layers
