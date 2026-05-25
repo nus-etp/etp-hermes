@@ -17,3 +17,7 @@ data/changed-sources.json
 # creative-baoyu-infographic skill working tree (intermediates only; the
 # final PNG is copied into signals/briefs/<slug>/ by prompts/infographics.md)
 /infographic/
+
+# block71 portfolio seed working files (scripts/_tmp_*.py + data/_block71_seed.json)
+/scripts/_tmp_*
+/data/_block71_seed.json

@@ -447,6 +447,15 @@
     "funding_notes": "Pre-A round (labeled as Pre-A by company) of $2.7M led by Tin Men Capital. Seed round amount undisclosed."
   },
   {
+    "name": "AIPath",
+    "aliases": [
+      "AIPath.one"
+    ],
+    "description": "BLOCK71 Silicon Valley-resident SaaS startup building a prescriptive-AI decision engine for product and go-to-market teams (AI customer-journey mapping, evidence-based feature prioritization, digital-twin simulations). Generic AI brand — drop items about unrelated AI-pathology / AI-routing tools.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Silicon Valley cohort startup founded by David Isaac (CEO). No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "AIWater",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -881,6 +890,30 @@
     "funding_notes": "NUS spin-off. Total reported funding ~$560K with multiple early-stage investors including Iterative Accelerator and Shell. Exact round dates/breakdowns not publicly disclosed."
   },
   {
+    "name": "Constructor.io",
+    "aliases": [
+      "Constructor",
+      "Constructor.com"
+    ],
+    "description": "BLOCK71 Silicon Valley-affiliated US enterprise-eCommerce search and product-discovery platform (NLP + ML ranking, personalized search/browse/recommendations) used by Sephora, Petco, Bonobos, Target Australia. Drop items about unrelated 'constructor pattern' programming content or construction firms.",
+    "funding_rounds": [
+      {
+        "date": "2022-02-08",
+        "stage": "Series A",
+        "amount": "US$55M",
+        "amount_usd": 55000000,
+        "lead_investors": [
+          "Silversmith Capital Partners"
+        ],
+        "investors": [
+          "Silversmith Capital Partners"
+        ],
+        "source": "https://www.crunchbase.com/organization/constructor-io"
+      }
+    ],
+    "funding_notes": "Founded 2015 by Eli Finkelshteyn and Dan McCormick. Total reported funding ~US$61.1M across 4 rounds (Crunchbase). BLOCK71 Silicon Valley-listed."
+  },
+  {
     "name": "Cornucopia",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English noun — drop any item not clearly referring to the Singapore startup.",
@@ -1007,6 +1040,17 @@
     "funding_notes": "NUS GRIP portfolio company developing LIPITRAP for lymphedema treatment. No publicly announced funding rounds found."
   },
   {
+    "name": "dConstruct Robotics",
+    "aliases": [
+      "dConstruct",
+      "dConstruct Technologies",
+      "DCONSTRUCT ROBOTICS PTE. LTD."
+    ],
+    "description": "BLOCK71 Silicon Valley-listed Singapore deep-tech robotics startup building SLAM-based autonomous navigation and 3D digital-twin systems for construction, defense and logistics (d.ASH platform, d.ASH Nav self-driving stack, d.ASH Xplorer 3D mapping). Founded 2021 by Chinn Hwa Lim; signed MOU with Foxconn on SLAM/AMR manufacturing. Generic 'construct' wording — drop items about unrelated construction software or DIY robotics kits.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Silicon Valley portfolio (Singapore HQ). NRP RoboNexus participant. No publicly verifiable equity funding round announced; Foxconn collaboration is a manufacturing MOU, not an equity event."
+  },
+  {
     "name": "DolphinLink",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1125,6 +1169,16 @@
     "funding_notes": "NUS GRIP spin-off (2020). PitchBook/CB Insights aggregate total raised between US$100K–US$245K. Joined Luminate NY cohort 7 in 2024."
   },
   {
+    "name": "Epitex",
+    "aliases": [
+      "Epitex International",
+      "Epitex International Pte Ltd"
+    ],
+    "description": "BLOCK71 Guangzhou-affiliated Singapore home-textiles brand (founded 1997) commercialising fabrics suited to tropical climate — Egyptian cotton, bamboo, TENCEL blends — via NUS GRTII Guangzhou translation institute. Mature consumer brand, not a venture-stage startup; drop generic bedding / hotel-linens news unless it names Epitex.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou / NUS GRTII industry partner — ~100 employees across Singapore, Malaysia and China; 2024 Singapore Prestige Brand Award. No publicly verifiable equity funding round announced."
+  },
+  {
     "name": "FACI-FI",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1173,6 +1227,17 @@
     "description": "NUS GRIP-incubated Singapore myopia-management health-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company. No publicly announced funding round found."
+  },
+  {
+    "name": "Flexxon",
+    "aliases": [
+      "FLEXXON HOLDING PTE LTD",
+      "Flexxon Holding",
+      "X-PHY"
+    ],
+    "description": "BLOCK71 Silicon Valley-listed Singapore cybersecurity-hardware startup (founded 2007) building X-PHY, the world's first AI-embedded SSD with hardware-level threat detection and physical-tamper response. Co-founded by Camellia Chan and May Chng. Drop items that only mention generic flash-storage or unrelated 'X-PHY' physics content.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Silicon Valley portfolio (Singapore HQ). NUS Enterprise startup-story alumnus; Enterprise Singapore feature company. Public equity rounds not verified in open sources at time of writing."
   },
   {
     "name": "Florisense",
@@ -1284,6 +1349,48 @@
     "funding_notes": "Listed in NUS GRIP portfolio; no specific funding rounds publicly verified beyond programme participation."
   },
   {
+    "name": "Guangdong Zhaoyang Technology",
+    "aliases": [
+      "Guangdong Zhaoyang",
+      "Zhaoyang Air Compressor",
+      "Shenzhen Xinzhaoyang Air Compressor"
+    ],
+    "description": "BLOCK71 Guangzhou-listed Chinese industrial-equipment manufacturer (established 2003) producing screw air compressors and related accessories (oil seals, solenoid valves, intake valves, controllers) exported globally. Established SME rather than venture-stage startup; drop unrelated solar-tech 'Zhaoyang' brands and consumer-electronics mentions.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou directory entry. No publicly verifiable equity funding round announced; revenue-funded SME with international export channels."
+  },
+  {
+    "name": "Guangzhou Aosong Electronic",
+    "aliases": [
+      "Aosong Electronic",
+      "Aosong (Guangzhou) Elec",
+      "Guangzhou Aosong Intelligent"
+    ],
+    "description": "BLOCK71 Guangzhou-listed Chinese sensor manufacturer specialising in temperature/humidity sensor modules (AHT25, AHT3001, DHT11, DHT20, AM2302) for home appliances and industrial monitoring; products distributed through LCSC/JLCPCB/Chipmall. Mature electronics manufacturer rather than venture-stage startup; drop generic IoT-sensor coverage that doesn't name Aosong.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou industry partner / mature sensor manufacturer with global distribution. No publicly verifiable equity funding round announced."
+  },
+  {
+    "name": "Guangzhou Newsight Photoscope Technology",
+    "aliases": [
+      "Newsight Photoscope",
+      "Guangzhou Newsight"
+    ],
+    "description": "BLOCK71 Guangzhou-listed Chinese optical-imaging/inspection startup. Limited public-English information available beyond the directory listing — drop unrelated 'Newsight Imaging' (Israeli CMOS sensor firm) and unrelated optical-inspection vendors unless they explicitly reference the Guangzhou/NUS GRTII entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Guangzhou WISHEE Technology",
+    "aliases": [
+      "WISHEE Technology",
+      "WISHEE AiEar"
+    ],
+    "description": "BLOCK71 Guangzhou / NUS GRTII-incubated Chinese AI-wearables startup building consumer AI headsets (WISHEE AiEar) integrating LLM voice assistants, 4G/WiFi connectivity, head-motion sensors and on-device apps for navigation and notes. Drop unrelated edtech / wishlist apps sharing the name.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou / NUS GRTII portfolio company. No publicly verifiable equity funding round announced beyond institute incubation support."
+  },
+  {
     "name": "Guardly",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from the US mobile-security firm Guardly or any other unrelated company sharing this name.",
@@ -1296,6 +1403,15 @@
     "description": "NUS GRIP-incubated Singapore energy-efficiency startup (heat-to-cool). Drop unrelated mentions of H2C as a chemical or other acronym.",
     "funding_rounds": [],
     "funding_notes": "Waste heat recovery startup in NUS GRIP portfolio. No external funding announcement found."
+  },
+  {
+    "name": "Hailego Group",
+    "aliases": [
+      "Hailego"
+    ],
+    "description": "BLOCK71 Guangzhou-listed Chinese startup. Limited public-English information available beyond the directory listing — name is generic and may collide with logistics/e-commerce ventures of the same name; drop unless the article clearly identifies the BLOCK71 Guangzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Hamlit",
@@ -1428,6 +1544,16 @@
     "funding_notes": "Privacy-preserving monitoring for seniors. NUS GRIP portfolio; no other public funding rounds found."
   },
   {
+    "name": "Hong Xin Da",
+    "aliases": [
+      "Hongxinda",
+      "Hong Xinda"
+    ],
+    "description": "BLOCK71 Guangzhou-listed Chinese startup. Limited public-English information available beyond the directory listing — name is very generic (transliterated Mandarin); drop unless the article explicitly ties to BLOCK71 Guangzhou or NUS GRTII context.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Hybrique",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1477,6 +1603,24 @@
       }
     ],
     "funding_notes": "Construction-safety AI video analytics (Singapore). PitchBook records total raised of US$490K with named investors (NUS GRIP, NVIDIA Inception, BLOCK71). Tracxn references an M&A offer in April 2025 (unconfirmed)."
+  },
+  {
+    "name": "JN Medsys",
+    "aliases": [
+      "JN MedSys",
+      "Clarity dPCR",
+      "Clarity Plus"
+    ],
+    "description": "BLOCK71 Guangzhou-listed Singapore biotech startup (founded 2010 by Johnson Ng) commercialising chip-based digital PCR — Clarity dPCR system (2016) and Clarity Plus (2020) with 45,000 partitions per reaction and 6-color detection; ProTect COVID-19 IVD kit. Drop unrelated 'JN' brands and PCR-vendor news unless it names JN Medsys.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou / NUS GRTII industry partner (Singapore HQ). ~11-50 employees as of mid-2024. Public equity rounds not verified in open sources at time of writing."
+  },
+  {
+    "name": "Justra",
+    "aliases": [],
+    "description": "BLOCK71 Guangzhou-listed startup. Limited public-English information available beyond the directory listing — drop unrelated 'Just' / legal-tech / consumer-brand mentions unless the article explicitly ties to BLOCK71 Guangzhou or NUS GRTII context.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Keptan",
@@ -1618,6 +1762,13 @@
     "funding_notes": "NUS GRIP portfolio company (floating solar for green ports). Featured in GRIP Run 6 Lift-off Day booklet. No publicly-announced priced funding round found beyond standard GRIP support."
   },
   {
+    "name": "Mastermind Advisors",
+    "aliases": [],
+    "description": "BLOCK71 Silicon Valley-listed advisory/partner entity supporting Singapore startups on US market entry via the BLOCK71 SV programme. Not a venture-stage startup; drop generic 'mastermind group' coaching, business-advisory or financial-advisory news unless it names the BLOCK71 SV entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Silicon Valley advisor/partner network entry, not a portfolio startup."
+  },
+  {
     "name": "Matchapreneur",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1651,6 +1802,13 @@
       }
     ],
     "funding_notes": "Now rebranded as InteractAI. Won SGD 50K Startup SG Founder Grant via Founder IGNITE pitch 2021. PitchBook/Tracxn list SMU Business Incubator, NUS GRIP and PIXEL as backers, but no priced equity round is publicly disclosed."
+  },
+  {
+    "name": "Meracle",
+    "aliases": [],
+    "description": "BLOCK71 Tokyo-resident startup (founder Rachel Hong). Limited public information available beyond the BLOCK71 directory listing; BLOCK71 Tokyo (opened March 2025 in Takanawa Gateway LiSH with JR East) focuses on deep-tech in environment, mobility and healthcare. Drop unrelated 'Meracle'/'Miracle' product mentions.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Tokyo portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Metalivi",
@@ -1857,6 +2015,29 @@
     "funding_notes": "NUS GRIP portfolio company developing autonomous remote cataract monitoring tool. No publicly-announced individual funding round with verifiable source found."
   },
   {
+    "name": "nusmetics",
+    "aliases": [
+      "NUS metics"
+    ],
+    "description": "NUS GRIP-incubated Singapore cosmetics/beauty-science startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [
+      {
+        "date": "2019",
+        "stage": "Grant",
+        "amount": "SGD 180K",
+        "amount_usd": null,
+        "lead_investors": [
+          "NUS GRIP"
+        ],
+        "investors": [
+          "NUS GRIP"
+        ],
+        "source": "https://www.nusmetics.com/innovation"
+      }
+    ],
+    "funding_notes": "Also received NAMIC POC grant (undisclosed amount) for 3D-printed drug development. Was a finalist in L'Oreal Innovation Runway 2018."
+  },
+  {
     "name": "NuSoil",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
@@ -1919,29 +2100,6 @@
       }
     ],
     "funding_notes": "PitchBook indicates total funding ~$1.64M across multiple investors (Luna Capital, PlanetSpark, NUS GRIP, BEENEXT, Sunbo Angel Partners) but only the BEENEXT-led 2019 seed round has individual press coverage. BEENEXT amount was undisclosed."
-  },
-  {
-    "name": "nusmetics",
-    "aliases": [
-      "NUS metics"
-    ],
-    "description": "NUS GRIP-incubated Singapore cosmetics/beauty-science startup. Drop unrelated companies sharing the same name.",
-    "funding_rounds": [
-      {
-        "date": "2019",
-        "stage": "Grant",
-        "amount": "SGD 180K",
-        "amount_usd": null,
-        "lead_investors": [
-          "NUS GRIP"
-        ],
-        "investors": [
-          "NUS GRIP"
-        ],
-        "source": "https://www.nusmetics.com/innovation"
-      }
-    ],
-    "funding_notes": "Also received NAMIC POC grant (undisclosed amount) for 3D-printed drug development. Was a finalist in L'Oreal Innovation Runway 2018."
   },
   {
     "name": "Ocular Labs",
@@ -2107,6 +2265,34 @@
     "funding_notes": "Listed in NUS GRIP portfolio but no publicly-announced individual funding round with verifiable source found."
   },
   {
+    "name": "Puruon Technology",
+    "aliases": [],
+    "description": "BLOCK71 Guangzhou-listed Chinese startup. Limited public-English information available beyond the directory listing — drop unrelated mentions of similarly-named consumer/tech brands unless the article explicitly ties to BLOCK71 Guangzhou or NUS GRTII context.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Qapita",
+    "aliases": [],
+    "description": "BLOCK71 Silicon Valley-listed Singapore-headquartered equity-management platform (cap-table, ESOP administration, secondary-share workflows) founded 2019 by Ravi Ravulaparthi (CEO), Lakshman Gupta (COO) and Vamsee Mohan (CTO); serves ~2,700 SEA/India companies. Carta challenger now powering Schwab Private Issuer Equity Services in the US. Drop unrelated Qatar/Q-brands.",
+    "funding_rounds": [
+      {
+        "date": "2025-10-08",
+        "stage": "Series B",
+        "amount": "US$26.5M",
+        "amount_usd": 26500000,
+        "lead_investors": [
+          "Charles Schwab"
+        ],
+        "investors": [
+          "Charles Schwab"
+        ],
+        "source": "https://techcrunch.com/2025/10/08/charles-schwab-backs-singapores-qapita-in-26-5m-bet-to-challenge-carta-with-u-s-private-market-platform/"
+      }
+    ],
+    "funding_notes": "Total reported funding >US$80M (TechCrunch, 2025). Headcount ~300 across Singapore, India and Indonesia. BLOCK71 Silicon Valley-listed."
+  },
+  {
     "name": "QSIGNAGE",
     "aliases": [
       "Q Signage"
@@ -2181,6 +2367,17 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (robotic guide dogs for the visually impaired). No publicly announced funding rounds found."
+  },
+  {
+    "name": "Roplus",
+    "aliases": [
+      "RoPlus",
+      "ROPLUS PTE LTD",
+      "RoPlus Robotics"
+    ],
+    "description": "BLOCK71 Tokyo-listed Singapore robotics startup (incorporated 2021, NUS-based) building intelligent soft-gripping automation — reconfigurable hybrid-finger actuators and computer-vision-integrated pick-and-place for food (tofu, pudding, cake), e-commerce and agriculture. Drop unrelated 'R+' / mathematics / pharma mentions.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Tokyo / Singapore portfolio. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "SafeLight",
@@ -2283,6 +2480,15 @@
     "funding_notes": "NUS GRIP portfolio company (genomics). No publicly verifiable funding round announcements found."
   },
   {
+    "name": "Singnovel ChemTech",
+    "aliases": [
+      "Singnovel"
+    ],
+    "description": "NUS GRIP-incubated Singapore chemistry-tech startup. Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company (PDH catalysts for petrochemical industry, product 'Singdro-1'). No publicly verifiable funding round announcements found."
+  },
+  {
     "name": "SINGROW",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
@@ -2334,20 +2540,22 @@
     "funding_notes": "Series A announcement corroborated by 36Kr and Hortidaily. Series A date 2025-10-15 per 36Kr; AgFunderNews article published 2025-08-18."
   },
   {
-    "name": "Singnovel ChemTech",
-    "aliases": [
-      "Singnovel"
-    ],
-    "description": "NUS GRIP-incubated Singapore chemistry-tech startup. Drop unrelated companies sharing the same name.",
-    "funding_rounds": [],
-    "funding_notes": "NUS GRIP portfolio company (PDH catalysts for petrochemical industry, product 'Singdro-1'). No publicly verifiable funding round announcements found."
-  },
-  {
     "name": "SkyTrek",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "Softgridinc",
+    "aliases": [
+      "SoftGridinc",
+      "SOFTGRIDINC PTE LTD",
+      "Softgridinc Pte. Ltd., (Guangzhou)"
+    ],
+    "description": "BLOCK71 Guangzhou-listed Singapore IoT startup building lift/elevator safety-monitoring solutions — sensor arrays plus SCADA-style telemetry, big-data analytics and AI for precision maintenance and downtime reduction in elevator fleets. Drop unrelated 'smart grid' / power-grid news unless it names this entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou / Singapore portfolio. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Softlabs",
@@ -2589,6 +2797,13 @@
     "funding_notes": "NUS GRIP medtech (wireless implantable sensing platform, WiSeCue for post-colorectal-surgery monitoring). No publicly-announced funding round with verifiable date/amount/source found."
   },
   {
+    "name": "Wiseflick",
+    "aliases": [],
+    "description": "BLOCK71 Silicon Valley-listed startup. Limited public-English information available beyond the BLOCK71 directory listing — drop generic 'wise'/'flick' app mentions unless the article explicitly ties to the BLOCK71 SV entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Silicon Valley portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Xavoury Foods",
     "aliases": [
       "Xavoury"
@@ -2603,6 +2818,16 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio (diabetic-foot exfoliation safety device). No publicly-announced funding round located."
+  },
+  {
+    "name": "Yimiji Technology",
+    "aliases": [
+      "Yimiji",
+      "Yimiji Technology (Guangzhou)"
+    ],
+    "description": "BLOCK71 Guangzhou / NUS GRTII-incubated Chinese medtech startup co-founded by Dr Zhou Jiayin, building AI-driven medical-image processing and analysis plus smart surgical-robotic technology to support diagnosis and treatment. Drop unrelated consumer/biology firms in Guangzhou sharing the 'Yi' prefix.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Guangzhou / NUS GRTII portfolio company. No publicly verifiable equity funding round announced beyond institute incubation support."
   },
   {
     "name": "Zoe Botanicals",
