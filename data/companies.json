@@ -575,6 +575,15 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "Anlight Optoelectronic Technology",
+    "aliases": [
+      "Anlight Optoelectronic Technology Inc Ltd"
+    ],
+    "description": "BLOCK71 Suzhou-listed Chinese optoelectronic / LED technology venture. Limited public-English information beyond the directory listing — drop the many unrelated Suzhou LED/optoelectronics manufacturers (Radiant Opto-Electronics, Honglei, KingLight, HTP, etc.) unless the article explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "AProxy",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -776,6 +785,32 @@
     "funding_notes": "Series A announced Sept 2025; amount reported variously as SGD 10M / $7.4M / $7.76M across sources."
   },
   {
+    "name": "BioActivX",
+    "aliases": [
+      "BIOACTIVX PTE LTD",
+      "Bioactivx Pte Ltd (suzhou)",
+      "Bioactiv Matrix",
+      "Suzhou Bioactivx Medical Technology"
+    ],
+    "description": "BLOCK71 Suzhou-listed Singapore biotech startup (incorporated 2023; Suzhou ops via NUSRI translation institute; technical lead Dr Peili Teo — NUS / Caltech postdoc with Robert H. Grubbs) building Bioactiv™ Matrix synthetic-acellular wound dressings using bioactive polymers that link oligopeptides to synthetic backbones for accelerated wound healing, reduced scarring and lower infection risk. Drop unrelated 'bioactive' wound-care marketing news unless it names BioactivX.",
+    "funding_rounds": [
+      {
+        "date": "2025-11-11",
+        "stage": "Seed",
+        "amount": "US$1.4M",
+        "amount_usd": 1400000,
+        "lead_investors": [
+          "Cocoon Capital"
+        ],
+        "investors": [
+          "Cocoon Capital"
+        ],
+        "source": "https://beamstart.com/news/sg-biotech-startup-bioactivx-nets-17628411376784"
+      }
+    ],
+    "funding_notes": "BLOCK71 Suzhou / NUSRI portfolio (Singapore HQ). US$1.4M seed led by Cocoon Capital announced November 2025."
+  },
+  {
     "name": "BiocharCorp",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -952,6 +987,174 @@
       }
     ],
     "funding_notes": "Multiple seed rounds reported. Total funding reported variously as $2M to $4.12M depending on source. Won CNA's The Big Spark business reality show with SGD 4.15M led by Rigel-Farro Capital."
+  },
+  {
+    "name": "Chongqing AngLian Automobile Technology",
+    "aliases": [
+      "AngLian Automobile Technology",
+      "Chongqing Anglian Automobile Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese automotive-technology venture. Limited public-English information beyond the directory listing — drop unrelated Chinese auto parts / OEM news unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing ChuangXingSanWei Technology",
+    "aliases": [
+      "ChuangXingSanWei Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture (transliterated Mandarin name: 'ChuangXingSanWei' ≈ 'innovation 3D'). Limited public-English information beyond the directory listing — drop unrelated 'ChuangXing' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing FengKai Technology",
+    "aliases": [
+      "FengKai Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated 'FengKai' / 'Fengkai' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing Hengyan Technology",
+    "aliases": [
+      "Hengyan Technology",
+      "Chongqing Hengyan Technology Co Ltd Ltd"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Hengyan' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing JiYinZhiRui Technology",
+    "aliases": [
+      "JiYinZhiRui Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture (transliterated Mandarin: 'JiYinZhiRui' ≈ 'gene-smart-acute'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing Liaoyuanzhijian Technology",
+    "aliases": [
+      "Liaoyuanzhijian Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Liaoyuanzhijian' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing Lixing Biomaterial",
+    "aliases": [
+      "Lixing Biomaterial",
+      "Chongqing Lixing"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese biomaterial venture. Limited public-English information beyond the directory listing — drop unrelated 'Lixing' (common Chinese surname/transliteration) news unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing MaiKeTuo Technology",
+    "aliases": [
+      "MaiKeTuo Technology",
+      "Maiketuo Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture (transliterated Mandarin: 'MaiKeTuo'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing PanDaLa Technology",
+    "aliases": [
+      "PanDaLa Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture (transliterated Mandarin: 'PanDaLa'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing ShiWei Data Technology",
+    "aliases": [
+      "ShiWei Data Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese data-technology venture (transliterated Mandarin: 'ShiWei'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing ShuHeZhiTong Information Technology",
+    "aliases": [
+      "ShuHeZhiTong Information Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese information-technology venture. Limited public-English information beyond the directory listing — drop unrelated 'ShuHe' / 'ZhiTong' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing ShuWeiZhiLian Technology",
+    "aliases": [
+      "ShuWeiZhiLian Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture (transliterated Mandarin: 'ShuWeiZhiLian' ≈ 'digital-link-smart-connect'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing Unomove Technology",
+    "aliases": [
+      "Unomove",
+      "Chongqing Unomove"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese mobility/technology venture (related to the BLOCK71 Singapore-listed Unomove (Suzhou) Co Ltd group). Limited public-English information beyond the directory listing — drop unrelated 'Uno' / 'Unomove' brand mentions unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing XinGuYuChuang Technology",
+    "aliases": [
+      "XinGuYuChuang Technology",
+      "Chongqing Xinguyuchuang Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing XinZhiHongChuang Technology",
+    "aliases": [
+      "XinZhiHongChuang Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing XinZhuoYu Technology",
+    "aliases": [
+      "XinZhuoYu Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture (transliterated Mandarin: 'XinZhuoYu'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing YuZhiMiao Environmental Technology",
+    "aliases": [
+      "YuZhiMiao Environmental Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese environmental-technology venture. Limited public-English information beyond the directory listing — drop unrelated 'YuZhiMiao' transliterations and generic Chinese environmental-tech news unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Chongqing Zhihuishuoying Technology Development",
+    "aliases": [
+      "Zhihuishuoying Technology"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology-development venture. Limited public-English information beyond the directory listing — drop unrelated 'Zhihui' / 'Shuoying' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
   },
   {
     "name": "Circrete",
@@ -1158,6 +1361,15 @@
     "description": "NUS GRIP-incubated Singapore medical-tech startup (lymphatic). Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company developing LIPITRAP for lymphedema treatment. No publicly announced funding rounds found."
+  },
+  {
+    "name": "Dalan Membrane Technology",
+    "aliases": [
+      "Dalan Membrane Technology Co Ltd Ltd"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese membrane-technology venture (likely RO/NF/special-purpose membranes given the Suzhou industrial cluster). Limited public-English information beyond the directory listing — drop other Suzhou membrane firms (UltraClean, Feymer) unless the article explicitly references Dalan Membrane Technology.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
   },
   {
     "name": "DANA Indonesia",
@@ -1742,6 +1954,26 @@
     "funding_notes": "Two-wheeler blind-spot ML hardware. Publicly described as having raised pre-seed funding from NUS-GRIP; specific amount and date not disclosed."
   },
   {
+    "name": "Haobotics",
+    "aliases": [
+      "Haobotics Medical Technology (suzhou)",
+      "Suzhou Haobotics Technology Service Consulting Partnership",
+      "Suzhou Haobotic Business Management Consulting Partnership"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese medical-robotics venture (with two related LP holding/management partnerships also listed in the BLOCK71 directory — folded here as aliases). Limited public-English information beyond the directory listing — drop unrelated 'Hao' / 'robotics' brand news unless it explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
+  },
+  {
+    "name": "Haoyue Medical Technology",
+    "aliases": [
+      "Haoyue Medical Technology (suzhou)"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese medical-technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Haoyue' transliterations unless the article explicitly references this BLOCK71 Suzhou medtech entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
+  },
+  {
     "name": "Havari",
     "aliases": [],
     "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this BLOCK71 Jakarta entity.",
@@ -1868,6 +2100,16 @@
     "funding_notes": "BLOCK71 Guangzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "Huarundechuang Life Science",
+    "aliases": [
+      "Huarundechuang (jiangsu) Life Science",
+      "Huarundechuang"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese life-sciences venture (Jiangsu province). Limited public-English information beyond the directory listing — drop unrelated 'Huarun' (China Resources group) / 'dechuang' transliterations unless the article explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
+  },
+  {
     "name": "Hubtech.asia",
     "aliases": [
       "Hub Tech JSC"
@@ -1875,6 +2117,16 @@
     "description": "BLOCK71 Saigon-resident Vietnamese tech-ecosystem entity (HUB TECH JSC, HCMC). Limited public-English information distinguishing it from generic 'tech hub' / 'TechHub Asia' content — drop unrelated regional tech-hub commentary unless the article explicitly references the BLOCK71 Saigon Hubtech.asia entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Huidao Technology",
+    "aliases": [
+      "Suzhou Huidao Technology Co Ltd",
+      "Suzhou Huidao Enterprise Management Partnership"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese technology venture (with a related limited-partnership holding entity also listed in the BLOCK71 directory — folded here as an alias). Limited public-English information beyond the directory listing — drop unrelated 'Huidao' transliterations unless the article explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
   },
   {
     "name": "Hybrique",
@@ -1912,6 +2164,15 @@
     "description": "BLOCK71 Bandung-resident Indonesian enterprise-digitalisation consultancy/platform helping mid-market firms make data-driven decisions. Generic 'innovation ark' branding — drop unrelated 'Arc' / 'Ark' tech-brand news unless the article names this BLOCK71 Bandung entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Bandung portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Innofilm",
+    "aliases": [
+      "Innofilm (suzhou) Technology Co Ltd"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese membrane / thin-film technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Innofilm' branding (multiple Chinese / Korean optical-film makers share the name) unless the article explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
   },
   {
     "name": "insightic",
@@ -2443,6 +2704,16 @@
     "description": "BLOCK71 Jakarta-resident Indonesian healthtech startup. Limited public-English information beyond the directory listing — drop unrelated 'MyMedica' / 'My Medica' branding (other countries' health-portal apps) unless the article explicitly references this BLOCK71 Jakarta entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Nanjing Zilong Biotechnology",
+    "aliases": [
+      "Zilong Biotechnology",
+      "Nanjing Zilong"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese biotechnology venture (registered in Nanjing). Limited public-English information beyond the directory listing — drop unrelated 'Zilong' (common Chinese personal name / brand) news unless the article explicitly references this BLOCK71 Suzhou-listed biotech.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
   },
   {
     "name": "Nano Vietnam",
@@ -3047,6 +3318,15 @@
     "funding_notes": "NUS GRIP portfolio (electrochemistry wastewater treatment). No publicly-announced individual funding round with verifiable source found."
   },
   {
+    "name": "Rendeweichuang Biology Partner",
+    "aliases": [
+      "Rendeweichuang"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese biology venture (transliterated Mandarin name). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
+  },
+  {
     "name": "ReoMex Technologies",
     "aliases": [
       "ReoMex",
@@ -3172,6 +3452,15 @@
     "funding_notes": "NUS GRIP Run 3 portfolio company (visible light disinfection). No separately announced round with a verifiable source URL and disclosed amount."
   },
   {
+    "name": "Sanshiyitian Technology",
+    "aliases": [
+      "Sanshiyitian"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture (transliterated Mandarin: 'Sanshiyitian' ≈ 'thirty-one days'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
     "name": "Scent Analytics",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore scent-analytics startup. Drop unrelated companies sharing the same name.",
@@ -3282,6 +3571,15 @@
     "description": "BLOCK71 Saigon-resident Vietnamese startup (two-member limited investment company). Limited public-English information beyond the directory listing — drop unrelated 'she com' / women-empowerment-platform branding unless the article explicitly references this BLOCK71 Saigon entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "ShiKongDianGe Intelligent Technology",
+    "aliases": [
+      "ShiKongDianGe Intelligent Technology (Chongqing)"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese intelligent-technology venture (transliterated Mandarin: 'ShiKongDianGe' ≈ 'time-space-electric-grid'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
   },
   {
     "name": "SinGENE",
@@ -3542,6 +3840,53 @@
     "funding_notes": "BLOCK71 Social Impact Hub portfolio; Singapore Biomedtech Incubator co11ab member. Angel investments from Singapore tech-founder circle (PatSnap / Carousell)."
   },
   {
+    "name": "Suzhou Industrial Park Canyue Enterprise Management Partnership",
+    "aliases": [
+      "Canyue Enterprise Management Partnership"
+    ],
+    "description": "BLOCK71 Suzhou-listed Chinese limited-partnership investment / management vehicle (Suzhou Industrial Park). Not a venture-stage operating startup — drop generic SIP / industrial-park news unless the article explicitly references this Canyue LP vehicle.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou directory entry (LP / management partnership rather than an operating startup)."
+  },
+  {
+    "name": "Suzhou Industrial Park Hao Yuan Enterprise Management Partnership",
+    "aliases": [
+      "Hao Yuan Enterprise Management Partnership"
+    ],
+    "description": "BLOCK71 Suzhou-listed Chinese limited-partnership investment / management vehicle (Suzhou Industrial Park). Not a venture-stage operating startup — drop generic SIP / industrial-park news unless the article explicitly references this Hao Yuan LP vehicle.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou directory entry (LP / management partnership rather than an operating startup)."
+  },
+  {
+    "name": "Suzhou Mindel Biological Technology",
+    "aliases": [
+      "Mindel Biological Technology",
+      "Suzhou Mindel Biological Technology Co Ltd Ltd"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese biological-technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Mindel' / 'Mindelo' (Cabo Verde city) and other namesakes unless the article explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
+  },
+  {
+    "name": "Suzhou Shuqu Information Technology",
+    "aliases": [
+      "Shuqu Information Technology"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese information-technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Shuqu' (Chinese for 'numbers area') transliterations unless the article explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
+  },
+  {
+    "name": "Suzhou Sintelligent Electronic Technology",
+    "aliases": [
+      "Sintelligent Electronic Technology",
+      "Suzhou Sintelligent Electronic Technology Co Ltd Ltd"
+    ],
+    "description": "BLOCK71 Suzhou-resident Chinese intelligent-electronics venture. Limited public-English information beyond the directory listing — drop unrelated 'Sintelligent' branding (multiple unrelated firms share the portmanteau of 'sin'/'singapore' + 'intelligent') unless the article explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
+  },
+  {
     "name": "Synectify",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -3555,6 +3900,19 @@
     ],
     "funding_rounds": [],
     "funding_notes": "NUS GRIP spin-off (RootChain, later pivoted to renewable-energy-powered HPC). Crunchbase/PitchBook list Tech Planter, Shell StartUp Engine (2021 cohort 5), NUS GRIP, BLOCK71, and Solar Impulse as backers, but no specific publicly-announced funding round with date+amount+source found."
+  },
+  {
+    "name": "Taidii",
+    "aliases": [
+      "Taidii Pte Ltd",
+      "Taidii Information Technology",
+      "Taidii Information Technology#2 Co Ltd",
+      "Diibear",
+      "VAMS 4S"
+    ],
+    "description": "BLOCK71 Suzhou-listed Singapore preschool / childcare-school-management SaaS (HQ Singapore, Suzhou ops listed twice in directory — folded here) covering attendance, billing, e-enrollment, e-forms, finance, parent-school communication; >50% private-school market share in Singapore; ECDA-approved vendor; VAMS 4S sub-second attendance / temperature device; presence in Singapore, China (Suzhou), UAE, Australia and the Philippines. Drop generic 'taid' / 'tide' branding news unless it names Taidii.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou / Singapore portfolio. IMDA CTO-as-a-Service vendor; PSG-approved. Public priced equity round details not verified at time of writing."
   },
   {
     "name": "Tana Lab",
@@ -3640,6 +3998,15 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "Incorporated 2019 at NUS Enterprise Centre; ACRA status reported as struck off. No publicly-announced funding round located."
+  },
+  {
+    "name": "Ultrapower Eco Clean",
+    "aliases": [
+      "Ultrapower Eco Clean Pte"
+    ],
+    "description": "BLOCK71 Suzhou-listed Singapore cleantech / eco-clean venture. Limited public-English information beyond the directory listing — drop unrelated 'Ultrapower' brands (industrial-cleaner chemistries, EV chargers) unless the article explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
   },
   {
     "name": "UnoMove",
@@ -3887,6 +4254,15 @@
     "funding_notes": "NUS GRIP portfolio (diabetic-foot exfoliation safety device). No publicly-announced funding round located."
   },
   {
+    "name": "Xinzhiyuneng Technology",
+    "aliases": [
+      "Xinzhiyuneng (chongqing) Technology Co Ltd Ltd"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Xinzhi' / 'yuneng' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
     "name": "Yimiji Technology",
     "aliases": [
       "Yimiji",
@@ -3895,6 +4271,24 @@
     "description": "BLOCK71 Guangzhou / NUS GRTII-incubated Chinese medtech startup co-founded by Dr Zhou Jiayin, building AI-driven medical-image processing and analysis plus smart surgical-robotic technology to support diagnosis and treatment. Drop unrelated consumer/biology firms in Guangzhou sharing the 'Yi' prefix.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Guangzhou / NUS GRTII portfolio company. No publicly verifiable equity funding round announced beyond institute incubation support."
+  },
+  {
+    "name": "Zhimou Information",
+    "aliases": [
+      "Zhimou Information Pte"
+    ],
+    "description": "BLOCK71 Suzhou-resident Singapore-incorporated information-technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Zhimou' transliterations unless the article explicitly references this BLOCK71 Suzhou entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
+  },
+  {
+    "name": "Zhongchuangbo Technology",
+    "aliases": [
+      "Zhongchuangbo (chongqing) Technology Co Ltd Ltd"
+    ],
+    "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Zhongchuangbo' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
   },
   {
     "name": "Zoe Botanicals",
