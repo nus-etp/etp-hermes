@@ -18,7 +18,6 @@
 #   auth.json  — OAuth credentials (Nous Portal etc.); not needed with API-key auth
 #   sessions/  — runtime, ephemeral
 #   logs/      — runtime, secrets-redacted but still ephemeral
-#   cron/      — bypassed (we use `hermes -z` rather than the internal scheduler)
 
 set -euo pipefail
 
