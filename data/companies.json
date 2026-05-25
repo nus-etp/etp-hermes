@@ -564,6 +564,18 @@
     "funding_notes": "NUS GRIP Run 1 spin-off (Industrial AI / smart manufacturing), founded 2018. Tracxn indicates 1 institutional investor / 1 round but amounts undisclosed; no verifiable public source for amount or date."
   },
   {
+    "name": "Assist.id",
+    "aliases": [
+      "Assist",
+      "PT Teknologi Media Medika",
+      "Clinica by Assist.id",
+      "Privata by Assist.id"
+    ],
+    "description": "BLOCK71 Bandung-resident Indonesian healthtech startup (legal entity PT Teknologi Media Medika, est. 2019) building an electronic medical records / clinic management platform (registration, queues, EMR, drug inventory, POS, BPJS Kesehatan integration); 100+ staff, ~6,000+ healthcare facilities, ISO 27001 certified, SATUSEHAT-verified. Generic 'assist' word — drop unrelated personal-assistant / driver-assist app coverage.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung Innovation Factory tenant (Jl. Ir. H. Djuanda 108). No publicly verifiable equity funding round announced; growth funded via subscription revenue from 6,000+ clinics."
+  },
+  {
     "name": "Atlastream",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1040,6 +1052,17 @@
     "funding_notes": "NUS GRIP portfolio company developing LIPITRAP for lymphedema treatment. No publicly announced funding rounds found."
   },
   {
+    "name": "DANA Indonesia",
+    "aliases": [
+      "DANA",
+      "DANA Wallet",
+      "Dompet Digital Indonesia"
+    ],
+    "description": "BLOCK71 Bandung-listed Indonesian e-wallet operated by Elang Andalan Nusantara (a 2017 JV between Emtek and Ant Group's API Investment). ~200M registered users; Bank Indonesia-licensed for electronic money, digital wallet, remittance and digital financial services; bill-pay, paylater, QR payments, e-commerce checkout. Drop unrelated 'DANA' acronyms (Dynamic Adaptive Network Architecture, etc.).",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung-listed late-stage fintech (effectively part of the Ant International / Emtek group rather than a venture-stage independent). 20%+ YoY user growth 2023→2024. Track via Crunchbase 'DANA' profile and Ant International announcements."
+  },
+  {
     "name": "dConstruct Robotics",
     "aliases": [
       "dConstruct",
@@ -1080,11 +1103,30 @@
     "funding_notes": "Winner of 2019 PIER71 Smart Port Challenge; received MPA grant. Also received NUS GRIP support and ESG support per company About page. Tracxn/CBInsights list ~US$40K total raised."
   },
   {
+    "name": "Duluin",
+    "aliases": [
+      "Duluin Platform",
+      "Duluin.id"
+    ],
+    "description": "BLOCK71 Bandung-resident Indonesian fintech startup building an Earned Wage Access (EWA) platform plus blue-collar workforce management; named 'Startup of the Year' at the ASEAN Startup Innovation Weekend 2026 (Phnom Penh, April 2026). CEO Isa Nuruddin Ahmad. Generic Indonesian word — drop unrelated brand mentions unless they reference the BLOCK71 Bandung fintech.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung portfolio company; BNI Ventures Axel Arc program alumnus. Expansion plans into Vietnam and Cambodia announced May 2026. Public equity rounds not yet verified at time of writing."
+  },
+  {
     "name": "Ecobinder",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore battery-materials startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP Run 3 (Dec 2019) portfolio company. Eligible for up to S$100K seed from NUS GRIP, but no publicly verifiable funding round announcement found."
+  },
+  {
+    "name": "EcoMatcher",
+    "aliases": [
+      "EcoMatcher Limited"
+    ],
+    "description": "BLOCK71 Bandung-listed Hong Kong-headquartered B-Corp (founded 2016 by Bas Fransen) operating a blockchain-tracked tree-planting / forest-management platform — TreeCorder data-capture app, TreeManager cloud system, Verra/Gold Standard carbon-certified TREES+ projects (partnership with VNV Advisory). Corporate customers include Grab and Procter & Gamble; ~50,000 customers globally. Drop generic 'eco' / matching-engine mentions.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung-listed; B-Corp since 2018. Strategic partnership with VNV Advisory announced for TREES+ carbon-certified projects. No publicly verifiable equity funding round announced."
   },
   {
     "name": "EEA",
@@ -1106,6 +1148,13 @@
     "description": "NUS GRIP-incubated Singapore sensor-tech startup. Drop unrelated companies sharing the same name and any items where 'eigen' refers to eigenvalues/eigenvectors in physics or math.",
     "funding_rounds": [],
     "funding_notes": "No publicly verifiable funding round found in Crunchbase/Tracxn/news."
+  },
+  {
+    "name": "Elkopra",
+    "aliases": [],
+    "description": "BLOCK71 Bandung-resident Indonesian cooperative-management SaaS — accounting, POS, PPOB payments, savings-and-loans and fundraising modules built for Indonesian koperasi (cooperatives). Bandung-based (Jl. Kembar Mas II); not a logistics startup despite the name. Drop generic 'cooperative' news unless the article names Elkopra.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "EmaCare",
@@ -1561,6 +1610,27 @@
     "funding_notes": "AI-enabled e-Sourcing platform for electronics BOM. NUS GRIP portfolio listing; no other public funding rounds found."
   },
   {
+    "name": "Infinit Group",
+    "aliases": [
+      "Infinit Singapore",
+      "INFINIT GROUP PTE LTD",
+      "INFINIT GROUP"
+    ],
+    "description": "BLOCK71 Bandung-listed Singapore/Indonesia entity. Limited public-English information directly tying this BLOCK71 listing to a specific product — name collides with multiple unrelated 'Infinit-O' (PH BPO), 'INFINITIGROUP' (Indonesia industry-4.0 automation) and 'Infinitium' (payments) businesses; drop unless the article clearly identifies the BLOCK71 Bandung-affiliated Infinit Group.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung portfolio entry. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "InnoArk",
+    "aliases": [
+      "Pt Innoark Servis Internasional",
+      "PT Innoark"
+    ],
+    "description": "BLOCK71 Bandung-resident Indonesian enterprise-digitalisation consultancy/platform helping mid-market firms make data-driven decisions. Generic 'innovation ark' branding — drop unrelated 'Arc' / 'Ark' tech-brand news unless the article names this BLOCK71 Bandung entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "insightic",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1621,6 +1691,27 @@
     "description": "BLOCK71 Guangzhou-listed startup. Limited public-English information available beyond the directory listing — drop unrelated 'Just' / legal-tech / consumer-brand mentions unless the article explicitly ties to BLOCK71 Guangzhou or NUS GRTII context.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Guangzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Karla Bionics",
+    "aliases": [
+      "KARLA BIONICS",
+      "Karla",
+      "K22BP"
+    ],
+    "description": "BLOCK71 Bandung-resident Indonesian medtech startup spun out of Institut Teknologi Bandung (ITB) building affordable 3D-printed body-powered upper-limb prostheses (K22BP, whippletree-mechanism gripper) using locally-sourced ABS/rope/glove materials at <2.5M IDR price points for BPJS holders. Third-place finisher in CYBATHLON 2022 Arm Prosthesis Race; also competed CYBATHLON 2023.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung portfolio company; ITB spin-off. No publicly verifiable equity funding round announced beyond BLOCK71 / ITB incubation support."
+  },
+  {
+    "name": "Karlo",
+    "aliases": [
+      "Karlo.id",
+      "PT Star Karlo Indonesia"
+    ],
+    "description": "BLOCK71 Bandung-listed Indonesian logistics-tech platform (HQ Jakarta, office in Bandung) connecting shippers, transporters and drivers; 3,000+ fleets reported on the platform. Drop generic 'Karlo' brand mentions (it's a common name) unless the article references the Indonesian logistics platform.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung portfolio company; Startup4Industry alumnus. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Keptan",
@@ -1755,6 +1846,17 @@
     "funding_notes": "NUS GRIP Run 5 (June 2021) participant — indoor positioning/footfall analytics for shopping malls. No publicly-announced venture funding round found."
   },
   {
+    "name": "Mapid",
+    "aliases": [
+      "MAPID",
+      "PT Multi Areal Planing Indonesia",
+      "GEO MAPID"
+    ],
+    "description": "BLOCK71 Bandung-resident Indonesian geospatial-intelligence startup (PT Multi Areal Planing Indonesia, led by Bagus Imam Darmawan) building GEO MAPID — a cloud GIS platform for collecting, managing, visualizing and analysing geospatial data, plus a community/competition layer for non-GIS-experts. Finalist of Making Indonesia 4.0 Startup4Industry (2018). Drop generic 'map ID' / map-API mentions.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / Startup4Industry incubation support."
+  },
+  {
     "name": "Marino Solar",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore solar-tech startup. Drop unrelated companies sharing the same name.",
@@ -1887,6 +1989,19 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS spin-off — automated singing-quality assessment platform — funded by NUS GRIP programme support. No publicly-announced external venture round found."
+  },
+  {
+    "name": "Mycotech",
+    "aliases": [
+      "MYCL",
+      "Mycotech Lab",
+      "Mycotech Pte Ltd",
+      "Mylea",
+      "BIOBO"
+    ],
+    "description": "BLOCK71 Bandung-resident Indonesian biomaterials startup (founded 2015 by Adi Reza Nugroho and four co-founders, ITB-linked) using mycelium as a bio-adhesive to convert agricultural waste (cassava starch, corn bark, bagasse) into BIOBO interior boards and Mylea mycelium-leather for fashion and footwear. B-Corp since 2019. Solar Impulse Efficient Solution. Drop generic 'mycelium' / mushroom-cultivation articles unless they name MYCL.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Bandung portfolio; Solar Impulse World Alliance member. No publicly verifiable equity funding round announced (revenue-funded with grant support)."
   },
   {
     "name": "nbrane",
@@ -2162,6 +2277,37 @@
     "funding_notes": "NUS GRIP Run 9 (2023) participant developing RNA sequencing platform Picoception. No publicly-announced individual funding round with verifiable source found."
   },
   {
+    "name": "Pinhome",
+    "aliases": [
+      "PinHome",
+      "Pinhome Home Service",
+      "PHS"
+    ],
+    "description": "BLOCK71 Bandung-listed Indonesian end-to-end proptech (founded January 2020 by ex-Gojek execs Dayu Dara Permata and Ahmed Aljunied): home search, transactions, conventional + sharia mortgage and refinancing, plus PinHome Home Service for cleaning, car wash and home maintenance. 1M+ housing inventories, 20+ banking partners. Generic 'pin home' wording — drop unrelated Pinterest / home-decor mentions.",
+    "funding_rounds": [
+      {
+        "date": "2022-04-22",
+        "stage": "Series B",
+        "amount": "US$50M",
+        "amount_usd": 50000000,
+        "lead_investors": [
+          "Goodwater Capital"
+        ],
+        "investors": [
+          "Goodwater Capital",
+          "Intudo Ventures",
+          "Ribbit Capital",
+          "Eurazeo Smart City",
+          "Insignia Ventures Partners",
+          "Watiga Trust",
+          "Global Founders Capital"
+        ],
+        "source": "https://aimgroup.com/2022/04/22/indonesia-based-proptech-pinhome-raises-50m/"
+      }
+    ],
+    "funding_notes": "BLOCK71 Bandung-listed; led by ex-Gojek operators. Series B closed April 2022; subsequent rounds not verified in open sources at time of writing."
+  },
+  {
     "name": "polybee",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
@@ -2291,6 +2437,42 @@
       }
     ],
     "funding_notes": "Total reported funding >US$80M (TechCrunch, 2025). Headcount ~300 across Singapore, India and Indonesia. BLOCK71 Silicon Valley-listed."
+  },
+  {
+    "name": "Qarbotech",
+    "aliases": [
+      "QarboGrow"
+    ],
+    "description": "BLOCK71 Bandung-listed Malaysian agritech startup (founded 2018) commercialising a patented carbon-quantum-dot photosynthesis enhancer (QarboGrow) — an on-plant / in-soil biocompatible formulation that mimics chlorophyll and boosts crop yields by up to ~60%. 100,000 L/month QarboGrow production capacity. Expanding from Malaysia into Indonesia, Thailand, Vietnam. Drop generic 'carbon' / 'cleantech' news unless it names Qarbotech.",
+    "funding_rounds": [
+      {
+        "date": "2023-12-04",
+        "stage": "Seed",
+        "amount": "US$700K",
+        "amount_usd": 700000,
+        "lead_investors": [
+          "500 Global"
+        ],
+        "investors": [
+          "500 Global",
+          "Temasek Foundation (grant)",
+          "Khazanah Nasional Dana Impak (grant)"
+        ],
+        "source": "https://technode.global/2023/12/04/malaysian-agritech-startup-qarbotech-lands-700000-seed-funding/"
+      },
+      {
+        "date": "2024-12-01",
+        "stage": "Seed extension",
+        "amount": "US$1.5M",
+        "amount_usd": 1500000,
+        "lead_investors": [],
+        "investors": [
+          "EQT Foundation"
+        ],
+        "source": "https://www.digitalnewsasia.com/startups/agritech-startup-qarbotech-secures-us15mil-seed-extension-round"
+      }
+    ],
+    "funding_notes": "BLOCK71 Bandung-listed; backed by 500 Global, EQT Foundation, Temasek Foundation grant (Climate Impact Innovations Challenge 2023) and Khazanah Dana Impak grant. Expansion plans across SEA."
   },
   {
     "name": "QSIGNAGE",
@@ -2538,6 +2720,13 @@
       }
     ],
     "funding_notes": "Series A announcement corroborated by 36Kr and Hortidaily. Series A date 2025-10-15 per 36Kr; AgFunderNews article published 2025-08-18."
+  },
+  {
+    "name": "Skuling",
+    "aliases": [],
+    "description": "BLOCK71 Yogyakarta-resident Indonesian edutech startup building a gamified web learning platform — leaderboards, social discussion, performance analytics — targeting Indonesian primary/secondary education accessibility and engagement gaps. ~110,000 users across 502 of 514 Indonesian cities. Founded by Yudha Pratama Situmorang (Boston University Questrom MBA'24); 2024 Poets & Quants Most Disruptive MBA Startup. Drop generic 'schooling' / education-tech mentions.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Yogyakarta portfolio company. ~US$100K raised to date; no major equity round disclosed."
   },
   {
     "name": "SkyTrek",
