@@ -10,6 +10,13 @@
 .hermes-local/
 .hermes-state.zip
 
+# evals — local venv, pytest cache, and the editable-install egg-info
+# that `uv pip install -e .[dev]` drops at the repo root
+/.venv/
+.pytest_cache/
+__pycache__/
+*.egg-info/
+
 # preflight (scripts/preflight-feeds.py) outputs — derived state, GHA cache is source of truth
 data/feed-cache.json
 data/changed-sources.json

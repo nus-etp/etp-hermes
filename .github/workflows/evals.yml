@@ -1,0 +1,88 @@
+name: evals
+
+# Static + script suites run on every PR that touches the pipeline. The LLM
+# suite is opt-in: nightly cron at 12:30 UTC (before hermes-sync's 13:00 cron)
+# and manual dispatch. The LLM suite never blocks PR CI.
+
+on:
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'prompts/**'
+      - 'scripts/**'
+      - 'signals/briefs/**'
+      - 'tests/**'
+      - 'pyproject.toml'
+      - '.github/workflows/evals.yml'
+  schedule:
+    - cron: '30 12 * * *'        # 12:30 UTC daily, ahead of hermes-sync at 13:00
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: 'Which suite to run: all | static | scripts | llm'
+        required: false
+        default: 'all'
+
+permissions:
+  contents: read
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Deterministic suites: static schema + script unit tests. Always run on PR.
+  # ---------------------------------------------------------------------------
+  fast:
+    if: github.event_name != 'schedule' || github.event.inputs.suite == 'static' || github.event.inputs.suite == 'scripts' || github.event.inputs.suite == 'all' || github.event.inputs.suite == ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python and install dev deps
+        run: |
+          uv venv
+          uv pip install -e ".[dev]"
+
+      - name: Run static suite
+        if: github.event.inputs.suite == '' || github.event.inputs.suite == 'static' || github.event.inputs.suite == 'all' || github.event_name == 'pull_request'
+        run: .venv/bin/pytest tests/static -q
+
+      - name: Run scripts suite
+        if: github.event.inputs.suite == '' || github.event.inputs.suite == 'scripts' || github.event.inputs.suite == 'all' || github.event_name == 'pull_request'
+        run: .venv/bin/pytest tests/scripts -q
+
+  # ---------------------------------------------------------------------------
+  # LLM suite: nightly cron + opt-in workflow_dispatch. Never runs on PR.
+  # ---------------------------------------------------------------------------
+  llm:
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && (github.event.inputs.suite == 'llm' || github.event.inputs.suite == 'all'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write   # to open a tracking issue on eval regression
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python and install dev deps
+        run: |
+          uv venv
+          uv pip install -e ".[dev]"
+
+      - name: Run LLM eval suite
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        # Skip the batch_runner integration eval in CI (HERMES_BATCH_EVAL unset);
+        # it requires the local hermes install on the runner.
+        run: .venv/bin/pytest tests/evals -q -m llm --tb=short
+
+      - name: Open tracking issue on failure
+        if: failure() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "Nightly LLM eval failed ($(date -u +%F))" \
+            --body "The scheduled \`evals.yml\` LLM suite failed. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --label "eval-regression" || true

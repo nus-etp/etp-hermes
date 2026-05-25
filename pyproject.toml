@@ -1,0 +1,28 @@
+[project]
+name = "etp-hermes-evals"
+version = "0.0.0"
+description = "Evals and tests for the etp-hermes daily pipeline."
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# This is a tests-only project; no importable package ships from the repo root.
+packages = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "llm: end-to-end LLM behaviour eval (slow, requires DEEPSEEK_API_KEY)",
+]
+filterwarnings = [
+    "error",
+]
