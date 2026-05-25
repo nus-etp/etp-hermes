@@ -501,6 +501,13 @@
     "funding_notes": "NUS GRIP portfolio company (AI for wastewater treatment optimization); likely received NUS GRIP seed grant (~SGD 250K) but no public equity round announced."
   },
   {
+    "name": "Akar",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — 'Akar' (Indonesian for 'root') is a very generic word; drop unrelated namesakes (botanical / restaurants / NGOs) unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Akesis Biologics",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -528,6 +535,13 @@
       }
     ],
     "funding_notes": "NUS GRIP spin-off (Aleph Digital Technologies); AI-driven digital twin platform for process manufacturing."
+  },
+  {
+    "name": "AlgaeID",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian algae-biotech startup. Limited public-English information beyond the directory listing — drop unrelated Indonesian algae players (Albitec, Bio Algae International, Algaepark, Greenlabs) unless the article explicitly references AlgaeID / BLOCK71 Jakarta.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Algno",
@@ -621,6 +635,15 @@
     "description": "BLOCK71 Social Impact Hub-listed Indonesian AR / 3D-content platform (HQ Bandung, SG offices at CT HUB2 and 336 Smith St) with Assemblr EDU for K-12 STEM AR experiences; 11,500+ teachers trained via the Assemblr Certified Trainer programme; joined the NUS Enterprise × raiSE Technology for Sustainable Social Impact (TS2) cohort. Drop generic 'assembler' / IKEA-style assembly news unless it names this AR platform.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub / TS2 cohort company. Public equity rounds not verified at time of writing."
+  },
+  {
+    "name": "Assist Jkt",
+    "aliases": [
+      "Assist Jakarta"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — likely related to the broader 'Assist' product family but operating in a distinct Jakarta-localised scope; drop generic 'assist' / personal-assistant mentions unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Assist.id",
@@ -1159,6 +1182,13 @@
     "funding_notes": "BLOCK71 Silicon Valley portfolio (Singapore HQ). NRP RoboNexus participant. No publicly verifiable equity funding round announced; Foxconn collaboration is a manufacturing MOU, not an equity event."
   },
   {
+    "name": "Digitala",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian digital-services startup. Limited public-English information beyond the directory listing — drop unrelated 'Digitala' brands (Italian digital agency, Filipino bookings firm, etc.) unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "DolphinLink",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1464,6 +1494,13 @@
     "funding_notes": "NUS GRIP portfolio company (smell-sensing tech for flavour/fragrance QC). No publicly announced funding round found."
   },
   {
+    "name": "Food Sustainesia",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian sustainable-food-systems community / educational venture (founded 2018 by five co-founders) — programs around waste reduction, sustainable sourcing, local food, fair trade and home growing. Not a typical VC-backed food-waste startup — drop other Indonesian food-waste players (Surplus, FoodCycle, BIKI) unless the article specifically references Food Sustainesia.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company / community-focused initiative. No publicly verifiable equity funding round announced."
+  },
+  {
     "name": "Forte Biotech",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
@@ -1520,6 +1557,15 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable priced equity funding round announced beyond BLOCK71 / national startup-competition support."
   },
   {
+    "name": "Gelora",
+    "aliases": [
+      "Pt Gelora Raga Nusantara"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian sports-tech / fitness venture (operating entity PT Gelora Raga Nusantara). Limited public-English information beyond the directory listing — 'Gelora' (Indonesian for 'roar' / 'spirit') collides with countless unrelated brands (sports stadiums, political parties, etc.); drop unless the article explicitly references PT Gelora Raga Nusantara.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "GenVoice",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore voice-tech startup. Drop items where 'gen voice' is incidental phrasing ('next-gen voice', 'generation voice', etc.) rather than the company name.",
@@ -1534,6 +1580,18 @@
     "funding_notes": "NUS GRIP portfolio company (geotechnical real-time seawall monitoring). No publicly announced funding round found beyond GRIP programme support."
   },
   {
+    "name": "GoMobile",
+    "aliases": [
+      "Gomobile",
+      "Go Mobile Indonesia",
+      "PT Solusi Media Selular",
+      "GoNET"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian mobile-marketing programmatic platform (HQ South Jakarta, Sampoerna Strategic Square) operating the GoNET DSP for in-app and web media buying with hyper-segmented targeting across SEA/NA/EU traffic sources; predictive LTV scoring for ad-spend optimisation. Distinct from 'Go Mobile by CIMB Niaga' (the bank's app); drop generic mobile-marketing news unless it names this entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Goodwhale",
     "aliases": [
       "GoodWhale",
@@ -1542,6 +1600,17 @@
     "description": "BLOCK71 Social Impact Hub-resident Singapore B-Corp-certified fintech startup running a personalised investing-health platform for new retail investors — goal setting, portfolio coaching, sustainable / values-aligned investing tools. Drop pet/animal-care 'whale' brands or shipping news unless the article references the investing-health platform.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio; Certified B-Corp. Public equity rounds not verified at time of writing."
+  },
+  {
+    "name": "Goritax",
+    "aliases": [
+      "GORITax",
+      "PT Goritax Prospera Indonesia",
+      "GORI-TAX"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian back-office services startup (founded 2019 by Anton Irawan and Shinta Purnomo) providing tax compliance, bookkeeping, corporate-secretarial, business-permit and HR-payroll services for SMEs and market-entry clients; ~200+ customers, claims 90% back-office cost saving vs in-house teams. Drop unrelated 'Gori' / generic-tax-consultancy news.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable priced equity funding round announced at time of writing."
   },
   {
     "name": "GranuSmart",
@@ -1671,6 +1740,13 @@
       }
     ],
     "funding_notes": "Two-wheeler blind-spot ML hardware. Publicly described as having raised pre-seed funding from NUS-GRIP; specific amount and date not disclosed."
+  },
+  {
+    "name": "Havari",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Heseed",
@@ -1808,6 +1884,15 @@
     "funding_notes": "AI-enabled e-Sourcing platform for electronics BOM. NUS GRIP portfolio listing; no other public funding rounds found."
   },
   {
+    "name": "Iklanmu.id",
+    "aliases": [
+      "Iklanmu"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian advertising-tech / classifieds platform ('Iklanmu' literally 'your ad' in Indonesian). Limited public-English information beyond the directory listing — drop coverage of the dominant Indonesian ad-tech players (TADEX/Telkomsel, Adsmart/detikcom) unless the article explicitly references Iklanmu.id.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Infinit Group",
     "aliases": [
       "Infinit Singapore",
@@ -1912,6 +1997,15 @@
     "funding_notes": "BLOCK71 Bandung portfolio company; Startup4Industry alumnus. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "Kataliz AI",
+    "aliases": [
+      "KatalizAI"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian AI startup. Limited public-English information beyond the directory listing — 'Kataliz' (Indonesian variant of 'catalyst') is a generic name; drop AI-catalyst / AI-accelerator brand mentions unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Keptan",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1941,6 +2035,17 @@
     "funding_notes": "NUS GRIP spin-off (founded 2019) in environmental waste remediation. Partnered with NSL Chemicals on a three-year NEA Closing the Waste Loop project; specific grant amount/date not publicly disclosed."
   },
   {
+    "name": "KliknKlin",
+    "aliases": [
+      "Kliknklin",
+      "PT KliknKlin Digital Nusantara",
+      "LaundryKlin"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian on-demand laundry marketplace (founders incl. CEO Raka Destama, Co-CTO Irfan Fadhila) offering 48-hour turnaround, no-extra-fee pickup/delivery across Jakarta, Bogor, Depok, Tangerang, Bekasi, Bandung, Surabaya, Semarang; spun out a LaundryKlin franchise sister-brand for outlet operators. Drop generic 'click and clean' / cleaning-service news.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable priced equity funding round announced at time of writing."
+  },
+  {
     "name": "lalia",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1954,6 +2059,20 @@
     ],
     "funding_rounds": [],
     "funding_notes": "Culture-aware English learning platform (NUS GRIP portfolio). Crunchbase profile exists but no funding round details surfaced."
+  },
+  {
+    "name": "Lallita Jyoti",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — Sanskrit-rooted name suggests a wellness/lifestyle product; drop unrelated namesakes unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Lapan",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian startup. CRITICAL: 'LAPAN' is the historic name of Indonesia's national aeronautics and space agency (Lembaga Penerbangan dan Antariksa Nasional, dissolved 2021 and folded into BRIN) — almost all 'Lapan' news refers to the space agency, not this startup. Drop unless the article explicitly references the BLOCK71 Jakarta entity (not the space agency / BRIN successor / satellite programme).",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Let's Celebrate",
@@ -1999,6 +2118,17 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from the Lincore welding-consumables brand or any other unrelated company sharing this name.",
     "funding_rounds": [],
     "funding_notes": "NUS spin-off in Li-ion battery recycling. Selected for Breakthrough Energy Fellows SEA 2024 and 2025 cohorts (technical support / non-equity fellowship). No publicly-announced priced funding round found. See https://www.eco-business.com/news/as-lithium-reserves-dwindle-singapore-ev-battery-recycling-startup-aims-to-plug-supply-gap/"
+  },
+  {
+    "name": "LittleLives",
+    "aliases": [
+      "Little",
+      "Littlelives",
+      "LITTLELIVES INC PTE LTD"
+    ],
+    "description": "BLOCK71 Jakarta-listed Singapore preschool SaaS (founded 2011 by Sun Ho, NUS Computing alumna) running a holistic school-management system for early-childhood centres — attendance, time-in/out, temperature/height/weight, child portfolios, log books, fees, parent communication; ~1,000 schools across Singapore, Malaysia, China, Vietnam, Cambodia; MOE/ECDA-accredited, AECES Top Preschool Software. Made strategic acquisition of Illume Technology. Drop generic 'small / little lives' branding unless it names this entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio (Singapore HQ); Enterprise Singapore featured story. Public priced equity round details not verified at time of writing."
   },
   {
     "name": "M.I.Cloud Technologies",
@@ -2066,6 +2196,13 @@
       }
     ],
     "funding_notes": "Combined SGD 200K NUS GRIP/Origgin investment and a SGD 500K Startup SG Tech Grant. Dates approximate (announcement in 2021)."
+  },
+  {
+    "name": "MakeIt",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — generic 'make it' brand collides with many unrelated services; drop unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Mall Nautics",
@@ -2301,6 +2438,13 @@
     "funding_notes": "BLOCK71 Bandung portfolio; Solar Impulse World Alliance member. No publicly verifiable equity funding round announced (revenue-funded with grant support)."
   },
   {
+    "name": "MyMedica",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian healthtech startup. Limited public-English information beyond the directory listing — drop unrelated 'MyMedica' / 'My Medica' branding (other countries' health-portal apps) unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Nano Vietnam",
     "aliases": [
       "Công Ty Tnhh Dịch Vụ Công Nghệ Nano Vietnam Ltd"
@@ -2420,6 +2564,13 @@
       }
     ],
     "funding_notes": "Received SGD 50K first-tranche GRIP seed funding (one of 15 teams sharing NUS' SGD 1.5M GRIP allocation announced in 2019). Eligible for SGD 50K second tranche subject to external match."
+  },
+  {
+    "name": "Nobi Project",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — drop unrelated 'Nobi' brands (Belgian crypto firm, Japanese consumer apps) unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "NodeSeer",
@@ -2552,6 +2703,16 @@
     "description": "BLOCK71 Saigon-resident enterprise-SaaS startup (founded 2018 in Vancouver by Lucas Cunha and Nhat Nguyen; HQ Vancouver / ops Saigon) automating collection, storage and transfer of certification data across the F&B supply chain using NLP + OCR. Techstars-introduced to Cargill (which ran a 2020 supplier food-safety pilot). Drop generic 'food traceability' / 'supplier compliance' vendor news unless it names Otrafy.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio; Techstars alumnus. Backed by Mind Fund and Forward Fooding's FoodTech 500 (2020). Public priced equity round not verified at time of writing."
+  },
+  {
+    "name": "paperlesshospital.id",
+    "aliases": [
+      "Paperless Hospital",
+      "PaperlessHospital"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian healthtech startup digitising hospital records / paperless clinical workflows. Limited public-English information beyond the directory listing — drop generic 'paperless / EMR' vendor news unless it explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "PharLyfe+",
@@ -2719,6 +2880,22 @@
     "funding_notes": "NUS GRIP portfolio (cultivated meat cell priming tech). No publicly-announced individual funding round with verifiable source found."
   },
   {
+    "name": "Priztinz",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Progate",
+    "aliases": [
+      "Progate Inc"
+    ],
+    "description": "BLOCK71 Jakarta-listed Tokyo-headquartered online coding-education / bootcamp startup (founded September 2014) — slide-based interactive learning across 14+ programming languages and frameworks, 60+ lessons, 800+ exercises; 2.8M+ users globally; backed by East Ventures for SEA expansion (India, Singapore, Malaysia, Indonesia, Philippines). Drop unrelated 'pro gate' / 'pro-grade' branding news.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio (Tokyo HQ); East Ventures-backed SEA expansion. Public priced equity round details for SEA entity not verified at time of writing."
+  },
+  {
     "name": "ProlegoMiR",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore oncology-tech startup. Drop unrelated companies sharing the same name.",
@@ -2734,6 +2911,44 @@
     "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "Listed in NUS GRIP portfolio but no publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "PT Laut Biru Seafood",
+    "aliases": [
+      "Laut Biru Seafood"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian seafood-supply venture. Limited public-English information beyond the directory listing — drop unrelated 'Laut Biru' (Indonesian for 'blue sea') brand mentions unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "PT Pemrakarsa Murni Teknologi",
+    "aliases": [
+      "Pemrakarsa Murni Teknologi",
+      "Pt Pemrakarsa Murni Teknologi"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian technology startup (legal name). Limited public-English information beyond the directory listing — drop unrelated 'Pemrakarsa' branded mentions unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "PT Roti Indonesia Satu",
+    "aliases": [
+      "Roti Indonesia Satu",
+      "Roti Satu"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian foodtech / bakery startup (legal name PT Roti Indonesia Satu, 'one bread of Indonesia'). Limited public-English information beyond the directory listing — drop generic Indonesian bakery / 'roti' news unless the article explicitly references PT Roti Indonesia Satu.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "PT Teknologi Konstruksi Indonesia",
+    "aliases": [
+      "Teknologi Konstruksi Indonesia"
+    ],
+    "description": "BLOCK71 Jakarta-resident Indonesian construction-tech startup. Limited public-English information beyond the directory listing — drop generic Indonesian construction / contech news unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Puruon Technology",
@@ -2943,6 +3158,13 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. Public priced equity round not verified at time of writing."
   },
   {
+    "name": "Saba",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — 'Saba' is generic (could be Arabic, banana variety, surnames, multiple unrelated firms); drop unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "SafeLight",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -2985,6 +3207,13 @@
     ],
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (haptic feedback for the Metaverse). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "Secha Home",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian home/lifestyle venture. Limited public-English information beyond the directory listing — drop unrelated 'Secha' / 'home' branding mentions unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "See Your Voice",
@@ -3259,6 +3488,34 @@
     "funding_notes": "NUS GRIP portfolio company developing mid-infrared multi-gas detector (SPOT 3000). No publicly-announced funding round with verifiable date/amount/source found."
   },
   {
+    "name": "StaffAny",
+    "aliases": [
+      "Staffany",
+      "Staffany Private Limited"
+    ],
+    "description": "BLOCK71 Jakarta-listed Singapore HR-tech startup (founded by four NUS alumni) running a workforce-management app for hourly workers in F&B / retail — drag-and-drop rostering, time tracking, availability, payroll/accounting integration. ~100K+ shifts and ~700K hours tracked at the S$1M seed milestone; lead investor FreakOut Holdings; angels include ex-Zopim founders Lim Qing Ru, Kwok Yang Bin and Royston Tay plus Kenji Niwa.",
+    "funding_rounds": [
+      {
+        "date": "2020-08-01",
+        "stage": "Seed",
+        "amount": "S$1M",
+        "amount_usd": 729000,
+        "lead_investors": [
+          "FreakOut Holdings"
+        ],
+        "investors": [
+          "FreakOut Holdings",
+          "Kenji Niwa",
+          "Lim Qing Ru",
+          "Kwok Yang Bin",
+          "Royston Tay"
+        ],
+        "source": "https://vulcanpost.com/672619/staffany-singapore-seed-funding/"
+      }
+    ],
+    "funding_notes": "BLOCK71 Jakarta portfolio (Singapore HQ); seed amount was S$1M (~US$729K) led by FreakOut Holdings (2020). Subsequent rounds not verified in open sources."
+  },
+  {
     "name": "Stratificare",
     "aliases": [
       "StratifiCare"
@@ -3298,6 +3555,13 @@
     ],
     "funding_rounds": [],
     "funding_notes": "NUS GRIP spin-off (RootChain, later pivoted to renewable-energy-powered HPC). Crunchbase/PitchBook list Tech Planter, Shell StartUp Engine (2021 cohort 5), NUS GRIP, BLOCK71, and Solar Impulse as backers, but no specific publicly-announced funding round with date+amount+source found."
+  },
+  {
+    "name": "Tana Lab",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian agritech / land-tech startup ('tana' from 'tanah' = 'soil/land' in Indonesian). Limited public-English information beyond the directory listing — drop unrelated 'TANA Lab' (Finnish heavy-equipment), 'Tana' (DAO) and other unrelated namesakes unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "TANNGENT",
@@ -3411,6 +3675,13 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "Venambak",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Verazt Security",
     "aliases": [
       "Verazt"
@@ -3418,6 +3689,13 @@
     "description": "NUS GRIP-incubated Singapore cybersecurity startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP blockchain smart-contract security startup (founded 2022, based at NUS COM3). No publicly-announced funding round located."
+  },
+  {
+    "name": "Videfly",
+    "aliases": [],
+    "description": "BLOCK71 Jakarta-resident Indonesian video-creation / video-marketing startup. Limited public-English information beyond the directory listing — drop unrelated 'Videfly' / 'videfly.com' brand mentions unless the article explicitly references this BLOCK71 Jakarta entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Village Ventures",
@@ -3544,6 +3822,18 @@
     "description": "NUS GRIP-incubated Singapore waste-management tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio (WasteBoard recycling-bin computer-vision device). No publicly-announced funding round located."
+  },
+  {
+    "name": "WateRoam",
+    "aliases": [
+      "Wateroam",
+      "Wateroam Pte Ltd",
+      "ROAMfilter",
+      "ROAMfilter Plus"
+    ],
+    "description": "BLOCK71 Jakarta-listed Singapore social-enterprise deep-tech / cleantech startup (founded 2014 by NUS students David Pong, Vincent Loka and Lim Chong Tee, out of the PUB × NUS Enterprise Hydropreneur accelerator) building portable ROAMfilter / ROAMfilter Plus low-pressure water-filter units (250+ L/h) for disaster-relief and rural-development deployments. 300+ units deployed within two weeks of the 2025 Myanmar earthquake; clients include Singapore Red Cross, Mercy Relief, WHO Laos, PUB, NUS Office of Global Health.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Jakarta portfolio (Singapore HQ); NUS Enterprise startup-story alumnus. Public priced equity round details not verified at time of writing."
   },
   {
     "name": "WAVEBOOST",
