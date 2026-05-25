@@ -10,7 +10,7 @@ Stay strictly within Layer 4: only write `signals/briefs/<slug>/infographic.png`
 
 ## Task
 
-Living briefs are markdown. Readers skim them on GitHub. A per-brief infographic, regenerated on every content change, gives the at-a-glance view that prose can't. The skill we use (`skills/creative/baoyu-infographic`, bundled with Hermes — already available at runtime) takes the brief markdown and renders a structured visual using `image_generate`. The hard part is determining *which* briefs to redraw without burning budget on no-ops: Layer 3 already enforces a byte-identity no-write check, so we trust the filesystem and treat any brief whose working-tree state differs from `HEAD` as freshly changed.
+For every brief Layer 3 just created or modified, regenerate `infographic.png` next to it via the bundled `creative-baoyu-infographic` skill. Use the working-tree-vs-`HEAD` diff to detect what changed (Layer 3's no-write check guarantees only real content edits show up).
 
 ## Inputs
 
@@ -19,8 +19,8 @@ Living briefs are markdown. Readers skim them on GitHub. A per-brief infographic
 
 ## Constants
 
-- **Per-run cap**: 8 infographics. Typical days touch 0–3 briefs; the cap is a safety valve against runaway costs on a big news day. Excess slugs are skipped (recoverable on the next change).
-- **Skill knobs**: layout `bento-grid`, style `craft-handmade`, aspect ratio `landscape`, language `en`. Use these every time — do not vary per brief.
+- **Per-run cap**: 8 infographics. Excess slugs are skipped (recoverable next change).
+- **Skill knobs**: layout `bento-grid`, style `craft-handmade`, aspect `landscape`, language `en`. Same every time.
 
 ## Steps
 
@@ -38,7 +38,7 @@ Living briefs are markdown. Readers skim them on GitHub. A per-brief infographic
      | sed -E 's,^signals/briefs/([^/]+)/.*,\1,' | sort -u
    ```
 
-   The first catches modifications to existing briefs; the second catches first-time creates that aren't yet tracked. Union and sort. Let the result be `CHANGED_SLUGS` (sorted, unique).
+   First catches modifications; second catches untracked creates. Union, sort, dedupe → `CHANGED_SLUGS`.
 
 3. **If `CHANGED_SLUGS` is empty**, write nothing and exit with stdout `no briefs changed today`.
 
@@ -48,30 +48,30 @@ Living briefs are markdown. Readers skim them on GitHub. A per-brief infographic
 
    a. Read `signals/briefs/<slug>/LIVING_BRIEF.md` into a string `brief_md`.
 
-   b. Invoke the `creative-baoyu-infographic` skill on `brief_md`. Phrase the request so the skill matches its trigger keywords (e.g. "create an infographic"), and pass the four knobs above plus the slug as the topic so the skill's working directory is predictable. A working invocation:
+   b. Invoke `creative-baoyu-infographic` on `brief_md`. Use trigger phrasing and pass slug as topic:
 
-      > Create an infographic for topic `<slug>` from the following content. Use layout `bento-grid`, style `craft-handmade`, aspect ratio `landscape`, language `en`. Faithfully preserve the brief's facts; do not summarize away dates, amounts, or named entities. Strip any URLs/credentials before they reach the image prompt.
+      > Create an infographic for topic `<slug>` from the following content. Use layout `bento-grid`, style `craft-handmade`, aspect ratio `landscape`, language `en`. Faithfully preserve the brief's facts; do not summarize away dates, amounts, or named entities. Strip URLs/credentials before they reach the image prompt.
       >
       > Content:
       > ```
       > <brief_md>
       > ```
 
-      The skill will create `infographic/<topic-slug>/` containing intermediate scaffolding (`analysis.md`, `structured-content.md`, `prompts/infographic.md`) and the final `infographic.png`. The skill may sanitize `<slug>` further — accept whatever directory it produces.
+      The skill creates `infographic/<topic-slug>/` with intermediates and the final `infographic.png`. Accept whatever directory the skill produces.
 
-   c. **Locate and copy the PNG.** After the skill returns, find the most-recently-modified `infographic.png` under `infographic/`. If exactly one matches and was modified during this run, copy it to `signals/briefs/<slug>/infographic.png` (overwrite). If none is found or the skill returned an error, log `infographic failed for <slug>` and continue to the next slug — do not raise, do not skip subsequent slugs.
+   c. Find the most-recently-modified `infographic.png` under `infographic/`. If exactly one matches and was modified during this run, copy it to `signals/briefs/<slug>/infographic.png` (overwrite). On error or no match, log `infographic failed for <slug>` and continue.
 
-   d. Leave the `infographic/<...>/` intermediate directory in place. It is gitignored at the repo root and will not be committed; the runner's filesystem is ephemeral.
+   d. Leave the `infographic/<...>/` intermediates in place (gitignored, ephemeral runner).
 
-6. **Do not modify the LIVING_BRIEF.md files.** Synthesis already wrote `![Infographic](infographic.png)` into every brief's header on its own write; the image reference is unconditional and will resolve as soon as the PNG lands next to it.
+6. **Do not modify LIVING_BRIEF.md.** Synthesis already wrote the `![Infographic](infographic.png)` reference.
 
 7. **Final stdout**: a single line of the form `<G> infographics generated, <F> failed, <K> skipped (cap)`. If `K > 0`, follow with a second line listing the skipped slugs: `skipped: <slug>, <slug>, ...`. Nothing else.
 
 ## Constraints
 
-- Only create or overwrite files matching `signals/briefs/<slug>/infographic.png` for slugs in `KEPT`. Do not modify any other file under `signals/` or `data/`.
-- Do not commit anything — the workflow handles git operations after you exit.
-- Do not regenerate infographics for briefs not in `CHANGED_SLUGS`. `image_generate` is the expensive step; the changed-set filter is what makes Layer 4 sustainable.
-- Do not fetch external URLs to enrich the visual. Work from the brief markdown alone — it already aggregates everything that's known.
-- Do not fabricate facts in the infographic. The skill is instructed to preserve source data; honor that — the visual must round-trip back to the brief without inventing new claims.
-- If any single skill invocation fails for a slug, log and continue to the next slug. A failure for one company must not block infographics for the others.
+- Only create/overwrite `signals/briefs/<slug>/infographic.png` for `KEPT` slugs. No other files.
+- Do not commit — the workflow handles git.
+- Do not regenerate infographics for briefs outside `CHANGED_SLUGS`.
+- Do not fetch external URLs. Work from the brief markdown alone.
+- Do not fabricate facts. The visual must round-trip back to the brief.
+- Single-slug failure: log and continue to the next slug.

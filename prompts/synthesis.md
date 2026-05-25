@@ -9,7 +9,7 @@ Stay strictly within Layer 3: only write under `signals/briefs/<slug>/`. Do not 
 
 ## Task
 
-The briefs are the durable, per-company unit of analysis. Daily digests get buried in git history; a brief is the thing you'd open if asked "what's the state of company X right now?" Your job is to merge today's new signals into each touched company's living brief — surgically, preserving prior content unless a new signal materially changes it.
+Merge today's new signals into each touched company's living brief. Preserve prior content unless a new signal materially changes it.
 
 ## Inputs
 
@@ -40,21 +40,21 @@ The briefs are the durable, per-company unit of analysis. Daily digests get buri
    b. Compute `slug = slug(c.name)`. Brief path = `signals/briefs/<slug>/LIVING_BRIEF.md`.
 
    c. **If the brief does not exist**, this is the first-time write. Generate all sections from scratch:
-      - **Header**: `# <c.name> — LIVING BRIEF`, then `_Last updated: <UTC-timestamp>_`, then `![Infographic](infographic.png)` on its own line. The image line is unconditional — Layer 4 generates the PNG later in the run; if it hasn't yet (or fails), GitHub renders a broken-image placeholder until the next infographic run fills it in.
-      - **Thesis**: 2–3 sentences derived from `c.description` and today's signals. Frame what the company is and the trajectory the signals suggest.
-      - **Profile**: bullets pulled from `c.description` (sector, region, what they do) plus `c.identifiers` (LinkedIn, Crunchbase, UEN, website if present). Include only fields that are actually present in `companies.json` — don't invent.
-      - **Funding history**: render from `c.funding_rounds` (see "Funding history rendering rules" below). Omit the section entirely if `c.funding_rounds` is empty or absent.
-      - **Recent signals**: today's `NEW_SIGNALS[c.name]` as bullets, most recent first, in the format `- **<UTC-date>** — <one-line summary> — [<source-short>](<url>)`. The summary must be your own one-line synthesis, NOT a copy of the headline.
-      - **Older signals**: empty section (`_none_`).
-      - **Open questions**: 1–3 questions that today's signals raise but don't answer (e.g. "What's the round's valuation?", "Who led?", "Is the new hire replacing a departure?"). Skip the section if you have nothing concrete to ask.
+      - **Header**: `# <c.name> — LIVING BRIEF`, then `_Last updated: <UTC-timestamp>_`, then `![Infographic](infographic.png)` on its own line (unconditional — Layer 4 fills the PNG later).
+      - **Thesis**: 2–3 sentences derived from `c.description` and today's signals.
+      - **Profile**: bullets from `c.description` (sector, region) plus `c.identifiers` (LinkedIn, Crunchbase, UEN, website). Include only fields actually present — don't invent.
+      - **Funding history**: render from `c.funding_rounds` (see "Funding history rendering rules"). Omit if empty/absent.
+      - **Recent signals**: today's `NEW_SIGNALS[c.name]` as cards, most recent first. Top-level bullet: `- **<UTC-date>** — <one-line synthesis, your own words> — [<source-short>](<url>)` (NOT the headline verbatim). Optionally followed by indented sub-bullets enriched from the fetched body (see "URL fetching" and "Signal card extraction" below). If fetch skipped/failed, emit top-level bullet only.
+      - **Older signals**: `_none_`.
+      - **Open questions**: 1–3 questions today's signals raise but don't answer. Skip if none.
 
    d. **If the brief already exists**, read it and merge:
-      - **Header**: update the `_Last updated:_` line to `<UTC-timestamp>`. Keep the H1 verbatim. Ensure the line `![Infographic](infographic.png)` is present immediately after the `_Last updated:_` line; if absent (legacy briefs written before Layer 4 existed), insert it.
-      - **Thesis**: keep verbatim *unless* today's signals materially shift the company's trajectory (new market, new funding stage, pivot, major exec change, acquisition, shutdown). If you rewrite, the new thesis must implicitly justify itself by referencing the kind of signal that drove the change — but write naturally, not as a list of citations.
-      - **Profile**: touch only when a today's signal contradicts or extends a field (e.g. funding round → stage/valuation; new office → region; founder departure → key people). Otherwise keep verbatim.
-      - **Funding history**: re-render the section from `c.funding_rounds` (see "Funding history rendering rules" below). `companies.json` is authoritative — if the rendered section differs from what's on disk (e.g. a new round was added to the JSON), replace the existing section with the freshly rendered one. If `c.funding_rounds` is empty/absent, drop the section. Do **not** add rounds inferred from today's signals into the brief here — that belongs in `data/companies.json` first, then it flows into the brief on the next run.
-      - **Recent signals**: prepend today's `NEW_SIGNALS[c.name]` bullets to the existing list. If a today's URL is already present in `Recent signals` or `Older signals`, skip it (URL-level dedup against the existing brief). Then enforce the cap: if `Recent signals` now has more than 20 bullets, move the oldest excess down into `Older signals` (still bulleted, same format, oldest at the bottom of `Older signals`).
-      - **Open questions**: append new questions raised by today's signals; remove any existing question that today's signals clearly answer. If after editing the section is empty, replace it with `_none open_`.
+      - **Header**: update `_Last updated:_` to `<UTC-timestamp>`. Keep the H1 verbatim. Ensure `![Infographic](infographic.png)` follows `_Last updated:_`; insert if missing (legacy briefs).
+      - **Thesis**: keep verbatim *unless* today's signals materially shift trajectory (new market, new funding stage, pivot, exec change, acquisition, shutdown). If you rewrite, write naturally — not as a list of citations.
+      - **Profile**: touch only when a today's signal contradicts or extends a field. Otherwise keep verbatim.
+      - **Funding history**: re-render from `c.funding_rounds`. `companies.json` is authoritative — replace the on-disk section if it differs. Omit if empty/absent. Do **not** add rounds inferred from today's signals — that goes in `data/companies.json` first.
+      - **Recent signals**: prepend today's `NEW_SIGNALS[c.name]` cards. URL-level dedup against the existing brief (skip if URL already in `Recent signals` or `Older signals`; never re-fetch on-disk URLs). Cap: 20 **top-level** bullets — sub-bullets don't count. If exceeded, demote oldest excess to `Older signals`, moving each card as a single subtree (top bullet + its sub-bullets), oldest at the bottom.
+      - **Open questions**: append new questions; remove any that today's signals clearly answer. If empty after editing, render `_none open_`.
 
    e. **No-write check**: if after the merge the brief file's contents are byte-identical to the existing file, **do not write**. This preserves git history and avoids meaningless commits.
 
@@ -88,6 +88,11 @@ _Total disclosed: <sum of amount_usd as $X.XM>._  <!-- optional, omit if no amou
 
 ## Recent signals
 - **<YYYY-MM-DD>** — <one-line synthesis, your own words> — [<source-short>](<url>)
+  - Summary: <2–3 sentence neutral expansion in the brief's voice>
+  - People: <Name (role)>, <Name (role)>
+  - Counterparties: <Lead investor / Customer / Partner / Acquirer / Regulator>
+  - Numbers: <disclosed figures: round size, valuation, headcount, ARR, customer count, units>
+  - Quote: "<verbatim excerpt from the fetched body>" — <attributed speaker>
 - **<YYYY-MM-DD>** — … — [<source-short>](<url>)
 
 ## Older signals
@@ -98,7 +103,7 @@ _none_
 - <question>
 ```
 
-Omit Profile bullets for fields you don't have. Omit the entire **Funding history** section if `c.funding_rounds` is empty or absent. If `Older signals` is empty render it as `_none_`. If `Open questions` is empty render it as `_none open_`.
+Omit Profile bullets you don't have. Omit `Funding history` if `c.funding_rounds` is empty/absent. Render empty `Older signals` as `_none_`, empty `Open questions` as `_none open_`. Omit any sub-bullet with no evidence — no empty placeholders. If URL was not fetched or fetch failed, emit top-level bullet only.
 
 ## Funding history rendering rules
 
@@ -110,10 +115,38 @@ Omit Profile bullets for fields you don't have. Omit the entire **Funding histor
 - **Total line**: after the bullet list, sum `amount_usd` across all rounds (skip nulls) and render `_Total disclosed: $<X>M._` (one decimal place, rounded). If every round's `amount_usd` is null, omit the total line.
 - **`funding_notes`**: if `c.funding_notes` is present and the company has rounds, ignore it (the rounds speak for themselves). If `c.funding_notes` is present and `c.funding_rounds` is empty, also omit the section — the notes are diagnostic and not for the brief.
 
+## URL fetching for signal enrichment
+
+Fetch article bodies for kept URLs in today's `NEW_SIGNALS[c.name]` to produce the sub-bullets. Bounded, prioritized, fails closed.
+
+- **Eligibility**: only today's new URLs about to be written. **Never re-fetch URLs already on disk.**
+- **Budget**: 20 fetches per run total across all companies. Once spent, remaining URLs render top-level only.
+- **Priority** when eligible URLs > 20:
+  1. `signals/agent/<UTC-date>.md` Deepen-cohort URLs first.
+  2. Then `signals/updates/<UTC-date>.md` URLs in file order.
+  3. Tie-break: prefer trade press (`techcrunch.com`, `agfundernews.com`, `e27.co`, `vulcanpost.com`, `press.<company>.com`).
+- **Host skip-list — never fetch, do not consume budget**: `news.google.com`, `linkedin.com`, `x.com`, `twitter.com`, `facebook.com`, `bloomberg.com`, `straitstimes.com`, `wsj.com`, `ft.com`, `nikkei.com`, `theinformation.com`. Render top-level bullet only.
+- **Per-fetch timeout**: 15s. No retries.
+- **Failure** = HTTP error, timeout, body < 500 chars of extractable text, or `subscribe to continue` / `JavaScript is required` sentinel. Emit no sub-bullets, **count toward budget**, move on.
+
+## Signal card extraction rules
+
+When a fetch succeeds, emit sub-bullets in this order; omit any whose field has no evidence:
+
+1. **Summary** — 2–3 neutral sentences. Required.
+2. **People** — `Name (role)` comma-joined. Cap 4. Skip "a spokesperson" / "person familiar with the matter".
+3. **Counterparties** — lead investor, acquirer, customer, regulator, partner. Cap 4. Skip co-investors already in `Funding history`.
+4. **Numbers** — disclosed only: deal size, valuation (label pre/post), headcount, revenue/ARR, customers, units shipped; market size only if quoted by the company. Cap 6 tokens.
+5. **Quote** — at most one, only if it adds signal beyond Summary. **Must be a verbatim contiguous substring of the fetched body.** If not guaranteed, omit. No paraphrases-in-quotes. No quotes from headline or memory.
+
+Do **NOT** extract: "About <Company>" trailers; generic market-size claims not attributed to the company; multiple paraphrases of the same number; analyst forecasts unrelated to the company; cap-table content already in `Funding history`; image captions, ads, related-articles lists, share-button labels.
+
+If two cards cover the same announcement (different outlets), keep both top-level bullets but reduce the second's sub-bullets to a single `Summary: Corroborates the <date> announcement; no new facts.`
+
 ## Constraints
 
 - Only create/modify files matching `signals/briefs/<slug>/LIVING_BRIEF.md`. Do not modify any other file.
 - Do not commit anything — the workflow handles git operations after you exit.
-- Do not fetch URLs to enrich the synthesis. You work from headline + source + pubDate + the existing brief + `c.description`. If a one-line summary needs the article body, write a more cautious summary that stays defensible from the headline alone.
+- URL fetching is permitted **only** as defined in "URL fetching for signal enrichment". The top-level date bullet must stay defensible from headline + source alone so skipped/failed fetches degrade to a one-liner.
 - Do not write a brief for a company name that's not in `data/companies.json` — log and skip.
 - Never overwrite a brief with the same content as already on disk (the no-write check above).

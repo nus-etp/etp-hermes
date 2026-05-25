@@ -9,22 +9,22 @@ Stay strictly within Layer 1: only write under `signals/updates/` and append to 
 
 ## Task
 
-Produce a daily company-news digest for the watchlist in `data/companies.json`, drawing from every feed in `data/feeds.json`, written to `signals/updates/<UTC-date>.md`. Apply an LLM relevance pass — your own judgment — to drop false-positive matches before writing. Deduplicate against `signals/seen-urls.txt` so the same article never appears twice across runs.
+Produce a daily company-news digest for the `data/companies.json` watchlist from every feed in `data/feeds.json`, written to `signals/updates/<UTC-date>.md`. Apply an LLM relevance pass to drop false-positives. Dedupe against `signals/seen-urls.txt`.
 
 ## Inputs
 
 - `data/companies.json` — watchlist. Array of objects:
-  - `name` (string, required) — canonical name, used as the company label in output.
-  - `aliases` (array of strings, optional, default `[]`) — additional names. Both `name` and every alias are used as case-insensitive substring patterns for the initial triage match against item title/description.
-  - `description` (string, required) — one- or two-sentence description of the company. This is what you use during the relevance pass to judge whether a candidate item is actually about this company. It may explicitly call out unrelated entities to exclude (other companies with the same name, ticker collisions, etc.).
-  - `sources` (array of source objects, optional, default `[]`) — per-company curated feeds. See "Per-company source types" below. When present, these are fetched in Step 2.5 and bypass the substring triage in Step 2.
-  - `identifiers` (object, optional) — carry-only metadata (LinkedIn URL, Crunchbase URL, ACRA UEN, etc.). Do not fetch or otherwise act on these in this pipeline; they exist for future use.
+  - `name` (string, required) — canonical name, used as the output label.
+  - `aliases` (array, default `[]`) — additional names. Used with `name` as case-insensitive substring patterns for the Step 2 triage.
+  - `description` (string, required) — used in the relevance pass to judge whether a candidate item is actually about this company. May call out same-name entities to exclude.
+  - `sources` (array, default `[]`) — per-company curated feeds (see below). Fetched in Step 2.5; bypass Step 2 triage.
+  - `identifiers` (object, optional) — carry-only metadata (LinkedIn, Crunchbase, UEN). Do not fetch.
 
   Call the array `C[]`. For each company `c`, define `c.terms = [c.name, ...c.aliases]`.
 
 - `data/feeds.json` — array of feed definitions. Each has `name`, `type` (always `firehose` in the current config), and `url`. Feeds are standard RSS/Atom.
 
-- `data/changed-sources.json` — **container-level change whitelist**, written by `scripts/preflight-feeds.py` before this prompt runs. Schema:
+- `data/changed-sources.json` — change whitelist from `scripts/preflight-feeds.py`. Schema:
   ```json
   {
     "generated_at": "<ISO8601 UTC>",
@@ -32,9 +32,9 @@ Produce a daily company-news digest for the watchlist in `data/companies.json`, 
     "per_company": { "<company-name>": ["<source-url>", ...], ... }
   }
   ```
-  The preflight sends conditional HTTP requests (ETag/Last-Modified + body-hash fallback) against every preflightable URL and only lists those that have changed since the last run. **Only fetch URLs listed in this file.** Treat sources whose URL is absent as unchanged-since-last-run (no new items possible) and skip them entirely — do not fetch, do not parse, do not include in the relevance pass. `html_scrape` sources are always listed (preflight passes them through), so behavior for those is unchanged. If the file is missing, fall back to fetching everything (cold-start behavior).
+  **Only fetch URLs listed here.** URLs not listed = unchanged; skip entirely. `html_scrape` sources are always listed. If the file is missing, fetch everything (cold-start).
 
-- `signals/seen-urls.txt` — newline-delimited dedup keys already reported. Hold as a set `SEEN`. Entries are typically article URLs from firehose feeds; per-company sources may add synthetic keys (e.g. `lever://patsnap/<posting_id>`, `github-atom://<entry_id>`, or the scraped item's absolute URL) — see Step 2.5. Layer 2 (agent supplement) reads and appends to the same file, so anything you write here is also off-limits for the agent's web searches.
+- `signals/seen-urls.txt` — newline-delimited dedup keys. Hold as `SEEN`. Article URLs for firehose; synthetic keys for per-company sources (`lever://patsnap/<posting_id>`, `github-atom://<entry_id>`, or absolute URL for scrapes — see Step 2.5).
 
 ## Per-company source types
 
@@ -64,26 +64,24 @@ If a single per-company source fetch fails, log and continue — do not fail the
        - **Skip the substring triage** — per-company sources are already company-scoped. The candidate is bound to `c` regardless of headline content.
    - If `s` is an `html_scrape` and you cannot reliably extract a structured item list from the page (e.g. JS-only render, page structure changed), log and continue — do not fabricate items.
 
-3. **Relevance pass.** This is the critical step that justifies the architecture — without it, the digest is unusable.
+3. **Relevance pass.** For each candidate `(c, item)`, judge: *is this article clearly and primarily about `c` per `c.description`?* Use only `headline`, `description`, `source` — do not fetch the URL. Default to `drop` when uncertain.
 
-   For each candidate `(c, item)`, judge: *is this article clearly and primarily about the company `c` described by `c.description`?* Use only the candidate's `headline`, `description`, and `source` for the judgment — do not fetch the article URL. Output `keep` or `drop` per candidate, with `drop` as the default when uncertain.
+   Drop when:
+   - Substring coincidence on a generic word ("emerge", "alpha", "seamless", "carousel", "horizon", "nova") where the item isn't about the watchlisted company.
+   - Different entity with the same/similar name (band, different region, different industry, public ticker colliding with a private SG company). `description` often calls these out.
+   - Ticker-aggregator content (Zacks, TipRanks, MarketBeat, MEXC, StockInvest, TradingView, Stock Titan, AlphaStreet, geneonline, CryptoRank, Investing.com, Yahoo Finance) on same-name public tickers.
+   - Mentioned only in passing (one-word in a list, not the subject).
+   - Generic SEO/listicle, stock-price/earnings restatement.
 
-   Drop a candidate when any of the following is true:
-   - The match is a substring coincidence on a generic English word or phrase ("emerge", "alpha", "seamless", "carousel", "horizon", "nova", etc.) where the item is not about the watchlisted company.
-   - The item is about a different entity with the same or similar name (a band, a different region's company, a different industry's product, a publicly-traded ticker that collides with a private SG company, etc.) — the `description` field will frequently call these out explicitly.
-   - The item is ticker-aggregator content (Zacks, TipRanks, MarketBeat, MEXC, StockInvest, TradingView, Stock Titan, AlphaStreet, geneonline, CryptoRank, Investing.com, Yahoo Finance, etc.) about a public ticker that happens to share a name with one of our private SG startups.
-   - The company is mentioned only in passing (one-word mention in a list, not the subject of the article).
-   - The item is generic SEO/listicle content or a stock-price/earnings-data restatement.
+   Keep when headline+source make clear the article is genuinely about the company — funding, launches, hiring, partnerships, regulatory news, founder interviews, etc.
 
-   Keep a candidate when the headline and source make it clear the article is genuinely about the watchlisted company — funding rounds, product launches, hiring, customer announcements, partnerships, regulatory news, founder interviews, etc.
+   For `source_kind != "firehose"`, shift bias toward keeping (already curated). But still drop:
+   - Duplicate of an item already kept this run from another source.
+   - Bot/chore GitHub events that slipped past Step 2.5 (Dependabot, README typos, version-tag-only pushes).
+   - Lever job postings that are evergreen reqs (generic title, no team, low information).
+   - arXiv revisions (`[v2]`, `[v3]` markers).
 
-   For candidates whose `source_kind != "firehose"` (i.e. they came from a per-company source), shift the bias slightly toward keeping — the source is already curated and company-scoped. But still drop:
-   - **Duplicate of an item already kept this run from a different source** (e.g. the same product-launch announcement on both the company blog and AgFunder News firehose; keep one, drop the other).
-   - **Bot / chore GitHub events** that slipped past the Step 2.5 filter — Dependabot bumps, README typo fixes, version-tag-only pushes.
-   - **Lever job postings whose role is clearly a long-open evergreen req** (generic title, no team specified, low information).
-   - **arXiv submissions that are revisions of prior papers** rather than new work (look for `[v2]`, `[v3]` markers in the title or the typical "comments: ..." block).
-
-   Default bias for firehose candidates remains: drop. A small clean digest is the goal; false negatives are recoverable next run, false positives are noise.
+   Default bias for firehose: drop. False negatives recover next run; false positives are noise.
 
 4. **Write outputs.** Let `K[]` be the candidates that passed the relevance pass.
    - If `K[]` is empty: write nothing. Final stdout: `no new items`.

@@ -9,18 +9,16 @@ Stay strictly within Layer 2: only write under `signals/agent/` and append to `s
 
 ## Task
 
-Layer 1 produces a deterministic digest from RSS firehose + per-company curated sources. It misses things — long-tail companies whose names never trip the firehose substring match, and shallow coverage on companies that did get a hit but where the firehose only caught one angle.
+Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest. Same drop-rule discipline. Two cohorts, in priority order:
 
-Your job is to run **timestamped, dynamic web/browser searches** to plug those gaps, applying the same drop-rule discipline as Layer 1. Two cohorts, in priority order:
-
-1. **Gap-fill cohort** — companies with zero kept items across the last 7 UTC days of `signals/updates/*.md`. These are otherwise invisible to the pipeline today.
-2. **Deepen cohort** — companies that appear in today's `signals/updates/<today>.md`. Layer 1 already found something for them; you look for related coverage, corroboration, valuation/investor context, follow-on analyses, the company's own website announcement, etc.
+1. **Gap-fill** — companies with zero kept items across the last 7 UTC days of `signals/updates/*.md`. Otherwise invisible today.
+2. **Deepen** — companies in today's `signals/updates/<today>.md`. Look for corroboration, valuation/investor context, follow-ons, company-site announcements.
 
 ## Inputs
 
-- `data/companies.json` — watchlist. Same structure used by Layer 1: `{name, aliases?, description, sources?, identifiers?}`. The `description` is your primary tool for disambiguation in queries and for the relevance judgment. `identifiers` may include a homepage URL, LinkedIn, Crunchbase, ACRA UEN — use these to build targeted queries, but treat them as carry-only metadata (do not write to them).
-- `signals/updates/*.md` — Layer 1 outputs, one file per UTC date. Today's is `signals/updates/<UTC-date>.md` (may be absent if Layer 1 found nothing).
-- `signals/seen-urls.txt` — shared dedup state. Hold as a set `SEEN`. If you would return a URL already in `SEEN`, drop it silently.
+- `data/companies.json` — watchlist (`{name, aliases?, description, sources?, identifiers?}`). `description` is used for disambiguation and the relevance judgment. `identifiers` (homepage, LinkedIn, Crunchbase, UEN) — use for targeted queries, don't write.
+- `signals/updates/*.md` — Layer 1 outputs. Today's may be absent if Layer 1 found nothing.
+- `signals/seen-urls.txt` — shared dedup state `SEEN`. Drop any URL already in it.
 
 ## Steps
 
@@ -29,29 +27,29 @@ Your job is to run **timestamped, dynamic web/browser searches** to plug those g
 2. **Read inputs.** Load `data/companies.json` and `signals/seen-urls.txt`. Glob `signals/updates/*.md` and select files whose filename date is within the last 7 UTC days (inclusive of today).
 
 3. **Compute cohorts.**
-   - **Gap-fill** is pre-selected for you by `scripts/select_gapfill_queue.py`, which runs before this layer. Read `signals/agent-queue.txt` — one canonical company name per line, ordered by ascending last-queried date (least-recently-queried first). This is the **authoritative** gap-fill cohort for this run — do not expand it with other companies from `data/companies.json`. If the file is missing or empty, treat gap-fill as empty for this run.
-   - **Deepen** = `{ c : c.name appears as ## heading in signals/updates/<today>.md }` (empty if today's file doesn't exist).
+   - **Gap-fill** = `signals/agent-queue.txt` (one name per line, oldest-queried first, pre-selected by `scripts/select_gapfill_queue.py`). Authoritative — do not expand. Empty if file missing.
+   - **Deepen** = companies appearing as `## ` headings in `signals/updates/<today>.md`. Empty if file absent.
 
-4. **Budget.** You have a hard cap of **50 search/fetch operations total** across both cohorts. Prefer gap-fill over deepen when allocating — gap-fill companies are otherwise invisible. **Process the gap-fill queue in file order** (top-to-bottom in `signals/agent-queue.txt`) and stop when budget runs low; the ordering already encodes fairness. Within that order, you may still **skip** a company where you cannot construct a high-confidence query (e.g. one-word generic name with no aliases or sector hints) — skipping is fine; reordering is not.
+4. **Budget.** Hard cap **50 search/fetch ops total**. Process gap-fill queue in file order; stop when budget runs low. You may skip a company whose name is too generic to query confidently — skipping is fine, reordering is not.
 
 5. **For each company in cohort order (gap-fill first, then deepen):**
 
-   a. Form 1–2 targeted queries. Examples that work well:
-      - Gap-fill: `"<canonical name>" Singapore site:linkedin.com OR site:vulcanpost.com` scoped to last 7 days.
-      - Gap-fill: company homepage check — if `identifiers.website` is present, fetch the `/news` or `/press` or `/blog` index.
-      - Deepen: `"<canonical name>" funding OR raised OR partnership` for the past 30 days; or competitor / sector context for the specific event Layer 1 surfaced.
-      - Use `c.description` to add disambiguating qualifiers ("deep tech", "battery", "quantum", etc.) when the name is generic.
+   a. Form 1–2 targeted queries. Examples:
+      - Gap-fill: `"<name>" Singapore site:linkedin.com OR site:vulcanpost.com`, last 7 days.
+      - Gap-fill: fetch `identifiers.website`'s `/news`, `/press`, or `/blog` index.
+      - Deepen: `"<name>" funding OR raised OR partnership`, past 30 days; or competitor/sector context for the event Layer 1 surfaced.
+      - Use `c.description` to disambiguate generic names ("deep tech", "battery", "quantum").
 
-   b. Run the search using the web/browser tools available to you. For each result candidate `(c, item)`:
-      - Compute a stable dedup key — prefer the resolved article URL. If the URL has tracking params (`utm_*`, `?ref=`, `gclid`, etc.), strip them before using as the key.
-      - If the key is in `SEEN`, drop it silently — Layer 1 or a previous Layer 2 run already handled it.
-      - Otherwise, judge relevance against `c.description` using the same rules as Layer 1's relevance pass:
-        - **Drop** if it's a ticker-aggregator (Zacks, TipRanks, MarketBeat, etc.) hitting a same-name public ticker; a different-entity same-name collision; passing-mention listicle; generic SEO content; or the article is clearly older than 60 days for gap-fill / 14 days for deepen.
-        - **Drop** if the source is low-trust spam (content farms, AI-generated press releases without primary attribution). Prefer the company's own site, established trade press, regulator filings, recognized investors' posts.
-        - **Keep** if the article is genuinely and primarily about the watchlisted company.
-      - Default bias for gap-fill: **keep on the margin** — these companies are invisible without you, so a moderate-confidence hit is worth surfacing. Default bias for deepen: **drop on the margin** — Layer 1 already covered the company, you only add value with materially new context.
+   b. For each result `(c, item)`:
+      - Dedup key = resolved URL, stripping `utm_*`, `ref`, `gclid`, `fbclid`.
+      - If key in `SEEN`, drop silently.
+      - Else judge against `c.description` (same rules as Layer 1):
+        - **Drop**: ticker-aggregator on same-name public ticker; same-name different-entity; passing-mention listicle; generic SEO; >60 days old for gap-fill / >14 days for deepen.
+        - **Drop**: low-trust spam (content farms, AI-generated PR without attribution). Prefer company site, trade press, regulator filings, recognized investors.
+        - **Keep**: genuinely and primarily about the watchlisted company.
+      - Bias: gap-fill **keep on margin** (invisible otherwise); deepen **drop on margin** (only material new context).
 
-   c. After judging, append **every** key seen this turn — kept or dropped — to `signals/seen-urls.txt` (append-only, one key per line). This is identical to Layer 1's discipline and prevents re-judging the same junk tomorrow.
+   c. Append every key seen this turn — kept or dropped — to `signals/seen-urls.txt`.
 
 6. **Write output.** Let `K[]` be the kept items across both cohorts.
 
