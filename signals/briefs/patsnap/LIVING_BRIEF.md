@@ -1,5 +1,6 @@
 # Patsnap — LIVING BRIEF
 _Last updated: 2026-05-19 16:37 UTC_
+![Infographic](infographic.png)
 
 ## Thesis
 Patsnap is a Singapore-headquartered IP intelligence and innovation analytics SaaS company that helps organizations manage patents, trademarks, and R&D intelligence. The company is in an active growth phase, hiring across its AI Agent Platform (product growth, product marketing, engineering), life sciences vertical (account executives, support, SDRs, marketing interns), and semiconductor/material verticals — suggesting a multi-sector SaaS expansion beyond its core IP analytics base.

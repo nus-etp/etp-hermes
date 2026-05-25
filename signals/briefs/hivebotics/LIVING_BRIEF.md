@@ -1,5 +1,6 @@
 # Hivebotics — LIVING BRIEF
 _Last updated: 2026-05-19 16:37 UTC_
+![Infographic](infographic.png)
 
 ## Thesis
 Hivebotics is a Singapore-headquartered robotics startup incubated under NUS GRIP, developing autonomous cleaning robots for commercial and industrial environments. The company's toilet-cleaning robot has attracted serious commercial interest, suggesting strong early product-market fit in the janitorial robotics space.

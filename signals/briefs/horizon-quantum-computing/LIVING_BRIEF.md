@@ -1,5 +1,6 @@
 # Horizon Quantum Computing — LIVING BRIEF
 _Last updated: 2026-05-14 15:29 UTC_
+![Infographic](infographic.png)
 
 ## Thesis
 Singapore-based privately-held quantum computing software startup developing programming tools and infrastructure for quantum computers. The company's publication of its first-quarter 2026 financial results suggests a posture of transparency consistent with a maturing venture positioning itself for the next stage of growth in the quantum software space.
