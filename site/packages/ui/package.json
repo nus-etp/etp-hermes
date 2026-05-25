@@ -1,0 +1,43 @@
+{
+  "name": "@acme/ui",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./empty-placeholder": "./src/empty-placeholder.tsx",
+    "./svgs": "./src/svgs/index.ts",
+    "./link-button": "./src/link-button.tsx",
+    "./text-field": "./src/text-field.tsx",
+    "./infobox": "./src/infobox/index.ts",
+    "./restricted-footer": "./src/restricted-footer/index.ts"
+  },
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@opengovsg/oui": "catalog:oui",
+    "@opengovsg/oui-theme": "catalog:oui",
+    "react-aria": "^3.44.0",
+    "react-aria-components": "catalog:",
+    "react-icons": "^5.5.0",
+    "tailwind-variants": "^3.1.1"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
+    "@types/react": "catalog:react",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "react": "catalog:react",
+    "typescript": "catalog:",
+    "zod": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:react",
+    "zod": "catalog:"
+  },
+  "prettier": "@acme/prettier-config"
+}

@@ -1,0 +1,57 @@
+name: 'Chromatic'
+
+# Event for the workflow
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+# List of jobs
+jobs:
+  # JOB to run change detection and run specific chromatic jobs only on changes
+  changes:
+    runs-on: ubuntu-latest
+    # Set job outputs to values from filter step
+    outputs:
+      web: ${{ steps.filter.outputs.web }}
+    steps:
+      - uses: actions/checkout@v5
+      # For pull requests it's not necessary to checkout the code
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36
+        id: filter
+        with:
+          filters: |
+            web:
+              - 'apps/web/**'
+  web:
+    needs: [changes]
+    # Only run if the user is not a bot and has changes
+    if: ${{ !endsWith(github.actor , 'bot') && !endsWith(github.actor, '[bot]') && needs.changes.outputs.web == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      CHROMATIC_WEB_PROJECT_TOKEN: ${{ secrets.CHROMATIC_WEB_PROJECT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+        if: env.CHROMATIC_WEB_PROJECT_TOKEN != ''
+        with:
+          fetch-depth: 0 # Required for v5
+      - name: Setup
+        if: env.CHROMATIC_WEB_PROJECT_TOKEN != ''
+        uses: ./tooling/github/setup
+      - name: Publish to Chromatic
+        if: env.CHROMATIC_WEB_PROJECT_TOKEN != ''
+        uses: chromaui/action@latest
+        with:
+          workingDir: apps/web
+          storybookBaseDir: apps/web
+          projectToken: ${{ env.CHROMATIC_WEB_PROJECT_TOKEN }}
+          onlyChanged: true
+          exitOnceUploaded: true
+          autoAcceptChanges: main
+          skip: dependabot/** # Skip running Chromatic on dependabot PRs

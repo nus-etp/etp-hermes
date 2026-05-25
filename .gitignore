@@ -21,3 +21,13 @@ data/changed-sources.json
 # block71 portfolio seed working files (scripts/_tmp_*.py + data/_block71_seed.json)
 /scripts/_tmp_*
 /data/_block71_seed.json
+
+# Static frontend (site/) — generated assets and dev-kit quarantine
+site/node_modules
+site/**/.next
+site/**/.turbo
+site/**/.cache
+site/apps/web/out
+site/apps/web/public/briefs
+site/apps/web/src/data/*.generated.json
+site/.trash

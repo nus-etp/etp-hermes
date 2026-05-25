@@ -1,0 +1,18 @@
+name: "CodeQL config"
+# Vendored from opengovsg/codeql-config@prod, with the private OGP query packs
+# removed since they live in ghcr.io/opengovsg/* and aren't readable from this org.
+query-filters:
+  - exclude:
+      id: js/hardcoded-credentials
+  - exclude:
+      id: js/missing-rate-limiting
+  - exclude:
+      id: js/missing-token-validation
+  - exclude:
+      id: actions/missing-workflow-permissions
+paths-ignore:
+  - '**/test/**'
+  - '**/tests/**'
+  - '**/__test__/**'
+  - '**/__tests__/**'
+  - '**/*.test.*'

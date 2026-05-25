@@ -1,0 +1,48 @@
+{
+  "name": "@acme/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-data.mjs && next build",
+    "clean": "git clean -xdf .cache .next .turbo out node_modules",
+    "dev": "node scripts/build-data.mjs && next dev --turbopack",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "data": "node scripts/build-data.mjs"
+  },
+  "dependencies": {
+    "@acme/common": "workspace:*",
+    "@acme/ui": "workspace:*",
+    "@opengovsg/oui": "catalog:oui",
+    "@opengovsg/oui-theme": "catalog:oui",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "next": "catalog:next",
+    "nuqs": "^2.8.6",
+    "react": "catalog:react",
+    "react-aria-components": "catalog:",
+    "react-dom": "catalog:react",
+    "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "tailwind-merge": "^3.4.1",
+    "tailwind-variants": "^3.1.1"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tailwind-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:react",
+    "@types/react-dom": "catalog:react",
+    "eslint": "catalog:",
+    "tailwindcss": "catalog:tailwindcss4",
+    "typescript": "catalog:"
+  },
+  "prettier": "@acme/prettier-config"
+}

@@ -1,0 +1,49 @@
+packages:
+  - apps/*
+  - packages/*
+  - tooling/*
+
+catalog:
+  '@eslint/js': ^9.39.1
+  '@types/node': ^24.10.4
+  eslint: ^9.39.2
+  prettier: ^3.7.4
+  react-aria-components: 1.16.0
+  typescript: ^5.9.3
+  zod: ^4.2.1
+
+catalogs:
+  next:
+    '@next/env': 16.2.3
+    '@next/eslint-plugin-next': 16.2.3
+    next: 16.2.3
+  oui:
+    '@opengovsg/oui': 0.0.52
+    '@opengovsg/oui-theme': 0.0.52
+  react:
+    '@types/react': ^19.2.14
+    '@types/react-dom': ^19.2.3
+    react: ^19.2.5
+    react-dom: ^19.2.5
+  tailwindcss4:
+    '@tailwindcss/postcss': ^4.2.2
+    tailwindcss: ^4.2.2
+
+linkWorkspacePackages: true
+
+minimumReleaseAge: 1440
+
+minimumReleaseAgeExclude:
+  - '@opengovsg/*'
+
+onlyBuiltDependencies:
+  - esbuild
+
+overrides:
+  '@types/minimatch': 5.1.2
+  '@img/sharp-libvips-darwin-arm64': '-'
+
+publicHoistPattern:
+  - '*prettier*'
+  - '*eslint-plugin*'
+  - '*@opengovsg/oui*'
