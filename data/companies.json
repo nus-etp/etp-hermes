@@ -394,11 +394,28 @@
     "funding_notes": "NUS GRIP Run 6 portfolio company (patented dye chemistry for exosome quality control). No publicly verifiable equity funding round announced beyond NUS GRIP seed support."
   },
   {
+    "name": "Active Silvers",
+    "aliases": [
+      "Active Silvers Pte Ltd",
+      "Active Silvers Pte Litd"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore senior-fitness startup running a Seniors Functional Fitness online platform deployed via social-service agencies and elder-care centres; ~20 years of operating experience training fitness champions to onboard beneficiaries. Drop generic 'active ageing' / 'silvers' policy news unless it names this entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
+  },
+  {
     "name": "Actly",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "No publicly verifiable funding information found; NUS GRIP affiliation not strongly evidenced in search results."
+  },
+  {
+    "name": "AidMi",
+    "aliases": [],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore startup. Limited public-English information beyond the directory listing — drop generic 'aid' / 'AI for medicine' news unless the article explicitly references this BLOCK71 SIH entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
   },
   {
     "name": "Ailytics",
@@ -454,6 +471,17 @@
     "description": "BLOCK71 Silicon Valley-resident SaaS startup building a prescriptive-AI decision engine for product and go-to-market teams (AI customer-journey mapping, evidence-based feature prioritization, digital-twin simulations). Generic AI brand — drop items about unrelated AI-pathology / AI-routing tools.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Silicon Valley cohort startup founded by David Isaac (CEO). No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "AiSee",
+    "aliases": [
+      "AiSee Glasses",
+      "AiSee Pte Ltd",
+      "AISEE PTE LTD"
+    ],
+    "description": "NUS Enterprise@SSP-resident Singapore deep-tech startup (NUS School of Computing spin-out, 2025) building AiSee — a self-contained AI-powered wearable visual companion for the visually impaired with bone-conduction audio, on-device Meta Llama models, and capabilities like label-reading and text translation. Won the 2024 Meta Llama Impact Innovation Award; pre-orders at S$199. Drop generic 'AI see' / vision-AI hype unless it names this device.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio company; Meta Llama Impact Innovation Award winner (2024). Pre-launch consumer device priced S$199; institutional deployments under discussion with museums and airports. No publicly verifiable equity funding round announced at time of writing."
   },
   {
     "name": "AIWater",
@@ -564,6 +592,17 @@
     "funding_notes": "NUS GRIP Run 1 spin-off (Industrial AI / smart manufacturing), founded 2018. Tracxn indicates 1 institutional investor / 1 round but amounts undisclosed; no verifiable public source for amount or date."
   },
   {
+    "name": "Assemblr",
+    "aliases": [
+      "Assemblr World",
+      "Assemblr EDU",
+      "Assemblr Pte Ltd"
+    ],
+    "description": "BLOCK71 Social Impact Hub-listed Indonesian AR / 3D-content platform (HQ Bandung, SG offices at CT HUB2 and 336 Smith St) with Assemblr EDU for K-12 STEM AR experiences; 11,500+ teachers trained via the Assemblr Certified Trainer programme; joined the NUS Enterprise × raiSE Technology for Sustainable Social Impact (TS2) cohort. Drop generic 'assembler' / IKEA-style assembly news unless it names this AR platform.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub / TS2 cohort company. Public equity rounds not verified at time of writing."
+  },
+  {
     "name": "Assist.id",
     "aliases": [
       "Assist",
@@ -610,6 +649,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from BAE Systems (defence) or any other unrelated company sharing this name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company developing wireless charging tech for wearables. No publicly announced funding rounds found beyond NUS GRIP incubation."
+  },
+  {
+    "name": "Bamboobon",
+    "aliases": [],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore sustainable-bamboo-products startup. Limited public-English information beyond the directory listing — drop other Singapore bamboo brands (Bamboolove, Bambooloo, Bamboo Straw Girl) unless the article specifically references Bamboobon.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
   },
   {
     "name": "BEEX",
@@ -926,6 +972,16 @@
     "funding_notes": "Founded 2015 by Eli Finkelshteyn and Dan McCormick. Total reported funding ~US$61.1M across 4 rounds (Crunchbase). BLOCK71 Silicon Valley-listed."
   },
   {
+    "name": "CoolestDC",
+    "aliases": [
+      "Coolestdc",
+      "COOLESTDC PTE LTD"
+    ],
+    "description": "BLOCK71 / NUS Enterprise@SSP-resident Singapore deep-tech data-centre cooling startup (NUS Mechanical Engineering spin-off, founder/CTO Dr Poh Seng Lee) building 'oblique-fin' direct-to-chip liquid cooling cold plates and closed-loop integrated liquid-cooled racks; partnership with Digital Realty for SIN11 deployment; demonstrated up to 29% power reduction and 39% IT-perf uplift vs air cooling. Drop unrelated 'cool' / 'coldest' data centre branding news.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio. Digital Realty partnership announced for liquid-cooling bare-metal service starting at Digital Loyang 1 (SIN11). No publicly verifiable priced equity funding round announced at time of writing."
+  },
+  {
     "name": "Cornucopia",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English noun — drop any item not clearly referring to the Singapore startup.",
@@ -1113,6 +1169,17 @@
     "funding_notes": "BLOCK71 Bandung portfolio company; BNI Ventures Axel Arc program alumnus. Expansion plans into Vietnam and Cambodia announced May 2026. Public equity rounds not yet verified at time of writing."
   },
   {
+    "name": "E3A Healthcare",
+    "aliases": [
+      "E3a Healthcare",
+      "E3A HEALTHCARE PTE LTD",
+      "E3A"
+    ],
+    "description": "BLOCK71 / NUS Enterprise@SSP-resident Singapore deep-medtech startup (NUS spin-off, founded 2019; 83 Science Park Drive #02-03 The Curie) building first-in-class medical devices plus AI for newborn and women's healthcare — a non-invasive bilirubin meter is deployed across 120+ hospitals/clinics globally and has monitored jaundice in 500,000+ babies. Drop unrelated 'E3' / 'A3' branding news.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio. NUS Enterprise startup-story alumnus. Public equity rounds not verified at time of writing."
+  },
+  {
     "name": "Ecobinder",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore battery-materials startup. Drop unrelated companies sharing the same name.",
@@ -1127,6 +1194,16 @@
     "description": "BLOCK71 Bandung-listed Hong Kong-headquartered B-Corp (founded 2016 by Bas Fransen) operating a blockchain-tracked tree-planting / forest-management platform — TreeCorder data-capture app, TreeManager cloud system, Verra/Gold Standard carbon-certified TREES+ projects (partnership with VNV Advisory). Corporate customers include Grab and Procter & Gamble; ~50,000 customers globally. Drop generic 'eco' / matching-engine mentions.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Bandung-listed; B-Corp since 2018. Strategic partnership with VNV Advisory announced for TREES+ carbon-certified projects. No publicly verifiable equity funding round announced."
+  },
+  {
+    "name": "Ecovolt",
+    "aliases": [
+      "Ecovolt Technologies",
+      "Ecovolt.ai"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore cleantech / smart-buildings startup founded by four NUS students out of the SDG Open Hack @ NUS 2024 building an AI-native building orchestration platform with IoT smart-plug sensors that target phantom-load ('vampire energy') consumption. Drop unrelated EV-charging 'Ecovolt' / 'Volt' brands (Greenvolt, Keppel Volt) unless the article names ecovolt.ai.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
   },
   {
     "name": "EEA",
@@ -1271,6 +1348,17 @@
     "funding_notes": "AI breast cancer imaging spin-off from NUS/NUHS. The 2022 round is described variously as Pre-Series A in press; Crunchbase logs it as Seed (2022-09-01). Aggregate ~US$1.95M–US$2.55M across databases."
   },
   {
+    "name": "FingerDance",
+    "aliases": [
+      "Fingerdance",
+      "FINGERDANCE PTE LTD",
+      "SiLViA"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore social-impact deep-tech startup (incorporated 2023, co-founded by technologist Gong He) building SiLViA — a Sign Language Virtual Assistant that converts audio announcements into Singapore Sign Language and answers commuter FAQs in sign + text. Partnered with SBS Transit for Chinatown MRT kiosks and with SADeaf for Deaf-led product development; Huawei-supported. TS2 accelerator cohort. Drop generic 'finger dance' game / app news.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio company; TS2 accelerator cohort (US$3.5M programme commitment across 7 startups). Public equity rounds not verified at time of writing."
+  },
+  {
     "name": "FitSight",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore myopia-management health-tech startup. Drop unrelated companies sharing the same name.",
@@ -1353,6 +1441,16 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name (e.g. geology/mining firms named GeoCore).",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (geotechnical real-time seawall monitoring). No publicly announced funding round found beyond GRIP programme support."
+  },
+  {
+    "name": "Goodwhale",
+    "aliases": [
+      "GoodWhale",
+      "Goodwhale Pte Ltd"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore B-Corp-certified fintech startup running a personalised investing-health platform for new retail investors — goal setting, portfolio coaching, sustainable / values-aligned investing tools. Drop pet/animal-care 'whale' brands or shipping news unless the article references the investing-health platform.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio; Certified B-Corp. Public equity rounds not verified at time of writing."
   },
   {
     "name": "GranuSmart",
@@ -1804,6 +1902,28 @@
     "funding_notes": "NUS startup developing Magnetic Interference Cloud technology for sleep/healthcare. Won healthcare vertical at Shenzhen Innovation and Entrepreneurship International competition (shared USD$26,000 prize pool; not a funding round). No publicly-announced venture funding round found."
   },
   {
+    "name": "MADCash",
+    "aliases": [
+      "MADcash",
+      "MADCash Pte Ltd"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Shariah-compliant fintech (HQ Kuala Lumpur, SG via TS2) providing 0%-interest micro-funding plus financial literacy and digital tools to women micro-entrepreneurs; ~RM800K disbursed to ~400 women, 1,000+ in MADCash programmes; operates Malaysia, Singapore (S$2K-3K loans), Tajikistan. Drop generic 'mad cash' lottery / consumer-finance branding.",
+    "funding_rounds": [
+      {
+        "date": "2023-08-01",
+        "stage": "Pre-Series A",
+        "amount": "RM5M",
+        "amount_usd": 1100000,
+        "lead_investors": [],
+        "investors": [
+          "Singaporean and Malaysian investors (unnamed publicly)"
+        ],
+        "source": "https://vulcanpost.com/841503/madcash-malaysia-fintech-microloans-pre-series-a-funding/"
+      }
+    ],
+    "funding_notes": "BLOCK71 Social Impact Hub / NUS Enterprise × raiSE TS2 cohort. Founder Nuraizah Shamsul Baharin (CEO)."
+  },
+  {
     "name": "Magloy Tech",
     "aliases": [
       "Magloy"
@@ -1844,6 +1964,16 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP Run 5 (June 2021) participant — indoor positioning/footfall analytics for shopping malls. No publicly-announced venture funding round found."
+  },
+  {
+    "name": "MangaChat",
+    "aliases": [
+      "Mangachat",
+      "MangaChat Pte Ltd"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore youth-mental-health startup building an AI-driven emotional-support platform delivered through manga-style engagement channels; graduated from the NUS Medicine Digital Advanced Technology Accelerator (DATA) 2025 cohort. Drop generic 'manga' / chatbot AI hype unless the article references this NUS-affiliated youth-MH platform.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub / NUS Medicine DATA 2025 graduate. Public equity rounds not verified at time of writing."
   },
   {
     "name": "Mapid",
@@ -1904,6 +2034,16 @@
       }
     ],
     "funding_notes": "Now rebranded as InteractAI. Won SGD 50K Startup SG Founder Grant via Founder IGNITE pitch 2021. PitchBook/Tracxn list SMU Business Incubator, NUS GRIP and PIXEL as backers, but no priced equity round is publicly disclosed."
+  },
+  {
+    "name": "MeMove",
+    "aliases": [
+      "MeMove Pte Ltd",
+      "MeMoveSG"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore mobility/rehab venture (limited public-English information beyond the directory and a Facebook presence). Drop unrelated 'M:Move' / mobility-app branding unless the article references this BLOCK71 SIH entity. Likely focused on assistive-mobility for elderly / accessibility.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
   },
   {
     "name": "Meracle",
@@ -2517,6 +2657,42 @@
     "funding_notes": "Participated in NUS GRIP Run 3 (December 2019). 8 of 15 Run 3 teams received up to S$100k seed funding but ReoMex not explicitly named as a recipient in publicly available sources."
   },
   {
+    "name": "RetireGenie",
+    "aliases": [
+      "RetireGenie Technology",
+      "RetireGenie Pte Ltd"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore silver-economy platform aggregating elderly-care services for the 'Silver Generation' — home-care providers, social services, dementia day-care, specialised care, home therapy, assisted-living and senior-group-home listings; complementary lifestyle and rental services. Drop unrelated retirement-planning / fintech tools branded similarly.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio company. Public equity rounds not verified at time of writing."
+  },
+  {
+    "name": "RiDM",
+    "aliases": [
+      "RIDM",
+      "RiDM Technology",
+      "DODA"
+    ],
+    "description": "BLOCK71 / NUS Enterprise@SSP-resident Singapore AI-computing deep-tech startup (NUS spin-out, founder/CEO Jin-ho Lee) building DODA — Dynamically Orchestrated Dataflow Architecture — a proprietary chip architecture that linearises spatial compilation to target the 'memory wall' bottleneck in AI/HPC, positioned as a C++-friendly alternative to Nvidia CUDA. Drop unrelated 'risk-informed decision making' (FERC/dam-safety) acronym usage.",
+    "funding_rounds": [
+      {
+        "date": "2026-02-27",
+        "stage": "Seed",
+        "amount": "Undisclosed",
+        "amount_usd": 0,
+        "lead_investors": [
+          "The Invention Lab"
+        ],
+        "investors": [
+          "The Invention Lab",
+          "Qube Research & Technologies (QRT)"
+        ],
+        "source": "https://technode.global/2026/02/27/the-invention-lab-completes-seed-investment-in-singapores-ai-computing-startup-ridm/"
+      }
+    ],
+    "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio company; underlying dataflow-architecture patent NUS-owned and exclusively licensed to RiDM. Seed amount not disclosed in TNGlobal coverage."
+  },
+  {
     "name": "RightCode",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -2646,6 +2822,16 @@
     "funding_notes": "NUS GRIP portfolio company (non-contact vital signs monitoring - Sensori VSM). No publicly verifiable funding round announcements found."
   },
   {
+    "name": "SENSORI Healthcare",
+    "aliases": [
+      "Sensori Healthcare",
+      "SENSORI HEALTHCARE PTE LTD"
+    ],
+    "description": "BLOCK71 / NUS Enterprise@SSP-resident Singapore healthtech startup building non-contact health-monitoring solutions (advanced sensing technologies for continuous quality-of-life monitoring). Part of a SENSORI corporate family (Holding, Institute, International, Investment). Drop unrelated 'sensor' / IoT-monitoring vendor news unless it names SENSORI Healthcare.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio. Public equity rounds not verified at time of writing."
+  },
+  {
     "name": "SHARPEN.AI",
     "aliases": [
       "Sharpen AI"
@@ -2768,6 +2954,17 @@
     "funding_notes": "NUS GRIP portfolio company (organic solvent nanofiltration membrane technology). No publicly verifiable funding round announcements found."
   },
   {
+    "name": "SoundEye",
+    "aliases": [
+      "Soundeye",
+      "Soundeye Pte Ltd",
+      "Lasso by SoundEye"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore social-enterprise deep-tech startup (A*STAR Institute of Infocomm Research origin) building wearable-free, privacy-preserving sensing for elderly fall / abnormal-event detection — Lasso combines LiDAR with sound recognition; 1,000+ deployments across airports (Changi), nursing homes, malls. NCSS Techbooster trusted vendor. Drop generic 'audio AI' / acoustic-monitoring news unless it names SoundEye.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio; NCSS Techbooster vendor. Deployments include Thye Hua Kwan Nursing Home, Bishan Home, Cerebral Palsy Alliance Singapore, Changi Airport Group. Public equity rounds not verified at time of writing."
+  },
+  {
     "name": "Soynergy",
     "aliases": [
       "Synergy"
@@ -2830,6 +3027,32 @@
     "funding_notes": "NUS GRIP portfolio company developing mid-infrared multi-gas detector (SPOT 3000). No publicly-announced funding round with verifiable date/amount/source found."
   },
   {
+    "name": "Stratificare",
+    "aliases": [
+      "StratifiCare"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore predictive medical-diagnostics startup (launched 2015, CEO Anthony Chua) building in-vitro diagnostic tests — flagship predictive test for life-threatening severe Dengue complications, plus pipeline for liver-cancer internal-radiation-therapy response and other oncology indications. Drop generic 'patient stratification' / clinical-trial-stratification industry copy.",
+    "funding_rounds": [
+      {
+        "date": "2021-10-01",
+        "stage": "Seed",
+        "amount": "S$1M",
+        "amount_usd": 729000,
+        "lead_investors": [
+          "ADB Ventures"
+        ],
+        "investors": [
+          "ADB Ventures",
+          "Sprout",
+          "Jeffrey Tiong (PatSnap CEO)",
+          "Quek Siu Rui (Carousell CEO)"
+        ],
+        "source": "https://1covidnews.com/2021/10/08/stratificare-attracts-seed-funding-from-adb-ventures-sprout-for-its-dengue-disease-prediction-test/"
+      }
+    ],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio; Singapore Biomedtech Incubator co11ab member. Angel investments from Singapore tech-founder circle (PatSnap / Carousell)."
+  },
+  {
     "name": "Synectify",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -2852,6 +3075,15 @@
     "funding_notes": "No publicly indexed funding announcements located."
   },
   {
+    "name": "Tech Up Advance",
+    "aliases": [
+      "Tech Up Advance Pte Ltd"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore startup. Limited public-English information beyond the BLOCK71 directory listing — drop generic 'tech advance' / accelerator copy unless the article explicitly references this BLOCK71 SIH entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
+  },
+  {
     "name": "TEREDO Analytics",
     "aliases": [
       "TEREDO"
@@ -2859,6 +3091,17 @@
     "description": "NUS GRIP-incubated Singapore analytics startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP spin-off (founded 2019) for acoustic pipeline leak detection. Tracxn/PitchBook list NUS, Imagine H2O and Ripple2Wave as institutional investors and the company won the Digital Water Hackathon @ SIWW 2021, but no publicly-announced funding round with specific date/amount/source was found."
+  },
+  {
+    "name": "The Moonbeam Co",
+    "aliases": [
+      "the moonbeam co.",
+      "Moonbeam",
+      "THEMOONBEAM.CO PTE LTD"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore sustainable-foodtech social enterprise (founded 2021 by NUS students Jia Wei Lim, Qi Herng Kong, Varden En Cheng Toh) upcycling brewer's spent grains (BSG) into high-fibre, high-protein snacks/granola; raiSE-registered; partners with Bettr Coffee for inclusive hiring; reports 1.55 tonnes waste diverted and 1,872 kg CO2-eq avoided. 2021/22 RISE 'Most Innovative' award. Drop generic 'moonbeam' beverage / brand mentions.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio; raiSE-registered social enterprise. Public equity rounds not verified at time of writing."
   },
   {
     "name": "TuSense",
@@ -2901,6 +3144,15 @@
     "description": "NUS GRIP-incubated Singapore cybersecurity startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP blockchain smart-contract security startup (founded 2022, based at NUS COM3). No publicly-announced funding round located."
+  },
+  {
+    "name": "Village Ventures",
+    "aliases": [
+      "Village Ventures Pte Ltd"
+    ],
+    "description": "BLOCK71 Social Impact Hub-resident Singapore impact venture. Limited public-English information distinguishing it from US-based 'Village Capital' or similarly-named funds — drop unrelated VC fund / venture-capital news unless the article explicitly references the BLOCK71 SIH entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
   },
   {
     "name": "Vilota",
@@ -2977,6 +3229,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "Listed in NUS Enterprise startup stories and PitchBook with NUS GRIP listed as an investor, but no specific publicly-announced funding round with verifiable date/amount/source was found."
+  },
+  {
+    "name": "Wellmatix",
+    "aliases": [],
+    "description": "BLOCK71 / NUS Enterprise@SSP-resident Singapore healthtech startup. Limited public-English information beyond the directory listing — drop generic 'wellness' / health-matrix product mentions unless the article explicitly references this BLOCK71 / NUS@SSP entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "WiSe",
