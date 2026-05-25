@@ -378,6 +378,13 @@
     "funding_notes": "NUS GRIP portfolio company (dew-point cooler tech); likely received NUS GRIP seed grant (~SGD 250K) but no public equity round announced."
   },
   {
+    "name": "1N Robotics",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore robotics startup. Limited public-English information beyond the directory listing — distinct from Chef Roboto (HOPE Technik subsidiary, Singapore robot-fryer brand); drop unrelated 'one robotics' / numbered-robotics brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "8VERLINK",
     "aliases": [
       "Overlink"
@@ -409,6 +416,22 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "No publicly verifiable funding information found; NUS GRIP affiliation not strongly evidenced in search results."
+  },
+  {
+    "name": "AdmitPath",
+    "aliases": [
+      "AdmitPath Inc"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore education / admissions startup helping students navigate university or programme admissions. Drop generic 'admission' / college-counseling content (Crimson, Prep101, etc.) unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Agrolitik",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore agritech startup. Limited public-English information beyond the directory listing — drop unrelated 'agro' / 'agrolytic' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "AidMi",
@@ -481,6 +504,13 @@
     "description": "BLOCK71 Saigon-resident Vietnamese AI/IoT smart-building management startup (founded late-2021 via Antler Singapore by three co-founders, seed-funded US$85K by Antler). Reduces residential operating staff (e.g., 10→3 per 1,000 rooms) and building op-costs up to 40% via AI maintenance prediction; 30+ clients, ~1,500 paid units across 60 locations in 5 cities; 2023 Smart City Award (IOC). Distinct from air-quality-monitoring vendors like tMonitor — drop pollution / AQI articles unless they name AirCity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company; Antler Singapore seed (~US$85K). Public priced equity round details not verified beyond Antler seed."
+  },
+  {
+    "name": "Airgorithm",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — name is a portmanteau of 'air' + 'algorithm', suggesting aviation/airline-optimization or air-quality analytics; drop unrelated namesakes unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "AiSee",
@@ -565,6 +595,13 @@
     "funding_notes": "Incorporated July 2021 with pre-seed support from NUS GRIP; graduated NUS Deep Tech Incubator 2021. No public equity funding round announced beyond NUS GRIP grant."
   },
   {
+    "name": "amble",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — generic English-word brand collides with many unrelated apps and services; drop unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Anatics",
     "aliases": [
       "ANATICS DATA BUSINESS AND TECHNOLOGY STRATEGY CONSULTANCY",
@@ -582,6 +619,33 @@
     "description": "BLOCK71 Suzhou-listed Chinese optoelectronic / LED technology venture. Limited public-English information beyond the directory listing — drop the many unrelated Suzhou LED/optoelectronics manufacturers (Radiant Opto-Electronics, Honglei, KingLight, HTP, etc.) unless the article explicitly references this BLOCK71 Suzhou entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Anomaly Bio",
+    "aliases": [
+      "Anomaly Bio Pte Ltd"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore biomanufacturing startup (founded 2022 at NUS by Armaan Dhanda and Samyak Baid) using fermentation + strain engineering to turn microbes into 'micro-factories' producing bio-based ingredients for crop protection, nutrition and personal care. One of five startups (sole student company out of 140 applicants) in Mars Petcare's Next Generation Pet Food Program 2024; MIT WFA Prize 2025 + WTFund Fellowship awardee (>US$120K non-dilutive).",
+    "funding_rounds": [
+      {
+        "date": "2025-11-12",
+        "stage": "Pre-Seed",
+        "amount": "US$2.6M",
+        "amount_usd": 2600000,
+        "lead_investors": [
+          "Pebblebed Ventures"
+        ],
+        "investors": [
+          "Pebblebed Ventures",
+          "Akshay Kothari (Notion)",
+          "Sean Hunt (Solugen)",
+          "Eben Bayer (Ecovative)",
+          "Mithun Sacheti (CaratLane)"
+        ],
+        "source": "https://technode.global/2025/11/12/singapores-anomaly-bio-raises-2-6m-in-funding-led-by-pebblebed-ventures/"
+      }
+    ],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio. NUS undergraduate founders; US$2.6M pre-seed led by Pebblebed Ventures (SF) Nov 2025 with notable strategic angels."
   },
   {
     "name": "AProxy",
@@ -617,6 +681,13 @@
       }
     ],
     "funding_notes": "NUS GRIP spin-off (UV-LED disinfection); pre-seed grant from NUS GRIP confirmed; specific amount not disclosed (NUS GRIP typically up to SGD 250K)."
+  },
+  {
+    "name": "Arch",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — 'Arch' is extremely generic (Linux distro, programming arch, construction, fashion); drop unrelated mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "ARMAS TEC",
@@ -694,6 +765,17 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company developing Brain Protection System (BPS) with auxetic meta-material helmet liners. No publicly announced funding rounds beyond NUS GRIP incubation found."
+  },
+  {
+    "name": "AVA (Bright Sight)",
+    "aliases": [
+      "AVA Bright Sight",
+      "Bright Sight",
+      "AVA"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore assistive-technology startup operating 'Bright Sight' / 'AVA' product (assistive companion for the visually impaired). Distinct from the related but separate AiSee glasses (NUS Computing spin-out, already in this watchlist) — both come out of NUS adjacent assistive-tech research; drop generic 'AVA' AI-assistant news (Ava call-centre AI, Ava Labs blockchain) unless it explicitly references the Hangar's Bright Sight / AVA team.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "BAE",
@@ -839,6 +921,13 @@
     "funding_notes": "NUS GRIP portfolio company developing portable 12-lead AI-enabled ECG device. No publicly announced funding rounds found beyond NUS GRIP incubation."
   },
   {
+    "name": "Blue House",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — 'Blue House' is extremely generic (Hong Kong heritage building, multiple consumer brands); drop unrelated mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "brain|pool",
     "aliases": [
       "brainpool"
@@ -860,6 +949,22 @@
       }
     ],
     "funding_notes": "Brain Pool Tech closed a total of S$900K in funding during the pandemic, led by ABC Dream Ventures."
+  },
+  {
+    "name": "Carbonzeroed",
+    "aliases": [
+      "CARBONZEROED PTE LTD"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore climate-tech startup (incorporated 14 Nov 2023, HQ 10 Ubi Crescent #04-21 Ubi Techpark) providing engineering-design and consultancy services around energy management, clean-energy systems and Carbon Net Zero strategy execution; secondary activity in software/applications development. Drop generic 'carbon zero' / net-zero policy news unless it explicitly names Carbonzeroed.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Careforwe",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore caregiving / healthcare startup ('care for we'). Limited public-English information beyond the directory listing — drop generic 'care for' / caregiver-marketplace mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Casa Medico",
@@ -1164,11 +1269,36 @@
     "funding_notes": "NUS GRIP portfolio company / NUS spin-off producing green cement from marine clay. No publicly announced external funding rounds found."
   },
   {
+    "name": "Cityscape Farm SG",
+    "aliases": [
+      "Cityscape Farm"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore urban-farming venture aligned with Singapore's '30 by 30' food-security target. Distinct from other Singapore indoor / vertical farms (Artisan Green, Sustenir, VertiVegies, Citysprouts) — drop generic SG urban-farming content unless the article explicitly references Cityscape Farm SG.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "CLink",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — 'CLink' / 'C-Link' collides with multiple unrelated networking and crypto brands; drop unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Codaveri",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "AI programming tutor startup spun out from NUS AI Centre for Educational Technologies (AICET). Listed as 'Unfunded' on Tracxn."
+  },
+  {
+    "name": "Commenhers",
+    "aliases": [
+      "Commenhers LLP"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore LLP venture (likely women-focused mentorship or community given the play on 'commenters'/'her'). Limited public-English information beyond the directory listing — drop unrelated namesakes unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "ConcreteAI",
@@ -1218,6 +1348,13 @@
     "funding_notes": "Founded 2015 by Eli Finkelshteyn and Dan McCormick. Total reported funding ~US$61.1M across 4 rounds (Crunchbase). BLOCK71 Silicon Valley-listed."
   },
   {
+    "name": "Convalesce Labs",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore healthtech / rehabilitation-focused venture ('convalesce' = recover from illness). Limited public-English information beyond the directory listing — drop unrelated namesakes unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "CoolestDC",
     "aliases": [
       "Coolestdc",
@@ -1233,6 +1370,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English noun — drop any item not clearly referring to the Singapore startup.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company; biofertilizer products for sustainable agriculture. No publicly announced funding rounds found."
+  },
+  {
+    "name": "Crafca",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Craft Health",
@@ -1315,6 +1459,16 @@
     "funding_notes": "Selected as one of two inaugural projects in Breakthrough Energy Fellows - Southeast Asia (2024). Also received Startup SG Founder Grant from Enterprise Singapore. No equity funding rounds publicly disclosed."
   },
   {
+    "name": "Creo.works",
+    "aliases": [
+      "Creo.works Pte Ltd",
+      "Creo Works"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore creative / digital-services startup. Limited public-English information beyond the directory listing — drop generic 'creo' / 'creator-tools' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Curated Culture",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic phrase — drop any item not clearly referring to the Singapore startup.",
@@ -1394,6 +1548,16 @@
     "funding_notes": "BLOCK71 Silicon Valley portfolio (Singapore HQ). NRP RoboNexus participant. No publicly verifiable equity funding round announced; Foxconn collaboration is a manufacturing MOU, not an equity event."
   },
   {
+    "name": "Digi.Upstudio",
+    "aliases": [
+      "Digi.Upstudio LLP",
+      "Digi Upstudio"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore LLP / digital-studio venture. Limited public-English information beyond the directory listing — drop generic 'digital studio' / 'Digi.' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Digitala",
     "aliases": [],
     "description": "BLOCK71 Jakarta-resident Indonesian digital-services startup. Limited public-English information beyond the directory listing — drop unrelated 'Digitala' brands (Italian digital agency, Filipino bookings firm, etc.) unless the article explicitly references this BLOCK71 Jakarta entity.",
@@ -1430,6 +1594,13 @@
     "funding_notes": "Winner of 2019 PIER71 Smart Port Challenge; received MPA grant. Also received NUS GRIP support and ESG support per company About page. Tracxn/CBInsights list ~US$40K total raised."
   },
   {
+    "name": "DryTrack",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — could be moisture/drying analytics or athletic-performance tracking; drop unrelated brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Duluin",
     "aliases": [
       "Duluin Platform",
@@ -1449,6 +1620,13 @@
     "description": "BLOCK71 / NUS Enterprise@SSP-resident Singapore deep-medtech startup (NUS spin-off, founded 2019; 83 Science Park Drive #02-03 The Curie) building first-in-class medical devices plus AI for newborn and women's healthcare — a non-invasive bilirubin meter is deployed across 120+ hospitals/clinics globally and has monitored jaundice in 500,000+ babies. Drop unrelated 'E3' / 'A3' branding news.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio. NUS Enterprise startup-story alumnus. Public equity rounds not verified at time of writing."
+  },
+  {
+    "name": "Easyconvo",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore conversational-AI / messaging startup. Limited public-English information beyond the directory listing — drop generic 'easy conversation' AI chatbot news unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Ecobinder",
@@ -1475,6 +1653,13 @@
     "description": "BLOCK71 Social Impact Hub-resident Singapore cleantech / smart-buildings startup founded by four NUS students out of the SDG Open Hack @ NUS 2024 building an AI-native building orchestration platform with IoT smart-plug sensors that target phantom-load ('vampire energy') consumption. Drop unrelated EV-charging 'Ecovolt' / 'Volt' brands (Greenvolt, Keppel Volt) unless the article names ecovolt.ai.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
+  },
+  {
+    "name": "Eduville",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore edtech startup. Limited public-English information beyond the directory listing — drop unrelated 'eduville' / education-platform mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "EEA",
@@ -1526,6 +1711,13 @@
     "funding_notes": "NUS GRIP portfolio company (non-adherent hemostatic device). No publicly announced funding round found."
   },
   {
+    "name": "Emplity",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore HR / employee-experience startup ('empl' + 'ability'). Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "ENBED",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore energy-tech startup. Drop unrelated companies sharing the same name.",
@@ -1574,6 +1766,30 @@
     "description": "BLOCK71 Guangzhou-affiliated Singapore home-textiles brand (founded 1997) commercialising fabrics suited to tropical climate — Egyptian cotton, bamboo, TENCEL blends — via NUS GRTII Guangzhou translation institute. Mature consumer brand, not a venture-stage startup; drop generic bedding / hotel-linens news unless it names Epitex.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Guangzhou / NUS GRTII industry partner — ~100 employees across Singapore, Malaysia and China; 2024 Singapore Prestige Brand Award. No publicly verifiable equity funding round announced."
+  },
+  {
+    "name": "Evalumate",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore evaluation / assessment-tooling startup ('eval' + 'mate'). Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Eventlytics.AI",
+    "aliases": [
+      "Eventlytics.Ai",
+      "Bardar"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore event-analytics AI startup (previously branded 'Bardar'). Drop unrelated 'event analytics' B2B vendor news (eventbrite-tools, etc.) unless the article explicitly references Eventlytics.AI / its Bardar predecessor.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "f1gures",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup (stylised name 'f1gures'). Limited public-English information beyond the directory listing — drop unrelated 'figures' / 'F1' Formula One mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "F5 Online Trading Technology",
@@ -1681,6 +1897,13 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "FitSensei",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore fitness / wellness startup ('fit' + 'sensei' coach). Limited public-English information beyond the directory listing — drop generic fitness-AI / personal-trainer-app mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "FitSight",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore myopia-management health-tech startup. Drop unrelated companies sharing the same name.",
@@ -1704,6 +1927,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (smell-sensing tech for flavour/fragrance QC). No publicly announced funding round found."
+  },
+  {
+    "name": "Flow Coffee",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore coffee / F&B startup. Limited public-English information beyond the directory listing — drop unrelated 'Flow' (Bay Area co-living) and other 'Flow Coffee' cafe brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Food Sustainesia",
@@ -1790,6 +2020,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name (e.g. geology/mining firms named GeoCore).",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (geotechnical real-time seawall monitoring). No publicly announced funding round found beyond GRIP programme support."
+  },
+  {
+    "name": "GigSpace",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore gig-economy / workspace startup. Limited public-English information beyond the directory listing — drop unrelated 'gig space' coworking / freelancer-marketplace brands unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "GoMobile",
@@ -1981,6 +2218,27 @@
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "HearU",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore audiology / hearing-tech / mental-health startup ('hear you'). Limited public-English information beyond the directory listing — drop unrelated 'HearU' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Helb",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop the unrelated 'HELB' (Kenya's Higher Education Loans Board) news unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "herbie",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup (likely herb / TCM / wellness given the name). Limited public-English information beyond the directory listing — drop unrelated 'Herbie' brand mentions (VW car, multiple consumer products) unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Heseed",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -2083,6 +2341,13 @@
     "funding_notes": "NUS spin-off (founded 2022) building autonomous toilet/restroom cleaning robots (Abluo). Pre-seed reported up to ~US$1M with the named investors per CB Insights and PitchBook; total raised across rounds reported around US$6.14M (PitchBook). Specific dates not disclosed in public sources."
   },
   {
+    "name": "HoloTracker",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup (likely AR/holography or holistic-tracking given the name). Limited public-English information beyond the directory listing — drop unrelated holographic-AR vendor news unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "HOMEPAL",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore care-tech startup. Distinct from Homepal the Italian proptech firm or any other unrelated company sharing this name.",
@@ -2136,6 +2401,16 @@
     "funding_notes": "AI-enabled e-Sourcing platform for electronics BOM. NUS GRIP portfolio listing; no other public funding rounds found."
   },
   {
+    "name": "Hyperpod AI",
+    "aliases": [
+      "Hyperpod",
+      "Hyperpodai"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore AI-developer-tooling startup (app.hyperpodai.com) offering an AI-prototype builder — 30-min prototypes, 3-hour school projects, 3-day startup-idea validation; users can upload custom models. Drop the unrelated DDN Enterprise AI HyperPOD GPU appliance brand unless the article explicitly references the BLOCK71 Hangar Hyperpod AI startup.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Iklanmu.id",
     "aliases": [
       "Iklanmu"
@@ -2143,6 +2418,13 @@
     "description": "BLOCK71 Jakarta-resident Indonesian advertising-tech / classifieds platform ('Iklanmu' literally 'your ad' in Indonesian). Limited public-English information beyond the directory listing — drop coverage of the dominant Indonesian ad-tech players (TADEX/Telkomsel, Adsmart/detikcom) unless the article explicitly references Iklanmu.id.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Incy Tech",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'Incy' / 'incy-wincy' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Infinit Group",
@@ -2307,6 +2589,31 @@
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable priced equity funding round announced at time of writing."
   },
   {
+    "name": "Koel",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — 'Koel' is a common South-Asian word and bird species; drop unrelated namesakes unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Koola",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'Koola' / 'Koolala' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Labl'r.ai",
+    "aliases": [
+      "Labl'r",
+      "Lablr.ai",
+      "Labl r ai"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore AI data-labelling / annotation startup. Drop generic data-labelling vendor news (Scale AI, Labelbox, etc.) unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "lalia",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -2334,6 +2641,29 @@
     "description": "BLOCK71 Jakarta-resident Indonesian startup. CRITICAL: 'LAPAN' is the historic name of Indonesia's national aeronautics and space agency (Lembaga Penerbangan dan Antariksa Nasional, dissolved 2021 and folded into BRIN) — almost all 'Lapan' news refers to the space agency, not this startup. Drop unless the article explicitly references the BLOCK71 Jakarta entity (not the space agency / BRIN successor / satellite programme).",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Lecture AI",
+    "aliases": [
+      "LectureAI"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore education-AI startup (likely lecture-transcription / study-companion). Drop unrelated 'lecture AI' generic edtech mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Leibler",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop the unrelated 'Arnold Bloch Leibler' (Australian law firm) and other 'Leibler' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Lenor",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop the unrelated 'Lenor' (Procter & Gamble laundry softener brand) and other namesakes unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Let's Celebrate",
@@ -2367,6 +2697,20 @@
     "funding_notes": "NUS spin-off in AI-driven text analytics. Supported by NUS GRIP and Lean Launchpad Singapore; no external equity funding rounds publicly disclosed."
   },
   {
+    "name": "LFG",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. CRITICAL: 'LFG' is a very common acronym (Looking For Group in gaming, Luna Foundation Guard in crypto, Let's F-ing Go meme); drop unrelated mentions unless the article explicitly references the BLOCK71 / NUS Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Liftauth",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore authentication / access-control startup (suggesting elevator / building auth or 'lift' + 'auth' for SSO). Limited public-English information beyond the directory listing — drop generic identity-vendor news unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Liloss",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -2379,6 +2723,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Distinct from the Lincore welding-consumables brand or any other unrelated company sharing this name.",
     "funding_rounds": [],
     "funding_notes": "NUS spin-off in Li-ion battery recycling. Selected for Breakthrough Energy Fellows SEA 2024 and 2025 cohorts (technical support / non-equity fellowship). No publicly-announced priced funding round found. See https://www.eco-business.com/news/as-lithium-reserves-dwindle-singapore-ev-battery-recycling-startup-aims-to-plug-supply-gap/"
+  },
+  {
+    "name": "Linkify",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'Linkify' (Linkedin-style and link-shortening tools share the name) brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "LittleLives",
@@ -2510,6 +2861,13 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "Marymount Labs",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore digital-health startup (co-founder Zacchaeus Chok, NUS Computing) building 'Broadcast', an AI-powered WhatsApp engagement platform that automates patient outreach (smoking-cessation assessments, Hospital@Home triage, preventive-care campaign reminders) in local languages. Joined NUS Medicine DATA accelerator (Sep), backed by NUS VIP and 500 Startups (SSGF); 2024 NUS Health Hack 1st Prize; sole SG/Asia team in 2024 Caelestinus Digital Health Incubator. Drop unrelated 'Marymount' (school/hospital brand) news.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. NUS Medicine DATA cohort + NUS VIP + 500 Startups SSGF support. Public priced equity round details not verified at time of writing."
+  },
+  {
     "name": "Mastermind Advisors",
     "aliases": [],
     "description": "BLOCK71 Silicon Valley-listed advisory/partner entity supporting Singapore startups on US market entry via the BLOCK71 SV programme. Not a venture-stage startup; drop generic 'mastermind group' coaching, business-advisory or financial-advisory news unless it names the BLOCK71 SV entity.",
@@ -2522,6 +2880,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "Singapore startup community platform incorporated 16 May 2016 (UEN 201613194E); company status is currently 'struck off' per ACRA records. No publicly-announced funding round found."
+  },
+  {
+    "name": "Matchwise",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'matchwise' (multiple sports / dating / recommendation brands share the name) mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Medicert",
@@ -2560,6 +2925,15 @@
     "description": "BLOCK71 Social Impact Hub-resident Singapore mobility/rehab venture (limited public-English information beyond the directory and a Facebook presence). Drop unrelated 'M:Move' / mobility-app branding unless the article references this BLOCK71 SIH entity. Likely focused on assistive-mobility for elderly / accessibility.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
+  },
+  {
+    "name": "MenSC Labs",
+    "aliases": [
+      "Menstrual Stem Cell Labs"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore biotech startup likely focused on menstrual-blood-derived stem-cell research (MenSC = Menstrual Stem Cells, an established research term). Drop unrelated 'MEMS-C' / men's-care brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Mento.vn",
@@ -2858,6 +3232,13 @@
     "funding_notes": "NUS GRIP portfolio company developing autonomous remote cataract monitoring tool. No publicly-announced individual funding round with verifiable source found."
   },
   {
+    "name": "Nth Labs",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — 'Nth' is a generic mathematical prefix; drop unrelated 'NTH Labs' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "nusmetics",
     "aliases": [
       "NUS metics"
@@ -2952,6 +3333,13 @@
     "funding_notes": "Listed in NUS GRIP portfolio but no publicly-announced funding round with verifiable source found."
   },
   {
+    "name": "Ohana",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup ('ohana' = Hawaiian for family). Limited public-English information beyond the directory listing — drop unrelated 'Ohana' brand mentions (Salesforce community term, many family-themed brands) unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Oleum Lev",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -2964,6 +3352,13 @@
     "description": "NUS GRIP-incubated Singapore driving-data analytics startup. Highly generic name — drop any item not clearly about this specific company.",
     "funding_rounds": [],
     "funding_notes": "Listed in NUS GRIP portfolio (auto-insurance behavioral data platform) but no publicly-announced funding round with verifiable source found."
+  },
+  {
+    "name": "OpenJio",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup ('jio' is Singlish for 'invite'). Drop the unrelated 'Jio' / 'Reliance Jio' (India telecom) and Carousell-style classified rumour news unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Otrafy",
@@ -2984,6 +3379,33 @@
     "description": "BLOCK71 Jakarta-resident Indonesian healthtech startup digitising hospital records / paperless clinical workflows. Limited public-English information beyond the directory listing — drop generic 'paperless / EMR' vendor news unless it explicitly references this BLOCK71 Jakarta entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Pennycillin",
+    "aliases": [
+      "PennyCillin"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup (pennycillin.co; play on 'penicillin' + 'penny' — likely affordable healthcare / antibiotic access). Limited public-English information beyond the directory listing — drop unrelated penicillin-research / pharmaceutical-pricing policy news unless it explicitly names Pennycillin.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Perfingo",
+    "aliases": [
+      "Perfingo Pte Ltd"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'Perfingo' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Perkpal",
+    "aliases": [
+      "Perkpal Pte Ltd"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore HR-tech / employee-perks startup (the BLOCK71 directory lists Perkpal twice — folded here). Limited public-English information beyond the directory listing — drop unrelated 'perks platform' vendor news (Perkbox, etc.) unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "PharLyfe+",
@@ -3014,6 +3436,15 @@
       }
     ],
     "funding_notes": "Founders received NUS GRIP funding in January 2023 (GRIP Run 8) before incorporation in Feb 2023. Specific amount not disclosed; GRIP standard is up to S$250k."
+  },
+  {
+    "name": "Phonics AI",
+    "aliases": [
+      "PhonicsAI"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore education-AI startup likely focused on phonics / early-literacy AI tutoring. Drop generic 'phonics' education curriculum and speech-recognition vendor news unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Picopoint Genomics",
@@ -3054,6 +3485,13 @@
       }
     ],
     "funding_notes": "BLOCK71 Bandung-listed; led by ex-Gojek operators. Series B closed April 2022; subsequent rounds not verified in open sources at time of writing."
+  },
+  {
+    "name": "PlasticTinkers",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore plastic-recycling / circular-economy maker startup. Drop generic 'plastic recycling' / 'maker' content unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "polybee",
@@ -3142,6 +3580,15 @@
     "funding_notes": "SERIS spin-off. Was 4th EMA-Shell Startup Grant recipient in 2023. Specific grant amounts not publicly disclosed."
   },
   {
+    "name": "Prescience Presbyrobotics",
+    "aliases": [
+      "Prescience Presbyrobotics Private Limited"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore medtech / robotics startup (name suggests prescient diagnostics + 'presby' = elderly, robotics — likely elderly-care or vision-correction robotic systems). Drop unrelated 'presbyterian' church news and generic robotics-startup mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "PrimeGROWTH Technologies",
     "aliases": [
       "PrimeGROWTH"
@@ -3172,6 +3619,13 @@
     "description": "NUS GRIP-incubated Singapore oncology-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio (cancer diagnostics, miRNA biomarkers). No publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "Promise Tickets",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore ticketing / events startup. Limited public-English information beyond the directory listing — drop generic ticketing-platform news (Eventbrite, Ticketmaster) unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "ProniaBioTech",
@@ -3295,6 +3749,13 @@
     "funding_notes": "Not clearly confirmed in NUS GRIP public materials; no publicly-announced funding round with verifiable source found."
   },
   {
+    "name": "Quiver",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — 'Quiver' is generic (Quiver Quantitative, archery, fishing, multiple apps); drop unrelated mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "RDM",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Very generic three-letter acronym — drop any item not clearly about the Singapore startup.",
@@ -3316,6 +3777,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio (electrochemistry wastewater treatment). No publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "Renaissance",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. CRITICAL: 'Renaissance' is extremely generic (Renaissance Technologies hedge fund, Renaissance Re insurance, Renaissance Hotels, Renaissance learning); drop almost all 'Renaissance' news unless the article explicitly references the BLOCK71 / NUS Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Rendeweichuang Biology Partner",
@@ -3380,6 +3848,13 @@
     "funding_notes": "Participated in NUS GRIP Run 3 (December 2019). 8 of 15 Run 3 teams received up to S$100k seed funding but RightCode not explicitly named as a recipient in publicly available sources."
   },
   {
+    "name": "RizqX",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup (name from Arabic 'rizq' = sustenance / livelihood — likely Islamic fintech or food / employment tech). Drop unrelated 'Rizq' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "RO+",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore automation startup. Very short brand — drop any item not clearly about this specific Singapore startup.",
@@ -3416,6 +3891,13 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "Root Solution",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — 'Root Solution' is generic (root-cause analysis, root vegetables, hair / dental products); drop unrelated mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Roplus",
     "aliases": [
       "RoPlus",
@@ -3443,6 +3925,13 @@
     "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — 'Saba' is generic (could be Arabic, banana variety, surnames, multiple unrelated firms); drop unless the article explicitly references this BLOCK71 Jakarta entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Safelatch",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore safety / security-hardware startup (likely smart-lock or industrial latch). Drop unrelated 'Safelatch' product mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "SafeLight",
@@ -3555,6 +4044,13 @@
     "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio. Public equity rounds not verified at time of writing."
   },
   {
+    "name": "ShareRight",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup (likely equity-sharing / ESOP / legal-sharing tools). Drop unrelated 'ShareRight' generic-rights brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "SHARPEN.AI",
     "aliases": [
       "Sharpen AI"
@@ -3580,6 +4076,15 @@
     "description": "BLOCK71 Chongqing-resident Chinese intelligent-technology venture (transliterated Mandarin: 'ShiKongDianGe' ≈ 'time-space-electric-grid'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "SilentConvo",
+    "aliases": [
+      "Silent Convo"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup (name suggests silent conversation / privacy messaging or sign-language). Drop unrelated 'silent conversation' wellness / mindfulness mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "SinGENE",
@@ -3661,6 +4166,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "Snowball",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. CRITICAL: 'Snowball' collides with many unrelated brands (Snowball Effect crowd-investing, Snowball Analytics, Snowball debit-credit method); drop unrelated mentions unless the article explicitly references the BLOCK71 / NUS Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Socompany",
@@ -3814,6 +4326,26 @@
     "funding_notes": "BLOCK71 Jakarta portfolio (Singapore HQ); seed amount was S$1M (~US$729K) led by FreakOut Holdings (2020). Subsequent rounds not verified in open sources."
   },
   {
+    "name": "Stick'Em",
+    "aliases": [
+      "Stick' Em",
+      "Stick'Em Private Limited"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'stick em' branding (online card / sticker / shooter game references) unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "storeIT",
+    "aliases": [
+      "StoreIT",
+      "store IT"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup (likely storage / IT-asset-management). Drop unrelated 'storeIT' / 'StoreIT' generic-storage news unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Stratificare",
     "aliases": [
       "StratifiCare"
@@ -3938,6 +4470,15 @@
     "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
   },
   {
+    "name": "Telequotes",
+    "aliases": [
+      "Telequotes Pte Ltd"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup likely offering tele-quoting / virtual sales-quote workflows. Drop unrelated 'tele quotes' insurance brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "TEREDO Analytics",
     "aliases": [
       "TEREDO"
@@ -3984,6 +4525,15 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "Tracework.AI",
+    "aliases": [
+      "Tracework AI"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore AI startup (likely workflow / process tracing / observability for ML). Drop generic 'work tracing' / project-management vendor mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Tuc Thoi Service Corporation",
     "aliases": [
       "Tuc Thoi"
@@ -4007,6 +4557,15 @@
     "description": "BLOCK71 Suzhou-listed Singapore cleantech / eco-clean venture. Limited public-English information beyond the directory listing — drop unrelated 'Ultrapower' brands (industrial-cleaner chemistries, EV chargers) unless the article explicitly references this BLOCK71 Suzhou entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
+  },
+  {
+    "name": "Uniad",
+    "aliases": [
+      "Uniad Pte Ltd"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'uniad' (Unilever Ad / university-ad / unidad) brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "UnoMove",
@@ -4056,6 +4615,15 @@
     "description": "NUS GRIP-incubated Singapore cybersecurity startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP blockchain smart-contract security startup (founded 2022, based at NUS COM3). No publicly-announced funding round located."
+  },
+  {
+    "name": "VetBuddy",
+    "aliases": [
+      "Vetbuddy"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore veterinary-tech / pet-health startup. Drop unrelated 'vet buddy' (US veteran-support, generic vet apps) mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "Videfly",
@@ -4134,6 +4702,16 @@
     "funding_notes": "No publicly indexed information matching a NUS GRIP Singapore startup named 'Virtu AI'. Distinct from the US-based 'Virtue AI'."
   },
   {
+    "name": "VITALITEA",
+    "aliases": [
+      "VitaliTEA",
+      "Boost VitaliTEA"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore wellness-beverage / functional-tea startup ('Boost VitaliTEA'). Drop generic 'vitality' / 'tea' wellness articles unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Việc Có",
     "aliases": [
       "Viec Co",
@@ -4210,6 +4788,13 @@
     "funding_notes": "Listed in NUS Enterprise startup stories and PitchBook with NUS GRIP listed as an investor, but no specific publicly-announced funding round with verifiable date/amount/source was found."
   },
   {
+    "name": "Wazure",
+    "aliases": [],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'Wazure' brand mentions unless the article explicitly references this Hangar entity. Distinct from Microsoft 'Azure' / 'Wazuh' security-monitoring open-source project.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "Wellmatix",
     "aliases": [],
     "description": "BLOCK71 / NUS Enterprise@SSP-resident Singapore healthtech startup. Limited public-English information beyond the directory listing — drop generic 'wellness' / health-matrix product mentions unless the article explicitly references this BLOCK71 / NUS@SSP entity.",
@@ -4222,6 +4807,15 @@
     "description": "BLOCK71 Saigon-resident Vietnamese startup. Limited public-English information beyond the directory listing — name 'Weva' is generic (clothing brands, real-estate firms, marketing agencies share it); drop unless the article explicitly references this BLOCK71 Saigon entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Whyre Technologies",
+    "aliases": [
+      "Whyre"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore technology startup. Limited public-English information beyond the directory listing — drop unrelated 'Whyre' brand mentions unless the article explicitly references this Hangar entity.",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
     "name": "WiSe",
