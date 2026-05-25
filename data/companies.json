@@ -385,6 +385,16 @@
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
+    "name": "1UP! Sales AI",
+    "aliases": [
+      "1UP Sales AI",
+      "1up Sales AI"
+    ],
+    "description": "BLOCK71 Singapore-resident SaaS startup building an AI sales-enablement / coaching platform ('1UP' as in level up). Limited public-English information beyond the directory listing — drop generic 'sales AI' / Gong / Outreach.io vendor mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "8VERLINK",
     "aliases": [
       "Overlink"
@@ -418,6 +428,26 @@
     "funding_notes": "No publicly verifiable funding information found; NUS GRIP affiliation not strongly evidenced in search results."
   },
   {
+    "name": "Addlly AI",
+    "aliases": [
+      "Addlly",
+      "Addlly AI Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident GenAI content-marketing startup (co-founders Tina Chopra (CEO) and Ronie Ganguly) operating a 'zero-prompt' AI content-creation suite — 1-Click Blog Writer, AI Social Media Post Generator, multi-language Asian-market support; ASEAN Digital Awards 2025 Silver. Drop generic AI-marketing-tools coverage unless it names Addlly.",
+    "funding_rounds": [
+      {
+        "date": "2024-01-01",
+        "stage": "Seed",
+        "amount": "Undisclosed (SGD 5M valuation cap)",
+        "amount_usd": 0,
+        "lead_investors": [],
+        "investors": [],
+        "source": "https://www.wate.com/business/press-releases/ein-presswire/683195059/addlly-ai-secures-first-round-of-funding-at-a-5-million-valuation-cap/"
+      }
+    ],
+    "funding_notes": "BLOCK71 Singapore portfolio. Seed announced at S$5M valuation cap; round size not disclosed in coverage."
+  },
+  {
     "name": "AdmitPath",
     "aliases": [
       "AdmitPath Inc"
@@ -439,6 +469,16 @@
     "description": "BLOCK71 Social Impact Hub-resident Singapore startup. Limited public-English information beyond the directory listing — drop generic 'aid' / 'AI for medicine' news unless the article explicitly references this BLOCK71 SIH entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
+  },
+  {
+    "name": "AiForAll Technologies",
+    "aliases": [
+      "AiForAll",
+      "AiForAll Technologies Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident AI-accessibility / AI-democratisation startup. Limited public-English information beyond the directory listing — drop generic 'AI for all' policy / Microsoft / Google AI-democratisation news unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Ailytics",
@@ -513,6 +553,15 @@
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
+    "name": "AiRTS",
+    "aliases": [
+      "AiRTS Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident AI startup (name suggests real-time-systems / AI Real-Time-Streaming). Limited public-English information beyond the directory listing — drop unrelated 'airts' / 'arts' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "AiSee",
     "aliases": [
       "AiSee Glasses",
@@ -531,6 +580,15 @@
     "funding_notes": "NUS GRIP portfolio company (AI for wastewater treatment optimization); likely received NUS GRIP seed grant (~SGD 250K) but no public equity round announced."
   },
   {
+    "name": "Ajentik AI",
+    "aliases": [
+      "Ajentik AI Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident agentic-AI startup (play on 'agentic'). Drop generic 'agentic AI' hype articles unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Akar",
     "aliases": [],
     "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — 'Akar' (Indonesian for 'root') is a very generic word; drop unrelated namesakes (botanical / restaurants / NGOs) unless the article explicitly references this BLOCK71 Jakarta entity.",
@@ -543,6 +601,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS spin-off biotech (gut health, DUSP10 enzyme/MastGut); supported by NUS GRIP but no public equity funding rounds announced."
+  },
+  {
+    "name": "Akro",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — 'Akro' collides with multiple unrelated brands (Akro-Mils plastic bins, Akropolis crypto); drop unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Aleph",
@@ -579,6 +644,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (algae control / nutrient removal); likely received NUS GRIP seed grant (~SGD 250K) but no public equity round announced."
+  },
+  {
+    "name": "Alluci Studio",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident creative / studio venture. Limited public-English information beyond the directory listing — drop unrelated 'Alluci' / 'Allucia' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Alpha",
@@ -646,6 +718,13 @@
       }
     ],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio. NUS undergraduate founders; US$2.6M pre-seed led by Pebblebed Ventures (SF) Nov 2025 with notable strategic angels."
+  },
+  {
+    "name": "API-Rex",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident API / developer-tools startup. Limited public-English information beyond the directory listing — drop unrelated 'APIRex' / API-management vendor mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "AProxy",
@@ -743,6 +822,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS-linked video streaming startup; no public funding announcement found. Company appears to have ceased operations."
+  },
+  {
+    "name": "Aurelif",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Aurelif' / 'Aurelia' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Aurora Food",
@@ -867,6 +953,26 @@
     "funding_notes": "Series A announced Sept 2025; amount reported variously as SGD 10M / $7.4M / $7.76M across sources."
   },
   {
+    "name": "Belli AI",
+    "aliases": [
+      "Belli",
+      "Belli AI Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident air-cargo software startup (founders ex-McKinsey, SpaceX, Boeing, Booking.com, AirAsia) digitising end-to-end airline cargo operations. Drop unrelated namesakes (Italian food brand, maternal-health apps named Belly/Bella) unless the article explicitly references the Singapore air-cargo Belli AI.",
+    "funding_rounds": [
+      {
+        "date": "2024-01-01",
+        "stage": "Seed",
+        "amount": "US$2.4M",
+        "amount_usd": 2400000,
+        "lead_investors": [],
+        "investors": [],
+        "source": "https://block71.co/directory/startups/belli-ai/"
+      }
+    ],
+    "funding_notes": "BLOCK71 Singapore portfolio. Reported US$2.4M raised (per company sources / PitchBook); priced round details not verified."
+  },
+  {
     "name": "BioActivX",
     "aliases": [
       "BIOACTIVX PTE LTD",
@@ -965,6 +1071,15 @@
     "description": "The Hangar (NUS Enterprise)-resident Singapore caregiving / healthcare startup ('care for we'). Limited public-English information beyond the directory listing — drop generic 'care for' / caregiver-marketplace mentions unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "CareSense",
+    "aliases": [
+      "CareSense Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident caregiving / health-monitoring startup. Drop unrelated 'CareSense' brand mentions (multiple US patient-engagement vendors share the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Casa Medico",
@@ -1092,6 +1207,26 @@
       }
     ],
     "funding_notes": "Multiple seed rounds reported. Total funding reported variously as $2M to $4.12M depending on source. Won CNA's The Big Spark business reality show with SGD 4.15M led by Rigel-Farro Capital."
+  },
+  {
+    "name": "Chain Technology Development (SG)",
+    "aliases": [
+      "Chain Technology Development",
+      "Chain Technology Development Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident technology development startup ('Chain' suggests blockchain / supply-chain). Drop generic 'chain technology' / Web3 brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "ChemT Biotechnology",
+    "aliases": [
+      "ChemT",
+      "ChemT Biotechnology Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident chemistry / biotechnology startup. Limited public-English information beyond the directory listing — drop unrelated 'ChemT' / chemistry brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Chongqing AngLian Automobile Technology",
@@ -1278,11 +1413,40 @@
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
+    "name": "ClearCorp",
+    "aliases": [
+      "ClearCorp Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident corporate-services / compliance-tech startup. Drop unrelated 'ClearCorp' brand mentions (CCIL India clearing-corporation, multiple corporate-services firms share the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Clever Forever Education AG",
+    "aliases": [
+      "Clever Forever",
+      "Clever Forever Education"
+    ],
+    "description": "BLOCK71 Singapore-listed Swiss edtech startup (AG = Aktiengesellschaft / Swiss public limited company). Limited public-English information beyond the directory listing — drop unrelated 'Clever' brand edtech (multiple US edtech vendors share the name) mentions unless the article explicitly references this Swiss-incorporated entity at BLOCK71 SG.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio (Swiss HQ). No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "CLink",
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — 'CLink' / 'C-Link' collides with multiple unrelated networking and crypto brands; drop unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "CMED Health",
+    "aliases": [
+      "CMED Health Ltd",
+      "CMED"
+    ],
+    "description": "BLOCK71 Singapore-resident healthtech startup. Limited public-English information beyond the directory listing — drop unrelated 'CMED' / 'C-MED' (multiple medical-equipment and contract-research brands share the name) mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Codaveri",
@@ -1322,6 +1486,17 @@
       }
     ],
     "funding_notes": "NUS spin-off. Total reported funding ~$560K with multiple early-stage investors including Iterative Accelerator and Shell. Exact round dates/breakdowns not publicly disclosed."
+  },
+  {
+    "name": "Connectingdna Global",
+    "aliases": [
+      "Connectingdna",
+      "ConnectingDNA Global",
+      "ConnectingDNA Global Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident genomics / ancestry / DNA-connection startup. Drop unrelated 'connecting DNA' / ancestry-genealogy vendor mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Constructor.io",
@@ -1370,6 +1545,15 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English noun — drop any item not clearly referring to the Singapore startup.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company; biofertilizer products for sustainable agriculture. No publicly announced funding rounds found."
+  },
+  {
+    "name": "Cortex AI",
+    "aliases": [
+      "Cortex AI Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident AI startup. CRITICAL: 'Cortex AI' is extremely generic (Snowflake Cortex, Cortex.io DevOps, Twilio Cortex, etc.) — drop unrelated mentions unless the article explicitly references this BLOCK71 SG Cortex AI entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Crafca",
@@ -1565,6 +1749,17 @@
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "Doinn APAC",
+    "aliases": [
+      "Doinn APAC Pte Ltd",
+      "Doinn",
+      "Doinn APAC online marketplace for services"
+    ],
+    "description": "BLOCK71 Singapore-resident APAC arm of Doinn — an online marketplace connecting hosts / property-managers with cleaning, laundry and linen services. Drop unrelated 'Doinn' brand mentions unless the article explicitly references this BLOCK71 SG-listed APAC entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "DolphinLink",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1645,6 +1840,15 @@
     "funding_notes": "BLOCK71 Bandung-listed; B-Corp since 2018. Strategic partnership with VNV Advisory announced for TREES+ carbon-certified projects. No publicly verifiable equity funding round announced."
   },
   {
+    "name": "Ecovision Solutions",
+    "aliases": [
+      "Ecovision Solutions Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident cleantech / environmental-solutions startup. Drop unrelated 'Ecovision' brand mentions (multiple eco-vision consultancies and environmental services share the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Ecovolt",
     "aliases": [
       "Ecovolt Technologies",
@@ -1653,6 +1857,13 @@
     "description": "BLOCK71 Social Impact Hub-resident Singapore cleantech / smart-buildings startup founded by four NUS students out of the SDG Open Hack @ NUS 2024 building an AI-native building orchestration platform with IoT smart-plug sensors that target phantom-load ('vampire energy') consumption. Drop unrelated EV-charging 'Ecovolt' / 'Volt' brands (Greenvolt, Keppel Volt) unless the article names ecovolt.ai.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
+  },
+  {
+    "name": "Ecoworks",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident sustainability / cleantech startup. Drop unrelated 'Ecoworks' brand mentions (US construction-decarbonisation vendor, German renewable-energy firm share the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Eduville",
@@ -1681,6 +1892,13 @@
     "description": "NUS GRIP-incubated Singapore sensor-tech startup. Drop unrelated companies sharing the same name and any items where 'eigen' refers to eigenvalues/eigenvectors in physics or math.",
     "funding_rounds": [],
     "funding_notes": "No publicly verifiable funding round found in Crunchbase/Tracxn/news."
+  },
+  {
+    "name": "Elgo AI",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident AI startup. Limited public-English information beyond the directory listing — drop unrelated 'Elgo' / 'Algo' / 'Elgo Industries' mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Elkopra",
@@ -1911,6 +2129,24 @@
     "funding_notes": "NUS GRIP portfolio company. No publicly announced funding round found."
   },
   {
+    "name": "FizzDragon",
+    "aliases": [
+      "FizzDragon Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'FizzDragon' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Flexii",
+    "aliases": [
+      "Flexii Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Flexi' / 'Flexii' brand mentions (Flexi loans, Flexi-Coil, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Flexxon",
     "aliases": [
       "FLEXXON HOLDING PTE LTD",
@@ -1934,6 +2170,24 @@
     "description": "The Hangar (NUS Enterprise)-resident Singapore coffee / F&B startup. Limited public-English information beyond the directory listing — drop unrelated 'Flow' (Bay Area co-living) and other 'Flow Coffee' cafe brand mentions unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Flyoro Technologies",
+    "aliases": [
+      "Flyoro"
+    ],
+    "description": "BLOCK71 Singapore-resident technology startup (name suggests aviation / drone / aerial-imaging given 'fly'). Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "fn7",
+    "aliases": [
+      "FN7"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — 'fn7' is extremely generic (F-keys, function-7); drop unrelated technical references unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Food Sustainesia",
@@ -1988,6 +2242,15 @@
     "funding_notes": "NUS GRIP portfolio company. No publicly announced funding round found."
   },
   {
+    "name": "Fronka Tech",
+    "aliases": [
+      "Fronka Tech Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident technology startup. Limited public-English information beyond the directory listing — drop unrelated 'Fronka' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "GaraSTEM",
     "aliases": [
       "Garastem",
@@ -2006,6 +2269,15 @@
     "description": "BLOCK71 Jakarta-resident Indonesian sports-tech / fitness venture (operating entity PT Gelora Raga Nusantara). Limited public-English information beyond the directory listing — 'Gelora' (Indonesian for 'roar' / 'spirit') collides with countless unrelated brands (sports stadiums, political parties, etc.); drop unless the article explicitly references PT Gelora Raga Nusantara.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "GeniiAI",
+    "aliases": [
+      "GeniiAI Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident AI startup ('Genii' play on 'genie' + 'AI'). CRITICAL: 'Genii' is also a Slack/Atlassian Cloud Fortress firm and Genie/GenAI brands proliferate; drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "GenVoice",
@@ -2029,6 +2301,13 @@
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
+    "name": "GoGuided",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup (likely guided-tours / guided-learning given the name). Limited public-English information beyond the directory listing — drop generic 'guided' tour-app brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "GoMobile",
     "aliases": [
       "Gomobile",
@@ -2049,6 +2328,13 @@
     "description": "BLOCK71 Social Impact Hub-resident Singapore B-Corp-certified fintech startup running a personalised investing-health platform for new retail investors — goal setting, portfolio coaching, sustainable / values-aligned investing tools. Drop pet/animal-care 'whale' brands or shipping news unless the article references the investing-health platform.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio; Certified B-Corp. Public equity rounds not verified at time of writing."
+  },
+  {
+    "name": "GoRent",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident rental-marketplace startup. Limited public-English information beyond the directory listing — drop unrelated 'GoRent' brand mentions (multiple car / property / equipment rental services share the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Goritax",
@@ -2191,6 +2477,13 @@
     "funding_notes": "Two-wheeler blind-spot ML hardware. Publicly described as having raised pre-seed funding from NUS-GRIP; specific amount and date not disclosed."
   },
   {
+    "name": "Hangr",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Hangr' / 'Hangry' / 'Wardrobe Hangr' brand mentions unless the article explicitly references this BLOCK71 SG entity. Distinct from 'The Hangar' NUS hub (a workspace, not this startup).",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Haobotics",
     "aliases": [
       "Haobotics Medical Technology (suzhou)",
@@ -2218,6 +2511,13 @@
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "HealthBridge AI",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident healthcare-AI startup. Limited public-English information beyond the directory listing — drop unrelated 'HealthBridge' brand mentions (multiple US/Canada healthcare-tech vendors share the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "HearU",
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore audiology / hearing-tech / mental-health startup ('hear you'). Limited public-English information beyond the directory listing — drop unrelated 'HearU' brand mentions unless the article explicitly references this Hangar entity.",
@@ -2230,6 +2530,15 @@
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop the unrelated 'HELB' (Kenya's Higher Education Loans Board) news unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Helios Applied Systems",
+    "aliases": [
+      "HELIOS APPLIED SYSTEMS PTE LTD"
+    ],
+    "description": "BLOCK71 Singapore-resident industrial-AI / robotics startup (Pte Ltd 200808305R, incorporated 2008, HQ Bukit Batok) offering process automation, digitisation, AI consulting and machine manufacturing; notable product is an autonomous drilling robot for aircraft structural drilling (passenger-to-freighter conversion). Selected as one of 10 AI startups to present at Echelon Singapore. Drop unrelated 'Helios' branded firms unless the article explicitly references this entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced at time of writing."
   },
   {
     "name": "herbie",
@@ -2286,6 +2595,13 @@
       }
     ],
     "funding_notes": "Received initial NUS GRIP S$50K seed tranche. Technology development supported by NHIC I2D and clinical application by I2I schemes. JumpStart programme also referenced."
+  },
+  {
+    "name": "hika",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'hika' / 'hike' brand mentions (Hike Messenger, Hike Capital, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "hilibbie",
@@ -2365,6 +2681,13 @@
     "funding_notes": "BLOCK71 Guangzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "Hoursec",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Hoursec' / 'Hours' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Huarundechuang Life Science",
     "aliases": [
       "Huarundechuang (jiangsu) Life Science",
@@ -2411,6 +2734,29 @@
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
+    "name": "Hyphn",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Hyphn' / 'Hyphen' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Idle Logic",
+    "aliases": [
+      "Idle Logic Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Idle Logic' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "iGOT AI",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident AI startup. Limited public-English information beyond the directory listing — drop unrelated 'iGOT' branded mentions (Indian government iGOT learning platform shares the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Iklanmu.id",
     "aliases": [
       "Iklanmu"
@@ -2418,6 +2764,23 @@
     "description": "BLOCK71 Jakarta-resident Indonesian advertising-tech / classifieds platform ('Iklanmu' literally 'your ad' in Indonesian). Limited public-English information beyond the directory listing — drop coverage of the dominant Indonesian ad-tech players (TADEX/Telkomsel, Adsmart/detikcom) unless the article explicitly references Iklanmu.id.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Illucio",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Illucio' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "illumi one",
+    "aliases": [
+      "Illumi One",
+      "illumi-one"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'illumi' / 'illumiOne' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Incy Tech",
@@ -2436,6 +2799,13 @@
     "description": "BLOCK71 Bandung-listed Singapore/Indonesia entity. Limited public-English information directly tying this BLOCK71 listing to a specific product — name collides with multiple unrelated 'Infinit-O' (PH BPO), 'INFINITIGROUP' (Indonesia industry-4.0 automation) and 'Infinitium' (payments) businesses; drop unless the article clearly identifies the BLOCK71 Bandung-affiliated Infinit Group.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Bandung portfolio entry. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Inheritage",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup (likely estate / inheritance / legacy planning given the name). Limited public-English information beyond the directory listing — drop unrelated 'Inheritage' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "InnoArk",
@@ -2704,6 +3074,15 @@
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
+    "name": "Librarian",
+    "aliases": [
+      "Librarian Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. CRITICAL: 'Librarian' is extremely generic (library staff, software-libraries, multiple branded products); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Liftauth",
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore authentication / access-control startup (suggesting elevator / building auth or 'lift' + 'auth' for SSO). Limited public-English information beyond the directory listing — drop generic identity-vendor news unless the article explicitly references this Hangar entity.",
@@ -2743,6 +3122,23 @@
     "funding_notes": "BLOCK71 Jakarta portfolio (Singapore HQ); Enterprise Singapore featured story. Public priced equity round details not verified at time of writing."
   },
   {
+    "name": "Logice",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup (likely logistics / logic-engine given the name). Limited public-English information beyond the directory listing — drop unrelated 'Logice' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "M.i. Cloud Tech",
+    "aliases": [
+      "Magnetic Interference Technology",
+      "M.i. Cloud Tech Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident technology startup operating under 'M.i. Cloud Tech' / 'Magnetic Interference Technology'. Limited public-English information beyond the directory listing — drop unrelated 'MI' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "M.I.Cloud Technologies",
     "aliases": [
       "MI Cloud",
@@ -2773,6 +3169,15 @@
       }
     ],
     "funding_notes": "BLOCK71 Social Impact Hub / NUS Enterprise × raiSE TS2 cohort. Founder Nuraizah Shamsul Baharin (CEO)."
+  },
+  {
+    "name": "Maestro Labs",
+    "aliases": [
+      "Maestro Labs Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. CRITICAL: 'Maestro Labs' is extremely generic (multiple ML / orchestration / music vendors share the name); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Magloy Tech",
@@ -2832,6 +3237,13 @@
     "description": "BLOCK71 Social Impact Hub-resident Singapore youth-mental-health startup building an AI-driven emotional-support platform delivered through manga-style engagement channels; graduated from the NUS Medicine Digital Advanced Technology Accelerator (DATA) 2025 cohort. Drop generic 'manga' / chatbot AI hype unless the article references this NUS-affiliated youth-MH platform.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub / NUS Medicine DATA 2025 graduate. Public equity rounds not verified at time of writing."
+  },
+  {
+    "name": "ManPack",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Manpack' (mens-grooming subscription) brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Mapid",
@@ -2915,6 +3327,13 @@
       }
     ],
     "funding_notes": "Now rebranded as InteractAI. Won SGD 50K Startup SG Founder Grant via Founder IGNITE pitch 2021. PitchBook/Tracxn list SMU Business Incubator, NUS GRIP and PIXEL as backers, but no priced equity round is publicly disclosed."
+  },
+  {
+    "name": "MeetArts",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident arts / creative-community startup. Limited public-English information beyond the directory listing — drop unrelated 'Meet Arts' / arts-platform brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "MeMove",
@@ -3019,6 +3438,15 @@
     "funding_notes": "NUS spin-off building wearable stretchable microfiber sensors. Latest publicly-announced round is the SGD 1.1M Seed; no Series A announced as of search."
   },
   {
+    "name": "Midori Climate Partner",
+    "aliases": [
+      "Midori Climate Partner Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident climate / sustainability advisory startup ('midori' = green in Japanese). Drop unrelated 'Midori' brand mentions (browser, brewing yeast, AdMidori, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Mindful Drinks",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore consumer-tech startup. Drop generic 'mindful drinks' wellness articles unrelated to the Singapore startup.",
@@ -3031,6 +3459,15 @@
     "description": "NUS GRIP-incubated Singapore fintech startup. Drop generic 'money moves' financial-advice content unrelated to the Singapore startup.",
     "funding_rounds": [],
     "funding_notes": "No verifiable public information found for an NUS GRIP-incubated fintech named 'MoneyMoves'. No funding round announcement located."
+  },
+  {
+    "name": "Motionlytics",
+    "aliases": [
+      "Motionlytics Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident motion / sports analytics startup. Drop unrelated motion-analytics vendor mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Movan Vietnam Technology Solution",
@@ -3211,6 +3648,13 @@
     "funding_notes": "Received SGD 50K first-tranche GRIP seed funding (one of 15 teams sharing NUS' SGD 1.5M GRIP allocation announced in 2019). Eligible for SGD 50K second tranche subject to external match."
   },
   {
+    "name": "Nexmedis",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident healthtech / medical startup. Drop unrelated 'Nexmed' / 'Nexmedis' (Indonesian online clinic, others share the name) mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Nobi Project",
     "aliases": [],
     "description": "BLOCK71 Jakarta-resident Indonesian startup. Limited public-English information beyond the directory listing — drop unrelated 'Nobi' brands (Belgian crypto firm, Japanese consumer apps) unless the article explicitly references this BLOCK71 Jakarta entity.",
@@ -3230,6 +3674,13 @@
     "description": "NUS GRIP-incubated Singapore ophthalmology-AI startup. Highly generic name — drop any item not clearly about the Singapore ophthalmology startup.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company developing autonomous remote cataract monitoring tool. No publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "Nova Tribe",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident community / consumer startup. Drop unrelated 'Nova Tribe' brand mentions (multiple US / EU consumer / esports brands share the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Nth Labs",
@@ -3361,6 +3812,13 @@
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
+    "name": "Orbits",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. CRITICAL: 'Orbits' is extremely generic (multiple satellite / space / digital products share the name); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Otrafy",
     "aliases": [
       "Otrafy Inc",
@@ -3371,6 +3829,24 @@
     "funding_notes": "BLOCK71 Saigon portfolio; Techstars alumnus. Backed by Mind Fund and Forward Fooding's FoodTech 500 (2020). Public priced equity round not verified at time of writing."
   },
   {
+    "name": "Palmvb",
+    "aliases": [
+      "Palmvb Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Palm' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Pantheon Werks",
+    "aliases": [
+      "Pantheon Werks Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Drop unrelated 'Pantheon' brand mentions (Pantheon hosting platform, Pantheon Lab, Pantheon Resources) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "paperlesshospital.id",
     "aliases": [
       "Paperless Hospital",
@@ -3379,6 +3855,13 @@
     "description": "BLOCK71 Jakarta-resident Indonesian healthtech startup digitising hospital records / paperless clinical workflows. Limited public-English information beyond the directory listing — drop generic 'paperless / EMR' vendor news unless it explicitly references this BLOCK71 Jakarta entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Jakarta portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Pencil Labs",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Drop unrelated 'Pencil' / 'Pencil Labs' brand mentions (Pencil.ai marketing, Pencil app, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Pennycillin",
@@ -3397,6 +3880,16 @@
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'Perfingo' brand mentions unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Peris.ai",
+    "aliases": [
+      "Peris.ai Cybersecurity",
+      "Perisai"
+    ],
+    "description": "BLOCK71 Singapore-resident cybersecurity-AI startup (peris.ai). Drop unrelated 'peris' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Perkpal",
@@ -3436,6 +3929,15 @@
       }
     ],
     "funding_notes": "Founders received NUS GRIP funding in January 2023 (GRIP Run 8) before incorporation in Feb 2023. Specific amount not disclosed; GRIP standard is up to S$250k."
+  },
+  {
+    "name": "PharmCare Technology",
+    "aliases": [
+      "PharmCare Technology Limited"
+    ],
+    "description": "BLOCK71 Singapore-resident pharmacy / healthcare-technology startup. Drop unrelated 'PharmCare' brand mentions (multiple pharmacy-management software vendors share the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Phonics AI",
@@ -3492,6 +3994,13 @@
     "description": "The Hangar (NUS Enterprise)-resident Singapore plastic-recycling / circular-economy maker startup. Drop generic 'plastic recycling' / 'maker' content unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Polar Cold",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident cold-chain / refrigeration startup. Drop unrelated 'Polar' / 'Polar Cold' brand mentions (multiple cold-chain logistics vendors share the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "polybee",
@@ -3580,6 +4089,16 @@
     "funding_notes": "SERIS spin-off. Was 4th EMA-Shell Startup Grant recipient in 2023. Specific grant amounts not publicly disclosed."
   },
   {
+    "name": "pQCee",
+    "aliases": [
+      "pQCee Pte Ltd",
+      "SafeQuard"
+    ],
+    "description": "BLOCK71 Singapore-resident post-quantum cybersecurity startup (founded 2022) building scalable encryption + key-lifecycle management; flagship SafeQuard™ document-protection tool (NIST-aligned post-quantum crypto); use cases span quantum-proofing docs, securing Web3 against quantum threats and protecting comms. Supported by the US$15M CyberSG Talent, Innovation and Growth (TIG) Collaboration Centre (NUS × CSA).",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio; CyberSG TIG cohort. National Quantum-Safe Network ecosystem participant. Public priced equity round details not verified at time of writing."
+  },
+  {
     "name": "Prescience Presbyrobotics",
     "aliases": [
       "Prescience Presbyrobotics Private Limited"
@@ -3596,6 +4115,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio (cultivated meat cell priming tech). No publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "PrivateBytes",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident privacy / encryption startup ('private bytes'). Drop unrelated 'PrivateBytes' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Priztinz",
@@ -3636,6 +4162,20 @@
     "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "Listed in NUS GRIP portfolio but no publicly-announced individual funding round with verifiable source found."
+  },
+  {
+    "name": "Proplens AI",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident proptech / property-analytics AI startup ('prop' + 'lens'). Drop unrelated 'Proplens' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Prospero",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. CRITICAL: 'Prospero' is extremely generic (Shakespeare's Tempest, Prospero Resources mining, multiple consumer / B2B brands); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "PT Laut Biru Seafood",
@@ -3681,6 +4221,13 @@
     "description": "BLOCK71 Guangzhou-listed Chinese startup. Limited public-English information available beyond the directory listing — drop unrelated mentions of similarly-named consumer/tech brands unless the article explicitly ties to BLOCK71 Guangzhou or NUS GRTII context.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Guangzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Qallix",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Qallix' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Qapita",
@@ -3749,11 +4296,30 @@
     "funding_notes": "Not clearly confirmed in NUS GRIP public materials; no publicly-announced funding round with verifiable source found."
   },
   {
+    "name": "Qubit Dynamics",
+    "aliases": [
+      "Qubit Dynamics Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident quantum-tech startup. Drop unrelated 'Qubit' / 'Qubit Dynamics' generic quantum-computing vendor mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Quiver",
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — 'Quiver' is generic (Quiver Quantitative, archery, fishing, multiple apps); drop unrelated mentions unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Raijin A.i.",
+    "aliases": [
+      "Raijin AI",
+      "Raijin A.i. Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident AI startup ('raijin' = Japanese god of thunder). Drop unrelated 'Raijin' / 'Raijin AI' brand mentions (multiple namesakes across anime, gaming, ML projects) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "RDM",
@@ -3805,6 +4371,15 @@
     "funding_notes": "Participated in NUS GRIP Run 3 (December 2019). 8 of 15 Run 3 teams received up to S$100k seed funding but ReoMex not explicitly named as a recipient in publicly available sources."
   },
   {
+    "name": "Resume Rubix",
+    "aliases": [
+      "ResumeRubix"
+    ],
+    "description": "BLOCK71 Singapore-resident resume / careertech startup ('Rubix' as in Rubik's cube — likely modular resume-builder). Drop unrelated 'Rubik' / careersite brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "RetireGenie",
     "aliases": [
       "RetireGenie Technology",
@@ -3813,6 +4388,15 @@
     "description": "BLOCK71 Social Impact Hub-resident Singapore silver-economy platform aggregating elderly-care services for the 'Silver Generation' — home-care providers, social services, dementia day-care, specialised care, home therapy, assisted-living and senior-group-home listings; complementary lifestyle and rental services. Drop unrelated retirement-planning / fintech tools branded similarly.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio company. Public equity rounds not verified at time of writing."
+  },
+  {
+    "name": "Rextore",
+    "aliases": [
+      "Rextore Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Rextore' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "RiDM",
@@ -3839,6 +4423,13 @@
       }
     ],
     "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio company; underlying dataflow-architecture patent NUS-owned and exclusively licensed to RiDM. Seed amount not disclosed in TNGlobal coverage."
+  },
+  {
+    "name": "Riffai",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident AI startup ('riff' + 'ai'). Limited public-English information beyond the directory listing — drop unrelated 'Riff AI' (Spotify-era music AI, others share the name) mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "RightCode",
@@ -3941,6 +4532,15 @@
     "funding_notes": "NUS GRIP Run 3 portfolio company (visible light disinfection). No separately announced round with a verifiable source URL and disclosed amount."
   },
   {
+    "name": "SalesMind AI",
+    "aliases": [
+      "SalesMind Ai"
+    ],
+    "description": "BLOCK71 Singapore-resident sales-AI startup. Drop unrelated 'SalesMind' branded vendors (Salesmind.ai LinkedIn outreach, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Sanshiyitian Technology",
     "aliases": [
       "Sanshiyitian"
@@ -3955,6 +4555,15 @@
     "description": "NUS GRIP-incubated Singapore scent-analytics startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (volatile chemical detection for crop disease/pest monitoring). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "Scholarly",
+    "aliases": [
+      "Scholarly Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident edtech / academic-tools startup. Drop unrelated 'Scholarly' brand mentions (Scholarly Kitchen, Scholarly Research) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "SCPscan",
@@ -4003,6 +4612,13 @@
     "funding_notes": "NUS GRIP Run 7 portfolio company (AI sign-language translation). No publicly verifiable equity funding round announced beyond NUS GRIP seed support."
   },
   {
+    "name": "Sembuh AI",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident AI startup ('sembuh' = 'recover/heal' in Indonesian/Malay — likely healthtech or recovery-coaching). Limited public-English information beyond the directory listing — drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "sensAi",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name.",
@@ -4042,6 +4658,15 @@
     "description": "BLOCK71 / NUS Enterprise@SSP-resident Singapore healthtech startup building non-contact health-monitoring solutions (advanced sensing technologies for continuous quality-of-life monitoring). Part of a SENSORI corporate family (Holding, Institute, International, Investment). Drop unrelated 'sensor' / IoT-monitoring vendor news unless it names SENSORI Healthcare.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio. Public equity rounds not verified at time of writing."
+  },
+  {
+    "name": "Serenic.ai",
+    "aliases": [
+      "Serenic AI"
+    ],
+    "description": "BLOCK71 Singapore-resident AI startup. Drop unrelated 'Serenic' brand mentions (Serenic Software, Serenic Wellness) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "ShareRight",
@@ -4085,6 +4710,16 @@
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup (name suggests silent conversation / privacy messaging or sign-language). Drop unrelated 'silent conversation' wellness / mindfulness mentions unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Singapore Sapiens Technology",
+    "aliases": [
+      "Singapore Sapiens Technology Pte Ltd",
+      "Sapiens Technology"
+    ],
+    "description": "BLOCK71 Singapore-resident technology startup. Drop unrelated 'Sapiens' brand mentions (Sapiens International insurance software, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "SinGENE",
@@ -4225,6 +4860,15 @@
     "funding_notes": "NUS GRIP portfolio company (organic solvent nanofiltration membrane technology). No publicly verifiable funding round announcements found."
   },
   {
+    "name": "Somin",
+    "aliases": [
+      "Somin Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Drop unrelated 'Somin' brand mentions (UK social-AI compliance vendor, Korean brands share the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "SoundEye",
     "aliases": [
       "Soundeye",
@@ -4291,6 +4935,15 @@
     "funding_notes": "NUS GRIP portfolio company (AI interior visualisation web app for designers). No publicly verifiable funding round announcements found."
   },
   {
+    "name": "Spaceytales",
+    "aliases": [
+      "Spaceytales Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident edtech / storytelling startup (likely children's AR / space-themed content). Drop unrelated namesakes unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "spotics",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -4344,6 +4997,13 @@
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup (likely storage / IT-asset-management). Drop unrelated 'storeIT' / 'StoreIT' generic-storage news unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Storyvord",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident video / content-production startup. Drop unrelated namesakes unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Stratificare",
@@ -4434,6 +5094,24 @@
     "funding_notes": "NUS GRIP spin-off (RootChain, later pivoted to renewable-energy-powered HPC). Crunchbase/PitchBook list Tech Planter, Shell StartUp Engine (2021 cohort 5), NUS GRIP, BLOCK71, and Solar Impulse as backers, but no specific publicly-announced funding round with date+amount+source found."
   },
   {
+    "name": "SystemEarth",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident climate / earth-systems startup. Drop unrelated 'System Earth' academic / Wikipedia mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Tacniq",
+    "aliases": [
+      "TacnIQ",
+      "Backy",
+      "Kuushy"
+    ],
+    "description": "BLOCK71 Singapore-resident deep-tech tactile-sensor / Physical-AI startup (NUS spin-out, SGInnovate venture-built; founders Prof Harold Soh (NUS CS), Prof Benjamin Tee (NUS Enterprise AVP) and serial entrepreneur Aashish Mehta). Consumer product Kuushy = AI Posture-Coach smart cushion; B2B product Backy™ = AI safety wearable detecting risky postures with real-time haptic feedback for logistics / manufacturing. Drop unrelated 'Tacniq' / 'tactic' brand mentions unless the article references this NUS / SGInnovate entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio; SGInnovate venture-built. Public priced equity round details not verified at time of writing."
+  },
+  {
     "name": "Taidii",
     "aliases": [
       "Taidii Pte Ltd",
@@ -4459,6 +5137,13 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "No publicly indexed funding announcements located."
+  },
+  {
+    "name": "TearIT",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'TearIT' / 'TearAid' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Tech Up Advance",
@@ -4488,6 +5173,15 @@
     "funding_notes": "NUS GRIP spin-off (founded 2019) for acoustic pipeline leak detection. Tracxn/PitchBook list NUS, Imagine H2O and Ripple2Wave as institutional investors and the company won the Digital Water Hackathon @ SIWW 2021, but no publicly-announced funding round with specific date/amount/source was found."
   },
   {
+    "name": "The Fashion Bond",
+    "aliases": [
+      "The Fashion Bond Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident fashion-tech / community startup. Drop unrelated 'Fashion Bond' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "The Geng",
     "aliases": [],
     "description": "BLOCK71 Saigon-resident Vietnamese startup. Limited public-English information beyond the directory listing — name is extremely generic; drop unrelated mentions unless the article explicitly references this BLOCK71 Saigon entity.",
@@ -4515,6 +5209,15 @@
     "funding_notes": "BLOCK71 Social Impact Hub portfolio; raiSE-registered social enterprise. Public equity rounds not verified at time of writing."
   },
   {
+    "name": "The Shelter Company",
+    "aliases": [
+      "The Shelter Company Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident shelter / housing / property startup. Drop unrelated 'Shelter' / homelessness charity / construction firm mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Tocom VN",
     "aliases": [
       "Công Ty Tnhh Tocom Vn",
@@ -4523,6 +5226,24 @@
     "description": "BLOCK71 Saigon-resident Vietnamese startup. Limited public-English information beyond the directory listing — drop unrelated 'TOCOM' (Tokyo Commodity Exchange) market data and other 'Tocom' brands unless the article explicitly references this BLOCK71 Saigon entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Tokai National Higher Education And Research System",
+    "aliases": [
+      "Tokai National Higher Education and Research System"
+    ],
+    "description": "BLOCK71 Singapore-listed Japanese university research / commercialisation entity (Nagoya University / Gifu University consortium operates this system). Drop generic Japanese higher-education news unless the article explicitly references the BLOCK71-listed commercialisation arm.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore directory listing for a Japanese research consortium (commercialisation partner), not a venture-stage startup."
+  },
+  {
+    "name": "Topo AI Consulting",
+    "aliases": [
+      "Topo AI"
+    ],
+    "description": "BLOCK71 Singapore-resident AI consultancy startup. Drop unrelated 'Topo' brand mentions (Topo Chico, Topo.ai outbound-sales vendor, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Tracework.AI",
@@ -4543,11 +5264,36 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "TunaSolutions",
+    "aliases": [
+      "Tuna Solutions"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Drop unrelated 'tuna' / fisheries-tech brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "TuSense",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "Incorporated 2019 at NUS Enterprise Centre; ACRA status reported as struck off. No publicly-announced funding round located."
+  },
+  {
+    "name": "TutorEase",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident edtech / tutoring-marketplace startup (listed twice in the directory — collapsed here). Drop unrelated 'tutor' marketplace vendor mentions (Tutor.com, Cambly, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Udifine",
+    "aliases": [
+      "Udifine Ltd"
+    ],
+    "description": "BLOCK71 Singapore-listed startup (registered as Limited, suggesting overseas incorporation). Limited public-English information beyond the directory listing — drop unrelated 'Udifine' brand mentions unless the article explicitly references this BLOCK71 SG-affiliated entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Ultrapower Eco Clean",
@@ -4573,6 +5319,16 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio (Run 9-era). Won BRICS-SG Entrepreneurship Competition 2023. No specific publicly-announced funding round with verifiable date/amount/source found."
+  },
+  {
+    "name": "Unomove (Suzhou)",
+    "aliases": [
+      "Unomove Suzhou Co Ltd",
+      "Unomove"
+    ],
+    "description": "BLOCK71 Singapore-listed Chinese mobility venture (Suzhou ops; related to the BLOCK71 Chongqing-listed Chongqing Unomove Technology). Drop unrelated 'Uno' / mobility brand mentions unless the article explicitly references the Unomove (Suzhou) entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company with Suzhou operations. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
   },
   {
     "name": "UpperMed",
@@ -4624,6 +5380,24 @@
     "description": "The Hangar (NUS Enterprise)-resident Singapore veterinary-tech / pet-health startup. Drop unrelated 'vet buddy' (US veteran-support, generic vet apps) mentions unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
+    "name": "Vibefam",
+    "aliases": [
+      "Vibefam Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident community / wellness / events startup ('vibe' + 'fam'). Drop unrelated namesakes unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Vibtree",
+    "aliases": [
+      "Vibtree Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident communications / CPaaS startup. Drop unrelated 'Vibtree' (Indian cloud-telephony provider shares the name) unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Videfly",
@@ -4700,6 +5474,13 @@
     "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "No publicly indexed information matching a NUS GRIP Singapore startup named 'Virtu AI'. Distinct from the US-based 'Virtue AI'."
+  },
+  {
+    "name": "Vita",
+    "aliases": [],
+    "description": "BLOCK71 Singapore-resident startup. CRITICAL: 'Vita' is extremely generic (Vita Coco, Vita Mojo, Vita3K emulator, dozens of consumer brands); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "VITALITEA",
@@ -4883,6 +5664,15 @@
     "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Zhongchuangbo' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Chongqing portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUS GRTII incubation support."
+  },
+  {
+    "name": "Zoala",
+    "aliases": [
+      "Zoala Pte Ltd"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Zoala' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Zoe Botanicals",
