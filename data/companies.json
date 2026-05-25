@@ -473,6 +473,16 @@
     "funding_notes": "BLOCK71 Silicon Valley cohort startup founded by David Isaac (CEO). No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "AirCity",
+    "aliases": [
+      "Công Ty Tnhh Aircity Vietnam",
+      "AirCity Vietnam"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese AI/IoT smart-building management startup (founded late-2021 via Antler Singapore by three co-founders, seed-funded US$85K by Antler). Reduces residential operating staff (e.g., 10→3 per 1,000 rooms) and building op-costs up to 40% via AI maintenance prediction; 30+ clients, ~1,500 paid units across 60 locations in 5 cities; 2023 Smart City Award (IOC). Distinct from air-quality-monitoring vendors like tMonitor — drop pollution / AQI articles unless they name AirCity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company; Antler Singapore seed (~US$85K). Public priced equity round details not verified beyond Antler seed."
+  },
+  {
     "name": "AiSee",
     "aliases": [
       "AiSee Glasses",
@@ -539,6 +549,16 @@
     "description": "NUS GRIP-incubated Singapore climate-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "Incorporated July 2021 with pre-seed support from NUS GRIP; graduated NUS Deep Tech Incubator 2021. No public equity funding round announced beyond NUS GRIP grant."
+  },
+  {
+    "name": "Anatics",
+    "aliases": [
+      "ANATICS DATA BUSINESS AND TECHNOLOGY STRATEGY CONSULTANCY",
+      "CôNG TY TNHH Tư VấN CHIếN LượC CôNG NGHệ Và Dữ LIệU DOANH NGHIệP ANATICS"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese tech & data consultancy (operating since Aug 2019, HCMC District 1) helping SMEs adopt modern BI tools and data-governance, embedded as in-house teams for 1.5-4 year engagements; clients include Heineken-Laos, Mercular (Thailand), Highlands Coffee, PTSC Group. Strategic platform partner: Holistics.io. Drop generic 'analytics' vendor news unless it names Anatics.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "AProxy",
@@ -1094,6 +1114,15 @@
     "funding_notes": "Closed first angel investment round; amount and investor names not publicly disclosed. NUS GRIP-incubated spin-off from NUS Food Science and Technology department."
   },
   {
+    "name": "Cyber Eleven",
+    "aliases": [
+      "Cyber Eleven Company Limited"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese cybersecurity startup. Limited public-English information beyond the directory listing — drop unrelated 'Ten Eleven Ventures' (cybersecurity VC), 'CyStack', 'CyRadar' and other Vietnamese cyber-vendors unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Cycfield",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1305,6 +1334,15 @@
     "funding_notes": "BLOCK71 Guangzhou / NUS GRTII industry partner — ~100 employees across Singapore, Malaysia and China; 2024 Singapore Prestige Brand Award. No publicly verifiable equity funding round announced."
   },
   {
+    "name": "F5 Online Trading Technology",
+    "aliases": [
+      "F5 Online Trading Technology Company Limited"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese online-trading-technology startup. Limited public-English information beyond the directory listing — drop generic 'F5' (network appliances) and 'F5 refresh' branding unless the article explicitly references this BLOCK71 Saigon trading-tech entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "FACI-FI",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1348,6 +1386,41 @@
     "funding_notes": "AI breast cancer imaging spin-off from NUS/NUHS. The 2022 round is described variously as Pre-Series A in press; Crunchbase logs it as Seed (2022-09-01). Aggregate ~US$1.95M–US$2.55M across databases."
   },
   {
+    "name": "Finan",
+    "aliases": [
+      "Finan Pte Ltd",
+      "SoBanHang",
+      "Finan One"
+    ],
+    "description": "BLOCK71 Saigon-listed Singapore-headquartered (founders Hai Long Bui and Hai Nam Bui, mid-2021) SME-operating-system startup whose Vietnamese app SoBanHang gives micro-businesses sales/order/inventory/invoicing/cash-flow tools plus embedded financial services; >800K active business users, >US$5B transaction volume processed; Shinhan Store partnership with Shinhan Bank Vietnam. Drop generic 'finan' / 'finance' branding unless it names Finan / SoBanHang.",
+    "funding_rounds": [
+      {
+        "date": "2026-05-13",
+        "stage": "Pre-Series A",
+        "amount": "US$3.8M",
+        "amount_usd": 3800000,
+        "lead_investors": [
+          "Hong Leong Bank"
+        ],
+        "investors": [
+          "Hong Leong Bank",
+          "OSK-SBI Venture Partners"
+        ],
+        "source": "https://technode.global/2026/05/13/finan-raises-3-8m-to-expand-vietnam-sme-management-platform-across-southeast-asia/"
+      }
+    ],
+    "funding_notes": "BLOCK71 Saigon portfolio. Hong Leong Bank anchored Pre-A with US$2M; OSK-SBI Venture Partners US$1.5M. Capital earmarked for Finan One AI-native business OS plus regional SEA expansion."
+  },
+  {
+    "name": "Finbase",
+    "aliases": [
+      "Finbase Joint Stock Company"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese fintech startup. Limited public-English information beyond the directory listing — generic 'finbase' brand collides with multiple unrelated fintech ventures; drop unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "FingerDance",
     "aliases": [
       "Fingerdance",
@@ -1357,6 +1430,13 @@
     "description": "BLOCK71 Social Impact Hub-resident Singapore social-impact deep-tech startup (incorporated 2023, co-founded by technologist Gong He) building SiLViA — a Sign Language Virtual Assistant that converts audio announcements into Singapore Sign Language and answers commuter FAQs in sign + text. Partnered with SBS Transit for Chinatown MRT kiosks and with SADeaf for Deaf-led product development; Huawei-supported. TS2 accelerator cohort. Drop generic 'finger dance' game / app news.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio company; TS2 accelerator cohort (US$3.5M programme commitment across 7 startups). Public equity rounds not verified at time of writing."
+  },
+  {
+    "name": "Finsey",
+    "aliases": [],
+    "description": "BLOCK71 Saigon-resident Vietnamese fintech startup. Limited public-English information beyond the directory listing — drop generic fintech brand mentions unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "FitSight",
@@ -1427,6 +1507,17 @@
     ],
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company. No publicly announced funding round found."
+  },
+  {
+    "name": "GaraSTEM",
+    "aliases": [
+      "Garastem",
+      "Công Ty Cổ Phần Công Nghệ Giáo Dục Garastem",
+      "G-Robot"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese edtech startup (founded 2017 by Truong Vo Huu Thien, HCMC) — first Vietnamese company to design and manufacture educational robots in-country (G-Robot Maker, G-Robot Creator series) priced ~30-50% below imported equivalents. Partner to 50+ schools across HCMC, Hanoi, Hai Phong, Da Nang and beyond; products exported to Malaysia, Cambodia, Thailand, Laos and Singapore. 2018 Vietnam national startup-championship winner.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable priced equity funding round announced beyond BLOCK71 / national startup-competition support."
   },
   {
     "name": "GenVoice",
@@ -1701,6 +1792,15 @@
     "funding_notes": "BLOCK71 Guangzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
+    "name": "Hubtech.asia",
+    "aliases": [
+      "Hub Tech JSC"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese tech-ecosystem entity (HUB TECH JSC, HCMC). Limited public-English information distinguishing it from generic 'tech hub' / 'TechHub Asia' content — drop unrelated regional tech-hub commentary unless the article explicitly references the BLOCK71 Saigon Hubtech.asia entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Hybrique",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1856,6 +1956,15 @@
     "funding_notes": "Culture-aware English learning platform (NUS GRIP portfolio). Crunchbase profile exists but no funding round details surfaced."
   },
   {
+    "name": "Let's Celebrate",
+    "aliases": [
+      "Lets Celebrate"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese startup. Limited public-English information beyond the directory listing — name is extremely generic; drop unrelated party-planning / event-platform articles unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "LEXIKAT",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -1994,6 +2103,15 @@
     "funding_notes": "NUS GRIP portfolio company (floating solar for green ports). Featured in GRIP Run 6 Lift-off Day booklet. No publicly-announced priced funding round found beyond standard GRIP support."
   },
   {
+    "name": "Markus Vietnam",
+    "aliases": [
+      "Markus Viet Nam Joint Stock Company"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese joint-stock startup. Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Mastermind Advisors",
     "aliases": [],
     "description": "BLOCK71 Silicon Valley-listed advisory/partner entity supporting Singapore startups on US market entry via the BLOCK71 SV programme. Not a venture-stage startup; drop generic 'mastermind group' coaching, business-advisory or financial-advisory news unless it names the BLOCK71 SV entity.",
@@ -2046,6 +2164,15 @@
     "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
   },
   {
+    "name": "Mento.vn",
+    "aliases": [
+      "Mento"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese career-mentorship platform. Drop the lookalike domain 'Mentori.vn' (separate Vietnamese mentorship platform with 90K+ community), 'Mento.co' (US founder coaching service), 'Mentor.vn' and 'Mentors.vn' — these are distinct products that share the prefix; only items naming Mento.vn / BLOCK71 Saigon should match.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Meracle",
     "aliases": [],
     "description": "BLOCK71 Tokyo-resident startup (founder Rachel Hong). Limited public information available beyond the BLOCK71 directory listing; BLOCK71 Tokyo (opened March 2025 in Takanawa Gateway LiSH with JR East) focuses on deep-tech in environment, mobility and healthcare. Drop unrelated 'Meracle'/'Miracle' product mentions.",
@@ -2072,6 +2199,16 @@
     "description": "NUS GRIP-incubated Singapore climate-intelligence startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company; hyperlocal climate-risk intelligence platform for real estate. No publicly-announced funding round amount or investor list found."
+  },
+  {
+    "name": "Metastream",
+    "aliases": [
+      "Công Ty Metastream As",
+      "Metastream AS"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese streaming/media-tech startup (operating as 'AS' suggests Norwegian/SEA holding structure). Limited public-English information beyond the directory listing — drop unrelated 'metastream' browser-extension / co-watching apps unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Microtube Technologies",
@@ -2124,6 +2261,26 @@
     "funding_notes": "No verifiable public information found for an NUS GRIP-incubated fintech named 'MoneyMoves'. No funding round announcement located."
   },
   {
+    "name": "Movan Vietnam Technology Solution",
+    "aliases": [
+      "Movan Vietnam",
+      "Movan",
+      "Movan Vietnam Technology Solution Joint Stock Company"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese technology-solutions joint-stock startup. Limited public-English information beyond the directory listing — generic 'mo van' / 'movan' brand collides with unrelated names; drop unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Mplify Vietnam",
+    "aliases": [
+      "CôNG TY TNHH MPLIFY VIệT NAM"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese startup operating under 'Mplify' brand. Limited public-English information beyond the directory listing — drop unrelated 'amplify' / 'Mplify' marketing-platform mentions unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "MuSigPro",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -2142,6 +2299,15 @@
     "description": "BLOCK71 Bandung-resident Indonesian biomaterials startup (founded 2015 by Adi Reza Nugroho and four co-founders, ITB-linked) using mycelium as a bio-adhesive to convert agricultural waste (cassava starch, corn bark, bagasse) into BIOBO interior boards and Mylea mycelium-leather for fashion and footwear. B-Corp since 2019. Solar Impulse Efficient Solution. Drop generic 'mycelium' / mushroom-cultivation articles unless they name MYCL.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Bandung portfolio; Solar Impulse World Alliance member. No publicly verifiable equity funding round announced (revenue-funded with grant support)."
+  },
+  {
+    "name": "Nano Vietnam",
+    "aliases": [
+      "Công Ty Tnhh Dịch Vụ Công Nghệ Nano Vietnam Ltd"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese nano-technology services startup. Limited public-English information beyond the directory listing — name is generic ('Nano' collides with countless unrelated tech / fintech / hardware brands worldwide); drop unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "nbrane",
@@ -2378,6 +2544,16 @@
     "funding_notes": "Listed in NUS GRIP portfolio (auto-insurance behavioral data platform) but no publicly-announced funding round with verifiable source found."
   },
   {
+    "name": "Otrafy",
+    "aliases": [
+      "Otrafy Inc",
+      "Otrafy Technologies"
+    ],
+    "description": "BLOCK71 Saigon-resident enterprise-SaaS startup (founded 2018 in Vancouver by Lucas Cunha and Nhat Nguyen; HQ Vancouver / ops Saigon) automating collection, storage and transfer of certification data across the F&B supply chain using NLP + OCR. Techstars-introduced to Cargill (which ran a 2020 supplier food-safety pilot). Drop generic 'food traceability' / 'supplier compliance' vendor news unless it names Otrafy.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio; Techstars alumnus. Backed by Mind Fund and Forward Fooding's FoodTech 500 (2020). Public priced equity round not verified at time of writing."
+  },
+  {
     "name": "PharLyfe+",
     "aliases": [
       "PharLyfe"
@@ -2489,6 +2665,15 @@
       }
     ],
     "funding_notes": "Founder Siddharth Jadhav also acknowledged earlier pre-seed funding from NUS and additional backing from Temasek Foundation per The Peak Singapore interview, but specific amounts/dates not publicly disclosed. PitchBook/Crunchbase list Elev8.vc, SEEDS Capital, Temasek Holdings, NUS Endowment, and DBS Bank as investors."
+  },
+  {
+    "name": "Poma Vietnam",
+    "aliases": [
+      "Công Ty Cổ Phần Poma Việt Nam"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese joint-stock startup. Limited public-English information beyond the directory listing — drop unrelated 'Poma' (French ropeway / cable-car manufacturer) and other Poma-branded businesses unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Power Facade",
@@ -2727,6 +2912,15 @@
     "funding_notes": "NUS GRIP portfolio company (robotic guide dogs for the visually impaired). No publicly announced funding rounds found."
   },
   {
+    "name": "Rongbient Biotech",
+    "aliases": [
+      "Rongbient Biotech Company Limited"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese biotech startup. Limited public-English information beyond the directory listing — drop generic biotech mentions unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Roplus",
     "aliases": [
       "RoPlus",
@@ -2736,6 +2930,17 @@
     "description": "BLOCK71 Tokyo-listed Singapore robotics startup (incorporated 2021, NUS-based) building intelligent soft-gripping automation — reconfigurable hybrid-finger actuators and computer-vision-integrated pick-and-place for food (tofu, pudding, cake), e-commerce and agriculture. Drop unrelated 'R+' / mathematics / pharma mentions.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Tokyo / Singapore portfolio. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Rostek",
+    "aliases": [
+      "Rostek Inc",
+      "Rostek Technology and Automation",
+      "Công Ty Tnhh Công Nghệ Và Tự Động Hóa Rostek"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese smart-factory automation startup (founded 2019, founders Chu Duc Thanh and Nguyen Van Hoi; CEO Do Ngoc Duc) building Autonomous Mobile Robots (MC/AMR-F series), Warehouse Management System and Fleet Management System; complements MES/OEE/production-supervision software. Kudan partner. Drop unrelated 'Rostec' (Russian state defense conglomerate) and other 'Rostek' brand uses.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. Public priced equity round not verified at time of writing."
   },
   {
     "name": "SafeLight",
@@ -2841,6 +3046,15 @@
     "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
   },
   {
+    "name": "SHECOM",
+    "aliases": [
+      "SHECOM TWO MEMBER COMPANY LIMITED Investment"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese startup (two-member limited investment company). Limited public-English information beyond the directory listing — drop unrelated 'she com' / women-empowerment-platform branding unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "SinGENE",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore genomics startup. Drop unrelated companies sharing the same name.",
@@ -2922,6 +3136,13 @@
     "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
   },
   {
+    "name": "Socompany",
+    "aliases": [],
+    "description": "BLOCK71 Saigon-resident Vietnamese startup. Limited public-English information beyond the directory listing — name is extremely generic; drop unrelated 'so company' / 'social company' / brand-name mentions unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "Softgridinc",
     "aliases": [
       "SoftGridinc",
@@ -2938,6 +3159,17 @@
     "description": "NUS GRIP-incubated Singapore touch-tech startup. Very generic name — drop any item not clearly about this specific Singapore startup.",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (haptic VR gloves). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "Solano Energy",
+    "aliases": [
+      "Solano",
+      "Solano Energy Vietnam",
+      "Solano Energy Vietnam Company Limited"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese climate-tech startup (HQ HCMC, co-founders incl. CEO Tran Tuan Anh — engineers from Oxford/Cambridge) building distributed residential / commercial rooftop solar combined with battery storage and IoT control software; cell-level coulombic-flow control to optimise battery discharge against grid-charge. Drop unrelated solar-installer / utility news unless it names Solano.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio. Backed by Do Ventures, Wistron Accelerator, HAX and SOSV. Public priced equity round details not disclosed beyond participating investors."
   },
   {
     "name": "SOLEMETRIX",
@@ -3093,6 +3325,22 @@
     "funding_notes": "NUS GRIP spin-off (founded 2019) for acoustic pipeline leak detection. Tracxn/PitchBook list NUS, Imagine H2O and Ripple2Wave as institutional investors and the company won the Digital Water Hackathon @ SIWW 2021, but no publicly-announced funding round with specific date/amount/source was found."
   },
   {
+    "name": "The Geng",
+    "aliases": [],
+    "description": "BLOCK71 Saigon-resident Vietnamese startup. Limited public-English information beyond the directory listing — name is extremely generic; drop unrelated mentions unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "The Global Citizen",
+    "aliases": [
+      "The Global Citizen Pte Ltd"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese / Singapore startup operating under 'The Global Citizen' brand. Drop the unrelated 'Global Citizen' advocacy non-profit (globalcitizen.org) and Global Citizen Festival news — only the BLOCK71 Saigon entity should match.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
     "name": "The Moonbeam Co",
     "aliases": [
       "the moonbeam co.",
@@ -3102,6 +3350,25 @@
     "description": "BLOCK71 Social Impact Hub-resident Singapore sustainable-foodtech social enterprise (founded 2021 by NUS students Jia Wei Lim, Qi Herng Kong, Varden En Cheng Toh) upcycling brewer's spent grains (BSG) into high-fibre, high-protein snacks/granola; raiSE-registered; partners with Bettr Coffee for inclusive hiring; reports 1.55 tonnes waste diverted and 1,872 kg CO2-eq avoided. 2021/22 RISE 'Most Innovative' award. Drop generic 'moonbeam' beverage / brand mentions.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio; raiSE-registered social enterprise. Public equity rounds not verified at time of writing."
+  },
+  {
+    "name": "Tocom VN",
+    "aliases": [
+      "Công Ty Tnhh Tocom Vn",
+      "Tocom"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese startup. Limited public-English information beyond the directory listing — drop unrelated 'TOCOM' (Tokyo Commodity Exchange) market data and other 'Tocom' brands unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Tuc Thoi Service Corporation",
+    "aliases": [
+      "Tuc Thoi"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese service-corporation startup. Limited public-English information beyond the directory listing — drop unrelated mentions unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "TuSense",
@@ -3135,6 +3402,13 @@
       }
     ],
     "funding_notes": "NUS GRIP medtech (peritoneal-dialysis device PD Care). Crunchbase records a seed round with Artesian VC participation; round size and date not publicly disclosed in indexed sources."
+  },
+  {
+    "name": "V01",
+    "aliases": [],
+    "description": "BLOCK71 Saigon-resident Vietnamese startup. Limited public-English information beyond the directory listing — name 'V01' is too generic (version tags, model numbers) to match safely; drop unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "Verazt Security",
@@ -3215,6 +3489,54 @@
     "funding_notes": "No publicly indexed information matching a NUS GRIP Singapore startup named 'Virtu AI'. Distinct from the US-based 'Virtue AI'."
   },
   {
+    "name": "Việc Có",
+    "aliases": [
+      "Viec Co",
+      "Công Ty Tnhh Việc Có"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese jobs platform targeting blue-collar / unskilled workers in Vietnam. Drop the larger 'ViecLamTot.com' (a Chợ Tốt vertical) and unrelated white-collar boards (VietnamWorks, etc.) unless the article explicitly references the BLOCK71 Saigon 'Việc Có' platform.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Wareflex",
+    "aliases": [
+      "Wareflex.io",
+      "CôNG TY TNHH WAREFLEX VIệT NAM"
+    ],
+    "description": "BLOCK71 Saigon-resident Vietnamese on-demand logistics startup (launched August 2023) operating a tech-enabled marketplace connecting businesses to ~150 logistics providers across nearly 400 warehouses and ~4,000 vehicles nationwide on a pay-as-you-go model. Top 5 TECHFEST Vietnam 2022, Top 6 VietChallenge 2022, Top 20 Best Quality Products Vietnam National Brand 2024.",
+    "funding_rounds": [
+      {
+        "date": "2022-01-01",
+        "stage": "Pre-Seed",
+        "amount": "US$785K",
+        "amount_usd": 785000,
+        "lead_investors": [],
+        "investors": [
+          "Genesia Ventures",
+          "Antler"
+        ],
+        "source": "https://istishub.com/library/case-studies/wareflex/"
+      },
+      {
+        "date": "2023-06-01",
+        "stage": "Seed (Shark Tank Vietnam S6)",
+        "amount": "US$500K",
+        "amount_usd": 500000,
+        "lead_investors": [
+          "Shark Hùng Lâm",
+          "Shark Tuệ Lâm"
+        ],
+        "investors": [
+          "Shark Hùng Lâm",
+          "Shark Tuệ Lâm"
+        ],
+        "source": "https://istishub.com/library/case-studies/wareflex/"
+      }
+    ],
+    "funding_notes": "BLOCK71 Saigon portfolio. Shark Tank Vietnam Season 6 closed US$500K for 10% equity. SEA expansion targets include Indonesia, Thailand and the Philippines."
+  },
+  {
     "name": "WasteViz",
     "aliases": [
       "WIZ WasteViz"
@@ -3236,6 +3558,13 @@
     "description": "BLOCK71 / NUS Enterprise@SSP-resident Singapore healthtech startup. Limited public-English information beyond the directory listing — drop generic 'wellness' / health-matrix product mentions unless the article explicitly references this BLOCK71 / NUS@SSP entity.",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+  },
+  {
+    "name": "Weva",
+    "aliases": [],
+    "description": "BLOCK71 Saigon-resident Vietnamese startup. Limited public-English information beyond the directory listing — name 'Weva' is generic (clothing brands, real-estate firms, marketing agencies share it); drop unless the article explicitly references this BLOCK71 Saigon entity.",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
     "name": "WiSe",
