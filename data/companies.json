@@ -387,6 +387,13 @@
     "funding_notes": "NUS GRIP portfolio company (battery-free wireless IoT sensors); likely received NUS GRIP seed grant (~SGD 250K) but no public equity round announced."
   },
   {
+    "name": "Acoerela",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup developing fluorescent dyes that simplify exosome detection (drug-delivery and disease-diagnosis QC). Drop unrelated companies sharing the same name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP Run 6 portfolio company (patented dye chemistry for exosome quality control). No publicly verifiable equity funding round announced beyond NUS GRIP seed support."
+  },
+  {
     "name": "Actly",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -2218,6 +2225,15 @@
     ],
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (haptic feedback for the Metaverse). No publicly verifiable funding round announcements found."
+  },
+  {
+    "name": "See Your Voice",
+    "aliases": [
+      "SeeYourVoice"
+    ],
+    "description": "NUS GRIP-incubated Singapore deep-tech startup building an AI-driven 2-way sign-language translation system (digital sign-language library, mobile app, multimodal sensors). Generic phrase — drop items about karaoke/music/voice-coaching apps not clearly about this Singapore startup.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP Run 7 portfolio company (AI sign-language translation). No publicly verifiable equity funding round announced beyond NUS GRIP seed support."
   },
   {
     "name": "sensAi",
