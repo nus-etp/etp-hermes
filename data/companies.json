@@ -6,8 +6,8 @@
     "sources": [
       {
         "type": "rss",
-        "label": "blog",
-        "url": "https://blog.carousell.com/feed/"
+        "label": "press",
+        "url": "https://press.carousell.com/feed/"
       },
       {
         "type": "github_org",
@@ -1482,14 +1482,7 @@
     "name": "KleenSoil",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
-    "sources": [
-      {
-        "type": "html_scrape",
-        "label": "news",
-        "url": "https://www.kleensoil.com/news",
-        "hint": "Wix-hosted news listing on kleensoil.com (NUS chemistry spin-off, Singapore). The page lists multiple news items covering deployments, awards, and partnerships (e.g. China refinery slag-free deployment 2024, AFTEA competition with Republic Polytechnic, Eco-Innovation Green Action finals). Each item is a card/section with a heading and short body paragraph; dates typically appear inline in the body (e.g. 'August 2024'). Resolve relative links against https://www.kleensoil.com/."
-      }
-    ],
+    "sources": [],
     "funding_rounds": [
       {
         "date": null,

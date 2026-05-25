@@ -46,7 +46,7 @@ Your job is to run **timestamped, dynamic web/browser searches** to plug those g
       - Compute a stable dedup key — prefer the resolved article URL. If the URL has tracking params (`utm_*`, `?ref=`, `gclid`, etc.), strip them before using as the key.
       - If the key is in `SEEN`, drop it silently — Layer 1 or a previous Layer 2 run already handled it.
       - Otherwise, judge relevance against `c.description` using the same rules as Layer 1's relevance pass:
-        - **Drop** if it's a ticker-aggregator (Zacks, TipRanks, MarketBeat, etc.) hitting a same-name public ticker; a different-entity same-name collision; passing-mention listicle; generic SEO content; or the article is clearly older than 30 days for gap-fill / 14 days for deepen.
+        - **Drop** if it's a ticker-aggregator (Zacks, TipRanks, MarketBeat, etc.) hitting a same-name public ticker; a different-entity same-name collision; passing-mention listicle; generic SEO content; or the article is clearly older than 60 days for gap-fill / 14 days for deepen.
         - **Drop** if the source is low-trust spam (content farms, AI-generated press releases without primary attribution). Prefer the company's own site, established trade press, regulator filings, recognized investors' posts.
         - **Keep** if the article is genuinely and primarily about the watchlisted company.
       - Default bias for gap-fill: **keep on the margin** — these companies are invisible without you, so a moderate-confidence hit is worth surfacing. Default bias for deepen: **drop on the margin** — Layer 1 already covered the company, you only add value with materially new context.
