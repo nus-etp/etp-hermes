@@ -1,30 +1,30 @@
-RDM
-Reachbots Automation
-reActo
-ReoMex Technologies
-RightCode
-RO+
-RoamAssist
-SafeLight
-Scent Analytics
-SCPscan
-seamless
-sensAi
-SenseMor
-SENSORi
-SHARPEN.AI
-SinGENE
-Singnovel ChemTech
-SINGROW
-SkyTrek
-Softlabs
-SOLEMETRIX
-SOLV8
-Soynergy
-Space Match
-spacejot
-spotics
-Synectify
-TANNGENT
-TEREDO Analytics
-TuSense
+UnoMove
+UpperMed
+Verazt Security
+Vilota
+VIR-POP
+Virtu AI
+CBE Eco-Solutions
+Cell2Mix
+Cellivate Technologies
+Circrete
+Codaveri
+ConcreteAI
+Cornucopia
+Craft Health
+CRecTech
+Curated Culture
+Cycfield
+CycloMeds
+DolphinLink
+DRAVAM
+Ecobinder
+EEA
+EGGOL
+Eigen Sensor
+EmaCare
+Emerge
+Emerstat
+ENBED
+enlipsium
+Horizon Quantum Computing
