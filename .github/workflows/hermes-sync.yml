@@ -101,17 +101,23 @@ jobs:
           FAL_KEY: ${{ secrets.FAL_KEY }}
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+          HERMES_LANGFUSE_PUBLIC_KEY: ${{ secrets.HERMES_LANGFUSE_PUBLIC_KEY }}
+          HERMES_LANGFUSE_SECRET_KEY: ${{ secrets.HERMES_LANGFUSE_SECRET_KEY }}
+          HERMES_LANGFUSE_BASE_URL: ${{ secrets.HERMES_LANGFUSE_BASE_URL }}
         run: bash scripts/bootstrap-hermes.sh
 
-      - name: Install ddgs into hermes venv
-        # Layer 2's search_backend (ddgs) requires the `ddgs` PyPI package
+      - name: Install ddgs + langfuse into hermes venv
+        # ddgs: Layer 2's search_backend requires the `ddgs` PyPI package
         # importable from hermes' Python interpreter. The plugin does NOT
         # lazy-install — see plugins/web/ddgs/provider.py:65 — so without
         # this step, Layer 2 falls back to whichever extract backend has a
         # key (tavily) for search too, doubling Tavily quota usage.
+        # langfuse: required by the bundled observability/langfuse plugin
+        # (enabled via hermes/config.yaml). Plugin fails open without it,
+        # but we want traces in CI, so install unconditionally.
         # The hermes installer builds the venv with uv and doesn't seed pip,
         # so we install via `uv pip` against the existing interpreter.
-        run: uv pip install --quiet --python "$HOME/.hermes/hermes-agent/venv/bin/python" ddgs
+        run: uv pip install --quiet --python "$HOME/.hermes/hermes-agent/venv/bin/python" ddgs langfuse
 
       - name: Resolve layers to run
         id: layers

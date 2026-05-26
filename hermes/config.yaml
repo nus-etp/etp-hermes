@@ -31,3 +31,13 @@ web:
   # extract_backend to "exa".
   search_backend: ddgs
   extract_backend: tavily
+
+plugins:
+  # Streams live traces (LLM calls + tool calls) to Langfuse. Needs the
+  # `langfuse` SDK installed in hermes' venv (handled in the workflow) plus
+  # HERMES_LANGFUSE_PUBLIC_KEY / HERMES_LANGFUSE_SECRET_KEY in ~/.hermes/.env
+  # (written by bootstrap-hermes.sh from GHA secrets). Missing creds → hooks
+  # no-op silently, hermes runs unchanged.
+  enabled:
+    - observability/langfuse
+  disabled: []

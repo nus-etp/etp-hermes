@@ -50,6 +50,19 @@ fi
 if [ -n "${EXA_API_KEY:-}" ]; then
   echo "EXA_API_KEY=${EXA_API_KEY}" >> "$HERMES_HOME/.env"
 fi
+# Langfuse observability plugin (hermes/config.yaml: plugins.enabled). All
+# three keys are optional — if any is missing the bundled plugin's hooks
+# no-op and hermes runs unchanged. BASE_URL defaults to cloud.langfuse.com
+# inside the plugin, so we only write it when the operator overrode it.
+if [ -n "${HERMES_LANGFUSE_PUBLIC_KEY:-}" ]; then
+  echo "HERMES_LANGFUSE_PUBLIC_KEY=${HERMES_LANGFUSE_PUBLIC_KEY}" >> "$HERMES_HOME/.env"
+fi
+if [ -n "${HERMES_LANGFUSE_SECRET_KEY:-}" ]; then
+  echo "HERMES_LANGFUSE_SECRET_KEY=${HERMES_LANGFUSE_SECRET_KEY}" >> "$HERMES_HOME/.env"
+fi
+if [ -n "${HERMES_LANGFUSE_BASE_URL:-}" ]; then
+  echo "HERMES_LANGFUSE_BASE_URL=${HERMES_LANGFUSE_BASE_URL}" >> "$HERMES_HOME/.env"
+fi
 chmod 600 "$HERMES_HOME/.env"
 
 echo "bootstrapped $HERMES_HOME from $SRC_DIR"
