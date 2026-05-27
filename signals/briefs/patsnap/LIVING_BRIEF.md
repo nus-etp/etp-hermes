@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-05-19 16:37 UTC_
+_Last updated: 2026-05-27 00:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,8 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-05-27** — Hiring Semiconductor Reverse Engineering Specialist / AI Domain Expert for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/5edb10a2-12ff-44db-b1c8-9488e8e8c361)
+- **2026-05-27** — Hiring Semiconductor Materials Specialist for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/e61a7dab-2174-4b1f-a9f3-8537e3f4ba76)
 - **2026-05-15** — New Account Executive posting for Connected Innovation Solutions Sales — [Patsnap · careers](https://jobs.lever.co/patsnap/20d8ae88-d16c-4c80-aeb1-d68daa6fbfdf)
 - **2026-05-15** — Patsnap publishes thought leadership on companion animal biotech innovation and patents — [patsnap.com](https://www.patsnap.com/resources/blog/the-man-who-refused-to-let-his-dog-die/)
 - **2026-05-15** — Patsnap publishes analysis on China as the next GLP-1 drug development frontier — [patsnap.com](https://www.patsnap.com/resources/blog/when-obesity-isnt-the-driver-why-china-signals-the-next-glp-1-frontier/)
