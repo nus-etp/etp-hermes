@@ -21,6 +21,10 @@ __pycache__/
 data/feed-cache.json
 data/changed-sources.json
 
+# jina-reader (scripts/jina-reader.py) outputs — derived state, GHA cache is source of truth
+data/jina-items.json
+data/jina-cache/
+
 # creative-baoyu-infographic skill working tree (intermediates only; the
 # final PNG is copied into signals/briefs/<slug>/ by prompts/infographics.md)
 /infographic/

@@ -101,6 +101,7 @@ jobs:
           FAL_KEY: ${{ secrets.FAL_KEY }}
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
           HERMES_LANGFUSE_PUBLIC_KEY: ${{ secrets.HERMES_LANGFUSE_PUBLIC_KEY }}
           HERMES_LANGFUSE_SECRET_KEY: ${{ secrets.HERMES_LANGFUSE_SECRET_KEY }}
           HERMES_LANGFUSE_BASE_URL: ${{ secrets.HERMES_LANGFUSE_BASE_URL }}
@@ -142,11 +143,38 @@ jobs:
           restore-keys: |
             feed-cache-
 
+      - name: Restore Jina cache
+        # Carries data/jina-cache/ across runs so multi-runs within the 23h
+        # TTL skip the network and don't burn Jina's 100/day free quota.
+        if: steps.layers.outputs.run_l1 == 'true'
+        id: jina-cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: data/jina-cache
+          key: jina-cache-${{ github.run_id }}
+          restore-keys: |
+            jina-cache-
+
       - name: Preflight feeds (conditional GET + body hash)
         # Emits data/changed-sources.json — the whitelist Layer 1 reads to
         # skip unchanged sources. Stdlib-only, so no uv setup needed.
         if: steps.layers.outputs.run_l1 == 'true'
         run: python3 scripts/preflight-feeds.py
+
+      - name: Prefetch html_scrape via Jina Reader
+        # For every html_scrape source listed as changed by preflight,
+        # fetch https://r.jina.ai/<source-url> to get clean Markdown and
+        # heuristically extract candidate items into data/jina-items.json.
+        # The Layer 1 prompt reads that file first and only falls back to
+        # LLM-driven HTML parsing for URLs the heuristic couldn't extract.
+        # Fails open: a missing key, rate-limit, or extraction miss all
+        # degrade to the prompt's existing path.
+        if: steps.layers.outputs.run_l1 == 'true'
+        env:
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+          JINA_DAILY_BUDGET: "80"
+        continue-on-error: true
+        run: python3 scripts/jina-reader.py
 
       - name: Layer 1 — data ingestion
         if: steps.layers.outputs.run_l1 == 'true'
@@ -287,6 +315,13 @@ jobs:
         with:
           path: data/feed-cache.json
           key: feed-cache-${{ github.run_id }}
+
+      - name: Save Jina cache
+        if: always() && steps.layers.outputs.run_l1 == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: data/jina-cache
+          key: jina-cache-${{ github.run_id }}
 
       - name: Upload hermes artifact
         if: always()

@@ -50,6 +50,14 @@ fi
 if [ -n "${EXA_API_KEY:-}" ]; then
   echo "EXA_API_KEY=${EXA_API_KEY}" >> "$HERMES_HOME/.env"
 fi
+# Jina Reader API key — consumed by scripts/jina-reader.py (Layer 0.5
+# prefetch), not by hermes itself. Free tier ~100 req/day with the key,
+# unauthenticated traffic works too at a lower rate. Optional: missing key
+# just means the script falls back to anonymous Reader and on rate-limit
+# failure the prompt's existing LLM html_scrape path takes over.
+if [ -n "${JINA_API_KEY:-}" ]; then
+  echo "JINA_API_KEY=${JINA_API_KEY}" >> "$HERMES_HOME/.env"
+fi
 # Langfuse observability plugin (hermes/config.yaml: plugins.enabled). All
 # three keys are optional — if any is missing the bundled plugin's hooks
 # no-op and hermes runs unchanged. BASE_URL defaults to cloud.langfuse.com

@@ -43,7 +43,7 @@ Each entry in `c.sources` has `type`, `label` (short string used in output's `so
 - `rss` — standard RSS/Atom feed. Dedup key = item `<link>`.
 - `github_org` — GitHub org Atom feed (`https://github.com/<org>.atom`). Dedup key = entry `<id>`. Keep only human-meaningful events: `ReleaseEvent`, `CreateEvent` with `ref_type=repository`, and `PushEvent` whose head commit message is not a bot signature (skip Dependabot, renovate-bot, `[bot]` accounts) and not a trivial chore (`Bump`, `Update README`, version tag pushes alone). Synthesize the item's headline as `<repo>: <event summary>` (e.g. `<repo>: new release v1.2.3`, `<repo>: <commit subject>`); set `link` to the entry URL.
 - `lever_jobs` — Lever JSON endpoint (`https://api.lever.co/v0/postings/<slug>?mode=json`). Dedup key = `lever://<slug>/<posting.id>`. For each posting whose `createdAt` is within the last 30 days and whose synthetic key is not in `SEEN`, synthesize an item: headline `<title> — <team>`, link `<hostedUrl>`, pubDate from `createdAt`.
-- `html_scrape` — plain `GET` of an HTML page. The source entry has an additional `hint` field describing the page structure. Fetch the page, parse the HTML, and extract a list of items (title + absolute link + optional date) by reasoning about the structure described in `hint`. Dedup key = absolute item URL. Resolve any relative links to absolute against the source URL's origin.
+- `html_scrape` — plain `GET` of an HTML page. The source entry has an additional `hint` field describing the page structure. **Before fetching**, check `data/jina-items.json` (if it exists): if `per_company[<c.name>][<s.url>]` is present, use those items as-is — each is already `{headline, link, source_kind: "html_scrape", pre_extracted: true}`, optionally with `pubDate` and `label`. Skip the fetch and parse entirely. Only fetch and parse the HTML yourself if `s.url` appears in `extraction_failed`/`deferred`, or `data/jina-items.json` is missing. When you do fetch: parse the HTML and extract a list of items (title + absolute link + optional date) by reasoning about the structure described in `hint`. Dedup key = absolute item URL. Resolve any relative links to absolute against the source URL's origin.
 
 If a single per-company source fetch fails, log and continue — do not fail the whole run.
 
@@ -65,6 +65,8 @@ If a single per-company source fetch fails, log and continue — do not fail the
    - If `s` is an `html_scrape` and you cannot reliably extract a structured item list from the page (e.g. JS-only render, page structure changed), log and continue — do not fabricate items.
 
 3. **Relevance pass.** For each candidate `(c, item)`, judge: *is this article clearly and primarily about `c` per `c.description`?* Use only `headline`, `description`, `source` — do not fetch the URL. Default to `drop` when uncertain.
+
+   **Exception**: candidates flagged `pre_extracted: true` (sourced from `data/jina-items.json`) skip the relevance judgment entirely — accept as kept. They came from a curated per-company html_scrape page whose markdown was already cleaned by Jina Reader, and per-company sources are already keep-biased. They still need to pass the deduplication and bot/chore filters below.
 
    Drop when:
    - Substring coincidence on a generic word ("emerge", "alpha", "seamless", "carousel", "horizon", "nova") where the item isn't about the watchlisted company.
