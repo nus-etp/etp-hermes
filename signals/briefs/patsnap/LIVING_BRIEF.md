@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-05-27 00:00 UTC_
+_Last updated: 2026-05-28 17:05 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,10 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-05-28** — Hiring Sales Development Representative in Toronto with disclosed pre-IPO positioning and compensation structure — [Patsnap · careers](https://jobs.lever.co/patsnap/6d72034b-6765-4036-9b66-115e012e10c3)
+  - Summary: Patsnap is hiring an SDR in Toronto, Canada for outbound lead generation and qualification, with a $56,650 CAD base salary and ~$94,166 CAD on-target earnings including uncapped commission. The job posting describes Patsnap as a "pre-IPO company" with 12,000+ R&D and IP team customers globally and offices in Toronto, London, Shanghai, and Singapore.
+  - Numbers: Base $56,650 CAD/year; OTE ~$94,166 CAD/year; 12,000+ R&D and IP customers globally; 5 weeks paid vacation
+  - Quote: "You will be the first point of contact for prospective customers, introducing them to Patsnap's innovation intelligence platform... identify, engage, and qualify prospects, building meaningful early-stage relationships that convert into long-term customers." — Patsnap job posting
 - **2026-05-27** — Hiring Semiconductor Reverse Engineering Specialist / AI Domain Expert for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/5edb10a2-12ff-44db-b1c8-9488e8e8c361)
 - **2026-05-27** — Hiring Semiconductor Materials Specialist for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/e61a7dab-2174-4b1f-a9f3-8537e3f4ba76)
 - **2026-05-15** — New Account Executive posting for Connected Innovation Solutions Sales — [Patsnap · careers](https://jobs.lever.co/patsnap/20d8ae88-d16c-4c80-aeb1-d68daa6fbfdf)
@@ -48,3 +52,4 @@ _none_
 - Is the life sciences hiring push related to a specific product launch or market expansion in pharma R&D?
 - What is the commercial structure of the CAS-Patsnap partnership — is CAS data being integrated into Patsnap's platform, resold as a standalone dataset, or something else?
 - Does the CAS partnership signal a strategic expansion beyond patent/IP analytics into the broader scientific and R&D content analytics market?
+- Does the Toronto SDR hire and "pre-IPO" self-description indicate a North America go-to-market push and a concrete IPO timeline?
