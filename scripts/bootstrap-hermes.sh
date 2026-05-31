@@ -35,6 +35,14 @@ cp -a "$SRC_DIR/." "$HERMES_HOME/"
 umask 077
 # Hermes' built-in `deepseek` provider reads DEEPSEEK_API_KEY directly.
 echo "DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}" > "$HERMES_HOME/.env"
+# Provider failover: hermes/config.yaml lists xiaomi (Xiaomi MiMo) as a
+# fallback_providers entry. The bundled xiaomi provider profile reads
+# XIAOMI_API_KEY directly. Optional — if unset, the fallback chain entry
+# resolves to no client and is skipped, so the primary deepseek path is
+# unaffected (safe for forks without the secret).
+if [ -n "${XIAOMI_API_KEY:-}" ]; then
+  echo "XIAOMI_API_KEY=${XIAOMI_API_KEY}" >> "$HERMES_HOME/.env"
+fi
 # Layer 4 (infographics) calls Hermes' image_generate, which reads FAL_KEY.
 # Optional — if unset, Layer 4 fails gracefully (continue-on-error in the
 # workflow) and the brief renders without an image.

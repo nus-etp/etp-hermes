@@ -2,6 +2,17 @@ model:
   provider: deepseek
   default: deepseek-v4-flash
 
+# Credential/provider failover. When the primary (deepseek) is exhausted —
+# rate-limit, billing, 5xx, or connection failure after agent.api_max_retries —
+# hermes swaps to the next entry mid-turn. The xiaomi provider profile reads
+# XIAOMI_API_KEY from ~/.hermes/.env (seeded by bootstrap-hermes.sh from the
+# GHA secret). If that key is absent the chain entry resolves to no client and
+# is skipped, so the fallback is a no-op until the secret is seeded — safe for
+# forks. Failover is turn-scoped: each new turn restores deepseek first.
+fallback_providers:
+  - provider: xiaomi
+    model: mimo-v2.5
+
 terminal:
   backend: local
   timeout: 180

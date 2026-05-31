@@ -98,6 +98,7 @@ jobs:
       - name: Bootstrap config
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          XIAOMI_API_KEY: ${{ secrets.XIAOMI_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_KEY }}
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
