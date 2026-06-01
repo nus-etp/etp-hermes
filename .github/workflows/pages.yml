@@ -8,6 +8,10 @@ on:
       - 'data/**'
       - 'signals/**'
       - '.github/workflows/pages.yml'
+  workflow_run:
+    workflows: ["hermes-sync"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
