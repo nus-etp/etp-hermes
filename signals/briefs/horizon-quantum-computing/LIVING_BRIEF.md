@@ -1,5 +1,5 @@
 # Horizon Quantum Computing — LIVING BRIEF
-_Last updated: 2026-05-14 15:29 UTC_
+_Last updated: 2026-06-02 12:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis

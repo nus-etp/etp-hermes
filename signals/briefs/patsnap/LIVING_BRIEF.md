@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-05-28 17:05 UTC_
+_Last updated: 2026-06-02 12:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,11 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-06-02** — Hiring a Senior Account Executive (Life Sciences) for a remote US-based role covering EST hours, continuing its North America commercial build-out — [Patsnap · careers](https://jobs.lever.co/patsnap/6886b6d9-1aaa-40a0-9df3-08b0993a6abc)
+  - Summary: Patsnap is hiring a Senior Account Executive for the US market to lead strategic, consultative sales cycles with pharmaceutical, biotech, and medical device organizations. The Life Sciences vertical is described as growing 20%+ YoY and one of Patsnap's most strategic and fastest-growing verticals. The role involves building and executing territory plans, managing complex multi-threaded opportunities, and engaging stakeholders across R&D, Innovation, IP, and Commercial functions.
+  - Numbers: Life Sciences business growing 20%+ YoY
+- **2026-06-02** — Hiring a Senior Account Executive (Life Sciences) for a London hybrid role (Farringdon, 3 days/week), mirroring the US posting — [Patsnap · careers](https://jobs.lever.co/patsnap/dae69aa3-82bc-4804-b301-5f86bf2caa98)
+  - Summary: Corroborates the June 2 Life Sciences AE posting; London-based version of the same role. No new facts beyond the location difference.
 - **2026-05-28** — Hiring Sales Development Representative in Toronto with disclosed pre-IPO positioning and compensation structure — [Patsnap · careers](https://jobs.lever.co/patsnap/6d72034b-6765-4036-9b66-115e012e10c3)
   - Summary: Patsnap is hiring an SDR in Toronto, Canada for outbound lead generation and qualification, with a $56,650 CAD base salary and ~$94,166 CAD on-target earnings including uncapped commission. The job posting describes Patsnap as a "pre-IPO company" with 12,000+ R&D and IP team customers globally and offices in Toronto, London, Shanghai, and Singapore.
   - Numbers: Base $56,650 CAD/year; OTE ~$94,166 CAD/year; 12,000+ R&D and IP customers globally; 5 weeks paid vacation
@@ -41,11 +46,10 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Product Marketing Manager for AI Agent Platform GTM — [Patsnap](https://jobs.lever.co/patsnap/b85aa927-6566-4d67-8d6c-b2c27776edf2)
 - **2026-05-12** — Hiring Sales Development Representative (Life Science Graduates) — [Patsnap](https://jobs.lever.co/patsnap/9a625f6f-9b2e-441e-9a69-5d5c46bf324e)
 - **2026-05-12** — Hiring Community Operations Intern (R&D / PLG Product) — [Patsnap](https://jobs.lever.co/patsnap/3cc3a98b-de49-46ea-8694-6363f95af64f)
-- **2026-05-12** — Hiring Industry Product Specialist (Semiconductor Packaging Technology) — [Patsnap](https://jobs.lever.co/patsnap/905f8dd4-c47e-4d73-b5d7-55e3cf740d8c)
-- **2026-05-12** — Hiring Industry Product Specialist (Semiconductor) — [Patsnap](https://jobs.lever.co/patsnap/9dab3451-8d4a-4d59-89a9-8e90c916131a)
 
 ## Older signals
-_none_
+- **2026-05-12** — Hiring Industry Product Specialist (Semiconductor Packaging Technology) — [Patsnap](https://jobs.lever.co/patsnap/905f8dd4-c47e-4d73-b7d5-55e3cf740d8c)
+- **2026-05-12** — Hiring Industry Product Specialist (Semiconductor) — [Patsnap](https://jobs.lever.co/patsnap/9dab3451-8d4a-4d59-89a9-8e90c916131a)
 
 ## Open questions
 - Is the AI Agent Platform a new product line or an evolution of existing IP analytics? How does it differ from the core Patsnap offering?
