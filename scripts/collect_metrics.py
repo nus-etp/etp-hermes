@@ -23,6 +23,16 @@ subplots to draw.
 
 Pure stdlib (urllib). Set GITHUB_TOKEN to lift GitHub's rate limit from
 60/hr to 5,000/hr.
+
+Collection runs companies concurrently (METRICS_WORKERS, default 12), but every
+outbound request passes through a per-host `PoliteGate`: parallelism happens
+*across* hosts while requests to the *same* host are spaced by
+max(robots.txt Crawl-delay, our known API floor) and gated by robots.txt
+`can_fetch`. So GDELT stays serialized at its documented ~1-req/5s/IP floor while
+the 480+ Hacker News lookups (a single host with no robots restriction) run at a
+polite bounded rate alongside it. The gate fetches each host's robots.txt once,
+caches it, and fails open (allow, no extra delay) if robots.txt is missing or
+unreachable.
 """
 
 from __future__ import annotations
@@ -33,10 +43,13 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import urllib.robotparser
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -45,20 +58,114 @@ COMPANIES_PATH = REPO_ROOT / "data" / "companies.json"
 METRICS_DIR = REPO_ROOT / "data" / "metrics"
 
 USER_AGENT = "etp-hermes-metrics/1.0 (+https://github.com)"
-HN_PAUSE_S = 0.3
 GDELT_PAUSE_S = 5.5  # GDELT enforces ~one request per 5s per IP.
 GDELT_TIMEOUT_S = 45  # GDELT's tail latency is high; give it more headroom than other endpoints.
 GDELT_BACKOFF_S = 12  # Initial backoff after a 429/rate-limit signal; doubled each retry.
 GDELT_MAX_ATTEMPTS = 3
-GITHUB_PAUSE_S = 0.1
 HTTP_TIMEOUT_S = 20
+ROBOTS_TIMEOUT_S = 10
+
+# Minimum gap between request *starts* to a host, in seconds. The effective gap
+# is max(this floor, the host's robots.txt Crawl-delay). GDELT is the real
+# throttle (documented ~1 req/5s/IP); the others are deliberately small so many
+# companies' lookups overlap politely. Hosts not listed use DEFAULT_HOST_FLOOR_S.
+DEFAULT_HOST_FLOOR_S = 0.5
+HOST_FLOOR_S = {
+    "api.gdeltproject.org": GDELT_PAUSE_S,
+    "hn.algolia.com": 0.1,
+    "api.github.com": 0.1,
+}
 
 
 def slugify(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
 
 
+class Disallowed(Exception):
+    """robots.txt forbids fetching the URL. Callers treat the metric as null."""
+
+
+class _HostState:
+    """Per-host robots.txt rules + request spacing. Guarded by its own lock."""
+
+    def __init__(self, host: str) -> None:
+        self.host = host
+        self.lock = threading.Lock()
+        self.next_allowed = 0.0  # monotonic clock; next permitted request start
+        self.rp: urllib.robotparser.RobotFileParser | None = None
+        self.crawl_delay = 0.0
+        self._loaded = False
+
+    def _ensure_loaded(self) -> None:
+        # Called under self.lock. Fetch + parse robots.txt exactly once. Any
+        # failure (404, network error, non-200) fails open: no rules, no delay.
+        if self._loaded:
+            return
+        self._loaded = True
+        try:
+            req = urllib.request.Request(
+                f"https://{self.host}/robots.txt", headers={"User-Agent": USER_AGENT}
+            )
+            with urllib.request.urlopen(req, timeout=ROBOTS_TIMEOUT_S) as resp:
+                if getattr(resp, "status", 200) >= 400:
+                    return
+                text = resp.read().decode("utf-8", errors="replace")
+        except Exception:
+            return
+        rp = urllib.robotparser.RobotFileParser()
+        rp.parse(text.splitlines())
+        self.rp = rp
+        delay = rp.crawl_delay(USER_AGENT)
+        if delay:
+            self.crawl_delay = float(delay)
+
+    def reserve(self, url: str) -> None:
+        with self.lock:
+            self._ensure_loaded()
+            if self.rp is not None and not self.rp.can_fetch(USER_AGENT, url):
+                raise Disallowed(url)
+            interval = max(HOST_FLOOR_S.get(self.host, DEFAULT_HOST_FLOOR_S), self.crawl_delay)
+            now = time.monotonic()
+            start = self.next_allowed if self.next_allowed > now else now
+            self.next_allowed = start + interval
+            wait = start - now
+        if wait > 0:  # sleep outside the lock so other hosts aren't blocked
+            time.sleep(wait)
+
+
+class PoliteGate:
+    """Thread-safe robots.txt-aware throttle, keyed by host.
+
+    Call `before_request(url)` before every outbound GET. Hosts are throttled
+    independently, so concurrent collection parallelizes across hosts while
+    each host is hit no faster than its robots.txt / API floor allows.
+    """
+
+    def __init__(self) -> None:
+        self._lock = threading.Lock()
+        self._hosts: dict[str, _HostState] = {}
+
+    def before_request(self, url: str) -> None:
+        host = urllib.parse.urlsplit(url).netloc
+        with self._lock:
+            state = self._hosts.get(host)
+            if state is None:
+                state = self._hosts[host] = _HostState(host)
+        state.reserve(url)
+
+
+# Active only during a batch run (set in main()). None elsewhere so unit tests
+# that call the collectors directly incur no robots fetch and no spacing sleeps.
+_GATE: PoliteGate | None = None
+
+
+def _gate(url: str) -> None:
+    if _GATE is not None:
+        _GATE.before_request(url)
+
+
 def http_get_json(url: str, headers: dict[str, str] | None = None) -> Any:
+    _gate(url)
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})})
     with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT_S) as resp:
         return json.loads(resp.read().decode("utf-8", errors="replace"))
@@ -99,7 +206,6 @@ def github_stats(org: str, token: str | None) -> dict[str, int | None] | None:
     repos_path = "orgs" if is_org else "users"
     try:
         for page in range(1, 6):
-            time.sleep(GITHUB_PAUSE_S)
             url = (
                 f"https://api.github.com/{repos_path}/{org}/repos"
                 f"?per_page=100&page={page}&type=public"
@@ -157,6 +263,7 @@ def gdelt_articles_7d(name: str) -> int | None:
     for attempt in range(GDELT_MAX_ATTEMPTS):
         last = attempt == GDELT_MAX_ATTEMPTS - 1
         try:
+            _gate(url)
             req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
             with urllib.request.urlopen(req, timeout=GDELT_TIMEOUT_S) as resp:
                 body = resp.read().decode("utf-8", errors="replace")
@@ -211,15 +318,13 @@ def collect_one(company: dict[str, Any], now: dt.datetime, gh_token: str | None)
         record["lever"] = {"open": lever_open_jobs(lever_src["url"])}
 
     record["hn_30d"] = hn_mentions_30d(name, now)
-    time.sleep(HN_PAUSE_S)
 
-    # GDELT is rate-limited to one request per 5s per IP. Reserve it for
-    # companies we've deemed worth tracking structurally (i.e. have any
-    # `sources` entry); the long tail of leaf-watchlist names returns
-    # zeros anyway and would bloat the workflow runtime.
+    # GDELT is rate-limited to one request per 5s per IP (enforced by the gate's
+    # per-host spacing). Reserve it for companies we've deemed worth tracking
+    # structurally (i.e. have any `sources` entry); the long tail of
+    # leaf-watchlist names returns zeros anyway and would bloat the runtime.
     if company.get("sources"):
         record["gdelt_7d"] = gdelt_articles_7d(name)
-        time.sleep(GDELT_PAUSE_S)
 
     return record
 
@@ -271,27 +376,40 @@ def main() -> int:
     now = dt.datetime.fromisoformat(args.date).replace(tzinfo=dt.timezone.utc)
     only = [s for s in args.only.split(",") if s.strip()] if args.only else None
     gh_token = os.environ.get("GITHUB_TOKEN") or None
+    workers = max(1, int(os.environ.get("METRICS_WORKERS", "12")))
 
     METRICS_DIR.mkdir(parents=True, exist_ok=True)
 
-    n_done = 0
-    for company in iter_selected(companies, only):
-        slug = slugify(company["name"])
-        try:
-            record = collect_one(company, now, gh_token)
-        except Exception as e:
-            print(f"  ! {company['name']}: collect failed: {e}", file=sys.stderr)
-            continue
-        upsert_record(METRICS_DIR / f"{slug}.jsonl", record)
-        n_done += 1
-        summary = ", ".join(
-            f"{k}={v}"
-            for k, v in record.items()
-            if k != "date" and not isinstance(v, dict)
-        )
-        print(f"  - {company['name']} [{slug}] {summary}")
+    # Enable the robots-aware per-host throttle for the duration of the run.
+    global _GATE
+    _GATE = PoliteGate()
 
-    print(f"collected: {n_done} companies on {now.date().isoformat()}")
+    selected = list(iter_selected(companies, only))
+
+    # Collect companies concurrently; the gate keeps each host polite. Records
+    # are written from this thread as futures complete — every company owns a
+    # distinct <slug>.jsonl, so there's no cross-file contention.
+    n_done = 0
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(collect_one, c, now, gh_token): c for c in selected}
+        for future in as_completed(futures):
+            company = futures[future]
+            slug = slugify(company["name"])
+            try:
+                record = future.result()
+            except Exception as e:
+                print(f"  ! {company['name']}: collect failed: {e}", file=sys.stderr)
+                continue
+            upsert_record(METRICS_DIR / f"{slug}.jsonl", record)
+            n_done += 1
+            summary = ", ".join(
+                f"{k}={v}"
+                for k, v in record.items()
+                if k != "date" and not isinstance(v, dict)
+            )
+            print(f"  - {company['name']} [{slug}] {summary}")
+
+    print(f"collected: {n_done} companies on {now.date().isoformat()} (workers={workers})")
     return 0
 
 

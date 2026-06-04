@@ -153,6 +153,50 @@ def test_iter_selected_filters_by_name_and_slug(scripts_module_loader) -> None:
     assert {c["name"] for c in out} == {"Acme Inc", "Gamma"}
 
 
+def test_polite_gate_blocks_disallowed_paths(scripts_module_loader, monkeypatch) -> None:
+    import pytest
+
+    mod = scripts_module_loader("collect_metrics")
+    robots = _FakeResponse(b"User-agent: *\nDisallow: /private/\n")
+    urlopen = _urlopen_from({"https://example.com/robots.txt": robots})
+    monkeypatch.setattr(mod.urllib.request, "urlopen", urlopen)
+    monkeypatch.setattr(mod.time, "sleep", lambda _: None)
+
+    gate = mod.PoliteGate()
+    with pytest.raises(mod.Disallowed):
+        gate.before_request("https://example.com/private/secret")
+    # An allowed path on the same host passes.
+    gate.before_request("https://example.com/public/ok")
+
+
+def test_polite_gate_fails_open_without_robots(scripts_module_loader, monkeypatch) -> None:
+    mod = scripts_module_loader("collect_metrics")
+    urlopen = _urlopen_from({"https://example.com/robots.txt": error.URLError("nope")})
+    monkeypatch.setattr(mod.urllib.request, "urlopen", urlopen)
+    monkeypatch.setattr(mod.time, "sleep", lambda _: None)
+
+    gate = mod.PoliteGate()
+    # Missing/unreachable robots.txt → allow all, no exception.
+    gate.before_request("https://example.com/anything")
+
+
+def test_polite_gate_spaces_same_host_requests(scripts_module_loader, monkeypatch) -> None:
+    mod = scripts_module_loader("collect_metrics")
+    urlopen = _urlopen_from(
+        {"https://api.gdeltproject.org/robots.txt": error.URLError("none")}
+    )
+    monkeypatch.setattr(mod.urllib.request, "urlopen", urlopen)
+    slept: list[float] = []
+    monkeypatch.setattr(mod.time, "sleep", lambda s: slept.append(s))
+    monkeypatch.setattr(mod.time, "monotonic", lambda: 1000.0)  # frozen clock
+
+    gate = mod.PoliteGate()
+    base = "https://api.gdeltproject.org/api/v2/doc/doc?query="
+    gate.before_request(base + "a")  # first call: no wait
+    gate.before_request(base + "b")  # second: spaced by the GDELT floor
+    assert slept == [mod.GDELT_PAUSE_S]
+
+
 def test_collect_one_records_date_and_hn(scripts_module_loader, monkeypatch) -> None:
     import datetime as dt
 
