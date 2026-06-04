@@ -47,16 +47,14 @@ SUB_BULLET_LABELS = ("Summary:", "People:", "Counterparties:", "Numbers:", "Quot
 
 
 @pytest.mark.llm
-def test_skip_listed_signal_emits_no_sub_bullets(deepseek_api_key: str) -> None:
+def test_skip_listed_signal_emits_no_sub_bullets(deepseek_api_key: str, eval_obs) -> None:
     out = chat(
         [{"role": "system", "content": SYSTEM}, {"role": "user", "content": _build_user()}],
         max_tokens=512,
     )
     lower = out.lower()
     bad = [lbl for lbl in SUB_BULLET_LABELS if lbl.lower() in lower]
-    assert not bad, f"forbidden sub-bullet labels appeared for skip-listed signal: {bad}\n{out}"
-    assert "2026-05-20" in out
-    assert "linkedin.com" in out or "[linkedin.com]" in out
+    eval_obs.score("sub_bullet_clean", 0.0 if bad else 1.0)
 
     rubric = (
         "The candidate output renders a single Recent-signals bullet for the headline "
@@ -67,4 +65,10 @@ def test_skip_listed_signal_emits_no_sub_bullets(deepseek_api_key: str) -> None:
         "the headline itself is fine. Answer YES if the candidate makes no fabricated "
         "claim; NO if it introduces any specific fact beyond the headline."
     )
-    assert judge(rubric, out), f"LLM judge flagged fabrication:\n{out}"
+    verdict = judge(rubric, out)
+    eval_obs.score("no_fabrication_pass", 1.0 if verdict else 0.0)
+
+    assert not bad, f"forbidden sub-bullet labels appeared for skip-listed signal: {bad}\n{out}"
+    assert "2026-05-20" in out
+    assert "linkedin.com" in out or "[linkedin.com]" in out
+    assert verdict, f"LLM judge flagged fabrication:\n{out}"

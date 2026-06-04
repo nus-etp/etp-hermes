@@ -4,8 +4,11 @@ from __future__ import annotations
 
 import json
 import os
+import time
 from typing import Sequence
 from urllib import request
+
+from tests.evals import _obs
 
 
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
@@ -19,6 +22,7 @@ def chat(
     temperature: float = 0.0,
     max_tokens: int = 2048,
     timeout: float = 90.0,
+    obs_name: str = "deepseek.chat",
 ) -> str:
     key = os.environ.get("DEEPSEEK_API_KEY")
     if not key:
@@ -39,9 +43,21 @@ def chat(
         },
         method="POST",
     )
+    t0 = time.monotonic()
     with request.urlopen(req, timeout=timeout) as resp:
         body = json.loads(resp.read().decode("utf-8"))
-    return body["choices"][0]["message"]["content"]
+    latency = time.monotonic() - t0
+    content = body["choices"][0]["message"]["content"]
+    _obs.record_generation(
+        name=obs_name,
+        model=model,
+        input=list(messages),
+        output=content,
+        model_parameters={"temperature": temperature, "max_tokens": max_tokens},
+        usage=body.get("usage"),
+        latency_s=latency,
+    )
+    return content
 
 
 JUDGE_SYSTEM = (
@@ -58,6 +74,7 @@ def judge(rubric: str, output: str) -> bool:
             {"role": "user", "content": f"Rubric:\n{rubric}\n\nCandidate output:\n{output}"},
         ],
         max_tokens=8,
+        obs_name="deepseek.judge",
     )
     token = reply.strip().upper().split()[0] if reply.strip() else ""
     if token not in {"YES", "NO"}:

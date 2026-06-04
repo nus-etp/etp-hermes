@@ -69,7 +69,7 @@ def _parse_json(text: str) -> dict[str, object]:
 
 
 @pytest.mark.llm
-def test_relevance_precision_and_recall(deepseek_api_key: str) -> None:
+def test_relevance_precision_and_recall(deepseek_api_key: str, eval_obs) -> None:
     user = _build_user(WATCHLIST, FIXTURE)
     out = chat(
         [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
@@ -96,5 +96,8 @@ def test_relevance_precision_and_recall(deepseek_api_key: str) -> None:
 
     precision = tp / (tp + fp) if (tp + fp) else 1.0
     recall = tp / (tp + fn) if (tp + fn) else 1.0
+    # Score before asserting so the metric lands in Langfuse even on regression.
+    eval_obs.score("precision", precision)
+    eval_obs.score("recall", recall)
     assert precision >= 0.75, f"precision {precision:.2f} below 0.75; answers={answers}"
     assert recall >= 0.75, f"recall {recall:.2f} below 0.75; answers={answers}"

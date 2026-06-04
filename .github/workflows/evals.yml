@@ -66,13 +66,24 @@ jobs:
       - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
 
       - name: Set up Python and install dev deps
+        # langfuse: optional eval observability (tests/evals/_obs.py). Installed
+        # only in this LLM job; the suite fail-opens when it's absent, so the
+        # fast (PR) job above stays langfuse-free. Unpinned to mirror the
+        # hermes-sync install precedent.
         run: |
           uv venv
-          uv pip install -e ".[dev]"
+          uv pip install -e ".[dev]" langfuse
 
       - name: Run LLM eval suite
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          # Reuse the existing hermes Langfuse secrets so each eval's LLM calls
+          # and pass/fail + precision/recall scores stream to Langfuse. Absent
+          # secrets (e.g. forks) → _obs.py no-ops; the suite runs unchanged.
+          HERMES_LANGFUSE_PUBLIC_KEY: ${{ secrets.HERMES_LANGFUSE_PUBLIC_KEY }}
+          HERMES_LANGFUSE_SECRET_KEY: ${{ secrets.HERMES_LANGFUSE_SECRET_KEY }}
+          HERMES_LANGFUSE_BASE_URL: ${{ secrets.HERMES_LANGFUSE_BASE_URL }}
+          HERMES_LANGFUSE_ENV: eval
         # Skip the batch_runner integration eval in CI (HERMES_BATCH_EVAL unset);
         # it requires the local hermes install on the runner.
         run: .venv/bin/pytest tests/evals -q -m llm --tb=short

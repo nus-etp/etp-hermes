@@ -75,18 +75,30 @@ LAST_UPDATED_RE = re.compile(r"^_Last updated: \d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC
 
 
 @pytest.mark.llm
-def test_first_time_brief_matches_template(deepseek_api_key: str) -> None:
+def test_first_time_brief_matches_template(deepseek_api_key: str, eval_obs) -> None:
     out = chat(
         [{"role": "system", "content": SYSTEM}, {"role": "user", "content": _build_user()}],
         max_tokens=1024,
     )
     lines = out.strip().splitlines()
-    assert H1_RE.match(lines[0]), f"line 1 not a valid LIVING BRIEF H1: {lines[0]!r}\n{out}"
-    assert LAST_UPDATED_RE.match(lines[1]), f"line 2 not a valid _Last updated:_ line: {lines[1]!r}\n{out}"
-    assert lines[2] == "![Infographic](infographic.png)", f"line 3 must be the infographic marker: {lines[2]!r}\n{out}"
+    # Collect all violations rather than failing on the first, so the
+    # template_pass score reflects the whole check and the message lists
+    # everything wrong at once.
+    failures: list[str] = []
+    if not lines or not H1_RE.match(lines[0]):
+        failures.append(f"line 1 not a valid LIVING BRIEF H1: {lines[0]!r}" if lines else "empty output")
+    if len(lines) < 2 or not LAST_UPDATED_RE.match(lines[1]):
+        failures.append(f"line 2 not a valid _Last updated:_ line: {lines[1]!r}" if len(lines) >= 2 else "missing line 2")
+    if len(lines) < 3 or lines[2] != "![Infographic](infographic.png)":
+        failures.append(f"line 3 must be the infographic marker: {lines[2]!r}" if len(lines) >= 3 else "missing line 3")
 
     cursor = 0
     for heading in REQUIRED_SECTIONS:
         idx = out.find("\n" + heading + "\n", cursor)
-        assert idx > 0, f"missing required heading {heading!r} (cursor={cursor}):\n{out}"
-        cursor = idx
+        if idx <= 0:
+            failures.append(f"missing required heading {heading!r} (cursor={cursor})")
+        else:
+            cursor = idx
+
+    eval_obs.score("template_pass", 0.0 if failures else 1.0)
+    assert not failures, "template violations:\n  - " + "\n  - ".join(failures) + f"\n\n{out}"
