@@ -36,12 +36,11 @@ image_gen:
   use_gateway: false
 
 web:
-  # Per-capability split for Layer 2 (agent supplement). ddgs is keyless and
-  # unmetered; tavily handles the rarer extract path within its 1k/mo free
-  # tier. EXA_API_KEY is seeded in .env as a hot spare — swap by changing
-  # extract_backend to "exa".
-  search_backend: ddgs
-  extract_backend: tavily
+  # Per-capability split for Layer 2 (agent supplement). tavily handles
+  # search (~30-48 calls/run vs its 1k/mo free tier — near the ceiling at
+  # daily cadence, watch quota); exa handles the rarer extract path.
+  search_backend: tavily
+  extract_backend: exa
 
 plugins:
   # Streams live traces (LLM calls + tool calls) to Langfuse. Needs the
