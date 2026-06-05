@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-06-05 04:00 UTC_
+_Last updated: 2026-06-05 16:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,10 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-06-05** — Patsnap hiring a Strategic Life Sciences Data & AI Expansion Specialist (remote, California) for DaaS account expansion, reinforcing Life Sciences vertical push — [Patsnap · careers](https://jobs.lever.co/patsnap/0e0f5286-41c2-4292-90f8-41768fb50de4)
+  - Summary: Patsnap is hiring a Strategic Life Sciences Data & AI Expansion Specialist for a remote California-based role focused on expanding Data-as-a-Service (DaaS) opportunities within existing Life Sciences accounts across North America. The role acts as a subject-matter expert overlay supporting multiple Account Executives, targeting senior R&D, BD&L, Competitive Intelligence, and Innovation stakeholders in pharmaceutical, biotech, and medical device organizations.
+  - Numbers: $130K–$260K OTE (50/50 base + uncapped commission); 12,000+ customers; Life Sciences business growing 20%+ YoY; pre-IPO unicorn at $1B+ valuation
+  - Quote: "We are seeking a highly commercial, customer-facing Strategic Life Sciences Data & AI Expansion Specialist to drive growth across our existing Life Sciences customer base and support high-value strategic opportunities throughout North America." — Patsnap job posting
 - **2026-06-05** — Patsnap hiring Senior Account Executive in San Antonio (Texas) for Connected Innovation Solutions, extending its North American sales coverage to the US South/West — [Patsnap · careers](https://jobs.lever.co/patsnap/a144a6aa-3e18-43dd-8add-9531ae569745)
   - Summary: Patsnap is hiring a remote, hunter-focused Senior Account Executive in San Antonio, Texas for net-new logo acquisition in its Connected Innovation Solutions vertical. The job posting describes Patsnap as a pre-IPO unicorn ($1B+ valuation) with 18,000+ customers globally, 20%+ YoY growth, and 82% growth in enterprise deals. The role covers the Americas and West Coast.
   - Numbers: 18,000+ customers globally; 20%+ YoY growth; 82% growth in enterprise deals; $1B+ valuation; $300M Series E
@@ -46,18 +50,18 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Lead / Staff Engineer for AI Agent Platform (Search & Algorithm) — [Patsnap](https://jobs.lever.co/patsnap/3b8e49d4-dc8b-485e-9b46-415b155969e3)
 - **2026-05-12** — Hiring Account Executive for Life Sciences Sales — [Patsnap](https://jobs.lever.co/patsnap/91674214-6d6c-41c2-b743-f40327fe134c)
 - **2026-05-12** — Hiring Product Support Specialist (Life Sciences) — [Patsnap](https://jobs.lever.co/patsnap/e990d3dc-4298-487b-9a1e-ef33db46a22f)
-- **2026-05-12** — Hiring Account Executive for Connected Innovation Solutions Sales — [Patsnap](https://jobs.lever.co/patsnap/9caa7b0b-8e39-400c-9fa2-0a9ae1728373)
+- **2026-05-12** — Hiring Account Executive for Connected Innovation Solutions Sales — [Patsnap](https://jobs.lever.co/patsnap/9caa0b0b-8e39-400c-9fa2-0a9ae1728373)
 - **2026-05-12** — Hiring Full Stack Intern (AI & Web Development, Material vertical) — [Patsnap](https://jobs.lever.co/patsnap/968e70fb-dd6b-4756-8d4d-ec2a7e482207)
 - **2026-05-12** — Hiring Life Science Growth Marketing Intern — [Patsnap](https://jobs.lever.co/patsnap/06fa8277-13bf-4dd5-bd0b-e1198ba4f8f0)
 - **2026-05-12** — Hiring Senior Digital Marketing Manager — [Patsnap](https://jobs.lever.co/patsnap/ba7981cc-46a3-4014-933f-800793cc4b59)
 - **2026-05-12** — Hiring Product Growth Manager for AI Agent Platform (IP Checking) — [Patsnap](https://jobs.lever.co/patsnap/5d9d748a-f9ce-40fd-aa3b-dde76007b0e6)
-- **2026-05-12** — Hiring Product Marketing Manager for AI Agent Platform GTM — [Patsnap](https://jobs.lever.co/patsnap/b85aa927-6566-4d67-8d6c-b2c27776edf2)
 
 ## Older signals
 - **2026-05-12** — Hiring Sales Development Representative (Life Science Graduates) — [Patsnap](https://jobs.lever.co/patsnap/9a625f6f-9b2e-441e-9a69-5d5c46bf324e)
 - **2026-05-12** — Hiring Community Operations Intern (R&D / PLG Product) — [Patsnap](https://jobs.lever.co/patsnap/3cc3a98b-de49-46ea-8694-6363f95af64f)
 - **2026-05-12** — Hiring Industry Product Specialist (Semiconductor Packaging Technology) — [Patsnap](https://jobs.lever.co/patsnap/905f8dd4-c47e-4d73-b7d5-55e3cf740d8c)
 - **2026-05-12** — Hiring Industry Product Specialist (Semiconductor) — [Patsnap](https://jobs.lever.co/patsnap/9dab3451-8d4a-4d59-89a9-8e90c916131a)
+- **2026-05-12** — Hiring Product Marketing Manager for AI Agent Platform GTM — [Patsnap](https://jobs.lever.co/patsnap/b85aa927-6566-4d67-8d6c-b2c27776edf2)
 
 ## Open questions
 - Is the AI Agent Platform a new product line or an evolution of existing IP analytics? How does it differ from the core Patsnap offering?
