@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-06-02 12:00 UTC_
+_Last updated: 2026-06-05 04:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,14 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-06-05** — Patsnap hiring Senior Account Executive in San Antonio (Texas) for Connected Innovation Solutions, extending its North American sales coverage to the US South/West — [Patsnap · careers](https://jobs.lever.co/patsnap/a144a6aa-3e18-43dd-8add-9531ae569745)
+  - Summary: Patsnap is hiring a remote, hunter-focused Senior Account Executive in San Antonio, Texas for net-new logo acquisition in its Connected Innovation Solutions vertical. The job posting describes Patsnap as a pre-IPO unicorn ($1B+ valuation) with 18,000+ customers globally, 20%+ YoY growth, and 82% growth in enterprise deals. The role covers the Americas and West Coast.
+  - Numbers: 18,000+ customers globally; 20%+ YoY growth; 82% growth in enterprise deals; $1B+ valuation; $300M Series E
+- **2026-06-04** — PatSnap publishes 2026 R&D Benchmark Report revealing structural R&D waste and an "intelligence gap" even among heavy AI adopters, alongside an interactive benchmark calculator — [EZ Newswire](https://www.voiceofalexandria.com/news/national_business_news/patsnap-releases-2026-r-d-benchmark-report-revealing-the-intelligence-gap-costing-innovation-teams-millions/article_372459cd-b728-50f6-9334-71485d94f73a.html)
+  - Summary: PatSnap commissioned a survey of 200+ senior R&D leaders across North America, UK, and Europe (all with $50M+ annual R&D budgets). Key findings: 37% of organizations waste 25-40% of R&D budgets on projects that never reach market; 45% estimate $1M+ lost per terminated project; 73% report half or fewer of initiated projects ultimately launch. 92% use AI in R&D, but 54% of heavy AI users say better intelligence access would have the greatest impact on R&D success.
+  - People: Jason Resnick (General Manager, PatSnap West)
+  - Numbers: 37% waste 25-40% of R&D budget; $1M+ per terminated project; 73% of projects fail to launch; 92% AI adoption rate; 54% of heavy AI users cite intelligence as top need
+  - Quote: "In R&D, the cost of acting on incomplete intelligence is not a delayed report. It is months of work that cannot be recovered." — Jason Resnick, General Manager, PatSnap West
 - **2026-06-02** — Hiring a Senior Account Executive (Life Sciences) for a remote US-based role covering EST hours, continuing its North America commercial build-out — [Patsnap · careers](https://jobs.lever.co/patsnap/6886b6d9-1aaa-40a0-9df3-08b0993a6abc)
   - Summary: Patsnap is hiring a Senior Account Executive for the US market to lead strategic, consultative sales cycles with pharmaceutical, biotech, and medical device organizations. The Life Sciences vertical is described as growing 20%+ YoY and one of Patsnap's most strategic and fastest-growing verticals. The role involves building and executing territory plans, managing complex multi-threaded opportunities, and engaging stakeholders across R&D, Innovation, IP, and Commercial functions.
   - Numbers: Life Sciences business growing 20%+ YoY
@@ -39,15 +47,15 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Account Executive for Life Sciences Sales — [Patsnap](https://jobs.lever.co/patsnap/91674214-6d6c-41c2-b743-f40327fe134c)
 - **2026-05-12** — Hiring Product Support Specialist (Life Sciences) — [Patsnap](https://jobs.lever.co/patsnap/e990d3dc-4298-487b-9a1e-ef33db46a22f)
 - **2026-05-12** — Hiring Account Executive for Connected Innovation Solutions Sales — [Patsnap](https://jobs.lever.co/patsnap/9caa7b0b-8e39-400c-9fa2-0a9ae1728373)
-- **2026-05-12** — Hiring Full Stack Intern (AI & Web Development, Material vertical) — [Patsnap](https://jobs.lever.co/patsnap/968e70fb-dd6b-4452-8d4d-ec2a7e482207)
+- **2026-05-12** — Hiring Full Stack Intern (AI & Web Development, Material vertical) — [Patsnap](https://jobs.lever.co/patsnap/968e70fb-dd6b-4756-8d4d-ec2a7e482207)
 - **2026-05-12** — Hiring Life Science Growth Marketing Intern — [Patsnap](https://jobs.lever.co/patsnap/06fa8277-13bf-4dd5-bd0b-e1198ba4f8f0)
 - **2026-05-12** — Hiring Senior Digital Marketing Manager — [Patsnap](https://jobs.lever.co/patsnap/ba7981cc-46a3-4014-933f-800793cc4b59)
 - **2026-05-12** — Hiring Product Growth Manager for AI Agent Platform (IP Checking) — [Patsnap](https://jobs.lever.co/patsnap/5d9d748a-f9ce-40fd-aa3b-dde76007b0e6)
 - **2026-05-12** — Hiring Product Marketing Manager for AI Agent Platform GTM — [Patsnap](https://jobs.lever.co/patsnap/b85aa927-6566-4d67-8d6c-b2c27776edf2)
-- **2026-05-12** — Hiring Sales Development Representative (Life Science Graduates) — [Patsnap](https://jobs.lever.co/patsnap/9a625f6f-9b2e-441e-9a69-5d5c46bf324e)
-- **2026-05-12** — Hiring Community Operations Intern (R&D / PLG Product) — [Patsnap](https://jobs.lever.co/patsnap/3cc3a98b-de49-46ea-8694-6363f95af64f)
 
 ## Older signals
+- **2026-05-12** — Hiring Sales Development Representative (Life Science Graduates) — [Patsnap](https://jobs.lever.co/patsnap/9a625f6f-9b2e-441e-9a69-5d5c46bf324e)
+- **2026-05-12** — Hiring Community Operations Intern (R&D / PLG Product) — [Patsnap](https://jobs.lever.co/patsnap/3cc3a98b-de49-46ea-8694-6363f95af64f)
 - **2026-05-12** — Hiring Industry Product Specialist (Semiconductor Packaging Technology) — [Patsnap](https://jobs.lever.co/patsnap/905f8dd4-c47e-4d73-b7d5-55e3cf740d8c)
 - **2026-05-12** — Hiring Industry Product Specialist (Semiconductor) — [Patsnap](https://jobs.lever.co/patsnap/9dab3451-8d4a-4d59-89a9-8e90c916131a)
 
@@ -57,3 +65,4 @@ _Total disclosed: $351.6M._
 - What is the commercial structure of the CAS-Patsnap partnership — is CAS data being integrated into Patsnap's platform, resold as a standalone dataset, or something else?
 - Does the CAS partnership signal a strategic expansion beyond patent/IP analytics into the broader scientific and R&D content analytics market?
 - Does the Toronto SDR hire and "pre-IPO" self-description indicate a North America go-to-market push and a concrete IPO timeline?
+- What is the "Connected Innovation Solutions" vertical and how does it relate to Patsnap's core IP analytics and life sciences verticals?
