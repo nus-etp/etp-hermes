@@ -1,0 +1,75 @@
+name: langfuse-usage
+
+# Monthly rollup of Langfuse usage (traces, observations, tokens, cost) across
+# the production hermes pipeline and the nightly LLM eval suite. Reads it back
+# out of Langfuse's Daily Metrics API and commits a per-month JSON snapshot plus
+# a human Markdown report. Reuses the same HERMES_LANGFUSE_* secrets the
+# production plugin and eval suite already use — no new secret required.
+#
+# Runs on the 1st of each month and collects the *previous* month (now fully
+# closed). Manual dispatch can target any YYYY-MM.
+
+on:
+  schedule:
+    - cron: '0 6 1 * *'   # 06:00 UTC on the 1st of each month
+  workflow_dispatch:
+    inputs:
+      month:
+        description: 'UTC month to collect (YYYY-MM). Default: previous month.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+# Avoid a scheduled run and a manual dispatch racing on the same push.
+concurrency:
+  group: langfuse-usage
+  cancel-in-progress: false
+
+jobs:
+  usage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - uses: actions/setup-python@39cd14951b08e74b54015e9e001cdefcf80e669f # v5
+        with:
+          python-version: '3.11'
+
+      - name: Resolve target month
+        id: month
+        run: |
+          if [ -n "${{ github.event.inputs.month }}" ]; then
+            echo "month=${{ github.event.inputs.month }}" >> "$GITHUB_OUTPUT"
+          else
+            # Scheduled on the 1st → collect the month that just ended.
+            echo "month=$(date -u -d 'last month' +%Y-%m)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Collect Langfuse usage
+        # Pure stdlib (urllib) — no install step. Fail-open: absent secrets
+        # (e.g. forks) make the script print a notice and exit 0.
+        env:
+          HERMES_LANGFUSE_PUBLIC_KEY: ${{ secrets.HERMES_LANGFUSE_PUBLIC_KEY }}
+          HERMES_LANGFUSE_SECRET_KEY: ${{ secrets.HERMES_LANGFUSE_SECRET_KEY }}
+          HERMES_LANGFUSE_BASE_URL: ${{ secrets.HERMES_LANGFUSE_BASE_URL }}
+          LANGFUSE_USAGE_MONTH: ${{ steps.month.outputs.month }}
+        run: python3 scripts/langfuse_usage.py
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/langfuse-usage/ signals/langfuse-usage.md
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "chore(obs): langfuse usage ${{ steps.month.outputs.month }}"
+          for attempt in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push attempt ${attempt} rejected; rebasing..." >&2
+            git pull --rebase || { git rebase --abort; exit 1; }
+          done
+          exit 1
