@@ -108,6 +108,10 @@ jobs:
           HERMES_LANGFUSE_PUBLIC_KEY: ${{ secrets.HERMES_LANGFUSE_PUBLIC_KEY }}
           HERMES_LANGFUSE_SECRET_KEY: ${{ secrets.HERMES_LANGFUSE_SECRET_KEY }}
           HERMES_LANGFUSE_BASE_URL: ${{ secrets.HERMES_LANGFUSE_BASE_URL }}
+          # Label the daily pipeline's traces "production" so they split from
+          # the eval suite (HERMES_LANGFUSE_ENV=eval) in Langfuse. Without this
+          # the plugin falls back to the literal "default" environment.
+          HERMES_LANGFUSE_ENV: production
         run: bash scripts/bootstrap-hermes.sh
 
       - name: Install ddgs + langfuse into hermes venv

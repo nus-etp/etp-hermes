@@ -79,6 +79,12 @@ fi
 if [ -n "${HERMES_LANGFUSE_BASE_URL:-}" ]; then
   echo "HERMES_LANGFUSE_BASE_URL=${HERMES_LANGFUSE_BASE_URL}" >> "$HERMES_HOME/.env"
 fi
+# Environment tag (the plugin reads HERMES_LANGFUSE_ENV). The daily workflow
+# sets it to "production"; left unset locally so the plugin keeps its
+# "default" fallback rather than mislabelling a dev run as production.
+if [ -n "${HERMES_LANGFUSE_ENV:-}" ]; then
+  echo "HERMES_LANGFUSE_ENV=${HERMES_LANGFUSE_ENV}" >> "$HERMES_HOME/.env"
+fi
 chmod 600 "$HERMES_HOME/.env"
 
 echo "bootstrapped $HERMES_HOME from $SRC_DIR"

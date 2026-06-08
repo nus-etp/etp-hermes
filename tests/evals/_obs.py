@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import os
 import subprocess
+import time
 import warnings
 from contextlib import contextmanager
 from functools import lru_cache
@@ -39,6 +40,20 @@ def _git_sha() -> str:
         return out.stdout.strip() or "unknown"
     except Exception:
         return "unknown"
+
+
+@lru_cache(maxsize=1)
+def _session_id() -> str:
+    """Stable id for the whole eval run, so its traces group as one session.
+
+    Without a session id every eval trace is session-less and never shows in
+    Langfuse's Sessions tab (only the production agent, which does set one,
+    appears there). Prefer the CI run id — one session per workflow run — and
+    fall back to a process-start epoch locally; both are prefixed with the
+    short git SHA for a readable, collision-free handle.
+    """
+    run = os.environ.get("GITHUB_RUN_ID") or str(int(time.time()))
+    return f"eval-{_git_sha()}-{run}"
 
 
 def _client() -> Any:
@@ -144,7 +159,9 @@ def eval_span(name: str) -> Iterator[Any]:
             warnings.simplefilter("ignore")
             from langfuse import propagate_attributes
 
-            prop_cm = propagate_attributes(trace_name=name, tags=["llm-eval"])
+            prop_cm = propagate_attributes(
+                trace_name=name, tags=["llm-eval"], session_id=_session_id()
+            )
             prop_cm.__enter__()
             span_cm = c.start_as_current_observation(
                 name=name,
