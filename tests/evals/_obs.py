@@ -122,19 +122,30 @@ def eval_span(name: str) -> Iterator[Any]:
 
     Generations recorded by ``record_generation`` inside the ``with`` block
     nest under this span automatically (OTEL current-context). Flushes on exit.
+
+    Langfuse v4's OTEL SDK does **not** derive the trace name from the root
+    span's name, so every eval trace otherwise lands unnamed (blank rows) in the
+    Traces list. ``propagate_attributes(trace_name=...)`` is entered *before* the
+    span so it stamps ``langfuse.trace.name`` (and tags) onto the span and every
+    child generation — fail-open like everything else here.
     """
     c = _client()
     if c is None:
         yield _NullHandle()
         return
 
-    # Enter the span manually (not via `with`) so a failure mid-setup still
+    # Enter the contexts manually (not via `with`) so a failure mid-setup still
     # leaves us with a clean null handle to yield — the eval must never break.
+    prop_cm = None
     span_cm = None
     trace_id = None
     try:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
+            from langfuse import propagate_attributes
+
+            prop_cm = propagate_attributes(trace_name=name, tags=["llm-eval"])
+            prop_cm.__enter__()
             span_cm = c.start_as_current_observation(
                 name=name,
                 as_type="span",
@@ -143,20 +154,37 @@ def eval_span(name: str) -> Iterator[Any]:
             span_cm.__enter__()
             trace_id = c.get_current_trace_id()
     except Exception:
+        # Unwind the propagate context if the span never opened.
+        if prop_cm is not None and span_cm is None:
+            try:
+                prop_cm.__exit__(None, None, None)
+            except Exception:
+                pass
+            prop_cm = None
         span_cm = None
 
     handle = _Handle(c, trace_id) if span_cm is not None else _NullHandle()
     try:
         yield handle
     finally:
-        if span_cm is not None:
-            try:
-                with warnings.catch_warnings():
-                    warnings.simplefilter("ignore")
+        # Exit in reverse order: span first, then the propagate context.
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            if span_cm is not None:
+                try:
                     span_cm.__exit__(None, None, None)
+                except Exception:
+                    pass
+            if prop_cm is not None:
+                try:
+                    prop_cm.__exit__(None, None, None)
+                except Exception:
+                    pass
+            if span_cm is not None:
+                try:
                     c.flush()
-            except Exception:
-                pass
+                except Exception:
+                    pass
 
 
 def record_generation(
