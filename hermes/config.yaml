@@ -51,3 +51,101 @@ plugins:
   enabled:
     - observability/langfuse
   disabled: []
+
+skills:
+  # Native skill deny-list (consumed by hermes_cli/skills_config.py). Hermes
+  # bundles ~90 skills; this pipeline only needs a handful, so every other
+  # bundled skill is disabled here to keep the agent's skill surface small.
+  # This is a DENY-list, not an allow-list: any skill a future `hermes update`
+  # adds defaults to ENABLED and must be appended here to stay off. Names are
+  # skill leaf-names (the `name:` frontmatter field), not category/name paths.
+  #
+  # KEPT (intentionally absent below): baoyu-infographic (Layer 4 infographics,
+  # the only skill the prompts invoke), company-signals, arxiv, blogwatcher,
+  # humanizer.
+  disabled:
+    - airtable
+    - apple-notes
+    - apple-reminders
+    - architecture-diagram
+    - ascii-art
+    - ascii-video
+    - audiocraft-audio-generation
+    - baoyu-article-illustrator
+    - baoyu-comic
+    - claude-code
+    - claude-design
+    - codebase-inspection
+    - codex
+    - comfyui
+    - debugging-hermes-tui-commands
+    - design-md
+    - dogfood
+    - dspy
+    - evaluating-llms-harness
+    - excalidraw
+    - findmy
+    - gif-search
+    - github-auth
+    - github-code-review
+    - github-issues
+    - github-pr-workflow
+    - github-repo-management
+    - godmode
+    - google-workspace
+    - heartmula
+    - hermes-agent
+    - hermes-agent-skill-authoring
+    - himalaya
+    - huggingface-hub
+    - ideation
+    - imessage
+    - jupyter-live-kernel
+    - kanban-codex-lane
+    - kanban-orchestrator
+    - kanban-worker
+    - linear
+    - llama-cpp
+    - llm-wiki
+    - macos-computer-use
+    - manim-video
+    - maps
+    - minecraft-modpack-server
+    - nano-pdf
+    - native-mcp
+    - node-inspect-debugger
+    - notion
+    - obliteratus
+    - obsidian
+    - ocr-and-documents
+    - opencode
+    - openhue
+    - p5js
+    - pixel-art
+    - plan
+    - pokemon-player
+    - polymarket
+    - popular-web-designs
+    - powerpoint
+    - pretext
+    - python-debugpy
+    - requesting-code-review
+    - research-paper-writing
+    - segment-anything-model
+    - serving-llms-vllm
+    - sketch
+    - songsee
+    - songwriting-and-ai-music
+    - spike
+    - spotify
+    - subagent-driven-development
+    - systematic-debugging
+    - teams-meeting-pipeline
+    - test-driven-development
+    - touchdesigner-mcp
+    - webhook-subscriptions
+    - weights-and-biases
+    - writing-plans
+    - xurl
+    - youtube-content
+    - yuanbao
