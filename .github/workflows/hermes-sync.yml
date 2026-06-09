@@ -372,6 +372,12 @@ jobs:
           name: hermes-output
           path: .
 
+      # The agent occasionally appends dedup keys with trailing whitespace,
+      # which trips test_seen_urls_format. Strip it before staging so the eval
+      # doesn't break on the next run.
+      - name: Sanitize seen-urls.txt
+        run: python3 scripts/sanitize-seen-urls.py
+
       - name: Commit and push
         run: |
           git config user.name  "github-actions[bot]"
