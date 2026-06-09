@@ -157,12 +157,18 @@ def eval_span(name: str) -> Iterator[Any]:
     try:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            from langfuse import propagate_attributes
+            # propagate_attributes is optional: the SDK may be absent in
+            # non-LLM-job environments (e.g. the fast/PR job, unit tests).
+            # Isolate it so an ImportError here doesn't abort span creation.
+            try:
+                from langfuse import propagate_attributes
 
-            prop_cm = propagate_attributes(
-                trace_name=name, tags=["llm-eval"], session_id=_session_id()
-            )
-            prop_cm.__enter__()
+                prop_cm = propagate_attributes(
+                    trace_name=name, tags=["llm-eval"], session_id=_session_id()
+                )
+                prop_cm.__enter__()
+            except Exception:
+                prop_cm = None
             span_cm = c.start_as_current_observation(
                 name=name,
                 as_type="span",
