@@ -159,7 +159,7 @@ for (const c of companies) {
     aliases,
     description: c.description ?? '',
     hasBrief: !!brief,
-    sector: brief?.parsed.sector,
+    sector: brief?.parsed.sector ?? c.sector ?? undefined,
     region: shortRegion,
     regionFull: brief?.parsed.region,
     thesis: brief?.parsed.thesis,

@@ -42,7 +42,7 @@ Merge today's new signals into each touched company's living brief. Preserve pri
    c. **If the brief does not exist**, this is the first-time write. Generate all sections from scratch:
       - **Header**: `# <c.name> — LIVING BRIEF`, then `_Last updated: <UTC-timestamp>_`, then `![Infographic](infographic.png)` on its own line (unconditional — Layer 4 fills the PNG later).
       - **Thesis**: 2–3 sentences derived from `c.description` and today's signals.
-      - **Profile**: bullets from `c.description` (sector, region) plus `c.identifiers` (LinkedIn, Crunchbase, UEN, website). Include only fields actually present — don't invent.
+      - **Profile**: bullets from `c.description` (sector, region) plus `c.identifiers` (LinkedIn, Crunchbase, UEN, website). Include only fields actually present — don't invent. For `Sector:`, follow the "Sector tagging" rules below.
       - **Funding history**: render from `c.funding_rounds` (see "Funding history rendering rules"). Omit if empty/absent.
       - **Recent signals**: today's `NEW_SIGNALS[c.name]` as cards, most recent first. Top-level bullet: `- **<UTC-date>** — <one-line synthesis, your own words> — [<source-short>](<url>)` (NOT the headline verbatim). Optionally followed by indented sub-bullets enriched from the fetched body (see "URL fetching" and "Signal card extraction" below). If fetch skipped/failed, emit top-level bullet only.
       - **Older signals**: `_none_`.
@@ -51,7 +51,7 @@ Merge today's new signals into each touched company's living brief. Preserve pri
    d. **If the brief already exists**, read it and merge:
       - **Header**: update `_Last updated:_` to `<UTC-timestamp>`. Keep the H1 verbatim. Ensure `![Infographic](infographic.png)` follows `_Last updated:_`; insert if missing (legacy briefs).
       - **Thesis**: keep verbatim *unless* today's signals materially shift trajectory (new market, new funding stage, pivot, exec change, acquisition, shutdown). If you rewrite, write naturally — not as a list of citations.
-      - **Profile**: touch only when a today's signal contradicts or extends a field. Otherwise keep verbatim.
+      - **Profile**: touch only when a today's signal contradicts or extends a field. Otherwise keep verbatim. Exception: if `c.sector` is present in `companies.json` and the on-disk `Sector:` bullet does not match it, update the bullet to match `c.sector` verbatim (silent correction, no SECTOR_PROPOSAL needed).
       - **Funding history**: re-render from `c.funding_rounds`. `companies.json` is authoritative — replace the on-disk section if it differs. Omit if empty/absent. Do **not** add rounds inferred from today's signals — that goes in `data/companies.json` first.
       - **Recent signals**: prepend today's `NEW_SIGNALS[c.name]` cards. URL-level dedup against the existing brief (skip if URL already in `Recent signals` or `Older signals`; never re-fetch on-disk URLs). Cap: 20 **top-level** bullets — sub-bullets don't count. If exceeded, demote oldest excess to `Older signals`, moving each card as a single subtree (top bullet + its sub-bullets), oldest at the bottom.
       - **Open questions**: append new questions; remove any that today's signals clearly answer. If empty after editing, render `_none open_`.
@@ -142,6 +142,22 @@ When a fetch succeeds, emit sub-bullets in this order; omit any whose field has 
 Do **NOT** extract: "About <Company>" trailers; generic market-size claims not attributed to the company; multiple paraphrases of the same number; analyst forecasts unrelated to the company; cap-table content already in `Funding history`; image captions, ads, related-articles lists, share-button labels.
 
 If two cards cover the same announcement (different outlets), keep both top-level bullets but reduce the second's sub-bullets to a single `Summary: Corroborates the <date> announcement; no new facts.`
+
+## Sector tagging
+
+`data/sectors.json` is the canonical sector taxonomy — a flat array of atomic sector strings (e.g. `"Agritech"`, `"AI"`, `"Climate tech"`).
+
+**Rules (in priority order):**
+
+1. **If `c.sector` is present** in `data/companies.json`: write it verbatim as the `Sector:` bullet. Do not paraphrase or append qualifiers.
+2. **If `c.sector` is absent**: pick the 1–2 closest entries from `data/sectors.json` that describe the company. Join two entries with ` / ` (e.g. `Agritech / Biotechnology`). Do not invent entries not in the list; do not use more than two.
+3. **Emit a proposal to stdout** (one line, does not appear in the brief):
+   ```
+   SECTOR_PROPOSAL: <slug> → "<derived value>"
+   ```
+   Emit this whenever `c.sector` was absent (rule 2 applied). This signals that the human should review and add `"sector": "<value>"` to `data/companies.json`.
+
+**Do not emit a SECTOR_PROPOSAL when `c.sector` was already present** — it was intentional.
 
 ## Constraints
 

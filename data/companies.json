@@ -167,7 +167,8 @@
         "source": "https://aimgroup.com/2023/09/04/goto-invests-2-8m-in-singapore-based-carousell/"
       }
     ],
-    "funding_notes": "Total funding ~$376M across 9 rounds; achieved unicorn status in Sept 2021 at $1.1B valuation."
+    "funding_notes": "Total funding ~$376M across 9 rounds; achieved unicorn status in Sept 2021 at $1.1B valuation.",
+    "sector": "Marketplace"
   },
   {
     "name": "Patsnap",
@@ -267,7 +268,8 @@
         "source": "https://tech.eu/2021/03/16/singapore-london-based-patsnap-snaps-up-300-million-in-series-e-funding/"
       }
     ],
-    "funding_notes": "Total ~$352M across 5 rounds; became Singapore unicorn in 2021 Series E at >$1B valuation."
+    "funding_notes": "Total ~$352M across 5 rounds; became Singapore unicorn in 2021 Series E at >$1B valuation.",
+    "sector": "SaaS"
   },
   {
     "name": "Horizon Quantum Computing",
@@ -366,7 +368,8 @@
         "source": "https://technode.global/2023/04/01/singapores-horizon-quantum-computing-raises-18-1m-series-a-funding-from-sequoia-capital-india-tencent-and-others/"
       }
     ],
-    "funding_notes": "Total raised ~$21.3M across 3 rounds; Singapore quantum software company founded 2018."
+    "funding_notes": "Total raised ~$21.3M across 3 rounds; Singapore quantum software company founded 2018.",
+    "sector": "Quantum computing"
   },
   {
     "name": "1cool",
@@ -405,7 +408,8 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup developing fluorescent dyes that simplify exosome detection (drug-delivery and disease-diagnosis QC). Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
-    "funding_notes": "NUS GRIP Run 6 portfolio company (patented dye chemistry for exosome quality control). No publicly verifiable equity funding round announced beyond NUS GRIP seed support."
+    "funding_notes": "NUS GRIP Run 6 portfolio company (patented dye chemistry for exosome quality control). No publicly verifiable equity funding round announced beyond NUS GRIP seed support.",
+    "sector": "Deep tech / Biotechnology"
   },
   {
     "name": "Active Silvers",
@@ -442,7 +446,8 @@
         "source": "https://www.wate.com/business/press-releases/ein-presswire/683195059/addlly-ai-secures-first-round-of-funding-at-a-5-million-valuation-cap/"
       }
     ],
-    "funding_notes": "BLOCK71 Singapore portfolio. Seed announced at S$5M valuation cap; round size not disclosed in coverage."
+    "funding_notes": "BLOCK71 Singapore portfolio. Seed announced at S$5M valuation cap; round size not disclosed in coverage.",
+    "sector": "AI / SaaS"
   },
   {
     "name": "AdmitPath",
@@ -521,7 +526,8 @@
         "source": "https://www.prnewswire.com/apac/news-releases/ailytics-raises-us2-7m-to-power-next-generation-scenario-based-ai-monitoring-for-heavy-industries-302105965.html"
       }
     ],
-    "funding_notes": "Pre-A round (labeled as Pre-A by company) of $2.7M led by Tin Men Capital. Seed round amount undisclosed."
+    "funding_notes": "Pre-A round (labeled as Pre-A by company) of $2.7M led by Tin Men Capital. Seed round amount undisclosed.",
+    "sector": "AI / Deep tech"
   },
   {
     "name": "AIPath",
@@ -718,7 +724,8 @@
         "source": "https://technode.global/2025/11/12/singapores-anomaly-bio-raises-2-6m-in-funding-led-by-pebblebed-ventures/"
       }
     ],
-    "funding_notes": "The Hangar (NUS Enterprise) portfolio. NUS undergraduate founders; US$2.6M pre-seed led by Pebblebed Ventures (SF) Nov 2025 with notable strategic angels."
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio. NUS undergraduate founders; US$2.6M pre-seed led by Pebblebed Ventures (SF) Nov 2025 with notable strategic angels.",
+    "sector": "Biomanufacturing"
   },
   {
     "name": "API-Rex",
@@ -798,7 +805,8 @@
     ],
     "description": "BLOCK71 Social Impact Hub-listed Indonesian AR / 3D-content platform (HQ Bandung, SG offices at CT HUB2 and 336 Smith St) with Assemblr EDU for K-12 STEM AR experiences; 11,500+ teachers trained via the Assemblr Certified Trainer programme; joined the NUS Enterprise × raiSE Technology for Sustainable Social Impact (TS2) cohort. Drop generic 'assembler' / IKEA-style assembly news unless it names this AR platform.",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Social Impact Hub / TS2 cohort company. Public equity rounds not verified at time of writing."
+    "funding_notes": "BLOCK71 Social Impact Hub / TS2 cohort company. Public equity rounds not verified at time of writing.",
+    "sector": "EdTech / XR"
   },
   {
     "name": "Assist Jkt",
@@ -955,7 +963,8 @@
         "source": "https://technode.global/2025/09/25/singapores-beex-launches-7-76m-series-a-funding-round-to-fuel-global-expansion/"
       }
     ],
-    "funding_notes": "Series A announced Sept 2025; amount reported variously as SGD 10M / $7.4M / $7.76M across sources."
+    "funding_notes": "Series A announced Sept 2025; amount reported variously as SGD 10M / $7.4M / $7.76M across sources.",
+    "sector": "Robotics"
   },
   {
     "name": "Belli AI",
@@ -975,7 +984,8 @@
         "source": "https://block71.co/directory/startups/belli-ai/"
       }
     ],
-    "funding_notes": "BLOCK71 Singapore portfolio. Reported US$2.4M raised (per company sources / PitchBook); priced round details not verified."
+    "funding_notes": "BLOCK71 Singapore portfolio. Reported US$2.4M raised (per company sources / PitchBook); priced round details not verified.",
+    "sector": "Logistics"
   },
   {
     "name": "BioActivX",
@@ -1144,7 +1154,8 @@
         "source": "https://cde.nus.edu.sg/research/industry-partnership/cbe-eco-solutions/"
       }
     ],
-    "funding_notes": "May 2022 seed round valued company at USD 7M post-money. Pre-Series A of S$5.5M completed alongside Jurong demonstration plant in November 2024; specific investors not publicly disclosed."
+    "funding_notes": "May 2022 seed round valued company at USD 7M post-money. Pre-Series A of S$5.5M completed alongside Jurong demonstration plant in November 2024; specific investors not publicly disclosed.",
+    "sector": "Climate tech"
   },
   {
     "name": "Cell2Mix",
@@ -1242,7 +1253,8 @@
     ],
     "description": "BLOCK71 Singapore-resident chemistry / biotechnology startup. Limited public-English information beyond the directory listing — drop unrelated 'ChemT' / chemistry brand mentions unless the article explicitly references this BLOCK71 SG entity.",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support.",
+    "sector": "Biotechnology"
   },
   {
     "name": "Chongqing AngLian Automobile Technology",
@@ -1653,7 +1665,8 @@
         "source": "https://www.temasek.com.sg/en/news-and-resources/news-room/news/2024/BEF-SEA_announce_first_cohort"
       }
     ],
-    "funding_notes": "Selected as one of two inaugural projects in Breakthrough Energy Fellows - Southeast Asia (2024). Also received Startup SG Founder Grant from Enterprise Singapore. No equity funding rounds publicly disclosed."
+    "funding_notes": "Selected as one of two inaugural projects in Breakthrough Energy Fellows - Southeast Asia (2024). Also received Startup SG Founder Grant from Enterprise Singapore. No equity funding rounds publicly disclosed.",
+    "sector": "Climate tech"
   },
   {
     "name": "Creo.works",
@@ -1818,7 +1831,8 @@
     ],
     "description": "BLOCK71 Bandung-resident Indonesian fintech startup building an Earned Wage Access (EWA) platform plus blue-collar workforce management; named 'Startup of the Year' at the ASEAN Startup Innovation Weekend 2026 (Phnom Penh, April 2026). CEO Isa Nuruddin Ahmad. Generic Indonesian word — drop unrelated brand mentions unless they reference the BLOCK71 Bandung fintech.",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Bandung portfolio company; BNI Ventures Axel Arc program alumnus. Expansion plans into Vietnam and Cambodia announced May 2026. Public equity rounds not yet verified at time of writing."
+    "funding_notes": "BLOCK71 Bandung portfolio company; BNI Ventures Axel Arc program alumnus. Expansion plans into Vietnam and Cambodia announced May 2026. Public equity rounds not yet verified at time of writing.",
+    "sector": "Fintech"
   },
   {
     "name": "E3A Healthcare",
@@ -1851,7 +1865,8 @@
     ],
     "description": "BLOCK71 Bandung-listed Hong Kong-headquartered B-Corp (founded 2016 by Bas Fransen) operating a blockchain-tracked tree-planting / forest-management platform — TreeCorder data-capture app, TreeManager cloud system, Verra/Gold Standard carbon-certified TREES+ projects (partnership with VNV Advisory). Corporate customers include Grab and Procter & Gamble; ~50,000 customers globally. Drop generic 'eco' / matching-engine mentions.",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Bandung-listed; B-Corp since 2018. Strategic partnership with VNV Advisory announced for TREES+ carbon-certified projects. No publicly verifiable equity funding round announced."
+    "funding_notes": "BLOCK71 Bandung-listed; B-Corp since 2018. Strategic partnership with VNV Advisory announced for TREES+ carbon-certified projects. No publicly verifiable equity funding round announced.",
+    "sector": "Climate tech"
   },
   {
     "name": "Ecovision Solutions",
@@ -2098,7 +2113,8 @@
         "source": "https://technode.global/2026/05/13/finan-raises-3-8m-to-expand-vietnam-sme-management-platform-across-southeast-asia/"
       }
     ],
-    "funding_notes": "BLOCK71 Saigon portfolio. Hong Leong Bank anchored Pre-A with US$2M; OSK-SBI Venture Partners US$1.5M. Capital earmarked for Finan One AI-native business OS plus regional SEA expansion."
+    "funding_notes": "BLOCK71 Saigon portfolio. Hong Leong Bank anchored Pre-A with US$2M; OSK-SBI Venture Partners US$1.5M. Capital earmarked for Finan One AI-native business OS plus regional SEA expansion.",
+    "sector": "Fintech / SaaS"
   },
   {
     "name": "Finbase",
@@ -2117,7 +2133,8 @@
     ],
     "description": "BLOCK71 Social Impact Hub-resident Singapore social-impact deep-tech startup (incorporated 2023, co-founded by technologist Gong He) building SiLViA — a Sign Language Virtual Assistant that converts audio announcements into Singapore Sign Language and answers commuter FAQs in sign + text. Partnered with SBS Transit for Chinatown MRT kiosks and with SADeaf for Deaf-led product development; Huawei-supported. TS2 accelerator cohort. Drop generic 'finger dance' game / app news.",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Social Impact Hub portfolio company; TS2 accelerator cohort (US$3.5M programme commitment across 7 startups). Public equity rounds not verified at time of writing."
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio company; TS2 accelerator cohort (US$3.5M programme commitment across 7 startups). Public equity rounds not verified at time of writing.",
+    "sector": "AI / Social impact"
   },
   {
     "name": "Finsey",
@@ -2167,7 +2184,8 @@
     ],
     "description": "BLOCK71 Silicon Valley-listed Singapore cybersecurity-hardware startup (founded 2007) building X-PHY, the world's first AI-embedded SSD with hardware-level threat detection and physical-tamper response. Co-founded by Camellia Chan and May Chng. Drop items that only mention generic flash-storage or unrelated 'X-PHY' physics content.",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Silicon Valley portfolio (Singapore HQ). NUS Enterprise startup-story alumnus; Enterprise Singapore feature company. Public equity rounds not verified in open sources at time of writing."
+    "funding_notes": "BLOCK71 Silicon Valley portfolio (Singapore HQ). NUS Enterprise startup-story alumnus; Enterprise Singapore feature company. Public equity rounds not verified in open sources at time of writing.",
+    "sector": "Cybersecurity / Deep tech"
   },
   {
     "name": "Florisense",
@@ -2234,7 +2252,8 @@
         "source": "https://technode.global/2023/12/08/alterno-forte-biotech-and-airx-carbon-win-630000-in-grant-funding-from-net-zero-challenge-2023/"
       }
     ],
-    "funding_notes": "NUS spin-off (aquaculture diagnostics, RAPID system). Other investors per PitchBook/Crunchbase include COMEUP STARS, Sopoong, Touchstone Partners, NUS GRIP. PitchBook reports ~US$630K total raised; specific other rounds (amounts/dates) not publicly itemized."
+    "funding_notes": "NUS spin-off (aquaculture diagnostics, RAPID system). Other investors per PitchBook/Crunchbase include COMEUP STARS, Sopoong, Touchstone Partners, NUS GRIP. PitchBook reports ~US$630K total raised; specific other rounds (amounts/dates) not publicly itemized.",
+    "sector": "Agritech / Biotechnology"
   },
   {
     "name": "FRONKA",
@@ -2387,7 +2406,8 @@
         "source": "https://e27.co/green-cop-secures-investment-to-launch-a-pilot-biofuels-plant-20240214/"
       }
     ],
-    "funding_notes": "NUS GRIP alumnus; sustainable biofuels from biowaste. Closed an undisclosed angel/seed round Feb 2024 with corporate investor Ken Energy. Teo Teng Seng appointed Chairman as part of round. Also won top 3 PIER71 Smart Port Challenge 2022."
+    "funding_notes": "NUS GRIP alumnus; sustainable biofuels from biowaste. Closed an undisclosed angel/seed round Feb 2024 with corporate investor Ken Energy. Teo Teng Seng appointed Chairman as part of round. Also won top 3 PIER71 Smart Port Challenge 2022.",
+    "sector": "Climate tech"
   },
   {
     "name": "GrowLights",
@@ -2662,7 +2682,8 @@
         "source": "https://pitchbook.com/profiles/company/509315-32"
       }
     ],
-    "funding_notes": "NUS spin-off (founded 2022) building autonomous toilet/restroom cleaning robots (Abluo). Pre-seed reported up to ~US$1M with the named investors per CB Insights and PitchBook; total raised across rounds reported around US$6.14M (PitchBook). Specific dates not disclosed in public sources."
+    "funding_notes": "NUS spin-off (founded 2022) building autonomous toilet/restroom cleaning robots (Abluo). Pre-seed reported up to ~US$1M with the named investors per CB Insights and PitchBook; total raised across rounds reported around US$6.14M (PitchBook). Specific dates not disclosed in public sources.",
+    "sector": "Robotics"
   },
   {
     "name": "HoloTracker",
@@ -2878,7 +2899,8 @@
         "source": "https://pitchbook.com/profiles/company/509812-57"
       }
     ],
-    "funding_notes": "Construction-safety AI video analytics (Singapore). PitchBook records total raised of US$490K with named investors (NUS GRIP, NVIDIA Inception, BLOCK71). Tracxn references an M&A offer in April 2025 (unconfirmed). Also listed in the BLOCK71 Singapore directory as 'Invigilo Technologies'."
+    "funding_notes": "Construction-safety AI video analytics (Singapore). PitchBook records total raised of US$490K with named investors (NUS GRIP, NVIDIA Inception, BLOCK71). Tracxn references an M&A offer in April 2025 (unconfirmed). Also listed in the BLOCK71 Singapore directory as 'Invigilo Technologies'.",
+    "sector": "AI / Deep tech"
   },
   {
     "name": "JN Medsys",
@@ -3244,7 +3266,8 @@
     ],
     "description": "BLOCK71 Social Impact Hub-resident Singapore youth-mental-health startup building an AI-driven emotional-support platform delivered through manga-style engagement channels; graduated from the NUS Medicine Digital Advanced Technology Accelerator (DATA) 2025 cohort. Drop generic 'manga' / chatbot AI hype unless the article references this NUS-affiliated youth-MH platform.",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Social Impact Hub / NUS Medicine DATA 2025 graduate. Public equity rounds not verified at time of writing."
+    "funding_notes": "BLOCK71 Social Impact Hub / NUS Medicine DATA 2025 graduate. Public equity rounds not verified at time of writing.",
+    "sector": "Digital health"
   },
   {
     "name": "ManPack",
@@ -3284,7 +3307,8 @@
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore digital-health startup (co-founder Zacchaeus Chok, NUS Computing) building 'Broadcast', an AI-powered WhatsApp engagement platform that automates patient outreach (smoking-cessation assessments, Hospital@Home triage, preventive-care campaign reminders) in local languages. Joined NUS Medicine DATA accelerator (Sep), backed by NUS VIP and 500 Startups (SSGF); 2024 NUS Health Hack 1st Prize; sole SG/Asia team in 2024 Caelestinus Digital Health Incubator. Drop unrelated 'Marymount' (school/hospital brand) news.",
     "funding_rounds": [],
-    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. NUS Medicine DATA cohort + NUS VIP + 500 Startups SSGF support. Public priced equity round details not verified at time of writing."
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. NUS Medicine DATA cohort + NUS VIP + 500 Startups SSGF support. Public priced equity round details not verified at time of writing.",
+    "sector": "Digital health"
   },
   {
     "name": "Mastermind Advisors",
@@ -3359,7 +3383,8 @@
     ],
     "description": "The Hangar (NUS Enterprise)-resident Singapore biotech startup likely focused on menstrual-blood-derived stem-cell research (MenSC = Menstrual Stem Cells, an established research term). Drop unrelated 'MEMS-C' / men's-care brand mentions unless the article explicitly references this Hangar entity.",
     "funding_rounds": [],
-    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support.",
+    "sector": "Biotechnology / Digital health"
   },
   {
     "name": "Mento.vn",
@@ -3650,7 +3675,8 @@
     "aliases": [],
     "description": "BLOCK71 Singapore-resident healthtech / medical startup. Drop unrelated 'Nexmed' / 'Nexmedis' (Indonesian online clinic, others share the name) mentions unless the article explicitly references this BLOCK71 SG entity.",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support.",
+    "sector": "Digital health / MedTech"
   },
   {
     "name": "Nobi Project",
@@ -3770,7 +3796,8 @@
         "source": "https://e27.co/space-tech-company-nuspace-raises-funding-to-bring-iot-connectivity-to-remote-places-20191003/"
       }
     ],
-    "funding_notes": "PitchBook indicates total funding ~$1.64M across multiple investors (Luna Capital, PlanetSpark, NUS GRIP, BEENEXT, Sunbo Angel Partners) but only the BEENEXT-led 2019 seed round has individual press coverage. BEENEXT amount was undisclosed."
+    "funding_notes": "PitchBook indicates total funding ~$1.64M across multiple investors (Luna Capital, PlanetSpark, NUS GRIP, BEENEXT, Sunbo Angel Partners) but only the BEENEXT-led 2019 seed round has individual press coverage. BEENEXT amount was undisclosed.",
+    "sector": "Space tech / IoT"
   },
   {
     "name": "Ocular Labs",
@@ -4036,7 +4063,8 @@
         "source": "https://agfundernews.com/polybee-raises-4-3m-to-automate-yield-forecasting-and-pollination-with-physical-ai-agents"
       }
     ],
-    "funding_notes": "Founder Siddharth Jadhav also acknowledged earlier pre-seed funding from NUS and additional backing from Temasek Foundation per The Peak Singapore interview, but specific amounts/dates not publicly disclosed. PitchBook/Crunchbase list Elev8.vc, SEEDS Capital, Temasek Holdings, NUS Endowment, and DBS Bank as investors."
+    "funding_notes": "Founder Siddharth Jadhav also acknowledged earlier pre-seed funding from NUS and additional backing from Temasek Foundation per The Peak Singapore interview, but specific amounts/dates not publicly disclosed. PitchBook/Crunchbase list Elev8.vc, SEEDS Capital, Temasek Holdings, NUS Endowment, and DBS Bank as investors.",
+    "sector": "Agritech"
   },
   {
     "name": "Poma Vietnam",
@@ -4089,7 +4117,8 @@
     ],
     "description": "BLOCK71 Singapore-resident post-quantum cybersecurity startup (founded 2022) building scalable encryption + key-lifecycle management; flagship SafeQuard™ document-protection tool (NIST-aligned post-quantum crypto); use cases span quantum-proofing docs, securing Web3 against quantum threats and protecting comms. Supported by the US$15M CyberSG Talent, Innovation and Growth (TIG) Collaboration Centre (NUS × CSA).",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Singapore portfolio; CyberSG TIG cohort. National Quantum-Safe Network ecosystem participant. Public priced equity round details not verified at time of writing."
+    "funding_notes": "BLOCK71 Singapore portfolio; CyberSG TIG cohort. National Quantum-Safe Network ecosystem participant. Public priced equity round details not verified at time of writing.",
+    "sector": "Cybersecurity / Quantum computing"
   },
   {
     "name": "Prescience Presbyrobotics",
@@ -4276,7 +4305,8 @@
         "source": "https://www.digitalnewsasia.com/startups/agritech-startup-qarbotech-secures-us15mil-seed-extension-round"
       }
     ],
-    "funding_notes": "BLOCK71 Bandung-listed; backed by 500 Global, EQT Foundation, Temasek Foundation grant (Climate Impact Innovations Challenge 2023) and Khazanah Dana Impak grant. Expansion plans across SEA."
+    "funding_notes": "BLOCK71 Bandung-listed; backed by 500 Global, EQT Foundation, Temasek Foundation grant (Climate Impact Innovations Challenge 2023) and Khazanah Dana Impak grant. Expansion plans across SEA.",
+    "sector": "Agritech / Biotechnology"
   },
   {
     "name": "QSIGNAGE",
@@ -4469,7 +4499,8 @@
     ],
     "description": "BLOCK71 Saigon-resident Vietnamese biotech startup. Limited public-English information beyond the directory listing — drop generic biotech mentions unless the article explicitly references this BLOCK71 Saigon entity.",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
+    "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support.",
+    "sector": "Biotechnology / Agritech"
   },
   {
     "name": "Root Solution",
@@ -4580,7 +4611,8 @@
       }
     ],
     "funding_rounds": [],
-    "funding_notes": "NUS GRIP portfolio company (haptic feedback for the Metaverse). No publicly verifiable funding round announcements found."
+    "funding_notes": "NUS GRIP portfolio company (haptic feedback for the Metaverse). No publicly verifiable funding round announcements found.",
+    "sector": "MedTech / XR"
   },
   {
     "name": "Secha Home",
@@ -4861,7 +4893,8 @@
     ],
     "description": "BLOCK71 Social Impact Hub-resident Singapore social-enterprise deep-tech startup (A*STAR Institute of Infocomm Research origin) building wearable-free, privacy-preserving sensing for elderly fall / abnormal-event detection — Lasso combines LiDAR with sound recognition; 1,000+ deployments across airports (Changi), nursing homes, malls. NCSS Techbooster trusted vendor. Drop generic 'audio AI' / acoustic-monitoring news unless it names SoundEye.",
     "funding_rounds": [],
-    "funding_notes": "BLOCK71 Social Impact Hub portfolio; NCSS Techbooster vendor. Deployments include Thye Hua Kwan Nursing Home, Bishan Home, Cerebral Palsy Alliance Singapore, Changi Airport Group. Public equity rounds not verified at time of writing."
+    "funding_notes": "BLOCK71 Social Impact Hub portfolio; NCSS Techbooster vendor. Deployments include Thye Hua Kwan Nursing Home, Bishan Home, Cerebral Palsy Alliance Singapore, Changi Airport Group. Public equity rounds not verified at time of writing.",
+    "sector": "Digital health / IoT"
   },
   {
     "name": "Soynergy",
@@ -5073,7 +5106,8 @@
       }
     ],
     "funding_rounds": [],
-    "funding_notes": "NUS GRIP spin-off (RootChain, later pivoted to renewable-energy-powered HPC). Crunchbase/PitchBook list Tech Planter, Shell StartUp Engine (2021 cohort 5), NUS GRIP, BLOCK71, and Solar Impulse as backers, but no specific publicly-announced funding round with date+amount+source found."
+    "funding_notes": "NUS GRIP spin-off (RootChain, later pivoted to renewable-energy-powered HPC). Crunchbase/PitchBook list Tech Planter, Shell StartUp Engine (2021 cohort 5), NUS GRIP, BLOCK71, and Solar Impulse as backers, but no specific publicly-announced funding round with date+amount+source found.",
+    "sector": "Climate tech / Deep tech"
   },
   {
     "name": "SystemEarth",
