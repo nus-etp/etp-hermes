@@ -4,10 +4,16 @@ import { BiCalendar } from 'react-icons/bi'
 import { digestDates, digests } from '~/lib/data'
 
 function previewOf(md: string) {
-  const lines = md.split('\n')
-  const companies = lines
-    .filter((l) => l.startsWith('### '))
-    .map((l) => l.replace(/^###\s+/, '').trim())
+  const seen = new Set<string>()
+  const companies: string[] = []
+  for (const l of md.split('\n')) {
+    if (!/^#{2,3} /.test(l)) continue
+    const name = l.replace(/^#{2,3}\s+/, '').trim()
+    if (/^run at /i.test(name)) continue
+    if (seen.has(name)) continue
+    seen.add(name)
+    companies.push(name)
+  }
   return { count: companies.length, names: companies.slice(0, 6) }
 }
 
