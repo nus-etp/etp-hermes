@@ -45,6 +45,17 @@ hermes -z "$(cat prompts/synthesis.md)"   # Layer 3
 
 Tune *judgment* by editing the prompts and per-company `description` strings (that's where ticker collisions, same-name entities, and generic-word disambiguation are encoded). Tune *mechanics* (parsing, dedup, date windows, triage) in `scripts/collect-candidates.py` — the prompts no longer do mechanical collection.
 
+## v2 A/B arm
+
+A parallel experimental arm for Layers 1–2 tests "freed judgment": same candidate set, dedup discipline, gap-fill cohort, and 50-op budget as production, but the relevance pass is a goal statement + worked examples instead of enumerated drop-lists, and Layer 2 plans its own queries instead of using templates. Wiring:
+
+- Prompts: `prompts/v2/{ingest,agent_supplement}.md` (kept structurally parallel to v1 for easy diffing — only the judgment sections differ). v2 ingest judges the same `data/candidates.json` the production arm's `scripts/collect-candidates.py` pre-step produces; v2 L2 reads `data/agent-companies-v2.json` from `scripts/slice_companies.py --layer agent-v2` (shared gap-fill queue + v2's own deepen cohort from `signals/v2/updates/`). Both dependencies fail open: a missing candidates file makes v2 L1 a no-op (`no candidates file`), and a missing slice makes the L2 prompt fall back to `data/companies.json`.
+- State isolation: v2 writes only `signals/v2/{updates,agent}/<date>.md` and appends `signals/v2/seen-urls.txt` (seeded from v1's file at arm creation so it didn't cold-start). It must never touch v1 paths; it *reads* the shared `signals/agent-queue.txt` so both arms work the same gap-fill cohort.
+- Workflow: v2 steps run right after their v1 counterparts (both `continue-on-error` — the experiment never blocks the sync), gated by the `v2` dispatch input (default true; schedule always runs it). Each v2 step sed-swaps `HERMES_LANGFUSE_ENV` to `production-v2` in `~/.hermes/.env` for the duration so traces split per arm.
+- Comparison: `scripts/ab_compare.py` (stdlib, runs after `filter_exclusions.py`) diffs the arms' kept-URL sets for the day → appends `signals/ab/metrics.jsonl` (idempotent per date) and rewrites `signals/ab/report.md` (history table + per-arm unique items — the human review queue: v1-only items are candidate v2 misses and vice versa). `filter_exclusions.py` cleans both arms, routing dropped URLs to the owning arm's seen-urls. Unit tests: `tests/scripts/test_ab_compare.py`.
+- Layers 3–4 (synthesis, infographics) stay v1-only — briefs are the user-facing artifact; the A/B is judged on kept-item sets, not duplicated briefs.
+- Decision rule: review `signals/ab/report.md` disagreements for a few weeks; if v2's unique keeps are signal (not noise) and its misses are rare, promote v2's judgment sections into the production prompts and retire the arm.
+
 ## Non-obvious
 
 - Change-detection preflight: `scripts/preflight-feeds.py` runs before Layer 1 and sends conditional HTTP requests (ETag/Last-Modified + body-SHA256 fallback) against every preflightable source URL. It writes `data/feed-cache.json` (per-URL state, gitignored, kept across runs via the GHA `feed-cache-*` cache key) and `data/changed-sources.json` (the URL whitelist the ingest prompt is allowed to fetch). `html_scrape` sources are not preflighted — they're always listed as changed. For local runs, invoke `python3 scripts/preflight-feeds.py` before `hermes -z` to get the same skip behavior.

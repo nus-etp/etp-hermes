@@ -21,12 +21,14 @@ def sc(tmp_repo: Path, monkeypatch, scripts_module_loader):
     monkeypatch.setattr(mod, "COMPANIES_FILE", tmp_repo / "data" / "companies.json")
     monkeypatch.setattr(mod, "QUEUE_FILE", tmp_repo / "signals" / "agent-queue.txt")
     monkeypatch.setattr(mod, "UPDATES_DIR", tmp_repo / "signals" / "updates")
+    monkeypatch.setattr(mod, "V2_UPDATES_DIR", tmp_repo / "signals" / "v2" / "updates")
     monkeypatch.setattr(mod, "AGENT_DIR", tmp_repo / "signals" / "agent")
     monkeypatch.setattr(
         mod,
         "OUT_FILES",
         {
             "agent": tmp_repo / "data" / "agent-companies.json",
+            "agent-v2": tmp_repo / "data" / "agent-companies-v2.json",
             "synthesis": tmp_repo / "data" / "touched-companies.json",
         },
     )
@@ -47,6 +49,16 @@ def test_agent_slice_queue_plus_deepen(sc, monkeypatch, tmp_repo: Path):
     )
     out = _run(sc, monkeypatch, "agent")
     assert [c["name"] for c in out] == ["Patsnap", "Nova Health", "Acme Robotics"]
+
+
+def test_agent_v2_slice_uses_v2_updates_for_deepen(sc, monkeypatch, tmp_repo: Path):
+    (tmp_repo / "signals" / "agent-queue.txt").write_text("Patsnap\n")
+    # v1 updates name Acme; v2 updates name Nova — the v2 slice must follow v2's file.
+    (tmp_repo / "signals" / "updates" / "2026-06-10.md").write_text("## Acme Robotics\n- item\n")
+    (tmp_repo / "signals" / "v2" / "updates").mkdir(parents=True)
+    (tmp_repo / "signals" / "v2" / "updates" / "2026-06-10.md").write_text("## Nova Health\n- item\n")
+    out = _run(sc, monkeypatch, "agent-v2")
+    assert [c["name"] for c in out] == ["Patsnap", "Nova Health"]
 
 
 def test_synthesis_slice_updates_h2_and_agent_h3(sc, monkeypatch, tmp_repo: Path):
