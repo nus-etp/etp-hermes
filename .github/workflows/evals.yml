@@ -68,11 +68,14 @@ jobs:
       - name: Set up Python and install dev deps
         # langfuse: optional eval observability (tests/evals/_obs.py). Installed
         # only in this LLM job; the suite fail-opens when it's absent, so the
-        # fast (PR) job above stays langfuse-free. Unpinned to mirror the
-        # hermes-sync install precedent.
+        # fast (PR) job above stays langfuse-free. Hash-pinned via the same
+        # lock as hermes-sync (`make pin-hermes-extras` to bump); installed
+        # separately because the editable `-e .` install can't be hashed.
+        # ddgs rides along from the shared lock — unused here, harmless.
         run: |
           uv venv
-          uv pip install -e ".[dev]" langfuse
+          uv pip install -e ".[dev]"
+          uv pip install --require-hashes -r requirements-hermes.txt
 
       - name: Run LLM eval suite
         env:
