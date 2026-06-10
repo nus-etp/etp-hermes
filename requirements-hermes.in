@@ -1,0 +1,7 @@
+# Extra packages installed into hermes-agent's venv on CI (not this repo's
+# venv — see the "Install ddgs + langfuse into hermes venv" step in
+# .github/workflows/hermes-sync.yml for why each is needed).
+#
+# Compiled to requirements-hermes.txt with hashes via `make pin-hermes-extras`.
+ddgs
+langfuse

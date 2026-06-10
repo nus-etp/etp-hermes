@@ -150,7 +150,9 @@ jobs:
         # but we want traces in CI, so install unconditionally.
         # The hermes installer builds the venv with uv and doesn't seed pip,
         # so we install via `uv pip` against the existing interpreter.
-        run: uv pip install --quiet --python "$HOME/.hermes/hermes-agent/venv/bin/python" ddgs langfuse
+        # Versions + hashes are pinned in requirements-hermes.txt (compiled
+        # from requirements-hermes.in); bump via `make pin-hermes-extras`.
+        run: uv pip install --quiet --python "$HOME/.hermes/hermes-agent/venv/bin/python" --require-hashes -r requirements-hermes.txt
 
       - name: Resolve layers to run
         id: layers
