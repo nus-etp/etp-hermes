@@ -27,9 +27,9 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
 
       - name: Collect public metrics
         # Appends today's snapshot per company to data/metrics/<slug>.jsonl.
@@ -40,14 +40,28 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: uv run scripts/collect_metrics.py
 
+      - name: Decide whether to render charts
+        id: charts
+        run: |
+          # Rendering rewrites all ~47 chart PNGs (~1MB of new git blobs)
+          # even when each series only gained one data point, so the daily
+          # cron renders weekly (Mondays UTC). Manual dispatches always
+          # render. Data collection above stays daily either way.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u +%u)" = "1" ]; then
+            echo "render=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "not Monday; skipping chart render"
+          fi
+
       - name: Render metric charts
         # matplotlib is the only non-stdlib dep; uv run --with provides it
         # ad-hoc in an ephemeral venv (PEP 668-safe on Ubuntu 24.04).
+        if: steps.charts.outputs.render == 'true'
         continue-on-error: true
         run: uv run --with matplotlib scripts/render_metrics.py
 
       - name: Upload metrics artifact
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: metrics-output
           path: |
@@ -64,9 +78,9 @@ jobs:
   hermes:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
 
       - name: Install Hermes
         # Pinned install: the installer script is fetched at an immutable
@@ -90,7 +104,7 @@ jobs:
         # first run misses gracefully (no zip on disk) and bootstrap still
         # seeds from the committed hermes/ tree.
         id: cache-restore
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: /tmp/hermes-state.zip
           key: hermes-state-${{ github.run_id }}
@@ -154,7 +168,7 @@ jobs:
       - name: Restore feed cache
         if: steps.layers.outputs.run_l1 == 'true'
         id: feed-cache-restore
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: data/feed-cache.json
           key: feed-cache-${{ github.run_id }}
@@ -166,7 +180,7 @@ jobs:
         # TTL skip the network and don't burn Jina's 100/day free quota.
         if: steps.layers.outputs.run_l1 == 'true'
         id: jina-cache-restore
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: data/jina-cache
           key: jina-cache-${{ github.run_id }}
@@ -194,6 +208,18 @@ jobs:
         continue-on-error: true
         run: python3 scripts/jina-reader.py
 
+      - name: Collect candidates (deterministic feed parse + dedup)
+        # Fetches and parses every changed feed/source, applies date windows,
+        # dedupes against signals/seen-urls.txt, and runs the substring
+        # triage — all the mechanical work of the old Layer 1 prompt — into
+        # data/candidates.json. The Layer 1 session then only performs the
+        # LLM relevance pass over that small file instead of holding
+        # companies.json + seen-urls.txt + raw feeds in context.
+        # Stdlib-only. Not continue-on-error: a crash here must surface,
+        # since Layer 1 depends on its output.
+        if: steps.layers.outputs.run_l1 == 'true'
+        run: python3 scripts/collect-candidates.py
+
       - name: Layer 1 — data ingestion
         if: steps.layers.outputs.run_l1 == 'true'
         run: hermes -z "$(cat prompts/ingest.md)"
@@ -207,8 +233,28 @@ jobs:
         if: steps.layers.outputs.run_l2 == 'true'
         run: python3 scripts/select_gapfill_queue.py
 
-      - name: Layer 2 — agent supplement
+      - name: Gate Layer 2 on having work
+        id: l2gate
         if: steps.layers.outputs.run_l2 == 'true'
+        run: |
+          # Skip the agent-supplement session(s) when there is no cohort at
+          # all: empty gap-fill queue and no Layer 1 output to deepen.
+          date="$(date -u +%F)"
+          if [ -s signals/agent-queue.txt ] || [ -s "signals/updates/$date.md" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "no gap-fill queue and no updates today; skipping Layer 2"
+          fi
+
+      - name: Slice watchlist for Layer 2
+        # data/agent-companies.json = the gap-fill queue + today's deepen
+        # companies, full entries. ~5KB instead of the ~300KB companies.json
+        # the Layer 2 prompt used to read into context.
+        if: steps.l2gate.outputs.run == 'true'
+        run: python3 scripts/slice_companies.py --layer agent
+
+      - name: Layer 2 — agent supplement
+        if: steps.l2gate.outputs.run == 'true'
         continue-on-error: true
         run: hermes -z "$(cat prompts/agent_supplement.md)"
 
@@ -216,7 +262,9 @@ jobs:
         # Deterministic post-step: stamps every name in signals/agent-queue.txt
         # as queried today in signals/agent-queue-state.json. Backs the
         # fairness rotation read by select_gapfill_queue.py on the next run.
-        if: steps.layers.outputs.run_l2 == 'true'
+        # Gated on Layer 2 actually having consumed the queue, so a skipped
+        # Layer 2 doesn't burn a rotation slot.
+        if: steps.l2gate.outputs.run == 'true'
         run: python3 scripts/update_gapfill_state.py
 
       - name: Filter exclusions
@@ -227,8 +275,28 @@ jobs:
         if: steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true'
         run: python3 scripts/filter_exclusions.py
 
-      - name: Layer 3 — synthesis
+      - name: Gate synthesis on having signals
+        id: l3gate
         if: steps.layers.outputs.run_l3 == 'true'
+        run: |
+          # Skip the synthesis session entirely when Layers 1-2 produced
+          # nothing today — previously the agent burned a full session
+          # (including reading the watchlist) just to conclude that.
+          date="$(date -u +%F)"
+          if [ -s "signals/updates/$date.md" ] || grep -q '^### ' "signals/agent/$date.md" 2>/dev/null; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "no signals today; skipping synthesis and infographics"
+          fi
+
+      - name: Slice watchlist for synthesis
+        # data/touched-companies.json = full entries for today's touched
+        # companies only, so Layer 3 doesn't read the ~300KB companies.json.
+        if: steps.l3gate.outputs.run == 'true'
+        run: python3 scripts/slice_companies.py --layer synthesis
+
+      - name: Layer 3 — synthesis
+        if: steps.l3gate.outputs.run == 'true'
         run: hermes -z "$(cat prompts/synthesis.md)"
 
       - name: Layer 4 — infographic generation
@@ -237,9 +305,26 @@ jobs:
         # input is the working-tree diff Layer 3 produced. continue-on-error:
         # image_generate is slow/flaky; a bad run must not block the daily
         # sync — same precedent as Layer 2.
-        if: steps.layers.outputs.run_l4 == 'true' && steps.layers.outputs.run_l3 == 'true'
+        if: steps.layers.outputs.run_l4 == 'true' && steps.l3gate.outputs.run == 'true'
         continue-on-error: true
         run: hermes -z "$(cat prompts/infographics.md)"
+
+      - name: Compress new infographics
+        # The generated PNGs land at ~1.3MB each and are committed, so every
+        # regeneration adds megabyte-scale git blobs. pngquant typically cuts
+        # AI-generated infographics 60-80% with no visible loss. Only touches
+        # PNGs Layer 4 just wrote (modified or untracked in the working tree).
+        if: steps.layers.outputs.run_l4 == 'true' && steps.l3gate.outputs.run == 'true'
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -yqq pngquant
+          git status --porcelain -uall signals/briefs \
+            | awk '{print $2}' \
+            | grep 'infographic\.png$' \
+            | while read -r png; do
+                pngquant --force --skip-if-larger --quality 60-90 --output "$png" -- "$png" \
+                  && echo "compressed $png" || echo "left $png as-is"
+              done
 
       - name: Usage insights
         if: always()
@@ -266,7 +351,7 @@ jobs:
 
       - name: Upload run logs
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: hermes-logs-${{ github.run_id }}
           path: run-logs/
@@ -322,28 +407,28 @@ jobs:
 
       - name: Save backup to cache
         if: always()
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: /tmp/hermes-state.zip
           key: hermes-state-${{ github.run_id }}
 
       - name: Save feed cache
         if: always() && steps.layers.outputs.run_l1 == 'true'
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: data/feed-cache.json
           key: feed-cache-${{ github.run_id }}
 
       - name: Save Jina cache
         if: always() && steps.layers.outputs.run_l1 == 'true'
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: data/jina-cache
           key: jina-cache-${{ github.run_id }}
 
       - name: Upload hermes artifact
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: hermes-output
           path: |
@@ -367,18 +452,18 @@ jobs:
     if: always() && (needs.metrics.result == 'success' || needs.hermes.result == 'success')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
       - name: Download metrics artifact
         continue-on-error: true
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: metrics-output
           path: .
 
       - name: Download hermes artifact
         continue-on-error: true
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: hermes-output
           path: .

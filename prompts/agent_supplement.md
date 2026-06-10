@@ -16,15 +16,15 @@ Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest.
 
 ## Inputs
 
-- `data/companies.json` — watchlist (`{name, aliases?, description, sources?, identifiers?}`). `description` is used for disambiguation and the relevance judgment. `identifiers` (homepage, LinkedIn, Crunchbase, UEN) — use for targeted queries, don't write.
+- `data/agent-companies.json` — your cohort's slice of the watchlist (`{name, aliases?, description, sources?, identifiers?}`), pre-computed by `scripts/slice_companies.py` from the gap-fill queue plus today's deepen companies. `description` is used for disambiguation and the relevance judgment. `identifiers` (homepage, LinkedIn, Crunchbase, UEN) — use for targeted queries, don't write. Fall back to `data/companies.json` only if the slice file is missing.
 - `signals/updates/*.md` — Layer 1 outputs. Today's may be absent if Layer 1 found nothing.
-- `signals/seen-urls.txt` — shared dedup state `SEEN`. Drop any URL already in it.
+- `signals/seen-urls.txt` — shared dedup state `SEEN`. Drop any URL already in it. Do **not** read this file into context; check membership per-URL with `grep -Fxq '<url>' signals/seen-urls.txt`.
 
 ## Steps
 
 1. **Compute today's UTC date** as `<YYYY-MM-DD>`. This is the date used by both Layer 1's output file and the file you write.
 
-2. **Read inputs.** Load `data/companies.json` and `signals/seen-urls.txt`. Glob `signals/updates/*.md` and select files whose filename date is within the last 7 UTC days (inclusive of today).
+2. **Read inputs.** Load `data/agent-companies.json` (fallback: `data/companies.json`). Glob `signals/updates/*.md` and select files whose filename date is within the last 7 UTC days (inclusive of today). Leave `signals/seen-urls.txt` on disk — membership checks happen via `grep` at judge time.
 
 3. **Compute cohorts.**
    - **Gap-fill** = `signals/agent-queue.txt` (one name per line, oldest-queried first, pre-selected by `scripts/select_gapfill_queue.py`). Authoritative — do not expand. Empty if file missing.
@@ -42,7 +42,7 @@ Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest.
 
    b. For each result `(c, item)`:
       - Dedup key = resolved URL, stripping `utm_*`, `ref`, `gclid`, `fbclid`.
-      - If key in `SEEN`, drop silently.
+      - If `grep -Fxq '<key>' signals/seen-urls.txt` matches, drop silently.
       - Else judge against `c.description` (same rules as Layer 1):
         - **Drop**: ticker-aggregator on same-name public ticker; same-name different-entity; passing-mention listicle; generic SEO; >60 days old for gap-fill / >14 days for deepen.
         - **Drop**: low-trust spam (content farms, AI-generated PR without attribution). Prefer company site, trade press, regulator filings, recognized investors.

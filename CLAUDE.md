@@ -4,16 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A scheduled hermes-agent deployment. No app to build/test — the "product" is the daily Markdown digest in `signals/news/`. Behavior is configured by editing the prompt and data files; there is no source code.
+A scheduled hermes-agent deployment. No app to build/test — the "product" is the daily signal set under `signals/` (dated updates, agent supplements, per-company living briefs). Behavior is configured by editing the prompts, the deterministic pre-step scripts, and the data files.
 
 ## Layout
 
-`scripts/bootstrap-hermes.sh` copies `hermes/` verbatim into `$HOME/.hermes/`. Everything outside `hermes/` is repo-side, referenced by the prompt at runtime.
+`scripts/bootstrap-hermes.sh` copies `hermes/` verbatim into `$HOME/.hermes/`. Everything outside `hermes/` is repo-side, referenced by the prompts at runtime.
 
 - `hermes/` → `~/.hermes/` (config, memories, optional skills)
-- `prompts/news.md` — prompt fed to `hermes -z`
-- `data/{companies,feeds}.json` — watchlist + firehose feeds
-- `signals/news/` — outputs; the **only** path the agent may write
+- `prompts/{ingest,agent_supplement,synthesis,infographics}.md` — the four layer prompts fed to `hermes -z`
+- `data/{companies,feeds,sectors}.json` — watchlist + firehose feeds + sector taxonomy
+- `scripts/` — deterministic pre/post-steps (preflight, jina prefetch, candidate collection, watchlist slicing, gap-fill rotation, exclusion filtering, metrics)
+- `signals/updates/`, `signals/agent/`, `signals/briefs/`, `signals/seen-urls.txt` — layer outputs; the only paths the agents may write
+- `signals/metrics/`, `data/metrics/` — deterministic public-metrics charts + series (no LLM)
+- `site/` — static frontend (pnpm/turbo workspace, deployed via `pages.yml`)
 - `.github/workflows/hermes-sync.yml` — daily 13:00 UTC cron
 
 ## Local run
@@ -21,23 +24,34 @@ A scheduled hermes-agent deployment. No app to build/test — the "product" is t
 ```bash
 export DEEPSEEK_API_KEY=...
 bash scripts/bootstrap-hermes.sh
-hermes -z "$(cat prompts/news.md)"
+python3 scripts/preflight-feeds.py        # change detection → data/changed-sources.json
+python3 scripts/jina-reader.py            # html_scrape prefetch → data/jina-items.json
+python3 scripts/collect-candidates.py     # feed parse + triage + dedup → data/candidates.json
+hermes -z "$(cat prompts/ingest.md)"      # Layer 1: relevance pass only
+python3 scripts/select_gapfill_queue.py
+python3 scripts/slice_companies.py --layer agent
+hermes -z "$(cat prompts/agent_supplement.md)"   # Layer 2
+python3 scripts/slice_companies.py --layer synthesis
+hermes -z "$(cat prompts/synthesis.md)"   # Layer 3
 ```
 
-## Pipeline (defined in `prompts/news.md`)
+## Pipeline (one GHA run)
 
-1. **Firehose triage** — substring-match new feed items against `name + aliases`.
-2. **Per-company collection** — fetch curated `sources` (rss / github_org / lever_jobs / html_scrape) for opted-in companies.
-3. **LLM relevance pass** — judge each candidate against `c.description`. Firehose bias: drop. Per-company bias: keep.
-4. **Write** — group kept items into `signals/news/<UTC-date>.md`; append both kept *and* dropped dedup keys to `seen-urls.txt`.
-5. **Infographic generation** — `prompts/infographics.md` runs after synthesis. For every brief modified or created in this run (computed from `git diff` against `HEAD` plus untracked-file enumeration), invoke the bundled `creative-baoyu-infographic` skill and copy the resulting PNG to `signals/briefs/<slug>/infographic.png`. Capped at 8 per run. Skill intermediates under `infographic/` are gitignored.
+1. **Deterministic collection** — `preflight-feeds.py` (conditional GETs → changed-source whitelist) → `jina-reader.py` (html_scrape → markdown items) → `collect-candidates.py` (fetch+parse all changed rss/github_org/lever_jobs sources, substring-triage against `name + aliases`, date windows, dedup against `signals/seen-urls.txt`) → `data/candidates.json`. **No LLM involved up to here.**
+2. **Layer 1 — ingest** (`prompts/ingest.md`) — LLM relevance pass over `candidates.json` only (plus fallback fetches for pages the heuristics couldn't parse). Firehose bias: drop. Per-company bias: keep. Writes `signals/updates/<UTC-date>.md`; appends kept *and* dropped dedup keys to `seen-urls.txt`.
+3. **Layer 2 — agent supplement** (`prompts/agent_supplement.md`) — dynamic search for the gap-fill queue + today's deepen companies, reading the `data/agent-companies.json` slice. Workflow-guarded: skipped when there is no cohort.
+4. **Layer 3 — synthesis** (`prompts/synthesis.md`) — merges today's signals into `signals/briefs/<slug>/LIVING_BRIEF.md`, reading the `data/touched-companies.json` slice. Workflow-guarded: skipped when Layers 1–2 produced nothing today.
+5. **Layer 4 — infographics** (`prompts/infographics.md`) — for every brief modified or created in this run, invoke the bundled `creative-baoyu-infographic` skill and copy the PNG to `signals/briefs/<slug>/infographic.png`. Capped at 8 per run; a `pngquant` workflow step then compresses the new PNGs (committed PNGs are megabyte-scale otherwise). Skill intermediates under `infographic/` are gitignored.
 
-Tune behavior by editing the prompt and per-company `description` strings (that's where ticker collisions, same-name entities, and generic-word disambiguation are encoded).
+Tune *judgment* by editing the prompts and per-company `description` strings (that's where ticker collisions, same-name entities, and generic-word disambiguation are encoded). Tune *mechanics* (parsing, dedup, date windows, triage) in `scripts/collect-candidates.py` — the prompts no longer do mechanical collection.
 
 ## Non-obvious
 
 - Change-detection preflight: `scripts/preflight-feeds.py` runs before Layer 1 and sends conditional HTTP requests (ETag/Last-Modified + body-SHA256 fallback) against every preflightable source URL. It writes `data/feed-cache.json` (per-URL state, gitignored, kept across runs via the GHA `feed-cache-*` cache key) and `data/changed-sources.json` (the URL whitelist the ingest prompt is allowed to fetch). `html_scrape` sources are not preflighted — they're always listed as changed. For local runs, invoke `python3 scripts/preflight-feeds.py` before `hermes -z` to get the same skip behavior.
-- Jina Reader prefetch: `scripts/jina-reader.py` runs between preflight and Layer 1. For every html_scrape URL preflight marked changed, it fetches `https://r.jina.ai/<url>` (with optional `JINA_API_KEY` Bearer for the 100/day free tier), caches the markdown under `data/jina-cache/` (gitignored, GHA cache key `jina-cache-*`), and runs a heading→link heuristic to write structured items into `data/jina-items.json`. The ingest prompt's `html_scrape` branch reads `jina-items.json` first and Step 3 skips items flagged `pre_extracted: true`; URLs in `extraction_failed`/`deferred` fall back to the LLM HTML-parse path. Daily call budget: `JINA_DAILY_BUDGET` (default 80). Fails open everywhere — missing key, HTTP error, or extraction miss all degrade to the existing prompt path. For local runs invoke `python3 scripts/jina-reader.py` after preflight.
+- Jina Reader prefetch: `scripts/jina-reader.py` runs between preflight and candidate collection. For every html_scrape URL preflight marked changed, it fetches `https://r.jina.ai/<url>` (with optional `JINA_API_KEY` Bearer for the 100/day free tier), caches the markdown under `data/jina-cache/` (gitignored, GHA cache key `jina-cache-*`), and runs a heading→link heuristic to write structured items into `data/jina-items.json`. `collect-candidates.py` folds those into `data/candidates.json` flagged `pre_extracted: true` (the relevance pass auto-keeps them); html_scrape URLs jina missed are listed under `llm_fetch_required` so the ingest prompt parses them itself. Daily call budget: `JINA_DAILY_BUDGET` (default 80). Fails open everywhere — missing key, HTTP error, or extraction miss all degrade to the LLM-parse path. For local runs invoke `python3 scripts/jina-reader.py` after preflight.
+- Candidate collection: `scripts/collect-candidates.py` does all of Layer 1's mechanical work (fetch/parse changed feeds, substring triage, date windows, dedup against `signals/seen-urls.txt`, GitHub bot/chore filtering) and writes `data/candidates.json` — including a `companies` map carrying *only* matched companies' descriptions. Both ingest arms read just that file; this is what keeps the ~300KB `companies.json` and ~300KB `seen-urls.txt` out of model context (they used to cost ~150K input tokens per session turn). Per-source fetch failures land in `fetch_failed` for the prompt to retry (fail open); a script crash fails the workflow step (fail loud) because both arms depend on its output.
+- Watchlist slices: `scripts/slice_companies.py --layer agent|synthesis` writes `data/agent-companies.json` / `data/touched-companies.json` — full company entries for just that layer's cohort (gap-fill queue + deepen H2s for Layer 2; today's updates/agent headings for Layer 3). The prompts read the slice and fall back to `companies.json` only if it's missing. All slice/candidate files are gitignored, regenerated per run.
+- seen-urls membership for the agentic layers is checked with `grep -Fxq` per URL, never by reading the file into context (the prompts say so explicitly).
 - API key: `bootstrap-hermes.sh` writes the `DEEPSEEK_API_KEY` secret into `~/.hermes/.env` as `OPENAI_API_KEY` (what Hermes' `custom` provider reads). Don't rename the secret.
 - Provider failover: `hermes/config.yaml` lists `fallback_providers: [{provider: xiaomi, model: mimo-v2.5}]`. When the primary `deepseek` provider is exhausted mid-turn (rate-limit, billing, 5xx, or connection failure after `agent.api_max_retries`), Hermes' `-z`/oneshot path (`hermes_cli/oneshot.py` reads `fallback_providers` → passes it as the agent's `_fallback_chain`) swaps to the next entry. Failover is **turn-scoped** — each new turn restores `deepseek` first. The bundled `xiaomi` provider profile reads `XIAOMI_API_KEY` from `~/.hermes/.env`, seeded by `bootstrap-hermes.sh` from the `XIAOMI_API_KEY` GHA secret. Fails open: if the secret is absent the chain entry resolves to no client and is skipped, so forks without it run on `deepseek` alone, unchanged. To swap the fallback model, edit the `model:` under `fallback_providers` (native catalog: `mimo-v2-flash`/`mimo-v2.5`/`mimo-v2.5-pro`/`mimo-v2-pro`/`mimo-v2-omni`).
 - State roundtrip: each workflow run restores the prior `hermes backup` zip from GitHub Actions cache (`hermes-state-*`), imports it with `hermes import --force`, runs the layers, then re-runs `hermes backup` and saves the (sanitized) zip back to the cache. The `~/.hermes/memories/` → `hermes/memories/` rsync + commit is still done as a belt-and-suspenders fallback so a lost cache doesn't cold-start the agent. `scripts/sync-hermes-local.sh` mirrors the same pattern with a gitignored `.hermes-state.zip` in the repo root.
@@ -46,6 +60,8 @@ Tune behavior by editing the prompt and per-company `description` strings (that'
 - Langfuse traces: hermes-agent ships a bundled `observability/langfuse` plugin that streams each turn (LLM call + tool calls) to Langfuse Cloud live, with no repo-side ingest script. Activation is three things, all already wired: `hermes/config.yaml` lists the plugin under `plugins.enabled`, `bootstrap-hermes.sh` writes `HERMES_LANGFUSE_PUBLIC_KEY`/`SECRET_KEY`/`BASE_URL` into `~/.hermes/.env` when those GHA secrets are present, and the "Install ddgs + langfuse into hermes venv" workflow step `uv pip install`s the SDK into hermes' Python interpreter. The plugin fails open: missing SDK or missing creds → hooks no-op silently, hermes runs unchanged (so forks without the secrets are unaffected). Tunables (set via GHA secret or `~/.hermes/.env`): `HERMES_LANGFUSE_ENV`, `HERMES_LANGFUSE_RELEASE`, `HERMES_LANGFUSE_SAMPLE_RATE`, `HERMES_LANGFUSE_MAX_CHARS`, `HERMES_LANGFUSE_DEBUG`.
 - Monthly Langfuse usage rollup: `scripts/langfuse_usage.py` reads usage back *out* of Langfuse (the inverse of the trace-emitting plugin/evals above). For a given UTC month it queries the public Daily Metrics API (`GET /api/public/metrics/daily`, Basic-auth with the public/secret key pair) — once unfiltered for the grand total, then once per environment in `LANGFUSE_USAGE_ENVIRONMENTS` (default `production,eval`) — aggregates the per-day rows by environment + model, and writes `data/langfuse-usage/<YYYY-MM>.json` (committed, idempotent per month) plus `signals/langfuse-usage.md` (a month-over-month history table built from *every* snapshot on disk + a detail view of the latest month). Pure stdlib (urllib), no SDK dependency. Reuses the same `HERMES_LANGFUSE_{PUBLIC_KEY,SECRET_KEY,BASE_URL}` secrets — base URL defaults to `https://cloud.langfuse.com`. Fails open on *missing* creds (prints notice, exits 0 so forks/local don't break); a real HTTP error when creds are present exits 1 so the workflow surfaces it. `.github/workflows/langfuse-usage.yml` runs it on the 1st of each month (06:00 UTC, collecting the just-closed previous month) + `workflow_dispatch` with an optional `month` input, then commits the JSON + Markdown. Unit-tested with mocked HTTP in `tests/scripts/test_langfuse_usage.py` (runs on every PR via the evals `fast` job). Local: `python3 scripts/langfuse_usage.py --month YYYY-MM`.
 - `seen-urls.txt` is append-only. No search feeds (Google News, HN) — intentional, doesn't scale.
+- Metric charts (`signals/metrics/*.png`) re-render weekly (Mondays UTC) or on `workflow_dispatch`, not daily — every render rewrites all ~47 PNGs (~1MB of new git blobs) even though each series only gained one point. Data collection (`data/metrics/*.jsonl`) stays daily.
+- Layer guards: the workflow skips the Layer 2 session when the gap-fill queue is empty and there's nothing to deepen, and skips Layers 3–4 when neither `signals/updates/<today>.md` nor a `### ` heading in `signals/agent/<today>.md` exists — previously the synthesis agent burned a full session (reading the watchlist) just to print "no companies touched today".
 - `identifiers` in `companies.json` is carry-only metadata; not fetched.
 - Briefs embed `![Infographic](infographic.png)` directly under the `_Last updated:_` line. Synthesis writes this line unconditionally; if Layer 4 didn't run (or failed for that slug), the image renders as a 404 placeholder until the next successful infographic run. This decouples Layer 3 from Layer 4's success — synthesis never waits on `image_generate`.
 - Evals live in `tests/` (pytest). Three suites: `tests/static/` (data schema, brief template, slug rule — fast, no API), `tests/scripts/` (unit tests for the Python helpers with mocked HTTP), `tests/evals/` (LLM-behaviour evals gated on `DEEPSEEK_API_KEY`; the `test_batch_integration.py` integration eval additionally requires `HERMES_BATCH_EVAL=1` and a local hermes-agent install at `~/.hermes/hermes-agent/batch_runner.py`). Static + scripts run on every PR via `.github/workflows/evals.yml`; the LLM suite runs nightly at 12:30 UTC and is skipped on PRs. Local: `uv venv && uv pip install -e ".[dev]" && .venv/bin/pytest tests/static tests/scripts -q`.

@@ -25,6 +25,11 @@ data/changed-sources.json
 data/jina-items.json
 data/jina-cache/
 
+# per-run derived inputs for the layer prompts (collect-candidates.py, slice_companies.py)
+data/candidates.json
+data/agent-companies.json
+data/touched-companies.json
+
 # creative-baoyu-infographic skill working tree (intermediates only; the
 # final PNG is copied into signals/briefs/<slug>/ by prompts/infographics.md)
 /infographic/

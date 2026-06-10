@@ -15,7 +15,7 @@ Merge today's new signals into each touched company's living brief. Preserve pri
 
 - `signals/updates/<UTC-date>.md` — today's Layer 1 output (may be absent or contain only "no new items").
 - `signals/agent/<UTC-date>.md` — today's Layer 2 output (may be absent or contain "no agent items").
-- `data/companies.json` — watchlist. For each touched company `c`, pull `c.name`, `c.description`, `c.aliases`, `c.identifiers` for the brief's profile section, and `c.funding_rounds` (+ optional `c.funding_notes`) for the brief's funding history section.
+- `data/touched-companies.json` — the touched companies' slice of the watchlist, pre-computed by `scripts/slice_companies.py` from today's updates/agent headings. Same schema as `companies.json`. For each touched company `c`, pull `c.name`, `c.description`, `c.aliases`, `c.identifiers` for the brief's profile section, and `c.funding_rounds` (+ optional `c.funding_notes`) for the brief's funding history section. Fall back to `data/companies.json` only if the slice file is missing — do not read the full watchlist otherwise.
 - Existing `signals/briefs/<slug>/LIVING_BRIEF.md` per touched company (may not exist on first touch).
 
 ## Slug derivation
@@ -27,7 +27,7 @@ Merge today's new signals into each touched company's living brief. Preserve pri
 1. **Compute today's UTC date** as `<UTC-date>` (format `YYYY-MM-DD`). Compute today's UTC timestamp as `<UTC-timestamp>` (format `YYYY-MM-DD HH:MM UTC`).
 
 2. **Collect today's signals.**
-   - Read `signals/updates/<UTC-date>.md` if it exists. Parse it as: H2 (`## `) = company name (canonical, matches `c.name` in `data/companies.json`); below each H2, a list of items in the format `- **<headline>** — <source> · <pubDate>\n  <link>`. There may also be `## Run at <time>` subheadings — those are not company names; treat them as section dividers and continue parsing the H2s that follow.
+   - Read `signals/updates/<UTC-date>.md` if it exists. Parse it as: H2 (`## `) = company name (canonical, matches `c.name` in `data/touched-companies.json`); below each H2, a list of items in the format `- **<headline>** — <source> · <pubDate>\n  <link>`. There may also be `## Run at <time>` subheadings — those are not company names; treat them as section dividers and continue parsing the H2s that follow.
    - Read `signals/agent/<UTC-date>.md` if it exists. Structure: H2 = cohort (`## Gap-fill ...` or `## Deepen ...`); H3 = company name; items below as in Layer 1. Skip the cohort H2s; collect items grouped by the H3 company name.
    - Build `TOUCHED` = set of distinct company names mentioned today across both files. For each name, also build `NEW_SIGNALS[c.name]` = list of `(headline, source, pubDate, link)` tuples merged from both files, deduped by URL.
 
@@ -35,7 +35,7 @@ Merge today's new signals into each touched company's living brief. Preserve pri
 
 4. **For each company `c` in `TOUCHED`:**
 
-   a. Look up `c` in `data/companies.json` by matching `c.name` exactly. If not found, skip the company and log — don't write a brief for an unrecognized name.
+   a. Look up `c` in `data/touched-companies.json` by matching `c.name` exactly. If not found, skip the company and log — don't write a brief for an unrecognized name.
 
    b. Compute `slug = slug(c.name)`. Brief path = `signals/briefs/<slug>/LIVING_BRIEF.md`.
 
@@ -51,7 +51,7 @@ Merge today's new signals into each touched company's living brief. Preserve pri
    d. **If the brief already exists**, read it and merge:
       - **Header**: update `_Last updated:_` to `<UTC-timestamp>`. Keep the H1 verbatim. Ensure `![Infographic](infographic.png)` follows `_Last updated:_`; insert if missing (legacy briefs).
       - **Thesis**: keep verbatim *unless* today's signals materially shift trajectory (new market, new funding stage, pivot, exec change, acquisition, shutdown). If you rewrite, write naturally — not as a list of citations.
-      - **Profile**: touch only when a today's signal contradicts or extends a field. Otherwise keep verbatim. Exception: if `c.sector` is present in `companies.json` and the on-disk `Sector:` bullet does not match it, update the bullet to match `c.sector` verbatim (silent correction, no SECTOR_PROPOSAL needed).
+      - **Profile**: touch only when a today's signal contradicts or extends a field. Otherwise keep verbatim. Exception: if `c.sector` is present on the company object and the on-disk `Sector:` bullet does not match it, update the bullet to match `c.sector` verbatim (silent correction, no SECTOR_PROPOSAL needed).
       - **Funding history**: re-render from `c.funding_rounds`. `companies.json` is authoritative — replace the on-disk section if it differs. Omit if empty/absent. Do **not** add rounds inferred from today's signals — that goes in `data/companies.json` first.
       - **Recent signals**: prepend today's `NEW_SIGNALS[c.name]` cards. URL-level dedup against the existing brief (skip if URL already in `Recent signals` or `Older signals`; never re-fetch on-disk URLs). Cap: 20 **top-level** bullets — sub-bullets don't count. If exceeded, demote oldest excess to `Older signals`, moving each card as a single subtree (top bullet + its sub-bullets), oldest at the bottom.
       - **Open questions**: append new questions; remove any that today's signals clearly answer. If empty after editing, render `_none open_`.
@@ -149,7 +149,7 @@ If two cards cover the same announcement (different outlets), keep both top-leve
 
 **Rules (in priority order):**
 
-1. **If `c.sector` is present** in `data/companies.json`: write it verbatim as the `Sector:` bullet. Do not paraphrase or append qualifiers.
+1. **If `c.sector` is present** on the company object: write it verbatim as the `Sector:` bullet. Do not paraphrase or append qualifiers.
 2. **If `c.sector` is absent**: pick the 1–2 closest entries from `data/sectors.json` that describe the company. Join two entries with ` / ` (e.g. `Agritech / Biotechnology`). Do not invent entries not in the list; do not use more than two.
 3. **Emit a proposal to stdout** (one line, does not appear in the brief):
    ```
@@ -164,5 +164,5 @@ If two cards cover the same announcement (different outlets), keep both top-leve
 - Only create/modify files matching `signals/briefs/<slug>/LIVING_BRIEF.md`. Do not modify any other file.
 - Do not commit anything — the workflow handles git operations after you exit.
 - URL fetching is permitted **only** as defined in "URL fetching for signal enrichment". The top-level date bullet must stay defensible from headline + source alone so skipped/failed fetches degrade to a one-liner.
-- Do not write a brief for a company name that's not in `data/companies.json` — log and skip.
+- Do not write a brief for a company name that's not in `data/touched-companies.json` — log and skip.
 - Never overwrite a brief with the same content as already on disk (the no-write check above).
