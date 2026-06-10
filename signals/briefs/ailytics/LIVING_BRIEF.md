@@ -1,12 +1,12 @@
 # Ailytics — LIVING BRIEF
-_Last updated: 2026-06-02 12:00 UTC_
+_Last updated: 2026-06-10 16:43 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 NUS GRIP-incubated Singapore deep-tech startup developing AI-powered video analytics for heavy industries. Ailytics is building momentum through strategic partnerships (Japan expansion with Safie), industry recognition, and a major technology leap by integrating NVIDIA Cosmos 3 world models into its Ailyssa platform — unlocking spatio-temporal reasoning and SOP-verification capabilities that were previously unsolvable with traditional computer vision.
 
 ## Profile
-- Sector: AI video analytics / deep-tech
+- Sector: AI / Deep tech
 - Region: Singapore
 - Stage / funding: Early-stage (seed + pre-seed)
 - Key people: Huang Shao-Ning (lead seed investor, early backer)
@@ -18,6 +18,7 @@ NUS GRIP-incubated Singapore deep-tech startup developing AI-powered video analy
 _Total disclosed: $2.7M._
 
 ## Recent signals
+- **2026-06-10** — Posted a general news update (category: news) on its website — [Ailytics · news](https://cdn.prod.website-files.com/69649f66a99bea9a8e7b067c/6a1e86e8a804c20618a89ada_Untitled%20design%20(1)
 - **2026-06-02** — Deployed NVIDIA Cosmos 3 world models into its Ailyssa platform, enabling spatio-temporal reasoning for industrial safety that was previously unsolvable with traditional CV — [Ailytics](https://www.ailytics.ai/news/industrial-video-intelligence-reimagined-ailytics-deploys-nvidia-cosmos-3-across-heavy-industry)
   - Summary: Ailytics integrated NVIDIA Cosmos 3 across four capabilities of its Ailyssa platform — contextual natural-language search across CCTV footage, periodic image reasoning for slow-moving hazards, second-layer false-positive reduction on generated alerts, and spatio-temporal SOP verification. The company positions this as a complement to its existing fast specialized models, not a replacement. Customers include Changi Airport Group, DHL, Laing O'Rourke, and Leonardo da Vinci International Airport.
   - People: Tan Wei Zhuang, Lenard (Co-Founder & CEO), Prateek Manocha (Co-Founder & CTO)
@@ -38,5 +39,4 @@ _Total disclosed: $2.7M._
 _none_
 
 ## Open questions
-- Who is Safie and what specific AI monitoring use cases does the Japan partnership cover?
 - Is Ailytics currently fundraising for its next round, given the 2024 pre-seed and growing momentum?

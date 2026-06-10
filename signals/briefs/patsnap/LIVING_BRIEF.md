@@ -1,12 +1,12 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-06-05 16:00 UTC_
+_Last updated: 2026-06-10 16:43 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Patsnap is a Singapore-headquartered IP intelligence and innovation analytics SaaS company that helps organizations manage patents, trademarks, and R&D intelligence. The company is in an active growth phase, hiring across its AI Agent Platform (product growth, product marketing, engineering), life sciences vertical (account executives, support, SDRs, marketing interns), and semiconductor/material verticals — suggesting a multi-sector SaaS expansion beyond its core IP analytics base.
 
 ## Profile
-- Sector: IP intelligence / innovation analytics SaaS
+- Sector: SaaS
 - Region: Singapore (global operations)
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/patsnap), [Crunchbase](https://www.crunchbase.com/organization/patsnap)
 
@@ -20,6 +20,10 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-06-10** — Hiring a Senior AI Engineer to build company-wide AI knowledge infrastructure and RAG pipelines, signaling an internal AI transformation push — [Patsnap · careers](https://jobs.lever.co/patsnap/d338cfc9-9991-4bd0-a6d4-c7371b75ce62)
+  - Summary: Patsnap is hiring a Senior AI Engineer for its AI Growth team in Singapore to design and build the company-wide AI knowledge infrastructure, including internal wiki, knowledge base, retrieval layer, and context management system. The role requires 4-7 years of backend engineering experience with at least 2 years of hands-on LLM application development, experience with RAG and vector databases (Pinecone, Weaviate, Chroma), and Mandarin fluency. The hire will own end-to-end technical delivery of internal AI tools and work with business, brand, PR, IR, and leadership stakeholders.
+  - Numbers: 4-7 years backend experience; 2+ years LLM application experience
+  - Quote: "Design and build the company-wide AI knowledge infrastructure, including company wiki, internal knowledge base, retrieval layer, and context management system." — Patsnap job posting
 - **2026-06-05** — Patsnap hiring a Strategic Life Sciences Data & AI Expansion Specialist (remote, California) for DaaS account expansion, reinforcing Life Sciences vertical push — [Patsnap · careers](https://jobs.lever.co/patsnap/0e0f5286-41c2-4292-90f8-41768fb50de4)
   - Summary: Patsnap is hiring a Strategic Life Sciences Data & AI Expansion Specialist for a remote California-based role focused on expanding Data-as-a-Service (DaaS) opportunities within existing Life Sciences accounts across North America. The role acts as a subject-matter expert overlay supporting multiple Account Executives, targeting senior R&D, BD&L, Competitive Intelligence, and Innovation stakeholders in pharmaceutical, biotech, and medical device organizations.
   - Numbers: $130K–$260K OTE (50/50 base + uncapped commission); 12,000+ customers; Life Sciences business growing 20%+ YoY; pre-IPO unicorn at $1B+ valuation
@@ -54,9 +58,9 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Full Stack Intern (AI & Web Development, Material vertical) — [Patsnap](https://jobs.lever.co/patsnap/968e70fb-dd6b-4756-8d4d-ec2a7e482207)
 - **2026-05-12** — Hiring Life Science Growth Marketing Intern — [Patsnap](https://jobs.lever.co/patsnap/06fa8277-13bf-4dd5-bd0b-e1198ba4f8f0)
 - **2026-05-12** — Hiring Senior Digital Marketing Manager — [Patsnap](https://jobs.lever.co/patsnap/ba7981cc-46a3-4014-933f-800793cc4b59)
-- **2026-05-12** — Hiring Product Growth Manager for AI Agent Platform (IP Checking) — [Patsnap](https://jobs.lever.co/patsnap/5d9d748a-f9ce-40fd-aa3b-dde76007b0e6)
 
 ## Older signals
+- **2026-05-12** — Hiring Product Growth Manager for AI Agent Platform (IP Checking) — [Patsnap](https://jobs.lever.co/patsnap/5d9d748a-f9ce-40fd-aa3b-dde76007b0e6)
 - **2026-05-12** — Hiring Sales Development Representative (Life Science Graduates) — [Patsnap](https://jobs.lever.co/patsnap/9a625f6f-9b2e-441e-9a69-5d5c46bf324e)
 - **2026-05-12** — Hiring Community Operations Intern (R&D / PLG Product) — [Patsnap](https://jobs.lever.co/patsnap/3cc3a98b-de49-46ea-8694-6363f95af64f)
 - **2026-05-12** — Hiring Industry Product Specialist (Semiconductor Packaging Technology) — [Patsnap](https://jobs.lever.co/patsnap/905f8dd4-c47e-4d73-b7d5-55e3cf740d8c)
