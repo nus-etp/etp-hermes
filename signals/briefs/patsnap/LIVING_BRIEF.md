@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-06-10 16:43 UTC_
+_Last updated: 2026-06-11 17:02 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,11 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-06-11** — Hiring an AI Solutions Lead for IP Legal in London, blending patent attorney expertise with AI product strategy — [Patsnap · careers](https://jobs.lever.co/patsnap/e4e5de86-5693-4f8d-8dee-d8c595d35a3c)
+  - Summary: Patsnap is hiring an AI Solutions Lead (IP Legal) for a London-based remote role. The position bridges patent practitioner expertise with AI product strategy: the hire will act as a trusted advisor to IP professionals, support product development for AI-powered patent drafting, and work across Sales, Product, and Engineering teams. The role requires hands-on patent drafting experience, preferably as a European Patent Attorney or Patent Agent.
+  - People: European Patent Attorney / Patent Agent (preferred)
+- **2026-06-04** — Publishes 2026 R&D Benchmark Report (patsnap.com direct press release) — [patsnap.com](https://www.patsnap.com/resources/blog/press_release/patsnap-releases-2026-rd-benchmark-report-revealing-the-intelligence-gap-costing-innovation-teams-millions)
+  - Summary: Corroborates the June 4, 2026 R&D Benchmark Report announcement; no new facts.
 - **2026-06-10** — Hiring a Senior AI Engineer to build company-wide AI knowledge infrastructure and RAG pipelines, signaling an internal AI transformation push — [Patsnap · careers](https://jobs.lever.co/patsnap/d338cfc9-9991-4bd0-a6d4-c7371b75ce62)
   - Summary: Patsnap is hiring a Senior AI Engineer for its AI Growth team in Singapore to design and build the company-wide AI knowledge infrastructure, including internal wiki, knowledge base, retrieval layer, and context management system. The role requires 4-7 years of backend engineering experience with at least 2 years of hands-on LLM application development, experience with RAG and vector databases (Pinecone, Weaviate, Chroma), and Mandarin fluency. The hire will own end-to-end technical delivery of internal AI tools and work with business, brand, PR, IR, and leadership stakeholders.
   - Numbers: 4-7 years backend experience; 2+ years LLM application experience
@@ -56,8 +61,6 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Product Support Specialist (Life Sciences) — [Patsnap](https://jobs.lever.co/patsnap/e990d3dc-4298-487b-9a1e-ef33db46a22f)
 - **2026-05-12** — Hiring Account Executive for Connected Innovation Solutions Sales — [Patsnap](https://jobs.lever.co/patsnap/9caa0b0b-8e39-400c-9fa2-0a9ae1728373)
 - **2026-05-12** — Hiring Full Stack Intern (AI & Web Development, Material vertical) — [Patsnap](https://jobs.lever.co/patsnap/968e70fb-dd6b-4756-8d4d-ec2a7e482207)
-- **2026-05-12** — Hiring Life Science Growth Marketing Intern — [Patsnap](https://jobs.lever.co/patsnap/06fa8277-13bf-4dd5-bd0b-e1198ba4f8f0)
-- **2026-05-12** — Hiring Senior Digital Marketing Manager — [Patsnap](https://jobs.lever.co/patsnap/ba7981cc-46a3-4014-933f-800793cc4b59)
 
 ## Older signals
 - **2026-05-12** — Hiring Product Growth Manager for AI Agent Platform (IP Checking) — [Patsnap](https://jobs.lever.co/patsnap/5d9d748a-f9ce-40fd-aa3b-dde76007b0e6)
@@ -66,6 +69,8 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Industry Product Specialist (Semiconductor Packaging Technology) — [Patsnap](https://jobs.lever.co/patsnap/905f8dd4-c47e-4d73-b7d5-55e3cf740d8c)
 - **2026-05-12** — Hiring Industry Product Specialist (Semiconductor) — [Patsnap](https://jobs.lever.co/patsnap/9dab3451-8d4a-4d59-89a9-8e90c916131a)
 - **2026-05-12** — Hiring Product Marketing Manager for AI Agent Platform GTM — [Patsnap](https://jobs.lever.co/patsnap/b85aa927-6566-4d67-8d6c-b2c27776edf2)
+- **2026-05-12** — Hiring Life Science Growth Marketing Intern — [Patsnap](https://jobs.lever.co/patsnap/06fa8277-13bf-4dd5-bd0b-e1198ba4f8f0)
+- **2026-05-12** — Hiring Senior Digital Marketing Manager — [Patsnap](https://jobs.lever.co/patsnap/ba7981cc-46a3-4014-933f-800793cc4b59)
 
 ## Open questions
 - Is the AI Agent Platform a new product line or an evolution of existing IP analytics? How does it differ from the core Patsnap offering?
