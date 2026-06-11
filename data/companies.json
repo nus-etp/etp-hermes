@@ -667,6 +667,13 @@
     "funding_notes": "Generic name; unable to disambiguate or verify funding for the specific NUS GRIP entity. No verifiable funding information found."
   },
   {
+    "name": "Alpha Electrics",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore electric-mobility startup building a battery-swapping network for electric 2-wheelers, 3-wheelers, buggies and golf carts. Very generic name: drop the UK industrial motor/pump repair firm Alpha Electrics, electrician businesses, and any 'Alpha Electric' items not tied to Singapore battery swapping.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
+  },
+  {
     "name": "Ambient Systems",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore climate-tech startup. Drop unrelated companies sharing the same name.",
@@ -2322,6 +2329,15 @@
     "funding_notes": "NUS GRIP portfolio company (geotechnical real-time seawall monitoring). No publicly announced funding round found beyond GRIP programme support."
   },
   {
+    "name": "GeoCore Solutions",
+    "aliases": [
+      "GeoPrime"
+    ],
+    "description": "NUS GRIP Run 10 Singapore startup. Non-destructive QA/QC for cement-based structures (seawalls, marine construction) via its GeoPrime real-time monitoring system. Drop unrelated drilling/mining 'GeoCore' companies and generic geotechnical-services firms sharing the name.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
+  },
+  {
     "name": "GigSpace",
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore gig-economy / workspace startup. Limited public-English information beyond the directory listing — drop unrelated 'gig space' coworking / freelancer-marketplace brands unless the article explicitly references this Hangar entity.",
@@ -3105,6 +3121,13 @@
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
   {
+    "name": "Libbie",
+    "aliases": [],
+    "description": "NUS GRIP Run 1 Singapore startup: AI/IoT voice-activated lab assistant integrating laboratory workflows for hands-free research environments. Common given name and place name: drop people named Libbie, Libbie Mill (Richmond VA), library chatbots, and any 'Libbie' not tied to lab automation in Singapore.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
+  },
+  {
     "name": "Librarian",
     "aliases": [
       "Librarian Pte Ltd"
@@ -3819,6 +3842,15 @@
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "funding_rounds": [],
     "funding_notes": "Listed in NUS GRIP portfolio but no publicly-announced funding round with verifiable source found."
+  },
+  {
+    "name": "Oleum Levo",
+    "aliases": [
+      "ZerOil"
+    ],
+    "description": "NUS GRIP-incubated Singapore cleantech startup tackling oil pollution; first product ZerOil is a membrane for oily wastewater treatment. Drop unrelated items where 'oleum' refers to the chemical (fuming sulfuric acid) or Latin phrases.",
+    "funding_rounds": [],
+    "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
   },
   {
     "name": "Only Technologies",
