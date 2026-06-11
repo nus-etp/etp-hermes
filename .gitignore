@@ -34,9 +34,13 @@ data/touched-companies.json
 # final PNG is copied into signals/briefs/<slug>/ by prompts/infographics.md)
 /infographic/
 
-# block71 portfolio seed working files (scripts/_tmp_*.py + data/_block71_seed.json)
+# portfolio seed working files (scripts/_tmp_*.py + data/_*_seed.json)
 /scripts/_tmp_*
 /data/_block71_seed.json
+/data/_grip_seed.json
+
+# scripts/discover_portfolio.py output, regenerated per run
+/data/portfolio-new-entries.json
 
 # Static frontend (site/) — generated assets and dev-kit quarantine
 site/node_modules

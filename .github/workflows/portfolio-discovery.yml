@@ -1,0 +1,71 @@
+name: portfolio-discovery
+
+# Monthly sweep of the BLOCK71 directory + NUS GRIP portfolio for ventures not
+# yet in data/companies.json. New ventures get conservative drafted entries,
+# merged + schema-validated, and land as a PR (branch `portfolio-discovery`,
+# force-pushed so re-runs stay idempotent) — never a direct commit, because
+# drafted descriptions usually need human-sharpened disambiguation for generic
+# names. GRIP intakes ~2 runs/year and BLOCK71 onboarding is batchy, so monthly
+# is plenty.
+
+on:
+  schedule:
+    - cron: '0 5 1 * *'   # 05:00 UTC on the 1st of each month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+
+      - name: Discover new portfolio ventures
+        run: python3 scripts/discover_portfolio.py
+
+      - name: Count new ventures
+        id: count
+        run: echo "count=$(python3 -c "import json; print(len(json.load(open('data/portfolio-new-entries.json'))))")" >> "$GITHUB_OUTPUT"
+
+      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
+        if: steps.count.outputs.count != '0'
+
+      - name: Merge drafted entries and validate schema
+        if: steps.count.outputs.count != '0'
+        run: |
+          python3 scripts/merge_portfolio_entries.py data/portfolio-new-entries.json
+          uv venv
+          uv pip install -e ".[dev]"
+          .venv/bin/pytest tests/static -q
+
+      - name: Open or refresh PR
+        if: steps.count.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c portfolio-discovery
+          git add data/companies.json
+          git commit -m "chore(data): add ${{ steps.count.outputs.count }} new BLOCK71/GRIP portfolio entries"
+          git push -f origin portfolio-discovery
+          # New-venture list for the PR body, from the discovery output
+          python3 - <<'EOF' > /tmp/pr-body.md
+          import json
+          entries = json.load(open("data/portfolio-new-entries.json"))
+          print("Monthly portfolio discovery found new ventures not in `companies.json`.")
+          print()
+          print("Drafted entries are conservative — **review each description and sharpen")
+          print("the disambiguation for generic names before merging.**")
+          print()
+          for e in entries:
+              print(f"- **{e['name']}** — {e['description']}")
+          EOF
+          if [ "$(gh pr list --head portfolio-discovery --state open --json number --jq length)" = "0" ]; then
+            gh pr create \
+              --title "chore(data): new BLOCK71/GRIP portfolio entries ($(date -u +%Y-%m))" \
+              --body-file /tmp/pr-body.md
+          fi
