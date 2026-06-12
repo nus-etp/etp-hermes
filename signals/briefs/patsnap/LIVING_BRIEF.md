@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-06-11 17:02 UTC_
+_Last updated: 2026-06-12 16:12 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,11 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-06-12** — Hiring an AI Solutions Lead for IP Legal/Patent Drafting (US remote, East Coast preferred), mirroring the London-based role posted June 11 — [Patsnap · careers](https://jobs.lever.co/patsnap/ef9106c4-4b87-4158-9b68-eeca47e00926)
+  - Summary: Patsnap is hiring an AI Solutions Lead for a US-based remote role (East Coast preferred) that bridges patent practitioner expertise with AI product strategy. The hire will act as a trusted advisor to IP professionals, support product development for AI-powered patent drafting, and work across Sales, Product, and Engineering teams. The role requires hands-on patent drafting experience, preferably as a European Patent Attorney or Patent Agent.
+  - People: European Patent Attorney / Patent Agent (preferred)
+  - Numbers: $300M Series E; $1B unicorn valuation; 12,000+ customers
+  - Quote: "We're looking for someone with hands-on patent drafting experience who is interested in applying that expertise in a broader capacity." — Patsnap job posting
 - **2026-06-11** — Hiring an AI Solutions Lead for IP Legal in London, blending patent attorney expertise with AI product strategy — [Patsnap · careers](https://jobs.lever.co/patsnap/e4e5de86-5693-4f8d-8dee-d8c595d35a3c)
   - Summary: Patsnap is hiring an AI Solutions Lead (IP Legal) for a London-based remote role. The position bridges patent practitioner expertise with AI product strategy: the hire will act as a trusted advisor to IP professionals, support product development for AI-powered patent drafting, and work across Sales, Product, and Engineering teams. The role requires hands-on patent drafting experience, preferably as a European Patent Attorney or Patent Agent.
   - People: European Patent Attorney / Patent Agent (preferred)
@@ -60,9 +65,9 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Account Executive for Life Sciences Sales — [Patsnap](https://jobs.lever.co/patsnap/91674214-6d6c-41c2-b743-f40327fe134c)
 - **2026-05-12** — Hiring Product Support Specialist (Life Sciences) — [Patsnap](https://jobs.lever.co/patsnap/e990d3dc-4298-487b-9a1e-ef33db46a22f)
 - **2026-05-12** — Hiring Account Executive for Connected Innovation Solutions Sales — [Patsnap](https://jobs.lever.co/patsnap/9caa0b0b-8e39-400c-9fa2-0a9ae1728373)
-- **2026-05-12** — Hiring Full Stack Intern (AI & Web Development, Material vertical) — [Patsnap](https://jobs.lever.co/patsnap/968e70fb-dd6b-4756-8d4d-ec2a7e482207)
 
 ## Older signals
+- **2026-05-12** — Hiring Full Stack Intern (AI & Web Development, Material vertical) — [Patsnap](https://jobs.lever.co/patsnap/968e70fb-dd6b-4756-8d4d-ec2a7e482207)
 - **2026-05-12** — Hiring Product Growth Manager for AI Agent Platform (IP Checking) — [Patsnap](https://jobs.lever.co/patsnap/5d9d748a-f9ce-40fd-aa3b-dde76007b0e6)
 - **2026-05-12** — Hiring Sales Development Representative (Life Science Graduates) — [Patsnap](https://jobs.lever.co/patsnap/9a625f6f-9b2e-441e-9a69-5d5c46bf324e)
 - **2026-05-12** — Hiring Community Operations Intern (R&D / PLG Product) — [Patsnap](https://jobs.lever.co/patsnap/3cc3a98b-de49-46ea-8694-6363f95af64f)
