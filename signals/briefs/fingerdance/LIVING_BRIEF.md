@@ -12,7 +12,7 @@ FingerDance is a Singapore social-impact deep-tech startup building SiLViA (Sign
 - Key people: Gong He (co-founder, technologist)
 
 ## Recent signals
-- **2026** — GovInsider profiles SBS Transit's AI accessibility initiatives including SiLViA, with expansion planned to more transport hubs within 12 months — [govinsider.asia](https://govinsider.asia/intl-en/article/making-transportation-user-friendly-for-the-hearing-impaired)
+- **date unknown** — GovInsider profiles SBS Transit's AI accessibility initiatives including SiLViA, with expansion planned to more transport hubs within 12 months — [govinsider.asia](https://govinsider.asia/intl-en/article/making-transportation-user-friendly-for-the-hearing-impaired)
   - Summary: GovInsider profiles SBS Transit's accessibility AI tools including SiLViA, the sign-language virtual assistant built with FingerDance. SiLViA is in a six-month pilot at Chinatown MRT Station, translating announcements into Singapore Sign Language via a kiosk with speech, keyboard, and text input. SBS Transit plans to expand SiLViA to more transport hubs within the next 12 months.
   - People: Shaun Liew (SBS Transit Head of Rail Operations & Support and Head of Customer Experience & Commercial), Gong He (co-founder, FingerDance)
   - Counterparties: SBS Transit, Singapore Association for the Deaf (SADeaf)
