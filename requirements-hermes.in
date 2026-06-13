@@ -4,5 +4,5 @@
 # the nightly LLM eval job (evals.yml) as its hash-pinned langfuse source.
 #
 # Compiled to requirements-hermes.txt with hashes via `make pin-hermes-extras`.
-ddgs
-langfuse
+ddgs>=9.14.4
+langfuse>=4.7.1
