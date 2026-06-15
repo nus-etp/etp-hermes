@@ -49,9 +49,11 @@ fi
 if [ -n "${FAL_KEY:-}" ]; then
   echo "FAL_KEY=${FAL_KEY}" >> "$HERMES_HOME/.env"
 fi
-# Web-search backends used by Layer 2 (agent supplement). Active backend is
-# ddgs (search) + tavily (extract), set in hermes/config.yaml. EXA_API_KEY is
-# seeded for future use / quick swap without touching the workflow.
+# Web search + fetch are served by the keyless Parallel Search MCP server
+# (wired in hermes/config.yaml under mcp_servers; the native `web` toolset is
+# disabled there). TAVILY_API_KEY / EXA_API_KEY are still seeded so a one-line
+# rollback (drop `web` from agent.disabled_toolsets) restores the native
+# tavily-search + exa-extract backends without touching the workflow.
 if [ -n "${TAVILY_API_KEY:-}" ]; then
   echo "TAVILY_API_KEY=${TAVILY_API_KEY}" >> "$HERMES_HOME/.env"
 fi

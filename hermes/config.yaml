@@ -26,6 +26,13 @@ agent:
   # DeepSeek V4 thinking mode is enabled by default server-side; reasoning_effort
   # controls how much it thinks. Set high for news dedup/summarization quality.
   reasoning_effort: high
+  # Disable hermes' native `web` toolset (web_search + web_extract) so the only
+  # web search/fetch surface across all layers is the keyless Parallel Search
+  # MCP server registered under `mcp_servers.parallel` below. Honored by
+  # hermes_cli/tools_config._get_platform_tools (applied last, overrides all).
+  # To roll back to the native tavily/exa backends, remove `web` from this list.
+  disabled_toolsets:
+    - web
 
 image_gen:
   # GPT-Image-2: text rendering is the bottleneck for Layer 4 infographics
@@ -35,10 +42,20 @@ image_gen:
   provider: fal
   use_gateway: false
 
+# Web search/fetch is served by the keyless Parallel Search MCP server, not the
+# native `web` toolset (disabled via agent.disabled_toolsets above). The MCP
+# endpoint accepts anonymous requests at lower rate limits; to lift them later,
+# add an `Authorization: Bearer ${PARALLEL_API_KEY}` header here and seed the
+# secret in bootstrap-hermes.sh. The agent sees the server's tools as
+# `mcp_parallel_web_search` and `mcp_parallel_web_fetch`.
+mcp_servers:
+  parallel:
+    url: "https://search.parallel.ai/mcp"
+
+# Inert while `web` is in agent.disabled_toolsets — kept so a one-line rollback
+# (drop `web` from that list) restores the native tavily/exa backends, whose
+# keys bootstrap-hermes.sh still seeds.
 web:
-  # Per-capability split for Layer 2 (agent supplement). tavily handles
-  # search (~30-48 calls/run vs its 1k/mo free tier — near the ceiling at
-  # daily cadence, watch quota); exa handles the rarer extract path.
   search_backend: tavily
   extract_backend: exa
 
