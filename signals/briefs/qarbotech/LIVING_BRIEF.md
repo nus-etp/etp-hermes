@@ -1,5 +1,5 @@
 # Qarbotech — LIVING BRIEF
-_Last updated: 2026-05-31 00:00 UTC_
+_Last updated: 2026-06-15 01:22 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -26,6 +26,8 @@ _Total disclosed: $2.2M._
   - Counterparties: Tokyo Governor Yuriko Koike (award presenter)
   - Numbers: ¥10 million (~US$62,000) Grand Prize; 800+ global applicants; 60+ countries represented
   - Quote: "We are not making the plant work extra hard. We are simply increasing its light energy usage. In regions like Southeast Asia, overcast weather and prolonged rainy seasons can reduce productivity by up to 40 per cent. Our technology bridges that gap." — Chor Chee Hoe, CEO and Co-Founder
+- **2026-04-29** — Corroborating coverage from The Stoly on Qarbotech's SusHi Tech Global Pitch Challenge 2026 Grand Prize win; the article recaps the ¥10M prize, 800+ applicants, and the significance for Southeast Asian agritech — [thestoly.com](https://thestoly.com/2026/05/qarbotech-wins-grand-prize-at-sushi-tech-challenge-2026-elevating-southeast-asian-agritech-on-the-global-stage)
+  - Summary: Corroborates the 2026-05-31 announcement; no new facts.
 
 ## Older signals
 _none_
