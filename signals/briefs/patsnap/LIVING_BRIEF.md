@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-06-15 17:55 UTC_
+_Last updated: 2026-06-16 18:02 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,13 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-06-15** — PatSnap targeting $300-400M at $2B+ valuation for dual HK/Singapore IPO, positioning as an AI play for HKEX investors — [Asia Tech Review](https://www.asiatechreview.com/p/patsnap-ipo-could-lead-southeast)
+  - Summary: Asia Tech Review reports that PatSnap is targeting to raise $300-400M at a valuation of over $2 billion for its dual HK/Singapore IPO, positioning as an AI company for Hong Kong investors. The 19-year-old company operates a database of 120M+ patents with over 15,000 customers.
+  - People: Ray Chohan (co-founder)
+  - Counterparties: HongShan (backer), SoftBank (backer), Tencent (backer)
+  - Numbers: $300-400M raise target; $2B+ valuation; 120M+ patents; 15,000+ customers; ~$400M capital raised to date; 19 years in operation
+  - Quote: "Patent data let us kick down the door and earn respect, but now we're looking at completely different products." — Ray Chohan, co-founder
+- **2026-06-16** — Hiring a Senior Account Executive in Austin, Texas for net-new logo acquisition in the Connected Innovation Solutions vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/d1690cc9-95e8-4874-be19-ed0f8d067e96)
 - **2026-06-15** — Patsnap has confidentially filed for a dual IPO in Hong Kong and Singapore, according to sources familiar with the matter, marking a major milestone for the Singapore-based patent intelligence unicorn — [Bloomberg](https://www.bloomberg.com/news/articles/2026-06-15/patsnap-said-to-confidentially-file-for-hk-singapore-dual-ipo)
 - **2026-06-15** — Hiring a domain knowledge Life Science Scientist (Singapore, on-site) to build AI-native life sciences products — moving beyond traditional SaaS into an AI agent/ecosystem powered by MCPs, Skills, and Agents for clinical, BD, and regulatory workflows — [Patsnap · careers](https://jobs.lever.co/patsnap/d8ed208f-0d67-4c4f-be6b-14f10fe0f645)
   - Summary: Patsnap is hiring a PhD-level Life Science Scientist for its LS department in Singapore to translate complex real-world life sciences problems into AI-native products. The role involves building PLG products by turning Patsnap's data assets (clinical trials, sequences, targets, deals, patents) into MCPs, Skills, and Agents that solve workflow pain points. The job description explicitly frames a shift from traditional SaaS to an "intelligent product ecosystem."
@@ -73,8 +80,6 @@ _Total disclosed: $351.6M._
 - **2026-05-27** — Hiring Semiconductor Reverse Engineering Specialist / AI Domain Expert for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/5edb10a2-12ff-44db-b1c8-9488e8e8c361)
 - **2026-05-27** — Hiring Semiconductor Materials Specialist for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/e61a7dab-2174-4b1f-a9f3-8537e3f4ba76)
 - **2026-05-15** — New Account Executive posting for Connected Innovation Solutions Sales — [Patsnap · careers](https://jobs.lever.co/patsnap/20d8ae88-d16c-4c80-aeb1-d68daa6fbfdf)
-- **2026-05-15** — Patsnap publishes thought leadership on companion animal biotech innovation and patents — [patsnap.com](https://www.patsnap.com/resources/blog/the-man-who-refused-to-let-his-dog-die/)
-- **2026-05-15** — Patsnap publishes analysis on China as the next GLP-1 drug development frontier — [patsnap.com](https://www.patsnap.com/resources/blog/when-obesity-isnt-the-driver-why-china-signals-the-next-glp-1-frontier/)
 
 ## Older signals
 - **2026-05-13** — Strategic partnership with CAS (Chemical Abstracts Service) to combine CAS's scientific content database with Patsnap's AI-powered innovation analytics platform — [Devdiscourse](https://www.devdiscourse.com/article/agency-wire/930997-cas-and-patsnap-forge-strategic-partnership-that-unites-market-leading-scientific-content-and-ai-powered-technology-to-accelerate-global-innovation)
@@ -91,6 +96,8 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Product Marketing Manager for AI Agent Platform GTM — [Patsnap](https://jobs.lever.co/patsnap/b85aa927-6566-4d67-8d6c-b2c27776edf2)
 - **2026-05-12** — Hiring Life Science Growth Marketing Intern — [Patsnap](https://jobs.lever.co/patsnap/06fa8277-13bf-4dd5-bd0b-e1198ba4f8f0)
 - **2026-05-12** — Hiring Senior Digital Marketing Manager — [Patsnap](https://jobs.lever.co/patsnap/ba7981cc-46a3-4014-933f-800793cc4b59)
+- **2026-05-15** — Patsnap publishes thought leadership on companion animal biotech innovation and patents — [patsnap.com](https://www.patsnap.com/resources/blog/the-man-who-refused-to-let-his-dog-die/)
+- **2026-05-15** — Patsnap publishes analysis on China as the next GLP-1 drug development frontier — [patsnap.com](https://www.patsnap.com/resources/blog/when-obesity-isnt-the-driver-why-china-signals-the-next-glp-1-frontier/)
 
 ## Open questions
 - What is the expected valuation and timeline for the dual HK/Singapore IPO? Which exchange will be the primary listing?
