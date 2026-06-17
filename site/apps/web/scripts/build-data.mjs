@@ -149,8 +149,14 @@ for (const c of companies) {
   const lsd = latestSignalDate(needles)
 
   // Reduce a long "Southeast Asia (Singapore HQ; …)" to a filterable short label.
-  const shortRegion = brief?.parsed.region
+  // Normalize known synonyms so brief-authored labels collapse onto the same
+  // facet as the country backfill (e.g. "US" → "United States").
+  const REGION_SYNONYMS = { US: 'United States', USA: 'United States', UK: 'United Kingdom' }
+  const shortRegionRaw = brief?.parsed.region
     ? brief.parsed.region.split(/[(/;,]/)[0].trim()
+    : undefined
+  const shortRegion = shortRegionRaw
+    ? (REGION_SYNONYMS[shortRegionRaw] ?? shortRegionRaw)
     : undefined
 
   normalized.push({
@@ -160,8 +166,10 @@ for (const c of companies) {
     description: c.description ?? '',
     hasBrief: !!brief,
     sector: brief?.parsed.sector ?? c.sector ?? undefined,
-    region: shortRegion,
-    regionFull: brief?.parsed.region,
+    // Backfill region from the company's HQ country when no brief supplies one,
+    // so every company is filterable by region (not just the ~14 with briefs).
+    region: shortRegion ?? c.country ?? undefined,
+    regionFull: brief?.parsed.region ?? c.country,
     thesis: brief?.parsed.thesis,
     sourceTypes,
     fundingStages,

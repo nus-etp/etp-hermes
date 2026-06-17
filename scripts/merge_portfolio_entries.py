@@ -14,9 +14,32 @@ import json
 import sys
 from pathlib import Path
 
+# Make the sibling `derive_country` importable whether run as a CLI (script dir
+# is already on sys.path) or imported by the test loader (it is not).
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from derive_country import derive as derive_country  # noqa: E402
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 COMPANIES_JSON = REPO_ROOT / "data" / "companies.json"
 PINNED_HEAD = 3  # Carousell, Patsnap, Horizon Quantum Computing stay first
+
+
+def with_country(entry: dict) -> dict:
+    """Return a copy of entry with a derived `country` placed right after
+    `description` (deterministic regex over the description — no LLM). Leaves an
+    existing `country` untouched and skips entries the heuristic can't resolve."""
+    if entry.get("country"):
+        return entry
+    country, _ = derive_country(entry.get("description", ""))
+    if not country:
+        return entry
+    out = {}
+    for k, v in entry.items():
+        out[k] = v
+        if k == "description":
+            out["country"] = country
+    out.setdefault("country", country)
+    return out
 
 
 def merge(companies: list[dict], new_entries: list[dict]) -> tuple[list[dict], int]:
@@ -26,7 +49,7 @@ def merge(companies: list[dict], new_entries: list[dict]) -> tuple[list[dict], i
         if e["name"].lower() in existing_names:
             print(f"SKIP duplicate: {e['name']}")
             continue
-        additions.append(e)
+        additions.append(with_country(e))
         existing_names.add(e["name"].lower())
     if not additions:
         return companies, 0

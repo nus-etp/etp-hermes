@@ -55,6 +55,23 @@ def test_required_keys_and_types(companies: list[dict]) -> None:
     assert not errors, "schema violations:\n  - " + "\n  - ".join(errors)
 
 
+def test_every_company_has_country(companies: list[dict]) -> None:
+    """Every company must carry a non-empty HQ `country` tag so the site's
+    region filter covers the whole watchlist. New entries get one
+    deterministically at merge time (scripts/merge_portfolio_entries.py via
+    scripts/derive_country.py); a manual addition that trips this should run
+    `python3 scripts/derive_country.py --write`."""
+    missing = [
+        c.get("name", repr(c))
+        for c in companies
+        if not isinstance(c.get("country"), str) or not c["country"].strip()
+    ]
+    assert not missing, (
+        "companies missing a `country` tag (run "
+        "`python3 scripts/derive_country.py --write`):\n  - " + "\n  - ".join(missing)
+    )
+
+
 def test_funding_rounds_shape(companies: list[dict]) -> None:
     errors: list[str] = []
     for c in companies:
