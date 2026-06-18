@@ -51,6 +51,19 @@ image_gen:
 mcp_servers:
   parallel:
     url: "https://search.parallel.ai/mcp"
+  # Jina AI's hosted MCP (https://github.com/jina-ai/MCP). Keyless: read_url /
+  # parallel_read_url (URL → clean Markdown) work anonymously at lower rate
+  # limits — the agent sees them as `mcp_jina_read_url` /
+  # `mcp_jina_parallel_read_url` and can use them as a second fetch surface when
+  # a page resists Parallel's fetcher. The deterministic feed fallback uses the
+  # same Jina engine via r.jina.ai in scripts/collect-candidates.py. NOTE: the
+  # search_* tools (search_web/search_arxiv/...) require a JINA key and error out
+  # keyless, so search stays on Parallel. To lift the read limits, add an
+  # `Authorization: Bearer ${JINA_API_KEY}` header here and seed it in
+  # bootstrap-hermes.sh (the JINA_API_KEY secret already exists for the Reader
+  # prefetch step).
+  jina:
+    url: "https://mcp.jina.ai/v1"
 
 # Inert while `web` is in agent.disabled_toolsets — kept so a one-line rollback
 # (drop `web` from that list) restores the native tavily/exa backends, whose

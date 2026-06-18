@@ -20,6 +20,7 @@ output.
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -28,6 +29,11 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
 from urllib import error, parse, request
+
+# Make the sibling `jina_fallback` module importable both when run directly
+# (scripts/ is sys.path[0]) and under pytest's file-path module loader.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from jina_fallback import extract_items, fetch_reader  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 FEEDS_FILE = REPO_ROOT / "data" / "feeds.json"
@@ -42,6 +48,16 @@ TIMEOUT_SECS = 25
 FIREHOSE_WINDOW = timedelta(days=7)
 PER_COMPANY_WINDOW = timedelta(days=14)
 LEVER_WINDOW = timedelta(days=30)
+
+# Jina Reader fallback: when a firehose/rss feed's direct fetch or parse fails
+# (host unreachable from the runner, but Jina can reach it), refetch it through
+# r.jina.ai → Markdown → the shared heading/link heuristic. Keyless by default;
+# JINA_API_KEY lifts the rate limit. Bounded per run so a wave of dead feeds
+# can't blow Jina's free quota. Only firehose + rss are recovered this way —
+# github_org/lever_jobs need fields (author/id, JSON) Markdown can't carry, so
+# those stay in fetch_failed for the prompt to retry.
+DEFAULT_JINA_FALLBACK_BUDGET = 25
+JINA_FALLBACK_KINDS = {"firehose", "rss"}
 
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
 
@@ -181,6 +197,9 @@ def collect(
     jina: dict[str, Any] | None,
     seen: set[str],
     fetcher=fetch,
+    reader=None,
+    jina_api_key: str | None = None,
+    jina_budget: int = DEFAULT_JINA_FALLBACK_BUDGET,
 ) -> dict[str, Any]:
     candidates: list[dict[str, Any]] = []
     fetch_failed: list[dict[str, str]] = []
@@ -198,6 +217,53 @@ def collect(
         c["name"]: [t.lower() for t in [c["name"], *(c.get("aliases") or [])]] for c in companies
     }
 
+    # Jina Reader fallback state. reader=None disables it entirely (the default,
+    # so existing callers/tests keep the direct-fetch-only behaviour); main()
+    # passes the real fetch_reader.
+    jina_state = {"calls": 0, "recovered": []}  # type: dict[str, Any]
+
+    def jina_recover(
+        url: str, *, kind: str, company: str | None, source_label: str, window: timedelta
+    ) -> bool:
+        """Refetch a failed feed via r.jina.ai and emit candidates from its items.
+
+        Returns True when Jina reached the URL (caller should NOT record a fetch
+        failure), False when the fallback is disabled, budget-capped, or Jina
+        also failed.
+        """
+        if reader is None or jina_state["calls"] >= jina_budget:
+            return False
+        try:
+            _status, markdown = reader(url, jina_api_key)
+        except (error.HTTPError, error.URLError, TimeoutError, OSError):
+            return False
+        jina_state["calls"] += 1
+        jina_state["recovered"].append(url)
+        for it in extract_items(markdown, url):
+            link = it["link"]
+            if not link or link in seen:
+                continue
+            if not within_window(parse_date(it.get("pubDate")), window):
+                continue
+            item = {
+                "headline": it["headline"],
+                "description": "",
+                "source": source_label,
+                "pubDate": it.get("pubDate", ""),
+                "link": link,
+                "dedup_key": link,
+                "source_kind": kind,
+                "via_jina_fallback": True,
+            }
+            if company is None:  # firehose: substring-triage across the watchlist
+                haystack = it["headline"].lower()
+                for name, ts in terms.items():
+                    if any(t in haystack for t in ts):
+                        add(name, dict(item))
+            else:
+                add(company, item)
+        return True
+
     # --- Firehose ---
     if changed is None:
         firehose_urls = {f["url"] for f in feeds}
@@ -209,6 +275,14 @@ def collect(
         try:
             entries = parse_feed(fetcher(feed["url"]))
         except (error.URLError, TimeoutError, OSError, ET.ParseError) as e:
+            if jina_recover(
+                feed["url"],
+                kind="firehose",
+                company=None,
+                source_label=feed["name"],
+                window=FIREHOSE_WINDOW,
+            ):
+                continue
             fetch_failed.append({"url": feed["url"], "kind": "firehose", "error": str(e)[:200]})
             continue
         for it in entries:
@@ -291,6 +365,14 @@ def collect(
             try:
                 body = fetcher(url)
             except (error.URLError, TimeoutError, OSError) as e:
+                if stype == "rss" and jina_recover(
+                    url,
+                    kind="rss",
+                    company=name,
+                    source_label=source_label,
+                    window=PER_COMPANY_WINDOW,
+                ):
+                    continue
                 fetch_failed.append(
                     {"url": url, "kind": stype, "company": name, "error": str(e)[:200]}
                 )
@@ -300,6 +382,14 @@ def collect(
                 try:
                     entries = parse_feed(body)
                 except ET.ParseError as e:
+                    if jina_recover(
+                        url,
+                        kind="rss",
+                        company=name,
+                        source_label=source_label,
+                        window=PER_COMPANY_WINDOW,
+                    ):
+                        continue
                     fetch_failed.append(
                         {"url": url, "kind": stype, "company": name, "error": str(e)[:200]}
                     )
@@ -391,17 +481,22 @@ def collect(
     matched = sorted({c["company"] for c in candidates})
     descriptions = {c["name"]: c.get("description", "") for c in companies if c["name"] in matched}
 
+    jina_candidates = sum(1 for c in candidates if c.get("via_jina_fallback"))
+
     return {
         "generated_at": _now().isoformat(timespec="seconds"),
         "candidates": candidates,
         "companies": descriptions,
         "llm_fetch_required": llm_fetch_required,
         "fetch_failed": fetch_failed,
+        "jina_recovered": sorted(set(jina_state["recovered"])),
         "stats": {
             "candidates": len(candidates),
             "companies_matched": len(matched),
             "llm_fetch_required": len(llm_fetch_required),
             "fetch_failed": len(fetch_failed),
+            "jina_recovered": len(set(jina_state["recovered"])),
+            "jina_candidates": jina_candidates,
         },
     }
 
@@ -413,7 +508,21 @@ def main() -> int:
     jina = _load_json(JINA_ITEMS_FILE) if JINA_ITEMS_FILE.exists() else None
     seen = load_seen(SEEN_FILE)
 
-    out = collect(companies, feeds, changed, jina, seen)
+    try:
+        jina_budget = int(os.environ.get("JINA_FALLBACK_BUDGET", str(DEFAULT_JINA_FALLBACK_BUDGET)))
+    except ValueError:
+        jina_budget = DEFAULT_JINA_FALLBACK_BUDGET
+
+    out = collect(
+        companies,
+        feeds,
+        changed,
+        jina,
+        seen,
+        reader=fetch_reader,
+        jina_api_key=os.environ.get("JINA_API_KEY") or None,
+        jina_budget=jina_budget,
+    )
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with OUT_FILE.open("w", encoding="utf-8") as f:
@@ -424,7 +533,9 @@ def main() -> int:
         f"collect-candidates: candidates={s['candidates']} "
         f"companies={s['companies_matched']} "
         f"llm_fetch_required={s['llm_fetch_required']} "
-        f"fetch_failed={s['fetch_failed']}",
+        f"fetch_failed={s['fetch_failed']} "
+        f"jina_recovered={s['jina_recovered']} "
+        f"jina_candidates={s['jina_candidates']}",
         file=sys.stderr,
     )
     return 0

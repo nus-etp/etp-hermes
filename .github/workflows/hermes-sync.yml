@@ -195,6 +195,17 @@ jobs:
         if: steps.layers.outputs.run_l1 == 'true'
         run: python3 scripts/preflight-feeds.py
 
+      - name: Detect dead feeds
+        # Reads the consecutive_failures / last_changed state preflight just
+        # wrote to data/feed-cache.json and classifies dead (≥3 consecutive
+        # failures) + stale (>45d no new items) sources into
+        # signals/feed-health.md (committed) + data/dead-feeds.json. Pure
+        # observability — collect-candidates does the actual r.jina.ai recovery
+        # inline — so it never gates the run.
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        run: python3 scripts/detect-dead-feeds.py
+
       - name: Prefetch html_scrape via Jina Reader
         # For every html_scrape source listed as changed by preflight,
         # fetch https://r.jina.ai/<source-url> to get clean Markdown and
@@ -218,8 +229,12 @@ jobs:
         # LLM relevance pass over that small file instead of holding
         # companies.json + seen-urls.txt + raw feeds in context.
         # Stdlib-only. Not continue-on-error: a crash here must surface,
-        # since Layer 1 depends on its output.
+        # since Layer 1 depends on its output. JINA_API_KEY (optional) lifts
+        # the r.jina.ai fallback's rate limit; it fails open to keyless.
         if: steps.layers.outputs.run_l1 == 'true'
+        env:
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+          JINA_FALLBACK_BUDGET: "25"
         run: python3 scripts/collect-candidates.py
 
       - name: Layer 1 — data ingestion

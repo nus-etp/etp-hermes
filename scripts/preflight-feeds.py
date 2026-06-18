@@ -57,6 +57,7 @@ def check_url(url: str, cache_entry: dict[str, Any] | None) -> tuple[bool, dict[
             headers["If-Modified-Since"] = cache_entry["last_modified"]
 
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    prior_failures = (cache_entry or {}).get("consecutive_failures", 0)
     req = request.Request(url, headers=headers, method="GET")
 
     try:
@@ -76,6 +77,7 @@ def check_url(url: str, cache_entry: dict[str, Any] | None) -> tuple[bool, dict[
                 "body_sha256": new_hash,
                 "last_status": status,
                 "last_run": now,
+                "consecutive_failures": 0,  # reachable → reset the dead-feed streak
             }
             if changed:
                 entry["last_changed"] = now
@@ -87,16 +89,21 @@ def check_url(url: str, cache_entry: dict[str, Any] | None) -> tuple[bool, dict[
             entry = dict(cache_entry or {})
             entry["last_status"] = 304
             entry["last_run"] = now
+            entry["consecutive_failures"] = 0  # 304 = reachable, content unchanged
             return False, entry
+        # 4xx/5xx: the server answered but didn't serve the feed — count it.
         entry = dict(cache_entry or {})
         entry["last_status"] = e.code
+        entry["last_error"] = f"HTTP {e.code}"
         entry["last_run"] = now
+        entry["consecutive_failures"] = prior_failures + 1
         return True, entry
     except (error.URLError, TimeoutError, OSError) as e:
         entry = dict(cache_entry or {})
         entry["last_status"] = -1
         entry["last_error"] = str(e)[:200]
         entry["last_run"] = now
+        entry["consecutive_failures"] = prior_failures + 1
         return True, entry
 
 

@@ -200,11 +200,13 @@ def test_html_scrape_sources_always_changed_no_http(preflight, tmp_repo, monkeyp
 
 def test_url_error_marks_changed_so_agent_retries(preflight, tmp_repo, monkeypatch) -> None:
     feeds = [{"name": "Flaky", "type": "firehose", "url": "https://flaky.example/feed"}]
+    # Already failed twice before — this run makes it three.
+    prior_cache = {"https://flaky.example/feed": {"consecutive_failures": 2, "last_status": -1}}
     urlopen, _ = _make_urlopen(
         {"https://flaky.example/feed": [error.URLError("conn refused")]}
     )
     monkeypatch.setattr(preflight.request, "urlopen", urlopen)
-    _write_inputs(tmp_repo, feeds, [])
+    _write_inputs(tmp_repo, feeds, [], cache=prior_cache)
 
     assert preflight.main() == 0
     changed = json.loads((tmp_repo / "data" / "changed-sources.json").read_text())
@@ -212,6 +214,23 @@ def test_url_error_marks_changed_so_agent_retries(preflight, tmp_repo, monkeypat
     assert changed["firehose"] == ["https://flaky.example/feed"]
     assert cache["https://flaky.example/feed"]["last_status"] == -1
     assert "last_error" in cache["https://flaky.example/feed"]
+    # Dead-feed streak increments across runs.
+    assert cache["https://flaky.example/feed"]["consecutive_failures"] == 3
+
+
+def test_successful_fetch_resets_failure_streak(preflight, tmp_repo, monkeypatch) -> None:
+    feeds = [{"name": "Recovered", "type": "firehose", "url": "https://back.example/feed"}]
+    prior_cache = {"https://back.example/feed": {"consecutive_failures": 4, "last_status": -1}}
+    body = b"<rss><item>back online</item></rss>"
+    urlopen, _ = _make_urlopen(
+        {"https://back.example/feed": [{"body": body, "headers": {"ETag": '"new"'}}]}
+    )
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, feeds, [], cache=prior_cache)
+
+    assert preflight.main() == 0
+    cache = json.loads((tmp_repo / "data" / "feed-cache.json").read_text())
+    assert cache["https://back.example/feed"]["consecutive_failures"] == 0
 
 
 def test_per_company_sources_grouped_under_company_name(preflight, tmp_repo, monkeypatch) -> None:

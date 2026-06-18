@@ -339,3 +339,113 @@ def test_undated_items_pass_window(cc):
         fetcher=_fetcher({FEEDS[0]["url"]: feed}),
     )
     assert [c["link"] for c in out["candidates"]] == ["https://x.example/undated"]
+
+
+# --- r.jina.ai dead-feed fallback ---------------------------------------------
+
+
+def _reader(responses: dict[str, str], status: int = 200):
+    """Fake fetch_reader: url -> markdown. Missing url raises URLError."""
+
+    def read(url: str, api_key: str | None = None):
+        if url not in responses:
+            raise error.URLError(f"unexpected reader {url}")
+        return status, responses[url]
+
+    return read
+
+
+def _recent_iso_date(days_ago: int = 1) -> str:
+    return (datetime.now(timezone.utc) - timedelta(days=days_ago)).date().isoformat()
+
+
+def test_jina_fallback_recovers_unreachable_firehose(cc):
+    md = (
+        "# Tech Feed\n\n"
+        f"### [Acme Robotics raises $5M](https://j.example/win)\n\n{_recent_iso_date(1)}\n\n"
+        f"### [Totally unrelated thing](https://j.example/misc)\n\n{_recent_iso_date(1)}\n"
+    )
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),  # direct fetch fails → fallback kicks in
+        reader=_reader({FEEDS[0]["url"]: md}),
+    )
+    # Only the term-matching item survives firehose triage.
+    assert [c["link"] for c in out["candidates"]] == ["https://j.example/win"]
+    cand = out["candidates"][0]
+    assert cand["company"] == "Acme Robotics"
+    assert cand["source_kind"] == "firehose"
+    assert cand["via_jina_fallback"] is True
+    # Recovered, so NOT recorded as a failure.
+    assert out["fetch_failed"] == []
+    assert out["jina_recovered"] == [FEEDS[0]["url"]]
+    assert out["stats"]["jina_candidates"] == 1
+
+
+def test_jina_fallback_recovers_per_company_rss(cc):
+    url = "https://nova.example/feed"
+    md = f"## [Nova quarterly update](https://nova.example/q3)\n\n{_recent_iso_date(2)}\n"
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Nova Health": [url]}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),
+        reader=_reader({url: md}),
+    )
+    [cand] = out["candidates"]
+    assert cand["company"] == "Nova Health"  # per-company binds without triage
+    assert cand["source"] == "Nova Health · press"
+    assert cand["source_kind"] == "rss"
+    assert cand["via_jina_fallback"] is True
+    assert out["fetch_failed"] == []
+
+
+def test_jina_fallback_disabled_by_default_keeps_fetch_failed(cc):
+    # No reader passed → fallback off → identical to the legacy fail-open path.
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),
+    )
+    assert [f["url"] for f in out["fetch_failed"]] == [FEEDS[0]["url"]]
+    assert out["jina_recovered"] == []
+
+
+def test_jina_fallback_budget_cap_falls_through_to_fetch_failed(cc):
+    md = f"### [Acme Robotics wins](https://j.example/x)\n\n{_recent_iso_date(1)}\n"
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),
+        reader=_reader({FEEDS[0]["url"]: md}),
+        jina_budget=0,  # exhausted before the first call
+    )
+    assert out["candidates"] == []
+    assert [f["url"] for f in out["fetch_failed"]] == [FEEDS[0]["url"]]
+
+
+def test_jina_fallback_skips_github_org(cc):
+    # github_org isn't Markdown-recoverable → stays in fetch_failed even with a reader.
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Patsnap": ["https://github.com/patsnap.atom"]}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),
+        reader=_reader({"https://github.com/patsnap.atom": "### [r](https://x)\n2026-06-17\n"}),
+    )
+    assert [f["kind"] for f in out["fetch_failed"]] == ["github_org"]
+    assert out["jina_recovered"] == []
