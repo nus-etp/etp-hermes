@@ -198,7 +198,8 @@ export function CompanyDirectory({
         )}
       </aside>
 
-      <section className="min-w-0">
+      <section className="min-w-0" aria-label="Company directory">
+        <h2 className="sr-only">Companies</h2>
         <div className="mb-4 flex items-center justify-between gap-3">
           <p className="text-base-content-medium text-sm">
             <span className="text-base-content-default font-semibold">

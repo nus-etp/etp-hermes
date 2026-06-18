@@ -7,11 +7,7 @@ export function Header() {
   return (
     <header className="border-base-divider-subtle bg-base-canvas-default sticky top-0 z-30 border-b backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          className="group flex items-center gap-2.5"
-          aria-label="etp-hermes home"
-        >
+        <Link href="/" className="group flex items-center gap-2.5">
           <span
             aria-hidden
             className="flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-indigo-500 to-fuchsia-500 text-white shadow-sm transition-transform group-hover:scale-105"
