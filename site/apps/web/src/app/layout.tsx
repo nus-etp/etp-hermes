@@ -35,9 +35,18 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         )}
       >
         <ClientProviders>
+          <a
+            href="#main-content"
+            className="focus:bg-base-canvas-default focus:ring-interaction-main-default sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:shadow-lg focus:ring-2"
+          >
+            Skip to content
+          </a>
           <Header />
           <NuqsAdapter>
-            <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 py-8 sm:px-6 lg:px-8">
+            <main
+              id="main-content"
+              className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 py-8 sm:px-6 lg:px-8"
+            >
               {props.children}
             </main>
           </NuqsAdapter>

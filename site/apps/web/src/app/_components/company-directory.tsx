@@ -140,6 +140,7 @@ export function CompanyDirectory({
             type="search"
             value={q ?? ''}
             onChange={(e) => void setQ(e.target.value || null)}
+            aria-label="Search companies, aliases, descriptions"
             placeholder="Search companies, aliases, descriptions…"
             className="ring-base-divider-default placeholder:text-base-content-subtle focus:ring-interaction-main-default w-full rounded-lg bg-white py-2.5 pr-3 pl-9 text-sm shadow-sm ring-1 focus:ring-2 focus:outline-none"
           />
