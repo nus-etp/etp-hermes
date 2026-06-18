@@ -133,7 +133,7 @@ export function CompanyDirectory({
 
   return (
     <div className="grid gap-6 lg:grid-cols-[280px_minmax(0,1fr)]">
-      <aside className="space-y-5 lg:sticky lg:top-20 lg:self-start">
+      <aside className="space-y-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:self-start lg:overflow-y-auto lg:pr-2">
         <div className="relative">
           <BiSearch className="text-base-content-medium pointer-events-none absolute top-3 left-3 h-4 w-4" />
           <input
