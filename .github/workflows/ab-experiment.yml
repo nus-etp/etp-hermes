@@ -1,0 +1,161 @@
+name: ab-experiment
+
+# Self-seeding driver for the v1/v2 A/B significance test. Each run, while the
+# experiment is still "collecting" (fewer than the target discordant pairs
+# labeled), it pulls a WIDE candidate pool (all sources, deep window, no
+# seen-urls dedup), replays both arms' relevance policy over it
+# (scripts/ab_backfill.py), labels the disagreements with the blind judge
+# (ab_judge.py), and recomputes the McNemar test (ab_stats.py) — then commits
+# the accumulated state. Once the target is reached it self-disables (the gate
+# step short-circuits) and, the first time the result is significant, opens a
+# GitHub issue assigned to the maintainer. Fully hands-off: no local runs.
+#
+# Only active on the default branch after the v2 A/B arm is merged. Pure stdlib,
+# so no dependency install — just Python + the DeepSeek secret.
+
+on:
+  schedule:
+    - cron: '30 14 * * *'   # 14:30 UTC, ~90 min after the 13:00 hermes-sync
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Discordant-pair target (significance read once reached).'
+        required: false
+        default: '40'
+      limit:
+        description: 'Max candidates to replay per run (token cap).'
+        required: false
+        default: '400'
+
+concurrency:
+  group: ab-experiment
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+env:
+  AB_TARGET: ${{ github.event.inputs.target || '40' }}
+  AB_BACKFILL_LIMIT: ${{ github.event.inputs.limit || '400' }}
+  AB_ISSUE_ASSIGNEE: luarss   # GitHub login to assign the significance issue
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+
+      - name: Gate — run only while still collecting
+        id: gate
+        # Source of truth is n_discordant < target (robust to a changed target).
+        # No significance.json yet => collecting. Once the target is hit the
+        # experiment is concluded and every later run no-ops here.
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os, pathlib
+          target = int(os.environ["AB_TARGET"])
+          p = pathlib.Path("signals/ab/significance.json")
+          if p.exists():
+              d = json.loads(p.read_text())
+              collecting = d.get("n_discordant", 0) < target
+          else:
+              collecting = True
+          print(f"collecting={'true' if collecting else 'false'}")
+          PY
+          if [ -f signals/ab/significance.json ]; then cat signals/ab/significance.json; fi
+
+      - name: Build a wide candidate pool
+        # All sources, deep window, no seen-urls dedup — the A/B is a policy
+        # comparison, so we deliberately re-collect items both arms have seen.
+        if: steps.gate.outputs.collecting == 'true'
+        env:
+          COLLECT_ALL_SOURCES: '1'
+          COLLECT_FIREHOSE_DAYS: '90'
+          COLLECT_PER_COMPANY_DAYS: '120'
+          COLLECT_LEVER_DAYS: '120'
+          COLLECT_SEEN_FILE: /tmp/empty-seen.txt
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+        run: |
+          : > /tmp/empty-seen.txt
+          rm -f data/changed-sources.json
+          python3 scripts/collect-candidates.py
+
+      - name: Replay both arms over the pool
+        if: steps.gate.outputs.collecting == 'true'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python3 scripts/ab_backfill.py --limit "$AB_BACKFILL_LIMIT" --date "$(date -u +%F)"
+
+      - name: Label new disagreements (blind judge)
+        if: steps.gate.outputs.collecting == 'true'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python3 scripts/ab_judge.py
+
+      - name: Recompute significance
+        if: steps.gate.outputs.collecting == 'true'
+        run: python3 scripts/ab_stats.py --target "$AB_TARGET"
+
+      - name: Commit accumulated A/B state
+        if: steps.gate.outputs.collecting == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add signals/ab/disagreements.jsonl signals/ab/significance.json signals/ab/report.md signals/ab/metrics.jsonl 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "no A/B state changes to commit"
+            exit 0
+          fi
+          git commit -m "chore(ab): seed + score A/B significance ($(date -u +%F))"
+          # Rebase-and-retry on non-fast-forward (same pattern as hermes-sync) —
+          # the daily sync may also be committing signals/ around this time.
+          for attempt in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push attempt ${attempt} rejected; rebasing..." >&2
+            git pull --rebase || { git rebase --abort; exit 1; }
+          done
+          exit 1
+
+      - name: Open significance issue (assigned)
+        # Fires the first time the test concludes significant; idempotent —
+        # re-runs comment on the existing open issue instead of duplicating.
+        if: steps.gate.outputs.collecting == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          status=$(python3 -c "import json;print(json.load(open('signals/ab/significance.json'))['status'])")
+          if [ "$status" != "significant" ]; then
+            echo "status=$status; no issue"
+            exit 0
+          fi
+          python3 - <<'PY' > /tmp/ab-issue.md
+          import json
+          d = json.load(open("signals/ab/significance.json"))
+          better, worse = (d["winner"], "v1" if d["winner"] == "v2" else "v2")
+          print(f"The A/B significance test concluded: **arm `{better}` judges significantly "
+                f"better than `{worse}`**.")
+          print()
+          print(f"- Discordant pairs: **{d['n_discordant']}** (target {d['target']})")
+          print(f"- {better} right: **{d['v1_right'] if better=='v1' else d['v2_right']}** · "
+                f"{worse} right: **{d['v2_right'] if better=='v1' else d['v1_right']}**")
+          print(f"- Exact two-sided binomial (McNemar) p = **{d['p_value']}** (< 0.05)")
+          print()
+          print("Next step (per `AGENTS.md` decision rule): promote the winning arm's "
+                "judgment sections into the production prompts and retire the arm. "
+                "Detail and per-item labels are in `signals/ab/report.md` / "
+                "`signals/ab/disagreements.jsonl`.")
+          PY
+          title="A/B experiment: arm reached significance"
+          existing=$(gh issue list --state open --search "$title in:title" --json number --jq 'length')
+          if [ "$existing" = "0" ]; then
+            url=$(gh issue create --title "$title" --body-file /tmp/ab-issue.md)
+            num=$(echo "$url" | grep -oE '[0-9]+$')
+            gh issue edit "$num" --add-assignee "$AB_ISSUE_ASSIGNEE" || echo "could not assign $AB_ISSUE_ASSIGNEE"
+            echo "opened issue #$num"
+          else
+            num=$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number')
+            gh issue comment "$num" --body-file /tmp/ab-issue.md
+            echo "commented on existing issue #$num"
+          fi

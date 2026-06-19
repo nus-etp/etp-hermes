@@ -45,9 +45,23 @@ OUT_FILE = REPO_ROOT / "data" / "candidates.json"
 
 USER_AGENT = "etp-hermes-collect/1 (+https://github.com/luarss/etp-hermes)"
 TIMEOUT_SECS = 25
-FIREHOSE_WINDOW = timedelta(days=7)
-PER_COMPANY_WINDOW = timedelta(days=14)
-LEVER_WINDOW = timedelta(days=30)
+
+
+def _window_days(env_name: str, default: int) -> timedelta:
+    """Date-window length in days, overridable via env for the A/B backfill.
+
+    The daily pipeline uses the defaults; the seeding job (ab-experiment.yml)
+    widens these to pull a deeper historical pool in one batch.
+    """
+    try:
+        return timedelta(days=int(os.environ.get(env_name, "") or default))
+    except ValueError:
+        return timedelta(days=default)
+
+
+FIREHOSE_WINDOW = _window_days("COLLECT_FIREHOSE_DAYS", 7)
+PER_COMPANY_WINDOW = _window_days("COLLECT_PER_COMPANY_DAYS", 14)
+LEVER_WINDOW = _window_days("COLLECT_LEVER_DAYS", 30)
 
 # Jina Reader fallback: when a firehose/rss feed's direct fetch or parse fails
 # (host unreachable from the runner, but Jina can reach it), refetch it through
@@ -504,9 +518,19 @@ def collect(
 def main() -> int:
     companies = _load_json(COMPANIES_FILE)
     feeds = _load_json(FEEDS_FILE)
-    changed = _load_json(CHANGED_FILE) if CHANGED_FILE.exists() else None
+    # COLLECT_ALL_SOURCES=1 ignores the changed-sources whitelist (fetch every
+    # source) — used by the A/B backfill to build a wide pool. The daily path
+    # leaves it unset and honours the whitelist.
+    if os.environ.get("COLLECT_ALL_SOURCES") == "1":
+        changed = None
+    else:
+        changed = _load_json(CHANGED_FILE) if CHANGED_FILE.exists() else None
     jina = _load_json(JINA_ITEMS_FILE) if JINA_ITEMS_FILE.exists() else None
-    seen = load_seen(SEEN_FILE)
+    # COLLECT_SEEN_FILE overrides the dedup list. The backfill points this at an
+    # empty file so it re-collects items both arms already judged — the A/B is a
+    # policy comparison, not a freshness check.
+    seen_path = Path(os.environ["COLLECT_SEEN_FILE"]) if os.environ.get("COLLECT_SEEN_FILE") else SEEN_FILE
+    seen = load_seen(seen_path)
 
     try:
         jina_budget = int(os.environ.get("JINA_FALLBACK_BUDGET", str(DEFAULT_JINA_FALLBACK_BUDGET)))
