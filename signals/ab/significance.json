@@ -8,12 +8,12 @@
     "v2_items": 2,
     "window_days": 1
   },
-  "n_discordant": 4,
-  "p_value": 0.625,
+  "n_discordant": 11,
+  "p_value": 0.01172,
   "status": "collecting",
   "target": 40,
   "unlabeled": 0,
   "v1_right": 1,
-  "v2_right": 3,
+  "v2_right": 10,
   "winner": null
 }

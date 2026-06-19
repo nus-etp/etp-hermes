@@ -34,8 +34,8 @@ review them to decide which policy filters better.
 
 ## Significance (McNemar, blind-judge labels)
 
-- Discordant pairs labeled: **4** / 40 target (10%)
-- v1 right (v2 missed): **1** · v2 right (v1 let noise through): **3**
+- Discordant pairs labeled: **11** / 40 target (28%)
+- v1 right (v2 missed): **1** · v2 right (v1 let noise through): **10**
 - Unlabeled disagreements awaiting judge: 0
-- **Verdict: collecting** — need 36 more discordant pairs before reading the p-value (current p=0.6250, not yet powered).
+- **Verdict: collecting** — need 29 more discordant pairs before reading the p-value (current p=0.0117, not yet powered).
 - Volume guardrail: **ok** — v2 kept 1.0× v1's volume (2 vs 2 items over 1 days), within [0.5, 2.0].
