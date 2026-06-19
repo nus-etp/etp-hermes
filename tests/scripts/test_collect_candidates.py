@@ -14,6 +14,16 @@ def cc(scripts_module_loader):
     return scripts_module_loader("collect-candidates")
 
 
+def test_window_days_env_override(cc, monkeypatch) -> None:
+    # Default when unset, env override when set, default again on a bad value.
+    monkeypatch.delenv("COLLECT_FIREHOSE_DAYS", raising=False)
+    assert cc._window_days("COLLECT_FIREHOSE_DAYS", 7).days == 7
+    monkeypatch.setenv("COLLECT_FIREHOSE_DAYS", "90")
+    assert cc._window_days("COLLECT_FIREHOSE_DAYS", 7).days == 90
+    monkeypatch.setenv("COLLECT_FIREHOSE_DAYS", "not-a-number")
+    assert cc._window_days("COLLECT_FIREHOSE_DAYS", 7).days == 7
+
+
 def _rss(items: list[tuple[str, str, str, str]]) -> bytes:
     """items: (title, link, description, pubDate)."""
     body = "".join(

@@ -1,0 +1,163 @@
+#!/usr/bin/env python3
+"""Significance test for the v1/v2 A/B experiment (McNemar, fixed-N).
+
+Reads the blind-judge labels in ``signals/ab/disagreements.jsonl`` and asks one
+question: *do the arms make errors at different rates?*
+
+Every disagreement is a **discordant pair** by construction — one arm kept the
+item, the other dropped it, so exactly one arm matches the judge's verdict:
+
+  kept_by=v1, judge=keep -> v1 was right (v2 missed a real item)
+  kept_by=v1, judge=drop -> v2 was right (v1 let noise through)
+  kept_by=v2, judge=keep -> v2 was right
+  kept_by=v2, judge=drop -> v1 was right
+
+Let b = #(v1 right), c = #(v2 right). Under H0 (equal error rates) each
+discordant pair favors either arm with probability 0.5, so we run an **exact
+two-sided binomial test** (this is McNemar's test; with all pairs discordant it
+reduces to the sign test) on b vs c.
+
+**Fixed-N, test once.** We pre-register a target number of discordant pairs
+(default 40 — ~80% power to detect a 72/28 split at alpha=0.05) and only read
+the p-value as decisive once that target is reached. Before then the report
+shows progress only; peeking at an unpowered p-value inflates false positives.
+
+Writes ``signals/ab/significance.json`` (machine) and appends a "Significance"
+section to ``signals/ab/report.md`` (human). Pure stdlib.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import sys
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+ALPHA = 0.05
+SECTION_HEADER = "## Significance (McNemar, blind-judge labels)"
+
+
+def right_arm(row: dict) -> str | None:
+    """Which arm the judge's verdict vindicated, or None if unusable."""
+    kept_by, label = row.get("kept_by"), row.get("label")
+    if label not in {"keep", "drop"} or kept_by not in {"v1", "v2"}:
+        return None
+    # The arm that kept it is right iff the item should be kept.
+    if label == "keep":
+        return kept_by
+    return "v2" if kept_by == "v1" else "v1"
+
+
+def binom_two_sided(b: int, c: int) -> float | None:
+    """Exact two-sided binomial p-value for b vs c under p=0.5."""
+    n = b + c
+    if n == 0:
+        return None
+    k = min(b, c)
+    tail = sum(math.comb(n, i) for i in range(k + 1)) / (2**n)
+    return min(1.0, 2 * tail)
+
+
+def compute(rows: list[dict], target: int) -> dict:
+    labeled = [r for r in rows if right_arm(r) is not None]
+    b = sum(1 for r in labeled if right_arm(r) == "v1")  # v1 right / v2 wrong
+    c = sum(1 for r in labeled if right_arm(r) == "v2")  # v2 right / v1 wrong
+    n = b + c
+    p = binom_two_sided(b, c)
+    result = {
+        "n_discordant": n,
+        "v1_right": b,
+        "v2_right": c,
+        "p_value": None if p is None else round(p, 5),
+        "target": target,
+        "unlabeled": sum(1 for r in rows if r.get("label") is None),
+    }
+    if n < target:
+        result["status"] = "collecting"
+        result["winner"] = None
+    elif p is not None and p < ALPHA:
+        result["status"] = "significant"
+        result["winner"] = "v2" if c > b else "v1"
+    else:
+        result["status"] = "not_significant"
+        result["winner"] = None
+    return result
+
+
+def render_section(res: dict) -> str:
+    lines = [SECTION_HEADER, ""]
+    n, b, c, target = res["n_discordant"], res["v1_right"], res["v2_right"], res["target"]
+    pct = round(100 * n / target) if target else 0
+    lines += [
+        f"- Discordant pairs labeled: **{n}** / {target} target ({pct}%)",
+        f"- v1 right (v2 missed): **{b}** · v2 right (v1 let noise through): **{c}**",
+        f"- Unlabeled disagreements awaiting judge: {res['unlabeled']}",
+    ]
+    p = res["p_value"]
+    p_str = "n/a" if p is None else f"{p:.4f}"
+    if res["status"] == "collecting":
+        lines.append(
+            f"- **Verdict: collecting** — need {target - n} more discordant pairs before "
+            f"reading the p-value (current p={p_str}, not yet powered)."
+        )
+    elif res["status"] == "significant":
+        better = res["winner"]
+        worse = "v1" if better == "v2" else "v2"
+        lines.append(
+            f"- **Verdict: {better} judges significantly better than {worse}** "
+            f"(p={p_str} < {ALPHA}, n={n})."
+        )
+    else:
+        lines.append(
+            f"- **Verdict: no significant difference** (p={p_str} ≥ {ALPHA}, n={n}); "
+            f"the arms' error rates are statistically indistinguishable at this sample."
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def upsert_section(report_path: Path, section: str) -> None:
+    """Append the Significance section, replacing a prior one if present."""
+    body = report_path.read_text(encoding="utf-8") if report_path.exists() else ""
+    idx = body.find(SECTION_HEADER)
+    if idx != -1:
+        body = body[:idx].rstrip() + "\n"
+    else:
+        body = body.rstrip() + "\n" if body.strip() else ""
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(body + "\n" + section, encoding="utf-8")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--repo-root", default=str(REPO_ROOT))
+    parser.add_argument(
+        "--target", type=int, default=40, help="Pre-registered discordant-pair target (default 40)."
+    )
+    args = parser.parse_args()
+    repo = Path(args.repo_root).resolve()
+
+    path = repo / "signals" / "ab" / "disagreements.jsonl"
+    rows = (
+        [json.loads(l) for l in path.read_text(encoding="utf-8").splitlines() if l.strip()]
+        if path.exists()
+        else []
+    )
+    res = compute(rows, args.target)
+
+    out = repo / "signals" / "ab" / "significance.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(res, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    upsert_section(repo / "signals" / "ab" / "report.md", render_section(res))
+
+    print(
+        f"status={res['status']} n={res['n_discordant']}/{args.target} "
+        f"v1_right={res['v1_right']} v2_right={res['v2_right']} p={res['p_value']}"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
