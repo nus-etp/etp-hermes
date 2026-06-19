@@ -135,3 +135,69 @@ def test_main_idempotent_per_date_and_writes_report(mod, ab_repo: Path, monkeypa
     report = (ab_repo / "signals" / "ab" / "report.md").read_text()
     assert "Kept only by v1" in report and "Beta Bio" in report
     assert "Kept only by v2" in report and "Gamma AI" in report
+
+
+def test_parse_digest_captures_source(mod, ab_repo: Path) -> None:
+    p = ab_repo / "signals" / "updates" / "2026-06-10.md"
+    p.write_text(L1_V1)
+    items = mod.parse_digest(p)
+    assert items[0]["source"] == "TechCrunch"
+    assert items[1]["source"] == "e27"
+
+
+def test_build_disagreements_enriches_and_tags_arm(mod) -> None:
+    v1 = [
+        {"company": "Acme Robotics", "url": "https://t.co/acme", "headline": "A", "source": "TC"},
+        {"company": "Beta Bio", "url": "https://e27.co/beta", "headline": "B", "source": "e27"},
+    ]
+    v2 = [
+        {"company": "Acme Robotics", "url": "https://t.co/acme", "headline": "A", "source": "TC"},
+        {"company": "Gamma AI", "url": "https://vp.com/gamma", "headline": "G", "source": "VP"},
+    ]
+    index = {"https://e27.co/beta": {"description": "raised seed", "company_description": "SG bio"}}
+    rows = mod.build_disagreements("2026-06-10", v1, v2, index)
+    # The shared Acme URL is agreement; only Beta (v1) and Gamma (v2) disagree.
+    by_url = {r["url"]: r for r in rows}
+    assert set(by_url) == {"https://e27.co/beta", "https://vp.com/gamma"}
+    assert by_url["https://e27.co/beta"]["kept_by"] == "v1"
+    assert by_url["https://e27.co/beta"]["company_description"] == "SG bio"
+    assert by_url["https://vp.com/gamma"]["kept_by"] == "v2"
+    assert all(r["label"] is None and r["origin"] == "daily" for r in rows)
+
+
+def test_merge_disagreements_preserves_labels(mod, tmp_path: Path) -> None:
+    path = tmp_path / "disagreements.jsonl"
+    # A prior run labeled one item; re-running the same date must not clobber it.
+    labeled = {
+        "date": "2026-06-10", "url": "https://e27.co/beta", "company": "Beta Bio",
+        "headline": "B", "source": "e27", "description": "", "company_description": "",
+        "kept_by": "v1", "origin": "daily", "label": "keep",
+        "label_model": "deepseek-chat", "label_reason": "real funding",
+    }
+    mod.write_rows(path, [labeled])
+
+    fresh = mod.build_disagreements(
+        "2026-06-10",
+        [{"company": "Beta Bio", "url": "https://e27.co/beta", "headline": "B", "source": "e27"}],
+        [{"company": "Gamma AI", "url": "https://vp.com/gamma", "headline": "G", "source": "VP"}],
+        {},
+    )
+    mod.merge_disagreements(path, "2026-06-10", fresh)
+    rows = {r["url"]: r for r in mod.load_rows(path)}
+    assert rows["https://e27.co/beta"]["label"] == "keep"  # preserved
+    assert rows["https://vp.com/gamma"]["label"] is None   # newly added
+    assert len(rows) == 2
+
+
+def test_merge_disagreements_drops_stale_for_date(mod, tmp_path: Path) -> None:
+    path = tmp_path / "disagreements.jsonl"
+    old = mod.build_disagreements(
+        "2026-06-10",
+        [{"company": "Beta Bio", "url": "https://e27.co/beta", "headline": "B", "source": "e27"}],
+        [],
+        {},
+    )
+    mod.merge_disagreements(path, "2026-06-10", old)
+    # Re-run where Beta is no longer a disagreement: its row drops out.
+    mod.merge_disagreements(path, "2026-06-10", [])
+    assert mod.load_rows(path) == []

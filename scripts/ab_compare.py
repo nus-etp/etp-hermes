@@ -82,11 +82,14 @@ def parse_digest(path: Path) -> list[dict]:
         if im and company:
             url_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
             if url_line:
+                # `rest` is "<source> · <pubDate>"; keep the source for the judge.
+                source = im.group("rest").split(" · ")[0].strip()
                 items.append(
                     {
                         "company": company,
                         "headline": im.group("headline").strip(),
                         "url": normalize_url(url_line),
+                        "source": source,
                     }
                 )
     return items
@@ -121,6 +124,92 @@ def compare(v1: list[dict], v2: list[dict]) -> dict:
         "v2_only": len(u2 - u1),
         "jaccard": round(len(u1 & u2) / len(union), 3) if union else None,
     }
+
+
+def load_candidate_index(repo: Path) -> dict[str, dict]:
+    """Map normalized candidate URL -> {description, company_description}.
+
+    Read from ``data/candidates.json`` (present in the working tree on the day
+    of the run) so each disagreement carries the context the blind judge needs
+    to rule on it — the article's own blurb plus the *company* description that
+    settles same-name identity. Returns an empty index if the file is absent
+    (e.g. replaying an old date), in which case rows fall back to digest-only
+    fields.
+    """
+    path = repo / "data" / "candidates.json"
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return {}
+    companies = data.get("companies", {}) or {}
+    index: dict[str, dict] = {}
+    for cand in data.get("candidates", []) or []:
+        link = cand.get("link") or ""
+        if not link:
+            continue
+        index[normalize_url(link)] = {
+            "description": (cand.get("description") or "").strip(),
+            "company_description": (companies.get(cand.get("company", "")) or "").strip(),
+        }
+    return index
+
+
+def build_disagreements(date: str, v1: list[dict], v2: list[dict], index: dict[str, dict]) -> list[dict]:
+    """One row per item kept by exactly one arm — the discordant pairs to label.
+
+    ``label`` starts null; ``scripts/ab_judge.py`` fills it. Each row is
+    self-contained (carries the context for judging) so the test can run long
+    after ``candidates.json`` is regenerated away.
+    """
+    u1 = {it["url"] for it in v1}
+    u2 = {it["url"] for it in v2}
+    rows: list[dict] = []
+    for arm, items, other in (("v1", v1, u2), ("v2", v2, u1)):
+        for it in items:
+            if it["url"] in other:
+                continue  # in both arms = agreement, not a disagreement
+            ctx = index.get(it["url"], {})
+            rows.append(
+                {
+                    "date": date,
+                    "url": it["url"],
+                    "company": it["company"],
+                    "headline": it["headline"],
+                    "source": it.get("source", ""),
+                    "description": ctx.get("description", ""),
+                    "company_description": ctx.get("company_description", ""),
+                    "kept_by": arm,
+                    "origin": "daily",
+                    "label": None,
+                    "label_model": None,
+                    "label_reason": None,
+                }
+            )
+    return rows
+
+
+def merge_disagreements(path: Path, date: str, fresh: list[dict]) -> None:
+    """Append today's disagreements, preserving any labels already assigned.
+
+    Idempotent per date: existing rows for *other* dates are untouched; for the
+    given date, a fresh row reuses the prior row's label fields when the (date,
+    url) pair already exists, and rows that are no longer disagreements drop
+    out. Never clobbers a label the judge has already written.
+    """
+    existing = load_rows(path)
+    prior_for_date = {
+        r["url"]: r for r in existing if r.get("date") == date
+    }
+    merged = [r for r in existing if r.get("date") != date]
+    for row in fresh:
+        prev = prior_for_date.get(row["url"])
+        if prev and prev.get("label") is not None:
+            row = {**row, **{k: prev.get(k) for k in ("label", "label_model", "label_reason")}}
+        merged.append(row)
+    merged.sort(key=lambda r: (r["date"], r["url"]))
+    write_rows(path, merged)
 
 
 def load_rows(metrics_path: Path) -> list[dict]:
@@ -216,6 +305,14 @@ def main() -> int:
 
     report_path = repo / "signals" / "ab" / "report.md"
     report_path.write_text(render_report(rows, row, v1, v2), encoding="utf-8")
+
+    # Item-level discordant pairs for the significance test (ab_judge/ab_stats).
+    index = load_candidate_index(repo)
+    merge_disagreements(
+        repo / "signals" / "ab" / "disagreements.jsonl",
+        args.date,
+        build_disagreements(args.date, v1, v2, index),
+    )
 
     print(
         f"{args.date}: v1={row['v1_items']} v2={row['v2_items']} "

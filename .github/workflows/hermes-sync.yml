@@ -351,6 +351,27 @@ jobs:
         continue-on-error: true
         run: python3 scripts/ab_compare.py
 
+      - name: A/B blind judge — label today's disagreements
+        # Fills signals/ab/disagreements.jsonl labels: a neutral LLM judge,
+        # blind to which arm kept each item, rules keep/drop. That verdict is
+        # the ground truth the significance test scores the arms against.
+        # Fail-open: no key or a per-row error leaves the label null (retried
+        # next run), so the experiment never blocks the sync.
+        if: steps.layers.outputs.run_v2 == 'true' && (steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true')
+        continue-on-error: true
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python3 scripts/ab_judge.py
+
+      - name: A/B significance — McNemar over labeled disagreements
+        # Pure stdlib, no LLM. Exact two-sided binomial (McNemar) on the
+        # blind-judge labels; pre-registered target of 40 discordant pairs.
+        # Writes signals/ab/significance.json + a Significance section in
+        # report.md. Reads "collecting" until the target is reached.
+        if: steps.layers.outputs.run_v2 == 'true' && (steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true')
+        continue-on-error: true
+        run: python3 scripts/ab_stats.py
+
       - name: Gate synthesis on having signals
         id: l3gate
         if: steps.layers.outputs.run_l3 == 'true'
