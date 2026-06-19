@@ -22,6 +22,15 @@ reduces to the sign test) on b vs c.
 the p-value as decisive once that target is reached. Before then the report
 shows progress only; peeking at an unpowered p-value inflates false positives.
 
+**Volume guardrail.** The binomial test only rules on the *discordant subset*.
+A challenger can win it while silently keeping far too much (noise flood) or
+far too little (signal collapse) overall — and that regression never shows up
+in a kept-vs-dropped pair count. So alongside the win metric we read the daily
+``metrics.jsonl`` and flag when v2's keep-volume relative to v1 drifts outside a
+sanity band over a trailing window. It's a cheap proxy (we don't track
+tokens/ops); a ``warn`` means "investigate before trusting the verdict," not a
+hard stop.
+
 Writes ``signals/ab/significance.json`` (machine) and appends a "Significance"
 section to ``signals/ab/report.md`` (human). Pure stdlib.
 """
@@ -58,6 +67,44 @@ def binom_two_sided(b: int, c: int) -> float | None:
     k = min(b, c)
     tail = sum(math.comb(n, i) for i in range(k + 1)) / (2**n)
     return min(1.0, 2 * tail)
+
+
+def load_metrics(repo: Path) -> list[dict]:
+    """Daily compare rows written by ab_compare.py (v1_items / v2_items / ...)."""
+    path = repo / "signals" / "ab" / "metrics.jsonl"
+    if not path.exists():
+        return []
+    return [
+        json.loads(l) for l in path.read_text(encoding="utf-8").splitlines() if l.strip()
+    ]
+
+
+def compute_guardrail(metrics: list[dict], lo: float, hi: float, window: int) -> dict:
+    """Volume sanity check, independent of the win metric.
+
+    Sums v1/v2 kept items over the trailing ``window`` compared days (summing
+    before dividing so a light day can't swing the ratio) and compares
+    v2/v1 against ``[lo, hi]``. ``warn_low`` = v2 keeping too little (signal
+    collapse), ``warn_high`` = too much (noise flood).
+    """
+    rows = sorted((r for r in metrics if r.get("date")), key=lambda r: r["date"])
+    recent = rows[-window:] if window else rows
+    v1 = sum(int(r.get("v1_items", 0)) for r in recent)
+    v2 = sum(int(r.get("v2_items", 0)) for r in recent)
+    result = {"window_days": len(recent), "v1_items": v1, "v2_items": v2, "lo": lo, "hi": hi}
+    if v1 == 0:
+        result["ratio"] = None
+        result["status"] = "insufficient"
+        return result
+    ratio = v2 / v1
+    result["ratio"] = round(ratio, 3)
+    if ratio < lo:
+        result["status"] = "warn_low"
+    elif ratio > hi:
+        result["status"] = "warn_high"
+    else:
+        result["status"] = "ok"
+    return result
 
 
 def compute(rows: list[dict], target: int) -> dict:
@@ -114,6 +161,28 @@ def render_section(res: dict) -> str:
             f"- **Verdict: no significant difference** (p={p_str} ≥ {ALPHA}, n={n}); "
             f"the arms' error rates are statistically indistinguishable at this sample."
         )
+    g = res.get("guardrail")
+    if g:
+        if g["status"] == "insufficient":
+            lines.append(
+                f"- Volume guardrail: insufficient data "
+                f"(no v1 items in the last {g['window_days']} compared days)."
+            )
+        else:
+            band = f"[{g['lo']}, {g['hi']}]"
+            vol = f"{g['v2_items']} vs {g['v1_items']} items over {g['window_days']} days"
+            if g["status"] == "ok":
+                lines.append(
+                    f"- Volume guardrail: **ok** — v2 kept {g['ratio']}× v1's volume "
+                    f"({vol}), within {band}."
+                )
+            else:
+                why = "too little (signal collapse?)" if g["status"] == "warn_low" else "too much (noise flood?)"
+                lines.append(
+                    f"- ⚠️ **Volume guardrail: {g['status']}** — v2 kept {g['ratio']}× v1's "
+                    f"volume ({vol}), outside {band}; v2 is keeping {why} "
+                    f"Investigate before trusting the verdict."
+                )
     lines.append("")
     return "\n".join(lines)
 
@@ -136,6 +205,15 @@ def main() -> int:
     parser.add_argument(
         "--target", type=int, default=40, help="Pre-registered discordant-pair target (default 40)."
     )
+    parser.add_argument(
+        "--guardrail-lo", type=float, default=0.5, help="Min acceptable v2/v1 keep-volume ratio."
+    )
+    parser.add_argument(
+        "--guardrail-hi", type=float, default=2.0, help="Max acceptable v2/v1 keep-volume ratio."
+    )
+    parser.add_argument(
+        "--guardrail-window", type=int, default=14, help="Trailing days for the volume guardrail."
+    )
     args = parser.parse_args()
     repo = Path(args.repo_root).resolve()
 
@@ -146,6 +224,9 @@ def main() -> int:
         else []
     )
     res = compute(rows, args.target)
+    res["guardrail"] = compute_guardrail(
+        load_metrics(repo), args.guardrail_lo, args.guardrail_hi, args.guardrail_window
+    )
 
     out = repo / "signals" / "ab" / "significance.json"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -154,7 +235,8 @@ def main() -> int:
 
     print(
         f"status={res['status']} n={res['n_discordant']}/{args.target} "
-        f"v1_right={res['v1_right']} v2_right={res['v2_right']} p={res['p_value']}"
+        f"v1_right={res['v1_right']} v2_right={res['v2_right']} p={res['p_value']} "
+        f"guardrail={res['guardrail']['status']} ratio={res['guardrail']['ratio']}"
     )
     return 0
 
