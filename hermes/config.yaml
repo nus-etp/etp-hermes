@@ -20,6 +20,16 @@ terminal:
 memory:
   memory_enabled: true
   user_profile_enabled: true
+  # External memory provider (augments built-in MEMORY.md, never replaces it).
+  # "holographic" is the bundled, SQLite-backed store (plugins/memory/holographic)
+  # — no external service, no API key, NumPy-optional. Chosen because it's the only
+  # provider that fits this deployment: its DB lives at ~/.hermes/memory_store.db,
+  # so it rides the existing `hermes backup` zip + Actions-cache state roundtrip
+  # exactly like state.db (it's not in the backup strip list). The agent gets a
+  # `fact_store` tool for unbounded structured recall alongside the always-on,
+  # 2200-char MEMORY.md working set. Fails open: if the plugin can't load, the
+  # built-in memory keeps working unchanged. Set to "" to disable.
+  provider: holographic
 
 agent:
   max_turns: 90
@@ -81,6 +91,15 @@ plugins:
   enabled:
     - observability/langfuse
   disabled: []
+  # Config for the holographic memory provider (activated via memory.provider
+  # above). SQLite at the default ~/.hermes/memory_store.db so it persists via
+  # the backup-zip cache roundtrip. auto_extract stays false — let the agent
+  # decide what to store via the fact_store tool rather than auto-mining every
+  # turn (keeps writes intentional and the DB small in a daily cron).
+  hermes-memory-store:
+    db_path: $HERMES_HOME/memory_store.db
+    auto_extract: false
+    default_trust: 0.5
 
 skills:
   # Native skill deny-list (consumed by hermes_cli/skills_config.py). Hermes
