@@ -14,7 +14,7 @@ Selection:
      `signals/agent-queue-state.json`. Missing entries are treated as never
      queried and sort to the top. Ties break alphabetically (case-insensitive)
      for determinism.
-  3. Take the top N (CLI/env tunable, default 30).
+  3. Take the top N (CLI/env tunable, default 60).
 
 Pure stdlib. Idempotent. Safe to re-run.
 """
@@ -30,7 +30,7 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_QUEUE_SIZE = 30
+DEFAULT_QUEUE_SIZE = 60
 COVERED_WINDOW_DAYS = 7
 H2_RE = re.compile(r"^## (.+)$")
 RUN_AT_RE = re.compile(r"^## Run at\b", re.IGNORECASE)

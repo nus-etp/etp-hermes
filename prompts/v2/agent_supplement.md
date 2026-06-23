@@ -28,11 +28,11 @@ Run dynamic web/browser searches to plug gaps in this arm's Layer 1 digest. Two 
    - **Gap-fill** = `signals/agent-queue.txt`, in file order. Authoritative — do not expand. Empty if file missing.
    - **Deepen** = companies appearing as `## ` headings in `signals/v2/updates/<today>.md`. Empty if file absent.
 
-4. **Budget.** Hard cap **50 search/fetch ops total**. Process gap-fill queue in file order; stop when budget runs low. You may skip a company whose name is too generic to query confidently — skipping is fine, reordering is not.
+4. **Budget.** Hard cap **100 search/fetch ops total**. Process gap-fill queue in file order; stop when budget runs low. You may skip a company whose name is too generic to query confidently — skipping is fine, reordering is not.
 
 5. **For each company in cohort order (gap-fill first, then deepen):**
 
-   a. **Plan your own approach.** You have the company's `description`, `aliases`, and `identifiers` (homepage, LinkedIn, Crunchbase, UEN) and a shared 50-op budget. Decide what is most likely to surface genuine, recent news for *this* company: a web search, a fetch of the company site's news/blog/press index, a search scoped to a relevant trade publication or regulator, a query built from the founder's name — whatever you judge best. Use the description to disambiguate generic names. As a guideline, spend 1–2 ops per company; a third is fine when the first results look materially promising. The goal is real signal per op, not coverage theater.
+   a. **Plan your own approach.** You have the company's `description`, `aliases`, and `identifiers` (homepage, LinkedIn, Crunchbase, UEN) and a shared 100-op budget. Decide what is most likely to surface genuine, recent news for *this* company: a web search, a fetch of the company site's news/blog/press index, a search scoped to a relevant trade publication or regulator, a query built from the founder's name — whatever you judge best. Use the description to disambiguate generic names. As a guideline, spend 1–2 ops per company; a third is fine when the first results look materially promising. The goal is real signal per op, not coverage theater.
 
    b. For each result `(c, item)`:
       - Dedup key = resolved URL, stripping `utm_*`, `ref`, `source`, `gclid`, `fbclid` query params.
@@ -69,12 +69,12 @@ Run dynamic web/browser searches to plug gaps in this arm's Layer 1 digest. Two 
 
      Group items by company within each cohort. Use `c.name` (canonical) as the `###` heading. Omit a cohort section entirely if it has no kept items. If the file already exists from an earlier run today, append a new `## Run at <UTC time>` section at the bottom rather than overwriting — same convention as Layer 1.
 
-   - Final stdout: a single line `<N> agent items across <M> companies (<G> gap-fill, <D> deepen, <X> ops used / 50, <Y> dropped)`. Nothing else.
+   - Final stdout: a single line `<N> agent items across <M> companies (<G> gap-fill, <D> deepen, <X> ops used / 100, <Y> dropped)`. Nothing else.
 
 ## Constraints
 
 - Only write `signals/v2/agent/<UTC-date>.md` and append to `signals/v2/seen-urls.txt`. Do not modify any other file. In particular, never write to the production arm's paths (`signals/agent/`, `signals/seen-urls.txt`) and never modify `signals/agent-queue.txt` or its state file — the production pipeline owns the rotation.
 - Do not commit anything — the workflow handles git operations after you exit.
 - If a single search/fetch fails, log and continue — do not fail the whole run.
-- Hard stop at 50 ops. If you hit the cap mid-company, finish judging what you already retrieved, then stop and write what you have.
+- Hard stop at 100 ops. If you hit the cap mid-company, finish judging what you already retrieved, then stop and write what you have.
 - Do not fabricate items. If a search returns nothing or only obvious junk for a company, that's a valid outcome — record nothing for that company.

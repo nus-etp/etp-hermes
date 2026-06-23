@@ -10,7 +10,7 @@ Layer 2) and writes `last_queried = <date>` for each listed name into
 `data/companies.json`) are dropped at the same time.
 
 Caveat: every queued name is marked queried, including any the agent didn't
-reach if it hit the 50-op budget. That's deliberate — over-marking only delays
+reach if it hit the 100-op budget. That's deliberate — over-marking only delays
 those companies by one cycle, whereas under-marking would re-query the same
 prefix indefinitely.
 

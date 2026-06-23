@@ -47,7 +47,7 @@ Tune *judgment* by editing the prompts and per-company `description` strings (th
 
 ## v2 A/B arm
 
-A parallel experimental arm for Layers 1–2 tests "freed judgment": same candidate set, dedup discipline, gap-fill cohort, and 50-op budget as production, but the relevance pass is a goal statement + worked examples instead of enumerated drop-lists, and Layer 2 plans its own queries instead of using templates. Wiring:
+A parallel experimental arm for Layers 1–2 tests "freed judgment": same candidate set, dedup discipline, gap-fill cohort, and 100-op budget as production, but the relevance pass is a goal statement + worked examples instead of enumerated drop-lists, and Layer 2 plans its own queries instead of using templates. Wiring:
 
 - Prompts: `prompts/v2/{ingest,agent_supplement}.md` (kept structurally parallel to v1 for easy diffing — only the judgment sections differ). v2 ingest judges the same `data/candidates.json` the production arm's `scripts/collect-candidates.py` pre-step produces; v2 L2 reads `data/agent-companies-v2.json` from `scripts/slice_companies.py --layer agent-v2` (shared gap-fill queue + v2's own deepen cohort from `signals/v2/updates/`). Both dependencies fail open: a missing candidates file makes v2 L1 a no-op (`no candidates file`), and a missing slice makes the L2 prompt fall back to `data/companies.json`.
 - State isolation: v2 writes only `signals/v2/{updates,agent}/<date>.md` and appends `signals/v2/seen-urls.txt` (seeded from v1's file at arm creation so it didn't cold-start). It must never touch v1 paths; it *reads* the shared `signals/agent-queue.txt` so both arms work the same gap-fill cohort.
