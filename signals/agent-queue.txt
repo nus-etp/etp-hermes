@@ -1,30 +1,60 @@
-spacejot
-spotics
-Synectify
-TANNGENT
-TEREDO Analytics
-1N Robotics
-1UP! Sales AI
-Acoerela
-Active Silvers
-Addlly AI
-AdmitPath
-Agrolitik
-AidMi
-AiForAll Technologies
-AIPath
-AirCity
-Airgorithm
-AiRTS
-AiSee
-Ajentik AI
-Akar
-Akro
-AlgaeID
-Alluci Studio
-amble
-Anatics
-Anlight Optoelectronic Technology
-Anomaly Bio
-API-Rex
-Arch
+Patsnap
+Assemblr
+Assist Jkt
+Assist.id
+Aurelif
+TuSense
+AVA (Bright Sight)
+Bamboobon
+Belli AI
+BioActivX
+BioMetallica
+Blue House
+Carbonzeroed
+Careforwe
+CareSense
+Cell2Mix
+Cellivate Technologies
+Chain Technology Development (SG)
+ChemT Biotechnology
+Chongqing AngLian Automobile Technology
+Chongqing ChuangXingSanWei Technology
+Chongqing FengKai Technology
+Chongqing Hengyan Technology
+Chongqing JiYinZhiRui Technology
+Chongqing Liaoyuanzhijian Technology
+Chongqing Lixing Biomaterial
+Chongqing MaiKeTuo Technology
+Chongqing PanDaLa Technology
+Chongqing ShiWei Data Technology
+Chongqing ShuHeZhiTong Information Technology
+Chongqing ShuWeiZhiLian Technology
+Chongqing Unomove Technology
+Chongqing XinGuYuChuang Technology
+Chongqing XinZhiHongChuang Technology
+Chongqing XinZhuoYu Technology
+Chongqing YuZhiMiao Environmental Technology
+Ailytics
+Chongqing Zhihuishuoying Technology Development
+Circrete
+Cityscape Farm SG
+ClearCorp
+Codaveri
+ConcreteAI
+Cornucopia
+Craft Health
+CRecTech
+Curated Culture
+Cycfield
+CycloMeds
+DolphinLink
+DRAVAM
+Ecobinder
+EEA
+EGGOL
+Eigen Sensor
+EmaCare
+Emerge
+Emerstat
+ENBED
+enlipsium
