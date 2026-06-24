@@ -3,3 +3,5 @@ Hermes venv at ~/.hermes/hermes-agent/venv/ ships without pip. To install packag
 Per-company html_scrape pages (Webflow/Next.js, e.g. Craft Health, Aurora Food, SINGROW) are low-value: JS rendering yields nav-only text (Company, Resources, get-in-touch, cdn.prod.website-files.com image links), and most content is 2+ years old so the 14-day recency filter catches nothing. Jina `pre_extracted: true` does NOT guarantee a useful item — filter out short headlines (<15 chars), CDN image URLs, and nav text.
 §
 Best real-signal feeds: Carousell press RSS, Horizon newsroom (table-based), GitHub org feeds, Lever job postings.
+§
+Layer 3 synthesis merges agent/updates signals into per-company living briefs. Uses `data/touched-companies.json` slice, parses H2=company/H3=company from agent file, generates signal cards with URL fetch enrichment (20 budget, 15s timeout, skip-list hosts). Detects duplicate announcements via word-overlap matching. Silent-corrects Sector: bullet to match c.sector. Funding history re-rendered from c.funding_rounds each run. No-write check compares byte content before overwriting.

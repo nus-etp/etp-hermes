@@ -1,5 +1,5 @@
 # Finan — LIVING BRIEF
-_Last updated: 2026-06-11 17:02 UTC_
+_Last updated: 2026-06-24 15:45 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -13,10 +13,13 @@ Finan is a Singapore-headquartered SME operating system startup serving Vietname
 
 ## Funding history
 - **2026-05-13** — Pre-Series A, US$3.8M — Hong Leong Bank; OSK-SBI Venture Partners — [technode.global](https://technode.global/2026/05/13/finan-raises-3-8m-to-expand-vietnam-sme-management-platform-across-southeast-asia/)
-
 _Total disclosed: $3.8M._
 
 ## Recent signals
+- **May 11, 2026** — SoBanHang targets SME digitisation with new funding — [ibsintelligence.com](https://ibsintelligence.com/ibsi-news/sobanhang-targets-sme-digitisation-with-new-funding)
+- **May 12, 2026** — Vietnamese merchant app SoBanHang (Finan) raises $3.8M Pre-Series A — [backscoop.com](https://www.backscoop.com/newsletter-posts/vietnamese-market-app-sobanhang-raises-fresh-funds)
+  - Summary: Corroborates the existing coverage; no new facts.
+- **May 29, 2026** — Tech in Asia: SoBanHang serves 800k merchants, raises funding for AI-powered SME finance tools — [techinasia.com](https://www.techinasia.com/news/sobanhang-funding-pre-series-a)
 - **2026-05-12** — Vietnam Investment Review covers Finan/SoBanHang's pre-Series A round with additional context on Vietnam's digital compliance-driven SME adoption — [vir.com.vn](https://vir.com.vn/sobanhang-wraps-up-pre-series-a-funding-round-152647.html)
   - Summary: Corroborates the May 13, 2026 pre-Series A announcement from TechNode Global; no new facts.
 - **2026-05-13** — Finan raised US$3.8M in a pre-Series A round led by Hong Leong Bank, earmarked for scaling Finan One and expanding across Southeast Asia — [TechNode Global](https://technode.global/2026/05/13/finan-raises-3-8m-to-expand-vietnam-sme-management-platform-across-southeast-asia/)
