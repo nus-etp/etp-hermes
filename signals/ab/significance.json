@@ -6,7 +6,7 @@
     "status": "ok",
     "v1_items": 20,
     "v2_items": 23,
-    "window_days": 6
+    "window_days": 7
   },
   "n_discordant": 48,
   "p_value": 0.0293,
