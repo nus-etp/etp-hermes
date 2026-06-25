@@ -45,10 +45,24 @@ function sectionBody(md, heading) {
 }
 
 function parseBrief(md) {
-  const out = { sector: undefined, region: undefined, thesis: undefined, lastUpdated: undefined }
+  const out = { sector: undefined, region: undefined, thesis: undefined, lastUpdated: undefined, latestSignalDate: undefined }
 
   const m = md.match(/_Last updated:\s*([^_]+?)_/)
   if (m) out.lastUpdated = m[1].trim()
+
+  // Most recent dated signal in the brief (Recent + Older sections). Cards tag
+  // the company "Signal <date>"; the brief is authoritative for that date since
+  // not every signal lands in a signals/updates/ digest (e.g. agent-only finds).
+  for (const heading of ['Recent signals', 'Older signals']) {
+    const body = sectionBody(md, heading)
+    if (!body) continue
+    for (const line of body.split('\n')) {
+      const d = line.match(/^\s*-\s*\*\*(\d{4}-\d{2}-\d{2})\*\*/)
+      if (d && (!out.latestSignalDate || d[1] > out.latestSignalDate)) {
+        out.latestSignalDate = d[1]
+      }
+    }
+  }
 
   const thesisBody = sectionBody(md, 'Thesis')
   if (thesisBody) out.thesis = thesisBody.trim().split(/\n\s*\n/)[0].trim()
@@ -175,7 +189,9 @@ for (const c of companies) {
     fundingStages,
     latestFundingDate,
     latestFundingStage,
-    latestSignalDate: lsd,
+    // Prefer the brief's own latest signal date; fall back to the digest scan
+    // (covers companies with signals but no brief yet).
+    latestSignalDate: brief?.parsed.latestSignalDate ?? lsd,
     identifiers: c.identifiers ?? {},
     fundingRoundsCount: stagesRaw.length,
   })
