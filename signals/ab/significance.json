@@ -2,18 +2,18 @@
   "guardrail": {
     "hi": 2.0,
     "lo": 0.5,
-    "ratio": 1.15,
+    "ratio": 0.65,
     "status": "ok",
-    "v1_items": 20,
-    "v2_items": 23,
-    "window_days": 7
+    "v1_items": 40,
+    "v2_items": 26,
+    "window_days": 8
   },
-  "n_discordant": 48,
-  "p_value": 0.0293,
+  "n_discordant": 71,
+  "p_value": 0.00011,
   "status": "significant",
   "target": 40,
   "unlabeled": 0,
-  "v1_right": 16,
-  "v2_right": 32,
+  "v1_right": 19,
+  "v2_right": 52,
   "winner": "v2"
 }

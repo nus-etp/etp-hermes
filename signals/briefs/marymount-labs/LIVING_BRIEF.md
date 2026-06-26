@@ -1,5 +1,5 @@
 # Marymount Labs — LIVING BRIEF
-_Last updated: 2026-05-29 16:46 UTC_
+_Last updated: 2026-06-26 15:36 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -12,10 +12,15 @@ Marymount Labs is a Singapore digital-health startup building 'Broadcast', an AI
 - Key people: Zacchaeus Chok (co-founder, NUS Computing)
 
 ## Recent signals
+
+- **2026-06-26** — Marymount Labs — Turn Care Plans into Patient Action — [marymountlabs.com](https://www.marymountlabs.com)
+  - Summary: Broadcast AI-powered patient messaging; Trident goal-driven triage agents. Metrics: 1 in 5 seniors act within 24h, 46% assessment completion, 40%+ response rate. Clinically-validated conversational pathways with full audit trails.
 - **2026-05-29** — Marymount Labs was showcased at the NUH Innovation Hub grand opening alongside other NUS Medicine DATA portfolio startups. — [LinkedIn (NUS Medicine DATA)](https://www.linkedin.com/posts/nusmeddata_healthtech-startups-digitalhealth-activity-7450758713738465280-kPbP)
 
 ## Older signals
-_none_
+
+  _none_
+
 
 ## Open questions
 - What specific milestones or traction has Marymount Labs achieved since joining the NUS Medicine DATA accelerator?
