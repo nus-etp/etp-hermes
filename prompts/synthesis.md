@@ -44,7 +44,7 @@ Merge today's new signals into each touched company's living brief. Preserve pri
       - **Thesis**: 2–3 sentences derived from `c.description` and today's signals.
       - **Profile**: bullets from `c.description` (sector, region) plus `c.identifiers` (LinkedIn, Crunchbase, UEN, website). Include only fields actually present — don't invent. For `Sector:`, follow the "Sector tagging" rules below.
       - **Funding history**: render from `c.funding_rounds` (see "Funding history rendering rules"). Omit if empty/absent.
-      - **Recent signals**: today's `NEW_SIGNALS[c.name]` as cards, most recent first. Top-level bullet: `- **<UTC-date>** — <one-line synthesis, your own words> — [<source-short>](<url>)` (NOT the headline verbatim). Optionally followed by indented sub-bullets enriched from the fetched body (see "URL fetching" and "Signal card extraction" below). If fetch skipped/failed, emit top-level bullet only.
+      - **Recent signals**: today's `NEW_SIGNALS[c.name]` as cards, most recent first. Top-level bullet: `- **<signal-date>** — <one-line synthesis, your own words> — [<source-short>](<url>)` (NOT the headline verbatim). `<signal-date>` is the item's publication date and **must** be strict ISO `YYYY-MM-DD` (or the literal `date unknown` if no date is available) — never a month name or `Month D, YYYY` form (write `2026-05-11`, never `May 11, 2026` or `April 2026`; if only month/year is known, use the first of the month, e.g. `2026-04-01`). Optionally followed by indented sub-bullets enriched from the fetched body (see "URL fetching" and "Signal card extraction" below). If fetch skipped/failed, emit top-level bullet only.
       - **Older signals**: `_none_`.
       - **Open questions**: 1–3 questions today's signals raise but don't answer. Skip if none.
 
@@ -103,7 +103,7 @@ _none_
 - <question>
 ```
 
-Omit Profile bullets you don't have. Omit `Funding history` if `c.funding_rounds` is empty/absent. Render empty `Older signals` as `_none_`, empty `Open questions` as `_none open_`. Omit any sub-bullet with no evidence — no empty placeholders. If URL was not fetched or fetch failed, emit top-level bullet only.
+Omit Profile bullets you don't have. Omit `Funding history` if `c.funding_rounds` is empty/absent. Render empty `Older signals` as `_none_`, empty `Open questions` as `_none open_`. Omit any sub-bullet with no evidence — no empty placeholders. If URL was not fetched or fetch failed, emit top-level bullet only. Every `## Recent signals` and `## Older signals` top-level bullet **must** open with `- **<YYYY-MM-DD>** — ` (strict ISO date) or `- **date unknown** — `; no other date form is valid (`- **April 2026** — ` and `- **May 11, 2026** — ` both fail the brief template check).
 
 ## Funding history rendering rules
 

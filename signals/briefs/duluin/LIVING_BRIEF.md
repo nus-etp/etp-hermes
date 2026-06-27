@@ -11,7 +11,7 @@ Duluin is an Indonesian Earned Wage Access (EWA) fintech startup, resident at BL
 - Key people: Isa Nuruddin Ahmad (CEO)
 
 ## Recent signals
-- **April 2026** — Duluin named Startup of the Year at ASEAN Startup Innovation Weekend 2026, Phnom Penh — [aseanstartupinnovationweekend.com](https://aseanstartupinnovationweekend.com/awards-2026)
+- **2026-04-01** — Duluin named Startup of the Year at ASEAN Startup Innovation Weekend 2026, Phnom Penh — [aseanstartupinnovationweekend.com](https://aseanstartupinnovationweekend.com/awards-2026)
 - **2026-05-26** — Duluin won Startup of the Year at Startup Innovation Weekend 2026 (Phnom Penh) and secured a direct invitation to TechFest Vietnam 2026, validating its EWA model's regional appeal — [The Leap Indonesia](https://theleap.id/detail/4087/earned-wage-access-startup-duluin-secures-regional-spotlight-through-techfest)
   - Summary: Duluin was named Startup of the Year at the three-day Startup Innovation Weekend 2026 in Phnom Penh, competing against 30 startups from more than 10 Asian countries. The prize includes a direct invitation to TechFest Vietnam 2026, offering market-access and investor-exposure opportunities for the Indonesian EWA platform.
   - Numbers: 30 startups from 10+ Asian countries
