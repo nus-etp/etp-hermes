@@ -1,5 +1,5 @@
 # Qarbotech — LIVING BRIEF
-_Last updated: 2026-06-15 01:22 UTC_
+_Last updated: 2026-06-27 14:40 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,11 @@ Qarbotech is a Malaysian agritech startup commercialising a patented nanocarbon-
 _Total disclosed: $2.2M._
 
 ## Recent signals
+- **2026-06-27** — Corroborating coverage of Qarbotech's SusHi Tech Challenge 2026 grand prize win; adds detail on the selection process (820 entries, 7 finalists) and a ¥1M winner's cheque presented by Tokyo Governor Yuriko Koike — [carbonwire.org](https://carbonwire.org/announcements/climate-focused-agritech-startup-qarbotech-takes-top-prize-at-sushi-tech-challenge-2026)
+  - Summary: Carbonwire.org reports Qarbotech was crowned grand winner of the SusHi Tech Challenge 2026, selected from 820 entries as one of seven finalists after multiple rounds of pitching and technical vetting. Tokyo Governor Yuriko Koike presented the prize at the summit's final day. The article frames the win as validation of the company's readiness to scale and accelerate expansion into Asian markets where food self-sufficiency is a priority.
+  - People: Chor Chee Hoe (CEO and Co-Founder)
+  - Counterparties: Tokyo Governor Yuriko Koike (award presenter)
+  - Numbers: 820 entries; 7 finalists; ¥1 million winner's cheque
 - **2026-05-31** — Won the SusHi Tech Global Pitch Challenge 2026 Grand Prize (¥10M, ~US$62K) in Tokyo, beating over 800 applicants from 60+ countries; prize awarded by Tokyo Governor Yuriko Koike — [Malaysia SME](https://www.malaysiasme.com.my/qarbotech-wins-grand-prize-at-sushi-tech-challenge-2026-elevating-southeast-asian-agritech-on-the-global-stage/)
   - Summary: Qarbotech's nanocarbon-based photosynthesis-enhancement technology earned top honours at the SusHi Tech 2026 pitch competition in Tokyo. The win validates the company's approach of optimising plants' natural light-energy utilisation without pushing crops beyond biological limits. The company plans partner-led distribution through seed manufacturers and agricultural input distributors.
   - People: Chor Chee Hoe (CEO and Co-Founder)
