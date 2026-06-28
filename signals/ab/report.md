@@ -17,21 +17,32 @@ review them to decide which policy filters better.
 | 2026-06-25 | 0 | 0 | 0 | 0 | 0 | — | 0 | 0 |
 | 2026-06-26 | 20 | 3 | 0 | 20 | 3 | 0.000 | 10 | 1 |
 | 2026-06-27 | 1 | 1 | 1 | 0 | 0 | 1.000 | 1 | 1 |
+| 2026-06-28 | 2 | 6 | 2 | 0 | 4 | 0.333 | 1 | 2 |
 
-## Latest disagreements — 2026-06-27
+## Latest disagreements — 2026-06-28
 
 ## Kept only by v1 (candidate v2 misses) (0)
 
 _none_
 
-## Kept only by v2 (candidate v1 misses) (0)
+## Kept only by v2 (candidate v1 misses) (4)
 
-_none_
+### Carousell
+- **Carousell Autos launches Singapore's first AI-powered car finder**
+  https://press.carousell.com/2026/06/18/carousell-autos-launches-singapores-first-ai-powered-car-finder
+
+### Patsnap
+- **Patsnap Launches Inaugural Life Sciences Customer Advisory Board**
+  https://www.patsnap.com/resources/blog/press_release/patsnap-launches-inaugural-life-sciences-customer-advisory-board
+- **Patsnap Expands Hiro AI Conversational Search**
+  https://www.patsnap.com/resources/blog/press_release/patsnap-expands-hiro-ai-conversational-search-2
+- **Patsnap Expands Hiro AI Conversational Search**
+  https://www.patsnap.com/resources/blog/press_release/patsnap-expands-hiro-ai-conversational-search
 
 ## Significance (McNemar, blind-judge labels)
 
-- Discordant pairs labeled: **71** / 40 target (178%)
-- v1 right (v2 missed): **19** · v2 right (v1 let noise through): **52**
+- Discordant pairs labeled: **75** / 40 target (188%)
+- v1 right (v2 missed): **22** · v2 right (v1 let noise through): **53**
 - Unlabeled disagreements awaiting judge: 0
-- **Verdict: v2 judges significantly better than v1** (p=0.0001 < 0.05, n=71).
-- Volume guardrail: **ok** — v2 kept 0.659× v1's volume (27 vs 41 items over 9 days), within [0.5, 2.0].
+- **Verdict: v2 judges significantly better than v1** (p=0.0004 < 0.05, n=75).
+- Volume guardrail: **ok** — v2 kept 0.767× v1's volume (33 vs 43 items over 10 days), within [0.5, 2.0].

@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-06-16 18:02 UTC_
+_Last updated: 2026-06-28 14:55 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -11,15 +11,23 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/patsnap), [Crunchbase](https://www.crunchbase.com/organization/patsnap)
 
 ## Funding history
-- **2014** — Series A, $3.6M — Vertex Ventures — [e27.co](https://e27.co/patsnap-raises-us3-6m-funding-led-by-vertex-venture-holdings-20140901/)
-- **2015-10-20** — Series B, $10M — Summit Partners; Vertex Ventures — [summitpartners.com](https://www.summitpartners.com/news/patsnap-secures-10-million-in-growth-financing-from-summit-partners)
-- **2016-11-21** — Series C, undisclosed — Sequoia Capital China; Shunwei Capital, Qualgro — [prnewswire.com](https://www.prnewswire.com/news-releases/innovation-intelligence-platform-patsnap-closes-series-c-funding-led-by-sequoia-capital-china-300366521.html)
-- **2018-06-14** — Series D, $38M — Sequoia Capital China, Shunwei Capital; Qualgro — [techcrunch.com](https://techcrunch.com/2018/06/14/patsnap-picks-up-38m/)
-- **2021-03-16** — Series E, $300M — SoftBank Vision Fund 2, Tencent; Sequoia Capital China, CICC Capital, Vertex Growth — [tech.eu](https://tech.eu/2021/03/16/singapore-london-based-patsnap-snaps-up-300-million-in-series-e-funding/)
+- **2014** — Series A, $3.6M — Vertex Ventures; Vertex Ventures — [e27.co](https://e27.co/patsnap-raises-us3-6m-funding-led-by-vertex-venture-holdings-20140901/)
+- **2015-10-20** — Series B, $10M — Summit Partners; Summit Partners, Vertex Ventures — [summitpartners.com](https://www.summitpartners.com/news/patsnap-secures-10-million-in-growth-financing-from-summit-partners)
+- **2016-11-21** — Series C, undisclosed — Sequoia Capital China; Sequoia Capital China, Shunwei Capital, Qualgro — [prnewswire.com](https://www.prnewswire.com/news-releases/innovation-intelligence-platform-patsnap-closes-series-c-funding-led-by-sequoia-capital-china-300366521.html)
+- **2018-06-14** — Series D, $38M — Sequoia Capital China, Shunwei Capital; Sequoia Capital China, Shunwei Capital, Qualgro — [techcrunch.com](https://techcrunch.com/2018/06/14/patsnap-picks-up-38m/)
+- **2021-03-16** — Series E, $300M — SoftBank Vision Fund 2, Tencent; SoftBank Vision Fund 2, Tencent, Sequoia Capital China, CICC Capital, Vertex Growth — [tech.eu](https://tech.eu/2021/03/16/singapore-london-based-patsnap-snaps-up-300-million-in-series-e-funding/)
 
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-06-27** — Hiring a Forward Deployed Engineer for Japan-facing enterprise AI solutions, configuring AI Agent workflows for IP, R&D, and innovation customers — [Patsnap · careers](https://jobs.lever.co/patsnap/e80dcb4a-0644-4883-95f3-8e6a0c01e846)
+  - Summary: Patsnap is hiring a Forward Deployed Engineer (FDE) to work directly with enterprise customers in Japan, configuring and deploying AI Agent workflows across IP, R&D, innovation, and strategic intelligence use cases. The role involves building prototypes, running proof-of-concept projects, and converting customer-specific requirements into reusable Skills or product enhancements. Business-level Japanese is required, reflecting a dedicated customer-facing presence for the Japan market.
+  - People: Forward Deployed Engineer (Japanese-speaking)
+  - Counterparties: Enterprise customers in Japan (IP, R&D, innovation teams)
+- **2026-06-27** — Hiring a Senior NLP/ML Engineer for the Material vertical to own information-extraction accuracy from patents and scientific literature, building hybrid NER-LLM pipelines — [Patsnap · careers](https://jobs.lever.co/patsnap/03897572-c3e3-4cf8-84bb-4cbf4531607f)
+  - Summary: Patsnap is hiring a Senior NLP/ML Engineer focused on the Material vertical to own the accuracy of its information-extraction pipeline. The role involves extracting material properties and quantitative measurements from long, complex documents including patents and scientific literature. The engineer will build hybrid systems combining NER, rule-based methods, and LLMs, and define evaluation methodology and quality metrics with domain experts.
+  - Numbers: 4+ years hands-on NLP/ML engineering; Master or Bachelor degree
+  - Quote: "We're hiring a Senior NLP Engineer to own the accuracy of our information-extraction pipeline. You'll work on hard problems extracting material properties and quantitative measurements from long, complex documents." — Patsnap job posting
 - **2026-06-15** — PatSnap targeting $300-400M at $2B+ valuation for dual HK/Singapore IPO, positioning as an AI play for HKEX investors — [Asia Tech Review](https://www.asiatechreview.com/p/patsnap-ipo-could-lead-southeast)
   - Summary: Asia Tech Review reports that PatSnap is targeting to raise $300-400M at a valuation of over $2 billion for its dual HK/Singapore IPO, positioning as an AI company for Hong Kong investors. The 19-year-old company operates a database of 120M+ patents with over 15,000 customers.
   - People: Ray Chohan (co-founder)
@@ -78,10 +86,10 @@ _Total disclosed: $351.6M._
   - Numbers: Base $56,650 CAD/year; OTE ~$94,166 CAD/year; 12,000+ R&D and IP customers globally; 5 weeks paid vacation
   - Quote: "You will be the first point of contact for prospective customers, introducing them to Patsnap's innovation intelligence platform... identify, engage, and qualify prospects, building meaningful early-stage relationships that convert into long-term customers." — Patsnap job posting
 - **2026-05-27** — Hiring Semiconductor Reverse Engineering Specialist / AI Domain Expert for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/5edb10a2-12ff-44db-b1c8-9488e8e8c361)
-- **2026-05-27** — Hiring Semiconductor Materials Specialist for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/e61a7dab-2174-4b1f-a9f3-8537e3f4ba76)
-- **2026-05-15** — New Account Executive posting for Connected Innovation Solutions Sales — [Patsnap · careers](https://jobs.lever.co/patsnap/20d8ae88-d16c-4c80-aeb1-d68daa6fbfdf)
 
 ## Older signals
+- **2026-05-27** — Hiring Semiconductor Materials Specialist for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/e61a7dab-2174-4b1f-a9f3-8537e3f4ba76)
+- **2026-05-15** — New Account Executive posting for Connected Innovation Solutions Sales — [Patsnap · careers](https://jobs.lever.co/patsnap/20d8ae88-d16c-4c80-aeb1-d68daa6fbfdf)
 - **2026-05-13** — Strategic partnership with CAS (Chemical Abstracts Service) to combine CAS's scientific content database with Patsnap's AI-powered innovation analytics platform — [Devdiscourse](https://www.devdiscourse.com/article/agency-wire/930997-cas-and-patsnap-forge-strategic-partnership-that-unites-market-leading-scientific-content-and-ai-powered-technology-to-accelerate-global-innovation)
 - **2026-05-12** — Hiring Lead / Staff Engineer for AI Agent Platform (Search & Algorithm) — [Patsnap](https://jobs.lever.co/patsnap/3b8e49d4-dc8b-485e-9b46-415b155969e3)
 - **2026-05-12** — Hiring Account Executive for Life Sciences Sales — [Patsnap](https://jobs.lever.co/patsnap/91674214-6d6c-41c2-b743-f40327fe134c)
@@ -106,3 +114,4 @@ _Total disclosed: $351.6M._
 - What is the commercial structure of the CAS-Patsnap partnership — is CAS data being integrated into Patsnap's platform, resold as a standalone dataset, or something else?
 - Does the CAS partnership signal a strategic expansion beyond patent/IP analytics into the broader scientific and R&D content analytics market?
 - What is the "Connected Innovation Solutions" vertical and how does it relate to Patsnap's core IP analytics and life sciences verticals?
+
