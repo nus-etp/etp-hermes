@@ -9,14 +9,14 @@ Stay strictly within Layer 2: only write under `signals/agent/` and append to `s
 
 ## Task
 
-Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest. Same drop-rule discipline. Two cohorts, in priority order:
+Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest. The search strategy is yours to plan, not prescribed. Two cohorts, in priority order:
 
 1. **Gap-fill** — companies with zero kept items across the last 7 UTC days of `signals/updates/*.md`. Otherwise invisible today.
 2. **Deepen** — companies in today's `signals/updates/<today>.md`. Look for corroboration, valuation/investor context, follow-ons, company-site announcements.
 
 ## Inputs
 
-- `data/agent-companies.json` — your cohort's slice of the watchlist (`{name, aliases?, description, sources?, identifiers?}`), pre-computed by `scripts/slice_companies.py` from the gap-fill queue plus today's deepen companies. `description` is used for disambiguation and the relevance judgment. `identifiers` (homepage, LinkedIn, Crunchbase, UEN) — use for targeted queries, don't write. Fall back to `data/companies.json` only if the slice file is missing.
+- `data/agent-companies.json` — your cohort's slice of the watchlist (`{name, aliases?, description, sources?, identifiers?}`), pre-computed by `scripts/slice_companies.py` from the gap-fill queue plus today's deepen companies. `description` is authoritative for identity and disambiguation. `identifiers` (homepage, LinkedIn, Crunchbase, UEN) — use for targeted lookups, don't write. Fall back to `data/companies.json` only if the slice file is missing.
 - `signals/updates/*.md` — Layer 1 outputs. Today's may be absent if Layer 1 found nothing.
 - `signals/seen-urls.txt` — shared dedup state `SEEN`. Drop any URL already in it. Do **not** read this file into context; check membership per-URL with `grep -Fxq '<url>' signals/seen-urls.txt`.
 
@@ -34,20 +34,13 @@ Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest.
 
 5. **For each company in cohort order (gap-fill first, then deepen):**
 
-   a. Form 1–2 targeted queries. Examples:
-      - Gap-fill: `"<name>" Singapore site:linkedin.com OR site:vulcanpost.com`, last 7 days.
-      - Gap-fill: fetch `identifiers.website`'s `/news`, `/press`, or `/blog` index.
-      - Deepen: `"<name>" funding OR raised OR partnership`, past 30 days; or competitor/sector context for the event Layer 1 surfaced.
-      - Use `c.description` to disambiguate generic names ("deep tech", "battery", "quantum").
+   a. **Plan your own approach.** You have the company's `description`, `aliases`, and `identifiers` (homepage, LinkedIn, Crunchbase, UEN) and a shared 100-op budget. Decide what is most likely to surface genuine, recent news for *this* company: a web search, a fetch of the company site's news/blog/press index, a search scoped to a relevant trade publication or regulator, a query built from the founder's name — whatever you judge best. Use the description to disambiguate generic names. As a guideline, spend 1–2 ops per company; a third is fine when the first results look materially promising. The goal is real signal per op, not coverage theater.
 
    b. For each result `(c, item)`:
-      - Dedup key = resolved URL, stripping `utm_*`, `ref`, `gclid`, `fbclid`.
+      - Dedup key = resolved URL, stripping `utm_*`, `ref`, `source`, `gclid`, `fbclid` query params.
       - If `grep -Fxq '<key>' signals/seen-urls.txt` matches, drop silently.
-      - Else judge against `c.description` (same rules as Layer 1):
-        - **Drop**: ticker-aggregator on same-name public ticker; same-name different-entity; passing-mention listicle; generic SEO; >60 days old for gap-fill / >14 days for deepen.
-        - **Drop**: low-trust spam (content farms, AI-generated PR without attribution). Prefer company site, trade press, regulator filings, recognized investors.
-        - **Keep**: genuinely and primarily about the watchlisted company.
-      - Bias: gap-fill **keep on margin** (invisible otherwise); deepen **drop on margin** (only material new context).
+      - Else judge against `c.description`: *would this item teach a reader tracking `c` something new and true about `c`?* Keep only items genuinely and primarily about the watchlisted company, from sources you'd trust to be factual (company site, trade press, regulator filings, recognized investors — not content farms, not unattributed AI-generated PR, not aggregator restatements of a same-name ticker). Freshness windows: drop items older than 60 days for gap-fill, 14 days for deepen.
+      - Bias: gap-fill **keep on margin** (the company is invisible otherwise); deepen **drop on margin** (only material new context).
 
    c. Append every key seen this turn — kept or dropped — to `signals/seen-urls.txt`.
 

@@ -148,24 +148,16 @@ def test_idempotent_second_run_drops_nothing(scripts_module_loader, tmp_repo: Pa
     assert seen.read_text().strip().splitlines() == ["https://acme.example/sponsored"]
 
 
-def test_seen_urls_routing_per_arm(scripts_module_loader, tmp_repo: Path) -> None:
+def test_seen_urls_file_is_production(scripts_module_loader, tmp_repo: Path) -> None:
     mod = scripts_module_loader("filter_exclusions")
-    v1_path = tmp_repo / "signals" / "updates" / "2026-06-10.md"
-    v2_path = tmp_repo / "signals" / "v2" / "agent" / "2026-06-10.md"
-    assert mod.seen_urls_for(v1_path, tmp_repo) == tmp_repo / "signals" / "seen-urls.txt"
-    assert (
-        mod.seen_urls_for(v2_path, tmp_repo)
-        == tmp_repo / "signals" / "v2" / "seen-urls.txt"
-    )
+    assert mod.seen_urls_file(tmp_repo) == tmp_repo / "signals" / "seen-urls.txt"
 
 
-def test_default_targets_include_v2_arm(scripts_module_loader, tmp_repo: Path) -> None:
+def test_default_targets(scripts_module_loader, tmp_repo: Path) -> None:
     mod = scripts_module_loader("filter_exclusions")
     targets = mod.default_targets(tmp_repo, "2026-06-10")
     rels = [str(t.relative_to(tmp_repo)) for t in targets]
     assert rels == [
         "signals/updates/2026-06-10.md",
         "signals/agent/2026-06-10.md",
-        "signals/v2/updates/2026-06-10.md",
-        "signals/v2/agent/2026-06-10.md",
     ]

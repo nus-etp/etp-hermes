@@ -45,26 +45,22 @@ If `data/candidates.json` is missing, write nothing; final stdout: `no candidate
    - For each entry in `fetch_failed` with a `company`: retry the fetch once. `rss` → parse RSS/Atom, items within 14 days, dedup key = item link. `lever_jobs` → JSON postings within 30 days, dedup key = `lever://<slug>/<id>`, headline `<title> — <team>`. `github_org` → Atom, dedup key = entry id, skip bot/chore events. Firehose entries (`kind: "firehose"`) are lower-value: retry once, substring-match title+description against the names in `companies`, skip on any error. Always `grep -Fxq` the dedup key against `signals/seen-urls.txt` before adding.
    - If a fetch fails again, log and continue — do not fail the run.
 
-2. **Relevance pass.** For each candidate (from the file + step 1), judge: *is this item clearly and primarily about its `company` per `companies[company]`'s description?* Use only `headline`, `description`, `source` — do not fetch the `link`. Default to `drop` when uncertain.
+2. **Relevance pass.** For each candidate (from the file + step 1), judge: *is this article clearly and primarily about its `company` as described in `companies[company]`?* Use only `headline`, `description`, `source` — do not fetch the `link`.
 
-   **Exception**: candidates with `pre_extracted: true` skip the judgment — accept as kept. They came from a curated per-company page already cleaned by Jina Reader.
+   You are the editorial filter for a private-market intelligence digest. The reader tracks the specific companies on the watchlist — early-stage, mostly Singapore-linked. An item earns its place only if reading it would teach the reader something new about *that company*: funding, product launches, partnerships, customers, hiring, regulatory events, founder moves, acquisitions, shutdowns. Substring triage matches names, not identities — your job is to tell the difference.
 
-   Drop when:
-   - Substring coincidence on a generic word ("emerge", "alpha", "seamless", "carousel", "horizon", "nova") where the item isn't about the watchlisted company.
-   - Different entity with the same/similar name (band, different region, different industry, public ticker colliding with a private SG company). The description often calls these out.
-   - Ticker-aggregator content (Zacks, TipRanks, MarketBeat, MEXC, StockInvest, TradingView, Stock Titan, AlphaStreet, geneonline, CryptoRank, Investing.com, Yahoo Finance) on same-name public tickers.
-   - Mentioned only in passing (one-word in a list, not the subject).
-   - Generic SEO/listicle, stock-price/earnings restatement.
+   The company description is authoritative for identity. It says what the company does, where it operates, and often names same-name entities to exclude. When a headline could plausibly be about a different entity sharing the name — a public ticker, a band, a foreign company, a generic English word — trust the description over the surface match.
 
-   Keep when headline+source make clear the item is genuinely about the company — funding, launches, hiring, partnerships, regulatory news, founder interviews, etc.
+   Biases (these are policy, not suggestions):
+   - `source_kind == "firehose"`: default **drop** when uncertain. False negatives recover next run; false positives are noise forever.
+   - `source_kind != "firehose"` (curated per-company sources): default **keep** — the source is already company-scoped. But still drop: duplicates of items already kept this run from another source; bot/chore GitHub events that slipped past the deterministic filter; evergreen job reqs with no information (generic title, no team); arXiv revision notices (`[v2]`, `[v3]`).
+   - Candidates flagged `pre_extracted: true` (sourced from Jina-extracted curated pages) skip this judgment entirely — accept as kept. They still pass through dedup and the bot/chore filters above.
 
-   For `source_kind != "firehose"`, shift bias toward keeping (already curated). But still drop:
-   - Duplicate of an item already kept this run from another source.
-   - Bot/chore GitHub events that slipped past the deterministic filter (Dependabot, README typos, version-tag-only pushes).
-   - Lever job postings that are evergreen reqs (generic title, no team, low information).
-   - arXiv revisions (`[v2]`, `[v3]` markers).
-
-   Default bias for firehose: drop. False negatives recover next run; false positives are noise.
+   Worked examples of the bar — illustrations, not an exhaustive rule list; apply the same reasoning to cases they don't cover:
+   - Headline "Emerge raises $12M Series A for warehouse robotics", watchlisted Emerge is per its description a Singapore healthtech → **drop**: same name, different entity.
+   - Headline "Zacks: 3 reasons XYZ stock is a strong buy", watchlisted XYZ is a private startup → **drop**: ticker-aggregator content about a same-name public ticker is never about a private watchlist company.
+   - Headline "15 startups exhibiting at SWITCH 2026" where the company appears once in a list → **drop**: passing mention; teaches the reader nothing about the company.
+   - Headline "<Company> partners with NTU on pilot deployment" and the sector matches the description → **keep**, even from small trade press: primarily about the company, and it's new information.
 
 3. **Write outputs.** Let `K[]` be the kept candidates.
    - Append the `dedup_key` of **every** candidate you judged — kept *and* dropped — to `signals/seen-urls.txt`, one per line, deduplicated. Append only — do not rewrite the file. (Dropped keys are recorded so we don't re-judge the same junk tomorrow.)

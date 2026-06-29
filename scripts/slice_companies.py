@@ -10,11 +10,6 @@ entries, all derivable deterministically before the session starts:
                      signals/updates/<date>.md (the deepen cohort).
                      Writes data/agent-companies.json.
 
-  --layer agent-v2   Same cohort shape as `agent` for the v2 A/B arm: the
-                     shared gap-fill queue plus the `## ` headings in
-                     signals/v2/updates/<date>.md (v2's own deepen cohort).
-                     Writes data/agent-companies-v2.json.
-
   --layer synthesis  Layer 3 cohort: company headings in today's
                      signals/updates/<date>.md (H2) and
                      signals/agent/<date>.md (H3).
@@ -40,11 +35,9 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 COMPANIES_FILE = REPO_ROOT / "data" / "companies.json"
 QUEUE_FILE = REPO_ROOT / "signals" / "agent-queue.txt"
 UPDATES_DIR = REPO_ROOT / "signals" / "updates"
-V2_UPDATES_DIR = REPO_ROOT / "signals" / "v2" / "updates"
 AGENT_DIR = REPO_ROOT / "signals" / "agent"
 OUT_FILES = {
     "agent": REPO_ROOT / "data" / "agent-companies.json",
-    "agent-v2": REPO_ROOT / "data" / "agent-companies-v2.json",
     "synthesis": REPO_ROOT / "data" / "touched-companies.json",
 }
 
@@ -75,7 +68,7 @@ def queue_names(path: Path) -> list[str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--layer", choices=("agent", "agent-v2", "synthesis"), required=True)
+    parser.add_argument("--layer", choices=("agent", "synthesis"), required=True)
     parser.add_argument("--date", help="UTC date override (YYYY-MM-DD), default today")
     args = parser.parse_args()
 
@@ -85,8 +78,6 @@ def main() -> int:
 
     if args.layer == "agent":
         names = queue_names(QUEUE_FILE) + heading_names(updates_file, 2)
-    elif args.layer == "agent-v2":
-        names = queue_names(QUEUE_FILE) + heading_names(V2_UPDATES_DIR / f"{date}.md", 2)
     else:
         names = heading_names(updates_file, 2) + heading_names(agent_file, 3)
 

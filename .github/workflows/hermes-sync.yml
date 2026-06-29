@@ -9,10 +9,6 @@ on:
         description: 'Comma-separated layers to run (1=ingest, 2=agent supplement, 3=synthesis, 4=infographics). Default: 1,2,3,4.'
         required: false
         default: '1,2,3,4'
-      v2:
-        description: 'Also run the v2 A/B arm (freed-judgment prompts) for layers 1–2. Default: true.'
-        required: false
-        default: 'true'
 
 concurrency:
   group: hermes-sync
@@ -170,11 +166,6 @@ jobs:
           case ",$layers," in (*,2,*) echo "run_l2=true" >> "$GITHUB_OUTPUT" ;; esac
           case ",$layers," in (*,3,*) echo "run_l3=true" >> "$GITHUB_OUTPUT" ;; esac
           case ",$layers," in (*,4,*) echo "run_l4=true" >> "$GITHUB_OUTPUT" ;; esac
-          # v2 A/B arm: scheduled runs default to true; workflow_dispatch can
-          # disable via the `v2` input (e.g. to re-run only production layers).
-          v2="${{ github.event.inputs.v2 }}"
-          v2="${v2:-true}"
-          echo "run_v2=$v2" >> "$GITHUB_OUTPUT"
 
       - name: Restore feed cache
         if: steps.layers.outputs.run_l1 == 'true'
@@ -250,24 +241,6 @@ jobs:
         if: steps.layers.outputs.run_l1 == 'true'
         run: hermes -z "$(cat prompts/ingest.md)"
 
-      - name: Layer 1 (v2 arm) — freed relevance policy
-        # A/B arm: judges the same data/candidates.json the production arm's
-        # collect-candidates pre-step produced, but with the judgment stated
-        # as a goal instead of rule lists. Isolated state under signals/v2/
-        # (own seen-urls). Fails open: if data/candidates.json is absent the
-        # step no-ops ("no candidates file"). continue-on-error: the
-        # experiment must never block the daily sync. The sed swap labels
-        # this arm's Langfuse traces "production-v2"; it no-ops when the
-        # Langfuse secrets are absent (no line to rewrite).
-        if: steps.layers.outputs.run_l1 == 'true' && steps.layers.outputs.run_v2 == 'true'
-        continue-on-error: true
-        run: |
-          sed -i 's/^HERMES_LANGFUSE_ENV=.*/HERMES_LANGFUSE_ENV=production-v2/' ~/.hermes/.env || true
-          status=0
-          hermes -z "$(cat prompts/v2/ingest.md)" || status=$?
-          sed -i 's/^HERMES_LANGFUSE_ENV=.*/HERMES_LANGFUSE_ENV=production/' ~/.hermes/.env || true
-          exit "$status"
-
       - name: Build gap-fill queue (fairness rotation)
         # Deterministic pre-step: writes signals/agent-queue.txt with the N
         # least-recently-queried gap-fill companies, ordered by ascending
@@ -302,29 +275,6 @@ jobs:
         continue-on-error: true
         run: hermes -z "$(cat prompts/agent_supplement.md)"
 
-      - name: Slice companies for v2 agent cohort
-        # Writes data/agent-companies-v2.json (gap-fill queue + this arm's
-        # deepen companies from signals/v2/updates/) so the v2 L2 prompt
-        # doesn't load the full watchlist. continue-on-error: a failure here
-        # just means the prompt falls back to data/companies.json.
-        if: steps.layers.outputs.run_l2 == 'true' && steps.layers.outputs.run_v2 == 'true'
-        continue-on-error: true
-        run: python3 scripts/slice_companies.py --layer agent-v2
-
-      - name: Layer 2 (v2 arm) — freed search strategy
-        # A/B arm: same gap-fill queue (shared cohort = fair comparison) and
-        # 50-op budget, but the agent plans its own queries instead of using
-        # templates. Runs before the queue-state stamp so both arms consume
-        # the same rotation. Same Langfuse env swap pattern as the v2 L1 step.
-        if: steps.layers.outputs.run_l2 == 'true' && steps.layers.outputs.run_v2 == 'true'
-        continue-on-error: true
-        run: |
-          sed -i 's/^HERMES_LANGFUSE_ENV=.*/HERMES_LANGFUSE_ENV=production-v2/' ~/.hermes/.env || true
-          status=0
-          hermes -z "$(cat prompts/v2/agent_supplement.md)" || status=$?
-          sed -i 's/^HERMES_LANGFUSE_ENV=.*/HERMES_LANGFUSE_ENV=production/' ~/.hermes/.env || true
-          exit "$status"
-
       - name: Record gap-fill queue as queried
         # Deterministic post-step: stamps every name in signals/agent-queue.txt
         # as queried today in signals/agent-queue-state.json. Backs the
@@ -341,36 +291,6 @@ jobs:
         # nothing matches.
         if: steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true'
         run: python3 scripts/filter_exclusions.py
-
-      - name: A/B comparison (v1 vs v2)
-        # Deterministic diff of the two arms' kept-item sets for today.
-        # Appends signals/ab/metrics.jsonl and rewrites signals/ab/report.md
-        # (history table + per-arm unique items = the human review queue).
-        # Runs after exclusion filtering so metrics reflect cleaned files.
-        if: steps.layers.outputs.run_v2 == 'true' && (steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true')
-        continue-on-error: true
-        run: python3 scripts/ab_compare.py
-
-      - name: A/B blind judge — label today's disagreements
-        # Fills signals/ab/disagreements.jsonl labels: a neutral LLM judge,
-        # blind to which arm kept each item, rules keep/drop. That verdict is
-        # the ground truth the significance test scores the arms against.
-        # Fail-open: no key or a per-row error leaves the label null (retried
-        # next run), so the experiment never blocks the sync.
-        if: steps.layers.outputs.run_v2 == 'true' && (steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true')
-        continue-on-error: true
-        env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: python3 scripts/ab_judge.py
-
-      - name: A/B significance — McNemar over labeled disagreements
-        # Pure stdlib, no LLM. Exact two-sided binomial (McNemar) on the
-        # blind-judge labels; pre-registered target of 40 discordant pairs.
-        # Writes signals/ab/significance.json + a Significance section in
-        # report.md. Reads "collecting" until the target is reached.
-        if: steps.layers.outputs.run_v2 == 'true' && (steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true')
-        continue-on-error: true
-        run: python3 scripts/ab_stats.py
 
       - name: Gate synthesis on having signals
         id: l3gate
@@ -535,7 +455,6 @@ jobs:
             signals/seen-urls.txt
             signals/agent-queue.txt
             signals/agent-queue-state.json
-            signals/v2/
             signals/ab/
             hermes/memories/
           if-no-files-found: ignore
@@ -573,7 +492,6 @@ jobs:
       - name: Sanitize seen-urls.txt
         run: |
           python3 scripts/sanitize-seen-urls.py
-          python3 scripts/sanitize-seen-urls.py signals/v2/seen-urls.txt
 
       - name: Commit and push
         run: |

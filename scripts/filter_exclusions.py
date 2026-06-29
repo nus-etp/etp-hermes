@@ -2,13 +2,11 @@
 """Post-process digest files to drop items matching per-company exclude_terms.
 
 Reads `data/companies.json` for each company's `exclude_terms` (case-insensitive
-substrings). Scans `signals/updates/<date>.md` and `signals/agent/<date>.md`
-(plus the v2 A/B arm's counterparts under `signals/v2/`) for the dates given
-on the CLI (defaulting to today's UTC date) and drops any item bullet whose
-headline-line contains an exclude term for the company it sits under. Dropped
-URLs are appended to the owning arm's seen-urls file (`signals/seen-urls.txt`
-or `signals/v2/seen-urls.txt`) so the LLM doesn't re-judge them tomorrow.
-Empty headings are pruned afterwards.
+substrings). Scans `signals/updates/<date>.md` and `signals/agent/<date>.md` for
+the dates given on the CLI (defaulting to today's UTC date) and drops any item
+bullet whose headline-line contains an exclude term for the company it sits
+under. Dropped URLs are appended to `signals/seen-urls.txt` so the LLM doesn't
+re-judge them tomorrow. Empty headings are pruned afterwards.
 
 The Layer 1 file uses `## <CompanyName>` for the company heading (with
 `## Run at <time>` re-run dividers ignored). The Layer 2 file uses `## <Cohort>`
@@ -148,7 +146,6 @@ def process_file(
     if not dropped:
         return 0
     pruned = prune_empty_headings(filtered)
-    seen_urls_path.parent.mkdir(parents=True, exist_ok=True)
     with seen_urls_path.open("a", encoding="utf-8") as f:
         for url in dropped:
             f.write(url + "\n")
@@ -164,19 +161,11 @@ def default_targets(repo: Path, today: str) -> list[Path]:
     return [
         repo / "signals" / "updates" / f"{today}.md",
         repo / "signals" / "agent" / f"{today}.md",
-        repo / "signals" / "v2" / "updates" / f"{today}.md",
-        repo / "signals" / "v2" / "agent" / f"{today}.md",
     ]
 
 
-def seen_urls_for(path: Path, repo: Path) -> Path:
-    """Route dropped URLs to the arm that owns the file (v2 arm has its own state)."""
-    try:
-        rel = path.resolve().relative_to(repo)
-    except ValueError:
-        rel = None
-    if rel is not None and rel.parts[:2] == ("signals", "v2"):
-        return repo / "signals" / "v2" / "seen-urls.txt"
+def seen_urls_file(repo: Path) -> Path:
+    """Seen-urls file dropped URLs are appended to."""
     return repo / "signals" / "seen-urls.txt"
 
 
@@ -215,7 +204,7 @@ def main() -> int:
     for path in targets:
         if not path.exists():
             continue
-        dropped = process_file(path, excludes, seen_urls_for(path, repo))
+        dropped = process_file(path, excludes, seen_urls_file(repo))
         if dropped:
             print(f"{path.relative_to(repo)}: dropped {dropped} item(s)")
             total += dropped

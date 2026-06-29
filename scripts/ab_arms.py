@@ -27,7 +27,10 @@ import os
 from pathlib import Path
 
 CHAMPION = "v1"
-DEFAULT_CHALLENGERS = ("v2",)
+# No active challenger: the v2 "freed judgment" arm was promoted into the
+# production prompts (it won the McNemar test, p=0.0004) and retired. The A/B
+# harness stays in place — add the next challenger here (see the ab-test skill).
+DEFAULT_CHALLENGERS: tuple[str, ...] = ()
 
 
 def challengers() -> list[str]:
