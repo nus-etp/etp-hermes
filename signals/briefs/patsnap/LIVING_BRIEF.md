@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-06-28 14:55 UTC_
+_Last updated: 2026-06-29 14:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -11,15 +11,28 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/patsnap), [Crunchbase](https://www.crunchbase.com/organization/patsnap)
 
 ## Funding history
-- **2014** — Series A, $3.6M — Vertex Ventures; Vertex Ventures — [e27.co](https://e27.co/patsnap-raises-us3-6m-funding-led-by-vertex-venture-holdings-20140901/)
-- **2015-10-20** — Series B, $10M — Summit Partners; Summit Partners, Vertex Ventures — [summitpartners.com](https://www.summitpartners.com/news/patsnap-secures-10-million-in-growth-financing-from-summit-partners)
-- **2016-11-21** — Series C, undisclosed — Sequoia Capital China; Sequoia Capital China, Shunwei Capital, Qualgro — [prnewswire.com](https://www.prnewswire.com/news-releases/innovation-intelligence-platform-patsnap-closes-series-c-funding-led-by-sequoia-capital-china-300366521.html)
-- **2018-06-14** — Series D, $38M — Sequoia Capital China, Shunwei Capital; Sequoia Capital China, Shunwei Capital, Qualgro — [techcrunch.com](https://techcrunch.com/2018/06/14/patsnap-picks-up-38m/)
-- **2021-03-16** — Series E, $300M — SoftBank Vision Fund 2, Tencent; SoftBank Vision Fund 2, Tencent, Sequoia Capital China, CICC Capital, Vertex Growth — [tech.eu](https://tech.eu/2021/03/16/singapore-london-based-patsnap-snaps-up-300-million-in-series-e-funding/)
+- **2014** — Series A, $3.6M — Vertex Ventures — [e27.co](https://e27.co/patsnap-raises-us3-6m-funding-led-by-vertex-venture-holdings-20140901/)
+- **2015-10-20** — Series B, $10M — Summit Partners; Vertex Ventures — [summitpartners.com](https://www.summitpartners.com/news/patsnap-secures-10-million-in-growth-financing-from-summit-partners)
+- **2016-11-21** — Series C, undisclosed — Sequoia Capital China; Shunwei Capital, Qualgro — [prnewswire.com](https://www.prnewswire.com/news-releases/innovation-intelligence-platform-patsnap-closes-series-c-funding-led-by-sequoia-capital-china-300366521.html)
+- **2018-06-14** — Series D, $38M — Sequoia Capital China, Shunwei Capital; Qualgro — [techcrunch.com](https://techcrunch.com/2018/06/14/patsnap-picks-up-38m/)
+- **2021-03-16** — Series E, $300M — SoftBank Vision Fund 2, Tencent; Sequoia Capital China, CICC Capital, Vertex Growth — [tech.eu](https://tech.eu/2021/03/16/singapore-london-based-patsnap-snaps-up-300-million-in-series-e-funding/)
 
 _Total disclosed: $351.6M._
 
+
 ## Recent signals
+- **2026-06-29** — Patsnap hiring an Account Manager for Life Sciences in Canada (Toronto-based), continuing its North American Life Sciences commercial build-out — [Patsnap · careers](https://jobs.lever.co/patsnap/a520e9f4-16b7-4cbe-bc82-5209e7641428)
+  - Summary: Patsnap is hiring an Account Manager for the Life Sciences vertical based in Toronto, Canada. The role focuses on commercial conversations including quarterly business reviews and negotiations to drive retention and expansion within existing life sciences accounts. Patsnap describes itself as a global, pre-IPO company with offices in Singapore, Toronto, London, and Shanghai.
+  - Numbers: 5 weeks paid vacation; RRSP Contribution Matching
+- **2026-06-29** — Patsnap hiring a Junior IT Support Analyst in Toronto (CAD $50-60K), expanding its internal IT operations in Canada — [Patsnap · careers](https://jobs.lever.co/patsnap/4bd918d7-ac6a-4f01-939e-4aef10b6414c)
+  - Summary: Patsnap is hiring a Junior IT Support Analyst in Toronto (CAD $50,000-$60,000/year) to support internal IT operations, expanding its Canadian office infrastructure. The posting emphasizes Patsnap's pre-IPO status and AI-first positioning.
+  - Numbers: CAD $50,000-$60,000/year salary range
+- **2026-06-29** — Patsnap hiring a Patent Analyst for Professional Services (Toronto), adding post-sales delivery capacity for IP analytics engagements — [Patsnap · careers](https://jobs.lever.co/patsnap/bb4fe344-bc59-4ac0-a489-4508fff7d097)
+  - Summary: Patsnap is hiring a Patent Analyst for its Professional Services team in Toronto (CAD $70,000-$85,000/year). The role supports global innovators and R&D teams by delivering post-sales IP analytics services, adding delivery capacity to the Canadian office.
+  - Numbers: CAD $70,000-$85,000/year salary range
+- **2026-06-24** — Patsnap and Intellegens announce strategic partnership integrating Patsnap's global patent dataset with Intellegens' Alchemite Suite for AI-driven formulation design, enabling real-time patentability and freedom-to-operate checks during R&D experiments — [intellegens.com](https://intellegens.com/patsnap-and-intellegens-announce-strategic-partnership-bringing-real-time-ip-intelligence-into-ai-driven-formulation-design/)
+  - Summary: Patsnap integrates its global patent dataset with Intellegens' Alchemite Suite, an AI-driven formulation design platform. R&D teams gain access to patentability and freedom-to-operate checks during experimental design, bridging the gap between IP intelligence and materials R&D workflows.
+  - Counterparties: Intellegens (Strategic Partner)
 - **2026-06-27** — Hiring a Forward Deployed Engineer for Japan-facing enterprise AI solutions, configuring AI Agent workflows for IP, R&D, and innovation customers — [Patsnap · careers](https://jobs.lever.co/patsnap/e80dcb4a-0644-4883-95f3-8e6a0c01e846)
   - Summary: Patsnap is hiring a Forward Deployed Engineer (FDE) to work directly with enterprise customers in Japan, configuring and deploying AI Agent workflows across IP, R&D, innovation, and strategic intelligence use cases. The role involves building prototypes, running proof-of-concept projects, and converting customer-specific requirements into reusable Skills or product enhancements. Business-level Japanese is required, reflecting a dedicated customer-facing presence for the Japan market.
   - People: Forward Deployed Engineer (Japanese-speaking)
@@ -76,17 +89,6 @@ _Total disclosed: $351.6M._
   - People: Jason Resnick (General Manager, PatSnap West)
   - Numbers: 37% waste 25-40% of R&D budget; $1M+ per terminated project; 73% of projects fail to launch; 92% AI adoption rate; 54% of heavy AI users cite intelligence as top need
   - Quote: "In R&D, the cost of acting on incomplete intelligence is not a delayed report. It is months of work that cannot be recovered." — Jason Resnick, General Manager, PatSnap West
-- **2026-06-02** — Hiring a Senior Account Executive (Life Sciences) for a remote US-based role covering EST hours, continuing its North America commercial build-out — [Patsnap · careers](https://jobs.lever.co/patsnap/6886b9d6-1aaa-40a0-9df3-08b0993a6abc)
-  - Summary: Patsnap is hiring a Senior Account Executive for the US market to lead strategic, consultative sales cycles with pharmaceutical, biotech, and medical device organizations. The Life Sciences vertical is described as growing 20%+ YoY and one of Patsnap's most strategic and fastest-growing verticals. The role involves building and executing territory plans, managing complex multi-threaded opportunities, and engaging stakeholders across R&D, Innovation, IP, and Commercial functions.
-  - Numbers: Life Sciences business growing 20%+ YoY
-- **2026-06-02** — Hiring a Senior Account Executive (Life Sciences) for a London hybrid role (Farringdon, 3 days/week), mirroring the US posting — [Patsnap · careers](https://jobs.lever.co/patsnap/dae69aa3-82bc-4804-b301-5f86bf2caa98)
-  - Summary: Corroborates the June 2 Life Sciences AE posting; London-based version of the same role. No new facts beyond the location difference.
-- **2026-05-28** — Hiring Sales Development Representative in Toronto with disclosed pre-IPO positioning and compensation structure — [Patsnap · careers](https://jobs.lever.co/patsnap/6d72034b-6765-4036-9b66-115e012e10c3)
-  - Summary: Patsnap is hiring an SDR in Toronto, Canada for outbound lead generation and qualification, with a $56,650 CAD base salary and ~$94,166 CAD on-target earnings including uncapped commission. The job posting describes Patsnap as a "pre-IPO company" with 12,000+ R&D and IP team customers globally and offices in Toronto, London, Shanghai, and Singapore.
-  - Numbers: Base $56,650 CAD/year; OTE ~$94,166 CAD/year; 12,000+ R&D and IP customers globally; 5 weeks paid vacation
-  - Quote: "You will be the first point of contact for prospective customers, introducing them to Patsnap's innovation intelligence platform... identify, engage, and qualify prospects, building meaningful early-stage relationships that convert into long-term customers." — Patsnap job posting
-- **2026-05-27** — Hiring Semiconductor Reverse Engineering Specialist / AI Domain Expert for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/5edb10a2-12ff-44db-b1c8-9488e8e8c361)
-
 ## Older signals
 - **2026-05-27** — Hiring Semiconductor Materials Specialist for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/e61a7dab-2174-4b1f-a9f3-8537e3f4ba76)
 - **2026-05-15** — New Account Executive posting for Connected Innovation Solutions Sales — [Patsnap · careers](https://jobs.lever.co/patsnap/20d8ae88-d16c-4c80-aeb1-d68daa6fbfdf)
@@ -106,6 +108,17 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Senior Digital Marketing Manager — [Patsnap](https://jobs.lever.co/patsnap/ba7981cc-46a3-4014-933f-800793cc4b59)
 - **2026-05-15** — Patsnap publishes thought leadership on companion animal biotech innovation and patents — [patsnap.com](https://www.patsnap.com/resources/blog/the-man-who-refused-to-let-his-dog-die/)
 - **2026-05-15** — Patsnap publishes analysis on China as the next GLP-1 drug development frontier — [patsnap.com](https://www.patsnap.com/resources/blog/when-obesity-isnt-the-driver-why-china-signals-the-next-glp-1-frontier/)
+
+- **2026-06-02** — Hiring a Senior Account Executive (Life Sciences) for a remote US-based role covering EST hours, continuing its North America commercial build-out — [Patsnap · careers](https://jobs.lever.co/patsnap/6886b9d6-1aaa-40a0-9df3-08b0993a6abc)
+  - Summary: Patsnap is hiring a Senior Account Executive for the US market to lead strategic, consultative sales cycles with pharmaceutical, biotech, and medical device organizations. The Life Sciences vertical is described as growing 20%+ YoY and one of Patsnap's most strategic and fastest-growing verticals. The role involves building and executing territory plans, managing complex multi-threaded opportunities, and engaging stakeholders across R&D, Innovation, IP, and Commercial functions.
+  - Numbers: Life Sciences business growing 20%+ YoY
+- **2026-06-02** — Hiring a Senior Account Executive (Life Sciences) for a London hybrid role (Farringdon, 3 days/week), mirroring the US posting — [Patsnap · careers](https://jobs.lever.co/patsnap/dae69aa3-82bc-4804-b301-5f86bf2caa98)
+  - Summary: Corroborates the June 2 Life Sciences AE posting; London-based version of the same role. No new facts beyond the location difference.
+- **2026-05-28** — Hiring Sales Development Representative in Toronto with disclosed pre-IPO positioning and compensation structure — [Patsnap · careers](https://jobs.lever.co/patsnap/6d72034b-6765-4036-9b66-115e012e10c3)
+  - Summary: Patsnap is hiring an SDR in Toronto, Canada for outbound lead generation and qualification, with a $56,650 CAD base salary and ~$94,166 CAD on-target earnings including uncapped commission. The job posting describes Patsnap as a "pre-IPO company" with 12,000+ R&D and IP team customers globally and offices in Toronto, London, Shanghai, and Singapore.
+  - Numbers: Base $56,650 CAD/year; OTE ~$94,166 CAD/year; 12,000+ R&D and IP customers globally; 5 weeks paid vacation
+  - Quote: "You will be the first point of contact for prospective customers, introducing them to Patsnap's innovation intelligence platform... identify, engage, and qualify prospects, building meaningful early-stage relationships that convert into long-term customers." — Patsnap job posting
+- **2026-05-27** — Hiring Semiconductor Reverse Engineering Specialist / AI Domain Expert for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/5edb10a2-12ff-44db-b1c8-9488e8e8c361)
 
 ## Open questions
 - What is the expected valuation and timeline for the dual HK/Singapore IPO? Which exchange will be the primary listing?

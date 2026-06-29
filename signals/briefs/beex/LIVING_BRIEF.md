@@ -1,5 +1,5 @@
 # BEEX — LIVING BRIEF
-_Last updated: 2026-06-22 17:50 UTC_
+_Last updated: 2026-06-29 14:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -18,7 +18,9 @@ NUS GRIP-incubated Singapore autonomous underwater vehicle (AUV) startup buildin
 
 _Total disclosed: $9.8M._
 
+
 ## Recent signals
+- **2026-06-24** — BeeX launches BETTA, its most powerful autonomous underwater drone, marking the product's official debut after a teaser in May 2026 — [beex.sg](https://www.beex.sg/)
 - **2026-06-22** — BeeX, SIT launch test site for AI underwater inspection systems — [theedgesingapore.com](https://www.theedgesingapore.com/digitaledge/technopreneurs/beex-sit-launch-test-site-ai-underwater-inspection-systems)
 - **2026-06-22** — BeeX Launches Live Underwater Drone Test-Zone with Opening of Autonomous Marine Foundry at SIT Punggol Campus — [beex.sg](https://www.beex.sg/news/beex-opens-autonomous-marine-foundry-and-live-test-zone-at-sit-punggol)
   - Summary: BeeX and SIT inaugurated the Autonomous Marine Foundry (AMF) at SIT Punggol Campus, a purpose-built hub for maritime robotics innovation including a live test zone with a davit crane for drone launch and recovery. The facility supports the full innovation lifecycle from research to field deployment and includes an Integrated Work Study Programme for talent development.
