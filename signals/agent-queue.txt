@@ -1,60 +1,60 @@
-BEEX
-Weva
-Whyre Technologies
-WiSe
-Wiseflick
-Xavoury Foods
-XFolio
-Casa Medico
-Florisense
-Forte Biotech
-FRONKA
-GenVoice
-GeoCore
-GranuSmart
-Green COP
-GrowLights
-Guardly
-H2C
-Hamlit
-Heseed
-HiCura
-hilibbie
-hiomi
-HiSEPOR
-HiTransfer
-Hivebotics
-HOMEPAL
-Hybrique
-insightic
-Keptan
-KleenSoil
-Xinzhiyuneng Technology
-Yimiji Technology
-Zhimou Information
-Zhongchuangbo Technology
-Zoala
-Zoe Botanicals
-lalia
-LEXIKAT
-Liloss
-Lincore
-M.I.Cloud Technologies
-Magloy Tech
-Mall Nautics
-Marino Solar
-Matchapreneur
-Medicert
-MediVR
-Metalivi
-Metasense
-Microtube Technologies
-Mindful Drinks
-MoneyMoves
-MuSigPro
-nbrane
-ndots
-NewGen GAS
-NodeSeer
-Nova
-nusmetics
+NuSoil
+NuSPACE
+Ocular Labs
+Oleum Lev
+Only Technologies
+PharLyfe+
+Picopoint Genomics
+polybee
+Power Facade
+PrimeGROWTH Technologies
+ProlegoMiR
+ProniaBioTech
+QSIGNAGE
+RDM
+Reachbots Automation
+reActo
+ReoMex Technologies
+RightCode
+RO+
+RoamAssist
+SafeLight
+Scent Analytics
+SCPscan
+seamless
+sensAi
+SenseMor
+SENSORi
+SHARPEN.AI
+SinGENE
+Singnovel ChemTech
+SINGROW
+SkyTrek
+Softlabs
+SOLEMETRIX
+SOLV8
+Soynergy
+Space Match
+1N Robotics
+1UP! Sales AI
+Acoerela
+Active Silvers
+Addlly AI
+AdmitPath
+Agrolitik
+AidMi
+AiForAll Technologies
+AIPath
+AirCity
+Airgorithm
+AiRTS
+AiSee
+Ajentik AI
+Akar
+AlgaeID
+Alluci Studio
+amble
+Anatics
+Anlight Optoelectronic Technology
+Anomaly Bio
+API-Rex
