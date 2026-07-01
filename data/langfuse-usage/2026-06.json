@@ -1,0 +1,64 @@
+{
+  "base_url": "https://cloud.langfuse.com",
+  "by_environment": {
+    "eval": {
+      "countObservations": 203,
+      "countTraces": 87,
+      "days": 26,
+      "inputUsage": 36859,
+      "outputUsage": 11446,
+      "totalCost": 0.0,
+      "totalUsage": 48305
+    },
+    "production": {
+      "countObservations": 5510,
+      "countTraces": 97,
+      "days": 23,
+      "inputUsage": 7471393,
+      "outputUsage": 39752,
+      "totalCost": 0.0,
+      "totalUsage": 7511145
+    }
+  },
+  "by_model": [
+    {
+      "countObservations": 3848,
+      "countTraces": 202,
+      "inputUsage": 27365555,
+      "model": "deepseek-v4-flash",
+      "outputUsage": 181063,
+      "totalCost": 0.0,
+      "totalUsage": 27546618
+    },
+    {
+      "countObservations": 7004,
+      "countTraces": 285,
+      "inputUsage": 0,
+      "model": "(unknown)",
+      "outputUsage": 0,
+      "totalCost": 0.0,
+      "totalUsage": 0
+    },
+    {
+      "countObservations": 116,
+      "countTraces": 87,
+      "inputUsage": 36859,
+      "model": "deepseek-chat",
+      "outputUsage": 11446,
+      "totalCost": 0.0,
+      "totalUsage": 48305
+    }
+  ],
+  "from": "2026-06-01T00:00:00Z",
+  "month": "2026-06",
+  "to": "2026-07-01T00:00:00Z",
+  "totals": {
+    "countObservations": 10968,
+    "countTraces": 289,
+    "days": 29,
+    "inputUsage": 27402414,
+    "outputUsage": 192509,
+    "totalCost": 0.0,
+    "totalUsage": 27594923
+  }
+}
