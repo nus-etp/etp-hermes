@@ -42,7 +42,8 @@
     "@types/react-dom": "catalog:react",
     "eslint": "catalog:",
     "tailwindcss": "catalog:tailwindcss4",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vite": "catalog:"
   },
   "prettier": "@acme/prettier-config"
 }

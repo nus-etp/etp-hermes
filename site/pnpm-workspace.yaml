@@ -10,13 +10,14 @@ catalog:
   prettier: ^3.7.4
   react-aria-components: 1.16.0
   typescript: ^5.9.3
+  vite: 8.0.16
   zod: ^4.2.1
 
 catalogs:
   next:
-    '@next/env': 16.2.3
-    '@next/eslint-plugin-next': 16.2.3
-    next: 16.2.3
+    '@next/env': 16.2.9
+    '@next/eslint-plugin-next': 16.2.9
+    next: 16.2.9
   oui:
     '@opengovsg/oui': 0.0.52
     '@opengovsg/oui-theme': 0.0.52
@@ -42,6 +43,9 @@ onlyBuiltDependencies:
 overrides:
   '@types/minimatch': 5.1.2
   '@img/sharp-libvips-darwin-arm64': '-'
+  postcss: 8.5.16
+  '@babel/core': 7.29.7
+  js-yaml: 4.3.0
 
 publicHoistPattern:
   - '*prettier*'
