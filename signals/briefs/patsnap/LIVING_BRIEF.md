@@ -1,14 +1,17 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-06-29 14:00 UTC_
+_Last updated: 2026-07-02 15:15 UTC_
 ![Infographic](infographic.png)
+
 
 ## Thesis
 Patsnap is a Singapore-headquartered IP intelligence and innovation analytics SaaS company that has confidentially filed for a dual listing in Hong Kong and Singapore, signaling its IPO readiness. The company is pursuing a multi-sector SaaS expansion beyond its core IP analytics base into life sciences and material science verticals, supported by aggressive hiring across AI product, life sciences, and semiconductor roles, and by domain-specific AI agents to embed its platform into customer workflows.
+
 
 ## Profile
 - Sector: SaaS
 - Region: Singapore (global operations)
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/patsnap), [Crunchbase](https://www.crunchbase.com/organization/patsnap)
+
 
 ## Funding history
 - **2014** — Series A, $3.6M — Vertex Ventures — [e27.co](https://e27.co/patsnap-raises-us3-6m-funding-led-by-vertex-venture-holdings-20140901/)
@@ -19,8 +22,8 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 
 _Total disclosed: $351.6M._
 
-
 ## Recent signals
+- **2026-07-02** — Key Account Manager — JP IP — [Patsnap · careers](https://jobs.lever.co/patsnap/01f261fd-6c87-4dc6-92f1-b295fa4f43d9)
 - **2026-06-29** — Patsnap hiring an Account Manager for Life Sciences in Canada (Toronto-based), continuing its North American Life Sciences commercial build-out — [Patsnap · careers](https://jobs.lever.co/patsnap/a520e9f4-16b7-4cbe-bc82-5209e7641428)
   - Summary: Patsnap is hiring an Account Manager for the Life Sciences vertical based in Toronto, Canada. The role focuses on commercial conversations including quarterly business reviews and negotiations to drive retention and expansion within existing life sciences accounts. Patsnap describes itself as a global, pre-IPO company with offices in Singapore, Toronto, London, and Shanghai.
   - Numbers: 5 weeks paid vacation; RRSP Contribution Matching
@@ -84,12 +87,13 @@ _Total disclosed: $351.6M._
 - **2026-06-05** — Patsnap hiring Senior Account Executive in San Antonio (Texas) for Connected Innovation Solutions, extending its North American sales coverage to the US South/West — [Patsnap · careers](https://jobs.lever.co/patsnap/a144a6aa-3e18-43dd-8add-9531ae569745)
   - Summary: Patsnap is hiring a remote, hunter-focused Senior Account Executive in San Antonio, Texas for net-new logo acquisition in its Connected Innovation Solutions vertical. The job posting describes Patsnap as a pre-IPO unicorn ($1B+ valuation) with 18,000+ customers globally, 20%+ YoY growth, and 82% growth in enterprise deals. The role covers the Americas and West Coast.
   - Numbers: 18,000+ customers globally; 20%+ YoY growth; 82% growth in enterprise deals; $1B+ valuation; $300M Series E
+
+## Older signals
 - **2026-06-04** — PatSnap publishes 2026 R&D Benchmark Report revealing structural R&D waste and an "intelligence gap" even among heavy AI adopters, alongside an interactive benchmark calculator — [Voice of Alexandria](https://www.voiceofalexandria.com/news/national_business_news/patsnap-releases-2026-r-d-benchmark-report-revealing-the-intelligence-gap-costing-innovation-teams-millions/article_372459cd-b728-50f6-9334-71485d94f73a.html)
   - Summary: PatSnap commissioned a survey of 200+ senior R&D leaders across North America, UK, and Europe (all with $50M+ annual R&D budgets). Key findings: 37% of organizations waste 25-40% of R&D budgets on projects that never reach market; 45% estimate $1M+ lost per terminated project; 73% report half or fewer of initiated projects ultimately launch. 92% use AI in R&D, but 54% of heavy AI users say better intelligence access would have the greatest impact on R&D success.
   - People: Jason Resnick (General Manager, PatSnap West)
   - Numbers: 37% waste 25-40% of R&D budget; $1M+ per terminated project; 73% of projects fail to launch; 92% AI adoption rate; 54% of heavy AI users cite intelligence as top need
   - Quote: "In R&D, the cost of acting on incomplete intelligence is not a delayed report. It is months of work that cannot be recovered." — Jason Resnick, General Manager, PatSnap West
-## Older signals
 - **2026-05-27** — Hiring Semiconductor Materials Specialist for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/e61a7dab-2174-4b1f-a9f3-8537e3f4ba76)
 - **2026-05-15** — New Account Executive posting for Connected Innovation Solutions Sales — [Patsnap · careers](https://jobs.lever.co/patsnap/20d8ae88-d16c-4c80-aeb1-d68daa6fbfdf)
 - **2026-05-13** — Strategic partnership with CAS (Chemical Abstracts Service) to combine CAS's scientific content database with Patsnap's AI-powered innovation analytics platform — [Devdiscourse](https://www.devdiscourse.com/article/agency-wire/930997-cas-and-patsnap-forge-strategic-partnership-that-unites-market-leading-scientific-content-and-ai-powered-technology-to-accelerate-global-innovation)
@@ -108,7 +112,6 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Senior Digital Marketing Manager — [Patsnap](https://jobs.lever.co/patsnap/ba7981cc-46a3-4014-933f-800793cc4b59)
 - **2026-05-15** — Patsnap publishes thought leadership on companion animal biotech innovation and patents — [patsnap.com](https://www.patsnap.com/resources/blog/the-man-who-refused-to-let-his-dog-die/)
 - **2026-05-15** — Patsnap publishes analysis on China as the next GLP-1 drug development frontier — [patsnap.com](https://www.patsnap.com/resources/blog/when-obesity-isnt-the-driver-why-china-signals-the-next-glp-1-frontier/)
-
 - **2026-06-02** — Hiring a Senior Account Executive (Life Sciences) for a remote US-based role covering EST hours, continuing its North America commercial build-out — [Patsnap · careers](https://jobs.lever.co/patsnap/6886b9d6-1aaa-40a0-9df3-08b0993a6abc)
   - Summary: Patsnap is hiring a Senior Account Executive for the US market to lead strategic, consultative sales cycles with pharmaceutical, biotech, and medical device organizations. The Life Sciences vertical is described as growing 20%+ YoY and one of Patsnap's most strategic and fastest-growing verticals. The role involves building and executing territory plans, managing complex multi-threaded opportunities, and engaging stakeholders across R&D, Innovation, IP, and Commercial functions.
   - Numbers: Life Sciences business growing 20%+ YoY
@@ -127,4 +130,5 @@ _Total disclosed: $351.6M._
 - What is the commercial structure of the CAS-Patsnap partnership — is CAS data being integrated into Patsnap's platform, resold as a standalone dataset, or something else?
 - Does the CAS partnership signal a strategic expansion beyond patent/IP analytics into the broader scientific and R&D content analytics market?
 - What is the "Connected Innovation Solutions" vertical and how does it relate to Patsnap's core IP analytics and life sciences verticals?
+
 
