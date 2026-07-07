@@ -1,5 +1,5 @@
 # BEEX — LIVING BRIEF
-_Last updated: 2026-06-29 14:00 UTC_
+_Last updated: 2026-07-07 15:48 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -18,8 +18,12 @@ NUS GRIP-incubated Singapore autonomous underwater vehicle (AUV) startup buildin
 
 _Total disclosed: $9.8M._
 
-
 ## Recent signals
+- **2026-06-24** — BeeX published detailed specs for its BETTA autonomous underwater drone: 100m depth rating, 12kWh battery for 24-hour operations, 7-sensor suite, and under 300kg, unveiled at its Xperiences 2 industry event — [beex.sg](https://www.beex.sg/news/beex-launches-betta-the-most-powerful-autonomous-underwater-drone)
+  - Summary: Corroborates the 2026-06-24 announcement of the BETTA drone launch; the detailed article confirms BETTA is a 100m depth-rated autonomous inspection and light intervention drone with a 10x battery capacity upgrade over A.IKANBILIS and IHO-rated positioning accuracy. It debuted before 200 guests at BeeX's Xperiences 2 event covering defence, energy, coastal management, and research sectors. BETTA improves on A.IKANBILIS' AI through 14 years of proprietary data and supports 24-hour continuous autonomous operations.
+  - People: Grace Chia (CEO and co-founder)
+  - Numbers: 100m depth rating, 12kWh battery, <300kg weight, 24-hour continuous operations, 7-sensor suite, 200 guests at launch
+  - Quote: "At less than 300kg, BETTA shares the same simple logistics and deployment methods as our flagship drones" — Grace Chia, CEO and co-founder
 - **2026-06-24** — BeeX launches BETTA, its most powerful autonomous underwater drone, marking the product's official debut after a teaser in May 2026 — [beex.sg](https://www.beex.sg/)
 - **2026-06-22** — BeeX, SIT launch test site for AI underwater inspection systems — [theedgesingapore.com](https://www.theedgesingapore.com/digitaledge/technopreneurs/beex-sit-launch-test-site-ai-underwater-inspection-systems)
 - **2026-06-22** — BeeX Launches Live Underwater Drone Test-Zone with Opening of Autonomous Marine Foundry at SIT Punggol Campus — [beex.sg](https://www.beex.sg/news/beex-opens-autonomous-marine-foundry-and-live-test-zone-at-sit-punggol)
@@ -42,5 +46,4 @@ _Total disclosed: $9.8M._
 _none_
 
 ## Open questions
-- What are the key technical specifications of BETTA and how does it differ from A.IKANBILIS?
 - Which commercial sectors (offshore wind, O&G, coastal infrastructure) is BEEX prioritizing for expansion?
