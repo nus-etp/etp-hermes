@@ -1,39 +1,31 @@
 # NEU Battery Materials — LIVING BRIEF
-_Last updated: 2026-06-26 15:36 UTC_
+_Last updated: 2026-07-08 15:16 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-NEU Battery Materials is a Singapore-headquartered battery-materials startup, incubated under NUS GRIP, developing patented electrochemical extraction technology to recycle lithium iron phosphate (LFP) batteries. The company is positioning itself for the growing EU battery recycling market as regional giga-factory supply chains scale up and new regulations mandate closed-loop infrastructure.
+NUS GRIP-incubated battery-materials startup developing low-cost electrochemical recycling for lithium iron phosphate (LFP) batteries. Founded by Dr. Bryan Oh and Dr. Chen Junting, the company aims to make recycled LFP feedstock economically competitive with mined lithium, particularly as China's new lithium futures market introduces global price volatility.
 
 ## Profile
 - Sector: Climate tech
 - Region: Singapore
-- Identifiers: [LinkedIn](https://sg.linkedin.com/company/neu-battery-materials), [Crunchbase](https://www.crunchbase.com/organization/neu-battery-materials), UEN 202119965Z, [Nus Cde](https://cde.nus.edu.sg/research/industry-partnership/neu-battery-materials/), [Sginnovate](https://www.sginnovate.com/investments/neu-battery-materials)
-
+- Stage / funding: Pre-Series A
+- Identifiers: [LinkedIn](https://sg.linkedin.com/company/neu-battery-materials), [Crunchbase](https://www.crunchbase.com/organization/neu-battery-materials), UEN: 202119965Z, [SGInnovate](https://www.sginnovate.com/investments/neu-battery-materials), [NUS CDE](https://cde.nus.edu.sg/research/industry-partnership/neu-battery-materials/)
 
 ## Funding history
+- **2022-06-24** — Seed, SGD 800K — investors undisclosed — [eco-business.com](https://www.eco-business.com/press-releases/nus-grip-deep-tech-start-up-neu-battery-materials-raises-s800000-in-seed-funding/)
+- **2023-07-05** — Seed, $3.7M — SGInnovate; ComfortDelGro Ventures, Shift4Good, Paragon Ventures I, Angel investors — [prnewswire.com](https://www.prnewswire.com/news-releases/neu-battery-materials-concludes-oversubscribed-us3-7m-seed-funding-round-301869909.html)
+- **2026-01-06** — Series A, undisclosed — SGInnovate, Shift4Good; CJIC (Central Japan Innovation Capital), M7 Holdings, Existing shareholders, Founders — [neumaterials.com](https://www.neumaterials.com/news/neu-battery-materials-closes-pre-series-a-to-scale-novel-lfp-battery-recycling-technology)
 
-- **2022-06-24** — Seed, SGD 800K — Momentum Venture Capital (SMRT Corporation), Se-cure Waste Management, Angel investors, NUS GRIP — [eco-business.com](https://www.eco-business.com/press-releases/nus-grip-deep-tech-start-up-neu-battery-materials-raises-s800000-in-seed-funding/)
-- **2023-07-05** — Seed, $3.7M — SGInnovate, ComfortDelGro Ventures, Shift4Good, Paragon Ventures I, Angel investors — [prnewswire.com](https://www.prnewswire.com/news-releases/neu-battery-materials-concludes-oversubscribed-us3-7m-seed-funding-round-301869909.html)
-- **2026-01-06** — Series A, undisclosed — SGInnovate, Shift4Good, CJIC (Central Japan Innovation Capital), M7 Holdings, Existing shareholders, et al. — [neumaterials.com](https://www.neumaterials.com/news/neu-battery-materials-closes-pre-series-a-to-scale-novel-lfp-battery-recycling-technology)
-
-_Total disclosed: $4.3M._
+_Total disclosed: $4.29M._
 
 ## Recent signals
-
-- **2026-06-26** — NEU Battery Materials — NUS College of Design and Engineering partner profile — [cde.nus.edu.sg](https://cde.nus.edu.sg/research/industry-partnership/neu-battery-materials)
-  - Summary: Founded 2020 by Bryan Oh (NUS Business) and Kenneth Palmer (NUS Engineering). Emerged from NUS GRIP. Progressed from lab bench to pilot. Now constructing world's first electrochemical redox commercial recycling plant. Supported by SGInnovate and Tema
-- **2026-06-19** — NEU Battery Materials attends The Battery Show Europe 2026 in Stuttgart, promoting its patented electrochemical LFP recycling technology as EU battery regulations drive demand for dedicated circular infrastructure — [neumaterials.com](https://www.neumaterials.com/news/neu-the-battery-show-europe-2026-in-stuttgart)
-  - Summary: NEU Battery Materials exhibited at The Battery Show Europe 2026 in Stuttgart, showcasing its patented electrochemical extraction process for recovering high-purity lithium hydroxide directly from LFP black mass. The company positioned its technology as uniquely optimised for LFP chemistry and aligned with emerging EU battery regulations requiring dedicated recycling infrastructure for regional giga-factory supply chains.
-  - Counterparties: The Battery Show Europe (event)
-  - Quote: "Our patented electrochemical extraction process is designed to recover high-purity lithium hydroxide directly from LFP black mass in a clean, cost-effective manner." — NEU Battery Materials (company statement)
+- **2026-07-07** — Published a thought-leadership article arguing that China's newly internationalised lithium futures market and CATL's Jianxiawo mine volatility make recycled feedstock more valuable as a stable supply alternative — [neumaterials.com](https://www.neumaterials.com/news/why-chinas-new-lithium-futures-market-makes-recycled-feedstock-more-valuable)
+  - Summary: NEU Battery Materials published an article analysing the June 2026 restart of CATL's Jianxiawo mine (supplying ~8-10% of China's lithium) and the Guangzhou Futures Exchange's July 3 decision to open lithium contracts to foreign traders. The piece positions battery recycling as a hedge against single-mine supply shocks and exchange-driven price volatility.
+  - Quote: "As a major importer, [China] logically wants to have some say in benchmark pricing," — Lucas Zhang Liutong, WaterRock Energy Economics
 
 ## Older signals
-
-  _none_
-
+_none_
 
 ## Open questions
-- What is the commercial traction of NEU's LFP battery recycling technology — are there active contracts, pilot programs, or revenue from customer agreements?
-- Is NEU targeting a physical presence or partnerships in Europe to serve the giga-factory supply chains described in its event recap?
-- What is the timeline to close the remaining portion of the Pre-Series A round announced in January 2026?
+- When will NEU's first commercial-scale recycling facility come online and at what capacity?
+- Has NEU secured feedstock supply agreements with battery manufacturers or EV OEMs?
