@@ -1,17 +1,14 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-07-02 15:15 UTC_
+_Last updated: 2026-07-09 16:03 UTC_
 ![Infographic](infographic.png)
-
 
 ## Thesis
 Patsnap is a Singapore-headquartered IP intelligence and innovation analytics SaaS company that has confidentially filed for a dual listing in Hong Kong and Singapore, signaling its IPO readiness. The company is pursuing a multi-sector SaaS expansion beyond its core IP analytics base into life sciences and material science verticals, supported by aggressive hiring across AI product, life sciences, and semiconductor roles, and by domain-specific AI agents to embed its platform into customer workflows.
-
 
 ## Profile
 - Sector: SaaS
 - Region: Singapore (global operations)
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/patsnap), [Crunchbase](https://www.crunchbase.com/organization/patsnap)
-
 
 ## Funding history
 - **2014** — Series A, $3.6M — Vertex Ventures — [e27.co](https://e27.co/patsnap-raises-us3-6m-funding-led-by-vertex-venture-holdings-20140901/)
@@ -23,6 +20,8 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-06-16** — TechInAsia reports Patsnap's confidential dual IPO filings in HK and Singapore, attributing the story to Bloomberg and noting a listing could come as soon as 2026 — [techinasia.com](https://www.techinasia.com/news/patsnap-files-confidentially-dual-ipos)
+  - Summary: Corroborates the June 15, 2026 Bloomberg report; no new facts.
 - **2026-07-02** — Key Account Manager — JP IP — [Patsnap · careers](https://jobs.lever.co/patsnap/01f261fd-6c87-4dc6-92f1-b295fa4f43d9)
 - **2026-06-29** — Patsnap hiring an Account Manager for Life Sciences in Canada (Toronto-based), continuing its North American Life Sciences commercial build-out — [Patsnap · careers](https://jobs.lever.co/patsnap/a520e9f4-16b7-4cbe-bc82-5209e7641428)
   - Summary: Patsnap is hiring an Account Manager for the Life Sciences vertical based in Toronto, Canada. The role focuses on commercial conversations including quarterly business reviews and negotiations to drive retention and expansion within existing life sciences accounts. Patsnap describes itself as a global, pre-IPO company with offices in Singapore, Toronto, London, and Shanghai.
@@ -84,11 +83,11 @@ _Total disclosed: $351.6M._
   - Summary: Patsnap is hiring a Strategic Life Sciences Data & AI Expansion Specialist for a remote California-based role focused on expanding Data-as-a-Service (DaaS) opportunities within existing Life Sciences accounts across North America. The role acts as a subject-matter expert overlay supporting multiple Account Executives, targeting senior R&D, BD&L, Competitive Intelligence, and Innovation stakeholders in pharmaceutical, biotech, and medical device organizations.
   - Numbers: $130K–$260K OTE (50/50 base + uncapped commission); 12,000+ customers; Life Sciences business growing 20%+ YoY; pre-IPO unicorn at $1B+ valuation
   - Quote: "We are seeking a highly commercial, customer-facing Strategic Life Sciences Data & AI Expansion Specialist to drive growth across our existing Life Sciences customer base and support high-value strategic opportunities throughout North America." — Patsnap job posting
+
+## Older signals
 - **2026-06-05** — Patsnap hiring Senior Account Executive in San Antonio (Texas) for Connected Innovation Solutions, extending its North American sales coverage to the US South/West — [Patsnap · careers](https://jobs.lever.co/patsnap/a144a6aa-3e18-43dd-8add-9531ae569745)
   - Summary: Patsnap is hiring a remote, hunter-focused Senior Account Executive in San Antonio, Texas for net-new logo acquisition in its Connected Innovation Solutions vertical. The job posting describes Patsnap as a pre-IPO unicorn ($1B+ valuation) with 18,000+ customers globally, 20%+ YoY growth, and 82% growth in enterprise deals. The role covers the Americas and West Coast.
   - Numbers: 18,000+ customers globally; 20%+ YoY growth; 82% growth in enterprise deals; $1B+ valuation; $300M Series E
-
-## Older signals
 - **2026-06-04** — PatSnap publishes 2026 R&D Benchmark Report revealing structural R&D waste and an "intelligence gap" even among heavy AI adopters, alongside an interactive benchmark calculator — [Voice of Alexandria](https://www.voiceofalexandria.com/news/national_business_news/patsnap-releases-2026-r-d-benchmark-report-revealing-the-intelligence-gap-costing-innovation-teams-millions/article_372459cd-b728-50f6-9334-71485d94f73a.html)
   - Summary: PatSnap commissioned a survey of 200+ senior R&D leaders across North America, UK, and Europe (all with $50M+ annual R&D budgets). Key findings: 37% of organizations waste 25-40% of R&D budgets on projects that never reach market; 45% estimate $1M+ lost per terminated project; 73% report half or fewer of initiated projects ultimately launch. 92% use AI in R&D, but 54% of heavy AI users say better intelligence access would have the greatest impact on R&D success.
   - People: Jason Resnick (General Manager, PatSnap West)
@@ -105,9 +104,9 @@ _Total disclosed: $351.6M._
 - **2026-05-12** — Hiring Product Growth Manager for AI Agent Platform (IP Checking) — [Patsnap](https://jobs.lever.co/patsnap/5d9d748a-f9ce-40fd-aa3b-dde76007b0e6)
 - **2026-05-12** — Hiring Sales Development Representative (Life Science Graduates) — [Patsnap](https://jobs.lever.co/patsnap/9a625f6f-9b2e-441e-9a69-5d5c46bf324e)
 - **2026-05-12** — Hiring Community Operations Intern (R&D / PLG Product) — [Patsnap](https://jobs.lever.co/patsnap/3cc3a98b-de49-46ea-8694-6363f95af64f)
-- **2026-05-12** — Hiring Industry Product Specialist (Semiconductor Packaging Technology) — [Patsnap](https://jobs.lever.co/patsnap/905f8dd4-c47e-4d73-b7d5-55e3cf740d8c)
+- **2026-05-12** — Hiring Industry Product Specialist (Semiconductor Packaging Technology) — [Patsnap](https://jobs.lever.co/patsnap/905f8dd4-c47e-4d73-b5d5-55e3cf740d8c)
 - **2026-05-12** — Hiring Industry Product Specialist (Semiconductor) — [Patsnap](https://jobs.lever.co/patsnap/9dab3451-8d4a-4d59-89a9-8e90c916131a)
-- **2026-05-12** — Hiring Product Marketing Manager for AI Agent Platform GTM — [Patsnap](https://jobs.lever.co/patsnap/b85aa927-6566-4d67-8d6c-b2c27776edf2)
+- **2026-05-12** — Hiring Product Marketing Manager for AI Agent Platform GTM — [Patsnap](https://jobs.lever.co/patsnap/b85aa656-6566-4d67-8d6c-b2c27776edf2)
 - **2026-05-12** — Hiring Life Science Growth Marketing Intern — [Patsnap](https://jobs.lever.co/patsnap/06fa8277-13bf-4dd5-bd0b-e1198ba4f8f0)
 - **2026-05-12** — Hiring Senior Digital Marketing Manager — [Patsnap](https://jobs.lever.co/patsnap/ba7981cc-46a3-4014-933f-800793cc4b59)
 - **2026-05-15** — Patsnap publishes thought leadership on companion animal biotech innovation and patents — [patsnap.com](https://www.patsnap.com/resources/blog/the-man-who-refused-to-let-his-dog-die/)
@@ -130,5 +129,3 @@ _Total disclosed: $351.6M._
 - What is the commercial structure of the CAS-Patsnap partnership — is CAS data being integrated into Patsnap's platform, resold as a standalone dataset, or something else?
 - Does the CAS partnership signal a strategic expansion beyond patent/IP analytics into the broader scientific and R&D content analytics market?
 - What is the "Connected Innovation Solutions" vertical and how does it relate to Patsnap's core IP analytics and life sciences verticals?
-
-
