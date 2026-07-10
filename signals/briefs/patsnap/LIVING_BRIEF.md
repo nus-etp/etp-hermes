@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-07-09 16:03 UTC_
+_Last updated: 2026-07-10 15:39 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -16,10 +16,10 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 - **2016-11-21** — Series C, undisclosed — Sequoia Capital China; Shunwei Capital, Qualgro — [prnewswire.com](https://www.prnewswire.com/news-releases/innovation-intelligence-platform-patsnap-closes-series-c-funding-led-by-sequoia-capital-china-300366521.html)
 - **2018-06-14** — Series D, $38M — Sequoia Capital China, Shunwei Capital; Qualgro — [techcrunch.com](https://techcrunch.com/2018/06/14/patsnap-picks-up-38m/)
 - **2021-03-16** — Series E, $300M — SoftBank Vision Fund 2, Tencent; Sequoia Capital China, CICC Capital, Vertex Growth — [tech.eu](https://tech.eu/2021/03/16/singapore-london-based-patsnap-snaps-up-300-million-in-series-e-funding/)
-
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-07-10** — Sales Development Representative (New Graduates) — Sales Development — [jobs.lever.co](https://jobs.lever.co/patsnap/62595d06-df12-4a9b-8daa-9e97cfb12ef6)
 - **2026-06-16** — TechInAsia reports Patsnap's confidential dual IPO filings in HK and Singapore, attributing the story to Bloomberg and noting a listing could come as soon as 2026 — [techinasia.com](https://www.techinasia.com/news/patsnap-files-confidentially-dual-ipos)
   - Summary: Corroborates the June 15, 2026 Bloomberg report; no new facts.
 - **2026-07-02** — Key Account Manager — JP IP — [Patsnap · careers](https://jobs.lever.co/patsnap/01f261fd-6c87-4dc6-92f1-b295fa4f43d9)
@@ -79,10 +79,6 @@ _Total disclosed: $351.6M._
   - Summary: Patsnap is hiring a Senior AI Engineer for its AI Growth team in Singapore to design and build the company-wide AI knowledge infrastructure, including internal wiki, knowledge base, retrieval layer, and context management system. The role requires 4-7 years of backend engineering experience with at least 2 years of hands-on LLM application development, experience with RAG and vector databases (Pinecone, Weaviate, Chroma), and Mandarin fluency. The hire will own end-to-end technical delivery of internal AI tools and work with business, brand, PR, IR, and leadership stakeholders.
   - Numbers: 4-7 years backend experience; 2+ years LLM application experience
   - Quote: "Design and build the company-wide AI knowledge infrastructure, including company wiki, internal knowledge base, retrieval layer, and context management system." — Patsnap job posting
-- **2026-06-05** — Patsnap hiring a Strategic Life Sciences Data & AI Expansion Specialist (remote, California) for DaaS account expansion, reinforcing Life Sciences vertical push — [Patsnap · careers](https://jobs.lever.co/patsnap/0e0f5286-41c2-4292-90f8-41768fb50de4)
-  - Summary: Patsnap is hiring a Strategic Life Sciences Data & AI Expansion Specialist for a remote California-based role focused on expanding Data-as-a-Service (DaaS) opportunities within existing Life Sciences accounts across North America. The role acts as a subject-matter expert overlay supporting multiple Account Executives, targeting senior R&D, BD&L, Competitive Intelligence, and Innovation stakeholders in pharmaceutical, biotech, and medical device organizations.
-  - Numbers: $130K–$260K OTE (50/50 base + uncapped commission); 12,000+ customers; Life Sciences business growing 20%+ YoY; pre-IPO unicorn at $1B+ valuation
-  - Quote: "We are seeking a highly commercial, customer-facing Strategic Life Sciences Data & AI Expansion Specialist to drive growth across our existing Life Sciences customer base and support high-value strategic opportunities throughout North America." — Patsnap job posting
 
 ## Older signals
 - **2026-06-05** — Patsnap hiring Senior Account Executive in San Antonio (Texas) for Connected Innovation Solutions, extending its North American sales coverage to the US South/West — [Patsnap · careers](https://jobs.lever.co/patsnap/a144a6aa-3e18-43dd-8add-9531ae569745)
@@ -121,6 +117,10 @@ _Total disclosed: $351.6M._
   - Numbers: Base $56,650 CAD/year; OTE ~$94,166 CAD/year; 12,000+ R&D and IP customers globally; 5 weeks paid vacation
   - Quote: "You will be the first point of contact for prospective customers, introducing them to Patsnap's innovation intelligence platform... identify, engage, and qualify prospects, building meaningful early-stage relationships that convert into long-term customers." — Patsnap job posting
 - **2026-05-27** — Hiring Semiconductor Reverse Engineering Specialist / AI Domain Expert for Material vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/5edb10a2-12ff-44db-b1c8-9488e8e8c361)
+- **2026-06-05** — Patsnap hiring a Strategic Life Sciences Data & AI Expansion Specialist (remote, California) for DaaS account expansion, reinforcing Life Sciences vertical push — [Patsnap · careers](https://jobs.lever.co/patsnap/0e0f5286-41c2-4292-90f8-41768fb50de4)
+  - Summary: Patsnap is hiring a Strategic Life Sciences Data & AI Expansion Specialist for a remote California-based role focused on expanding Data-as-a-Service (DaaS) opportunities within existing Life Sciences accounts across North America. The role acts as a subject-matter expert overlay supporting multiple Account Executives, targeting senior R&D, BD&L, Competitive Intelligence, and Innovation stakeholders in pharmaceutical, biotech, and medical device organizations.
+  - Numbers: $130K–$260K OTE (50/50 base + uncapped commission); 12,000+ customers; Life Sciences business growing 20%+ YoY; pre-IPO unicorn at $1B+ valuation
+  - Quote: "We are seeking a highly commercial, customer-facing Strategic Life Sciences Data & AI Expansion Specialist to drive growth across our existing Life Sciences customer base and support high-value strategic opportunities throughout North America." — Patsnap job posting
 
 ## Open questions
 - What is the expected valuation and timeline for the dual HK/Singapore IPO? Which exchange will be the primary listing?
