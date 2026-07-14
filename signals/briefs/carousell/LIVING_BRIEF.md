@@ -1,5 +1,5 @@
 # Carousell — LIVING BRIEF
-_Last updated: 2026-07-07 15:48 UTC_
+_Last updated: 2026-07-14 14:49 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -25,6 +25,9 @@ Singapore-headquartered online classifieds and consumer marketplace platform ope
 _Total disclosed: $440.6M._
 
 ## Recent signals
+- **2026-07-07** — Singapore's recommerce platform Carousell reaches EBITDA profitability as revenue hits $141M — [technode.global](https://technode.global/2026/07/07/singapores-recommerce-platform-carousell-reaches-ebitda-profitability-as-revenue-hits-141m)
+  - Summary: Corroborates the 2026-07-07 announcement; no new facts.
+- **2026-06-14** — M-Commerce Startup Carousell Announces Collaboration with Singapore Press Holdings' STClassifieds — [sg.finance.yahoo.com](https://sg.finance.yahoo.com/news/m-commerce-startup-carousell-announces-2310460.html)
 - **2026-07-07** — Carousell Group reported its first EBITDA-positive FY2025 with 18% revenue growth to $141M, driven by 40% recommerce growth, and outlined FY26 AI and recommerce scaling priorities — [Carousell Press](https://press.carousell.com/2026/07/07/carousell-group-reaches-ebitda-profitability-milestone-as-recommerce-scales-sets-ai-priorities-for-fy26/)
   - Summary: Revenue grew 18% YoY to $141M, nearly tripling since FY21. Recommerce revenue grew 40% and accounted for 45% of total revenue. Carousell ended FY25 with a strong cash position. The company outlined three FY26 priorities: scaling recommerce, disciplined execution for continued margin improvement, and deeper AI integration across the platform. AI tools already enable sellers to create listings in as little as three seconds, and more than 99% of transactions are completed without a scam incident.
   - People: Siu Rui Quek (Co-founder and CEO), Shing Tai Leung (Chief Strategy Officer)
