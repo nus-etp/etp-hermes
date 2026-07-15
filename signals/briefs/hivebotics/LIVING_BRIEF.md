@@ -1,5 +1,5 @@
 # Hivebotics — LIVING BRIEF
-_Last updated: 2026-06-19 16:06 UTC_
+_Last updated: 2026-07-15 14:45 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -11,10 +11,11 @@ Hivebotics is a Singapore-headquartered robotics startup incubated under NUS GRI
 
 ## Funding history
 - **date unknown** — Pre-Seed, $1M — The Gear, Feedback Ventures, Maple Exports, NUS Graduate Research Innovation Programme, BLOCK71 — [pitchbook.com](https://pitchbook.com/profiles/company/509315-32)
-
 _Total disclosed: $1.0M._
 
 ## Recent signals
+- **2026-06-12** — Tech in Asia republishes a profile of Hivebotics' Abluo toilet-cleaning robot, covering its 100+ commercial orders, facilities management vision, and ongoing Series A fundraising — [techinasia.com](https://www.techinasia.com/robot-cleans-toilets-humans-dont)
+  - Summary: Corroborates the 2026-05-13 Business Times feature; no new facts.
 - **2026-06-19** — Dealroom recap reports Hivebotics' Abluo robot cuts toilet cleaning time by 50%, confirming Series A fundraising is underway — [app.dealroom.co](https://app.dealroom.co/news/feed/hivebotics-abluo-robot-cuts-toilet-cleaning-time-by-50-with-ai-and-robotic-arms)
   - Summary: Dealroom reports Hivebotics' Abluo robot achieves a 50% reduction in cleaning time using AI-driven 3D perception and robotic arms. The article confirms Hivebotics is actively raising Series A funding to expand toward autonomous facilities management, citing 100+ orders since the July 2024 commercial launch.
   - People: Rishab Patwari (founder), Tuan Dung Nguyen (co-founder)
@@ -36,4 +37,3 @@ _none_
 - What is Hivebotics' commercial model — robot sales, leasing, or robotics-as-a-service (RaaS)?
 - Hivebotics confirmed to be raising Series A; who is the lead investor and what is the target raise size?
 - Which verticals (hospitality, healthcare, commercial real estate, transport) is Hivebotics targeting for its broader facilities management vision?
-

@@ -1,5 +1,5 @@
 # BEEX — LIVING BRIEF
-_Last updated: 2026-07-07 15:48 UTC_
+_Last updated: 2026-07-15 14:45 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -15,10 +15,11 @@ NUS GRIP-incubated Singapore autonomous underwater vehicle (AUV) startup buildin
 - **2021-11** — Seed, undisclosed — Cap Vista; Quest Ventures, IMC Ventures, SEEDS Capital, NUS Technology Holdings — [questventures.com](https://www.questventures.com/press/sg-based-underwater-robot-maker-beex-bags-seed-funding/)
 - **2023-11-15** — Bridge, $2M — Earth Venture Capital, ShipsFocus Ventures; SEEDS Capital, NUS Technology Holdings, Infinita VC — [technode.global](https://technode.global/2023/11/15/singapores-beex-raises-2m-in-funding-led-by-earth-venture-capital-shipsfocus-ventures/)
 - **2025-09-25** — Series A, $7.76M — ShipFocus Ventures, Earth Venture Capital; NUS Technology Holdings, SEEDS Capital, Infinita VC — [technode.global](https://technode.global/2025/09/25/singapores-beex-launches-7-76m-series-a-funding-round-to-fuel-global-expansion/)
-
 _Total disclosed: $9.8M._
 
 ## Recent signals
+- **2026-06-01** — SIT announces Autonomous Marine Foundry (AMF) at Punggol Digital District in partnership with BeeX, covering applied research, test-bedding, and talent development in maritime autonomy — [singaporetech.edu.sg](https://www.singaporetech.edu.sg/news/sit-and-beex-launch-autonomous-marine-foundry-punggol-digital-district-pdd-advance-maritime-robotics)
+  - Summary: Corroborates the 2026-06-22 Autonomous Marine Foundry launch announcement; no new facts.
 - **2026-06-24** — BeeX published detailed specs for its BETTA autonomous underwater drone: 100m depth rating, 12kWh battery for 24-hour operations, 7-sensor suite, and under 300kg, unveiled at its Xperiences 2 industry event — [beex.sg](https://www.beex.sg/news/beex-launches-betta-the-most-powerful-autonomous-underwater-drone)
   - Summary: Corroborates the 2026-06-24 announcement of the BETTA drone launch; the detailed article confirms BETTA is a 100m depth-rated autonomous inspection and light intervention drone with a 10x battery capacity upgrade over A.IKANBILIS and IHO-rated positioning accuracy. It debuted before 200 guests at BeeX's Xperiences 2 event covering defence, energy, coastal management, and research sectors. BETTA improves on A.IKANBILIS' AI through 14 years of proprietary data and supports 24-hour continuous autonomous operations.
   - People: Grace Chia (CEO and co-founder)
