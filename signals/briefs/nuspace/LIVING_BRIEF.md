@@ -1,5 +1,5 @@
 # NuSPACE — LIVING BRIEF
-_Last updated: 2026-06-20 16:00 UTC_
+_Last updated: 2026-07-16 15:06 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -14,6 +14,7 @@ NuSPACE is a Singapore-based space-tech startup incubated under NUS GRIP, buildi
 - **2019-10** — Seed, undisclosed — BEENEXT — [e27.co](https://e27.co/space-tech-company-nuspace-raises-funding-to-bring-iot-connectivity-to-remote-places-20191003/)
 
 ## Recent signals
+- **2026-07-01** — NuLink Satellite IoT Data Relay System Tested Successfully — [linkedin.com](https://www.linkedin.com/posts/nuspace-pte-ltd_nuspace-nulink-satelliteiot-activity-7477934037354049536--klh)
 - **2026-06-04** — NAMIC Singapore features NuSpace's 3D-printed antenna technology as a case study in Singapore's space manufacturing capability — [LinkedIn (NAMIC Singapore)](https://www.linkedin.com/posts/namicsg_from-lab-to-orbit-how-singapores-3d-printed-activity-7468119340383535104-awhn)
 - **2026-05-05** — NuSpace announced on LinkedIn that both NuLink-1 and NuLink-2 satellites are now in orbit, confirming full operational deployment of its first commercial satellite network following the May 3 Falcon 9 launch — [LinkedIn](https://sg.linkedin.com/company/nuspace-pte-ltd)
 - **2026-05-03** — NuSpace's first two satellites (NuLink 1 and 2) launched on Falcon 9 rideshare, forming the initial segment of its IoT communications constellation — [Gunter's Space Page](https://space.skyrocket.de/doc_sdat/nulink-1.htm)

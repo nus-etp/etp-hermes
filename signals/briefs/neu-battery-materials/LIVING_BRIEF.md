@@ -1,5 +1,5 @@
 # NEU Battery Materials — LIVING BRIEF
-_Last updated: 2026-07-14 14:49 UTC_
+_Last updated: 2026-07-16 15:06 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -14,7 +14,7 @@ NUS GRIP-incubated battery-materials startup developing low-cost electrochemical
 ## Funding history
 - **2022-06-24** — Seed, SGD 800K — Momentum Venture Capital (SMRT Corporation), Se-cure Waste Management, Angel investors, NUS GRIP — [eco-business.com](https://www.eco-business.com/press-releases/nus-grip-deep-tech-start-up-neu-battery-materials-raises-s800000-in-seed-funding/)
 - **2023-07-05** — Seed, $3.7M — SGInnovate; ComfortDelGro Ventures, Shift4Good, Paragon Ventures I, Angel investors — [prnewswire.com](https://www.prnewswire.com/news-releases/neu-battery-materials-concludes-oversubscribed-us3-7m-seed-funding-round-301869909.html)
-- **2026-01-06** — Series A, undisclosed — SGInnovate, Shift4Good; CJIC (Central Japan Innovation Capital), M7 Holdings, Existing shareholders, Founders — [neumaterials.com](https://www.neumaterials.com/news/neu-battery-materials-closes-pre-series-a-to-scale-novel-lfp-battery-recycling-technology)
+- **2026-01-06** — Series A, undisclosed — SGInnovate, Shift4Good; CJIC (Central Japan Innovation Capital), M7 Holdings, Existing shareholders, Founders et al. — [neumaterials.com](https://www.neumaterials.com/news/neu-battery-materials-closes-pre-series-a-to-scale-novel-lfp-battery-recycling-technology)
 
 _Total disclosed: $4.3M._
 

@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-07-14 14:49 UTC_
+_Last updated: 2026-07-16 15:06 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,11 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-07-16** — patsnap added caoyuan-zhihuiya to patsnap/agent — [github.com](https://github.com/patsnap/agent)
+- **2026-07-16** — Drug-Patent Relationship Specialist — LS department — [jobs.lever.co](https://jobs.lever.co/patsnap/6d73795a-2591-43da-9020-e35d0e98e5a6)
+- **2026-07-16** — Full Stack AI Engineer (Life Sciences) — LS department — [jobs.lever.co](https://jobs.lever.co/patsnap/9fbff515-11ed-4313-9f18-d713d0b0ddcc)
+- **2026-07-16** — Translational Medicine Data Specialist — LS department — [jobs.lever.co](https://jobs.lever.co/patsnap/ff35d833-bd95-446d-892f-8b9d432a5bac)
+- **2026-07-15** — Sales Development Representative (Life Science Graduates) — Sales Development — [jobs.lever.co](https://jobs.lever.co/patsnap/777ddfda-402a-45d1-bdda-4fb7102abcb2)
 - **2026-07-14** — Small Molecule Drug Discovery Scientist — LS department — [jobs.lever.co](https://jobs.lever.co/patsnap/01113c4a-9340-4f75-8571-4b39ad2ade52)
   - Summary: PatSnap - Small Molecule Drug Discovery Scientist Small Molecule Drug Discovery Scientist Shanghai Product Engineering Department – LS department / Full Time / On-site apply for this job Role Overview We are seeking a Small Molecule Drug Discovery Scientist to serve as the core bridge between our company and the life sciences sector. In this role, you will leverage your expertise in small molecule drug discovery to deeply understand customers' R D workflows, identify scientific challenges and business opportunities, and translate them into innovative AI-powered product solutions. Rather than conducting laboratory research, you will play a key role in shaping product strategy, defining product capabilities, and driving AI innovation for pharmaceutical R D.
 - **2026-07-13** — Patsnap Joins ASEAN IP Cooperation to Support Trusted Regional IP Data and AI-Assisted Examination — [patsnap.com](https://www.patsnap.com/resources/blog/patsnap-joins-asean-ip-cooperation-to-support-trusted-regional-ip-data-and-ai-assisted-examination)
@@ -59,6 +64,8 @@ _Total disclosed: $351.6M._
   - Summary: Patsnap is hiring a PhD-level Life Science Scientist for its LS department in Singapore to translate complex real-world life sciences problems into AI-native products. The role involves building PLG products by turning Patsnap's data assets (clinical trials, sequences, targets, deals, patents) into MCPs, Skills, and Agents that solve workflow pain points. The job description explicitly frames a shift from traditional SaaS to an "intelligent product ecosystem."
   - People: Life Science Scientist (PhD in life sciences, bioinformatics, or computational biology preferred)
   - Quote: "We are building the next generation of AI Native products for life sciences, moving Patsnap beyond a traditional SaaS platform into an intelligent product ecosystem powered by MCPs, Skills, and Agents." — Patsnap job posting
+
+## Older signals
 - **2026-06-15** — Hiring a UI/UX Design Intern (Singapore, on-site, part-time) to support design of an AI-powered formulation agent for the Material vertical, suggesting product development in materials science AI tools — [Patsnap · careers](https://jobs.lever.co/patsnap/b7b6c7ab-b4ac-44b1-9c60-4b4eb73698fc)
   - Summary: Patsnap is hiring a UI/UX Design Intern for its Material vertical in Singapore to support the design of an AI-powered formulation agent. The intern will work on user research, wireframing, prototyping, and information architecture for agent interaction flows, dashboards, and result presentation interfaces. This signals product development for an AI formulation agent targeting material science use cases.
   - Numbers: At least 3-month commitment required
@@ -77,8 +84,6 @@ _Total disclosed: $351.6M._
 - **2026-06-11** — Hiring an AI Solutions Lead for IP Legal in London, blending patent attorney expertise with AI product strategy — [Patsnap · careers](https://jobs.lever.co/patsnap/e4e5de86-5693-4f8d-8dee-d8c595d35a3c)
   - Summary: Patsnap is hiring an AI Solutions Lead (IP Legal) for a London-based remote role. The position bridges patent practitioner expertise with AI product strategy: the hire will act as a trusted advisor to IP professionals, support product development for AI-powered patent drafting, and work across Sales, Product, and Engineering teams. The role requires hands-on patent drafting experience, preferably as a European Patent Attorney or Patent Agent.
   - People: European Patent Attorney / Patent Agent (preferred)
-
-## Older signals
 - **2026-06-04** — Publishes 2026 R&D Benchmark Report (patsnap.com direct press release) — [patsnap.com](https://www.patsnap.com/resources/blog/press_release/patsnap-releases-2026-rd-benchmark-report-revealing-the-intelligence-gap-costing-innovation-teams-millions)
   - Summary: Corroborates the June 4, 2026 R&D Benchmark Report announcement; no new facts.
 - **2026-06-10** — Hiring a Senior AI Engineer to build company-wide AI knowledge infrastructure and RAG pipelines, signaling an internal AI transformation push — [Patsnap · careers](https://jobs.lever.co/patsnap/d338cfc9-9991-4bd0-a6d4-c7371b75ce62)
