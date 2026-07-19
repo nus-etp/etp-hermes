@@ -51,8 +51,24 @@ IGNORE_LINK_HOSTS = {
     "t.me",
     "wa.me",
     "pinterest.com",
+    # Asset CDNs — Webflow card layouts emit the thumbnail as the first link.
+    "cdn.prod.website-files.com",
+    "assets.website-files.com",
+    "assets-global.website-files.com",
 }
-IGNORE_LINK_EXTENSIONS = (".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".pdf")
+IGNORE_LINK_EXTENSIONS = (
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".svg",
+    ".webp",
+    ".avif",
+    ".pdf",
+    ".webm",
+    ".mp4",
+    ".ico",
+)
 
 
 def fetch_reader(url: str, api_key: str | None) -> tuple[int, str]:
@@ -143,7 +159,13 @@ def extract_items(markdown: str, base_url: str) -> list[dict[str, Any]]:
                     link = cand_link
 
         # Case 3: heading has no link; look forward a few lines for one.
+        # Collect the useful links in the scan window and prefer one on the same
+        # host as base_url — on Webflow card layouts the first link is often an
+        # off-host thumbnail and the real article link comes right after it.
         if link is None and heading_text and not LINK_RE.search(heading_text):
+            base_host = parse.urlparse(base_url).netloc
+            first_link: str | None = None
+            same_host_link: str | None = None
             for j in range(i + 1, min(i + 1 + LINK_SCAN_LINES, len(lines))):
                 next_line = lines[j].strip()
                 if not next_line:
@@ -155,10 +177,17 @@ def extract_items(markdown: str, base_url: str) -> list[dict[str, Any]]:
                 if not lm:
                     continue
                 cand_link = _resolve(lm.group(2), base_url)
-                if cand_link and _is_useful_news_link(cand_link, base_url):
-                    title = heading_text
-                    link = cand_link
+                if not (cand_link and _is_useful_news_link(cand_link, base_url)):
+                    continue
+                if first_link is None:
+                    first_link = cand_link
+                if parse.urlparse(cand_link).netloc == base_host:
+                    same_host_link = cand_link
                     break
+            chosen = same_host_link or first_link
+            if chosen:
+                title = heading_text
+                link = chosen
 
         if not title or not link:
             continue

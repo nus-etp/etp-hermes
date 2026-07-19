@@ -73,6 +73,12 @@ LEVER_WINDOW = _window_days("COLLECT_LEVER_DAYS", 30)
 DEFAULT_JINA_FALLBACK_BUDGET = 25
 JINA_FALLBACK_KINDS = {"firehose", "rss"}
 
+# Pre-extracted html_scrape items are auto-kept downstream (the ingest prompt
+# skips the relevance pass for them). A single bad first-crawl of a card layout
+# can emit dozens of undated junk links straight into the published output, so
+# cap how many pre-extracted items are accepted per source URL per run.
+DEFAULT_PRE_EXTRACTED_SOURCE_CAP = 8
+
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
 
 # GitHub org Atom feeds mix releases and repo creations (signal) with bot
@@ -86,6 +92,10 @@ GITHUB_KEEP_TITLE_RE = re.compile(
     r"(released|published a release|created a repository|created a tag .*release)",
     re.IGNORECASE,
 )
+# Org membership events ("<org> added <user> to <repo>") are org admin noise,
+# never product news. The keep regex above wins first, so releases/repo-created
+# still pass even if their titles happen to contain "added ... to".
+GITHUB_MEMBER_ADD_TITLE_RE = re.compile(r"^\S+ added \S+ to \S+", re.IGNORECASE)
 
 
 def _now() -> datetime:
@@ -190,7 +200,7 @@ def github_entry_keep(entry: dict[str, str]) -> bool:
         return False
     if GITHUB_KEEP_TITLE_RE.search(title):
         return True
-    if GITHUB_CHORE_TITLE_RE.search(title):
+    if GITHUB_CHORE_TITLE_RE.search(title) or GITHUB_MEMBER_ADD_TITLE_RE.search(title):
         return False
     # Push events: drop when the description (commit subjects) is all chores.
     desc = entry.get("description", "")
@@ -214,11 +224,13 @@ def collect(
     reader=None,
     jina_api_key: str | None = None,
     jina_budget: int = DEFAULT_JINA_FALLBACK_BUDGET,
+    pre_extracted_source_cap: int = DEFAULT_PRE_EXTRACTED_SOURCE_CAP,
 ) -> dict[str, Any]:
     candidates: list[dict[str, Any]] = []
     fetch_failed: list[dict[str, str]] = []
     llm_fetch_required: list[dict[str, str]] = []
     seen_this_run: set[tuple[str, str]] = set()  # (company, dedup_key)
+    pre_extracted_capped = 0  # pre-extracted items dropped by the per-source cap
 
     def add(company: str, item: dict[str, Any]) -> None:
         key = (company, item["dedup_key"])
@@ -345,11 +357,22 @@ def collect(
             if stype == "html_scrape":
                 pre = (jina_pc.get(name) or {}).get(url)
                 if pre:
-                    for it in pre:
-                        if it["link"] in seen:
-                            continue
-                        if not within_window(parse_date(it.get("pubDate")), PER_COMPANY_WINDOW):
-                            continue
+                    # Only items that survive dedup + the date window count
+                    # against the cap (an over-cap source of mostly-seen items
+                    # isn't a flood).
+                    eligible = [
+                        it
+                        for it in pre
+                        if it["link"] not in seen
+                        and within_window(parse_date(it.get("pubDate")), PER_COMPANY_WINDOW)
+                    ]
+                    if len(eligible) > pre_extracted_source_cap:
+                        # Prefer dated items; undated is the junk signature. The
+                        # sort is stable, so original order is kept among equals.
+                        eligible.sort(key=lambda it: parse_date(it.get("pubDate")) is None)
+                        pre_extracted_capped += len(eligible) - pre_extracted_source_cap
+                        eligible = eligible[:pre_extracted_source_cap]
+                    for it in eligible:
                         add(
                             name,
                             {
@@ -511,6 +534,7 @@ def collect(
             "fetch_failed": len(fetch_failed),
             "jina_recovered": len(set(jina_state["recovered"])),
             "jina_candidates": jina_candidates,
+            "pre_extracted_capped": pre_extracted_capped,
         },
     }
 
@@ -537,6 +561,13 @@ def main() -> int:
     except ValueError:
         jina_budget = DEFAULT_JINA_FALLBACK_BUDGET
 
+    try:
+        pre_extracted_source_cap = int(
+            os.environ.get("PRE_EXTRACTED_SOURCE_CAP", str(DEFAULT_PRE_EXTRACTED_SOURCE_CAP))
+        )
+    except ValueError:
+        pre_extracted_source_cap = DEFAULT_PRE_EXTRACTED_SOURCE_CAP
+
     out = collect(
         companies,
         feeds,
@@ -546,6 +577,7 @@ def main() -> int:
         reader=fetch_reader,
         jina_api_key=os.environ.get("JINA_API_KEY") or None,
         jina_budget=jina_budget,
+        pre_extracted_source_cap=pre_extracted_source_cap,
     )
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -559,7 +591,8 @@ def main() -> int:
         f"llm_fetch_required={s['llm_fetch_required']} "
         f"fetch_failed={s['fetch_failed']} "
         f"jina_recovered={s['jina_recovered']} "
-        f"jina_candidates={s['jina_candidates']}",
+        f"jina_candidates={s['jina_candidates']} "
+        f"pre_extracted_capped={s['pre_extracted_capped']}",
         file=sys.stderr,
     )
     return 0

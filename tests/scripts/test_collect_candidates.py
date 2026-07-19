@@ -275,6 +275,147 @@ def test_html_scrape_uses_jina_items(cc):
     assert out["llm_fetch_required"] == []
 
 
+def _jina_pre(url: str, items: list[dict[str, str]]) -> dict:
+    """Wrap pre-extracted html_scrape items for the Nova Health source."""
+    return {
+        "per_company": {"Nova Health": {url: items}},
+        "extraction_failed": [],
+        "deferred": [],
+    }
+
+
+def test_pre_extracted_under_cap_unchanged(cc):
+    url = "https://nova.example/news"
+    items = [
+        {"headline": f"Post {i}", "link": f"https://nova.example/p{i}", "pre_extracted": True}
+        for i in range(5)
+    ]
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Nova Health": [url]}},
+        jina=_jina_pre(url, items),
+        seen=set(),
+        fetcher=_fetcher({}),
+    )
+    assert len(out["candidates"]) == 5
+    assert out["stats"]["pre_extracted_capped"] == 0
+
+
+def test_pre_extracted_over_cap_drops_undated_first(cc):
+    url = "https://nova.example/news"
+    # 3 dated + 12 undated; default cap is 8 → keep 3 dated + 5 undated, drop 7.
+    dated = [
+        {
+            "headline": f"Dated {i}",
+            "link": f"https://nova.example/d{i}",
+            "pubDate": _recent_iso_date(1),
+            "pre_extracted": True,
+        }
+        for i in range(3)
+    ]
+    undated = [
+        {"headline": f"Junk {i}", "link": f"https://nova.example/u{i}", "pre_extracted": True}
+        for i in range(12)
+    ]
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Nova Health": [url]}},
+        jina=_jina_pre(url, dated + undated),
+        seen=set(),
+        fetcher=_fetcher({}),
+    )
+    links = {c["link"] for c in out["candidates"]}
+    assert len(links) == 8
+    assert out["stats"]["pre_extracted_capped"] == 7
+    # All dated items survive; the dropped ones are all undated.
+    for i in range(3):
+        assert f"https://nova.example/d{i}" in links
+    # Undated survivors keep original order (u0..u4 kept, u5..u11 dropped).
+    assert "https://nova.example/u0" in links
+    assert "https://nova.example/u11" not in links
+
+
+def test_pre_extracted_cap_env_override(cc):
+    url = "https://nova.example/news"
+    items = [
+        {"headline": f"Post {i}", "link": f"https://nova.example/p{i}", "pre_extracted": True}
+        for i in range(6)
+    ]
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Nova Health": [url]}},
+        jina=_jina_pre(url, items),
+        seen=set(),
+        fetcher=_fetcher({}),
+        pre_extracted_source_cap=2,
+    )
+    assert len(out["candidates"]) == 2
+    assert out["stats"]["pre_extracted_capped"] == 4
+
+
+def test_pre_extracted_cap_counts_only_addable_items(cc):
+    # Seen + windowed-out items shouldn't count toward the cap.
+    url = "https://nova.example/news"
+    items = [
+        {"headline": "Seen", "link": "https://nova.example/seen", "pre_extracted": True},
+        {
+            "headline": "Old",
+            "link": "https://nova.example/old",
+            "pubDate": _recent_iso_date(400),
+            "pre_extracted": True,
+        },
+    ] + [
+        {"headline": f"Fresh {i}", "link": f"https://nova.example/f{i}", "pre_extracted": True}
+        for i in range(3)
+    ]
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Nova Health": [url]}},
+        jina=_jina_pre(url, items),
+        seen={"https://nova.example/seen"},
+        fetcher=_fetcher({}),
+        pre_extracted_source_cap=3,
+    )
+    # 3 fresh addable items == cap → nothing dropped.
+    assert len(out["candidates"]) == 3
+    assert out["stats"]["pre_extracted_capped"] == 0
+
+
+def test_github_org_member_add_filtered(cc):
+    feed = _atom(
+        [
+            {
+                "id": "tag:github.com,2008:1",
+                "title": "patsnap added caoyuan-zhihuiya to patsnap/agent",
+                "link": "https://github.com/patsnap/agent",
+                "published": _recent_iso(1),
+            },
+            {
+                "id": "tag:github.com,2008:2",
+                "title": "someone released v2.0 of patsnap/agent",
+                "link": "https://github.com/patsnap/agent/releases/v2.0",
+                "published": _recent_iso(1),
+            },
+        ]
+    )
+    url = "https://github.com/patsnap.atom"
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Patsnap": [url]}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({url: feed}),
+    )
+    [cand] = out["candidates"]
+    # Member-add dropped; the release still passes the keep regex.
+    assert cand["dedup_key"] == "tag:github.com,2008:2"
+
+
 def test_html_scrape_without_jina_goes_to_llm_list(cc):
     url = "https://nova.example/news"
     out = cc.collect(

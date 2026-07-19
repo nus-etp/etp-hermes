@@ -365,6 +365,58 @@ def test_filters_self_link_and_image_link(jina, tmp_repo, monkeypatch) -> None:
     assert headlines == ["Real article"]
 
 
+@pytest.fixture()
+def fallback(scripts_module_loader):
+    return scripts_module_loader("jina_fallback")
+
+
+def test_ignores_avif_and_asset_cdn_links(fallback) -> None:
+    base = "https://invigilo.ai/blog"
+    # .avif thumbnail on an asset CDN — both the extension and the host disqualify it.
+    assert not fallback._is_useful_news_link(
+        "https://cdn.prod.website-files.com/abc/cover.avif", base
+    )
+    # Asset-CDN host disqualifies even a non-image path.
+    assert not fallback._is_useful_news_link(
+        "https://assets.website-files.com/abc/page", base
+    )
+    assert not fallback._is_useful_news_link(
+        "https://assets-global.website-files.com/abc/page", base
+    )
+    # New media/icon extensions on an otherwise-fine host.
+    for ext in (".avif", ".webm", ".mp4", ".ico"):
+        assert not fallback._is_useful_news_link(
+            f"https://other.example/media/file{ext}", base
+        )
+    # A real same-host article link still passes.
+    assert fallback._is_useful_news_link("https://invigilo.ai/blog/real-post", base)
+
+
+def test_webflow_card_prefers_same_host_article_over_thumbnail(fallback) -> None:
+    base = "https://invigilo.ai/blog"
+    markdown = """## AI safety on construction sites
+
+[thumbnail](https://cdn.prod.website-files.com/abc/cover.avif)
+[Read the article](https://invigilo.ai/blog/ai-safety-construction)
+"""
+    items = fallback.extract_items(markdown, base)
+    assert len(items) == 1
+    assert items[0]["link"] == "https://invigilo.ai/blog/ai-safety-construction"
+    assert items[0]["headline"] == "AI safety on construction sites"
+
+
+def test_case3_falls_back_to_first_useful_link_when_no_same_host(fallback) -> None:
+    base = "https://invigilo.ai/blog"
+    # No same-host link in the window → keep the first off-host (but useful) one.
+    markdown = """## External coverage
+
+[Coverage on partner site](https://partner.example/story)
+"""
+    items = fallback.extract_items(markdown, base)
+    assert len(items) == 1
+    assert items[0]["link"] == "https://partner.example/story"
+
+
 def test_missing_changed_sources_cold_starts_all_html_scrape(jina, tmp_repo, monkeypatch) -> None:
     companies = [
         {
