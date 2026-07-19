@@ -30,6 +30,9 @@ data/candidates.json
 data/agent-companies.json
 data/touched-companies.json
 
+# pre-Layer-1 snapshot of seen-urls (filter_seen_updates.py) — regenerated per run
+data/seen-urls-prerun.txt
+
 # dead-feed detector machine output — derived from feed-cache.json each run;
 # the committed human report is signals/feed-health.md
 data/dead-feeds.json

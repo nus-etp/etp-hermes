@@ -237,9 +237,30 @@ jobs:
           JINA_FALLBACK_BUDGET: "25"
         run: python3 scripts/collect-candidates.py
 
+      - name: Snapshot seen-urls before Layer 1
+        # Freeze signals/seen-urls.txt as it stands before the ingest session
+        # runs. filter_seen_updates.py (post-Layer-1) uses this snapshot to
+        # deterministically strip any item the LLM-parse path re-emitted for a
+        # URL that was already seen — the model doesn't always honour the
+        # grep -Fxq dedup instruction. Guard for the file existing (cold start).
+        if: steps.layers.outputs.run_l1 == 'true'
+        run: |
+          if [ -f signals/seen-urls.txt ]; then
+            cp signals/seen-urls.txt data/seen-urls-prerun.txt
+          fi
+
       - name: Layer 1 — data ingestion
         if: steps.layers.outputs.run_l1 == 'true'
         run: hermes -z "$(cat prompts/ingest.md)"
+
+      - name: Filter seen items from today's updates
+        # Deterministic post-Layer-1 dedup: removes any item from today's
+        # signals/updates/<date>.md whose link was already in the pre-run
+        # seen-urls snapshot. Backstops the model on the LLM-parse path.
+        # Exits 0 on all expected conditions (missing file/snapshot are no-ops);
+        # NOT continue-on-error, so a parse-time crash surfaces as a real bug.
+        if: steps.layers.outputs.run_l1 == 'true'
+        run: python3 scripts/filter_seen_updates.py
 
       - name: Build gap-fill queue (fairness rotation)
         # Deterministic pre-step: writes signals/agent-queue.txt with the N
@@ -362,9 +383,14 @@ jobs:
           # so upload-artifact can grab them. We don't commit these (audit/debug
           # artifacts, not learning), but uploading lets us inspect failures
           # without sshing into a runner. Exclude .env and auth.json — secrets.
+          # The oneshot (`hermes -z`) layers persist their turns into the SQLite
+          # ~/.hermes/state.db (via SessionDB), NOT ~/.hermes/sessions/ (only
+          # interactive sessions write there), so copy state.db too or the
+          # artifact carries no transcripts.
           mkdir -p run-logs
           cp -r ~/.hermes/logs run-logs/ 2>/dev/null || true
           cp -r ~/.hermes/sessions run-logs/ 2>/dev/null || true
+          cp ~/.hermes/state.db run-logs/ 2>/dev/null || true
 
       - name: Upload run logs
         if: always()
@@ -453,6 +479,7 @@ jobs:
             signals/updates/
             signals/briefs/
             signals/seen-urls.txt
+            signals/feed-health.md
             signals/agent-queue.txt
             signals/agent-queue-state.json
             signals/ab/
