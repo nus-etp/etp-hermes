@@ -40,6 +40,7 @@ Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest.
       - Dedup key = resolved URL, stripping `utm_*`, `ref`, `source`, `gclid`, `fbclid` query params.
       - If `grep -Fxq '<key>' signals/seen-urls.txt` matches, drop silently.
       - Else judge against `c.description`: *would this item teach a reader tracking `c` something new and true about `c`?* Keep only items genuinely and primarily about the watchlisted company, from sources you'd trust to be factual (company site, trade press, regulator filings, recognized investors — not content farms, not unattributed AI-generated PR, not aggregator restatements of a same-name ticker). Freshness windows: drop items older than 60 days for gap-fill, 14 days for deepen.
+      - **Date and link verification before keeping.** Search-snippet dates are unreliable — old articles routinely surface with recent-looking dates. Take the publication date from the fetched page itself, not the search result. If the fetch fails (404/error) or the page carries no publication date you can point to, **drop the item** — a dead or undatable link is not a signal. (This costs one of the item's ops; that's the point — verified signal only.)
       - Bias: gap-fill **keep on margin** (the company is invisible otherwise); deepen **drop on margin** (only material new context).
 
    c. Append every key seen this turn — kept or dropped — to `signals/seen-urls.txt`.

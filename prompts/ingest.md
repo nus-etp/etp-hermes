@@ -65,11 +65,12 @@ If `data/candidates.json` is missing, write nothing; final stdout: `no candidate
 3. **Write outputs.** Let `K[]` be the kept candidates.
    - Append the `dedup_key` of **every** candidate you judged — kept *and* dropped — to `signals/seen-urls.txt`, one per line, deduplicated. Append only — do not rewrite the file. (Dropped keys are recorded so we don't re-judge the same junk tomorrow.)
    - If `K[]` is empty: write nothing else. Final stdout: `no new items`.
-   - Otherwise write `signals/updates/<YYYY-MM-DD>.md` (UTC date) containing the kept items, grouped by company (use the canonical `company` value as the `## ` heading). Format per item:
+   - Otherwise write `signals/updates/<YYYY-MM-DD>.md` (UTC date). First line: `# Daily Updates — <YYYY-MM-DD>` (exactly this H1 — no other title variants). Then the kept items, grouped by company (use the canonical `company` value as the `## ` heading). Format per item:
      ```
      - **<headline>** — <source> · <pubDate>
        <link>
      ```
+     `<pubDate>` must be strict ISO `YYYY-MM-DD` (convert other forms; truncate timestamps to the date). If no date is known, omit the ` · <pubDate>` part entirely — never invent one.
      If the file already exists (re-run same day), append a new `## Run at <UTC time>` section instead of overwriting.
    - Final stdout: a single line of the form `<N> new items across <M> companies (<D> dropped by relevance)`. Nothing else.
 
