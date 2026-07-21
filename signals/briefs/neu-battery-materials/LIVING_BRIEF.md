@@ -1,5 +1,5 @@
 # NEU Battery Materials — LIVING BRIEF
-_Last updated: 2026-07-16 15:06 UTC_
+_Last updated: 2026-07-21 15:04 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -19,6 +19,10 @@ NUS GRIP-incubated battery-materials startup developing low-cost electrochemical
 _Total disclosed: $4.3M._
 
 ## Recent signals
+- **2026-07-21** — Published an article analysing China's September 2026 battery consumption tax and its implications for LFP recycling economics — [neumaterials.com](https://www.neumaterials.com/news/chinas-new-battery-tax-marks-lithium-ions-emerging-maturity)
+  - Summary: NEU published an article examining China's 2% battery consumption tax (rising to 4% in September 2027), ending an 11-year exemption on lithium-ion while exempting sodium-ion, solid-state, and fuel cells through 2028. The piece argues the tax shift signals that Beijing considers lithium-ion mature, shifting economics from subsidising new production to recovering value from the installed base — strengthening the case for building recycling capacity rather than relying on virgin lithium supply.
+  - Counterparties: China Ministry of Finance (tax policy)
+  - Numbers: 2% consumption tax from Sep 2026, 4% from Sep 2027; $60-180 estimated cost per BEV; 1,068.9 GWh battery production in China H1 2026 (+53.3% YoY); $48.7B lithium battery exports H1 2026
 - **2026-07-14** — Europe's New LFP Storage Plants and a Circular Economy Plan — [neumaterials.com](https://www.neumaterials.com/news/europes-new-lfp-storage-plants-and-a-circular-economy-plan)
   - Summary: Weeks earlier, Spain s Institute for Diversification and Energy Saving (IDAE) confirmed an €81 million grant toward Hithium s projected €405 million battery and energy-storage plant in Navarre. Both projects are moving fast, and both are being built almost entirely around what happens before a cell ships, not after. That is the blind spot a genuine battery circular economy is supposed to close, and closing it is far cheaper to plan for now, while the sites are still under construction, than once the first batteries start coming back.
   - Numbers: 10%; 16 GWh
