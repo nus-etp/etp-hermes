@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-07-20 15:10 UTC_
+_Last updated: 2026-07-24 14:40 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,8 @@ Patsnap is a Singapore-headquartered IP intelligence and innovation analytics Sa
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-07-23** — Patsnap hiring a Senior Account Manager (Commercial) in Singapore (on-site) for enterprise sales of its AI-driven innovation intelligence platform — [jobs.lever.co](https://jobs.lever.co/patsnap/1990fae5-8f0a-4fec-8c62-a8530add0ada)
+  - Summary: Patsnap is hiring a Senior Account Manager (Commercial) in Singapore (on-site) to build trusted, long-term partnerships with R&D and IP leaders and drive enterprise sales of its AI-driven innovation intelligence platform across the full innovation lifecycle.
 - **2026-07-20** — Patsnap hiring a part-time Life Science Growth Marketing Intern in Singapore to drive PLG metrics and cross-channel marketing for its Life Sciences vertical — [jobs.lever.co](https://jobs.lever.co/patsnap/1c79b54a-a920-4fdc-a6e9-a688063b9cb2)
   - Summary: Patsnap is hiring a part-time Life Science Growth Marketing Intern in Singapore to monitor PLG metrics (acquisition, activation, retention, paid conversion), design and execute A/B tests optimizing user journeys and conversion funnels, and support cross-channel marketing initiatives including email campaigns, conferences, and product launches. The role targets current Master's students or exceptional senior undergraduates with a life sciences, data science, or computer science background and AI tool proficiency.
   - Quote: "Proficient in using AI tools such as ChatGPT, Codex, Claude Code (CC), or similar coding and research assistants." — Patsnap job posting
@@ -63,9 +65,9 @@ _Total disclosed: $351.6M._
   - Numbers: $300-400M raise target; $2B+ valuation; 120M+ patents; 15,000+ customers; ~$400M capital raised to date; 19 years in operation
   - Quote: "Patent data let us kick down the door and earn respect, but now we're looking at completely different products." — Ray Chohan, co-founder
 - **2026-06-16** — Hiring a Senior Account Executive in Austin, Texas for net-new logo acquisition in the Connected Innovation Solutions vertical — [Patsnap · careers](https://jobs.lever.co/patsnap/d1690cc9-95e8-4874-be19-ed0f8d067e96)
-- **2026-06-15** — Patsnap has confidentially filed for a dual IPO in Hong Kong and Singapore, according to sources familiar with the matter, marking a major milestone for the Singapore-based patent intelligence unicorn — [Bloomberg](https://www.bloomberg.com/news/articles/2026-06-15/patsnap-said-to-confidentially-file-for-hk-singapore-dual-ipo)
 
 ## Older signals
+- **2026-06-15** — Patsnap has confidentially filed for a dual IPO in Hong Kong and Singapore, according to sources familiar with the matter, marking a major milestone for the Singapore-based patent intelligence unicorn — [Bloomberg](https://www.bloomberg.com/news/articles/2026-06-15/patsnap-said-to-confidentially-file-for-hk-singapore-dual-ipo)
 - **2026-06-15** — Hiring a domain knowledge Life Science Scientist (Singapore, on-site) to build AI-native life sciences products — moving beyond traditional SaaS into an AI agent/ecosystem powered by MCPs, Skills, and Agents for clinical, BD, and regulatory workflows — [Patsnap · careers](https://jobs.lever.co/patsnap/d8ed208f-0d67-4c4f-be6b-14f10fe0f645)
   - Summary: Patsnap is hiring a PhD-level Life Science Scientist for its LS department in Singapore to translate complex real-world life sciences problems into AI-native products. The role involves building PLG products by turning Patsnap's data assets (clinical trials, sequences, targets, deals, patents) into MCPs, Skills, and Agents that solve workflow pain points. The job description explicitly frames a shift from traditional SaaS to an "intelligent product ecosystem."
   - People: Life Science Scientist (PhD in life sciences, bioinformatics, or computational biology preferred)
