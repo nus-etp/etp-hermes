@@ -11,12 +11,12 @@ Rongbient Biotech is a BLOCK71 Saigon-incubated Vietnamese startup applying seaw
 - Stage / funding: Pre-seed / incubation (BLOCK71 Saigon, no public equity round)
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-06-01** — WEF profiled Rongbient's seaweed-and-biotech approach to reducing shrimp farming's environmental impact in Vietnam, the world's second-largest supplier. — [weforum.org](https://www.weforum.org/videos/this-start-up-is-using-seaweed-to-clean-up-shrimp-farming/)
   - Summary: The World Economic Forum featured Rongbient's approach of combining seaweed and biotechnology to address carbon-heavy shrimp farming in Vietnam. The piece notes that producing 1kg of shrimp generates approximately 15kg of CO2 emissions and describes the industry as inefficient and highly polluting.
   - Numbers: 15kg CO2 per 1kg shrimp; Vietnam is world's second-largest shrimp supplier
-
-## Older signals
-_none_
 
 ## Open questions
 - What is Rongbient's specific biotechnology mechanism (e.g., seaweed species, bioremediation process)?

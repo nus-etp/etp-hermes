@@ -11,15 +11,15 @@ Duluin is an Indonesian Earned Wage Access (EWA) fintech startup, resident at BL
 - Key people: Isa Nuruddin Ahmad (CEO)
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-06-22** — Duluin Amartha Collaboration Boosts Indonesia Fintech — [linkedin.com](https://www.linkedin.com/posts/duluin_duluin-x-amartha-activity-7475118135449235456-InPx)
-- **2026-04-01** — Duluin named Startup of the Year at ASEAN Startup Innovation Weekend 2026, Phnom Penh — [aseanstartupinnovationweekend.com](https://aseanstartupinnovationweekend.com/awards-2026)
 - **2026-05-26** — Duluin won Startup of the Year at Startup Innovation Weekend 2026 (Phnom Penh) and secured a direct invitation to TechFest Vietnam 2026, validating its EWA model's regional appeal — [The Leap Indonesia](https://theleap.id/detail/4087/earned-wage-access-startup-duluin-secures-regional-spotlight-through-techfest)
   - Summary: Duluin was named Startup of the Year at the three-day Startup Innovation Weekend 2026 in Phnom Penh, competing against 30 startups from more than 10 Asian countries. The prize includes a direct invitation to TechFest Vietnam 2026, offering market-access and investor-exposure opportunities for the Indonesian EWA platform.
   - Numbers: 30 startups from 10+ Asian countries
   - Quote: "Duluin's latest win is more than a trophy for the shelf. It is a strong market signal that an Indonesian Earned Wage Access startup can compete, stand out, and get noticed in a crowded regional ecosystem." — The Leap Indonesia
-
-## Older signals
-_none_
+- **2026-04-01** — Duluin named Startup of the Year at ASEAN Startup Innovation Weekend 2026, Phnom Penh — [aseanstartupinnovationweekend.com](https://aseanstartupinnovationweekend.com/awards-2026)
 
 ## Open questions
 - When does Duluin plan to enter the Vietnam and Cambodian markets, and what will its go-to-market strategy look like?

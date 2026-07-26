@@ -16,7 +16,7 @@ Peris.ai is a Singapore-based cybersecurity-AI startup (BLOCK71-resident) buildi
 - **2026-06-26** — Peris.ai — Crunchbase Company Profile — [crunchbase.com](https://www.crunchbase.com/organization/peris-ai)
 
 ## Older signals
-  _none_
+_none_
 
 ## Open questions
 - What commercial traction or pilot deployments does Peris.ai have to date?

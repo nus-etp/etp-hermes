@@ -18,6 +18,8 @@ FingerDance is a Singapore social-impact deep-tech startup building SiLViA (Sign
   - Counterparties: SBS Transit, Singapore Association for the Deaf (SADeaf)
   - Numbers: 6-month pilot at Chinatown MRT Station; expansion to more transport hubs within 12 months
   - Quote: "SBS Transit's broader goal is not to create a perfect technology, but to develop a 'symbol of hope' that demonstrates how technology can enable more inclusive transportation experiences." — Shaun Liew, SBS Transit
+
+## Older signals
 - **2026-04-15** — SBS Transit's SiLViA, powered by FingerDance, won the Transportation category at the Singapore Business Review National Business Awards 2026 — [Singapore Business Review](https://sbr.com.sg/co-written-partner/event-news/sbs-transits-sign-language-virtual-assistant-clinches-win-singapore-business-review-national-business-awards)
   - Summary: SiLViA was fully deployed at Chinatown MRT Station after a 2024 public trial. Within two months of deployment, it translated over 15,000 station announcements and responded to nearly 1,600 commuter enquiries with a 99.7% translation success rate. The modular system allows new sign languages to be added without major overhauls, supporting international expansion to Abu Dhabi for Emirati Sign Language.
   - People: Gong He (co-founder, FingerDance)
@@ -29,9 +31,6 @@ FingerDance is a Singapore social-impact deep-tech startup building SiLViA (Sign
   - Counterparties: SBS Transit, Singapore Association of the Deaf (SADeaf)
   - Numbers: ~2,000 queries during pilot, 1.2M daily ridership (SBS Transit network)
   - Quote: "Strong early adoption post-launch, handling some 2,000 queries during its pilot phase at Chinatown MRT station between October and November 2025."
-
-## Older signals
-_none_
 
 ## Open questions
 - What is FingerDance's business model — licensing SiLViA to transit operators, or a SaaS/subscription model?

@@ -17,6 +17,9 @@ Belli AI is a BLOCK71 Singapore-resident air-cargo software startup founded by v
 _Total disclosed: $2.4M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-06-23** — Belli takes the stage at The Pitch by Deel — [belli.ai](https://www.belli.ai/blog)
   - Summary: Belli AI was selected to pitch at The Pitch by Deel, a global startup tournament by Deel with a $15M prize pool. Co-founder and CEO Jeff Pan and Associate Product Engineer Asael Jalocha presented Belli's airline cargo software in separate editions of the competition.
   - People: Jeff Pan (Co-founder & CEO), Asael Jalocha (Associate Product Engineer)
@@ -25,9 +28,6 @@ _Total disclosed: $2.4M._
 - **2026-05-25** — Named as alumni with signed enterprise customers in Vercel's 2026 AI Accelerator recap — [Vercel Blog](https://vercel.com/blog/2026-vercel-ai-accelerator-recap)
   - Summary: Belli AI was highlighted among past Vercel AI Accelerator alumni that have signed enterprise customers and formed partnerships through the program. The 2026 cohort demo day was held April 16 at Vercel's San Francisco HQ with 39 teams presenting.
   - Numbers: Over $200K in credits and infrastructure per team; 40 alumni have raised $100M+ in venture funding collectively
-
-## Older signals
-_none_
 
 ## Open questions
 - Which enterprise customers has Belli AI signed, and what is the scale of deployment (pilot vs. production across how many airlines)?

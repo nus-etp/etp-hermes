@@ -24,8 +24,8 @@ _Total disclosed: $9.8M._
 - **2026-07-05** — BeeX has launched BETTA, its most advanced autonomous underwater drone featuring 24-hour endurance, AI-powered navigation, 100m depth rating, and IHO-grade positioning for offshore inspections and subsea surveys. — [botsanddrones.asia](https://botsanddrones.asia/drone-service-providers/f/beex-launches-betta-autonomous-underwater-drone-for-ai-inspection)
   - Summary: BeeX launched BETTA, an autonomous underwater drone with 24-hour endurance, AI-powered navigation, 100m depth rating, and IHO-grade positioning for offshore inspections and subsea surveys. The article covers the BETTA specs as a product roundup.
   - Numbers: 100m depth rating, 24-hour endurance, IHO-grade positioning
-- **2026-06-01** — SIT announces Autonomous Marine Foundry (AMF) at Punggol Digital District in partnership with BeeX, covering applied research, test-bedding, and talent development in maritime autonomy. — [singaporetech.edu.sg](https://www.singaporetech.edu.sg/news/sit-and-beex-launch-autonomous-marine-foundry-punggol-digital-district-pdd-advance-maritime-robotics)
-  - Summary: Corroborates the 2026-06-22 Autonomous Marine Foundry launch announcement; no new facts.
+
+## Older signals
 - **2026-06-24** — BeeX published detailed specs for its BETTA autonomous underwater drone: 100m depth rating, 12kWh battery for 24-hour operations, 7-sensor suite, and under 300kg, unveiled at its Xperiences 2 industry event. — [beex.sg](https://www.beex.sg/news/beex-launches-betta-the-most-powerful-autonomous-underwater-drone)
   - Summary: Corroborates the 2026-06-24 announcement of the BETTA drone launch; the detailed article confirms BETTA is a 100m depth-rated autonomous inspection and light intervention drone with a 10x battery capacity upgrade over A.IKANBILIS and IHO-rated positioning accuracy. It debuted before 200 guests at BeeX's Xperiences 2 event covering defence, energy, coastal management, and research sectors. BETTA improves on A.IKANBILIS' AI through 14 years of proprietary data and supports 24-hour continuous autonomous operations.
   - People: Grace Chia (CEO and co-founder)
@@ -46,11 +46,10 @@ _Total disclosed: $9.8M._
 - **2026-06-22** — BeeX Provides Integrated Inspection Approach for Offshore Industry Giant. — [beex.sg](https://www.beex.sg/case-studies/beex-provides-integrated-inspection-approach-for-offshore-industry-giant)
   - Summary: BeeX deployed its autonomous underwater inspection system for an offshore wind farm in the German North Sea (Lower Saxony), inspecting 18 monopiles in 16 days with a 95% reduction in carbon emissions versus conventional ROV operations. The system operated in currents up to 1.8 knots and delivered AI-enhanced visuals with real-time data access via the Sambal portal.
   - Numbers: 18 monopiles in 16 days, 95% reduction in carbon emissions, 1.8 knots current handling
+- **2026-06-01** — SIT announces Autonomous Marine Foundry (AMF) at Punggol Digital District in partnership with BeeX, covering applied research, test-bedding, and talent development in maritime autonomy. — [singaporetech.edu.sg](https://www.singaporetech.edu.sg/news/sit-and-beex-launch-autonomous-marine-foundry-punggol-digital-district-pdd-advance-maritime-robotics)
+  - Summary: Corroborates the 2026-06-22 Autonomous Marine Foundry launch announcement; no new facts.
 - **2026-05-20** — Preparing to unveil BETTA, its most advanced autonomous underwater drone, at a Singapore launch event. — [news.google.com](https://news.google.com/rss/articles/CBMiogJBVV95cUxPYXRYRnFKRW9PTU9rek1La1hITjQxc2g2STZ5VkF2clhlZFl4WWcxTUNsd1lQSmlNTFJ)
 - **2026-05-20** — Demonstrated its A.IKANBILIS autonomous subsea inspection drone at Oceanology International 2026, a major global ocean technology trade show. — [news.google.com](https://news.google.com/rss/articles/CBMimwJBVV95cUxPS29FUW9kcWwtdUJMWVFIRGVHWnYtQVFEZXF6MVhWN1lsU0lFT00tUlJqV3lEMDNyQk5)
-
-## Older signals
-_none_
 
 ## Open questions
 - Which commercial sectors (offshore wind, O&G, coastal infrastructure, defense) is BEEX prioritizing for expansion?

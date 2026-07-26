@@ -18,12 +18,10 @@ Green COP is a Singapore deep-tech startup converting biowaste into sustainable 
 - **2024-02** — Seed, undisclosed — Ken Energy — [e27.co](https://e27.co/green-cop-secures-investment-to-launch-a-pilot-biofuels-plant-20240214/)
 
 ## Recent signals
-
-- **2026-05-22** — CEO recognized as APAC Insider's Climate Tech CEO of the Year 2026, signalling growing industry credibility — [APAC Insider](https://apacinsider.digital/winners/green-cop-pte-ltd-2/)
+_none_
 
 ## Older signals
-
-_none_
+- **2026-05-22** — CEO recognized as APAC Insider's Climate Tech CEO of the Year 2026, signalling growing industry credibility — [APAC Insider](https://apacinsider.digital/winners/green-cop-pte-ltd-2/)
 
 ## Open questions
 

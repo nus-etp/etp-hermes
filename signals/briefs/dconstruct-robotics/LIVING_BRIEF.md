@@ -16,13 +16,11 @@ dConstruct Robotics is a Singapore-headquartered deep-tech robotics startup buil
   - Numbers: $125M Series A; 42,000 sqm global HQ in Punggol Digital District, completion end-2026
   - Quote: "the milestone reflects strong confidence in the company's vision to build the next generation of reality capture and robot automation solutions from Singapore to the world" — Chinn Lim, CEO of dConstruct Technologies
 
+## Older signals
 - **2026-06-10** — He Ruijie (RJ), PhD joins dConstruct Robotics as Tech Council Advisor — [dconstruct.ai](https://www.dconstruct.ai/news/he-ruijie-phd-joins-dconstruct-as-tech-council-advisor)
   - Summary: He Ruijie (RJ), PhD joins dConstruct's Tech Council to advise on engineering talent acquisition in the United States and provide strategic guidance on product direction and engineering excellence. RJ brings over a decade of experience in autonomous systems and is currently a Founding Technical Member at Mind Robotics, having previously co-founded two robotics startups from concept to deployment.
   - People: He Ruijie (RJ) (Tech Council Advisor); Chinn Hwa Lim (CEO and Founder)
   - Numbers: Founded 2021; three offices globally
-
-## Older signals
-_none_
 
 ## Open questions
 - What is the commercial structure of the Foxconn MOU — manufacturing partnership, joint development, or licensing?

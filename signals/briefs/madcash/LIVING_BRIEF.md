@@ -22,7 +22,7 @@ _Total disclosed: $1.1M._
   - Summary: MADCash started April 2020 in Kuala Lumpur as a Shariah-compliant fintech. Provides 0%-interest micro-funding. Partners: Bank Islam, YFCT, Yayasan Hasanah, Maybank, Paynet. Works with women micro-entrepreneurs in Malaysia.
 
 ## Older signals
-  _none_
+_none_
 
 ## Open questions
 - What commercial traction or pilot deployments does MADCash have to date?

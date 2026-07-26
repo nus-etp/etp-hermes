@@ -15,10 +15,10 @@ ConcreteAI is an NUS GRIP-incubated Singapore deep-tech startup developing AI-po
 _Total disclosed: $0.6M._
 
 ## Recent signals
-- **2026-06-23** — ConcreteAI at World Cities Summit 2026 in Singapore — [linkedin.com](https://www.linkedin.com/posts/concreteai_worldcitiessummit-concreteai-thermalcrack-activity-7471120375322664960-VTSa)
+_none_
 
 ## Older signals
-_none_
+- **2026-06-23** — ConcreteAI at World Cities Summit 2026 in Singapore — [linkedin.com](https://www.linkedin.com/posts/concreteai_worldcitiessummit-concreteai-thermalcrack-activity-7471120375322664960-VTSa)
 
 ## Open questions
 - What specific product or solution did ConcreteAI showcase at World Cities Summit 2026?

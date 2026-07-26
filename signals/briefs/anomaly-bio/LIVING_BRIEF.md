@@ -18,12 +18,12 @@ The Hangar (NUS Enterprise)-resident biomanufacturing startup using fermentation
 _Total disclosed: $2.6M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-05-28** — Co-founders Samyak Baid and Armaan Dhanda named to Forbes 30 Under 30 Asia 2026 list in the Healthcare and Science category — [mustsharenews.com](https://mustsharenews.com/forbes-30-under-30-2026)
   - Summary: The Anomaly Bio co-founders were among 18 Singaporeans selected for Forbes 30 Under 30 Asia 2026. They were recognised in the Healthcare and Science category from nearly 4,000 nominations across Asia-Pacific.
   - People: Samyak Baid (Co-founder), Armaan Dhanda (Co-founder)
-
-## Older signals
-_none_
 
 ## Open questions
 - What is Anomaly Bio's first target ingredient or product, and does it have any pilot or commercial offtake agreements?

@@ -14,11 +14,11 @@ Synectify is a Singapore deep-tech startup (NUS GRIP spin-off) deploying high-de
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/synectify)
 
 ## Recent signals
-- **2026-06-07** — Awarded "Most Disruptive Renewable Energy Transition Start-Up - Southeast Asia" by APAC Insider — [APAC Insider](https://www.apac-insider.com/winners/synectify-pte-ltd/)
-  - Summary: Synectify was recognized for addressing grid volatility and stranded power through high-density baseload computing solutions. The company deploys modular compute nodes engineered to convert surplus energy to value-generating computational work, solving the growing mismatch between intermittent renewable energy supply and increasing computing demand.
+_none_
 
 ## Older signals
-_none_
+- **2026-06-07** — Awarded "Most Disruptive Renewable Energy Transition Start-Up - Southeast Asia" by APAC Insider — [APAC Insider](https://www.apac-insider.com/winners/synectify-pte-ltd/)
+  - Summary: Synectify was recognized for addressing grid volatility and stranded power through high-density baseload computing solutions. The company deploys modular compute nodes engineered to convert surplus energy to value-generating computational work, solving the growing mismatch between intermittent renewable energy supply and increasing computing demand.
 
 ## Open questions
 - Has Synectify raised any priced equity round beyond the Shell StartUp Engine and NUS GRIP incubation support?

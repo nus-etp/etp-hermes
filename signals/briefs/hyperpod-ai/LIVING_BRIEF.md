@@ -12,12 +12,12 @@ Hyperpod AI is a Singapore-based AI developer-tooling startup offering an AI-pro
 - Identifiers: app.hyperpodai.com
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-04-01** — Listed among alumni startups of the NUS Computing Furnace incubator program — [comp.nus.edu.sg](https://www.comp.nus.edu.sg/entrepreneurship/furnace/start)
   - Summary: Hyperpod AI appears on the NUS Computing Furnace alumni roster, alongside startups like NodeFlair, StaffAny, and Visenze. The listing confirms the company's affiliation with NUS Enterprise's deep-tech incubation pipeline in addition to its The Hangar residency.
   - Counterparties: NUS Computing Furnace (incubator)
-
-## Older signals
-_none_
 
 ## Open questions
 - What user traction or revenue has Hyperpod AI achieved since launching its prototype builder?

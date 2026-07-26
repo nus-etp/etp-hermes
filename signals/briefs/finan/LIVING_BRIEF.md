@@ -16,20 +16,20 @@ Finan is a Singapore-headquartered SME operating system startup serving Vietname
 _Total disclosed: $3.8M._
 
 ## Recent signals
-- **2026-05-11** — SoBanHang targets SME digitisation with new funding — [ibsintelligence.com](https://ibsintelligence.com/ibsi-news/sobanhang-targets-sme-digitisation-with-new-funding)
-- **2026-05-12** — Vietnamese merchant app SoBanHang (Finan) raises $3.8M Pre-Series A — [backscoop.com](https://www.backscoop.com/newsletter-posts/vietnamese-market-app-sobanhang-raises-fresh-funds)
-  - Summary: Corroborates the existing coverage; no new facts.
+_none_
+
+## Older signals
 - **2026-05-29** — Tech in Asia: SoBanHang serves 800k merchants, raises funding for AI-powered SME finance tools — [techinasia.com](https://www.techinasia.com/news/sobanhang-funding-pre-series-a)
-- **2026-05-12** — Vietnam Investment Review covers Finan/SoBanHang's pre-Series A round with additional context on Vietnam's digital compliance-driven SME adoption — [vir.com.vn](https://vir.com.vn/sobanhang-wraps-up-pre-series-a-funding-round-152647.html)
-  - Summary: Corroborates the May 13, 2026 pre-Series A announcement from TechNode Global; no new facts.
 - **2026-05-13** — Finan raised US$3.8M in a pre-Series A round led by Hong Leong Bank, earmarked for scaling Finan One and expanding across Southeast Asia — [TechNode Global](https://technode.global/2026/05/13/finan-raises-3-8m-to-expand-vietnam-sme-management-platform-across-southeast-asia/)
   - Summary: Finan's SoBanHang platform serves 800K+ active business users and has processed US$5B+ in transaction volume. The pre-Series A was anchored by Hong Leong Bank (US$2M) and OSK-SBI Venture Partners (US$1.5M). Finan will use the capital to scale Finan One, an AI-native business OS built on SoBanHang's transaction data infrastructure, and to support embedded financial services, additional banking partnerships, and regional expansion into other Southeast Asian markets.
   - Counterparties: Hong Leong Bank (lead), OSK-SBI Venture Partners
   - Numbers: US$3.8M raised, 800K+ active business users, US$5B+ transaction volume
   - Quote: "Vietnam's SME sector is rapidly adopting digital payments, e-invoicing, accounting, and tax systems, creating an opportunity for businesses to move directly toward newer financial and operational infrastructure." — Sam Davidson, Investment Manager at OSK-SBI Venture Partners
-
-## Older signals
-_none_
+- **2026-05-12** — Vietnamese merchant app SoBanHang (Finan) raises $3.8M Pre-Series A — [backscoop.com](https://www.backscoop.com/newsletter-posts/vietnamese-market-app-sobanhang-raises-fresh-funds)
+  - Summary: Corroborates the existing coverage; no new facts.
+- **2026-05-12** — Vietnam Investment Review covers Finan/SoBanHang's pre-Series A round with additional context on Vietnam's digital compliance-driven SME adoption — [vir.com.vn](https://vir.com.vn/sobanhang-wraps-up-pre-series-a-funding-round-152647.html)
+  - Summary: Corroborates the May 13, 2026 pre-Series A announcement from TechNode Global; no new facts.
+- **2026-05-11** — SoBanHang targets SME digitisation with new funding — [ibsintelligence.com](https://ibsintelligence.com/ibsi-news/sobanhang-targets-sme-digitisation-with-new-funding)
 
 ## Open questions
 - What is the revenue model for Finan One vs SoBanHang — subscription, transaction-based, or both?

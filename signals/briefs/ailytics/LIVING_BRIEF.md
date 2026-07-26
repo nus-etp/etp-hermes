@@ -18,6 +18,9 @@ NUS GRIP-incubated Singapore deep-tech startup developing AI-powered video analy
 _Total disclosed: $2.7M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-06-10** — Posted a general news update (category: news) on its website — [Ailytics · news](https://cdn.prod.website-files.com/69649f66a99bea9a8e7b067c/6a1e86e8a804c20618a89ada_Untitled%20design%20(1)
 - **2026-06-02** — Deployed NVIDIA Cosmos 3 world models into its Ailyssa platform, enabling spatio-temporal reasoning for industrial safety that was previously unsolvable with traditional CV — [Ailytics](https://www.ailytics.ai/news/industrial-video-intelligence-reimagined-ailytics-deploys-nvidia-cosmos-3-across-heavy-industry)
   - Summary: Ailytics integrated NVIDIA Cosmos 3 across four capabilities of its Ailyssa platform — contextual natural-language search across CCTV footage, periodic image reasoning for slow-moving hazards, second-layer false-positive reduction on generated alerts, and spatio-temporal SOP verification. The company positions this as a complement to its existing fast specialized models, not a replacement. Customers include Changi Airport Group, DHL, Laing O'Rourke, and Leonardo da Vinci International Airport.
@@ -34,9 +37,6 @@ _Total disclosed: $2.7M._
 - **2026-05-20** — Won first place at the Supernova Challenge, an industry competition, validating its technology in a public forum — [ailyitics.ai](https://www.ailytics.ai/news/we-won-first-place-at-the-supernova-challenge)
 - **2026-05-20** — Featured on The Business Times in April 2026, gaining mainstream business media coverage in Singapore — [ailyitics.ai](https://www.ailytics.ai/news/april-2026-business-times-feature)
 - **2026-05-20** — Published its 2025 retrospective marking five years of operations, reflecting on growth and milestones achieved — [ailyitics.ai](https://www.ailytics.ai/news/turning-five-our-2025-retrospective)
-
-## Older signals
-_none_
 
 ## Open questions
 - Is Ailytics currently fundraising for its next round, given the 2024 pre-seed and growing momentum?

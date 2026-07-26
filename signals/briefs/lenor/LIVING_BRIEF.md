@@ -13,14 +13,14 @@ Lenor is a Singapore-based AI tutoring platform (also operating under the name "
 - Identifiers: lenorai.com
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-04-01** — Listed as a current resident of NUS Computing Furnace, described as an AI tutoring platform for personalized education — [comp.nus.edu.sg](https://www.comp.nus.edu.sg/entrepreneurship/furnace/start)
   - Summary: Lenor is listed as a current Furnace resident and also goes by the name "Remarkably". The incubator describes it as an AI tutoring platform offering personalized education through interactive assessments and adaptive algorithms. Victor Ng is the listed contact.
   - People: Victor Ng (contact)
   - Counterparties: NUS Computing Furnace (incubator)
   - Quote: "Lenor is an AI tutoring platform that offers personalized education through interactive assessments and adaptive algorithms." — NUS Computing Furnace page
-
-## Older signals
-_none_
 
 ## Open questions
 - Has Lenor launched a live product or piloted with any schools or tutoring centres?

@@ -11,10 +11,10 @@ Acoerela is an NUS GRIP-incubated Singapore deep-tech startup developing fluores
 - Stage / funding: NUS GRIP Run 6 portfolio (incubation / pre-seed)
 
 ## Recent signals
-- **2026-05-25** — Co-presented with Beckman Coulter at ISEV2026 on an exosome EV purification method — [linkedin.com](https://www.linkedin.com/posts/activity-7454042039400386560-9kdf)
+_none_
 
 ## Older signals
-_none_
+- **2026-05-25** — Co-presented with Beckman Coulter at ISEV2026 on an exosome EV purification method — [linkedin.com](https://www.linkedin.com/posts/activity-7454042039400386560-9kdf)
 
 ## Open questions
 - Has Acoerela raised any equity funding beyond NUS GRIP incubation support, or is the company still grant-funded?

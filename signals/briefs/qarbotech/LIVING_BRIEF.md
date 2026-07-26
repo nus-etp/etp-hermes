@@ -25,6 +25,8 @@ _Total disclosed: $2.2M._
   - People: Chor Chee Hoe (CEO and Co-Founder)
   - Counterparties: Tokyo Governor Yuriko Koike (award presenter)
   - Numbers: 820 entries; 7 finalists; ¥1 million winner's cheque
+
+## Older signals
 - **2026-05-31** — Won the SusHi Tech Global Pitch Challenge 2026 Grand Prize (¥10M, ~US$62K) in Tokyo, beating over 800 applicants from 60+ countries; prize awarded by Tokyo Governor Yuriko Koike — [Malaysia SME](https://www.malaysiasme.com.my/qarbotech-wins-grand-prize-at-sushi-tech-challenge-2026-elevating-southeast-asian-agritech-on-the-global-stage/)
   - Summary: Qarbotech's nanocarbon-based photosynthesis-enhancement technology earned top honours at the SusHi Tech 2026 pitch competition in Tokyo. The win validates the company's approach of optimising plants' natural light-energy utilisation without pushing crops beyond biological limits. The company plans partner-led distribution through seed manufacturers and agricultural input distributors.
   - People: Chor Chee Hoe (CEO and Co-Founder)
@@ -33,9 +35,6 @@ _Total disclosed: $2.2M._
   - Quote: "We are not making the plant work extra hard. We are simply increasing its light energy usage. In regions like Southeast Asia, overcast weather and prolonged rainy seasons can reduce productivity by up to 40 per cent. Our technology bridges that gap." — Chor Chee Hoe, CEO and Co-Founder
 - **2026-04-29** — Corroborating coverage from The Stoly on Qarbotech's SusHi Tech Global Pitch Challenge 2026 Grand Prize win; the article recaps the ¥10M prize, 800+ applicants, and the significance for Southeast Asian agritech — [thestoly.com](https://thestoly.com/2026/05/qarbotech-wins-grand-prize-at-sushi-tech-challenge-2026-elevating-southeast-asian-agritech-on-the-global-stage)
   - Summary: Corroborates the 2026-05-31 announcement; no new facts.
-
-## Older signals
-_none_
 
 ## Open questions
 - How will the SusHi Tech prize proceeds be deployed — R&D, capacity expansion, or market-entry?

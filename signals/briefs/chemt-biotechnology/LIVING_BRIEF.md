@@ -10,10 +10,10 @@ BLOCK71 Singapore-resident chemistry and biotechnology startup whose co-founders
 - Region: Singapore
 
 ## Recent signals
-- **2026-06-08** — Co-founders Sun Jie and Wu Ling named to Prestige Singapore 40 Under 40 2026, the first major public recognition for this BLOCK71-incubated startup — [Prestige Online](https://www.prestigeonline.com/sg/people/40-under-40/sun-jie-wu-ling-chemt-biotechnology-prestige-40-under-40-2026)
+_none_
 
 ## Older signals
-_none_
+- **2026-06-08** — Co-founders Sun Jie and Wu Ling named to Prestige Singapore 40 Under 40 2026, the first major public recognition for this BLOCK71-incubated startup — [Prestige Online](https://www.prestigeonline.com/sg/people/40-under-40/sun-jie-wu-ling-chemt-biotechnology-prestige-40-under-40-2026)
 
 ## Open questions
 - What specific chemistry / biotechnology application is ChemT Biotechnology developing?

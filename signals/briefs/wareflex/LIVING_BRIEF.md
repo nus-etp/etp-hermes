@@ -17,12 +17,12 @@ Vietnamese on-demand logistics startup operating a tech-enabled marketplace conn
 _Total disclosed: $1.3M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-06-01** — Wareflex posted three job openings (Marketing Intern, Assistant to CEO, Partnership Operation) in Ho Chi Minh City, signalling active team-building at its small, sub-50-person startup — [ybox.vn](https://ybox.vn/tuyen-dung/startup-hcm-nen-tang-logistics-wareflex-tuyen-dung-thuc-tap-sinh-marketing-truyen-thong-tro-ly-giam-doc-team-partnership-operation-full-time-2026-69b7737dd0ecf9555516bd1b)
   - Summary: Wareflex's job listings on YBox cover marketing, executive support, and partnership/operations roles. The company describes itself as Vietnam's first digital logistics platform connecting warehouse rental and transportation services. Company size is listed as small (< 49 employees with social insurance).
   - Numbers: < 49 employees (company size), 3 open positions
-
-## Older signals
-_none_
 
 ## Open questions
 - What is Wareflex's current revenue trajectory and customer count as it scales its logistics platform beyond its initial base?

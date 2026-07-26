@@ -22,7 +22,7 @@ _Total disclosed: $50.0M._
 - **2026-06-26** — Pinhome — LinkedIn — [linkedin.com](https://www.linkedin.com/company/pinhome)
 
 ## Older signals
-  _none_
+_none_
 
 ## Open questions
 - What commercial traction or pilot deployments does Pinhome have to date?

@@ -17,7 +17,7 @@ Otrafy is a Vancouver/Saigon-based enterprise-SaaS startup (founded 2018 by Luca
 - **2026-06-26** — Otrafy — Mind Fund portfolio — [mindfund.com](https://www.mindfund.com/portfolio/otrafy)
 
 ## Older signals
-  _none_
+_none_
 
 ## Open questions
 - Is Otrafy generating revenue, and at what scale?

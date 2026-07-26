@@ -13,6 +13,9 @@ Seamless (Seamless XR) is an NUS GRIP-incubated Singapore deep-tech startup deve
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/seamless-xr)
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-03-12** — Published clinical blog on vibration perception testing for diabetic neuropathy screening, positioning the Achilles platform as an automated alternative to manual biothesiometry — [seamless.sg](https://www.seamless.sg/blog/vibration-perception-testing-in-diabetic-neuropathy-screening)
   - Summary: The blog posts comprehensively cover sensory assessment techniques. An article on diabetic foot screening highlights that every 3 minutes 30 seconds someone with diabetes loses a limb in the US, and positions Seamless XR's Achilles platform as delivering automated, standardized screening in under 5 minutes per patient.
   - Numbers: 1 in 9 Singapore adults has diabetes (~450,000), projected 1M by 2050; 80% of lower limb amputations preceded by foot ulcers
@@ -26,9 +29,6 @@ Seamless (Seamless XR) is an NUS GRIP-incubated Singapore deep-tech startup deve
   - Summary: Corroborates the screening-gap narrative; Singapore's National Healthcare Group integrated foot programme achieved 40% reduction in major amputations.
 - **2026-03-12** — Published blog reviewing current sensory rehabilitation methods and their limitations, advocating for technology-assisted alternatives — [seamless.sg](https://www.seamless.sg/blog/sensory-rehabilitation-is-necessary-but-here-s-the-problem)
   - Summary: Reviews traditional sensory retraining techniques and advocates for technology-assisted approaches (VR/robotic platforms) as superior standardized, high-dose alternatives requiring less therapist time.
-
-## Older signals
-_none_
 
 ## Open questions
 - Has seamless raised any institutional funding, or is development still bootstrapped / grant-funded?
