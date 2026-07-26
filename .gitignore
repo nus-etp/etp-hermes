@@ -25,10 +25,11 @@ data/changed-sources.json
 data/jina-items.json
 data/jina-cache/
 
-# per-run derived inputs for the layer prompts (collect-candidates.py, slice_companies.py)
+# per-run derived inputs for the layer prompts (collect-candidates.py, slice_companies.py, select_gapfill_queue.py)
 data/candidates.json
 data/agent-companies.json
 data/touched-companies.json
+data/agent-open-questions.json
 
 # pre-Layer-1 snapshot of seen-urls (filter_seen_updates.py) — regenerated per run
 data/seen-urls-prerun.txt

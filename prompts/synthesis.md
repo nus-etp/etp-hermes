@@ -39,28 +39,34 @@ Merge today's new signals into each touched company's living brief. Preserve pri
 
    b. Compute `slug = slug(c.name)`. Brief path = `signals/briefs/<slug>/LIVING_BRIEF.md`.
 
-   c. **If the brief does not exist**, this is the first-time write. Generate all sections from scratch:
+   c. **If the brief does not exist**, this is a first-time write — apply the **new-brief bar** before creating anything. A living brief exists to track a company with real outside signal, not to restate its watchlist entry. Create the brief only if today's material clears one of:
+      - **≥3 distinct third-party signals** — independent coverage from sources other than the company itself, or
+      - **one material event** — funding round, partnership, product launch, major customer win.
+
+      The company's own homepage, its Crunchbase/LinkedIn profile page, and other static directory pages do **not** count as signals. Worked example of the failure mode this bar exists to prevent: a "brief" whose thesis restates `c.description` and whose only "signals" are `https://www.peris.ai` and `https://www.crunchbase.com/organization/peris-ai` — that is a stub, not a brief. If today's material fails the bar, **skip brief creation** (count it in `<S>` in the final stdout line); nothing is lost — the signal stays recorded in `signals/updates/`/`signals/agent/`, and the brief gets created on a later day once the bar is met. This gate applies to **creation only** — existing briefs are updated as usual per step d.
+
+      If the bar is met, generate all sections from scratch:
       - **Header**: `# <c.name> — LIVING BRIEF`, then `_Last updated: <UTC-timestamp>_`, then `![Infographic](infographic.png)` on its own line (unconditional — Layer 4 fills the PNG later).
-      - **Thesis**: 2–3 sentences derived from `c.description` and today's signals.
+      - **Thesis**: 2–3 sentences derived from `c.description` and today's signals. End the section with a final line `_Last material event: <YYYY-MM-DD> — <one-line description>_`. "Material" = funding, partnership, launch, major customer/award, exec change — **not** job postings or blog posts. If no material event is known yet, write `_Last material event: none on record_`.
       - **Profile**: bullets from `c.description` (sector, region) plus `c.identifiers` (LinkedIn, Crunchbase, UEN, website). Include only fields actually present — don't invent. For `Sector:`, follow the "Sector tagging" rules below.
-      - **Funding history**: render from `c.funding_rounds` (see "Funding history rendering rules"). Omit if empty/absent.
-      - **Recent signals**: today's `NEW_SIGNALS[c.name]` as cards, most recent first. Top-level bullet: `- **<signal-date>** — <one-line synthesis, your own words> — [<source-short>](<url>)` (NOT the headline verbatim). `<signal-date>` is the item's publication date and **must** be strict ISO `YYYY-MM-DD` (or the literal `date unknown` if no date is available) — never a month name or `Month D, YYYY` form (write `2026-05-11`, never `May 11, 2026` or `April 2026`; if only month/year is known, use the first of the month, e.g. `2026-04-01`). Optionally followed by indented sub-bullets enriched from the fetched body (see "URL fetching" and "Signal card extraction" below). If fetch skipped/failed, emit top-level bullet only.
+      - **Funding history**: required in every brief. Render from `c.funding_rounds` (see "Funding history rendering rules"). If empty/absent, still emit the `## Funding history` heading with the single line `_No disclosed funding._`.
+      - **Recent signals**: today's `NEW_SIGNALS[c.name]` as cards, most recent first. Top-level bullet: `- **<signal-date>** — <one-line synthesis, your own words> — [<source-short>](<url>)` (NOT the headline verbatim). `<signal-date>` is the item's publication date and **must** be strict ISO `YYYY-MM-DD` (or the literal `date unknown` if no date is available) — never a month name or `Month D, YYYY` form (write `2026-05-11`, never `May 11, 2026` or `April 2026`; if only month/year is known, use the first of the month, e.g. `2026-04-01`). Optionally followed by indented sub-bullets enriched from the fetched body (see "URL fetching" and "Signal card extraction" below). If fetch skipped/failed, emit top-level bullet only. Job postings and routine GitHub events do **not** get individual cards — see "Hiring & routine-event aggregation"; duplicate coverage of one event merges per "Corroboration merging".
       - **Older signals**: `_none_`.
       - **Open questions**: 1–3 questions today's signals raise but don't answer. Skip if none.
 
    d. **If the brief already exists**, read it and merge:
       - **Header**: update `_Last updated:_` to `<UTC-timestamp>`. Keep the H1 verbatim. Ensure `![Infographic](infographic.png)` follows `_Last updated:_`; insert if missing (legacy briefs).
-      - **Thesis**: keep verbatim *unless* today's signals materially shift trajectory (new market, new funding stage, pivot, exec change, acquisition, shutdown). If you rewrite, write naturally — not as a list of citations.
+      - **Thesis**: keep verbatim *unless* today's signals materially shift trajectory (new market, new funding stage, pivot, exec change, acquisition, shutdown). If you rewrite, write naturally — not as a list of citations. Maintain the `_Last material event:_` line as the last line of the section: update it whenever a new material event lands today (funding, partnership, launch, major customer/award, exec change — not job postings or blog posts); insert it (from the brief's known history, or `none on record`) if a legacy brief is missing it.
       - **Profile**: touch only when a today's signal contradicts or extends a field. Otherwise keep verbatim. Exception: if `c.sector` is present on the company object and the on-disk `Sector:` bullet does not match it, update the bullet to match `c.sector` verbatim (silent correction, no SECTOR_PROPOSAL needed).
-      - **Funding history**: re-render from `c.funding_rounds`. `companies.json` is authoritative — replace the on-disk section if it differs. Omit if empty/absent. Do **not** add rounds inferred from today's signals — that goes in `data/companies.json` first.
-      - **Recent signals**: prepend today's `NEW_SIGNALS[c.name]` cards. URL-level dedup against the existing brief (skip if URL already in `Recent signals` or `Older signals`; never re-fetch on-disk URLs). Cap: 20 **top-level** bullets — sub-bullets don't count. If exceeded, demote oldest excess to `Older signals`, moving each card as a single subtree (top bullet + its sub-bullets), oldest at the bottom.
-      - **Open questions**: append new questions; remove any that today's signals clearly answer. If empty after editing, render `_none open_`.
+      - **Funding history**: re-render from `c.funding_rounds`. `companies.json` is authoritative — replace the on-disk section if it differs. Required in every brief: if `c.funding_rounds` is empty/absent, emit the `## Funding history` heading with the single line `_No disclosed funding._` (insert the section if a legacy brief is missing it, between `## Profile` and `## Recent signals`). Do **not** add rounds inferred from today's signals — that goes in `data/companies.json` first.
+      - **Recent signals**: prepend today's `NEW_SIGNALS[c.name]` cards. URL-level dedup against the existing brief (skip if URL already in `Recent signals` or `Older signals`; never re-fetch on-disk URLs). Event-level dedup too: if a new URL merely corroborates an event already carded in the brief, don't add a bullet — append to the existing one per "Corroboration merging". Job postings go into the `### Hiring` subsection and routine GitHub events fold into one-line notes per "Hiring & routine-event aggregation" (when merging into a legacy brief that carries per-posting bullets, you may consolidate them into the roll-up). Cap: 20 **top-level** bullets — sub-bullets don't count. If exceeded, demote oldest excess to `Older signals`, moving each card as a single subtree (top bullet + its sub-bullets), oldest at the bottom.
+      - **Open questions**: this list is not write-only — retire before you append. First re-read every existing question against today's signals: if one is now answered, **delete it** (optionally folding the answer into the relevant signal bullet or the Thesis — e.g. "Is the company generating revenue?" dies the day an ARR figure lands, and the figure belongs in that signal's `Numbers:` sub-bullet). Then append genuinely new questions. Keep the list to at most ~4 live questions — if over, drop the stalest/least decision-relevant ones. If empty after editing, render `_none open_`.
 
    e. **No-write check**: if after the merge the brief file's contents are byte-identical to the existing file, **do not write**. This preserves git history and avoids meaningless commits.
 
    f. **Write the merged brief** to `signals/briefs/<slug>/LIVING_BRIEF.md`, creating the directory if needed. Overwrite the existing file in a single write — do not append.
 
-5. **Final stdout**: a single line `<W> briefs updated, <C> created, <S> skipped (no changes)`. Nothing else.
+5. **Final stdout**: a single line `<W> briefs updated, <C> created, <S> skipped (no changes)`. `<S>` counts both no-change merges and companies skipped by the new-brief bar. Nothing else.
 
 ## Brief template (use exactly these section headings)
 
@@ -71,6 +77,8 @@ _Last updated: <YYYY-MM-DD HH:MM UTC>_
 
 ## Thesis
 <2–3 sentences. Rolling assessment of what this company is and where it's going.>
+
+_Last material event: <YYYY-MM-DD> — <one-line description>_
 
 ## Profile
 - Sector: …
@@ -84,7 +92,7 @@ _Last updated: <YYYY-MM-DD HH:MM UTC>_
 - **<date>** — <stage>, <amount> — <lead>; <other investors> — [source](<url>)
 - **<date>** — <stage>, <amount> — <lead>; <other investors> — [source](<url>)
 
-_Total disclosed: <sum of amount_usd as $X.XM>._  <!-- optional, omit if no amounts -->
+_Total disclosed: <sum of amount_usd as $X.XM>._  <!-- optional, omit if no amounts; if no rounds at all, the section body is the single line `_No disclosed funding._` -->
 
 ## Recent signals
 - **<YYYY-MM-DD>** — <one-line synthesis, your own words> — [<source-short>](<url>)
@@ -95,6 +103,10 @@ _Total disclosed: <sum of amount_usd as $X.XM>._  <!-- optional, omit if no amou
   - Quote: "<verbatim excerpt from the fetched body>" — <attributed speaker>
 - **<YYYY-MM-DD>** — … — [<source-short>](<url>)
 
+### Hiring
+- **<YYYY-MM-DD>** — <one rolled-up read of the hiring pattern> — [<source-short>](<url>)
+- **<YYYY-MM-DD>** — <individual posting, only if strategically revealing> — [<source-short>](<url>)
+
 ## Older signals
 _none_
 
@@ -103,7 +115,7 @@ _none_
 - <question>
 ```
 
-Omit Profile bullets you don't have. Omit `Funding history` if `c.funding_rounds` is empty/absent. Render empty `Older signals` as `_none_`, empty `Open questions` as `_none open_`. Omit any sub-bullet with no evidence — no empty placeholders. If URL was not fetched or fetch failed, emit top-level bullet only. Every `## Recent signals` and `## Older signals` top-level bullet **must** open with `- **<YYYY-MM-DD>** — ` (strict ISO date) or `- **date unknown** — `; no other date form is valid (`- **April 2026** — ` and `- **May 11, 2026** — ` both fail the brief template check).
+Omit Profile bullets you don't have. `Funding history` is required in every brief — if `c.funding_rounds` is empty/absent, its body is the single line `_No disclosed funding._`. The `### Hiring` subsection is optional — include it only when the brief has job-posting signals (see "Hiring & routine-event aggregation"). Render empty `Older signals` as `_none_`, empty `Open questions` as `_none open_`. Omit any sub-bullet with no evidence — no empty placeholders. If URL was not fetched or fetch failed, emit top-level bullet only. Every `## Recent signals` and `## Older signals` top-level bullet **must** open with `- **<YYYY-MM-DD>** — ` (strict ISO date) or `- **date unknown** — `; no other date form is valid (`- **April 2026** — ` and `- **May 11, 2026** — ` both fail the brief template check).
 
 ## Funding history rendering rules
 
@@ -113,7 +125,8 @@ Omit Profile bullets you don't have. Omit `Funding history` if `c.funding_rounds
 - **Bullet format**: `- **<date-or-"date unknown">** — <stage>, <amount-or-"undisclosed"> — <lead-investors-comma-joined>; <other-investors-comma-joined> — [source](<url>)`. If `lead_investors` is empty, drop the leading "; " prefix and just render the investors. If both lists are empty, write "investors undisclosed". Truncate the investor list to the first 5 names and append "et al." if longer.
 - **Source label**: derive a short host label from the URL (e.g. `techcrunch.com`, `pier71.sg`, `nus.edu.sg`). Use the bare host, no `www.`.
 - **Total line**: after the bullet list, sum `amount_usd` across all rounds (skip nulls) and render `_Total disclosed: $<X>M._` (one decimal place, rounded). If every round's `amount_usd` is null, omit the total line.
-- **`funding_notes`**: if `c.funding_notes` is present and the company has rounds, ignore it (the rounds speak for themselves). If `c.funding_notes` is present and `c.funding_rounds` is empty, also omit the section — the notes are diagnostic and not for the brief.
+- **Empty/absent rounds**: never omit the section. Emit the `## Funding history` heading with the single line `_No disclosed funding._` — an explicit "none" is a statement; a missing section is just a gap.
+- **`funding_notes`**: if `c.funding_notes` is present and the company has rounds, ignore it (the rounds speak for themselves). If `c.funding_notes` is present and `c.funding_rounds` is empty, still render only `_No disclosed funding._` — the notes are diagnostic and not for the brief.
 
 ## URL fetching for signal enrichment
 
@@ -141,7 +154,20 @@ When a fetch succeeds, emit sub-bullets in this order; omit any whose field has 
 
 Do **NOT** extract: "About <Company>" trailers; generic market-size claims not attributed to the company; multiple paraphrases of the same number; analyst forecasts unrelated to the company; cap-table content already in `Funding history`; image captions, ads, related-articles lists, share-button labels.
 
-If two cards cover the same announcement (different outlets), keep both top-level bullets but reduce the second's sub-bullets to a single `Summary: Corroborates the <date> announcement; no new facts.`
+## Corroboration merging
+
+A second (or later) source covering the **same event** is confirmation, not a new signal — it must not get its own card. When a new URL merely corroborates an event already carded in the brief (whether the existing card landed today or on a prior day), append ` (Also reported by: [<source-short>](<url>))` to the end of that existing top-level bullet instead of adding a new bullet, and refresh nothing else on the card unless the new source adds genuinely new facts (new numbers, new named counterparties) — in that case fold those into the existing card's sub-bullets. Worked example of the failure mode: a brief carrying three full bullets for one funding round, two of them with the sub-bullet `Summary: Corroborates the 2026-07-07 announcement; no new facts.` — those should have been one bullet ending in two `Also reported by:` links. Never emit a card whose only content is "corroborates X; no new facts".
+
+## Hiring & routine-event aggregation
+
+Job postings are context, not events — a brief where Lever ads outnumber real signals (59 bullets, most of them individual job ads including a part-time intern and a junior IT-support role) has lost the plot. All job-posting signals for a company go into a single `### Hiring` subsection at the end of `## Recent signals` (never as ordinary signal cards), containing:
+
+- **One rolled-up read** of what the hiring pattern means, as a single dated bullet (date = most recent posting; link = the careers page or one representative posting). Synthesize, don't enumerate — e.g. `- **2026-07-20** — 14 life-sciences roles opened since May across Singapore/Toronto/Japan → LS vertical + North American commercial build-out — [lever.co](<url>)`. Update this bullet in place as new postings land; fold retired detail out rather than stacking bullets.
+- **At most 2–3 individual postings**, kept only when a single posting is itself strategically revealing — a Japan Forward Deployed Engineer implying an unannounced market entry, a designer for an unannounced product. A routine engineer/sales/intern/IT-support opening is never individually worth a bullet.
+
+Never paste raw job-description scrape text as a summary — every Hiring line is your own synthesis.
+
+Apply the same aggregation to **routine GitHub events** (member-added, chore/bot commits, dependency bumps): fold them into a single one-line dated note (in the main `Recent signals` list, or the Hiring roll-up style), never one dated bullet per event. A genuinely significant repo event (major open-source release, notable new project) may still get its own card.
 
 ## Sector tagging
 

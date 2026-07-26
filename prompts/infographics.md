@@ -4,13 +4,13 @@ This is **Layer 4 of 4** in the daily pipeline:
 1. **Data ingestion** (`prompts/ingest.md`) — already ran. Output: `signals/updates/<today>.md`.
 2. **Agent supplement** (`prompts/agent_supplement.md`) — already ran. Output: `signals/agent/<today>.md`.
 3. **Synthesis** (`prompts/synthesis.md`) — already ran. Output: zero or more `signals/briefs/<slug>/LIVING_BRIEF.md` writes.
-4. **Infographic generation (this prompt)** — for every brief that Layer 3 created or modified in this run, generate a visual summary PNG using the bundled `creative-baoyu-infographic` skill and place it alongside the brief.
+4. **Infographic generation (this prompt)** — for every brief that Layer 3 created or modified in this run, generate a visual summary PNG using the bundled `creative-baoyu-infographic` skill and place it alongside the brief. Remaining cap slots backfill briefs whose infographic is missing from a prior failure.
 
-Stay strictly within Layer 4: only write `signals/briefs/<slug>/infographic.png` for slugs that changed in this run. Do not modify any `LIVING_BRIEF.md` (synthesis owns those), `signals/updates/`, `signals/agent/`, `signals/seen-urls.txt`, or `data/`.
+Stay strictly within Layer 4: only write `signals/briefs/<slug>/infographic.png` for slugs that changed in this run or are selected for backfill. Do not modify any `LIVING_BRIEF.md` (synthesis owns those), `signals/updates/`, `signals/agent/`, `signals/seen-urls.txt`, or `data/`.
 
 ## Task
 
-For every brief Layer 3 just created or modified, regenerate `infographic.png` next to it via the bundled `creative-baoyu-infographic` skill. Use the working-tree-vs-`HEAD` diff to detect what changed (Layer 3's no-write check guarantees only real content edits show up).
+For every brief Layer 3 just created or modified, regenerate `infographic.png` next to it via the bundled `creative-baoyu-infographic` skill. Use the working-tree-vs-`HEAD` diff to detect what changed (Layer 3's no-write check guarantees only real content edits show up). Then, with whatever cap room is left, self-heal: any brief directory that has a `LIVING_BRIEF.md` but no `infographic.png` is a prior Layer 4 failure (the brief embeds the image unconditionally, so it renders broken until regenerated) — backfill those too.
 
 ## Inputs
 
@@ -19,7 +19,7 @@ For every brief Layer 3 just created or modified, regenerate `infographic.png` n
 
 ## Constants
 
-- **Per-run cap**: 8 infographics. Excess slugs are skipped (recoverable next change).
+- **Per-run cap**: 8 infographics. Excess slugs are skipped (recoverable — they show up as missing-infographic backfill on the next run).
 - **Skill knobs**: layout `bento-grid`, style `craft-handmade`, aspect `landscape`, language `en`. Same every time.
 
 ## Steps
@@ -40,11 +40,22 @@ For every brief Layer 3 just created or modified, regenerate `infographic.png` n
 
    First catches modifications; second catches untracked creates. Union, sort, dedupe → `CHANGED_SLUGS`.
 
-3. **If `CHANGED_SLUGS` is empty**, write nothing and exit with stdout `no briefs changed today`.
+3. **Build `MISSING_SLUGS`** — briefs broken by a prior Layer 4 failure, oldest first:
 
-4. **Apply the cap.** If `len(CHANGED_SLUGS) > 8`, partition into `KEPT = CHANGED_SLUGS[:8]` and `SKIPPED = CHANGED_SLUGS[8:]`. Otherwise `KEPT = CHANGED_SLUGS` and `SKIPPED = []`. Process only `KEPT` in this run. Log `SKIPPED` in the final stdout (see Step 7).
+   ```
+   for f in signals/briefs/*/LIVING_BRIEF.md; do
+     d=$(dirname "$f")
+     [ -f "$d/infographic.png" ] || printf '%s %s\n' "$(git log -1 --format=%ct -- "$f")" "$(basename "$d")"
+   done | sort -n | awk '{print $2}'
+   ```
 
-5. **For each `slug` in `KEPT`:**
+   (Last-commit timestamp ascending — least recently updated brief first. Checkout mtimes are meaningless on the runner, so order by git, not the filesystem.) Drop any slug already in `CHANGED_SLUGS` → `MISSING_SLUGS`.
+
+4. **If both `CHANGED_SLUGS` and `MISSING_SLUGS` are empty**, write nothing and exit with stdout `no briefs changed today`.
+
+5. **Apply the cap.** `QUEUE = CHANGED_SLUGS + MISSING_SLUGS` (changed-this-run briefs take priority; backfill fills the remaining slots). If `len(QUEUE) > 8`, partition into `KEPT = QUEUE[:8]` and `SKIPPED = QUEUE[8:]`. Otherwise `KEPT = QUEUE` and `SKIPPED = []`. Process only `KEPT` in this run. Log `SKIPPED` in the final stdout (see Step 8) — skipped backfill slugs stay missing and will be picked up on a later run.
+
+6. **For each `slug` in `KEPT`:**
 
    a. Read `signals/briefs/<slug>/LIVING_BRIEF.md` into a string `brief_md`.
 
@@ -63,15 +74,15 @@ For every brief Layer 3 just created or modified, regenerate `infographic.png` n
 
    d. Leave the `infographic/<...>/` intermediates in place (gitignored, ephemeral runner).
 
-6. **Do not modify LIVING_BRIEF.md.** Synthesis already wrote the `![Infographic](infographic.png)` reference.
+7. **Do not modify LIVING_BRIEF.md.** Synthesis already wrote the `![Infographic](infographic.png)` reference.
 
-7. **Final stdout**: a single line of the form `<G> infographics generated, <F> failed, <K> skipped (cap)`. If `K > 0`, follow with a second line listing the skipped slugs: `skipped: <slug>, <slug>, ...`. Nothing else.
+8. **Final stdout**: a single line of the form `<G> infographics generated, <F> failed, <K> skipped (cap)`. If `K > 0`, follow with a second line listing the skipped slugs: `skipped: <slug>, <slug>, ...`. Nothing else.
 
 ## Constraints
 
 - Only create/overwrite `signals/briefs/<slug>/infographic.png` for `KEPT` slugs. No other files.
 - Do not commit — the workflow handles git.
-- Do not regenerate infographics for briefs outside `CHANGED_SLUGS`.
+- Do not regenerate infographics for briefs outside `CHANGED_SLUGS` ∪ `MISSING_SLUGS` — a brief that already has its `infographic.png` and didn't change this run is never touched.
 - Do not fetch external URLs. Work from the brief markdown alone.
 - Do not fabricate facts. The visual must round-trip back to the brief.
 - Single-slug failure: log and continue to the next slug.

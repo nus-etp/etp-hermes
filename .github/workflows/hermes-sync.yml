@@ -337,6 +337,19 @@ jobs:
         if: steps.l3gate.outputs.run == 'true'
         run: hermes -z "$(cat prompts/synthesis.md)"
 
+      - name: Normalize living briefs
+        # Deterministic post-Layer-3 formatting pass over every
+        # signals/briefs/*/LIVING_BRIEF.md: sorts Recent/Older signal blocks
+        # descending by date, rotates Recent blocks older than 30 days into
+        # Older, and maintains the `_none_` placeholders — mechanics the
+        # synthesis prompt shouldn't have to hold. Gated on run_l3 (not
+        # l3gate) because rotation is calendar-driven and should happen even
+        # on no-signal days. Idempotent; fails open per file (unparseable
+        # briefs are skipped with a warning), so a step failure here is a
+        # real bug and should surface.
+        if: steps.layers.outputs.run_l3 == 'true'
+        run: python3 scripts/normalize_briefs.py
+
       - name: Layer 4 — infographic generation
         # Generates a baoyu infographic PNG next to every brief that Layer 3
         # just created or modified. Gated on Layer 3 having run because the
