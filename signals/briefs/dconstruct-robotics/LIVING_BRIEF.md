@@ -1,19 +1,25 @@
 # dConstruct Robotics — LIVING BRIEF
-_Last updated: 2026-07-18 14:20 UTC_
+_Last updated: 2026-07-26 14:28 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 dConstruct Robotics is a Singapore-headquartered deep-tech robotics startup building SLAM-based autonomous navigation and 3D digital-twin systems (d.ASH platform) for construction, defense, and logistics. Founded in 2021 by Chinn Hwa Lim, the company emerged from Singapore's RoboNexus accelerator and closed a $125M Series A in mid-2026, the largest round from the inaugural cohort, backed by the National Robotics Program. It has signed a manufacturing MOU with Foxconn, appointed robotics veteran He Ruijie to its Tech Council, and is establishing a 42,000 sqm global headquarters at Punggol Digital District (dC Plus) targeting completion by end-2026.
 
+_Last material event: 2026-07-03 — Closed $125M Series A led by JRE Ventures with SGInnovate, M7 Holdings, D.Camp, IMDA Spark Programme_
+
 ## Profile
 - Sector: Robotics
 - Region: Singapore (HQ), United States, Canada, Germany
 
+## Funding history
+_No disclosed funding._
+
 ## Recent signals
-- **2026-07-03** — dConstruct closed a $125M Series A round, the flagship outcome of Singapore's RoboNexus accelerator inaugural cohort under the National Robotics Program — [technode.global](https://technode.global/2026/07/03/singapores-dconstruct-raises-125m-series-a-as-robonexus-accelerator-concludes-inaugural-cohort)
-  - Summary: dConstruct Technologies raised $125M in Series A funding, marking the standout achievement of the inaugural RoboNexus accelerator cohort, a venture-building program under Singapore's National Robotics Program. The company will use the capital to scale its d.ASH autonomous robotics suite for GPS-denied environments across built environment, security, inspection, logistics, and entertainment, and to establish a new 42,000 sqm global headquarters at Punggol Digital District (dC Plus), targeting completion by end-2026.
+- **2026-07-03** — dConstruct closed a $125M Series A round led by JRE Ventures, the flagship outcome of Singapore's RoboNexus accelerator inaugural cohort under the National Robotics Program — [technode.global](https://technode.global/2026/07/03/singapores-dconstruct-raises-125m-series-a-as-robonexus-accelerator-concludes-inaugural-cohort) (Also reported by: [ai-market-watch.com](https://www.ai-market-watch.com/company/dconstruct-robotics))
+  - Summary: dConstruct Technologies raised $125M in Series A funding led by JRE Ventures, with participation from SGInnovate, M7 Holdings, D.Camp, and the IMDA Spark Programme, marking the standout achievement of the inaugural RoboNexus accelerator cohort. The company will use the capital to scale its d.ASH autonomous robotics suite for GPS-denied environments and establish a 42,000 sqm global headquarters at Punggol Digital District (dC Plus), targeting completion by end-2026.
   - People: Chinn Lim (CEO and Founder)
-  - Numbers: $125M Series A; 42,000 sqm global HQ in Punggol Digital District, completion end-2026
+  - Counterparties: JRE Ventures (lead), SGInnovate, M7 Holdings, D.Camp, IMDA Spark Programme
+  - Numbers: $125M Series A ($136M total raised across 2 rounds); 42,000 sqm global HQ in Punggol Digital District, completion end-2026
   - Quote: "the milestone reflects strong confidence in the company's vision to build the next generation of reality capture and robot automation solutions from Singapore to the world" — Chinn Lim, CEO of dConstruct Technologies
 
 ## Older signals
@@ -25,5 +31,4 @@ dConstruct Robotics is a Singapore-headquartered deep-tech robotics startup buil
 ## Open questions
 - What is the commercial structure of the Foxconn MOU — manufacturing partnership, joint development, or licensing?
 - What is the primary customer segment — government/defense, commercial construction, or logistics?
-- Who led the $125M Series A round and which institutional investors participated?
 - What post-money valuation did the Series A imply?
