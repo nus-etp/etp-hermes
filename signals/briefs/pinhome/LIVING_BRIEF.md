@@ -16,13 +16,13 @@ Pinhome is an Indonesian end-to-end proptech (founded 2019 by ex-Gojek execs Day
 _Total disclosed: $50.0M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-06-26** — Indonesian startup founder bootstrapped a company out of her garage (CNBC) — [cnbc.com](https://www.cnbc.com/indonesia-startup-founder-bootstrapped-garage)
 - **2026-06-26** — Pinhome — Genesis Alternative Ventures portfolio — [genesisventures.co](https://www.genesisventures.co/portfolio/pinhome)
   - Summary: Pinhome is Indonesia's largest property transaction platform. Founded 2019 by Dayu Dara and Ahmed Aljunied. Online-to-offline property brokerage. Key operations: Indonesia. Industry: Proptech.
 - **2026-06-26** — Pinhome — LinkedIn — [linkedin.com](https://www.linkedin.com/company/pinhome)
-
-## Older signals
-_none_
 
 ## Open questions
 - What commercial traction or pilot deployments does Pinhome have to date?

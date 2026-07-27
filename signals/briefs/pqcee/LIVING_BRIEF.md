@@ -20,11 +20,11 @@ pQCee is a Singapore-based post-quantum cybersecurity startup (founded 2022) bui
   - Counterparties: SGInnovate (co-lead), Lotus One Investment (co-lead), Thales (HSM partner), Microsoft (enterprise IT partner)
   - Numbers: $3.9M seed round; second institutional round; $2.8M prior raise (2022)
   - Quote: "global regulations are mandating that critical systems complete post-quantum cryptography migration by as early as 2030" — Paul Santos, Co-founder and Managing Partner, Wavemaker Partners
+
+## Older signals
 - **2026-06-26** — pQCee — Be Quantum Ready (LinkedIn) — [sg.linkedin.com](https://sg.linkedin.com/company/pqcee)
 - **2026-06-26** — How this quantum cybersecurity startup is enabling businesses to stay ahead (SGInnovate) — [sginnovate.com](https://www.sginnovate.com/investments/pqcee)
 - **2026-06-26** — pQCee | PKI Consortium — [pkic.org](https://pkic.org/about/membership/members/pqcee/)
-
-## Older signals
 - **2026-05-31** — Partnered with TechCreate Group to integrate NIST post-quantum cryptography (via SafeQuard) into QR Hybrid POS terminals, protecting payment data against harvest-now-decrypt-later quantum attacks — [Digital Transactions](https://www.digitaltransactions.net/techcreate-teams-with-pqcee-to-harden-qr-pos-terminal-security/)
   - Summary: TechCreate Group, a Singapore-based payments-software provider, will embed pQCee's SafeQuard quantum-safe cryptography into its QR Hybrid POS terminals that combine QR code scanning with contactless payment functions. The partnership targets the transition from current RSA/ECC encryption to post-quantum standards, aiming to demonstrate that PQC can be integrated into real-time payment systems without compromising performance or scalability.
   - People: Tan Teik Guan (CEO, pQCee), Heng Hai Lim (CEO, TechCreate)

@@ -20,10 +20,11 @@ CBE Eco-Solutions is a Singapore eco-tech startup incubated by NUS GRIP, develop
 _Total disclosed: $5.8M._
 
 ## Recent signals
-- **2026-06-26** — CBE Eco-Solutions Pte Ltd — Company profile — [sgpgrid.com](https://sgpgrid.com/company-details/cbe-ecosolutions-pte-ltd)
-  - Summary: CBE Eco-Solutions offers a dual sustainable solution for treating industrial carbon waste by recycling it into valuable products. Revenue $1-10M. 14 officers. Share capital SGD 2,917,050 (ordinary) and SGD 2,783,950 (preference).
+_none_
 
 ## Older signals
+- **2026-06-26** — CBE Eco-Solutions Pte Ltd — Company profile — [sgpgrid.com](https://sgpgrid.com/company-details/cbe-ecosolutions-pte-ltd)
+  - Summary: CBE Eco-Solutions offers a dual sustainable solution for treating industrial carbon waste by recycling it into valuable products. Revenue $1-10M. 14 officers. Share capital SGD 2,917,050 (ordinary) and SGD 2,783,950 (preference).
 - **2026-06-07** — Featured in CNA's "Young Changemakers" documentary series about climate change solutions — [Channel NewsAsia](https://www.channelnewsasia.com/news/video-on-demand/on-the-red-dot/how-to-stop-climate-change-14306852)
 
 ## Open questions

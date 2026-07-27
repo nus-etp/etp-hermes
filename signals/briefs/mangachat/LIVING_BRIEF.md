@@ -11,13 +11,14 @@ MangaChat is a Singapore youth-mental-health startup building an AI-driven emoti
 - Stage / funding: Incubation (BLOCK71 Social Impact Hub, NUS Medicine DATA graduate)
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-06-26** — MangaChat — Youth wellness platform (LinkedIn) — [sg.linkedin.com](https://sg.linkedin.com/company/mangachat)
 - **2026-06-26** — MangaChat — EMMET INSIGHT profile — [emmetinsight.com](https://emmetinsight.com/mangachat)
   - Summary: MangaChat has 126 schools in Taiwan, 100K+ students impacted. Secured TS2 Startup Accelerator grant by NUS Enterprise. Selected for UC Berkeley Health Innovation Accelerator. Expanding to Singapore, Hong Kong, Vietnam via Emmet Insight partnership.
 - **2026-06-26** — MangaChat — Company website — [sg.mangachat.com](https://sg.mangachat.com)
   - Summary: World's first gamified emotional journaling platform. 32% improvement in social-emotional skills in one month. Gamified CBT framework. Patented AI. Solutions for teachers (SEL curriculum), counsellors (gamified CBT), and parents.
-
-## Older signals
 - **2026-05-29** — MangaChat was showcased at the NUH Innovation Hub grand opening alongside other NUS Medicine DATA portfolio startups. — [LinkedIn (NUS Medicine DATA)](https://www.linkedin.com/posts/nusmeddata_healthtech-startups-digitalhealth-activity-7450758713738465280-kPbP)
 
 ## Open questions
