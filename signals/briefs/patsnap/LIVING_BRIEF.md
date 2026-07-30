@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-07-29 15:35 UTC_
+_Last updated: 2026-07-30 15:16 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -11,6 +11,7 @@ _Last material event: 2026-06-15 — Confidential dual IPO filing in Hong Kong a
 - Sector: SaaS
 - Region: Singapore (global operations)
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/patsnap), [Crunchbase](https://www.crunchbase.com/organization/patsnap)
+
 
 ## Funding history
 - **2014** — Series A, $3.6M — Vertex Ventures — [e27.co](https://e27.co/patsnap-raises-us3-6m-funding-led-by-vertex-venture-holdings-20140901/)
@@ -25,7 +26,7 @@ _Total disclosed: $351.6M._
 - **2026-07-13** — Patsnap Joins ASEAN IP Cooperation to Support Trusted Regional IP Data and AI-Assisted Examination — [patsnap.com](https://www.patsnap.com/resources/blog/patsnap-joins-asean-ip-cooperation-to-support-trusted-regional-ip-data-and-ai-assisted-examination)
 
 ### Hiring
-- **2026-07-29** — 50+ roles posted since May 2026 across Life Sciences, Material, and AI verticals in Singapore, Toronto, London, Shanghai, and North America, signaling continued multi-vertical build-out ahead of dual HK/SG IPO — [jobs.lever.co](https://jobs.lever.co/patsnap)
+- **2026-07-30** — 50+ roles posted since May 2026 across Life Sciences, Material, and AI verticals in Singapore, Toronto, London, Shanghai, and North America, signaling continued multi-vertical build-out ahead of dual HK/SG IPO — [jobs.lever.co](https://jobs.lever.co/patsnap)
 - **2026-06-27** — Forward Deployed Engineer for Japan (Japanese required), configuring AI Agent workflows for IP, R&D, and innovation enterprise customers — [jobs.lever.co](https://jobs.lever.co/patsnap/e80dcb4a-0644-4883-95f3-8e6a0c01e846)
   - Summary: Patsnap is hiring a Forward Deployed Engineer (FDE) to work directly with enterprise customers in Japan, configuring and deploying AI Agent workflows across IP, R&D, innovation, and strategic intelligence use cases. Business-level Japanese is required, reflecting a dedicated customer-facing presence for the Japan market.
   - People: Forward Deployed Engineer (Japanese-speaking)
@@ -33,6 +34,7 @@ _Total disclosed: $351.6M._
 - **2026-06-15** — Life Science Scientist (PhD, Singapore, on-site) to build AI-native life sciences products, transitioning Patsnap from traditional SaaS into an intelligent ecosystem powered by MCPs, Skills, and Agents — [jobs.lever.co](https://jobs.lever.co/patsnap/d8ed208f-0d67-4c4f-be6b-14f10fe0f645)
   - Summary: Patsnap is hiring a PhD-level Life Science Scientist for its LS department in Singapore to translate complex life sciences problems into AI-native products, turning data assets (clinical trials, sequences, targets, deals, patents) into MCPs, Skills, and Agents.
   - Quote: "We are building the next generation of AI Native products for life sciences, moving Patsnap beyond a traditional SaaS platform into an intelligent product ecosystem powered by MCPs, Skills, and Agents." — Patsnap job posting
+- **2026-07-29** — Head of Legal — Legal — [jobs.lever.co](https://jobs.lever.co/patsnap/6e3c63ca-2745-495c-9455-dab5f8fc58ae)
 
 ## Older signals
 - **2026-06-24** — Patsnap and Intellegens announce strategic partnership integrating Patsnap's global patent dataset with Intellegens' Alchemite Suite for AI-driven formulation design, enabling real-time patentability and freedom-to-operate checks during R&D experiments — [intellegens.com](https://intellegens.com/patsnap-and-intellegens-announce-strategic-partnership-bringing-real-time-ip-intelligence-into-ai-driven-formulation-design/)
@@ -64,5 +66,3 @@ _Total disclosed: $351.6M._
 - Is the AI Agent Platform a new product line or an evolution of existing IP analytics? How does it differ from the core Patsnap offering?
 - Is the life sciences hiring push related to a specific product launch or market expansion in pharma R&D?
 - What is the commercial structure of the CAS-Patsnap partnership — is CAS data being integrated into Patsnap's platform, resold as a standalone dataset, or something else?
-- Does the CAS partnership signal a strategic expansion beyond patent/IP analytics into the broader scientific and R&D content analytics market?
-- What is the "Connected Innovation Solutions" vertical and how does it relate to Patsnap's core IP analytics and life sciences verticals?

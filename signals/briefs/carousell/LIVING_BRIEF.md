@@ -1,15 +1,18 @@
 # Carousell — LIVING BRIEF
-_Last updated: 2026-07-14 14:49 UTC_
+_Last updated: 2026-07-30 15:16 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Singapore-headquartered online classifieds and consumer marketplace platform operating across Southeast Asia and Taiwan, Carousell has evolved from a classifieds marketplace into a multicategory recommerce platform. The group achieved its first EBITDA-positive year in FY2025, marking a milestone in its multiyear business model transformation, and is now targeting AI-driven growth and recommerce scaling as its FY26 strategic priorities.
+
+_Last material event: 2026-07-07 — Carousell Swings to Ebitda Profit as Recommerce Revenue Surges 40%_
 
 ## Profile
 - Sector: Marketplace
 - Region: Southeast Asia (Singapore HQ; operates in Malaysia, Indonesia, Philippines, Taiwan, Vietnam)
 - Stage / funding: Late-stage private (unicorn since 2021)
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/carousellgroup), [Crunchbase](https://www.crunchbase.com/organization/carousell)
+
 
 ## Funding history
 - **2013-11** — Seed, $800K — Rakuten Ventures; Golden Gate Ventures, 500 Global, QuestVC — [en.wikipedia.org](https://en.wikipedia.org/wiki/Carousell_(company))
@@ -25,7 +28,7 @@ Singapore-headquartered online classifieds and consumer marketplace platform ope
 _Total disclosed: $440.6M._
 
 ## Recent signals
-- **2026-07-07** — Singapore's recommerce platform Carousell reaches EBITDA profitability as revenue hits $141M — [technode.global](https://technode.global/2026/07/07/singapores-recommerce-platform-carousell-reaches-ebitda-profitability-as-revenue-hits-141m)
+- **2026-07-07** — Singapore's recommerce platform Carousell reaches EBITDA profitability as revenue hits $141M — [technode.global](https://technode.global/2026/07/07/singapores-recommerce-platform-carousell-reaches-ebitda-profitability-as-revenue-hits-141m) (Also reported by: [finance.biggo.com](https://finance.biggo.com/news/61a1dc7a-9a2d-4681-be9d-f97921c72339), [southeastasiaconnect.com](https://www.southeastasiaconnect.com/articles/carousell-ebitda-ai-recommerce-fy26.html))
   - Summary: Corroborates the 2026-07-07 announcement; no new facts.
 - **2026-07-07** — Carousell Group reported its first EBITDA-positive FY2025 with 18% revenue growth to $141M, driven by 40% recommerce growth, and outlined FY26 AI and recommerce scaling priorities — [Carousell Press](https://press.carousell.com/2026/07/07/carousell-group-reaches-ebitda-profitability-milestone-as-recommerce-scales-sets-ai-priorities-for-fy26/)
   - Summary: Revenue grew 18% YoY to $141M, nearly tripling since FY21. Recommerce revenue grew 40% and accounted for 45% of total revenue. Carousell ended FY25 with a strong cash position. The company outlined three FY26 priorities: scaling recommerce, disciplined execution for continued margin improvement, and deeper AI integration across the platform. AI tools already enable sellers to create listings in as little as three seconds, and more than 99% of transactions are completed without a scam incident.
