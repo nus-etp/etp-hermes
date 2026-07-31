@@ -1,9 +1,11 @@
 # BEEX — LIVING BRIEF
-_Last updated: 2026-07-23 15:10 UTC_
+_Last updated: 2026-07-31 15:30 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 NUS GRIP-incubated Singapore autonomous underwater vehicle (AUV) startup building inspection and survey drones for the maritime industry. BEEX has progressed from seed funding through a Series A in 2025 and is now deploying its most advanced drone, BETTA, signaling product maturation and a push into global markets.
+
+_Last material event: 2026-07-07 — SepcoTech A/S partnership to distribute BeeX's HAUV platform to European naval and defense customers_
 
 ## Profile
 - Sector: Robotics
@@ -24,6 +26,7 @@ _Total disclosed: $9.8M._
 - **2026-07-05** — BeeX has launched BETTA, its most advanced autonomous underwater drone featuring 24-hour endurance, AI-powered navigation, 100m depth rating, and IHO-grade positioning for offshore inspections and subsea surveys. — [botsanddrones.asia](https://botsanddrones.asia/drone-service-providers/f/beex-launches-betta-autonomous-underwater-drone-for-ai-inspection)
   - Summary: BeeX launched BETTA, an autonomous underwater drone with 24-hour endurance, AI-powered navigation, 100m depth rating, and IHO-grade positioning for offshore inspections and subsea surveys. The article covers the BETTA specs as a product roundup.
   - Numbers: 100m depth rating, 24-hour endurance, IHO-grade positioning
+- **date unknown** — BeeX publishes a technical explainer on autonomy levels in unmanned underwater vehicles, positioning A.IKANBILIS's integrated autonomy for inspection missions — [beex.sg](https://beex.sg/blogs/levels-of-autonomy-in-unmanned-underwater-vehicles-use-cases-limitations-and-a-ikanbilis-integrated-autonomy)
 
 ## Older signals
 - **2026-06-24** — BeeX published detailed specs for its BETTA autonomous underwater drone: 100m depth rating, 12kWh battery for 24-hour operations, 7-sensor suite, and under 300kg, unveiled at its Xperiences 2 industry event. — [beex.sg](https://www.beex.sg/news/beex-launches-betta-the-most-powerful-autonomous-underwater-drone)
@@ -32,7 +35,7 @@ _Total disclosed: $9.8M._
   - Numbers: 100m depth rating, 12kWh battery, <300kg weight, 24-hour continuous operations, 7-sensor suite, 200 guests at launch
   - Quote: "At less than 300kg, BETTA shares the same simple logistics and deployment methods as our flagship drones" — Grace Chia, CEO and co-founder
 - **2026-06-24** — BeeX launches BETTA, its most powerful autonomous underwater drone, marking the product's official debut after a teaser in May 2026. — [beex.sg](https://www.beex.sg/)
-- **2026-06-22** — BeeX, SIT launch test site for AI underwater inspection systems. — [theedgesingapore.com](https://www.theedgesingapore.com/digitaledge/technopreneurs/beex-sit-launch-test-site-ai-underwater-inspection-systems)
+- **2026-06-22** — BeeX, SIT launch test site for AI underwater inspection systems. — [theedgesingapore.com](https://www.theedgesingapore.com/digitaledge/technopreneurs/beex-sit-launch-test-site-ai-underwater-inspection-systems) (Also reported by: [sg.finance.yahoo.com](https://sg.finance.yahoo.com/news/beex-sit-launch-test-ai-003417097.html))
 - **2026-06-22** — BeeX Launches Live Underwater Drone Test-Zone with Opening of Autonomous Marine Foundry at SIT Punggol Campus. — [beex.sg](https://www.beex.sg/news/beex-opens-autonomous-marine-foundry-and-live-test-zone-at-sit-punggol)
   - Summary: BeeX and SIT inaugurated the Autonomous Marine Foundry (AMF) at SIT Punggol Campus, a purpose-built hub for maritime robotics innovation including a live test zone with a davit crane for drone launch and recovery. The facility supports the full innovation lifecycle from research to field deployment and includes an Integrated Work Study Programme for talent development.
   - Counterparties: Singapore Institute of Technology (Academic Partner)

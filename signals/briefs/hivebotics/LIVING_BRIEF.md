@@ -1,9 +1,11 @@
 # Hivebotics — LIVING BRIEF
-_Last updated: 2026-07-15 14:45 UTC_
+_Last updated: 2026-07-31 15:30 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Hivebotics is a Singapore-headquartered robotics startup incubated under NUS GRIP, developing autonomous cleaning robots for commercial and industrial environments. The company's toilet-cleaning robot has attracted serious commercial interest, suggesting strong early product-market fit in the janitorial robotics space.
+
+_Last material event: 2026-05-19 — Nimbus strategic investment in Hivebotics (terms undisclosed)_
 
 ## Profile
 - Sector: Robotics
@@ -23,6 +25,10 @@ _none_
   - Numbers: 50% cleaning time reduction; 100+ orders; 60% of cleaning time spent on 6% of floor space
 - **2026-06-12** — Tech in Asia republishes a profile of Hivebotics' Abluo toilet-cleaning robot, covering its 100+ commercial orders, facilities management vision, and ongoing Series A fundraising — [techinasia.com](https://www.techinasia.com/robot-cleans-toilets-humans-dont)
   - Summary: Corroborates the 2026-05-13 Business Times feature; no new facts.
+- **2026-05-19** — Nimbus, a proptech and facility-management firm, made a strategic investment in Hivebotics (terms undisclosed), pairing Hivebotics' autonomous cleaning robots with Nimbus's "buildingOS" facility-automation vision — [app.dealroom.co](https://app.dealroom.co/news/note/nimbus-invests-in-hivebotics-maker-of-the-first-fully-autonomous-bathroom-cleaning-robot)
+  - Summary: Nimbus, a proptech and facility-management company, announced a strategic investment in Hivebotics on May 19, 2026; financial terms were not disclosed. The deal stems from a shared vision between Hivebotics founder Rishab and Nimbus founder Daniel to automate physical-space maintenance, with Nimbus planning to combine robots and IoT sensors in a single "buildingOS" platform while human workers shift to oversight and complex problem-solving.
+  - People: Rishab Patwari (founder), Daniel (Nimbus founder)
+  - Counterparties: Nimbus (strategic investor)
 - **2026-05-13** — Hivebotics' Abluo toilet-cleaning robot passes 100 orders within a year of launch, with commercial trials across Singapore, Hong Kong, and Abu Dhabi — [The Business Times](https://www.businesstimes.com.sg/events-awards/emerging-enterprise/ocbc-emerging-enterprise-awards-robot-cleaning-toilet-hivebotics)
   - Summary: The Business Times profiles Hivebotics' Abluo autonomous toilet-cleaning robot, which combines steam-based disinfection, AI-driven 3D perception, and robotic arms. Over 100 units ordered within a year of commercial launch; trials underway at offices, shopping malls, and airports in Singapore, Hong Kong, and Abu Dhabi. The startup won Most Promising Start-up at the OCBC-BT Emerging Enterprise Awards 2025 and is now raising a Series A round.
   - People: Rishab Patwari (founder, former NUS computer engineering student), Tuan Dung Nguyen (co-founder)
@@ -33,5 +39,5 @@ _none_
 
 ## Open questions
 - What is Hivebotics' commercial model — robot sales, leasing, or robotics-as-a-service (RaaS)?
-- Hivebotics confirmed to be raising Series A; who is the lead investor and what is the target raise size?
+- Is the Nimbus investment part of Hivebotics' Series A round or a separate strategic tranche, and who leads the Series A?
 - Which verticals (hospitality, healthcare, commercial real estate, transport) is Hivebotics targeting for its broader facilities management vision?
