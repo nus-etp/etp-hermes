@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-07-31 15:30 UTC_
+_Last updated: 2026-08-01 14:37 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -23,10 +23,10 @@ _Last material event: 2026-06-15 — Confidential dual IPO filing in Hong Kong a
 _Total disclosed: $351.6M._
 
 ## Recent signals
-- **2026-07-13** — Patsnap Joins ASEAN IP Cooperation to Support Trusted Regional IP Data and AI-Assisted Examination — [patsnap.com](https://www.patsnap.com/resources/blog/patsnap-joins-asean-ip-cooperation-to-support-trusted-regional-ip-data-and-ai-assisted-examination)
+- **2026-07-13** — Patsnap Joins ASEAN IP Cooperation to Support Trusted Regional IP Data and AI-Assisted Examination — [patsnap.com](https://www.patsnap.com/resources/blog/patsnap-joins-asean-ip-cooperation-to-support-trusted-regional-ip-data-and-ai-assisted-examination/)
 
 ### Hiring
-- **2026-07-31** — 50+ roles posted since May 2026 across Life Sciences, Material, and AI verticals plus account-management/sales roles in Singapore, Toronto, London, Shanghai, and North America, signaling continued multi-vertical build-out ahead of dual HK/SG IPO — [jobs.lever.co](https://jobs.lever.co/patsnap)
+- **2026-08-01** — 50+ roles posted since May 2026 across Life Sciences, Material, and AI verticals plus account-management/sales roles in Singapore, Toronto, London, Shanghai, and North America; newest wave (Aug 1) adds Lead Engineer AI Agent Systems, Senior Applied Scientist LLMs, and Senior Engineering Manager roles in the Data & Technology org, signaling continued multi-vertical build-out ahead of dual HK/SG IPO — [jobs.lever.co](https://jobs.lever.co/patsnap)
 - **2026-06-27** — Forward Deployed Engineer for Japan (Japanese required), configuring AI Agent workflows for IP, R&D, and innovation enterprise customers — [jobs.lever.co](https://jobs.lever.co/patsnap/e80dcb4a-0644-4883-95f3-8e6a0c01e846)
   - Summary: Patsnap is hiring a Forward Deployed Engineer (FDE) to work directly with enterprise customers in Japan, configuring and deploying AI Agent workflows across IP, R&D, innovation, and strategic intelligence use cases. Business-level Japanese is required, reflecting a dedicated customer-facing presence for the Japan market.
   - People: Forward Deployed Engineer (Japanese-speaking)
