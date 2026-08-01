@@ -1,0 +1,64 @@
+{
+  "base_url": "https://cloud.langfuse.com",
+  "by_environment": {
+    "eval": {
+      "countObservations": 213,
+      "countTraces": 93,
+      "days": 31,
+      "inputUsage": 38129,
+      "outputUsage": 11882,
+      "totalCost": 0.0,
+      "totalUsage": 50011
+    },
+    "production": {
+      "countObservations": 9122,
+      "countTraces": 186,
+      "days": 31,
+      "inputUsage": 0,
+      "outputUsage": 0,
+      "totalCost": 0.0,
+      "totalUsage": 0
+    }
+  },
+  "by_model": [
+    {
+      "countObservations": 5737,
+      "countTraces": 279,
+      "inputUsage": 0,
+      "model": "(unknown)",
+      "outputUsage": 0,
+      "totalCost": 0.0,
+      "totalUsage": 0
+    },
+    {
+      "countObservations": 120,
+      "countTraces": 90,
+      "inputUsage": 38129,
+      "model": "deepseek-chat",
+      "outputUsage": 11882,
+      "totalCost": 0.0,
+      "totalUsage": 50011
+    },
+    {
+      "countObservations": 3478,
+      "countTraces": 186,
+      "inputUsage": 0,
+      "model": "deepseek-v4-flash",
+      "outputUsage": 0,
+      "totalCost": 0.0,
+      "totalUsage": 0
+    }
+  ],
+  "from": "2026-07-01T00:00:00Z",
+  "month": "2026-07",
+  "to": "2026-08-01T00:00:00Z",
+  "totals": {
+    "countObservations": 9335,
+    "countTraces": 279,
+    "days": 31,
+    "inputUsage": 38129,
+    "outputUsage": 11882,
+    "totalCost": 0.0,
+    "totalUsage": 50011
+  }
+}
