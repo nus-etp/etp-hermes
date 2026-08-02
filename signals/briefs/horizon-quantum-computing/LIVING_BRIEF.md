@@ -28,12 +28,11 @@ _Total disclosed: $22.2M._
   - People: Dr. Joe Fitzsimons (CEO, Horizon Quantum), Dr. Itamar Sivan (CEO, Quantum Machines)
   - Counterparties: Quantum Machines (Strategic Partner)
   - Quote: "Improved calibration routines are crucial for enabling real-world applications of quantum computing." — Dr. Joe Fitzsimons, CEO of Horizon Quantum
+
+## Older signals
 - **2026-07-02** — Horizon is a gold sponsor of TQC 2026 (Quebec, Aug 31–Sep 4), where it will demo Triple Alpha, its hardware-agnostic quantum IDE — [horizonquantum.com](https://www.horizonquantum.com/resources/newsroom/meet-us-at-tqc-2026)
   - Summary: Horizon Quantum will attend and sponsor the Theory of Quantum Computation, Communication and Cryptography conference in Sherbrooke, Canada. The company plans to showcase Triple Alpha, which lets developers write quantum programs across multiple abstraction levels, and meet with the theoretical quantum information science community.
   - Numbers: Gold sponsorship tier; event dates August 31–September 4, 2026
-
-## Older signals
-_none_
 
 ## Open questions
 - What is the adoption rate of Triple Alpha among academic and industry developers?
