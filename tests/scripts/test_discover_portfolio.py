@@ -135,6 +135,37 @@ def test_draft_entry_shapes(discover):
     )
 
 
+def test_draft_entry_sets_country_for_hubs_without_country_in_label(discover):
+    # "The Hangar" and "NUS Social Impact Hub" never spell out "Singapore" in
+    # their label, so derive_country.py's regex can't infer a country from
+    # the drafted description alone (github: portfolio-discovery run
+    # 30689689605 failed test_every_company_has_country on exactly this).
+    # draft_entry must set `country` explicitly so merged entries never rely
+    # on that inference.
+    hangar_entry = discover.draft_entry(
+        {"source": "block71", "name": "CarePal", "hub_label": "The Hangar (NUS Enterprise)",
+         "hub_country": "Singapore", "industry": "health tech"}
+    )
+    assert hangar_entry["country"] == "Singapore"
+
+    jakarta_entry = discover.draft_entry(
+        {"source": "block71", "name": "Fresh Startup", "hub_label": "BLOCK71 Jakarta",
+         "hub_country": "Indonesia", "industry": None}
+    )
+    assert jakarta_entry["country"] == "Indonesia"
+
+    grip_entry = discover.draft_entry(
+        {"source": "grip", "name": "WaveSense", "grip_run": 9, "description": "Acoustic sensors."}
+    )
+    assert grip_entry["country"] == "Singapore"
+
+
+def test_parse_block71_cards_sets_hub_country(discover):
+    cards = discover.parse_block71_cards(BLOCK71_HTML)
+    assert cards[0]["hub_country"] == "Singapore"  # block71-singapore
+    assert cards[1]["hub_country"] == "Singapore"  # the-hangar
+
+
 def test_first_sentences_trims_long_blurbs(discover):
     long = "First sentence here. " + "Second very long sentence " * 30
     out = discover.first_sentences(long, limit=60)

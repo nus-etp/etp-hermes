@@ -52,6 +52,28 @@ HUB_LABELS = {
     "select-block71-bandung-block71-bandung": "BLOCK71 Bandung",
 }
 
+# HQ country per hub, keyed the same as HUB_LABELS. Some domestic hub labels
+# ("The Hangar (NUS Enterprise)", "NUS Social Impact Hub") never spell out
+# "Singapore", so scripts/derive_country.py's regex heuristic can't resolve a
+# country from the drafted description alone — set it explicitly here instead
+# of leaving it to inference (see tests/static/test_companies_schema.py's
+# test_every_company_has_country).
+HUB_COUNTRY = {
+    "block71-singapore": "Singapore",
+    "the-hangar": "Singapore",
+    "nus-enterprisesingapore-science-park": "Singapore",
+    "social-impact-hub": "Singapore",
+    "block71-jakarta": "Indonesia",
+    "block71-saigon": "Vietnam",
+    "block71-suzhou": "China",
+    "block71-chongqing": "China",
+    "block71-guangzhou": "China",
+    "block71-silicon-valley": "United States",
+    "block71-tokyo": "Japan",
+    "block71-yogyakarta": "Indonesia",
+    "select-block71-bandung-block71-bandung": "Indonesia",
+}
+
 LEGAL_SUFFIX = re.compile(
     r"\s*[,(]?\s*"
     r"(pte\.?\s*ltd\.?|pte\.?\s*ltd\.|private\s+limited|"
@@ -137,6 +159,7 @@ def parse_block71_cards(src: str) -> list[dict]:
                 "source": "block71",
                 "name": normalize_name(raw_name),
                 "hub_label": HUB_LABELS.get(location, location),
+                "hub_country": HUB_COUNTRY.get(location),
                 "industry": industry.replace("-", " ").strip() or None,
             }
         )
@@ -200,6 +223,7 @@ def draft_entry(venture: dict) -> dict:
             "Drop unrelated companies sharing the same name."
         )
         notes = "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
+        country = "Singapore"
     else:
         industry = f" ({venture['industry']})" if venture.get("industry") else ""
         description = (
@@ -207,13 +231,17 @@ def draft_entry(venture: dict) -> dict:
             "Drop unrelated companies sharing the same name."
         )
         notes = f"{venture['hub_label']} portfolio company. No publicly verifiable funding round announcements found."
-    return {
+        country = venture.get("hub_country")
+    entry = {
         "name": venture["name"],
         "aliases": [],
         "description": description,
-        "funding_rounds": [],
-        "funding_notes": notes,
     }
+    if country:
+        entry["country"] = country
+    entry["funding_rounds"] = []
+    entry["funding_notes"] = notes
+    return entry
 
 
 # Directory entries that aren't real company names
