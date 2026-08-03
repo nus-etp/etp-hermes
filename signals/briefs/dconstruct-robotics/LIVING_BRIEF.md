@@ -15,14 +15,15 @@ _Last material event: 2026-07-03 — Closed $125M Series A led by JRE Ventures w
 _No disclosed funding._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-07-03** — dConstruct closed a $125M Series A round led by JRE Ventures, the flagship outcome of Singapore's RoboNexus accelerator inaugural cohort under the National Robotics Program — [technode.global](https://technode.global/2026/07/03/singapores-dconstruct-raises-125m-series-a-as-robonexus-accelerator-concludes-inaugural-cohort) (Also reported by: [ai-market-watch.com](https://www.ai-market-watch.com/company/dconstruct-robotics))
   - Summary: dConstruct Technologies raised $125M in Series A funding led by JRE Ventures, with participation from SGInnovate, M7 Holdings, D.Camp, and the IMDA Spark Programme, marking the standout achievement of the inaugural RoboNexus accelerator cohort. The company will use the capital to scale its d.ASH autonomous robotics suite for GPS-denied environments and establish a 42,000 sqm global headquarters at Punggol Digital District (dC Plus), targeting completion by end-2026.
   - People: Chinn Lim (CEO and Founder)
   - Counterparties: JRE Ventures (lead), SGInnovate, M7 Holdings, D.Camp, IMDA Spark Programme
   - Numbers: $125M Series A ($136M total raised across 2 rounds); 42,000 sqm global HQ in Punggol Digital District, completion end-2026
   - Quote: "the milestone reflects strong confidence in the company's vision to build the next generation of reality capture and robot automation solutions from Singapore to the world" — Chinn Lim, CEO of dConstruct Technologies
-
-## Older signals
 - **2026-06-10** — He Ruijie (RJ), PhD joins dConstruct Robotics as Tech Council Advisor — [dconstruct.ai](https://www.dconstruct.ai/news/he-ruijie-phd-joins-dconstruct-as-tech-council-advisor)
   - Summary: He Ruijie (RJ), PhD joins dConstruct's Tech Council to advise on engineering talent acquisition in the United States and provide strategic guidance on product direction and engineering excellence. RJ brings over a decade of experience in autonomous systems and is currently a Founding Technical Member at Mind Robotics, having previously co-founded two robotics startups from concept to deployment.
   - People: He Ruijie (RJ) (Tech Council Advisor); Chinn Hwa Lim (CEO and Founder)

@@ -1,5 +1,5 @@
 # EcoMatcher — LIVING BRIEF
-_Last updated: 2026-07-26 14:28 UTC_
+_Last updated: 2026-08-03 15:47 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -22,7 +22,7 @@ _No disclosed funding._
 _none_
 
 ## Older signals
-- **2026-04-21** — EcoMatcher launched Tree Personas, an AI-powered Nature Interface that assigns a distinct digital personality to each gifted tree, enabling recipients to chat with their tree in any language and follow its growth — [Thailand Business News](https://www.thailand-business-news.com/pr-news/ecomatcher-unveils-tree-personas) (Also reported by: [heraldchronicle.com](https://www.heraldchronicle.com/archives/2026/04/21/ecomatcher-unveils-tree-personas))
+- **2026-04-21** — EcoMatcher launched Tree Personas, an AI-powered Nature Interface that assigns a distinct digital personality to each gifted tree, enabling recipients to chat with their tree in any language and follow its growth — [Thailand Business News](https://www.thailand-business-news.com/pr-news/ecomatcher-unveils-tree-personas) (Also reported by: [heraldchronicle.com](https://www.heraldchronicle.com/archives/2026/04/21/ecomatcher-unveils-tree-personas), [prnewswire.com](https://www.prnewswire.com/news-releases/ecomatcher-unveils-tree-personas-302741328.html))
   - Summary: EcoMatcher unveiled Tree Personas, allowing companies to assign each gifted tree a personality — Twiggles (curious), Oakly (thoughtful), or Seren (calm) — with options for custom branded personas. Recipients visit their tree via TreeTracker 3D and interact through TreeChat+ in any language, building a personalised relationship with the tree and its ecosystem.
   - People: Bas Fransen (CEO)
   - Counterparties: Dubai Islamic Bank, Grab, Infosys, Singlife (customers)

@@ -1,9 +1,11 @@
 # Finan — LIVING BRIEF
-_Last updated: 2026-06-24 15:45 UTC_
+_Last updated: 2026-08-03 15:47 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Finan is a Singapore-headquartered SME operating system startup serving Vietnamese micro-businesses through its SoBanHang platform, with over 800,000 active users and US$5B+ in transaction volume. In May 2026 it raised a US$3.8M pre-Series A led by Hong Leong Bank to scale its AI-native Finan One OS and expand embedded financial services across Southeast Asia.
+
+_Last material event: 2026-05-13 — Raised US$3.8M pre-Series A led by Hong Leong Bank_
 
 ## Profile
 - Sector: Fintech / SaaS
@@ -20,7 +22,7 @@ _none_
 
 ## Older signals
 - **2026-05-29** — Tech in Asia: SoBanHang serves 800k merchants, raises funding for AI-powered SME finance tools — [techinasia.com](https://www.techinasia.com/news/sobanhang-funding-pre-series-a)
-- **2026-05-13** — Finan raised US$3.8M in a pre-Series A round led by Hong Leong Bank, earmarked for scaling Finan One and expanding across Southeast Asia — [TechNode Global](https://technode.global/2026/05/13/finan-raises-3-8m-to-expand-vietnam-sme-management-platform-across-southeast-asia/)
+- **2026-05-13** — Finan raised US$3.8M in a pre-Series A round led by Hong Leong Bank, earmarked for scaling Finan One and expanding across Southeast Asia — [TechNode Global](https://technode.global/2026/05/13/finan-raises-3-8m-to-expand-vietnam-sme-management-platform-across-southeast-asia/) (Also reported by: [sbivm.com](https://sbivm.com/osk-sbi-venture-partners-launches-second-fund-and-makes-first-investment-2))
   - Summary: Finan's SoBanHang platform serves 800K+ active business users and has processed US$5B+ in transaction volume. The pre-Series A was anchored by Hong Leong Bank (US$2M) and OSK-SBI Venture Partners (US$1.5M). Finan will use the capital to scale Finan One, an AI-native business OS built on SoBanHang's transaction data infrastructure, and to support embedded financial services, additional banking partnerships, and regional expansion into other Southeast Asian markets.
   - Counterparties: Hong Leong Bank (lead), OSK-SBI Venture Partners
   - Numbers: US$3.8M raised, 800K+ active business users, US$5B+ transaction volume
