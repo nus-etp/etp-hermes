@@ -20,15 +20,15 @@ _Last material event: 2026-07-07 — SepcoTech A/S partnership to distribute Bee
 _Total disclosed: $9.8M._
 
 ## Recent signals
+- **date unknown** — BeeX publishes a technical explainer on autonomy levels in unmanned underwater vehicles, positioning A.IKANBILIS's integrated autonomy for inspection missions — [beex.sg](https://beex.sg/blogs/levels-of-autonomy-in-unmanned-underwater-vehicles-use-cases-limitations-and-a-ikanbilis-integrated-autonomy)
+
+## Older signals
 - **2026-07-07** — SepcoTech A/S, Europe's largest ROV reseller and long-standing Nordic defense supplier, will distribute BeeX's Hovering Autonomous Underwater Vehicle (HAUV) platform to naval and defense customers across Europe, covering Denmark, the Nordics and wider Europe. — [daloindustrydays.com](https://www.daloindustrydays.com/news-inspiration/article/sepcotech-partners-with-beex-to-bring-autonomous-underwater-vehicles-to-the-european-defense-market)
   - Summary: SepcoTech A/S will serve as the defense-sector partner for BeeX's A.IKANBILIS HAUV in Denmark, the Nordics and wider Europe, offering local sales support, technical demonstrations, and after-sales service to European navies, coast guards, and defense agencies.
   - Counterparties: SepcoTech A/S (Distribution Partner)
 - **2026-07-05** — BeeX has launched BETTA, its most advanced autonomous underwater drone featuring 24-hour endurance, AI-powered navigation, 100m depth rating, and IHO-grade positioning for offshore inspections and subsea surveys. — [botsanddrones.asia](https://botsanddrones.asia/drone-service-providers/f/beex-launches-betta-autonomous-underwater-drone-for-ai-inspection)
   - Summary: BeeX launched BETTA, an autonomous underwater drone with 24-hour endurance, AI-powered navigation, 100m depth rating, and IHO-grade positioning for offshore inspections and subsea surveys. The article covers the BETTA specs as a product roundup.
   - Numbers: 100m depth rating, 24-hour endurance, IHO-grade positioning
-- **date unknown** — BeeX publishes a technical explainer on autonomy levels in unmanned underwater vehicles, positioning A.IKANBILIS's integrated autonomy for inspection missions — [beex.sg](https://beex.sg/blogs/levels-of-autonomy-in-unmanned-underwater-vehicles-use-cases-limitations-and-a-ikanbilis-integrated-autonomy)
-
-## Older signals
 - **2026-06-24** — BeeX published detailed specs for its BETTA autonomous underwater drone: 100m depth rating, 12kWh battery for 24-hour operations, 7-sensor suite, and under 300kg, unveiled at its Xperiences 2 industry event. — [beex.sg](https://www.beex.sg/news/beex-launches-betta-the-most-powerful-autonomous-underwater-drone)
   - Summary: Corroborates the 2026-06-24 announcement of the BETTA drone launch; the detailed article confirms BETTA is a 100m depth-rated autonomous inspection and light intervention drone with a 10x battery capacity upgrade over A.IKANBILIS and IHO-rated positioning accuracy. It debuted before 200 guests at BeeX's Xperiences 2 event covering defence, energy, coastal management, and research sectors. BETTA improves on A.IKANBILIS' AI through 14 years of proprietary data and supports 24-hour continuous autonomous operations.
   - People: Grace Chia (CEO and co-founder)

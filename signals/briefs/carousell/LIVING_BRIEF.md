@@ -28,6 +28,9 @@ _Last material event: 2026-07-07 — Carousell Swings to Ebitda Profit as Recomm
 _Total disclosed: $440.6M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-07-07** — Singapore's recommerce platform Carousell reaches EBITDA profitability as revenue hits $141M — [technode.global](https://technode.global/2026/07/07/singapores-recommerce-platform-carousell-reaches-ebitda-profitability-as-revenue-hits-141m) (Also reported by: [finance.biggo.com](https://finance.biggo.com/news/61a1dc7a-9a2d-4681-be9d-f97921c72339), [southeastasiaconnect.com](https://www.southeastasiaconnect.com/articles/carousell-ebitda-ai-recommerce-fy26.html))
   - Summary: Corroborates the 2026-07-07 announcement; no new facts.
 - **2026-07-07** — Carousell Group reported its first EBITDA-positive FY2025 with 18% revenue growth to $141M, driven by 40% recommerce growth, and outlined FY26 AI and recommerce scaling priorities — [Carousell Press](https://press.carousell.com/2026/07/07/carousell-group-reaches-ebitda-profitability-milestone-as-recommerce-scales-sets-ai-priorities-for-fy26/)
@@ -43,8 +46,6 @@ _Total disclosed: $440.6M._
   - Quote: "We'll continue investing where we see long-term value, particularly in artificial intelligence and recommerce, while remaining disciplined in how we deploy capital" — Leung Shing Tai, Chief Strategy Officer
 - **2026-07-07** — SCMP reports Carousell's first-time EBITDA-positive milestone as the company banks on AI as a "force multiplier" for its marketplace — [South China Morning Post](https://www.scmp.com/week-asia/lifestyle-culture/article/3359639/singapores-carousell-hits-profitability-milestone-banks-ai-force-multiplier)
   - Summary: Corroborates the 2026-07-07 announcement; no new facts.
-
-## Older signals
 - **2026-06-18** — Carousell Autos launched Singapore's first AI-powered conversational car finder, allowing users to search pre-owned cars with natural language queries instead of structured filters — [Carousell Press](https://press.carousell.com/2026/06/18/carousell-autos-launches-singapores-first-ai-powered-car-finder/)
   - Summary: The AI car finder on Carousell Autos lets buyers describe their needs in plain terms (e.g. "reliable family SUV under $80,000") and surfaces relevant listings. The tool also prompts users about maintenance costs, financing options, and long-term value. A 6.6 Deals campaign running through June offers $100 Shell petrol vouchers on qualifying purchases from participating dealers.
   - People: Sanjay Shivkumar (Head of Carousell Autos)

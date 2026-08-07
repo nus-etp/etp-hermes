@@ -15,9 +15,10 @@ _Last material event: 2026-07-06 — CRecTech-Pertamina project named among 26 a
 - **2024** — Grant, undisclosed — Breakthrough Energy Fellows; Breakthrough Energy, Temasek, Enterprise Singapore, SGInnovate — [temasek.com.sg](https://www.temasek.com.sg/en/news-and-resources/news-room/news/2024/BEF-SEA_announce_first_cohort)
 
 ## Recent signals
-- **2026-07-06** — CRecTech-Pertamina biogas-to-biomethanol pilot named among 26 agreements at the Singapore-Indonesia Leaders' Retreat, extending the bilateral endorsement from the June ministerial meeting — [crectech.net](https://www.crectech.net/news/crectech-pertamina-project-singapore-indonesia-leaders-retreat-2026)
+_none_
 
 ## Older signals
+- **2026-07-06** — CRecTech-Pertamina biogas-to-biomethanol pilot named among 26 agreements at the Singapore-Indonesia Leaders' Retreat, extending the bilateral endorsement from the June ministerial meeting — [crectech.net](https://www.crectech.net/news/crectech-pertamina-project-singapore-indonesia-leaders-retreat-2026)
 - **2026-06-10** — CRecTech-Pertamina bio-methanol pilot covered as case study in Singapore-Indonesia green economy cooperation — [opengovasia.com](https://opengovasia.com/singapore-indonesia-strengthen-digital-green-and-industrial-cooperation/)
   - Summary: Corroborates the 2026-06-09 announcement; no new facts.
 - **2026-06-09** — DPM Gan Kim Yong highlighted CRecTech-Pertamina biogas-to-biomethanol pilot in North Sumatra as a flagship project at the 16th Singapore-Indonesia 6WG Ministerial Meeting — [mti.gov.sg](https://www.mti.gov.sg/newsroom/remarks-by-deputy-prime-minister-and-minister-for-trade-and-industry-gan-kim-yong-at-the-16th-six-bilateral-economic-working-groups-ministerial-meeting-joint-press-conference/)

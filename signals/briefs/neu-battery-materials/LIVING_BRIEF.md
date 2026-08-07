@@ -1,5 +1,5 @@
 # NEU Battery Materials — LIVING BRIEF
-_Last updated: 2026-07-28 15:30 UTC_
+_Last updated: 2026-08-07 14:18 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -16,11 +16,16 @@ _Last material event: 2026-01-06 — Pre-Series A first close led by SGInnovate 
 ## Funding history
 - **2022-06-24** — Seed, SGD 800K — Momentum Venture Capital (SMRT Corporation), Se-cure Waste Management, Angel investors, NUS GRIP — [eco-business.com](https://www.eco-business.com/press-releases/nus-grip-deep-tech-start-up-neu-battery-materials-raises-s800000-in-seed-funding/)
 - **2023-07-05** — Seed, $3.7M — SGInnovate; ComfortDelGro Ventures, Shift4Good, Paragon Ventures I, Angel investors — [prnewswire.com](https://www.prnewswire.com/news-releases/neu-battery-materials-concludes-oversubscribed-us3-7m-seed-funding-round-301869909.html)
-- **2026-01-06** — Series A, undisclosed — SGInnovate, Shift4Good; CJIC (Central Japan Innovation Capital), M7 Holdings, Existing shareholders, Founders et al. — [neumaterials.com](https://www.neumaterials.com/news/neu-battery-materials-closes-pre-series-a-to-scale-novel-lfp-battery-recycling-technology)
+- **2026-01-06** — Series A, undisclosed — SGInnovate, Shift4Good; CJIC (Central Japan Innovation Capital), M7 Holdings, Existing shareholders, Founders — [neumaterials.com](https://www.neumaterials.com/news/neu-battery-materials-closes-pre-series-a-to-scale-novel-lfp-battery-recycling-technology)
 
 _Total disclosed: $4.3M._
 
 ## Recent signals
+- **2026-08-05** — Published analysis of the 30 July US Presidential Determination authorising Commerce to restrict black-mass exports, arguing the policy shift rewards domestic modular recycling capacity — [neumaterials.com](https://www.neumaterials.com/news/the-us-just-gave-itself-the-power-to-restrict-black-mass-exports)
+  - Summary: NEU analysed Presidential Determination No. 2026-19 (signed 30 July 2026), which invokes Section 101 of the Defense Production Act and gives the Commerce Department authority to restrict exports of black mass, magnet scrap, and other critical-mineral scrap — without banning anything yet. The piece argues the designation puts scrap on par with defense-critical minerals and, with federal rules barring defence-industry purchases of Chinese minerals from 1 January 2027, favours building domestic recycling capacity — the market NEU's modular LFP process targets.
+  - Counterparties: US President / Commerce Department (regulator)
+  - Numbers: 33,000 metric tonnes US e-waste exports per month (Basel Action Network); determination signed 2026-07-30; China-mineral procurement cutoff 2027-01-01
+  - Quote: "Treating black mass and other scrap as essential to national defense puts it in the same protected category as the country's other critical minerals." — NEU Battery Materials
 - **2026-07-29** — Published a market-analysis piece arguing Europe's accelerating EV adoption (60.7% YoY BEV growth) and EU recycling-compliance deadlines (50% lithium recovery by Dec 2027) create urgency for building LFP recycling capacity now, positioning NEU's electrochemical process as a solution — [neumaterials.com](https://www.neumaterials.com/news/europes-ev-sales-boom-raises-the-stakes-on-battery-recycling-deadlines)
   - Summary: EU BEV registrations jumped 60.7% YoY in June 2026 to 270,557 units, reaching a 20.7% market share. The article argues LFP is a growing share of EU battery demand and that EU recycling deadlines (50% lithium recovery by Dec 2027, 80% by 2031) mean recycling capacity must be built now. Germany's BEVs became the single largest powertrain category in June 2026.
   - Numbers: 60.7% YoY increase in EU BEV registrations June 2026; 270,557 units; 20.7% market share H1 2026; 65% recycling efficiency target from Dec 2025, 70% by 2030; 50% lithium recovery by Dec 2027, 80% by 2031
@@ -31,14 +36,14 @@ _Total disclosed: $4.3M._
 - **2026-07-14** — Europe's New LFP Storage Plants and a Circular Economy Plan — [neumaterials.com](https://www.neumaterials.com/news/europes-new-lfp-storage-plants-and-a-circular-economy-plan)
   - Summary: Weeks earlier, Spain s Institute for Diversification and Energy Saving (IDAE) confirmed an €81 million grant toward Hithium s projected €405 million battery and energy-storage plant in Navarre. Both projects are moving fast, and both are being built almost entirely around what happens before a cell ships, not after. That is the blind spot a genuine battery circular economy is supposed to close, and closing it is far cheaper to plan for now, while the sites are still under construction, than once the first batteries start coming back.
   - Numbers: 10%; 16 GWh
+
+## Older signals
 - **2026-07-07** — Published a thought-leadership article arguing that China's newly internationalised lithium futures market and CATL's Jianxiawo mine volatility make recycled feedstock more valuable as a stable supply alternative — [neumaterials.com](https://www.neumaterials.com/news/why-chinas-new-lithium-futures-market-makes-recycled-feedstock-more-valuable)
   - Summary: NEU Battery Materials published an article analysing the June 2026 restart of CATL's Jianxiawo mine (supplying ~8-10% of China's lithium) and the Guangzhou Futures Exchange's July 3 decision to open lithium contracts to foreign traders. The piece positions battery recycling as a hedge against single-mine supply shocks and exchange-driven price volatility.
   - Quote: "As a major importer, [China] logically wants to have some say in benchmark pricing," — Lucas Zhang Liutong, WaterRock Energy Economics
-
-## Older signals
-_none_
 
 ## Open questions
 - When will NEU's first commercial-scale recycling facility come online and at what capacity?
 - Has NEU secured feedstock supply agreements with battery manufacturers or EV OEMs?
 - Will the European stationary storage boom create a parallel recycling demand that NEU's LFP process can address?
+- Does the US policy push change NEU's go-to-market — is it pursuing North American deployment of its modular recycling systems?
