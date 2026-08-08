@@ -18,9 +18,10 @@ _Last material event: 2026-07-08 — Inaugural Wanita Itu Impact Fund campaign c
 _Total disclosed: $1.1M._
 
 ## Recent signals
-- **2026-07-08** — Concluded its inaugural Wanita Itu Impact Fund campaign with Islamic Relief Malaysia, raising RM19,794.79 for women micro-entrepreneurs — [linkedin.com](https://www.linkedin.com/posts/noor-amy-ismail-b7755685_wanita-itu-impact-fund-wiif-pillar-1-economic-activity-7480737711763529728-C9-G)
+_none_
 
 ## Older signals
+- **2026-07-08** — Concluded its inaugural Wanita Itu Impact Fund campaign with Islamic Relief Malaysia, raising RM19,794.79 for women micro-entrepreneurs — [linkedin.com](https://www.linkedin.com/posts/noor-amy-ismail-b7755685_wanita-itu-impact-fund-wiif-pillar-1-economic-activity-7480737711763529728-C9-G)
 - **2026-06-26** — MADCash — MAIA Awards profile — [maiawards.org](https://www.maiawards.org/MAIApedia/madcash-2)
   - Summary: MADCash is a fintech that helps women achieve greater financial security by providing capital, business and financial acumen to grow micro businesses. Grew from USD65 to USD700K loan pool. Partners include Bank Islam, Maybank, Yayasan Hasanah.
 - **2026-06-26** — Micro Funding For Malaysian Women Entrepreneurs — About MADCash — [getmadcash.com](https://getmadcash.com/about-us)
