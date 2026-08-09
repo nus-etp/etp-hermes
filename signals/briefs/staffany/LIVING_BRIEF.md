@@ -1,22 +1,21 @@
 # StaffAny — LIVING BRIEF
-_Last updated: 2026-07-05 14:33 UTC_
+_Last updated: 2026-08-09 13:54 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
+StaffAny is a Singapore-headquartered HR-tech startup building a workforce management SaaS for hourly workers in F&B, retail, and hospitality. Founded by four NUS alumni, it raised a US$3.4M Series A led by GGV Capital in 2022 on top of a S$1M seed from FreakOut Holdings, and by 2021 operated across seven countries while tracking over 700K hours through its scheduling, attendance, and payroll platform. It continues to expand from its F&B base into healthcare and field services across Southeast Asia.
 
-StaffAny is a Singapore-headquartered HR-tech startup building a workforce management SaaS for hourly workers in F&B, retail, and hospitality. Backed by FreakOut Holdings and founded by four NUS alumni, it has tracked over 700K hours through its scheduling, attendance, and payroll platform, and is expanding from its F&B base into healthcare and field services across Southeast Asia.
+_Last material event: 2022-01-21 — US$3.4M Series A led by GGV Capital_
 
 ## Profile
-
 - Sector: SaaS
 - Region: Singapore / Indonesia
 - Founded: ~2017
-- Stage / funding: Seed (S$1M, 2020)
+- Stage / funding: Seed (S$1M, 2020); Series A (US$3.4M, 2022)
 - Key people: Janson Seah (Co-Founder & CEO)
 - Identifiers: [staffany.com](https://www.staffany.com/)
 
 ## Funding history
-
 - **2020-08-01** — Seed, S$1M — FreakOut Holdings; Kenji Niwa, Lim Qing Ru, Kwok Yang Bin, Royston Tay — [vulcanpost.com](https://vulcanpost.com/672619/staffany-singapore-seed-funding/)
 
 _Total disclosed: $0.7M._
@@ -33,9 +32,8 @@ _none_
   - Summary: SME Business Review included StaffAny in its "30 Leading Companies to Watch 2026" list. The profile covers StaffAny's integrated platform for shift scheduling, attendance tracking, payroll coordination, and multi-location workforce management, targeting hourly workers across retail, F&B, hospitality, and healthcare.
   - People: Janson Seah (Co-Founder & CEO)
   - Quote: "We empower today's connected workforce through the provision of a data-driven approach to managing hourly workers." — Janson Seah
+- **2022-01-21** — Raised US$3.4M Series A led by GGV Capital — its first institutional round since the 2020 S$1M seed — [technode.global](https://technode.global/2022/01/21/singapore-workforce-management-solution-start-up-staffany-raises-3-4-million-in-series-a-funding-led-by-ggv-capital)
 
 ## Open questions
-
-- Has StaffAny raised any subsequent funding since its S$1M seed round in 2020?
 - How many active users or paying customers does StaffAny currently have?
-- What is StaffAny's geographic footprint beyond Singapore and Indonesia?
+- What has StaffAny done since the 2022 Series A — further rounds, profitability, or product expansion?
