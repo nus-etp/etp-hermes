@@ -22,8 +22,6 @@ _Last material event: 2026-06-15 — Confidential dual IPO filing in Hong Kong a
 _Total disclosed: $351.6M._
 
 ## Recent signals
-- **2026-07-13** — Patsnap Joins ASEAN IP Cooperation to Support Trusted Regional IP Data and AI-Assisted Examination — [patsnap.com](https://www.patsnap.com/resources/blog/patsnap-joins-asean-ip-cooperation-to-support-trusted-regional-ip-data-and-ai-assisted-examination/)
-
 ### Hiring
 - **2026-08-12** — 50+ roles posted since May 2026 across Life Sciences, Material, and AI verticals plus account-management/sales roles in Singapore, Toronto, London, Shanghai, and North America; Aug 12 adds an AI Product Manager for IP/AI Agent products in Data & Technology, extending the AI-agent build-out ahead of the dual HK/SG IPO — [jobs.lever.co](https://jobs.lever.co/patsnap)
 - **2026-06-27** — Forward Deployed Engineer for Japan (Japanese required), configuring AI Agent workflows for IP, R&D, and innovation enterprise customers — [jobs.lever.co](https://jobs.lever.co/patsnap/e80dcb4a-0644-4883-95f3-8e6a0c01e846)
@@ -36,6 +34,7 @@ _Total disclosed: $351.6M._
 - **2026-07-29** — Head of Legal — Legal — [jobs.lever.co](https://jobs.lever.co/patsnap/6e3c63ca-2745-495c-9455-dab5f8fc58ae)
 
 ## Older signals
+- **2026-07-13** — Patsnap Joins ASEAN IP Cooperation to Support Trusted Regional IP Data and AI-Assisted Examination — [patsnap.com](https://www.patsnap.com/resources/blog/patsnap-joins-asean-ip-cooperation-to-support-trusted-regional-ip-data-and-ai-assisted-examination/)
 - **2026-06-24** — Patsnap and Intellegens announce strategic partnership integrating Patsnap's global patent dataset with Intellegens' Alchemite Suite for AI-driven formulation design, enabling real-time patentability and freedom-to-operate checks during R&D experiments — [intellegens.com](https://intellegens.com/patsnap-and-intellegens-announce-strategic-partnership-bringing-real-time-ip-intelligence-into-ai-driven-formulation-design/)
   - Summary: Patsnap integrates its global patent dataset with Intellegens' Alchemite Suite, an AI-driven formulation design platform. R&D teams gain access to patentability and freedom-to-operate checks during experimental design, bridging the gap between IP intelligence and materials R&D workflows.
   - Counterparties: Intellegens (Strategic Partner)
