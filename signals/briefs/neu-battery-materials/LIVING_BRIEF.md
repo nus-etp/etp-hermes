@@ -33,11 +33,11 @@ _Total disclosed: $4.3M._
   - Summary: NEU published an article examining China's 2% battery consumption tax (rising to 4% in September 2027), ending an 11-year exemption on lithium-ion while exempting sodium-ion, solid-state, and fuel cells through 2028. The piece argues the tax shift signals that Beijing considers lithium-ion mature, shifting economics from subsidising new production to recovering value from the installed base — strengthening the case for building recycling capacity rather than relying on virgin lithium supply.
   - Counterparties: China Ministry of Finance (tax policy)
   - Numbers: 2% consumption tax from Sep 2026, 4% from Sep 2027; $60-180 estimated cost per BEV; 1,068.9 GWh battery production in China H1 2026 (+53.3% YoY); $48.7B lithium battery exports H1 2026
+
+## Older signals
 - **2026-07-14** — Europe's New LFP Storage Plants and a Circular Economy Plan — [neumaterials.com](https://www.neumaterials.com/news/europes-new-lfp-storage-plants-and-a-circular-economy-plan)
   - Summary: Weeks earlier, Spain s Institute for Diversification and Energy Saving (IDAE) confirmed an €81 million grant toward Hithium s projected €405 million battery and energy-storage plant in Navarre. Both projects are moving fast, and both are being built almost entirely around what happens before a cell ships, not after. That is the blind spot a genuine battery circular economy is supposed to close, and closing it is far cheaper to plan for now, while the sites are still under construction, than once the first batteries start coming back.
   - Numbers: 10%; 16 GWh
-
-## Older signals
 - **2026-07-07** — Published a thought-leadership article arguing that China's newly internationalised lithium futures market and CATL's Jianxiawo mine volatility make recycled feedstock more valuable as a stable supply alternative — [neumaterials.com](https://www.neumaterials.com/news/why-chinas-new-lithium-futures-market-makes-recycled-feedstock-more-valuable)
   - Summary: NEU Battery Materials published an article analysing the June 2026 restart of CATL's Jianxiawo mine (supplying ~8-10% of China's lithium) and the Guangzhou Futures Exchange's July 3 decision to open lithium contracts to foreign traders. The piece positions battery recycling as a hedge against single-mine supply shocks and exchange-driven price volatility.
   - Quote: "As a major importer, [China] logically wants to have some say in benchmark pricing," — Lucas Zhang Liutong, WaterRock Energy Economics
