@@ -1,9 +1,11 @@
 # Qarbotech — LIVING BRIEF
-_Last updated: 2026-06-27 14:40 UTC_
+_Last updated: 2026-08-16 13:43 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Qarbotech is a Malaysian agritech startup commercialising a patented nanocarbon-based photosynthesis enhancer (QarboGrow) that boosts crop yields by up to ~60% by improving plants' light-energy efficiency. The company recently won the SusHi Tech Global Pitch Challenge 2026 Grand Prize (¥10M), signalling strong international validation and positioning it for fast-track expansion across key Asian markets.
+
+_Last material event: 2026-05-31 — Won SusHi Tech Global Pitch Challenge 2026 Grand Prize (¥10M, ~US$62K)_
 
 ## Profile
 - Sector: Agritech / Biotechnology
@@ -20,7 +22,12 @@ Qarbotech is a Malaysian agritech startup commercialising a patented nanocarbon-
 _Total disclosed: $2.2M._
 
 ## Recent signals
-_none_
+- **2026-07-26** — QarboGrow now used by ~7,500 farmers worldwide; ~RM3M in 2025 sales, mostly overseas; Japan pilot trials underway and India distributor hunt, says CEO Chor Chee Hoe — [nst.com.my](https://www.nst.com.my/business/corporate/2026/07/1497319/malaysian-agritech-startup-qarbotech-expands-global-footprint)
+  - Summary: Qarbotech's QarboGrow photosynthesis enhancer is now used by nearly 7,500 farmers worldwide and recorded nearly RM3 million in sales last year, a large share from overseas. The product sells in Malaysia, Thailand and China, with China the largest market by farmer count; pilot trials are running in Japan and the company is seeking distributors in India. Domestic adoption lags because Qarbotech reaches smallholders but has yet to secure strong anchor distributors for medium-sized and larger plantations.
+  - People: Chor Chee Hoe (Co-founder and CEO)
+  - Counterparties: Departments of Agriculture, Penang/Terengganu/Kelantan (government partners)
+  - Numbers: ~7,500 farmers; ~RM3M (~US$650K) 2025 sales; 1,200 rice farmers reached via state agriculture departments; pilot trials in Japan
+  - Quote: "We already have the large-scale manufacturing facility here in Malaysia, so we are looking to work with more distributors and enter different markets" — Chor Chee Hoe, Co-founder and CEO, Qarbotech
 
 ## Older signals
 - **2026-06-27** — Corroborating coverage of Qarbotech's SusHi Tech Challenge 2026 grand prize win; adds detail on the selection process (820 entries, 7 finalists) and a ¥1M winner's cheque presented by Tokyo Governor Yuriko Koike — [carbonwire.org](https://carbonwire.org/announcements/climate-focused-agritech-startup-qarbotech-takes-top-prize-at-sushi-tech-challenge-2026)
@@ -41,3 +48,4 @@ _none_
 - How will the SusHi Tech prize proceeds be deployed — R&D, capacity expansion, or market-entry?
 - What is Qarbotech's current production capacity utilisation rate at 100,000 L/month?
 - Has a priced equity round been opened following the seed extension?
+- What share of the ~RM3M 2025 sales came from China, its largest market by farmer count?
