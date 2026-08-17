@@ -274,7 +274,7 @@ function Toggle({
   onChange: (v: boolean) => void
 }) {
   return (
-    <label className="ring-base-divider-subtle flex cursor-pointer items-center justify-between gap-3 rounded-lg bg-white px-3 py-2 text-sm ring-1">
+    <label className="border-base-divider-subtle flex cursor-pointer items-center justify-between gap-3 rounded-lg border bg-white px-3 py-2 text-sm">
       <span className="font-medium">{label}</span>
       <button
         type="button"
@@ -327,10 +327,10 @@ function FilterGroup({
               type="button"
               onClick={() => toggle(opt)}
               className={cx(
-                'rounded-full px-2.5 py-1 text-xs font-medium ring-1 transition',
+                'rounded-full border px-2.5 py-1 text-xs font-medium transition',
                 active
-                  ? 'bg-indigo-600 text-white ring-indigo-600 hover:bg-indigo-700'
-                  : 'ring-base-divider-default text-base-content-medium hover:bg-slate-50',
+                  ? 'border-indigo-600 bg-indigo-600 text-white hover:bg-indigo-700'
+                  : 'border-base-divider-default text-base-content-medium hover:bg-slate-50',
               )}
               aria-pressed={active}
             >
