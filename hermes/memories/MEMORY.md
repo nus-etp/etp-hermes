@@ -5,3 +5,5 @@ Per-company html_scrape pages (Webflow/Next.js, e.g. Craft Health, Aurora Food, 
 Best real-signal feeds: Carousell press RSS, Horizon newsroom (table-based), GitHub org feeds, Lever job postings.
 §
 Layer 3 synthesis merges agent/updates signals into per-company living briefs. Uses `data/touched-companies.json` slice, parses H2=company/H3=company from agent file, generates signal cards with URL fetch enrichment (20 budget, 15s timeout, skip-list hosts). Detects duplicate announcements via word-overlap matching. Silent-corrects Sector: bullet to match c.sector. Funding history re-rendered from c.funding_rounds each run. No-write check compares byte content before overwriting.
+§
+The etp-hermes GHA runner can boot with a corrupted PATH (env `declare -x` output embedded into it, so /usr/bin is missing and `cat`/`rm`/`ls` fail for tools that shell out, incl. write_file). Fix: `export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin` per command, or symlink coreutils into /home/runner/.local/bin (it's on PATH). Verify with `command -v cat` before assuming tools work.

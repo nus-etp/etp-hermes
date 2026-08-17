@@ -19,14 +19,15 @@ _Last material event: 2026-07-17 — $3.9M seed round co-led by SGInnovate and L
 _No disclosed funding._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-07-17** — Raised $3.9M in a seed round co-led by SGInnovate and Lotus One Investment to scale quantum-safe encryption globally — [technode.global](https://technode.global/2026/07/17/singapores-cryptography-solution-firm-pqcee-raises-3-9m-seed-round-to-scale-quantum-safe-encryption-globally)
   - Summary: pQCee closed a $3.9M seed round co-led by SGInnovate and Lotus One Investment, with participation from In Group Holdings, Wavemaker Ventures, SUTD Venture Holdings, and Apsara Investments. The company will use the funds to expand its Singapore team, deepen presence across Asia, and enter the US, Europe, and Middle East markets. The round follows a $2.8M raise in 2022.
   - People: Dr. Teik Guan Tan (CEO, pQCee), Hsien-Hui Tong (Executive Director of Investments, SGInnovate), Paul Santos (Co-founder and Managing Partner, Wavemaker Partners)
   - Counterparties: SGInnovate (co-lead), Lotus One Investment (co-lead), Thales (HSM partner), Microsoft (enterprise IT partner)
   - Numbers: $3.9M seed round; second institutional round; $2.8M prior raise (2022)
   - Quote: "global regulations are mandating that critical systems complete post-quantum cryptography migration by as early as 2030" — Paul Santos, Co-founder and Managing Partner, Wavemaker Partners
-
-## Older signals
 - **2026-06-26** — pQCee — Be Quantum Ready (LinkedIn) — [sg.linkedin.com](https://sg.linkedin.com/company/pqcee)
 - **2026-06-26** — How this quantum cybersecurity startup is enabling businesses to stay ahead (SGInnovate) — [sginnovate.com](https://www.sginnovate.com/investments/pqcee)
 - **2026-06-26** — pQCee | PKI Consortium — [pkic.org](https://pkic.org/about/membership/members/pqcee/)
