@@ -9,7 +9,7 @@ import type { Company } from '~/lib/data'
 
 import { CompanyCard } from './company-card'
 
-const SORT_OPTIONS = ['relevance', 'name', 'funding', 'signal'] as const
+const SORT_OPTIONS = ['relevance', 'name', 'funding', 'signal', 'updated'] as const
 type SortKey = (typeof SORT_OPTIONS)[number]
 
 interface Props {
@@ -95,6 +95,11 @@ export function CompanyDirectory({
       const bd = b.latestSignalDate ?? ''
       return bd.localeCompare(ad) || byName(a, b)
     }
+    const byUpdated = (a: Company, b: Company) => {
+      const ad = a.lastUpdated ?? ''
+      const bd = b.lastUpdated ?? ''
+      return bd.localeCompare(ad) || byName(a, b)
+    }
     const byRelevance = (a: Company, b: Company) => {
       if (a.hasBrief !== b.hasBrief) return a.hasBrief ? -1 : 1
       const sa = bySignal(a, b)
@@ -109,7 +114,9 @@ export function CompanyDirectory({
           ? byFunding
           : sort === 'signal'
             ? bySignal
-            : byRelevance
+            : sort === 'updated'
+              ? byUpdated
+              : byRelevance
     return [...out].sort(sorter)
   }, [companies, q, briefOnly, selSectors, selRegions, selStages, selSources, sort])
 
@@ -142,7 +149,7 @@ export function CompanyDirectory({
             onChange={(e) => void setQ(e.target.value || null)}
             aria-label="Search companies, aliases, descriptions"
             placeholder="Search companies, aliases, descriptions…"
-            className="ring-base-divider-default placeholder:text-base-content-subtle focus:ring-interaction-main-default w-full rounded-lg bg-white py-2.5 pr-3 pl-9 text-sm shadow-sm ring-1 focus:ring-2 focus:outline-none"
+            className="border-base-divider-default placeholder:text-base-content-subtle focus:border-interaction-main-default focus:ring-interaction-main-default w-full rounded-lg border bg-white py-2.5 pr-3 pl-9 text-sm shadow-sm focus:ring-1 focus:outline-none"
           />
           {q && (
             <button
@@ -226,6 +233,7 @@ export function CompanyDirectory({
               <option value="name">A–Z</option>
               <option value="funding">Latest funding</option>
               <option value="signal">Latest signal</option>
+              <option value="updated">Last updated</option>
             </select>
           </label>
         </div>

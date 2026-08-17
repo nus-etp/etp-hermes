@@ -20,6 +20,7 @@ export interface Company {
   latestFundingDate?: string
   latestFundingStage?: string
   latestSignalDate?: string
+  lastUpdated?: string
   identifiers: { linkedin?: string; crunchbase?: string }
   fundingRoundsCount: number
 }

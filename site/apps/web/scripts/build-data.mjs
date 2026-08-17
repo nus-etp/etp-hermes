@@ -4,6 +4,7 @@
 // static export at /etp-hermes/briefs/<slug>/infographic.png.
 
 import { readFileSync, readdirSync, existsSync, mkdirSync, copyFileSync, writeFileSync, statSync } from 'node:fs'
+import { execFileSync } from 'node:child_process'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -28,6 +29,27 @@ const toSlug = (s) =>
     .replace(/(^-|-$)/g, '')
 
 const readUtf8 = (p) => readFileSync(p, 'utf8')
+
+// Last commit time of a file (ISO 8601), the ground truth for "last updated".
+// Falls back to filesystem mtime when git isn't available (e.g. shallow/no-git
+// build) or the file is untracked.
+function lastCommitDate(path) {
+  try {
+    const out = execFileSync(
+      'git',
+      ['log', '-1', '--format=%cI', '--', path],
+      { cwd: REPO_ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] },
+    ).trim()
+    if (out) return out
+  } catch {
+    // fall through to mtime
+  }
+  try {
+    return statSync(path).mtime.toISOString()
+  } catch {
+    return undefined
+  }
+}
 
 // --- Parse LIVING_BRIEF.md ---------------------------------------------------
 
@@ -96,6 +118,7 @@ if (existsSync(BRIEFS_DIR)) {
       raw: md,
       parsed: parseBrief(md),
       hasInfographic: existsSync(infoPath),
+      lastUpdated: lastCommitDate(briefPath),
     }
     briefSlugs.add(entry)
   }
@@ -192,6 +215,8 @@ for (const c of companies) {
     // Prefer the brief's own latest signal date; fall back to the digest scan
     // (covers companies with signals but no brief yet).
     latestSignalDate: brief?.parsed.latestSignalDate ?? lsd,
+    // Ground truth for "last updated": the brief file's last commit time.
+    lastUpdated: brief?.lastUpdated,
     identifiers: c.identifiers ?? {},
     fundingRoundsCount: stagesRaw.length,
   })
