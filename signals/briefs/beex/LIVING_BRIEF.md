@@ -1,5 +1,5 @@
 # BEEX — LIVING BRIEF
-_Last updated: 2026-07-31 15:30 UTC_
+_Last updated: 2026-08-18 13:48 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -29,6 +29,12 @@ _Total disclosed: $9.8M._
 - **2026-07-05** — BeeX has launched BETTA, its most advanced autonomous underwater drone featuring 24-hour endurance, AI-powered navigation, 100m depth rating, and IHO-grade positioning for offshore inspections and subsea surveys. — [botsanddrones.asia](https://botsanddrones.asia/drone-service-providers/f/beex-launches-betta-autonomous-underwater-drone-for-ai-inspection)
   - Summary: BeeX launched BETTA, an autonomous underwater drone with 24-hour endurance, AI-powered navigation, 100m depth rating, and IHO-grade positioning for offshore inspections and subsea surveys. The article covers the BETTA specs as a product roundup.
   - Numbers: 100m depth rating, 24-hour endurance, IHO-grade positioning
+- **2026-06-29** — BeeX raises a US$7.7M Series A led by Monk's Hill Ventures, with Seeds Capital, NUS Technology Holdings, ShipsFocus and Octave Capital participating, to fund expansion of its underwater drone fleet — [businesstimes.com.sg](https://www.businesstimes.com.sg/startups-tech/startups/drone-startup-beex-raises-us7-7-million-series-round-monks-hill-ventures-seeds-capital)
+  - Summary: BeeX raised US$7.7M in a Series A round announced on 29 June 2026, led by Monk's Hill Ventures, with Seeds Capital (an arm of SG Growth Capital, the EDB–Enterprise Singapore investment platform), NUS Technology Holdings, ShipsFocus and Octave Capital participating. Proceeds will expand BeeX's autonomous underwater drone fleet and operational reach; the company has deployed across Asia-Pacific and Europe for offshore wind, oil and gas, subsea cable and coastal infrastructure inspection, and works with Singapore's Ministry of Defence on national security applications.
+  - People: Grace Chia (co-founder and CEO), Lim Kuo-Yi (co-founder and managing partner, Monk's Hill Ventures), Christine Giam (partner, SG Growth Capital)
+  - Counterparties: Monk's Hill Ventures (lead investor), Seeds Capital (investor), NUS Technology Holdings (investor), Singapore Ministry of Defence (government partner)
+  - Numbers: US$7.7M
+  - Quote: "The convergence of increasing offshore infrastructure asset integrity requirements and defence modernisation is creating a generational opportunity in underwater robotics that we believe BeeX is poised to capture." — Lim Kuo-Yi, co-founder and managing partner, Monk's Hill Ventures
 - **2026-06-24** — BeeX published detailed specs for its BETTA autonomous underwater drone: 100m depth rating, 12kWh battery for 24-hour operations, 7-sensor suite, and under 300kg, unveiled at its Xperiences 2 industry event. — [beex.sg](https://www.beex.sg/news/beex-launches-betta-the-most-powerful-autonomous-underwater-drone)
   - Summary: Corroborates the 2026-06-24 announcement of the BETTA drone launch; the detailed article confirms BETTA is a 100m depth-rated autonomous inspection and light intervention drone with a 10x battery capacity upgrade over A.IKANBILIS and IHO-rated positioning accuracy. It debuted before 200 guests at BeeX's Xperiences 2 event covering defence, energy, coastal management, and research sectors. BETTA improves on A.IKANBILIS' AI through 14 years of proprietary data and supports 24-hour continuous autonomous operations.
   - People: Grace Chia (CEO and co-founder)
@@ -55,4 +61,4 @@ _Total disclosed: $9.8M._
 - **2026-05-20** — Demonstrated its A.IKANBILIS autonomous subsea inspection drone at Oceanology International 2026, a major global ocean technology trade show. — [news.google.com](https://news.google.com/rss/articles/CBMimwJBVV95cUxPS29FUW9kcWwtdUJMWVFIRGVHWnYtQVFEZXF6MVhWN1lsU0lFT00tUlJqV3lEMDNyQk5)
 
 ## Open questions
-- Which commercial sectors (offshore wind, O&G, coastal infrastructure, defense) is BEEX prioritizing for expansion?
+_none open_

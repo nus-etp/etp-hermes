@@ -1,5 +1,5 @@
 # Hivebotics — LIVING BRIEF
-_Last updated: 2026-07-31 15:30 UTC_
+_Last updated: 2026-08-18 13:48 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -25,7 +25,7 @@ _none_
   - Numbers: 50% cleaning time reduction; 100+ orders; 60% of cleaning time spent on 6% of floor space
 - **2026-06-12** — Tech in Asia republishes a profile of Hivebotics' Abluo toilet-cleaning robot, covering its 100+ commercial orders, facilities management vision, and ongoing Series A fundraising — [techinasia.com](https://www.techinasia.com/robot-cleans-toilets-humans-dont)
   - Summary: Corroborates the 2026-05-13 Business Times feature; no new facts.
-- **2026-05-19** — Nimbus, a proptech and facility-management firm, made a strategic investment in Hivebotics (terms undisclosed), pairing Hivebotics' autonomous cleaning robots with Nimbus's "buildingOS" facility-automation vision — [app.dealroom.co](https://app.dealroom.co/news/note/nimbus-invests-in-hivebotics-maker-of-the-first-fully-autonomous-bathroom-cleaning-robot)
+- **2026-05-19** — Nimbus, a proptech and facility-management firm, made a strategic investment in Hivebotics (terms undisclosed), pairing Hivebotics' autonomous cleaning robots with Nimbus's "buildingOS" facility-automation vision — [app.dealroom.co](https://app.dealroom.co/news/note/nimbus-invests-in-hivebotics-maker-of-the-first-fully-autonomous-bathroom-cleaning-robot) (Also reported by: [app.dealroom.co](https://app.dealroom.co/news/feed/nimbus-invests-in-hivebotics-world-s-first-fully-autonomous-bathroom-cleaning-robot))
   - Summary: Nimbus, a proptech and facility-management company, announced a strategic investment in Hivebotics on May 19, 2026; financial terms were not disclosed. The deal stems from a shared vision between Hivebotics founder Rishab and Nimbus founder Daniel to automate physical-space maintenance, with Nimbus planning to combine robots and IoT sensors in a single "buildingOS" platform while human workers shift to oversight and complex problem-solving.
   - People: Rishab Patwari (founder), Daniel (Nimbus founder)
   - Counterparties: Nimbus (strategic investor)
