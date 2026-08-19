@@ -1,9 +1,11 @@
 # INVIGILO — LIVING BRIEF
-_Last updated: 2026-07-25 14:47 UTC_
+_Last updated: 2026-08-19 13:49 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 INVIGILO is an NUS GRIP-incubated Singapore deep-tech startup developing AI-powered video analytics for workplace safety across construction, oil & gas, and industrial sites. Recent milestones include winning Galp's global safety challenge (selected from 300+ applicants) and being awarded a JTC Innovative Procurement Partnership tender, signaling growing traction in both commercial and government markets.
+
+_Last material event: 2026-07-17 — Awarded JTC Innovative Procurement Partnership tender as one of three start-ups selected for worksite productivity monitoring_
 
 ## Profile
 - Sector: AI / Deep tech
@@ -27,6 +29,10 @@ _Total disclosed: $0.5M._
   - Counterparties: Galp
   - Numbers: selected from 300+ applicants
   - Quote: "this is a challenge result, not a commercial engagement, and Galp is not an Invigilo client" — INVIGILO
+- **2026-06-25** — Signed MOU with Motorola Solutions | Avigilon Alta for joint go-to-market across Singapore, Malaysia, Thailand and the Philippines — [invigilo.ai](https://www.invigilo.ai/news/motorola-solutions-avigilon-alta-mou)
+  - Summary: INVIGILO and Motorola Solutions | Avigilon Alta signed a Memorandum of Understanding on 25 June 2026 to develop a joint go-to-market across Singapore, Malaysia, Thailand and the Philippines, focused initially on construction and industrial sectors. The collaboration pairs INVIGILO's SafeKey AI video analytics with Avigilon Alta's cloud-native video security platform, running on cameras sites already own, so automated safety responses can connect to access-control systems. INVIGILO stresses the instrument is an MOU to develop the approach, not a signed commercial contract.
+  - Counterparties: Motorola Solutions | Avigilon Alta
+  - Quote: "this is an MOU, an agreement between the two companies to develop the joint go-to-market approach together. It is not a signed commercial contract." — Invigilo announcement
 - **2026-05-20** — Accepted into NVIDIA Inception program for AI tech ecosystem access — [INVIGILO](https://www.invigilo.ai/post/invigilo-technologies-joins-nvidia-inception-program)
 - **2026-05-20** — Featured for reshaping construction practices in Singapore — [INVIGILO](https://www.invigilo.ai/post/invigilo-reshaping-the-construction-scene-in-singapore)
 - **2026-05-20** — Strategic partnership with Aespada to expand safety capabilities — [INVIGILO](https://www.invigilo.ai/post/invigilo-partnership-with-aespada)
@@ -35,3 +41,4 @@ _Total disclosed: $0.5M._
 - How will NVIDIA Inception membership accelerate product development?
 - What is the commercial outcome of the Galp pilot program?
 - What is the scope and value of the JTC IPP tender for INVIGILO?
+- Will the Motorola Solutions | Avigilon Alta MOU convert into a commercial agreement, and does it signal expansion beyond the construction and industrial verticals in Southeast Asia?

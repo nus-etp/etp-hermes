@@ -1,5 +1,5 @@
 # NuSPACE — LIVING BRIEF
-_Last updated: 2026-08-01 14:37 UTC_
+_Last updated: 2026-08-19 13:49 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -16,7 +16,10 @@ _Last material event: 2026-05-03 — NuLink 1 and 2 satellites launched on Falco
 - **2019-10** — Seed, undisclosed — BEENEXT — [e27.co](https://e27.co/space-tech-company-nuspace-raises-funding-to-bring-iot-connectivity-to-remote-places-20191003/)
 
 ## Recent signals
-_none_
+- **2026-07-30** — NuLink-1 and NuLink-2 confirmed operational after July 2026 commissioning; NuLink-3 and NuLink-4 target a 30 Dec 2026 launch — [nanosats.eu](https://www.nanosats.eu/sat/nulink.html)
+  - Summary: Nanosats Database records NuLink-1 and NuLink-2 as operational, citing NuSpace's LinkedIn post from July 2026 on finishing commissioning; both launched 3 May 2026 on a Falcon 9 rideshare into 500 km, 97.4-degree orbits. NuLink-3 and NuLink-4 are listed as not yet launched, with a 30 Dec 2026 launch target and Exolaunch as launch broker.
+  - Counterparties: Exolaunch (launch broker)
+  - Numbers: 500 km altitude, 97.4° inclination; NuLink-3/4 target 2026-12-30
 
 ## Older signals
 - **2026-07-01** — NuLink Satellite IoT Data Relay System Tested Successfully — [linkedin.com](https://www.linkedin.com/posts/nuspace-pte-ltd_nuspace-nulink-satelliteiot-activity-7477934037354049536--klh)
@@ -33,6 +36,6 @@ _none_
 - **2026-05-03** — NuLink satellite launched by NuSpace, per company's LinkedIn announcement — [LinkedIn (NuSpace)](https://www.linkedin.com/posts/activity-7455434618704662530-RKvI)
 
 ## Open questions
-- What is NuSpace's constellation roadmap — how many additional satellites are planned?
+- What is the total planned constellation size beyond NuLink-3 and NuLink-4?
 - What IoT applications (logistics, agriculture, maritime) is NuSpace targeting for its connectivity service?
 - What is NuSpace's commercial model — satellite connectivity subscriptions, data relay services, or hardware sales?
