@@ -1,5 +1,5 @@
 # Assemblr — LIVING BRIEF
-_Last updated: 2026-08-12 14:23 UTC_
+_Last updated: 2026-08-20 13:50 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -19,11 +19,11 @@ _Last material event: 2026-08-03 — ImajiNation 2026 national visual-coding com
 _No disclosed funding._
 
 ## Recent signals
-- **2026-08-03** — Assemblr EDU, Indonesia's education ministry (Kemendikdasmen), and Samsung for Education launch ImajiNation 2026, a national visual-coding competition targeting 11,000+ participants from 2,000+ schools across 38 provinces — [assemblrworld.com](https://www.assemblrworld.com/blog/imajination-2026-officially-launches-bringing-a-national-visual-coding-competition-to-students-and-teachers-across-38-provinces)
-  - Summary: ImajiNation 2026 is a national digital creation championship co-launched by Kemendikdasmen, Assemblr EDU, and Samsung (through Samsung for Education), targeting more than 11,000 participants from over 2,000 schools across all 38 provinces. Students build projects using Visual Coding, 3D, and AR, aligned with Indonesia's new Coding and AI school subject and the Ministry's Deep Learning approach. Minister Abdul Mu'ti publicly endorsed the competition as part of the ministry's coding and AI learning agenda.
-  - People: Abdul Mu'ti (Minister of Primary and Secondary Education)
+- **2026-08-03** — Assemblr EDU, Indonesia's education ministry (Kemendikdasmen), and Samsung for Education launch ImajiNation 2026, a national visual-coding competition targeting 11,000+ participants from 2,000+ schools across 38 provinces — [assemblrworld.com](https://www.assemblrworld.com/blog/imajination-2026-officially-launches-bringing-a-national-visual-coding-competition-to-students-and-teachers-across-38-provinces) (Also reported by: [techinasia.com](https://www.techinasia.com/indonesias-education-ministry-partners-assemblr-samsung-nationwide-visual-coding-championship))
+  - Summary: ImajiNation 2026 is a national digital creation championship co-launched by Kemendikdasmen, Assemblr EDU, and Samsung (through Samsung for Education), targeting more than 11,000 participants from over 2,000 schools across all 38 provinces. Students build projects using Visual Coding, 3D, and AR, aligned with Indonesia's new Coding and AI school subject and the Ministry's Deep Learning approach. Minister Abdul Mu'ti publicly endorsed the competition as part of the ministry's coding and AI learning agenda. A six-week national learning program precedes an in-person Grand Final in Jakarta in October 2026, including a live Junior High School Visual Coding Battle on the Samsung EDU Innovation Stage and an Education Expo (about 1,000 on-site visitors and 5,000 livestream viewers).
+  - People: Abdul Mu'ti (Minister of Primary and Secondary Education), Hasbi Asyadiq (Co-Founder & CEO, Assemblr), Ian Chong (Head of Mobile Enterprise & Education, Samsung SEA & Oceania)
   - Counterparties: Kemendikdasmen (partner); Samsung for Education (supporter)
-  - Numbers: 11,000+ participants; 2,000+ schools; 38 provinces
+  - Numbers: 11,000+ participants; 2,000+ schools; 38 provinces; ~1,000 on-site / ~5,000 livestream at Education Expo
   - Quote: "Our goal is not simply to teach students how to write code, but to nurture systematic, creative, collaborative, and problem-solving ways of thinking." — Abdul Mu'ti, Minister of Primary and Secondary Education
 
 ## Older signals
