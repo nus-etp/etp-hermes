@@ -28,5 +28,10 @@
     "name": "AgFunder News",
     "type": "firehose",
     "url": "https://agfundernews.com/feed"
+  },
+  {
+    "name": "e27",
+    "type": "firehose",
+    "url": "https://e27.co/feed/"
   }
 ]
