@@ -1,5 +1,5 @@
 # Constructor.io — LIVING BRIEF
-_Last updated: 2026-08-13 14:33 UTC_
+_Last updated: 2026-08-21 13:47 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -23,7 +23,7 @@ _Total disclosed: $55.0M._
 _none_
 
 ## Older signals
-- **2026-06-25** — Named a Leader in Gartner's Magic Quadrant for Search and Product Discovery for the second straight year, placing furthest in Vision and highest in Execution among all vendors evaluated — [prnewswire.com](https://www.prnewswire.com/news-releases/constructor-named-a-leader-in-gartner-magic-quadrant-for-search-and-product-discovery--placing-furthest-in-vision-and-highest-in-execution-302810989.html)
+- **2026-06-25** — Named a Leader in Gartner's Magic Quadrant for Search and Product Discovery for the second straight year, placing furthest in Vision and highest in Execution among all vendors evaluated — [prnewswire.com](https://www.prnewswire.com/news-releases/constructor-named-a-leader-in-gartner-magic-quadrant-for-search-and-product-discovery--placing-furthest-in-vision-and-highest-in-execution-302810989.html) (Also reported by: [constructor.com](https://constructor.com/blog/gartner-magic-quadrant-2026-leader))
   - Summary: Constructor was named a Leader in the Gartner Magic Quadrant for Search and Product Discovery — its second consecutive year in the Leaders quadrant — placing furthest on the Completeness of Vision axis and highest on the Ability to Execute axis among all vendors evaluated. The recognition follows a run of analyst accolades: Leader in the Forrester Wave for Commerce Search and Product Discovery (Q3 2025), Leader in the IDC MarketScape for Retail GenAI-Driven Product Discovery, the only vendor named Customers' Choice in the 2025 Gartner Peer Insights Voice of the Customer report, and Retail Company of the Year at the American Business Awards for the second straight year.
   - People: Eli Finkelshteyn (CEO & Co-Founder)
   - Numbers: 2nd straight year as Gartner MQ Leader; consistent $10M+ lifts for leading brands (Sephora, Petco, The Very Group)
