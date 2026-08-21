@@ -63,6 +63,22 @@ FIREHOSE_WINDOW = _window_days("COLLECT_FIREHOSE_DAYS", 7)
 PER_COMPANY_WINDOW = _window_days("COLLECT_PER_COMPANY_DAYS", 14)
 LEVER_WINDOW = _window_days("COLLECT_LEVER_DAYS", 30)
 
+
+def build_term_matchers(terms: dict[str, list[str]]) -> dict[str, list[re.Pattern[str]]]:
+    """Compile each company's lowercased terms into whole-word matchers.
+
+    Firehose triage matches watchlist names as tokens, not raw substrings, so a
+    short alias like "arch" no longer fires on "research", "wise" on "WiseTech",
+    "ava" on "available", or "finan" on "financial". Lookarounds (not ``\\b``) so
+    terms with adjacent punctuation such as "assist.id" still anchor correctly.
+    Terms are already lowercased by the caller and matched against a lowercased
+    haystack, so the patterns are case-sensitive by construction.
+    """
+    return {
+        name: [re.compile(rf"(?<!\w){re.escape(t)}(?!\w)") for t in ts if t]
+        for name, ts in terms.items()
+    }
+
 # Jina Reader fallback: when a firehose/rss feed's direct fetch or parse fails
 # (host unreachable from the runner, but Jina can reach it), refetch it through
 # r.jina.ai → Markdown → the shared heading/link heuristic. Keyless by default;
@@ -242,6 +258,7 @@ def collect(
     terms = {
         c["name"]: [t.lower() for t in [c["name"], *(c.get("aliases") or [])]] for c in companies
     }
+    term_res = build_term_matchers(terms)
 
     # Jina Reader fallback state. reader=None disables it entirely (the default,
     # so existing callers/tests keep the direct-fetch-only behaviour); main()
@@ -281,10 +298,10 @@ def collect(
                 "source_kind": kind,
                 "via_jina_fallback": True,
             }
-            if company is None:  # firehose: substring-triage across the watchlist
+            if company is None:  # firehose: whole-word triage across the watchlist
                 haystack = it["headline"].lower()
-                for name, ts in terms.items():
-                    if any(t in haystack for t in ts):
+                for name, pats in term_res.items():
+                    if any(p.search(haystack) for p in pats):
                         add(name, dict(item))
             else:
                 add(company, item)
@@ -318,8 +335,8 @@ def collect(
             if not within_window(parse_date(it["pubDate"]), FIREHOSE_WINDOW):
                 continue
             haystack = f"{it['title']} {it['description']}".lower()
-            for name, ts in terms.items():
-                if any(t in haystack for t in ts):
+            for name, pats in term_res.items():
+                if any(p.search(haystack) for p in pats):
                     add(
                         name,
                         {

@@ -134,6 +134,49 @@ def test_firehose_triage_and_seen_dedup(cc):
     assert set(out["companies"]) == {"Acme Robotics"}
 
 
+def test_build_term_matchers_whole_word(cc):
+    matchers = cc.build_term_matchers(
+        {
+            "Arch": ["arch"],
+            "WiSe": ["wise"],
+            "Assist.id": ["assist.id"],
+        }
+    )
+
+    def hits(name: str, text: str) -> bool:
+        return any(p.search(text.lower()) for p in matchers[name])
+
+    # Whole-word matches still fire.
+    assert hits("Arch", "Arch raises $5M")
+    assert hits("WiSe", "WiSe launches app")
+    # Substring-glued false positives no longer fire.
+    assert not hits("Arch", "new research lab opens")
+    assert not hits("WiSe", "WiseTech shares skid 12%")
+    # Punctuation-bearing terms still anchor and don't fire on the bare stem.
+    assert hits("Assist.id", "Assist.id ships v2")
+    assert not hits("Assist.id", "China orders entities not to assist EU probe")
+
+
+def test_firehose_triage_rejects_substring_false_positive(cc):
+    companies = [{"name": "Arch", "aliases": [], "description": "chip startup", "sources": []}]
+    feed = _rss(
+        [
+            ("Micron plans $10b for AI memory research", "https://x.example/r", "", _recent_rfc822(1)),
+            ("Arch raises $5M seed", "https://x.example/arch", "", _recent_rfc822(1)),
+        ]
+    )
+    out = cc.collect(
+        companies,
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({FEEDS[0]["url"]: feed}),
+    )
+    # Only the whole-word "Arch" headline survives; "research" is dropped.
+    assert [c["link"] for c in out["candidates"]] == ["https://x.example/arch"]
+
+
 def test_firehose_skips_unchanged_feeds(cc):
     out = cc.collect(
         COMPANIES,
