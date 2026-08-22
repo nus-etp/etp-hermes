@@ -39,13 +39,16 @@ UA_LADDER = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
-    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; "
-    "GPTBot/1.2; +https://openai.com/gptbot",
-    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; "
-    "ChatGPT-User/1.0; +https://openai.com/bot",
-    "Mozilla/5.0 (compatible; Claude-User/1.0; +Claude-User@anthropic.com)",
-    "Mozilla/5.0 (compatible; PerplexityBot/1.0; "
-    "+https://docs.perplexity.ai/guides/bots)",
+    # Verified-effective agent-fetcher UAs (exact strings, some deliberately terse).
+    "Google",  # Gemini's fetcher — yes, literally "Google"
+    "OpenAI File Downloader",
+    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; "
+    "GPTBot/1.2; +https://openai.com/gptbot)",
+    "Claude-User",
+    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; "
+    "PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)",
+    "XaiImageApiFetch/1.0 (Linux; x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
 )
 USER_AGENT = UA_LADDER[0]
 GATED_STATUSES = {401, 403, 429}
