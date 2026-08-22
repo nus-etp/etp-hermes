@@ -3737,19 +3737,7 @@
     ],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
-    "sources": [
-      {
-        "type": "rss",
-        "label": "news",
-        "url": "https://microtube.tech/feed/"
-      },
-      {
-        "type": "html_scrape",
-        "label": "news",
-        "url": "https://microtube.tech/category/news-awards/",
-        "hint": "WordPress category archive listing 'News & Awards' posts as stacked cards. Each card has a featured image, a category badge, a headline as a linked heading (h2), an author byline ('By delta'), publication date (format 'DD Month, YYYY'), an excerpt, and a 'Read More' link. Relative links resolve against https://microtube.tech/."
-      }
-    ],
+    "sources": [],
     "funding_rounds": [
       {
         "date": "2022-03-27",

@@ -218,6 +218,55 @@ def test_url_error_marks_changed_so_agent_retries(preflight, tmp_repo, monkeypat
     assert cache["https://flaky.example/feed"]["consecutive_failures"] == 3
 
 
+def test_ua_ladder_recovers_gated_feed(preflight, tmp_repo, monkeypatch) -> None:
+    """A 403 to the honest UA retries down the ladder; a browser UA succeeds."""
+    feeds = [{"name": "Gated", "type": "firehose", "url": "https://gated.example/feed"}]
+    prior_cache = {"https://gated.example/feed": {"consecutive_failures": 5, "last_status": 403}}
+    forbidden = error.HTTPError("https://gated.example/feed", 403, "Forbidden", {}, None)  # type: ignore[arg-type]
+    body = b"<rss><item>real feed</item></rss>"
+    # honest UA -> 403, then the next ladder UA -> 200 for the same URL.
+    urlopen, calls = _make_urlopen(
+        {"https://gated.example/feed": [forbidden, {"body": body, "headers": {"ETag": '"ok"'}}]}
+    )
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, feeds, [], cache=prior_cache)
+
+    assert preflight.main() == 0
+    cache = json.loads((tmp_repo / "data" / "feed-cache.json").read_text())
+    entry = cache["https://gated.example/feed"]
+    # Recovered → real body hashed, streak reset, no lingering error.
+    assert entry["last_status"] == 200
+    assert entry["consecutive_failures"] == 0
+    assert entry["body_sha256"] == hashlib.sha256(body).hexdigest()
+    # Two attempts to the same URL: honest UA then an escalated UA.
+    uas = [dict(hdrs).get("User-agent") for url, hdrs in calls if url.endswith("/feed")]
+    assert uas[0] == preflight.UA_LADDER[0]
+    assert uas[1] == preflight.UA_LADDER[1]
+
+
+def test_ua_ladder_gives_up_after_exhausting_all_uas(preflight, tmp_repo, monkeypatch) -> None:
+    """Every UA gated → recorded as a failure, streak incremented."""
+    feeds = [{"name": "Walled", "type": "firehose", "url": "https://walled.example/feed"}]
+    prior_cache = {"https://walled.example/feed": {"consecutive_failures": 1, "last_status": 403}}
+    forbidden = [
+        error.HTTPError("https://walled.example/feed", 403, "Forbidden", {}, None)  # type: ignore[arg-type]
+        for _ in range(len(preflight.UA_LADDER))
+    ]
+    urlopen, calls = _make_urlopen({"https://walled.example/feed": list(forbidden)})
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, feeds, [], cache=prior_cache)
+
+    assert preflight.main() == 0
+    changed = json.loads((tmp_repo / "data" / "changed-sources.json").read_text())
+    cache = json.loads((tmp_repo / "data" / "feed-cache.json").read_text())
+    entry = cache["https://walled.example/feed"]
+    assert changed["firehose"] == ["https://walled.example/feed"]  # still retried downstream
+    assert entry["last_status"] == 403
+    assert entry["consecutive_failures"] == 2
+    # Tried every UA in the ladder before giving up.
+    assert len([c for c in calls if c[0].endswith("/feed")]) == len(preflight.UA_LADDER)
+
+
 def test_successful_fetch_resets_failure_streak(preflight, tmp_repo, monkeypatch) -> None:
     feeds = [{"name": "Recovered", "type": "firehose", "url": "https://back.example/feed"}]
     prior_cache = {"https://back.example/feed": {"consecutive_failures": 4, "last_status": -1}}

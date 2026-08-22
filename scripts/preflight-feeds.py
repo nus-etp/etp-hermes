@@ -28,7 +28,20 @@ CHANGED_FILE = REPO_ROOT / "data" / "changed-sources.json"
 
 PREFLIGHTED_TYPES = {"rss", "github_org", "lever_jobs"}
 ALWAYS_CHANGED_TYPES = {"html_scrape"}
-USER_AGENT = "etp-hermes-preflight/1 (+https://github.com/luarss/etp-hermes)"
+# UA-retry ladder — mirrors collect-candidates.py. A host that 403s an unknown
+# bot UA but serves the feed to a browser/Googlebot would otherwise get counted
+# as a dead feed here and refetched blindly every run; escalating on gate
+# statuses lets preflight see the real body (ETag/hash change-detection) and
+# reset the consecutive-failure streak. Honest UA first, escalate only on
+# 401/403/429.
+UA_LADDER = (
+    "etp-hermes-preflight/1 (+https://github.com/luarss/etp-hermes)",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+)
+USER_AGENT = UA_LADDER[0]
+GATED_STATUSES = {401, 403, 429}
 TIMEOUT_SECS = 20
 
 
@@ -49,7 +62,7 @@ def load_cache() -> dict[str, Any]:
 
 def check_url(url: str, cache_entry: dict[str, Any] | None) -> tuple[bool, dict[str, Any]]:
     """Returns (changed, new_cache_entry). changed=True means the agent should process this URL."""
-    headers = {"User-Agent": USER_AGENT, "Accept": "*/*"}
+    headers = {"Accept": "*/*"}  # User-Agent is set per-attempt from UA_LADDER below
     if cache_entry:
         if cache_entry.get("etag"):
             headers["If-None-Match"] = cache_entry["etag"]
@@ -58,53 +71,61 @@ def check_url(url: str, cache_entry: dict[str, Any] | None) -> tuple[bool, dict[
 
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     prior_failures = (cache_entry or {}).get("consecutive_failures", 0)
-    req = request.Request(url, headers=headers, method="GET")
 
-    try:
-        with request.urlopen(req, timeout=TIMEOUT_SECS) as resp:
-            status = resp.status
-            body = resp.read()
-            new_hash = hashlib.sha256(body).hexdigest()
-            new_etag = resp.headers.get("ETag")
-            new_lm = resp.headers.get("Last-Modified")
-
-            prior_hash = (cache_entry or {}).get("body_sha256")
-            changed = prior_hash != new_hash
-
-            entry = {
-                "etag": new_etag or (cache_entry or {}).get("etag"),
-                "last_modified": new_lm or (cache_entry or {}).get("last_modified"),
-                "body_sha256": new_hash,
-                "last_status": status,
-                "last_run": now,
-                "consecutive_failures": 0,  # reachable → reset the dead-feed streak
-            }
-            if changed:
-                entry["last_changed"] = now
-            elif cache_entry and cache_entry.get("last_changed"):
-                entry["last_changed"] = cache_entry["last_changed"]
-            return changed, entry
-    except error.HTTPError as e:
-        if e.code == 304:
-            entry = dict(cache_entry or {})
-            entry["last_status"] = 304
-            entry["last_run"] = now
-            entry["consecutive_failures"] = 0  # 304 = reachable, content unchanged
-            return False, entry
-        # 4xx/5xx: the server answered but didn't serve the feed — count it.
+    def _failure(status: int, err: str) -> tuple[bool, dict[str, Any]]:
         entry = dict(cache_entry or {})
-        entry["last_status"] = e.code
-        entry["last_error"] = f"HTTP {e.code}"
+        entry["last_status"] = status
+        entry["last_error"] = err
         entry["last_run"] = now
         entry["consecutive_failures"] = prior_failures + 1
         return True, entry
-    except (error.URLError, TimeoutError, OSError) as e:
-        entry = dict(cache_entry or {})
-        entry["last_status"] = -1
-        entry["last_error"] = str(e)[:200]
-        entry["last_run"] = now
-        entry["consecutive_failures"] = prior_failures + 1
-        return True, entry
+
+    last_result: tuple[bool, dict[str, Any]] | None = None
+    for ua in UA_LADDER:
+        req = request.Request(url, headers={"User-Agent": ua, **headers}, method="GET")
+        try:
+            with request.urlopen(req, timeout=TIMEOUT_SECS) as resp:
+                status = resp.status
+                body = resp.read()
+                new_hash = hashlib.sha256(body).hexdigest()
+                new_etag = resp.headers.get("ETag")
+                new_lm = resp.headers.get("Last-Modified")
+
+                prior_hash = (cache_entry or {}).get("body_sha256")
+                changed = prior_hash != new_hash
+
+                entry = {
+                    "etag": new_etag or (cache_entry or {}).get("etag"),
+                    "last_modified": new_lm or (cache_entry or {}).get("last_modified"),
+                    "body_sha256": new_hash,
+                    "last_status": status,
+                    "last_run": now,
+                    "consecutive_failures": 0,  # reachable → reset the dead-feed streak
+                }
+                if changed:
+                    entry["last_changed"] = now
+                elif cache_entry and cache_entry.get("last_changed"):
+                    entry["last_changed"] = cache_entry["last_changed"]
+                return changed, entry
+        except error.HTTPError as e:
+            if e.code == 304:
+                entry = dict(cache_entry or {})
+                entry["last_status"] = 304
+                entry["last_run"] = now
+                entry["consecutive_failures"] = 0  # 304 = reachable, content unchanged
+                return False, entry
+            # 4xx/5xx: the server answered but didn't serve the feed — count it.
+            last_result = _failure(e.code, f"HTTP {e.code}")
+            if e.code in GATED_STATUSES:
+                continue  # a different UA may get past the gate
+            return last_result
+        except (error.URLError, TimeoutError, OSError) as e:
+            # Network-level failure — a different UA won't help; stop here.
+            return _failure(-1, str(e)[:200])
+
+    # Ladder exhausted on gate statuses (401/403/429).
+    assert last_result is not None
+    return last_result
 
 
 def main() -> int:

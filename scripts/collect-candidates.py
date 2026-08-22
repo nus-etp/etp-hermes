@@ -43,7 +43,21 @@ JINA_ITEMS_FILE = REPO_ROOT / "data" / "jina-items.json"
 SEEN_FILE = REPO_ROOT / "signals" / "seen-urls.txt"
 OUT_FILE = REPO_ROOT / "data" / "candidates.json"
 
-USER_AGENT = "etp-hermes-collect/1 (+https://github.com/luarss/etp-hermes)"
+# UA-retry ladder. Many feed hosts (Cloudflare front-ends, Tech in Asia) 403 an
+# unknown bot UA but serve the identical public RSS/Atom to a browser or a
+# recognized crawler. No single UA wins everywhere — Tech in Asia unblocks for a
+# browser UA but 403s Googlebot, while some paywalled news outlets do the reverse
+# — so try the honest UA first (good citizenship, correct attribution when the
+# host allows it) and only escalate when the server actively gates us
+# (401/403/429). We fetch the same feed URLs the sites already syndicate.
+UA_LADDER = (
+    "etp-hermes-collect/1 (+https://github.com/luarss/etp-hermes)",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+)
+USER_AGENT = UA_LADDER[0]
+GATED_STATUSES = {401, 403, 429}
 TIMEOUT_SECS = 25
 
 
@@ -130,9 +144,24 @@ def load_seen(path: Path) -> set[str]:
 
 
 def fetch(url: str) -> bytes:
-    req = request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "*/*"})
-    with request.urlopen(req, timeout=TIMEOUT_SECS) as resp:
-        return resp.read()
+    """Fetch a URL, escalating the User-Agent only when the host gates us.
+
+    On a 401/403/429 the next UA in the ladder is tried; any other HTTP error
+    (404, 5xx) or the exhaustion of the ladder re-raises so the caller's Jina
+    fallback / fetch_failed path still runs unchanged.
+    """
+    last_exc: error.HTTPError | None = None
+    for ua in UA_LADDER:
+        req = request.Request(url, headers={"User-Agent": ua, "Accept": "*/*"})
+        try:
+            with request.urlopen(req, timeout=TIMEOUT_SECS) as resp:
+                return resp.read()
+        except error.HTTPError as e:
+            if e.code not in GATED_STATUSES:
+                raise  # a different UA won't fix a 404/5xx
+            last_exc = e
+    assert last_exc is not None  # loop ran ≥1 time and only gated errors continue
+    raise last_exc
 
 
 def parse_date(value: str | None) -> datetime | None:

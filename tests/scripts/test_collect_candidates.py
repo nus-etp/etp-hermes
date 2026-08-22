@@ -24,6 +24,50 @@ def test_window_days_env_override(cc, monkeypatch) -> None:
     assert cc._window_days("COLLECT_FIREHOSE_DAYS", 7).days == 7
 
 
+class _Resp:
+    def __init__(self, body: bytes) -> None:
+        self._body = body
+
+    def read(self) -> bytes:
+        return self._body
+
+    def __enter__(self) -> "_Resp":
+        return self
+
+    def __exit__(self, *exc) -> None:
+        return None
+
+
+def test_fetch_ua_ladder_escalates_on_gate(cc, monkeypatch) -> None:
+    """403 to the honest UA retries with the next UA; a non-gate error re-raises."""
+    body = b"<rss><item>ok</item></rss>"
+    seen_uas: list[str] = []
+
+    def urlopen(req, timeout=None):  # noqa: ARG001
+        ua = dict(req.header_items()).get("User-agent") or ""
+        seen_uas.append(ua)
+        if ua == cc.UA_LADDER[0]:
+            raise error.HTTPError(req.full_url, 403, "Forbidden", {}, None)  # type: ignore[arg-type]
+        return _Resp(body)
+
+    monkeypatch.setattr(cc.request, "urlopen", urlopen)
+    assert cc.fetch("https://gated.example/feed") == body
+    assert seen_uas == [cc.UA_LADDER[0], cc.UA_LADDER[1]]
+
+
+def test_fetch_reraises_non_gate_error_without_escalating(cc, monkeypatch) -> None:
+    calls = {"n": 0}
+
+    def urlopen(req, timeout=None):  # noqa: ARG001
+        calls["n"] += 1
+        raise error.HTTPError(req.full_url, 404, "Not Found", {}, None)  # type: ignore[arg-type]
+
+    monkeypatch.setattr(cc.request, "urlopen", urlopen)
+    with pytest.raises(error.HTTPError):
+        cc.fetch("https://dead.example/feed")
+    assert calls["n"] == 1  # 404 is not gated → no UA escalation
+
+
 def _rss(items: list[tuple[str, str, str, str]]) -> bytes:
     """items: (title, link, description, pubDate)."""
     body = "".join(
