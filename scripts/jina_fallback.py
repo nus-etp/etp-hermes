@@ -20,7 +20,7 @@ from typing import Any
 from urllib import parse, request
 
 READER_BASE = "https://r.jina.ai/"
-USER_AGENT = "etp-hermes-jina/1 (+https://github.com/luarss/etp-hermes)"
+USER_AGENT = "etp-hermes-jina/1 (+https://github.com/nus-etp/etp-hermes)"
 TIMEOUT_SECS = 30
 
 # Heuristic constants for extract_items().

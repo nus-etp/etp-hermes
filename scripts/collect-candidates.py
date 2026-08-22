@@ -51,10 +51,12 @@ OUT_FILE = REPO_ROOT / "data" / "candidates.json"
 # host allows it) and only escalate when the server actively gates us
 # (401/403/429). We fetch the same feed URLs the sites already syndicate.
 UA_LADDER = (
-    "etp-hermes-collect/1 (+https://github.com/luarss/etp-hermes)",
+    "etp-hermes-collect/1 (+https://github.com/nus-etp/etp-hermes)",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; "
+    "GPTBot/1.2; +https://openai.com/gptbot",
 )
 USER_AGENT = UA_LADDER[0]
 GATED_STATUSES = {401, 403, 429}
