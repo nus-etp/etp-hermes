@@ -33,5 +33,25 @@
     "name": "e27",
     "type": "firehose",
     "url": "https://e27.co/feed/"
+  },
+  {
+    "name": "DailySocial.id",
+    "type": "firehose",
+    "url": "https://dailysocial.id/feed"
+  },
+  {
+    "name": "Tech Collective SEA",
+    "type": "firehose",
+    "url": "https://techcollectivesea.com/feed/"
+  },
+  {
+    "name": "The Low Down",
+    "type": "firehose",
+    "url": "https://thelowdown.momentum.asia/feed/"
+  },
+  {
+    "name": "Fintech News SG",
+    "type": "firehose",
+    "url": "https://fintechnews.sg/feed/"
   }
 ]
