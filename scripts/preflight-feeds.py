@@ -41,6 +41,11 @@ UA_LADDER = (
     "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
     "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; "
     "GPTBot/1.2; +https://openai.com/gptbot",
+    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; "
+    "ChatGPT-User/1.0; +https://openai.com/bot",
+    "Mozilla/5.0 (compatible; Claude-User/1.0; +Claude-User@anthropic.com)",
+    "Mozilla/5.0 (compatible; PerplexityBot/1.0; "
+    "+https://docs.perplexity.ai/guides/bots)",
 )
 USER_AGENT = UA_LADDER[0]
 GATED_STATUSES = {401, 403, 429}
