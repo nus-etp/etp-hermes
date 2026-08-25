@@ -1,11 +1,11 @@
 # Ecoworks — LIVING BRIEF
-_Last updated: 2026-07-30 15:16 UTC_
+_Last updated: 2026-08-25 13:54 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 BLOCK71 Singapore-resident sustainability startup building automated refill station infrastructure for household care products. Backed by Lam Soon, Ecoworks is expanding its network of refill stations across Singapore with a focus on reducing single-use packaging waste.
 
-_Last material event: none on record_
+_Last material event: 2026-07-23 — S$1M investment from Lam Soon to expand refill-station infrastructure across Singapore_
 
 ## Profile
 - Sector: Climate tech
