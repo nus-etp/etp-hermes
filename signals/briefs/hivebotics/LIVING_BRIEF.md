@@ -1,5 +1,5 @@
 # Hivebotics — LIVING BRIEF
-_Last updated: 2026-08-18 13:48 UTC_
+_Last updated: 2026-08-26 14:21 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -16,7 +16,12 @@ _Last material event: 2026-05-19 — Nimbus strategic investment in Hivebotics (
 _Total disclosed: $1.0M._
 
 ## Recent signals
-_none_
+- **2026-08-26** — PickNik case study details how MoveIt Pro motion planning, autonomous navigation and simulation cut an estimated 10 months off Abluo's development and testing timeline — [picknik.ai](https://picknik.ai/case-study-hivebotics/)
+  - Summary: PickNik Robotics published a case study on its work with Hivebotics to productionize the Abluo cleaning robot: customized MoveIt Pro arm path planning for confined spaces, autonomous navigation software for consistent mobile-base placement, and real-time simulations to de-risk physical deployment. PickNik estimates the collaboration saved roughly 10 months of product development and testing time against a typical year-plus timeline.
+  - People: Rishab Patwari (CEO)
+  - Counterparties: PickNik Robotics (technology partner)
+  - Numbers: ~10 months of development/testing time saved
+  - Quote: "Their contributions allowed us to overcome significant technical challenges and accelerated our path to market with confidence." — Rishab Patwari, CEO, Hivebotics
 
 ## Older signals
 - **2026-06-19** — Dealroom recap reports Hivebotics' Abluo robot cuts toilet cleaning time by 50%, confirming Series A fundraising is underway — [app.dealroom.co](https://app.dealroom.co/news/feed/hivebotics-abluo-robot-cuts-toilet-cleaning-time-by-50-with-ai-and-robotic-arms)
