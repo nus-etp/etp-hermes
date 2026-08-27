@@ -1,5 +1,5 @@
 # AIPath — LIVING BRIEF
-_Last updated: 2026-08-11 14:27 UTC_
+_Last updated: 2026-08-27 23:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -23,6 +23,7 @@ _none_
   - People: David Isaac (Founder)
   - Quote: "The past supplies priors. It cannot supply verdicts." — David Isaac, Founder of AIPath
 - **2026-07-13** — AIPath Launches Growth Decision Intelligence for the CEO as Gartner launches the Decision Intelligence Category — [markets.businessinsider.com](https://markets.businessinsider.com/news/stocks/aipath-launches-growth-decision-intelligence-for-the-ceo-as-gartner-launches-the-decision-intelligence-category-1036318213)
+- **2026-07-02** — Tech in Asia features AIPath's AI-simulation approach to lowering customer acquisition cost — [techinasia.com](https://www.techinasia.com/lowering-customer-acquisition-cost-ai-simulation)
 
 ## Open questions
 - What is AIPath's pricing model — SaaS subscription, per-deployment, or hybrid?

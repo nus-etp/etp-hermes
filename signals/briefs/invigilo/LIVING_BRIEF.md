@@ -1,5 +1,5 @@
 # INVIGILO — LIVING BRIEF
-_Last updated: 2026-08-19 13:49 UTC_
+_Last updated: 2026-08-27 23:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -22,7 +22,7 @@ _none_
 ## Older signals
 - **2026-07-24** — Published thought leadership on underground construction safety challenges specific to Singapore's Cross Island Line — [invigilo.ai](https://www.invigilo.ai/post/underground-changes-every-safety-rule-you-know)
   - Summary: INVIGILO published a detailed analysis of how underground construction (specifically the Cross Island Line at 70m depth) inverts standard safety hazards like work at height and confined-space plant proximity. The piece positions INVIGILO's computer-vision platform as adapted for low-light, dust-heavy underground environments where conventional monitoring falls short.
-- **2026-07-17** — Invigilo AI awarded JTC Innovative Procurement Partnership tender as one of three start-ups selected for worksite productivity monitoring — [sg.news.yahoo.com](https://sg.news.yahoo.com/more-support-construction-tech-firms-022000931.html)
+- **2026-07-17** — Invigilo AI awarded JTC Innovative Procurement Partnership tender as one of three start-ups selected for worksite productivity monitoring — [sg.news.yahoo.com](https://sg.news.yahoo.com/more-support-construction-tech-firms-022000931.html) (Also reported by: [invigilo.ai](https://www.invigilo.ai/news/jtc-innovative-procurement-partnership-straits-times))
   - Summary: National Development Minister Chee Hong Tat announced INVIGILO is one of three start-ups awarded tenders under JTC's Innovative Procurement Partnership for computer-vision solutions that monitor worksite productivity. The government is waiving sandbox rental fees and extending support for proven construction tech solutions.
   - Counterparties: JTC
 - **2026-07-01** — Won Galp's Next-Gen Integrated Safety innovation challenge; pilot with Galp teams to follow — [invigilo.ai](https://www.invigilo.ai/news/galp-next-gen-safety-challenge-win)
