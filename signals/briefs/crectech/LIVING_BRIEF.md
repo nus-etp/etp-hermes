@@ -1,11 +1,11 @@
 # CRecTech — LIVING BRIEF
-_Last updated: 2026-08-02 14:38 UTC_
+_Last updated: 2026-08-28 23:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-NUS GRIP-incubated Singapore carbon-recycling tech startup developing green maritime fuel and sustainable chemical production. Its biogas-to-biomethanol pilot with Pertamina was highlighted as a flagship bilateral cooperation project at the 16th Singapore-Indonesia 6WG Ministerial Meeting, signaling strong government endorsement.
+CRecTech is an NUS GRIP-incubated Singapore carbon-recycling startup converting waste biogas into bio-methanol for green maritime fuel and sustainable chemical production. Its Pertamina NRE partnership has moved from MOU to project development: a Joint Development Agreement signed 14 August 2026 covers a ~50 t/yr biogas-to-bio-methanol demonstration facility at Sei Mangkei, North Sumatra, and anchors an end-to-end value chain spanning domestic offtake (Pertachem) and international marine-fuel supply (PIMD, with Singapore as the reference market around 2028). The project carries strong bilateral endorsement, having been highlighted at the Singapore-Indonesia 6WG Ministerial Meeting and Leaders' Retreat.
 
-_Last material event: 2026-07-06 — CRecTech-Pertamina project named among 26 agreements at the Singapore-Indonesia Leaders' Retreat_
+_Last material event: 2026-08-14 — Signed JDA with Pertamina NRE for an end-to-end bio-methanol value chain (Sei Mangkei demo facility; pilot ops targeted Dec 2026)_
 
 ## Profile
 - Sector: Climate tech
@@ -15,7 +15,11 @@ _Last material event: 2026-07-06 — CRecTech-Pertamina project named among 26 a
 - **2024** — Grant, undisclosed — Breakthrough Energy Fellows; Breakthrough Energy, Temasek, Enterprise Singapore, SGInnovate — [temasek.com.sg](https://www.temasek.com.sg/en/news-and-resources/news-room/news/2024/BEF-SEA_announce_first_cohort)
 
 ## Recent signals
-_none_
+- **2026-08-24** — CRecTech and Pertamina NRE signed a Joint Development Agreement on 14 Aug for a biogas-to-bio-methanol demonstration facility at Sei Mangkei, advancing the April MOU into project development and anchoring a full value chain with Pertachem (domestic offtake) and PIMD (international marine fuel) — [crectech.net](https://crectech.net/news/crectech-pertamina-nre-jda-end-to-end-biomethanol-value-chain) (Also reported by: [energynews.pro](https://energynews.pro/en/pertamina-nre-builds-indonesian-biomethanol-supply-chain-toward-singapore-by-2028))
+  - Summary: The JDA, signed 14 August 2026 in Bali, commits the two companies to develop a biogas-to-bio-methanol demonstration facility at Pertamina NRE's existing Sei Mangkei biogas power plant in the North Sumatra Special Economic Zone, producing about 50 tonnes of bio-methanol per year from palm oil mill effluent biogas. The facility will use CRecTech's two-stage CRecREF catalytic process, which CRecTech says can cut production costs by up to 50% versus the conventional four-stage route. The signing anchors a wider chain: a Heads of Agreement with PT Pertamina Petrochemical Trading (Pertachem) for a domestic offtake pathway — Indonesia imports about two-thirds of its ~2M tonnes annual methanol requirement — and an MoU with Pertamina International Marketing & Distribution (PIMD) to explore international marine-fuel supply. S&P Global reported the pilot is targeted to begin operating in December 2026; PIMD is assessing Singapore as the initial reference market for Indonesian bio-methanol after commercial scale-up, currently targeted around 2028.
+  - People: Dr. Lim Kang Hui (Co-founder & CEO, CRecTech), John Anis (CEO, Pertamina NRE), Aditya Prabowo (Managing Director, PIMD)
+  - Counterparties: Pertamina NRE (partner), Pertachem (domestic offtake partner), PIMD (marine-fuel partner)
+  - Numbers: ~50 t/yr bio-methanol; up to 50% lower production cost; pilot ops targeted Dec 2026; export scale-up ~2028; Indonesia imports ~two-thirds of ~2M t/yr methanol demand
 
 ## Older signals
 - **2026-07-06** — CRecTech-Pertamina biogas-to-biomethanol pilot named among 26 agreements at the Singapore-Indonesia Leaders' Retreat, extending the bilateral endorsement from the June ministerial meeting — [crectech.net](https://www.crectech.net/news/crectech-pertamina-project-singapore-indonesia-leaders-retreat-2026)
@@ -37,4 +41,4 @@ _none_
 ## Open questions
 - What is the size and valuation of the seed funding round?
 - Who led the seed round and who are the other investors?
-- What concrete next steps follow from the Leaders' Retreat agreement?
+- Will PIMD secure a dedicated Singapore methanol bunkering license — its current MPA license covers only conventional marine fuels — and on what timeline?
