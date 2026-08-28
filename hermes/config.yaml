@@ -74,6 +74,19 @@ mcp_servers:
   # prefetch step).
   jina:
     url: "https://mcp.jina.ai/v1"
+  # Keenable's hosted MCP (https://docs.keenable.ai/mcp-server). Keyless: its
+  # `search_web_pages` (web search → titles/summaries/URLs) and `fetch_page_content`
+  # (URL → clean Markdown) tools work anonymously against the public endpoint at a
+  # lower per-IP rate limit, so they add a third search+fetch fallback surface
+  # behind Parallel and Jina — unlike Jina, Keenable's search works keyless. The
+  # agent sees them as `mcp_keenable_search_web_pages` / `mcp_keenable_fetch_page_content`.
+  # Note reddit.com/twitter.com/x.com are blocked in the Keenable index. Fails open
+  # like the others: if the endpoint is unreachable, hermes' auto-connect just gets
+  # no tools from it and the run is unchanged (Parallel stays the primary surface).
+  # To lift the rate limits, add an `X-API-Key: keen_<key>` header here and seed the
+  # secret in bootstrap-hermes.sh.
+  keenable:
+    url: "https://api.keenable.ai/mcp"
 
 # Inert while `web` is in agent.disabled_toolsets — kept so a one-line rollback
 # (drop `web` from that list) restores the native tavily/exa backends, whose
