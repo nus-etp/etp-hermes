@@ -26,11 +26,11 @@ _Total disclosed: $4.3M._
   - Counterparties: US President / Commerce Department (regulator)
   - Numbers: 33,000 metric tonnes US e-waste exports per month (Basel Action Network); determination signed 2026-07-30; China-mineral procurement cutoff 2027-01-01
   - Quote: "Treating black mass and other scrap as essential to national defense puts it in the same protected category as the country's other critical minerals." — NEU Battery Materials
+
+## Older signals
 - **2026-07-29** — Published a market-analysis piece arguing Europe's accelerating EV adoption (60.7% YoY BEV growth) and EU recycling-compliance deadlines (50% lithium recovery by Dec 2027) create urgency for building LFP recycling capacity now, positioning NEU's electrochemical process as a solution — [neumaterials.com](https://www.neumaterials.com/news/europes-ev-sales-boom-raises-the-stakes-on-battery-recycling-deadlines)
   - Summary: EU BEV registrations jumped 60.7% YoY in June 2026 to 270,557 units, reaching a 20.7% market share. The article argues LFP is a growing share of EU battery demand and that EU recycling deadlines (50% lithium recovery by Dec 2027, 80% by 2031) mean recycling capacity must be built now. Germany's BEVs became the single largest powertrain category in June 2026.
   - Numbers: 60.7% YoY increase in EU BEV registrations June 2026; 270,557 units; 20.7% market share H1 2026; 65% recycling efficiency target from Dec 2025, 70% by 2030; 50% lithium recovery by Dec 2027, 80% by 2031
-
-## Older signals
 - **2026-07-21** — Published an article analysing China's September 2026 battery consumption tax and its implications for LFP recycling economics — [neumaterials.com](https://www.neumaterials.com/news/chinas-new-battery-tax-marks-lithium-ions-emerging-maturity)
   - Summary: NEU published an article examining China's 2% battery consumption tax (rising to 4% in September 2027), ending an 11-year exemption on lithium-ion while exempting sodium-ion, solid-state, and fuel cells through 2028. The piece argues the tax shift signals that Beijing considers lithium-ion mature, shifting economics from subsidising new production to recovering value from the installed base — strengthening the case for building recycling capacity rather than relying on virgin lithium supply.
   - Counterparties: China Ministry of Finance (tax policy)

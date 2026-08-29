@@ -19,15 +19,15 @@ _Last material event: 2026-07-29 — PharmaTher collaboration to evaluate CraftM
 _Total disclosed: $1.0M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-07-29** — PharmaTher (CSE: PHRM) signs collaboration to evaluate Craft Health's CraftMake 3D-printing platform for personalized peptide doses, with a path toward US compounding-pharmacy deployment — [newsfilecorp.com](https://www.newsfilecorp.com/release/307086/PharmaTher-Collaborates-with-Craft-Health-to-Evaluate-CraftMakeTM-GMPReady-Pharmaceutical-3D-Printing-Platform-for-Personalized-Peptides) (Also reported by: [3dprintingindustry.com](https://3dprintingindustry.com/news/craft-healths-craftmake-platform-gets-a-peptide-test-run-253591/))
   - Summary: PharmaTher will evaluate CraftMake — Craft Health's GMP-ready pharmaceutical 3D printer, CraftControl workflow software and CraftBlends formulations — for producing personalized peptide doses, combination formulations, controlled-release designs and differentiated dosage forms under PharmaTher's Personaliz3D Peptides initiative. The evaluation targets six peptides (BPC-157, KPV, TB-500, MOTS-c, Epitalon, Semax) recently recommended by the US FDA's Pharmacy Compounding Advisory Committee for the Section 503A Bulks List. PharmaTher also intends to explore a broader commercial relationship to deploy CraftMake with qualified US Section 503A compounding pharmacies. 3D Printing Industry's August 7 report adds that PharmaTher launched the Personaliz3D Peptides division on July 27 with a three-part Connect, Personalize and Deliver plan (a telemedicine platform at PersonalizedPeptidesRx.com, 3D printing and AI formulation tools, and 503A pharmacy partnerships); the current agreement is an evaluation, not a manufacturing deal, with formulations, dosage designs and release profiles assessed before either side commits further. CraftMake's room-temperature semi-solid paste extrusion avoids heat and UV, which can degrade sensitive peptide actives.
   - People: Dr. Wei Jiang Goh (Co-Founder & CEO, Craft Health), Fabio Chianelli (CEO, PharmaTher)
   - Counterparties: PharmaTher Holdings (partner)
   - Numbers: 6 peptides under evaluation; ~±1% dosing accuracy; >99% repeatability
   - Quote: "We believe there is a strong strategic fit between our technology platform and PharmaTher's vision for personalized peptides." — Dr. Wei Jiang Goh, Co-Founder & CEO, Craft Health
-
-## Older signals
-_none_
 
 ## Open questions
 - What are the commercial terms of the PharmaTher collaboration — paid evaluation, milestone-based, or equity-linked, and does it carry exclusivity for peptides?

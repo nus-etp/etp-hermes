@@ -32,13 +32,13 @@ _Total disclosed: $22.2M._
   - Summary: Horizon Quantum promoted Amanda Chew to Chief Product Officer, effective August 17, 2026, after she advanced through Director and VP of Product since joining in 2020. Before Horizon, Chew was a Senior Program Manager at Microsoft, working on Visual Studio App Center. As CPO she will lead product strategy and development across the company's software infrastructure, including Triple Alpha.
   - People: Amanda Chew (Chief Product Officer), Dr. Joe Fitzsimons (CEO)
   - Quote: "Her promotion to Chief Product Officer reflects both the impact she has already made in shaping the direction of the company and our confidence in her ability to lead the next phase of Horizon's product strategy." — Dr. Joe Fitzsimons, CEO
+
+## Older signals
 - **2026-07-29** — Strategic collaboration with Quantum Machines to develop embedded calibration technologies for the Ember-1 modular superconducting quantum computer, aiming to reduce downtime and improve operational reliability — [horizonquantum.com](https://www.horizonquantum.com/resources/newsroom/horizon-quantum-and-quantum-machines-announce-strategic-collaboration-to-increase-efficiency-of-quantum-systems)
   - Summary: Horizon Quantum and Quantum Machines will collaborate on embedded calibration technologies to enable lightweight calibration routines to run during normal system operation, reducing the need for lengthy full-system calibration cycles. The effort targets Horizon's first in-house hardware testbed, Ember-1, which uses QM's OPX1000 control system.
   - People: Dr. Joe Fitzsimons (CEO, Horizon Quantum), Dr. Itamar Sivan (CEO, Quantum Machines)
   - Counterparties: Quantum Machines (Strategic Partner)
   - Quote: "Improved calibration routines are crucial for enabling real-world applications of quantum computing." — Dr. Joe Fitzsimons, CEO of Horizon Quantum
-
-## Older signals
 - **2026-07-02** — Horizon is a gold sponsor of TQC 2026 (Quebec, Aug 31–Sep 4), where it will demo Triple Alpha, its hardware-agnostic quantum IDE — [horizonquantum.com](https://www.horizonquantum.com/resources/newsroom/meet-us-at-tqc-2026)
   - Summary: Horizon Quantum will attend and sponsor the Theory of Quantum Computation, Communication and Cryptography conference in Sherbrooke, Canada. The company plans to showcase Triple Alpha, which lets developers write quantum programs across multiple abstraction levels, and meet with the theoretical quantum information science community.
   - Numbers: Gold sponsorship tier; event dates August 31–September 4, 2026

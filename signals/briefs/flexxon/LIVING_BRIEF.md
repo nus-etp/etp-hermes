@@ -1,5 +1,5 @@
 # Flexxon — LIVING BRIEF
-_Last updated: 2026-06-24 15:45 UTC_
+_Last updated: 2026-08-29 17:18 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -10,6 +10,9 @@ Flexxon is a Singapore cybersecurity-hardware company (founded 2007) that builds
 - Region: Singapore (HQ), US (Maryland)
 - Founded: 2007
 - Key people: Camellia Chan (co-founder), May Chng (co-founder, COO)
+
+## Funding history
+_No disclosed funding._
 
 ## Recent signals
 _none_
@@ -22,8 +25,14 @@ _none_
   - Quote: "We selected bwtech@UMBC because it gives us immediate access to a vibrant innovation ecosystem... We chose a base where we could plug-in quickly, learn faster, and build the right relationships." — May Chng, Co-founder & COO
 - **2026-03-31** — X-PHY SSD Named Finalist at the 2026 UK Cyber OSPAs — [x-phy.com](https://x-phy.com/x-phy-ssd-named-finalist-at-the-2026-uk-cyber-ospas/)
 - **2026-03-23** — X-PHY Deepfake Detector Wins Global InfoSec Award for Innovative AI Security and Safety at RSAC 2026 — [x-phy.com](https://x-phy.com/x-phy-deepfake-detector-wins-global-infosec-award-for-innovative-ai-security-and-safety-at-rsac-2026/)
+- **2024-12-16** — Newsweek International feature on X-PHY: AI embedded directly in the SSD blocks known and unknown attacks in real time, with Dell, Lenovo and HP among Flexxon's system partners and a Fortune 500 customer base — [flexxon.com](https://www.flexxon.com/flexxon-equips-memory-hardware-with-autonomous-cybersecurity-function)
+  - Summary: A Newsweek International interview (December 20, 2024 edition, republished on Flexxon's news page) profiles the X-PHY AI Cyber Secure SSD, which embeds AI inside memory hardware to detect and block both known and unknown cyber threats in real time without constant human input or software-only protection. Flexxon, led by co-founder and CEO Camellia Chan, has evolved from an industrial NAND storage provider into a hardware-cybersecurity vendor with 50+ patents granted and a customer base that includes multiple Fortune 500 companies. The company is headquartered in Singapore with offices across Asia and two in the US.
+  - People: Camellia Chan (co-founder & CEO)
+  - Counterparties: Dell, Lenovo, HP (system partners); government agencies (partners)
+  - Numbers: 50+ patents; Fortune 500 customers
+  - Quote: "We recognized that there are pain points or gaps in the market that needed to be addressed. We found an effective way to leverage the hardware layer using cutting-edge AI algorithms to protect a device in a way that cybersecurity software cannot. Our solution will become the future de facto standard for all hardware devices." — Camellia Chan, Co-founder & CEO
 
 ## Open questions
 - What is Flexxon's funding or revenue stage — bootstrapped, VC-backed, or generating revenue from X-PHY hardware sales?
-- Are there announced customers or channel partnerships for X-PHY in the US market?
 - How does X-PHY's hardware-level approach to deepfake detection compare to software-only alternatives in terms of efficacy and cost?
+- How does X-PHY commercialize — direct sales, OEM, or through the Dell/Lenovo/HP system-partner channel?

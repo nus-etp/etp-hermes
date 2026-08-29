@@ -1,5 +1,5 @@
 # Vibefam — LIVING BRIEF
-_Last updated: 2026-08-11 14:27 UTC_
+_Last updated: 2026-08-29 17:18 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -19,7 +19,7 @@ _No disclosed funding._
 _none_
 
 ## Older signals
-- **2026-06-18** — Vibefam raised a US$1M seed round, led by an unnamed Singapore-based family office, to expand its AI-powered operating system for fitness businesses (700+ locations, 500K+ users) — [finance.yahoo.com](https://finance.yahoo.com/technology/ai/articles/vibefam-raises-us-1-million-080000605.html) (Also reported by: [prnewswire.com](https://www.prnewswire.com/news-releases/vibefam-raises-us1-million-to-build-an-ai-powered-operating-system-for-fitness-businesses-302800222.html))
+- **2026-06-18** — Vibefam raised a US$1M seed round, led by an unnamed Singapore-based family office, to expand its AI-powered operating system for fitness businesses (700+ locations, 500K+ users) — [finance.yahoo.com](https://finance.yahoo.com/technology/ai/articles/vibefam-raises-us-1-million-080000605.html) (Also reported by: [prnewswire.com](https://www.prnewswire.com/news-releases/vibefam-raises-us1-million-to-build-an-ai-powered-operating-system-for-fitness-businesses-302800222.html), [vibefam.com](https://vibefam.com/vibefam-raises-usd1m-to-build-the-operating-system-for-fitness-studios/))
   - Summary: Vibefam, an AI-powered operating system for fitness businesses, completed a US$1M seed round led by a Singapore-based family office, with Hustle Fund and Ignite Asia among earlier backers. The platform serves 700+ fitness locations and 500,000+ end users across Pilates, yoga, strength and conditioning, dance, martial arts, and boutique fitness. Proceeds go to AI and embedded-finance expansion, including Vibe AI, a messaging-native customer-engagement platform launching July 2026.
   - People: Serene Lim (co-founder & CEO), Lim Chun Yong (co-founder), Lee Jia Yi (co-founder)
   - Counterparties: Singapore-based family office (lead investor); Hustle Fund (investor); Ignite Asia (investor)
