@@ -16,12 +16,13 @@ _Last material event: 2026-05-03 — NuLink 1 and 2 satellites launched on Falco
 - **2019-10** — Seed, undisclosed — BEENEXT — [e27.co](https://e27.co/space-tech-company-nuspace-raises-funding-to-bring-iot-connectivity-to-remote-places-20191003/)
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-07-30** — NuLink-1 and NuLink-2 confirmed operational after July 2026 commissioning; NuLink-3 and NuLink-4 target a 30 Dec 2026 launch — [nanosats.eu](https://www.nanosats.eu/sat/nulink.html)
   - Summary: Nanosats Database records NuLink-1 and NuLink-2 as operational, citing NuSpace's LinkedIn post from July 2026 on finishing commissioning; both launched 3 May 2026 on a Falcon 9 rideshare into 500 km, 97.4-degree orbits. NuLink-3 and NuLink-4 are listed as not yet launched, with a 30 Dec 2026 launch target and Exolaunch as launch broker.
   - Counterparties: Exolaunch (launch broker)
   - Numbers: 500 km altitude, 97.4° inclination; NuLink-3/4 target 2026-12-30
-
-## Older signals
 - **2026-07-01** — NuLink Satellite IoT Data Relay System Tested Successfully — [linkedin.com](https://www.linkedin.com/posts/nuspace-pte-ltd_nuspace-nulink-satelliteiot-activity-7477934037354049536--klh)
 - **2026-06-04** — NAMIC Singapore features NuSpace's 3D-printed antenna technology as a case study in Singapore's space manufacturing capability — [LinkedIn (NAMIC Singapore)](https://www.linkedin.com/posts/namicsg_from-lab-to-orbit-how-singapores-3d-printed-activity-7468119340383535104-awhn) (Also reported by: [namic.sg](https://namic.sg/news/from-lab-to-orbit-how-singapores-3d-printed-antenna-is-redefining-space-ready-manufacturing))
   - Summary: A NAMIC-funded project coordinated by AIC @ A*STAR developed a flight-ready, additively manufactured antenna module for NuSpace's NuLink IoT satellites, consolidating what would traditionally be a 29-part antenna into 11 parts.

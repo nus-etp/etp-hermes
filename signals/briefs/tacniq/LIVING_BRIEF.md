@@ -16,10 +16,10 @@ _Last material event: 2026-07-30 — "Singapore has been a great launchpad, owin
 _No disclosed funding._
 
 ## Recent signals
-- **2026-07-30** — "Singapore has been a great launchpad, owing to its structured safety frameworks" — [biospectrumasia.com](https://biospectrumasia.com/opinion/46/26573/singapore-has-been-a-great-launchpad-owing-to-its-structured-safety-frameworks.html)
+_none_
 
 ## Older signals
-_none_
+- **2026-07-30** — "Singapore has been a great launchpad, owing to its structured safety frameworks" — [biospectrumasia.com](https://biospectrumasia.com/opinion/46/26573/singapore-has-been-a-great-launchpad-owing-to-its-structured-safety-frameworks.html)
 
 ## Open questions
 - What is the target valuation and lead investor for the upcoming fundraising round?
