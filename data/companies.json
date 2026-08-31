@@ -1921,6 +1921,19 @@
     "funding_notes": "NUS GRIP portfolio company; hospital patient bed task management system. No publicly announced funding rounds found."
   },
   {
+    "name": "Draper",
+    "aliases": [
+      "Eventlytics.AI",
+      "Eventlytics",
+      "Eventlytics AI",
+      "Bardar"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore event-analytics AI startup, now branded 'Draper' (previously 'Eventlytics.AI', originally 'Bardar'). The name 'Draper' is highly generic — drop unrelated hits for Draper Associates / Draper University / Draper Startup House / Draper Labs, and drop generic 'event analytics' B2B vendor news (eventbrite-tools, etc.) unless the article explicitly references Draper / its Eventlytics.AI / Bardar predecessors.",
+    "country": "Singapore",
+    "funding_rounds": [],
+    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
+  },
+  {
     "name": "DRAVAM",
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
@@ -2167,16 +2180,6 @@
     "name": "Evalumate",
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore evaluation / assessment-tooling startup ('eval' + 'mate'). Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this Hangar entity.",
-    "country": "Singapore",
-    "funding_rounds": [],
-    "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
-  },
-  {
-    "name": "Eventlytics.AI",
-    "aliases": [
-      "Bardar"
-    ],
-    "description": "The Hangar (NUS Enterprise)-resident Singapore event-analytics AI startup (previously branded 'Bardar'). Drop unrelated 'event analytics' B2B vendor news (eventbrite-tools, etc.) unless the article explicitly references Eventlytics.AI / its Bardar predecessor.",
     "country": "Singapore",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
@@ -3654,6 +3657,17 @@
       }
     ],
     "funding_notes": "Now rebranded as InteractAI. Won SGD 50K Startup SG Founder Grant via Founder IGNITE pitch 2021. PitchBook/Tracxn list SMU Business Incubator, NUS GRIP and PIXEL as backers, but no priced equity round is publicly disclosed."
+  },
+  {
+    "name": "MedvoraAI",
+    "aliases": [
+      "Medvora AI",
+      "Medvora"
+    ],
+    "description": "BLOCK71 Singapore portfolio startup applying AI to healthcare/medtech. Drop unrelated companies sharing the same name.",
+    "country": "Singapore",
+    "funding_rounds": [],
+    "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable funding round announcements found."
   },
   {
     "name": "MeetArts",
