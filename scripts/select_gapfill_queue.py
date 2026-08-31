@@ -1,20 +1,32 @@
 #!/usr/bin/env python3
-"""Pick the next batch of gap-fill candidates for Layer 2 by least-recently-queried.
+"""Pick the next batch of gap-fill candidates for Layer 2, questions-first.
 
-Layer 2 (agent supplement) operates under a 50-op budget against ~150 watchlisted
-companies. Without rotation it tends to re-query the same prefix every day. This
-script writes `signals/agent-queue.txt` — a deterministic ordered list of names
-that the prompt consumes as its authoritative gap-fill cohort.
+Layer 2 (agent supplement) operates under a 100-op budget against ~490
+watchlisted companies. Without rotation it tends to re-query the same prefix
+every day. This script writes `signals/agent-queue.txt` — a deterministic
+ordered list of names that the prompt consumes as its authoritative gap-fill
+cohort.
 
 Selection:
   1. Exclude companies "covered" in the last 7 UTC days (any `## <name>` H2 in
      a `signals/updates/<date>.md` file inside that window). Covered companies
      aren't gap-fill candidates today.
-  2. Of the remaining, sort by ascending `last_queried` date pulled from
-     `signals/agent-queue-state.json`. Missing entries are treated as never
-     queried and sort to the top. Ties break alphabetically (case-insensitive)
-     for determinism.
-  3. Take the top N (CLI/env tunable, default 60).
+  2. Of the remaining, sort by (has open questions DESC, `last_queried` ASC,
+     name ASC). Companies whose living brief carries unanswered `## Open
+     questions` bullets get slots first — those questions name exactly what a
+     reader is missing, so they're the highest-yield research targets;
+     pure-cold companies fill the rest. `last_queried` comes from
+     `signals/agent-queue-state.json`; missing entries are treated as never
+     queried and sort to the top of their group. Ties break alphabetically
+     (case-insensitive) for determinism.
+  3. Take the top N (CLI/env tunable, default 18).
+
+Why 18 and not 60: the 100-op Layer 2 budget is spent on the deepen cohort
+first, then ~4–6 ops per gap-fill company (search + mandatory verification
+fetches) — roughly 15–20 companies per run. Queueing 60 produced a queue the
+agent could never work through, so companies got stamped "queried" without ever
+being researched (~8-day nominal cadence, effectively never). At 18 the real
+cadence is ~25–27 days per company, but each turn is an actual research pass.
 
 Alongside the txt (whose one-name-per-line shape is load-bearing for the
 workflow layer guard, slice_companies.py, and update_gapfill_state.py) it
@@ -38,7 +50,7 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_QUEUE_SIZE = 60
+DEFAULT_QUEUE_SIZE = 18
 COVERED_WINDOW_DAYS = 7
 OPEN_QUESTIONS_CAP = 4
 H2_RE = re.compile(r"^## (.+)$")
@@ -124,10 +136,19 @@ def select_queue(
     state: dict[str, str],
     covered: set[str],
     size: int,
+    with_questions: set[str] | None = None,
 ) -> list[str]:
+    """Ordered gap-fill cohort: questions first, then least-recently-queried.
+
+    `with_questions` is the set of company names whose living brief carries at
+    least one unanswered `## Open questions` bullet. Those sort ahead of
+    everything else (0 before 1); within each group the ordering is unchanged —
+    ascending `last_queried` ("" for never-queried, which sorts first), then
+    case-insensitive name.
+    """
+    questions = with_questions or set()
     candidates = [c for c in companies if c not in covered]
-    # "" sorts before any ISO date, so never-queried companies surface first.
-    candidates.sort(key=lambda c: (state.get(c, ""), c.lower()))
+    candidates.sort(key=lambda c: (0 if c in questions else 1, state.get(c, ""), c.lower()))
     return candidates[:size]
 
 
@@ -153,7 +174,18 @@ def main() -> int:
     today = dt.date.fromisoformat(args.date)
     covered = covered_in_window(repo / "signals" / "updates", today, COVERED_WINDOW_DAYS)
 
-    queue = select_queue(companies, state, covered, args.size)
+    # Open questions drive the ordering, so they're harvested for every
+    # candidate *before* selection, not just for the winners. Cheap: only
+    # companies that already have a living brief hit the disk twice.
+    briefs_dir = repo / "signals" / "briefs"
+    questions_by_name = {
+        name: load_open_questions(briefs_dir, name)
+        for name in companies
+        if name not in covered
+    }
+    with_questions = {name for name, qs in questions_by_name.items() if qs}
+
+    queue = select_queue(companies, state, covered, args.size, with_questions)
 
     out = repo / "signals" / "agent-queue.txt"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -161,9 +193,8 @@ def main() -> int:
 
     # Companion JSON: same queue, enriched with each company's open brief
     # questions so Layer 2 can research them. The txt above stays names-only.
-    briefs_dir = repo / "signals" / "briefs"
     entries = [
-        {"name": name, "open_questions": load_open_questions(briefs_dir, name)}
+        {"name": name, "open_questions": questions_by_name.get(name, [])}
         for name in queue
     ]
     questions_out = repo / "data" / "agent-open-questions.json"
@@ -171,14 +202,15 @@ def main() -> int:
     questions_out.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n")
 
     never_queried = sum(1 for c in queue if c not in state)
-    with_questions = sum(1 for e in entries if e["open_questions"])
+    queued_with_questions = sum(1 for e in entries if e["open_questions"])
     total_questions = sum(len(e["open_questions"]) for e in entries)
     print(
         f"queue: {len(queue)}/{args.size} "
         f"({never_queried} never-queried, "
         f"{len(covered)} covered in last {COVERED_WINDOW_DAYS}d, "
         f"{len(companies)} total watchlisted); "
-        f"open questions: {total_questions} across {with_questions} companies"
+        f"open questions: {total_questions} across {queued_with_questions} queued companies "
+        f"({len(with_questions)} candidates had questions)"
     )
     return 0
 

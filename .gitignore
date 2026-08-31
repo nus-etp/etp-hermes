@@ -32,8 +32,14 @@ data/touched-companies.json
 data/agent-open-questions.json
 data/infographic-queue.json
 
-# pre-Layer-1 snapshot of seen-urls (filter_seen_updates.py) — regenerated per run
+# Layer 2's per-run progress log — one company name per line, appended by the
+# agent as it finishes each one, consumed by update_gapfill_state.py to stamp
+# only the companies actually reached. Deleted before every Layer 2 run.
+data/agent-reached.txt
+
+# pre-Layer-1 snapshots of the dedup state (filter_seen_updates.py) — regenerated per run
 data/seen-urls-prerun.txt
+data/dropped-urls-prerun.txt
 
 # dead-feed detector machine output — derived from feed-cache.json each run;
 # the committed human report is signals/feed-health.md
@@ -50,6 +56,10 @@ data/dead-feeds.json
 
 # scripts/discover_portfolio.py output, regenerated per run
 /data/portfolio-new-entries.json
+
+# scripts/generate_match_terms.py draft — operator-run, merged into
+# data/companies.json via `--merge` and reviewed as a diff
+/data/match-terms-draft.json
 
 # Static frontend (site/) — generated assets and dev-kit quarantine
 site/node_modules

@@ -240,15 +240,21 @@ jobs:
         run: python3 scripts/collect-candidates.py
 
       - name: Snapshot seen-urls before Layer 1
-        # Freeze signals/seen-urls.txt as it stands before the ingest session
-        # runs. filter_seen_updates.py (post-Layer-1) uses this snapshot to
+        # Freeze the dedup state as it stands before the ingest session runs:
+        # signals/seen-urls.txt (permanent, published keys) and
+        # signals/dropped-urls.txt (TTL'd, rejected keys — already pruned of
+        # expired entries by collect-candidates.py above).
+        # filter_seen_updates.py (post-Layer-1) uses these snapshots to
         # deterministically strip any item the LLM-parse path re-emitted for a
-        # URL that was already seen — the model doesn't always honour the
-        # grep -Fxq dedup instruction. Guard for the file existing (cold start).
+        # key that was already seen — the model doesn't always honour the
+        # grep -Fxq dedup instruction. Guard for the files existing (cold start).
         if: steps.layers.outputs.run_l1 == 'true'
         run: |
           if [ -f signals/seen-urls.txt ]; then
             cp signals/seen-urls.txt data/seen-urls-prerun.txt
+          fi
+          if [ -f signals/dropped-urls.txt ]; then
+            cp signals/dropped-urls.txt data/dropped-urls-prerun.txt
           fi
 
       - name: Layer 1 — data ingestion
@@ -266,12 +272,18 @@ jobs:
 
       - name: Build gap-fill queue (fairness rotation)
         # Deterministic pre-step: writes signals/agent-queue.txt with the N
-        # least-recently-queried gap-fill companies, ordered by ascending
+        # gap-fill companies ordered questions-first, then by ascending
         # last_queried date. The Layer 2 prompt consumes this as its
         # authoritative gap-fill cohort so the agent doesn't re-hit the same
         # prefix of companies.json every run.
+        # Also clears any stale data/agent-reached.txt: that file is per-run
+        # (Layer 2 appends each company as it finishes it) and drives the
+        # honest stamping in update_gapfill_state.py below, so a leftover copy
+        # from a cached/retried run would stamp companies never researched.
         if: steps.layers.outputs.run_l2 == 'true'
-        run: python3 scripts/select_gapfill_queue.py
+        run: |
+          rm -f data/agent-reached.txt
+          python3 scripts/select_gapfill_queue.py
 
       - name: Gate Layer 2 on having work
         id: l2gate
@@ -299,11 +311,15 @@ jobs:
         run: hermes -z "$(cat prompts/agent_supplement.md)"
 
       - name: Record gap-fill queue as queried
-        # Deterministic post-step: stamps every name in signals/agent-queue.txt
-        # as queried today in signals/agent-queue-state.json. Backs the
-        # fairness rotation read by select_gapfill_queue.py on the next run.
-        # Gated on Layer 2 actually having consumed the queue, so a skipped
-        # Layer 2 doesn't burn a rotation slot.
+        # Deterministic post-step: stamps last_queried in
+        # signals/agent-queue-state.json for the companies Layer 2 actually
+        # reached — the intersection of signals/agent-queue.txt with the
+        # data/agent-reached.txt the layer just appended (deleted fresh above,
+        # so it only ever reflects this run). If the model forgot to write it,
+        # falls back to stamping the whole queue. Backs the fairness rotation
+        # read by select_gapfill_queue.py on the next run. Runs in the same job
+        # right after Layer 2, so the reached file is on disk here; gated on
+        # Layer 2 having consumed the queue so a skipped Layer 2 burns nothing.
         if: steps.l2gate.outputs.run == 'true'
         run: python3 scripts/update_gapfill_state.py
 
@@ -508,6 +524,7 @@ jobs:
             signals/updates/
             signals/briefs/
             signals/seen-urls.txt
+            signals/dropped-urls.txt
             signals/feed-health.md
             signals/agent-queue.txt
             signals/agent-queue-state.json
@@ -548,6 +565,7 @@ jobs:
       - name: Sanitize seen-urls.txt
         run: |
           python3 scripts/sanitize-seen-urls.py
+          python3 scripts/sanitize-seen-urls.py signals/dropped-urls.txt
 
       - name: Commit and push
         run: |

@@ -84,6 +84,79 @@ def test_size_parameter_caps_queue(scripts_module_loader) -> None:
     assert out == sorted(names)[:5]
 
 
+def test_default_queue_size_is_eighteen(scripts_module_loader) -> None:
+    # 100-op budget / ~4-6 ops per gap-fill company. Guards against a silent
+    # revert to the old 60 (which the agent could never work through).
+    mod = scripts_module_loader("select_gapfill_queue")
+    assert mod.DEFAULT_QUEUE_SIZE == 18
+
+
+def test_companies_with_open_questions_sort_first(scripts_module_loader) -> None:
+    mod = scripts_module_loader("select_gapfill_queue")
+    # Charlie has questions but is the most recently queried; it still wins.
+    out = mod.select_queue(
+        ["Alpha", "Bravo", "Charlie"],
+        state={"Alpha": "", "Bravo": "2026-05-01", "Charlie": "2026-05-10"},
+        covered=set(),
+        size=10,
+        with_questions={"Charlie"},
+    )
+    assert out == ["Charlie", "Alpha", "Bravo"]
+
+
+def test_open_questions_group_keeps_internal_rotation(scripts_module_loader) -> None:
+    mod = scripts_module_loader("select_gapfill_queue")
+    out = mod.select_queue(
+        ["Alpha", "Bravo", "Charlie", "Delta"],
+        state={"Alpha": "2026-05-10", "Bravo": "2026-05-01", "Charlie": "2026-05-09"},
+        covered=set(),
+        size=10,
+        with_questions={"Alpha", "Bravo"},
+    )
+    # Questions group ordered by last_queried; then the rest (Delta never
+    # queried, so it precedes Charlie).
+    assert out == ["Bravo", "Alpha", "Delta", "Charlie"]
+
+
+def test_open_questions_cannot_resurrect_covered_companies(scripts_module_loader) -> None:
+    mod = scripts_module_loader("select_gapfill_queue")
+    out = mod.select_queue(
+        ["Alpha", "Bravo"],
+        state={},
+        covered={"Alpha"},
+        size=10,
+        with_questions={"Alpha"},
+    )
+    assert out == ["Bravo"]
+
+
+def test_questions_first_ordering_applied_end_to_end(
+    scripts_module_loader, tmp_repo: Path
+) -> None:
+    mod = scripts_module_loader("select_gapfill_queue")
+    _setup(
+        tmp_repo,
+        ["Alpha", "Bravo", "Charlie"],
+        state={"Alpha": "2026-05-01", "Charlie": "2026-05-10"},
+    )
+    # Charlie is the most recently queried but is the only one with questions.
+    _write_brief(
+        tmp_repo,
+        "charlie",
+        "# Charlie — LIVING BRIEF\n## Open questions\n- Who led the seed?\n",
+    )
+    argv = sys.argv
+    sys.argv = ["select_gapfill_queue.py", "--repo-root", str(tmp_repo), "--date", "2026-05-20"]
+    try:
+        assert mod.main() == 0
+    finally:
+        sys.argv = argv
+
+    assert (tmp_repo / "signals" / "agent-queue.txt").read_text() == "Charlie\nBravo\nAlpha\n"
+    entries = json.loads((tmp_repo / "data" / "agent-open-questions.json").read_text())
+    assert entries[0] == {"name": "Charlie", "open_questions": ["Who led the seed?"]}
+
+
 def _write_brief(tmp_repo: Path, slug: str, body: str) -> None:
     d = tmp_repo / "signals" / "briefs" / slug
     d.mkdir(parents=True, exist_ok=True)
