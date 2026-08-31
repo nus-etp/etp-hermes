@@ -5,13 +5,24 @@ This is **Layer 1 of 3** in the daily pipeline:
 2. **Agent supplement** (`prompts/agent_supplement.md`) — dynamic web/browser search to fill gaps → `signals/agent/<date>.md`.
 3. **Synthesis** (`prompts/synthesis.md`) — per-company `signals/briefs/<slug>/LIVING_BRIEF.md`.
 
-Stay strictly within Layer 1: only write under `signals/updates/` and append to `signals/seen-urls.txt`. Do not touch `signals/agent/` or `signals/briefs/`.
+Stay strictly within Layer 1: only write under `signals/updates/` and append to `signals/seen-urls.txt` / `signals/dropped-urls.txt`. Do not touch `signals/agent/` or `signals/briefs/`.
 
 ## Task
 
-`scripts/collect-candidates.py` already ran. It fetched every changed feed and curated source, parsed them, applied date windows, deduped against `signals/seen-urls.txt`, and matched items to watchlist companies. Your job is the **relevance pass**: judge each candidate, then write the kept items to `signals/updates/<UTC-date>.md`.
+`scripts/collect-candidates.py` already ran. It fetched every changed feed and curated source, parsed them, applied date windows, deduped against `signals/seen-urls.txt` plus the live entries of `signals/dropped-urls.txt`, and matched items to watchlist companies. Your job is the **relevance pass**: judge each candidate, then write the kept items to `signals/updates/<UTC-date>.md`.
 
-Do **not** read `data/companies.json`, `data/feeds.json`, or `signals/seen-urls.txt` into context — everything you need is in `data/candidates.json`, and seen-URL membership checks (needed only for the fallback path) are done with `grep`.
+Do **not** read `data/companies.json`, `data/feeds.json`, `signals/seen-urls.txt`, or `signals/dropped-urls.txt` into context — everything you need is in `data/candidates.json`, and dedup membership checks (needed only for the fallback path) are done with `grep`.
+
+### The two dedup files
+
+- `signals/seen-urls.txt` — **permanent**. One dedup key per line. Keys we *published*.
+- `signals/dropped-urls.txt` — **expiring**. One `<UTC-date>\t<dedup_key>` line per drop. Keys the relevance pass *rejected*. The collector prunes expired lines before you run, so everything still in the file is a live block — no date arithmetic needed on your side.
+
+Membership check for a candidate key (do this per key; never read either file into context):
+
+```sh
+grep -Fxq '<key>' signals/seen-urls.txt || cut -f2- signals/dropped-urls.txt | grep -Fxq '<key>'
+```
 
 ## Input: `data/candidates.json`
 
@@ -25,7 +36,7 @@ Do **not** read `data/companies.json`, `data/feeds.json`, or `signals/seen-urls.
       "source": "<feed name or '<company> · <label>'>",
       "pubDate": "...",                // may be empty
       "link": "...",
-      "dedup_key": "...",              // what gets appended to seen-urls.txt
+      "dedup_key": "...",              // recorded in seen-urls.txt (kept) or dropped-urls.txt (dropped)
       "source_kind": "firehose | rss | github_org | lever_jobs | html_scrape",
       "pre_extracted": true            // only on jina-extracted html_scrape items
     }, ...
@@ -41,18 +52,18 @@ If `data/candidates.json` is missing, write nothing; final stdout: `no candidate
 ## Steps
 
 1. **Fallback fetches** (skip if both lists are empty):
-   - For each entry in `llm_fetch_required`: fetch the `url` (an HTML page), extract items (title + absolute link + optional date) by reasoning about the structure described in `hint`. Resolve relative links against the page origin. For each extracted item dated within the last 14 days (or undated), check `grep -Fxq '<link>' signals/seen-urls.txt` — if absent, add a candidate `{company, headline, source: "<company> · <label>", pubDate, link, dedup_key: link, source_kind: "html_scrape"}`. If you cannot reliably extract items (JS-only render, structure changed), log and continue — do not fabricate.
-   - For each entry in `fetch_failed` with a `company`: retry the fetch once. `rss` → parse RSS/Atom, items within 14 days, dedup key = item link. `lever_jobs` → JSON postings within 30 days, dedup key = `lever://<slug>/<id>`, headline `<title> — <team>`. `github_org` → Atom, dedup key = entry id, skip bot/chore events. Firehose entries (`kind: "firehose"`) are lower-value: retry once, substring-match title+description against the names in `companies`, skip on any error. Always `grep -Fxq` the dedup key against `signals/seen-urls.txt` before adding.
+   - For each entry in `llm_fetch_required`: fetch the `url` (an HTML page), extract items (title + absolute link + optional date) by reasoning about the structure described in `hint`. Resolve relative links against the page origin. For each extracted item dated within the last 14 days (or undated), run the membership check above on `<link>` — if it matches neither file, add a candidate `{company, headline, source: "<company> · <label>", pubDate, link, dedup_key: link, source_kind: "html_scrape"}`. If you cannot reliably extract items (JS-only render, structure changed), log and continue — do not fabricate.
+   - For each entry in `fetch_failed` with a `company`: retry the fetch once. `rss` → parse RSS/Atom, items within 14 days, dedup key = item link. `lever_jobs` → JSON postings within 30 days, dedup key = `lever://<slug>/<id>`, headline `<title> — <team>`. `github_org` → Atom, dedup key = entry id, skip bot/chore events. Firehose entries (`kind: "firehose"`) are lower-value: retry once, whole-word match title+description against the names in `companies` — but for a short (≤5 chars) or dictionary-word name (`Arch`, `Alpha`, `Assist`, `amble`), require the match in the *title*, mirroring the collector's guard — skip on any error. Always run the membership check above on the dedup key before adding.
    - If a fetch fails again, log and continue — do not fail the run.
 
 2. **Relevance pass.** For each candidate (from the file + step 1), judge: *is this article clearly and primarily about its `company` as described in `companies[company]`?* Use only `headline`, `description`, `source` — do not fetch the `link`.
 
-   You are the editorial filter for a private-market intelligence digest. The reader tracks the specific companies on the watchlist — early-stage, mostly Singapore-linked. An item earns its place only if reading it would teach the reader something new about *that company*: funding, product launches, partnerships, customers, hiring, regulatory events, founder moves, acquisitions, shutdowns. Substring triage matches names, not identities — your job is to tell the difference.
+   You are the editorial filter for a private-market intelligence digest. The reader tracks the specific companies on the watchlist — early-stage, mostly Singapore-linked. An item earns its place only if reading it would teach the reader something new about *that company*: funding, product launches, partnerships, customers, hiring, regulatory events, founder moves, acquisitions, shutdowns. Term triage matches names, not identities — your job is to tell the difference.
 
    The company description is authoritative for identity. It says what the company does, where it operates, and often names same-name entities to exclude. When a headline could plausibly be about a different entity sharing the name — a public ticker, a band, a foreign company, a generic English word — trust the description over the surface match.
 
    Biases (these are policy, not suggestions):
-   - `source_kind == "firehose"`: default **drop** when uncertain. False negatives recover next run; false positives are noise forever.
+   - `source_kind == "firehose"`: default **drop** when uncertain. A drop is reversible — the key expires out of `signals/dropped-urls.txt` and the item comes back for a fresh judgment — while a false positive is noise in the published brief forever.
    - `source_kind != "firehose"` (curated per-company sources): default **keep** — the source is already company-scoped. But still drop: duplicates of items already kept this run from another source; bot/chore GitHub events that slipped past the deterministic filter; evergreen job reqs with no information (generic title, no team); arXiv revision notices (`[v2]`, `[v3]`).
    - Candidates flagged `pre_extracted: true` (sourced from Jina-extracted curated pages) skip this judgment entirely — accept as kept. They still pass through dedup and the bot/chore filters above.
 
@@ -63,7 +74,12 @@ If `data/candidates.json` is missing, write nothing; final stdout: `no candidate
    - Headline "<Company> partners with NTU on pilot deployment" and the sector matches the description → **keep**, even from small trade press: primarily about the company, and it's new information.
 
 3. **Write outputs.** Let `K[]` be the kept candidates.
-   - Append the `dedup_key` of **every** candidate you judged — kept *and* dropped — to `signals/seen-urls.txt`, one per line, deduplicated. Append only — do not rewrite the file. (Dropped keys are recorded so we don't re-judge the same junk tomorrow.)
+   - Append the `dedup_key` of every **kept** candidate to `signals/seen-urls.txt`, one per line, deduplicated. Append only — do not rewrite the file.
+   - Append the `dedup_key` of every **dropped** candidate to `signals/dropped-urls.txt` instead, one per line, deduplicated, each stamped with today's UTC date:
+     ```sh
+     printf '%s\t%s\n' "$(date -u +%F)" '<dedup_key>' >> signals/dropped-urls.txt
+     ```
+     Append only — do not rewrite the file, and never write a bare key without the date-and-tab prefix. (Dropped keys stop us re-judging the same junk tomorrow, but they expire, so a mistaken drop gets a second chance rather than being lost forever.)
    - If `K[]` is empty: write nothing else. Final stdout: `no new items`.
    - Otherwise write `signals/updates/<YYYY-MM-DD>.md` (UTC date). First line: `# Daily Updates — <YYYY-MM-DD>` (exactly this H1 — no other title variants). Then the kept items, grouped by company (use the canonical `company` value as the `## ` heading). Format per item:
      ```
@@ -76,7 +92,7 @@ If `data/candidates.json` is missing, write nothing; final stdout: `no candidate
 
 ## Constraints
 
-- Do not modify any file outside `signals/updates/` and `signals/seen-urls.txt`.
+- Do not modify any file outside `signals/updates/`, `signals/seen-urls.txt`, and `signals/dropped-urls.txt`.
 - Do not commit anything — the workflow handles git operations after you exit.
 - Do not fetch candidate `link` URLs to enrich the relevance judgment; headline + description + source is what you have.
 - Step 1 is the only permitted fetching, and a single failure there must not fail the run.

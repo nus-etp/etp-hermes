@@ -4,8 +4,11 @@
 Does everything in prompts/ingest.md steps 1-2.5 that needs no judgment:
 fetches changed firehose feeds and per-company rss/github_org/lever_jobs
 sources, parses them, applies date windows, dedupes against
-signals/seen-urls.txt, runs the substring triage against company terms, and
-folds in the pre-extracted html_scrape items from data/jina-items.json.
+signals/seen-urls.txt (permanent: published keys) and the non-expired half of
+signals/dropped-urls.txt (TTL'd: keys a relevance pass dropped), runs the
+entity-linked triage against company terms (name + aliases + match_terms,
+minus exclude_terms, with the generic-term guard from scripts/entity_terms.py),
+and folds in the pre-extracted html_scrape items from data/jina-items.json.
 
 Writes data/candidates.json. The ingest prompt then only performs the LLM
 relevance pass over the (small) candidate list instead of re-reading
@@ -24,7 +27,7 @@ import os
 import re
 import sys
 import xml.etree.ElementTree as ET
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
@@ -33,6 +36,14 @@ from urllib import error, parse, request
 # Make the sibling `jina_fallback` module importable both when run directly
 # (scripts/ is sys.path[0]) and under pytest's file-path module loader.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import dropped_urls  # noqa: E402
+from entity_terms import (  # noqa: E402
+    MATCH_WEAK_DESC,
+    build_company_matchers,
+    build_term_matchers,  # noqa: F401  (re-exported: imported by tests/other scripts)
+    is_excluded,
+    match_kind,
+)
 from jina_fallback import extract_items, fetch_reader  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -41,6 +52,7 @@ COMPANIES_FILE = REPO_ROOT / "data" / "companies.json"
 CHANGED_FILE = REPO_ROOT / "data" / "changed-sources.json"
 JINA_ITEMS_FILE = REPO_ROOT / "data" / "jina-items.json"
 SEEN_FILE = REPO_ROOT / "signals" / "seen-urls.txt"
+DROPPED_FILE = REPO_ROOT / "signals" / "dropped-urls.txt"
 OUT_FILE = REPO_ROOT / "data" / "candidates.json"
 
 # UA-retry ladder. Many feed hosts (Cloudflare front-ends, Tech in Asia) 403 an
@@ -87,21 +99,6 @@ FIREHOSE_WINDOW = _window_days("COLLECT_FIREHOSE_DAYS", 7)
 PER_COMPANY_WINDOW = _window_days("COLLECT_PER_COMPANY_DAYS", 14)
 LEVER_WINDOW = _window_days("COLLECT_LEVER_DAYS", 30)
 
-
-def build_term_matchers(terms: dict[str, list[str]]) -> dict[str, list[re.Pattern[str]]]:
-    """Compile each company's lowercased terms into whole-word matchers.
-
-    Firehose triage matches watchlist names as tokens, not raw substrings, so a
-    short alias like "arch" no longer fires on "research", "wise" on "WiseTech",
-    "ava" on "available", or "finan" on "financial". Lookarounds (not ``\\b``) so
-    terms with adjacent punctuation such as "assist.id" still anchor correctly.
-    Terms are already lowercased by the caller and matched against a lowercased
-    haystack, so the patterns are case-sensitive by construction.
-    """
-    return {
-        name: [re.compile(rf"(?<!\w){re.escape(t)}(?!\w)") for t in ts if t]
-        for name, ts in terms.items()
-    }
 
 # Jina Reader fallback: when a firehose/rss feed's direct fetch or parse fails
 # (host unreachable from the runner, but Jina can reach it), refetch it through
@@ -151,6 +148,22 @@ def load_seen(path: Path) -> set[str]:
     if not path.exists():
         return set()
     return {line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()}
+
+
+def load_blocked(
+    seen_path: Path,
+    dropped_path: Path,
+    ttl: int | None = None,
+    today: date | None = None,
+) -> set[str]:
+    """Keys that must not be re-emitted as candidates.
+
+    The union of the permanent published keys (``seen-urls.txt``) and the
+    *non-expired* dropped keys (``dropped-urls.txt``). An expired drop no longer
+    blocks, so a Layer 1 false negative gets re-judged instead of vanishing
+    forever.
+    """
+    return load_seen(seen_path) | dropped_urls.load_active(dropped_path, ttl, today)
 
 
 def fetch(url: str) -> bytes:
@@ -286,18 +299,40 @@ def collect(
     llm_fetch_required: list[dict[str, str]] = []
     seen_this_run: set[tuple[str, str]] = set()  # (company, dedup_key)
     pre_extracted_capped = 0  # pre-extracted items dropped by the per-source cap
+    suppressed = {"exclude_terms": 0, "weak_term": 0}
+
+    matchers = build_company_matchers(companies)
 
     def add(company: str, item: dict[str, Any]) -> None:
         key = (company, item["dedup_key"])
         if key in seen_this_run:
             return
         seen_this_run.add(key)
+        # exclude_terms are enforced here rather than in the triage helper so
+        # they also cover per-company sources (a company's own feed can still
+        # carry an item about the same-named entity we're disambiguating from).
+        m = matchers.get(company)
+        if m is not None and is_excluded(m, item["headline"], item.get("description", "")):
+            suppressed["exclude_terms"] += 1
+            return
         candidates.append({"company": company, **item})
 
-    terms = {
-        c["name"]: [t.lower() for t in [c["name"], *(c.get("aliases") or [])]] for c in companies
-    }
-    term_res = build_term_matchers(terms)
+    def triage(title: str, description: str = "") -> list[str]:
+        """Companies this firehose item is about, applying the generic-term guard.
+
+        A strong term may match anywhere in title+description; a weak (short or
+        dictionary-word) term must land in the title. Weak-in-description-only
+        hits — the "Arch"/"AVA"/"assist" false-positive class — are counted and
+        dropped.
+        """
+        hits: list[str] = []
+        for name, m in matchers.items():
+            kind = match_kind(m, title, description)
+            if kind == MATCH_WEAK_DESC:
+                suppressed["weak_term"] += 1
+            elif kind:
+                hits.append(name)
+        return hits
 
     # Jina Reader fallback state. reader=None disables it entirely (the default,
     # so existing callers/tests keep the direct-fetch-only behaviour); main()
@@ -327,9 +362,12 @@ def collect(
                 continue
             if not within_window(parse_date(it.get("pubDate")), window):
                 continue
+            # The heading→link heuristic usually carries no description; keep the
+            # field (and the triage haystack) tolerant of both shapes.
+            description = it.get("description") or ""
             item = {
                 "headline": it["headline"],
-                "description": "",
+                "description": description,
                 "source": source_label,
                 "pubDate": it.get("pubDate", ""),
                 "link": link,
@@ -338,10 +376,11 @@ def collect(
                 "via_jina_fallback": True,
             }
             if company is None:  # firehose: whole-word triage across the watchlist
-                haystack = it["headline"].lower()
-                for name, pats in term_res.items():
-                    if any(p.search(haystack) for p in pats):
-                        add(name, dict(item))
+                # Match on title + description, same as the direct-fetch path —
+                # a headline-only haystack silently loses items whose company
+                # name appears in the summary.
+                for name in triage(it["headline"], description):
+                    add(name, dict(item))
             else:
                 add(company, item)
         return True
@@ -373,21 +412,19 @@ def collect(
                 continue
             if not within_window(parse_date(it["pubDate"]), FIREHOSE_WINDOW):
                 continue
-            haystack = f"{it['title']} {it['description']}".lower()
-            for name, pats in term_res.items():
-                if any(p.search(haystack) for p in pats):
-                    add(
-                        name,
-                        {
-                            "headline": it["title"],
-                            "description": it["description"],
-                            "source": feed["name"],
-                            "pubDate": it["pubDate"],
-                            "link": link,
-                            "dedup_key": link,
-                            "source_kind": "firehose",
-                        },
-                    )
+            for name in triage(it["title"], it["description"]):
+                add(
+                    name,
+                    {
+                        "headline": it["title"],
+                        "description": it["description"],
+                        "source": feed["name"],
+                        "pubDate": it["pubDate"],
+                        "link": link,
+                        "dedup_key": link,
+                        "source_kind": "firehose",
+                    },
+                )
 
     # --- Per-company curated sources ---
     if changed is None:
@@ -591,6 +628,8 @@ def collect(
             "jina_recovered": len(set(jina_state["recovered"])),
             "jina_candidates": jina_candidates,
             "pre_extracted_capped": pre_extracted_capped,
+            "excluded_by_terms": suppressed["exclude_terms"],
+            "weak_term_suppressed": suppressed["weak_term"],
         },
     }
 
@@ -610,7 +649,18 @@ def main() -> int:
     # empty file so it re-collects items both arms already judged — the A/B is a
     # policy comparison, not a freshness check.
     seen_path = Path(os.environ["COLLECT_SEEN_FILE"]) if os.environ.get("COLLECT_SEEN_FILE") else SEEN_FILE
-    seen = load_seen(seen_path)
+    # COLLECT_DROPPED_FILE overrides the TTL'd drop list the same way (the
+    # backfill points it at an empty file).
+    dropped_path = (
+        Path(os.environ["COLLECT_DROPPED_FILE"])
+        if os.environ.get("COLLECT_DROPPED_FILE")
+        else DROPPED_FILE
+    )
+    # Prune expired entries first so the file the Layer 1 prompt greps holds
+    # only live drops — the prompt can then do a plain membership check without
+    # reimplementing the TTL in shell.
+    pruned = dropped_urls.prune_file(dropped_path)
+    seen = load_blocked(seen_path, dropped_path)
 
     try:
         jina_budget = int(os.environ.get("JINA_FALLBACK_BUDGET", str(DEFAULT_JINA_FALLBACK_BUDGET)))
@@ -648,7 +698,10 @@ def main() -> int:
         f"fetch_failed={s['fetch_failed']} "
         f"jina_recovered={s['jina_recovered']} "
         f"jina_candidates={s['jina_candidates']} "
-        f"pre_extracted_capped={s['pre_extracted_capped']}",
+        f"pre_extracted_capped={s['pre_extracted_capped']} "
+        f"excluded_by_terms={s['excluded_by_terms']} "
+        f"weak_term_suppressed={s['weak_term_suppressed']} "
+        f"dropped_urls_pruned={pruned}",
         file=sys.stderr,
     )
     return 0

@@ -55,6 +55,37 @@ def test_required_keys_and_types(companies: list[dict]) -> None:
     assert not errors, "schema violations:\n  - " + "\n  - ".join(errors)
 
 
+def test_match_and_exclude_terms_shape(companies: list[dict]) -> None:
+    """Optional entity-linking fields honoured at triage time.
+
+    `match_terms` are extra *positive* terms (founder names, product names, the
+    homepage domain) and `exclude_terms` are negative ones — both consumed by
+    scripts/collect-candidates.py via scripts/entity_terms.py, and drafted by
+    scripts/generate_match_terms.py. Both are optional list[str] of non-empty,
+    already-trimmed strings.
+    """
+    errors: list[str] = []
+    for c in companies:
+        for field in ("match_terms", "exclude_terms"):
+            v = c.get(field)
+            if v is None:
+                continue
+            if not isinstance(v, list):
+                errors.append(f"{c['name']}: {field} must be a list")
+                continue
+            for i, t in enumerate(v):
+                if not isinstance(t, str):
+                    errors.append(f"{c['name']}: {field}[{i}] must be str, got {type(t).__name__}")
+                elif not t.strip():
+                    errors.append(f"{c['name']}: {field}[{i}] is empty")
+                elif t != t.strip():
+                    errors.append(f"{c['name']}: {field}[{i}] has surrounding whitespace: {t!r}")
+            lowered = [t.lower() for t in v if isinstance(t, str)]
+            if len(set(lowered)) != len(lowered):
+                errors.append(f"{c['name']}: {field} has case-insensitive duplicates")
+    assert not errors, "match/exclude term violations:\n  - " + "\n  - ".join(errors)
+
+
 def test_every_company_has_country(companies: list[dict]) -> None:
     """Every company must carry a non-empty HQ `country` tag so the site's
     region filter covers the whole watchlist. New entries get one

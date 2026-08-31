@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from urllib import error
 
 import pytest
@@ -687,3 +687,340 @@ def test_jina_fallback_skips_github_org(cc):
     )
     assert [f["kind"] for f in out["fetch_failed"]] == ["github_org"]
     assert out["jina_recovered"] == []
+
+
+# --- dropped-urls TTL dedup -------------------------------------------------
+
+
+def _dedup_files(tmp_repo, seen: list[str], dropped: list[str]):
+    seen_path = tmp_repo / "signals" / "seen-urls.txt"
+    seen_path.write_text("\n".join(seen) + ("\n" if seen else ""), encoding="utf-8")
+    dropped_path = tmp_repo / "signals" / "dropped-urls.txt"
+    dropped_path.write_text("\n".join(dropped) + ("\n" if dropped else ""), encoding="utf-8")
+    return seen_path, dropped_path
+
+
+def test_load_blocked_expired_drop_no_longer_blocks(cc, tmp_repo):
+    today = date(2026, 8, 31)
+    seen_path, dropped_path = _dedup_files(
+        tmp_repo,
+        ["https://x.example/published"],
+        [
+            "# header",
+            "2026-08-25\thttps://x.example/fresh-drop",   # 6 days old → still blocks
+            "2026-06-01\thttps://x.example/stale-drop",   # long expired → free again
+            "https://x.example/malformed-drop",           # no date → non-blocking
+        ],
+    )
+    blocked = cc.load_blocked(seen_path, dropped_path, ttl=30, today=today)
+    assert blocked == {"https://x.example/published", "https://x.example/fresh-drop"}
+
+
+def test_expired_dropped_key_is_recollected(cc, tmp_repo):
+    """The recall fix end-to-end: a lapsed drop comes back as a candidate."""
+    today = date(2026, 8, 31)
+    _, dropped_path = _dedup_files(
+        tmp_repo,
+        [],
+        [
+            "2026-08-25\thttps://x.example/fresh",
+            "2026-06-01\thttps://x.example/stale",
+        ],
+    )
+    feed = _rss(
+        [
+            ("Acme Robotics ships v2", "https://x.example/fresh", "", _recent_rfc822(1)),
+            ("Acme Robotics hires CTO", "https://x.example/stale", "", _recent_rfc822(1)),
+        ]
+    )
+    blocked = cc.load_blocked(
+        tmp_repo / "signals" / "seen-urls.txt", dropped_path, ttl=30, today=today
+    )
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=blocked,
+        fetcher=_fetcher({FEEDS[0]["url"]: feed}),
+    )
+    assert [c["link"] for c in out["candidates"]] == ["https://x.example/stale"]
+
+
+def test_load_blocked_missing_dropped_file_is_seen_only(cc, tmp_repo):
+    seen_path = tmp_repo / "signals" / "seen-urls.txt"
+    seen_path.write_text("https://x.example/a\n", encoding="utf-8")
+    blocked = cc.load_blocked(seen_path, tmp_repo / "signals" / "nope.txt")
+    assert blocked == {"https://x.example/a"}
+
+
+# --- jina fallback triage haystack ------------------------------------------
+
+
+def test_jina_fallback_triage_matches_description(cc, monkeypatch):
+    """Firehose triage on the fallback path reads title + description, like direct fetch."""
+    monkeypatch.setattr(
+        cc,
+        "extract_items",
+        lambda markdown, base_url: [
+            {
+                "headline": "Weekly funding roundup",
+                "link": "https://j.example/roundup",
+                "description": "Acme Robotics closed a bridge round this week",
+                "pubDate": _recent_iso_date(1),
+            }
+        ],
+    )
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),  # direct fetch fails → fallback kicks in
+        reader=_reader({FEEDS[0]["url"]: "# markdown"}),
+    )
+    [cand] = out["candidates"]
+    assert cand["company"] == "Acme Robotics"  # matched via the description only
+    assert cand["link"] == "https://j.example/roundup"
+    assert cand["description"] == "Acme Robotics closed a bridge round this week"
+    assert cand["via_jina_fallback"] is True
+
+
+# --- entity-linked triage: generic-term guard + exclude_terms ----------------
+
+
+def _generic_companies() -> list[dict]:
+    """The observed generic-name offenders, verbatim from a live run."""
+    return [
+        {"name": "Arch", "aliases": [], "description": "SG fintech", "sources": []},
+        {
+            "name": "AVA (Bright Sight)",
+            "aliases": ["AVA", "Bright Sight"],
+            "description": "vision AI",
+            "sources": [],
+        },
+        {"name": "Assist.id", "aliases": ["Assist"], "description": "clinic SaaS", "sources": []},
+        {"name": "amble", "aliases": [], "description": "travel app", "sources": []},
+    ]
+
+
+@pytest.mark.parametrize(
+    ("title", "description"),
+    [
+        # "Arch" only in the body of an unrelated banking story.
+        ("Japan's largest banks to jointly issue stablecoins", "the arch of the deal"),
+        # alias "AVA" inside an Anthropic story summary.
+        ("Anthropic ships a new Claude model", "the ava assistant answers in-app"),
+        # alias "assist" inside a Siri article.
+        ("Apple rebuilds Siri", "the voice assist feature will assist users"),
+        # "amble" inside a SpaceX IPO story.
+        ("SpaceX weighs IPO", "shares amble higher on the news"),
+    ],
+)
+def test_weak_term_in_description_only_is_suppressed(cc, title, description):
+    feed = _rss([(title, "https://x.example/fp", description, _recent_rfc822(1))])
+    out = cc.collect(
+        _generic_companies(),
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({FEEDS[0]["url"]: feed}),
+    )
+    assert out["candidates"] == []
+    assert out["stats"]["weak_term_suppressed"] >= 1
+
+
+def test_weak_term_in_title_still_matches(cc):
+    feed = _rss(
+        [
+            ("Arch raises $2M seed", "https://x.example/arch", "fintech round", _recent_rfc822(1)),
+            ("amble launches in Bali", "https://x.example/amble", "travel", _recent_rfc822(1)),
+        ]
+    )
+    out = cc.collect(
+        _generic_companies(),
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({FEEDS[0]["url"]: feed}),
+    )
+    assert {(c["company"], c["link"]) for c in out["candidates"]} == {
+        ("Arch", "https://x.example/arch"),
+        ("amble", "https://x.example/amble"),
+    }
+
+
+def test_strong_alias_matches_in_description(cc):
+    # "Bright Sight" is multi-word → strong → a body mention is enough.
+    feed = _rss(
+        [
+            (
+                "Weekly funding roundup",
+                "https://x.example/roundup",
+                "Bright Sight closed a bridge round this week",
+                _recent_rfc822(1),
+            )
+        ]
+    )
+    out = cc.collect(
+        _generic_companies(),
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({FEEDS[0]["url"]: feed}),
+    )
+    assert [c["company"] for c in out["candidates"]] == ["AVA (Bright Sight)"]
+    assert out["stats"]["weak_term_suppressed"] == 0
+
+
+def test_match_terms_founder_name_matches_in_description(cc):
+    companies = [
+        {
+            "name": "Akro",
+            "aliases": [],
+            "match_terms": ["Jane Q Founder", "akro.sg"],
+            "description": "materials startup",
+            "sources": [],
+        }
+    ]
+    feed = _rss(
+        [
+            (
+                "Ten deep-tech founders to watch",
+                "https://x.example/founders",
+                "Jane Q Founder is scaling her materials venture",
+                _recent_rfc822(1),
+            )
+        ]
+    )
+    out = cc.collect(
+        companies,
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({FEEDS[0]["url"]: feed}),
+    )
+    assert [c["company"] for c in out["candidates"]] == ["Akro"]
+
+
+def test_exclude_terms_suppress_an_otherwise_good_match(cc):
+    companies = [
+        {
+            "name": "Horizon Quantum Computing",
+            "aliases": [],
+            "exclude_terms": ["nasdaq", "ticker"],
+            "description": "quantum software",
+            "sources": [],
+        }
+    ]
+    feed = _rss(
+        [
+            (
+                "Horizon Quantum Computing lists on NASDAQ",
+                "https://x.example/spac",
+                "",
+                _recent_rfc822(1),
+            ),
+            (
+                "Horizon Quantum Computing hires a CTO",
+                "https://x.example/hire",
+                "",
+                _recent_rfc822(1),
+            ),
+        ]
+    )
+    out = cc.collect(
+        companies,
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({FEEDS[0]["url"]: feed}),
+    )
+    assert [c["link"] for c in out["candidates"]] == ["https://x.example/hire"]
+    assert out["stats"]["excluded_by_terms"] == 1
+
+
+def test_exclude_terms_also_apply_to_per_company_sources(cc):
+    """Per-company sources bind without triage, but exclude_terms still cut."""
+    url = "https://hq.example/feed"
+    companies = [
+        {
+            "name": "Horizon Quantum Computing",
+            "aliases": [],
+            "exclude_terms": ["nasdaq"],
+            "description": "quantum software",
+            "sources": [{"type": "rss", "label": "press", "url": url}],
+        }
+    ]
+    feed = _rss(
+        [
+            ("Ticker HQ debuts on NASDAQ", "https://hq.example/a", "", _recent_rfc822(1)),
+            ("Compiler release notes", "https://hq.example/b", "", _recent_rfc822(1)),
+        ]
+    )
+    out = cc.collect(
+        companies,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Horizon Quantum Computing": [url]}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({url: feed}),
+    )
+    assert [c["link"] for c in out["candidates"]] == ["https://hq.example/b"]
+    assert out["stats"]["excluded_by_terms"] == 1
+
+
+def test_guard_applies_on_the_jina_fallback_path(cc, monkeypatch):
+    """The recovered-feed path uses the same acceptance rule as direct fetch."""
+    monkeypatch.setattr(
+        cc,
+        "extract_items",
+        lambda markdown, base_url: [
+            {
+                "headline": "Japan's largest banks to jointly issue stablecoins",
+                "link": "https://j.example/fp",
+                "description": "the arch of the deal",
+                "pubDate": _recent_iso_date(1),
+            },
+            {
+                "headline": "Arch raises $2M seed",
+                "link": "https://j.example/tp",
+                "description": "",
+                "pubDate": _recent_iso_date(1),
+            },
+        ],
+    )
+    out = cc.collect(
+        _generic_companies(),
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),  # direct fetch fails → fallback kicks in
+        reader=_reader({FEEDS[0]["url"]: "# markdown"}),
+    )
+    assert [c["link"] for c in out["candidates"]] == ["https://j.example/tp"]
+    assert out["stats"]["weak_term_suppressed"] >= 1
+
+
+def test_jina_fallback_tolerates_missing_description(cc):
+    """The heading→link heuristic emits no description key at all — must not crash."""
+    md = f"### [Acme Robotics raises $5M](https://j.example/win)\n\n{_recent_iso_date(1)}\n"
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),
+        reader=_reader({FEEDS[0]["url"]: md}),
+    )
+    [cand] = out["candidates"]
+    assert cand["description"] == ""
+    assert cand["company"] == "Acme Robotics"
