@@ -1,5 +1,5 @@
 # Qarbotech — LIVING BRIEF
-_Last updated: 2026-08-16 13:43 UTC_
+_Last updated: 2026-08-31 19:38 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -22,7 +22,10 @@ _Last material event: 2026-05-31 — Won SusHi Tech Global Pitch Challenge 2026 
 _Total disclosed: $2.2M._
 
 ## Recent signals
-_none_
+- **2026-08-26** — Founder and chief scientist Dr Suraya Rashid profiled in The Peak's Power List 2026; carbon-quantum-dot photosynthesis enhancer framed as raising yields without extra agricultural inputs — [thepeakmagazine.com.sg](https://www.thepeakmagazine.com.sg/people/qarbotech-wants-plants-be-more-efficient-photosynthesis)
+  - Summary: The Peak Power List 2026 profile traces Dr Suraya Rashid's path from materials-science research on carbon quantum dots to founding Qarbotech, a Malaysian deep-tech spin-off whose patented biocompatible solution enhances plants' photosynthetic efficiency. The piece emphasises the company's farmer-first philosophy — growers care about yield and input efficiency, not the underlying quantum mechanics. No new financial or commercial disclosures beyond prior signals.
+  - People: Dr Suraya Rashid (founder and chief scientist)
+  - Quote: "Farmers don't start by asking how the technology works. They start by asking what problem it solves." — Dr Suraya Rashid
 
 ## Older signals
 - **2026-07-26** — QarboGrow now used by ~7,500 farmers worldwide; ~RM3M in 2025 sales, mostly overseas; Japan pilot trials underway and India distributor hunt, says CEO Chor Chee Hoe — [nst.com.my](https://www.nst.com.my/business/corporate/2026/07/1497319/malaysian-agritech-startup-qarbotech-expands-global-footprint)
