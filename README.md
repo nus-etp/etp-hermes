@@ -20,7 +20,8 @@ prompts/
   synthesis.md                      # Layer 3: per-company LIVING_BRIEF
 data/{companies,feeds}.json         # watchlist + firehose feeds
 signals/
-  seen-urls.txt                     # shared dedup state across L1+L2
+  seen-urls.txt                     # shared dedup state across L1+L2 (kept keys, permanent)
+  dropped-urls.txt                  # shared dedup state across L1+L2 (dropped keys, 30-day TTL)
   updates/<YYYY-MM-DD>.md           # L1 output, one per UTC day
   agent/<YYYY-MM-DD>.md             # L2 output, one per UTC day
   briefs/<slug>/LIVING_BRIEF.md     # L3 output, per-company rolling brief
@@ -36,10 +37,10 @@ The workflow runs three Hermes invocations in order. Each layer is its own promp
 
 Deterministic feeds → `signals/updates/<UTC-date>.md`. Four phases:
 
-1. **Firehose triage** — fetch each feed in `data/feeds.json`, substring-match new items (≤7 days, not in `seen-urls.txt`) against `name + aliases`. Cheap, high-recall.
+1. **Firehose triage** — fetch each feed in `data/feeds.json`, substring-match new items (≤7 days, not in `seen-urls.txt` or a live entry of `dropped-urls.txt`) against `name + aliases`. Cheap, high-recall.
 2. **Per-company collection** — for companies with `sources`, fetch directly: RSS, GitHub org Atom, Lever jobs JSON, HTML newsroom pages. Bypasses substring match. Source taxonomy in `prompts/ingest.md`. Currently opted in: Carousell, Patsnap, Horizon Quantum Computing, NEU Battery Materials, polybee.
 3. **Relevance pass** — LLM judges each `(headline, source, description)` against `c.description`. Firehose bias: drop. Per-company bias: keep, with drops for bot/chore GitHub events, evergreen Lever reqs, arXiv revisions, cross-source duplicates.
-4. **Write** — kept items grouped by company into `signals/updates/<UTC-date>.md`; both kept and dropped dedup keys appended to `signals/seen-urls.txt`.
+4. **Write** — kept items grouped by company into `signals/updates/<UTC-date>.md`; kept dedup keys appended to `signals/seen-urls.txt` (permanent), dropped ones to `signals/dropped-urls.txt` as `<date>\t<key>` (expire after `DROPPED_URL_TTL_DAYS`, default 30, so a mistaken drop is re-judged instead of lost).
 
 No search feeds (Google News, HN) at this layer — they don't scale per added company. That's what Layer 2 is for.
 
@@ -50,7 +51,7 @@ Dynamic web/browser search → `signals/agent/<UTC-date>.md`. Two cohorts:
 - **Gap-fill** — companies with zero kept items across the last 7 days of `signals/updates/*.md`. Otherwise invisible to the pipeline. Hermes runs 1–2 targeted queries per company (web search scoped to last 7 days; company website if `identifiers.website` is set).
 - **Deepen** — companies that appear in today's `signals/updates/<today>.md`. Hermes runs one query per company to find related coverage, valuation/investor context, or corroboration that the firehose didn't surface.
 
-Budget: 50 ops total per run, gap-fill prioritized over deepen. Same relevance discipline as Layer 1; same shared `signals/seen-urls.txt`. Wrapped with `continue-on-error: true` — a Layer 2 failure doesn't block Layer 3.
+Budget: 50 ops total per run, gap-fill prioritized over deepen. Same relevance discipline as Layer 1; same shared `signals/seen-urls.txt` + `signals/dropped-urls.txt`. Wrapped with `continue-on-error: true` — a Layer 2 failure doesn't block Layer 3.
 
 ### Layer 3 — synthesis (`prompts/synthesis.md`)
 

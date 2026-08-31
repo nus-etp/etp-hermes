@@ -8,7 +8,7 @@ This is **Layer 4 of 4** in the daily pipeline:
 
 A deterministic pre-step, `scripts/select_infographic_queue.py`, has already decided which briefs qualify and written the answer to `data/infographic-queue.json`. You do **not** compute the changed set yourself — a raw working-tree-vs-`HEAD` diff over-fires, because `normalize_briefs.py` reorders/rotates signal blocks and synthesis bumps `_Last updated:_`, appends "Also reported by:" sources to existing signals, and retires open questions, none of which change what the image depicts. The pre-step counts only a genuinely new dated signal (in either the Recent or Older section, keyed by date + headline with corroboration stripped) or a changed `### Hiring` roll-up.
 
-Stay strictly within Layer 4: only write `signals/briefs/<slug>/infographic.png` for slugs the pre-step queued as changed or missing-backfill. Do not modify any `LIVING_BRIEF.md` (synthesis owns those), `signals/updates/`, `signals/agent/`, `signals/seen-urls.txt`, or `data/`.
+Stay strictly within Layer 4: only write `signals/briefs/<slug>/infographic.png` for slugs the pre-step queued as changed or missing-backfill. Do not modify any `LIVING_BRIEF.md` (synthesis owns those), `signals/updates/`, `signals/agent/`, `signals/seen-urls.txt`, `signals/dropped-urls.txt`, or `data/`.
 
 ## Task
 

@@ -1,0 +1,5 @@
+# Dedup keys the Layer 1/2 relevance pass DROPPED, with the UTC day of the drop.
+# Format: YYYY-MM-DD<TAB><dedup_key>. Entries expire after DROPPED_URL_TTL_DAYS
+# (default 30) so a false-negative drop gets re-judged instead of being lost
+# forever; scripts/collect-candidates.py prunes expired lines at the start of
+# each run. Keys we KEPT go to signals/seen-urls.txt (permanent) instead.

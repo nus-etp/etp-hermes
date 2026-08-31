@@ -8,10 +8,12 @@ instruction — and it occasionally leaks a duplicate (the same URL surfaced on 
 different days). This script backstops that in code.
 
 The workflow snapshots ``signals/seen-urls.txt`` into ``data/seen-urls-prerun.txt``
-*before* the ingest session runs. Afterwards this script reads today's updates
-file and removes any item whose link line (exact, stripped) is present in that
-snapshot. Emptied company sections lose their heading; if the whole file becomes
-item-less it is deleted.
+and ``signals/dropped-urls.txt`` into ``data/dropped-urls-prerun.txt`` *before*
+the ingest session runs. Afterwards this script reads today's updates file and
+removes any item whose link line (exact, stripped) is present in either snapshot
+— a key dropped on an earlier day and still inside its TTL counts as seen, same
+as the collector's dedup. Emptied company sections lose their heading; if the
+whole file becomes item-less it is deleted.
 
 Item format (per the prompts):
 
@@ -34,6 +36,11 @@ import re
 import sys
 from pathlib import Path
 
+# Make the sibling `dropped_urls` module importable both when run directly
+# (scripts/ is sys.path[0]) and under pytest's file-path module loader.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import dropped_urls  # noqa: E402
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ITEM_BULLET_RE = re.compile(r"^- \*\*")
 HEADING_RE = re.compile(r"^(#+)\s+(.*)$")
@@ -49,6 +56,15 @@ def load_seen(snapshot_path: Path) -> set[str]:
         for line in snapshot_path.read_text(encoding="utf-8").splitlines()
         if line.strip()
     }
+
+
+def load_dropped(snapshot_path: Path) -> set[str]:
+    """Load the pre-run dropped-urls snapshot: non-expired keys only.
+
+    Malformed lines and expired drops are non-blocking (fail open toward
+    recall), matching ``scripts/collect-candidates.py``.
+    """
+    return dropped_urls.load_active(snapshot_path)
 
 
 def _item_block_len(lines: list[str], start: int) -> int:
@@ -176,6 +192,14 @@ def main() -> int:
         default=None,
         help="Pre-run seen-urls snapshot (default: <repo>/data/seen-urls-prerun.txt).",
     )
+    parser.add_argument(
+        "--dropped",
+        default=None,
+        help=(
+            "Pre-run dropped-urls snapshot "
+            "(default: <repo>/data/dropped-urls-prerun.txt)."
+        ),
+    )
     args = parser.parse_args()
 
     repo = Path(args.repo_root).resolve()
@@ -185,15 +209,18 @@ def main() -> int:
         else repo / "signals" / "updates" / f"{args.date}.md"
     )
     snapshot = Path(args.seen) if args.seen else repo / "data" / "seen-urls-prerun.txt"
+    dropped_snapshot = (
+        Path(args.dropped) if args.dropped else repo / "data" / "dropped-urls-prerun.txt"
+    )
 
     if not updates.exists():
         print("filter-seen-updates: no updates file; nothing to do")
         return 0
-    if not snapshot.exists():
+    if not snapshot.exists() and not dropped_snapshot.exists():
         print("filter-seen-updates: no seen-urls snapshot; nothing to do")
         return 0
 
-    seen = load_seen(snapshot)
+    seen = load_seen(snapshot) | load_dropped(dropped_snapshot)
     text = updates.read_text(encoding="utf-8")
     kept_before = sum(1 for line in text.splitlines() if ITEM_BULLET_RE.match(line))
     removed = process_file(updates, seen)

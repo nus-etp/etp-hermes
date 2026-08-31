@@ -4,6 +4,9 @@ The files hold free-form dedup keys (mostly URLs but also `lever://...`,
 `mailto:`, `tel:`, occasional headlines). Append-only by design — we only
 enforce format hygiene, not URL-ness. `seen-urls.txt` belongs to the
 production arm; `v2/seen-urls.txt` to the A/B experiment arm.
+`dropped-urls.txt` carries the same keys prefixed with a drop date and a tab
+(and `#` comment lines); the tab is explicitly allowed below, and
+`scripts/dropped_urls.py` fails open on anything that doesn't parse.
 """
 
 from __future__ import annotations
@@ -13,7 +16,7 @@ from pathlib import Path
 import pytest
 
 
-@pytest.mark.parametrize("rel", ["seen-urls.txt", "v2/seen-urls.txt"])
+@pytest.mark.parametrize("rel", ["seen-urls.txt", "v2/seen-urls.txt", "dropped-urls.txt"])
 def test_seen_urls_format(signals_dir: Path, rel: str) -> None:
     path = signals_dir / rel
     if not path.exists():

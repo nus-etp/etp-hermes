@@ -8,6 +8,11 @@ bullet whose headline-line contains an exclude term for the company it sits
 under. Dropped URLs are appended to `signals/seen-urls.txt` so the LLM doesn't
 re-judge them tomorrow. Empty headings are pruned afterwards.
 
+Note: these drops go to the *permanent* list, not the TTL'd
+`signals/dropped-urls.txt` used for relevance-pass drops. An exclude_terms hit
+is a deterministic config decision that would re-fire identically on every
+resurfacing, so expiring it would buy nothing but repeated LLM judgment.
+
 The Layer 1 file uses `## <CompanyName>` for the company heading (with
 `## Run at <time>` re-run dividers ignored). The Layer 2 file uses `## <Cohort>`
 and `### <CompanyName>`; cohort headings whose children all got dropped are

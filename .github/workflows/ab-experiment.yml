@@ -75,9 +75,11 @@ jobs:
           COLLECT_PER_COMPANY_DAYS: '120'
           COLLECT_LEVER_DAYS: '120'
           COLLECT_SEEN_FILE: /tmp/empty-seen.txt
+          COLLECT_DROPPED_FILE: /tmp/empty-dropped.txt
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: |
           : > /tmp/empty-seen.txt
+          : > /tmp/empty-dropped.txt
           rm -f data/changed-sources.json
           python3 scripts/collect-candidates.py
 
