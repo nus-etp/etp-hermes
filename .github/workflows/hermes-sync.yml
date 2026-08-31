@@ -352,10 +352,24 @@ jobs:
         if: steps.layers.outputs.run_l3 == 'true'
         run: python3 scripts/normalize_briefs.py
 
+      - name: Select infographic queue
+        # Deterministic pre-step for Layer 4: decides which briefs get a fresh
+        # infographic. A raw working-tree-vs-HEAD diff over-fires — normalize
+        # reorders/rotates signal blocks and synthesis bumps `_Last updated:_`,
+        # appends "Also reported by:" to Older signals, and retires open
+        # questions, none of which change the image. This narrows the queue to
+        # briefs with a *material Recent-signals change* (+ missing-image
+        # backfill) and writes data/infographic-queue.json. Runs after
+        # normalize so the reordering it does is not mistaken for new content.
+        # Gated on run_l3 like normalize; fails loud (a crash is a real bug).
+        if: steps.layers.outputs.run_l4 == 'true' && steps.l3gate.outputs.run == 'true'
+        run: python3 scripts/select_infographic_queue.py
+
       - name: Layer 4 — infographic generation
-        # Generates a baoyu infographic PNG next to every brief that Layer 3
-        # just created or modified. Gated on Layer 3 having run because the
-        # input is the working-tree diff Layer 3 produced. continue-on-error:
+        # Generates a baoyu infographic PNG next to every brief the pre-step
+        # queued (material Recent-signals change, or missing-image backfill).
+        # Gated on Layer 3 having run because the queue reflects what Layer 3
+        # produced. continue-on-error:
         # image_generate is slow/flaky; a bad run must not block the daily
         # sync — same precedent as Layer 2.
         if: steps.layers.outputs.run_l4 == 'true' && steps.l3gate.outputs.run == 'true'

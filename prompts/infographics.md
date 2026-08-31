@@ -4,18 +4,20 @@ This is **Layer 4 of 4** in the daily pipeline:
 1. **Data ingestion** (`prompts/ingest.md`) — already ran. Output: `signals/updates/<today>.md`.
 2. **Agent supplement** (`prompts/agent_supplement.md`) — already ran. Output: `signals/agent/<today>.md`.
 3. **Synthesis** (`prompts/synthesis.md`) — already ran. Output: zero or more `signals/briefs/<slug>/LIVING_BRIEF.md` writes.
-4. **Infographic generation (this prompt)** — for every brief that Layer 3 created or modified in this run, generate a visual summary PNG using the bundled `creative-baoyu-infographic` skill and place it alongside the brief. Remaining cap slots backfill briefs whose infographic is missing from a prior failure.
+4. **Infographic generation (this prompt)** — for every brief carrying a **genuinely new signal** this run, generate a visual summary PNG using the bundled `creative-baoyu-infographic` skill and place it alongside the brief. Remaining cap slots backfill briefs whose infographic is missing from a prior failure.
 
-Stay strictly within Layer 4: only write `signals/briefs/<slug>/infographic.png` for slugs that changed in this run or are selected for backfill. Do not modify any `LIVING_BRIEF.md` (synthesis owns those), `signals/updates/`, `signals/agent/`, `signals/seen-urls.txt`, or `data/`.
+A deterministic pre-step, `scripts/select_infographic_queue.py`, has already decided which briefs qualify and written the answer to `data/infographic-queue.json`. You do **not** compute the changed set yourself — a raw working-tree-vs-`HEAD` diff over-fires, because `normalize_briefs.py` reorders/rotates signal blocks and synthesis bumps `_Last updated:_`, appends "Also reported by:" sources to existing signals, and retires open questions, none of which change what the image depicts. The pre-step counts only a genuinely new dated signal (in either the Recent or Older section, keyed by date + headline with corroboration stripped) or a changed `### Hiring` roll-up.
+
+Stay strictly within Layer 4: only write `signals/briefs/<slug>/infographic.png` for slugs the pre-step queued as changed or missing-backfill. Do not modify any `LIVING_BRIEF.md` (synthesis owns those), `signals/updates/`, `signals/agent/`, `signals/seen-urls.txt`, or `data/`.
 
 ## Task
 
-For every brief Layer 3 just created or modified, regenerate `infographic.png` next to it via the bundled `creative-baoyu-infographic` skill. Use the working-tree-vs-`HEAD` diff to detect what changed (Layer 3's no-write check guarantees only real content edits show up). Then, with whatever cap room is left, self-heal: any brief directory that has a `LIVING_BRIEF.md` but no `infographic.png` is a prior Layer 4 failure (the brief embeds the image unconditionally, so it renders broken until regenerated) — backfill those too.
+For every brief carrying a genuinely new signal this run, regenerate `infographic.png` next to it via the bundled `creative-baoyu-infographic` skill. The changed set is precomputed in `data/infographic-queue.json` (`changed`) — do not recompute it from a git diff. Then process the pre-step's backfill list (`missing`): any brief directory that has a `LIVING_BRIEF.md` but no `infographic.png` is a prior Layer 4 failure (the brief embeds the image unconditionally, so it renders broken until regenerated).
 
 ## Inputs
 
-- The working-tree state of `signals/briefs/`. Compare against `HEAD` to find what Layer 3 just wrote.
-- The brief markdown itself, one file per changed slug: `signals/briefs/<slug>/LIVING_BRIEF.md`.
+- `data/infographic-queue.json` — `{"changed": [<slug>, ...], "missing": [<slug>, ...]}`, written by `scripts/select_infographic_queue.py`. `changed` = briefs carrying a new signal this run; `missing` = missing-infographic backfill, oldest-first, already stripped of anything in `changed`.
+- The brief markdown itself, one file per queued slug: `signals/briefs/<slug>/LIVING_BRIEF.md`.
 
 ## Constants
 
@@ -26,30 +28,19 @@ For every brief Layer 3 just created or modified, regenerate `infographic.png` n
 
 1. **Compute today's UTC date** as `<UTC-date>` (format `YYYY-MM-DD`). Used only for logging.
 
-2. **Build `CHANGED_SLUGS`.** Run these two commands and union their outputs:
+2. **Read `CHANGED_SLUGS`** — the `changed` array from `data/infographic-queue.json` (briefs that gained a genuinely new signal this run, decided by the deterministic pre-step). Do not derive it from a git diff.
 
    ```
-   git diff --name-only HEAD -- 'signals/briefs/*/LIVING_BRIEF.md' \
-     | sed -E 's,^signals/briefs/([^/]+)/.*,\1,' | sort -u
+   python3 -c "import json;print('\n'.join(json.load(open('data/infographic-queue.json'))['changed']))"
    ```
 
-   ```
-   git ls-files --others --exclude-standard -- 'signals/briefs/*/LIVING_BRIEF.md' \
-     | sed -E 's,^signals/briefs/([^/]+)/.*,\1,' | sort -u
-   ```
-
-   First catches modifications; second catches untracked creates. Union, sort, dedupe → `CHANGED_SLUGS`.
-
-3. **Build `MISSING_SLUGS`** — briefs broken by a prior Layer 4 failure, oldest first:
+3. **Read `MISSING_SLUGS`** — the `missing` array from the same file (briefs with a `LIVING_BRIEF.md` but no `infographic.png`, oldest-first, already de-duped against `changed`):
 
    ```
-   for f in signals/briefs/*/LIVING_BRIEF.md; do
-     d=$(dirname "$f")
-     [ -f "$d/infographic.png" ] || printf '%s %s\n' "$(git log -1 --format=%ct -- "$f")" "$(basename "$d")"
-   done | sort -n | awk '{print $2}'
+   python3 -c "import json;print('\n'.join(json.load(open('data/infographic-queue.json'))['missing']))"
    ```
 
-   (Last-commit timestamp ascending — least recently updated brief first. Checkout mtimes are meaningless on the runner, so order by git, not the filesystem.) Drop any slug already in `CHANGED_SLUGS` → `MISSING_SLUGS`.
+   If `data/infographic-queue.json` is absent (pre-step didn't run), treat both lists as empty.
 
 4. **If both `CHANGED_SLUGS` and `MISSING_SLUGS` are empty**, write nothing and exit with stdout `no briefs changed today`.
 

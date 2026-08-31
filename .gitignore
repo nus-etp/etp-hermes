@@ -30,6 +30,7 @@ data/candidates.json
 data/agent-companies.json
 data/touched-companies.json
 data/agent-open-questions.json
+data/infographic-queue.json
 
 # pre-Layer-1 snapshot of seen-urls (filter_seen_updates.py) — regenerated per run
 data/seen-urls-prerun.txt
