@@ -1,5 +1,5 @@
 # NEU Battery Materials — LIVING BRIEF
-_Last updated: 2026-08-07 14:18 UTC_
+_Last updated: 2026-09-01 17:23 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -21,6 +21,9 @@ _Last material event: 2026-01-06 — Pre-Series A first close led by SGInnovate 
 _Total disclosed: $4.3M._
 
 ## Recent signals
+- **2026-09-01** — Published analysis arguing Europe's grid-scale ESS buildout — Chinese suppliers booked ~120 GWh of LFP storage orders in H1 2026 — creates recycling demand that must be sited in Europe, positioning its electrochemical process for the wave — [neumaterials.com](https://www.neumaterials.com/news/european-ev-and-ess-batteries-fuel-recycling-demand)
+  - Summary: NEU argues that while EU recycling policy centres on EVs, grid storage running the same LFP chemistry is growing faster: Chinese suppliers booked roughly 120 GWh of European energy-storage orders in H1 2026 (up 83% YoY), and BEV registrations rose 51% YoY in July to ~279,800 units (24.9% share). Because imported cells arrive without recovery plans and the EU Battery Regulation puts recycling obligations on whoever places batteries on the market, NEU contends recovery capacity must be built where batteries are installed — the market its electrochemical LFP process targets.
+  - Numbers: 120 GWh Chinese storage orders to Europe H1 2026 (+83% YoY); 279,800 BEV registrations July 2026 (+51% YoY); 90% LFP share of 2025 global stationary storage (IEA); 50% lithium recovery by end-2027, 80% by 2031
 - **2026-08-05** — Published analysis of the 30 July US Presidential Determination authorising Commerce to restrict black-mass exports, arguing the policy shift rewards domestic modular recycling capacity — [neumaterials.com](https://www.neumaterials.com/news/the-us-just-gave-itself-the-power-to-restrict-black-mass-exports)
   - Summary: NEU analysed Presidential Determination No. 2026-19 (signed 30 July 2026), which invokes Section 101 of the Defense Production Act and gives the Commerce Department authority to restrict exports of black mass, magnet scrap, and other critical-mineral scrap — without banning anything yet. The piece argues the designation puts scrap on par with defense-critical minerals and, with federal rules barring defence-industry purchases of Chinese minerals from 1 January 2027, favours building domestic recycling capacity — the market NEU's modular LFP process targets.
   - Counterparties: US President / Commerce Department (regulator)
@@ -45,5 +48,4 @@ _Total disclosed: $4.3M._
 ## Open questions
 - When will NEU's first commercial-scale recycling facility come online and at what capacity?
 - Has NEU secured feedstock supply agreements with battery manufacturers or EV OEMs?
-- Will the European stationary storage boom create a parallel recycling demand that NEU's LFP process can address?
 - Does the US policy push change NEU's go-to-market — is it pursuing North American deployment of its modular recycling systems?

@@ -1,11 +1,11 @@
 # BEEX — LIVING BRIEF
-_Last updated: 2026-08-18 13:48 UTC_
+_Last updated: 2026-09-01 17:23 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 NUS GRIP-incubated Singapore autonomous underwater vehicle (AUV) startup building inspection and survey drones for the maritime industry. BEEX has progressed from seed funding through a Series A in 2025 and is now deploying its most advanced drone, BETTA, signaling product maturation and a push into global markets.
 
-_Last material event: 2026-07-07 — SepcoTech A/S partnership to distribute BeeX's HAUV platform to European naval and defense customers_
+_Last material event: 2026-08-21 — Copper Turtle partnership to bring BeeX's autonomous underwater drones to naval forces across the UK and Europe_
 
 ## Profile
 - Sector: Robotics
@@ -20,6 +20,11 @@ _Last material event: 2026-07-07 — SepcoTech A/S partnership to distribute Bee
 _Total disclosed: $9.8M._
 
 ## Recent signals
+- **2026-08-21** — Copper Turtle, a UK defence-market specialist, will bring BeeX's hovering AUVs to naval forces across the UK and Europe for underwater infrastructure inspection, clearance diving and mine countermeasures — [copperturtle.co.uk](https://www.copperturtle.co.uk/insights/insights/beexcopperturtle)
+  - Summary: Copper Turtle announced a partnership with BeeX to support its hovering AUVs, pairing Copper Turtle's European defence-market expertise with BeeX's technology to reach UK and NATO naval customers across inspection, clearance-diving and mine-countermeasures missions.
+  - People: Christopher Wardman (Director, Copper Turtle), Elaine Plested (Founder and CEO, Copper Turtle)
+  - Counterparties: Copper Turtle (Distribution Partner)
+  - Quote: "This is a step change in enhancing our offering on the European stage. With our other complimentary partners, offering sensor and positioning solutions in the underwater battlespace will be key to supporting the UK and NATO countries." — Christopher Wardman, Director, Copper Turtle
 - **date unknown** — BeeX publishes a technical explainer on autonomy levels in unmanned underwater vehicles, positioning A.IKANBILIS's integrated autonomy for inspection missions — [beex.sg](https://beex.sg/blogs/levels-of-autonomy-in-unmanned-underwater-vehicles-use-cases-limitations-and-a-ikanbilis-integrated-autonomy)
 
 ## Older signals
