@@ -1,11 +1,11 @@
 # Constructor.io — LIVING BRIEF
-_Last updated: 2026-08-21 13:47 UTC_
+_Last updated: 2026-09-02 17:10 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 US-based enterprise eCommerce search and product-discovery platform using NLP and ML ranking to power personalized search, browse, and recommendations for major retailers. Already profitable and serving brands like Sephora, Petco, and Under Armour, Constructor recently raised a $25M Series B as an insurance policy — with minimal planned spend and a focus on R&D and EMEA expansion.
 
-_Last material event: 2026-06-25 — Named a Leader in Gartner Magic Quadrant for Search and Product Discovery (2nd straight year; furthest in Vision, highest in Execution)_
+_Last material event: 2026-08-27 — Partnered with IMPACT Commerce to pair AI product discovery with commerce strategy and implementation expertise_
 
 ## Profile
 - Sector: AI / SaaS
@@ -20,9 +20,17 @@ _Last material event: 2026-06-25 — Named a Leader in Gartner Magic Quadrant fo
 _Total disclosed: $55.0M._
 
 ## Recent signals
-_none_
+- **2026-08-27** — Partnered with IMPACT Commerce so retailers can combine Constructor's AI search and product discovery with IMPACT's commerce strategy, customer-experience and implementation expertise, building on joint work for beauty brand ELEMIS across the UK, US and EU — [constructor.com](https://constructor.com/blog/constructor-and-impact-commerce-partner-to-drive-better-ecommerce-experiences-with-ai)
+  - Summary: Constructor is partnering with IMPACT Commerce to offer retailers a bundled path from AI-powered product discovery to measurable growth: Constructor supplies search, browse, recommendations and conversational shopping built on real shopper behaviour, while IMPACT brings commerce strategy, customer experience and implementation capabilities. The partnership formalises an existing working relationship — the two teams previously ran a successful project for global beauty brand ELEMIS across the UK, US and EU. Constructor's 2025 State of Ecommerce research found 68% of shoppers think retail website search needs an upgrade and 40% say their favourite retailer still treats them like a stranger.
+  - Counterparties: IMPACT Commerce (partner), ELEMIS (joint customer reference)
+  - Numbers: 68% of shoppers say retail search needs an upgrade; 40% say favourite retailer treats them like a stranger
 
 ## Older signals
+- **2026-07-09** — Ranked #1 in 3 of 5 use cases in Gartner's Critical Capabilities for Search and Product Discovery — GenAI Product Discovery, Product Search and Discovery, and Multisite and Globalization — the only vendor to score highest in 3 of 5 use cases for the second straight year — [prnewswire.com](https://www.prnewswire.com/news-releases/constructor-has-the-most-1-rankings-in-gartner-critical-capabilities-for-search-and-product-discovery-report-302821039.html)
+  - Summary: Gartner's Critical Capabilities for Search and Product Discovery report evaluated 12 vendors across five use cases, with Constructor ranked #1 in three — "GenAI Product Discovery," "Product Search and Discovery," and "Multisite and Globalization" — the second year running that Constructor is the only vendor to score highest in three of five use cases. The report is the companion to the Gartner Magic Quadrant for Search and Product Discovery, where Constructor was recently named a Leader placing furthest in Vision and highest in Execution.
+  - People: Eli Finkelshteyn (CEO & Co-Founder)
+  - Numbers: #1 in 3 of 5 use cases; 12 vendors evaluated; 2 years straight
+  - Quote: "In our view, these rankings reflect Constructor's commitment to applying AI to solve real challenges for our customers and their shoppers." — Eli Finkelshteyn, CEO and Co-Founder
 - **2026-06-25** — Named a Leader in Gartner's Magic Quadrant for Search and Product Discovery for the second straight year, placing furthest in Vision and highest in Execution among all vendors evaluated — [prnewswire.com](https://www.prnewswire.com/news-releases/constructor-named-a-leader-in-gartner-magic-quadrant-for-search-and-product-discovery--placing-furthest-in-vision-and-highest-in-execution-302810989.html) (Also reported by: [constructor.com](https://constructor.com/blog/gartner-magic-quadrant-2026-leader))
   - Summary: Constructor was named a Leader in the Gartner Magic Quadrant for Search and Product Discovery — its second consecutive year in the Leaders quadrant — placing furthest on the Completeness of Vision axis and highest on the Ability to Execute axis among all vendors evaluated. The recognition follows a run of analyst accolades: Leader in the Forrester Wave for Commerce Search and Product Discovery (Q3 2025), Leader in the IDC MarketScape for Retail GenAI-Driven Product Discovery, the only vendor named Customers' Choice in the 2025 Gartner Peer Insights Voice of the Customer report, and Retail Company of the Year at the American Business Awards for the second straight year.
   - People: Eli Finkelshteyn (CEO & Co-Founder)

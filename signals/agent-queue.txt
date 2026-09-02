@@ -1,18 +1,18 @@
-StaffAny
-Stratificare
-Synectify
-Tacniq
-Akro
-Forte Biotech
-Green COP
-Hivebotics
-Acoerela
-Addlly AI
-Agrolitik
-AIPath
-Anomaly Bio
-INVIGILO
-NuSPACE
-Patsnap
-polybee
+BioActivX
 seamless
+Ailytics
+Assemblr
+Belli AI
+Carousell
+ChemT Biotechnology
+ConcreteAI
+Craft Health
+Constructor.io
+dConstruct Robotics
+Duluin
+EcoMatcher
+Finan
+FingerDance
+FizzDragon
+Flexxon
+Flyoro Technologies

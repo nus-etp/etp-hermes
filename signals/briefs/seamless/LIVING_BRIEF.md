@@ -1,16 +1,22 @@
 # seamless — LIVING BRIEF
-_Last updated: 2026-06-07 15:01 UTC_
+_Last updated: 2026-09-02 17:10 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Seamless (Seamless XR) is an NUS GRIP-incubated Singapore deep-tech startup developing haptic-feedback and sensory-assessment solutions for the healthcare and rehabilitation market. Its "Achilles" platform for automated diabetic foot screening and ongoing blog output on sensory rehabilitation protocols point to a product strategy targeting the large and underserved diabetic neuropathy screening market.
 
+_Last material event: 2025-11-30 — Won the raiSE Social Impact Grant Prize at the 12th Lee Kuan Yew Global Business Plan Competition_
+
 ## Profile
-- Sector: MedTech / sensory rehabilitation / XR health
+- Sector: MedTech / XR
 - Region: Singapore
 - Founded: ~2022
 - Stage / funding: Early stage; no priced equity round disclosed
+- Key people: Ajinkya Bhat (CEO & Co-Founder)
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/seamless-xr)
+
+## Funding history
+_No disclosed funding._
 
 ## Recent signals
 _none_
@@ -29,7 +35,12 @@ _none_
   - Summary: Corroborates the screening-gap narrative; Singapore's National Healthcare Group integrated foot programme achieved 40% reduction in major amputations.
 - **2026-03-12** — Published blog reviewing current sensory rehabilitation methods and their limitations, advocating for technology-assisted alternatives — [seamless.sg](https://www.seamless.sg/blog/sensory-rehabilitation-is-necessary-but-here-s-the-problem)
   - Summary: Reviews traditional sensory retraining techniques and advocates for technology-assisted approaches (VR/robotic platforms) as superior standardized, high-dose alternatives requiring less therapist time.
+- **2025-11-30** — Won the raiSE Social Impact Grant Prize at the 12th Lee Kuan Yew Global Business Plan Competition (LKYGBPC) for its Artemis automated somatosensory assessment platform, among 1,500+ entries from 91 countries — [seamless.sg](https://www.seamless.sg/news/seamless-xr-wins-raise-social-impact-grant-prize)
+  - Summary: Seamless XR was awarded the raiSE Social Impact Grant Prize at the 12th LKYGBPC, offered in partnership with raiSE to recognise social enterprises using technology to address pressing social needs in Singapore. Its Artemis platform beat more than 1,500 entries from 91 countries with an automated somatosensory assessment system for stroke and diabetic neuropathy patients, converting manual, subjective assessments — which only 1 in 4 clinicians conduct due to time constraints — into objective, patient-driven testing with instant EMR-ready reports. The prize confirms grant-backed rather than institutional-equity funding to date: no priced round is disclosed.
+  - People: Ajinkya Bhat (CEO & Co-Founder)
+  - Counterparties: raiSE (grant-prize partner), LKYGBPC (competition organiser)
+  - Numbers: 1,500+ entries; 91 countries; 1 in 4 clinicians performing manual sensory assessments
+  - Quote: "This recognition validates our mission to make sensory assessment accessible across community hospitals, active aging centers, and telerehab settings." — Ajinkya Bhat, CEO and Co-Founder, Seamless XR
 
 ## Open questions
-- Has seamless raised any institutional funding, or is development still bootstrapped / grant-funded?
 - What is the commercial status of the Achilles platform — pilot deployments, regulatory clearance, or revenue?

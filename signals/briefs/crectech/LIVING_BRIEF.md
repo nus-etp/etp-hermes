@@ -1,5 +1,5 @@
 # CRecTech — LIVING BRIEF
-_Last updated: 2026-08-30 17:18 UTC_
+_Last updated: 2026-09-02 17:10 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -15,6 +15,10 @@ _Last material event: 2026-08-29 — CEO Lim Kang Hui named Young Innovator at t
 - **2024** — Grant, undisclosed — Breakthrough Energy Fellows; Breakthrough Energy, Temasek, Enterprise Singapore, SGInnovate — [temasek.com.sg](https://www.temasek.com.sg/en/news-and-resources/news-room/news/2024/BEF-SEA_announce_first_cohort)
 
 ## Recent signals
+- **2026-08-31** — Selected as one of nine CIIC 2026 finalists (Energy Transition track) competing for the Rp15 billion prize pool, with its palm-oil-biogas-to-bio-methanol solution; final pitch 6 Oct 2026 at IISF Jakarta — [crectech.net](https://crectech.net/news/crectech-finalist-climate-impact-innovations-challenge-2026) (Also reported by: [climateimpactinnovations.com](https://climateimpactinnovations.com/nine-finalists-of-climate-impact-innovations-challenge-2026-to-compete-for-rp15-billion-to-advance-indonesias-climate-solutions))
+  - Summary: CRecTech was selected from more than 850 applications across roughly 60 countries as one of nine finalists of the Climate Impact Innovations Challenge (CIIC) 2026, presented by East Ventures, Temasek Foundation and Tencent, and one of three Energy Transition track finalists alongside Phase Two Chemicals and Sun Ice Energy. Its winning solution converts palm oil biogas into bio-methanol at 50% lower production cost with emissions cuts of up to 93% versus conventional pathways. The challenge offers a Rp15 billion prize pool plus a possible special award of pre-purchased carbon credits worth up to US$1 million, with mentorship on partnerships, go-to-market and commercialisation ahead of the Grand Finale on 6 October 2026 at the Indonesia International Sustainability Forum in Jakarta. CRecTech frames the placement as a chance to deepen Indonesian partnerships and accelerate commercial-scale deployment of its biogas-to-bio-methanol technology.
+  - Counterparties: East Ventures (challenge presenter), Temasek Foundation (challenge presenter), Tencent (challenge presenter)
+  - Numbers: 9 finalists (3 per track); 850+ applications; ~60 countries; Rp15 billion prize pool; up to US$1M pre-purchased carbon credits; 50% lower cost; up to 93% emission cut; Grand Finale 2026-10-06
 - **2026-08-29** — CEO Lim Kang Hui named Young Innovator at the inaugural IP for Growth Awards 2026 (IPOS), recognition centered on CRecTech's patent-plus-trade-secret strategy for its catalytic bio-methanol tech — [crectech.net](https://crectech.net/news/lim-kang-hui-young-innovator-ip-for-growth-awards-2026)
   - Summary: Dr. Lim Kang Hui, CRecTech co-founder and CEO, received the Young Innovator award at the inaugural IP for Growth Awards 2026, organised by the Intellectual Property Office of Singapore (IPOS) and IPOS International; the ceremony was held 25 August 2026 ahead of Singapore IP Week 2026. The category recognises individuals aged 35 and below who use intellectual property to turn ideas into ventures with economic, environmental, or social impact. CRecTech says it protects its technology through patents on selected catalyst innovations plus trade secrets and confidential know-how covering catalyst manufacturing, process design, and operating conditions — an approach also highlighted in The Straits Times' coverage of the awards.
   - People: Dr. Lim Kang Hui (Co-founder & CEO)

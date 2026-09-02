@@ -1,9 +1,11 @@
 # Flexxon — LIVING BRIEF
-_Last updated: 2026-08-29 17:18 UTC_
+_Last updated: 2026-09-02 17:10 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Flexxon is a Singapore cybersecurity-hardware company (founded 2007) that builds X-PHY, the world's first AI-embedded SSD with hardware-level threat detection and physical-tamper response. Co-founded by Camellia Chan and May Chng, the company has expanded into the US market through Maryland's Global Gateway Soft Landing Program at bwtech@UMBC, focusing on deepfake detection, server security, and endpoint protection built into the device itself.
+
+_Last material event: 2026-04-07 — Established US operations through Maryland's Global Gateway Soft Landing Program at bwtech@UMBC_
 
 ## Profile
 - Sector: Cybersecurity / Deep tech
@@ -18,6 +20,11 @@ _No disclosed funding._
 _none_
 
 ## Older signals
+- **2026-07-27** — Co-founder and CEO Camellia Chan recognized on the SG 100 Women in Tech list (2023 edition by Singapore Computer Society and IMDA); the underlying award dates to September 2023, with the page updated 27 July 2026 — [flexxon.com](https://www.flexxon.com/flexxon-ceo-camellia-chan-named-one-of-singapores-100-women-in-tech)
+  - Summary: Flexxon's news page records that Co-Founder and CEO Camellia Chan was named an SG 100 Women in Tech 2023 honouree by the Singapore Computer Society and IMDA — the third edition of the list, unveiled at a closed-door forum by Minister Josephine Teo from more than 850 applications. Nominees had to demonstrate tech expertise, leadership and vision, and community advocacy. Note: the underlying recognition dates to September 2023; this item surfaced via a page update rather than a new award.
+  - People: Camellia Chan (Co-Founder & CEO), Josephine Teo (Minister for Communications and Information; SGWIT patron)
+  - Counterparties: Singapore Computer Society (award organiser), IMDA (award organiser)
+  - Numbers: 850+ applications; 3rd edition of SG100WIT
 - **2026-04-07** — Flexxon established US operations through Maryland's Global Gateway Soft Landing Program at bwtech@UMBC, citing engineering talent and the university innovation ecosystem — [business.maryland.gov](https://business.maryland.gov/news/singapore-cybersecurity-company-finds-success-in-maryland/)
   - Summary: Flexxon's X-PHY cybersecurity spin-off joined Maryland's soft-landing program at UMBC's research and technology park. The company chose Maryland for its engineering talent, proximity to research institutions, and resourceful industry partners. X-PHY's approach embeds hardware and firmware-based security directly into the device, enabling proactive real-time defense at the data level, with applications in deepfake detection, server security, and endpoint protection.
   - People: May Chng (Co-founder & COO)
