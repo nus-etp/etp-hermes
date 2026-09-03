@@ -1,5 +1,5 @@
 # BEEX — LIVING BRIEF
-_Last updated: 2026-09-01 17:23 UTC_
+_Last updated: 2026-09-03 17:01 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,7 +20,7 @@ _Last material event: 2026-08-21 — Copper Turtle partnership to bring BeeX's a
 _Total disclosed: $9.8M._
 
 ## Recent signals
-- **2026-08-21** — Copper Turtle, a UK defence-market specialist, will bring BeeX's hovering AUVs to naval forces across the UK and Europe for underwater infrastructure inspection, clearance diving and mine countermeasures — [copperturtle.co.uk](https://www.copperturtle.co.uk/insights/insights/beexcopperturtle)
+- **2026-08-21** — Copper Turtle, a UK defence-market specialist, will bring BeeX's hovering AUVs to naval forces across the UK and Europe for underwater infrastructure inspection, clearance diving and mine countermeasures — [copperturtle.co.uk](https://www.copperturtle.co.uk/insights/insights/beexcopperturtle) (Also reported by: [beex.sg](https://www.beex.sg/news/copper-turtle-announce-partnership-with-beex))
   - Summary: Copper Turtle announced a partnership with BeeX to support its hovering AUVs, pairing Copper Turtle's European defence-market expertise with BeeX's technology to reach UK and NATO naval customers across inspection, clearance-diving and mine-countermeasures missions.
   - People: Christopher Wardman (Director, Copper Turtle), Elaine Plested (Founder and CEO, Copper Turtle)
   - Counterparties: Copper Turtle (Distribution Partner)

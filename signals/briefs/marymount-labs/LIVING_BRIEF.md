@@ -1,5 +1,5 @@
 # Marymount Labs — LIVING BRIEF
-_Last updated: 2026-08-07 14:18 UTC_
+_Last updated: 2026-09-03 17:01 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -17,7 +17,7 @@ _Last material event: 2025-11-15 — Partnership with Tzu-Chi Foundation to brin
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-08-26** — The Tzu-Chi Foundation deployment of Marymount Labs' WhatsApp Companion has engaged ~700 seniors, with a 50% rise in programme participation, per The Straits Times — [straitstimes.com](https://www.straitstimes.com/singapore/health/new-suss-initiative-to-boost-student-start-ups-and-social-ventures-tackling-social-challenges)
 
 ## Older signals
 - **2026-06-26** — Marymount Labs — Turn Care Plans into Patient Action — [marymountlabs.com](https://www.marymountlabs.com)
@@ -27,6 +27,5 @@ _none_
   - Summary: Marymount Labs partnered with Tzu-Chi Foundation on an AI-powered WhatsApp programme that delivers personalised nudges and activity recommendations to engage seniors. The company's news listing credits the coverage to The Straits Times and positions the programme within its social-care solutions.
 
 ## Open questions
-- What specific milestones or traction has Marymount Labs achieved since joining the NUS Medicine DATA accelerator?
 - Is there a priced equity round in progress, or is the company still relying on grant and accelerator support?
 - What is the commercial structure of the Tzu-Chi Foundation deployment — paid contract, grant, or pro-bono pilot?
