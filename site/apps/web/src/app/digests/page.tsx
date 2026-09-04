@@ -35,7 +35,7 @@ export default function DigestsIndex() {
             <li key={date}>
               <Link
                 href={`/digests/${date}/`}
-                className="group ring-base-divider-subtle hover:ring-base-divider-default flex h-full flex-col gap-2 rounded-xl bg-white p-5 shadow-sm ring-1 transition hover:-translate-y-0.5 hover:shadow-md"
+                className="group ring-base-divider-subtle hover:ring-base-divider-default flex h-full flex-col gap-2 rounded-xl bg-base-canvas-alt p-5 shadow-sm ring-1 transition hover:-translate-y-0.5 hover:shadow-md"
               >
                 <div className="flex items-center justify-between">
                   <span className="prose-headline-base-semibold flex items-center gap-2 text-lg">

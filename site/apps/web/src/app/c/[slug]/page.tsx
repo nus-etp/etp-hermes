@@ -47,7 +47,7 @@ export default async function CompanyPage({ params }: Params) {
             {company.name}
           </h1>
           {company.hasBrief && (
-            <span className="rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700 ring-1 ring-indigo-200">
+            <span className="rounded-full bg-[#302d41] px-2.5 py-0.5 text-xs font-medium text-[#cba6f7] ring-1 ring-[#494060]">
               Living brief
             </span>
           )}
@@ -116,7 +116,7 @@ function FundingTable({ rounds }: { rounds: FundingRound[] }) {
       <h2 className="prose-headline-base-semibold mb-3 text-xl">
         Funding history
       </h2>
-      <div className="ring-base-divider-subtle overflow-x-auto rounded-xl bg-white ring-1">
+      <div className="ring-base-divider-subtle overflow-x-auto rounded-xl bg-base-canvas-alt ring-1">
         <table className="min-w-full text-sm">
           <thead className="text-base-content-medium bg-slate-50 text-left text-xs uppercase tracking-wider">
             <tr>
@@ -166,7 +166,7 @@ function FallbackBody({
                   href={s.url}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="ring-base-divider-subtle hover:ring-base-divider-default inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-medium ring-1 hover:bg-slate-50"
+                  className="ring-base-divider-subtle hover:ring-base-divider-default inline-flex items-center gap-1.5 rounded-full bg-base-canvas-alt px-3 py-1.5 text-xs font-medium ring-1 hover:bg-slate-50"
                 >
                   <span className="text-base-content-medium font-mono uppercase">
                     {s.type}
@@ -186,7 +186,7 @@ function FallbackBody({
 
 function FactPill({ label, value }: { label: string; value: string }) {
   return (
-    <span className="ring-base-divider-subtle inline-flex items-baseline gap-1.5 rounded-full bg-white px-2.5 py-1 text-xs ring-1">
+    <span className="ring-base-divider-subtle inline-flex items-baseline gap-1.5 rounded-full bg-base-canvas-alt px-2.5 py-1 text-xs ring-1">
       <span className="text-base-content-medium font-mono uppercase tracking-wider">
         {label}
       </span>

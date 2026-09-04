@@ -48,7 +48,7 @@ const components: Components = {
       {...props}
       target={props.href?.startsWith('http') ? '_blank' : undefined}
       rel={props.href?.startsWith('http') ? 'noreferrer noopener' : undefined}
-      className="break-words text-indigo-600 underline-offset-2 hover:underline"
+      className="break-words text-indigo-400 underline-offset-2 hover:underline"
     />
   ),
   strong: (props) => (

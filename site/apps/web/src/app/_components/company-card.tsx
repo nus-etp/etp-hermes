@@ -18,7 +18,7 @@ function highlight(text: string, query?: string) {
   return (
     <>
       {text.slice(0, idx)}
-      <mark className="rounded bg-yellow-200/70 px-0.5">
+      <mark className="rounded bg-[#f9e2af]/25 px-0.5 text-[#f9e2af]">
         {text.slice(idx, idx + q.length)}
       </mark>
       {text.slice(idx + q.length)}
@@ -45,7 +45,7 @@ export function CompanyCard({ company, query }: Props) {
           {company.hasBrief && (
             <span
               title="Living brief available"
-              className="inline-flex flex-shrink-0 items-center gap-1 rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700 ring-1 ring-indigo-200"
+              className="inline-flex flex-shrink-0 items-center gap-1 rounded-full bg-[#302d41] px-2.5 py-0.5 text-xs font-medium text-[#cba6f7] ring-1 ring-[#494060]"
             >
               <BiBookContent className="h-3.5 w-3.5" /> Brief
             </span>
@@ -80,10 +80,10 @@ export function CompanyCard({ company, query }: Props) {
 }
 
 const chipPalette = {
-  indigo: 'bg-indigo-50 text-indigo-700 ring-indigo-200',
-  emerald: 'bg-emerald-50 text-emerald-700 ring-emerald-200',
-  amber: 'bg-amber-50 text-amber-800 ring-amber-200',
-  slate: 'bg-slate-100 text-slate-700 ring-slate-200',
+  indigo: 'bg-[#302d41] text-[#cba6f7] ring-[#494060]',
+  emerald: 'bg-[#233229] text-[#a6e3a1] ring-[#2e463a]',
+  amber: 'bg-[#332d20] text-[#f9e2af] ring-[#4a3f28]',
+  slate: 'bg-[#313244] text-[#cdd6f4] ring-[#45475a]',
 } as const
 
 function Chip({

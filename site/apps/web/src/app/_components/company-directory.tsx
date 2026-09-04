@@ -149,7 +149,7 @@ export function CompanyDirectory({
             onChange={(e) => void setQ(e.target.value || null)}
             aria-label="Search companies, aliases, descriptions"
             placeholder="Search companies, aliases, descriptions…"
-            className="border-base-divider-default placeholder:text-base-content-subtle focus:border-interaction-main-default focus:ring-interaction-main-default w-full rounded-lg border bg-white py-2.5 pr-3 pl-9 text-sm shadow-sm focus:ring-1 focus:outline-none"
+            className="border-base-divider-default placeholder:text-base-content-subtle focus:border-interaction-main-default focus:ring-interaction-main-default w-full rounded-lg border bg-base-canvas-alt py-2.5 pr-3 pl-9 text-sm shadow-sm focus:ring-1 focus:outline-none"
           />
           {q && (
             <button
@@ -227,7 +227,7 @@ export function CompanyDirectory({
             <select
               value={sort}
               onChange={(e) => void setSort(e.target.value as SortKey)}
-              className="ring-base-divider-default focus:ring-interaction-main-default rounded-md bg-white px-2 py-1 text-sm ring-1 focus:ring-2 focus:outline-none"
+              className="ring-base-divider-default focus:ring-interaction-main-default rounded-md bg-base-canvas-alt px-2 py-1 text-sm ring-1 focus:ring-2 focus:outline-none"
             >
               <option value="relevance">Relevance</option>
               <option value="name">A–Z</option>
@@ -239,7 +239,7 @@ export function CompanyDirectory({
         </div>
 
         {filtered.length === 0 ? (
-          <div className="ring-base-divider-subtle flex flex-col items-center justify-center gap-3 rounded-xl bg-white py-16 text-center ring-1">
+          <div className="ring-base-divider-subtle flex flex-col items-center justify-center gap-3 rounded-xl bg-base-canvas-alt py-16 text-center ring-1">
             <p className="prose-headline-base-semibold">No matches</p>
             <p className="text-base-content-medium max-w-sm text-sm">
               Try removing a filter or broadening your search.
@@ -274,7 +274,7 @@ function Toggle({
   onChange: (v: boolean) => void
 }) {
   return (
-    <label className="border-base-divider-subtle flex cursor-pointer items-center justify-between gap-3 rounded-lg border bg-white px-3 py-2 text-sm">
+    <label className="border-base-divider-subtle flex cursor-pointer items-center justify-between gap-3 rounded-lg border bg-base-canvas-alt px-3 py-2 text-sm">
       <span className="font-medium">{label}</span>
       <button
         type="button"
