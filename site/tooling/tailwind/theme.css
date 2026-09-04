@@ -210,6 +210,44 @@
   --color-interaction-links-inverse-default: #eff1f5;
   --color-interaction-links-inverse-hover: #e6e9ef;
 
+  /* Tailwind default purples remapped to Catppuccin signature accents.
+     These drive the hero gradient, links, sector chips, and toggles. */
+  /* indigo → mauve (#8839ef) — the primary accent */
+  --color-indigo-50: #f5ecfe;
+  --color-indigo-100: #ebd9fd;
+  --color-indigo-200: #d4b3fb;
+  --color-indigo-300: #bd8cf8;
+  --color-indigo-400: #a566f3;
+  --color-indigo-500: #8839ef;
+  --color-indigo-600: #7b2fdc;
+  --color-indigo-700: #6825bb;
+  --color-indigo-800: #561e99;
+  --color-indigo-900: #421775;
+
+  /* violet → mauve/lavender blend (hero mid-stop) */
+  --color-violet-50: #f0eefe;
+  --color-violet-100: #e2ddfd;
+  --color-violet-200: #c6bcfb;
+  --color-violet-300: #a89af8;
+  --color-violet-400: #8e7bf4;
+  --color-violet-500: #7d5cf0;
+  --color-violet-600: #7048e6;
+  --color-violet-700: #5f38cf;
+  --color-violet-800: #4f2eac;
+  --color-violet-900: #3e2588;
+
+  /* fuchsia → pink (#ea76cb) (hero end-stop) */
+  --color-fuchsia-50: #fdeef8;
+  --color-fuchsia-100: #fbd9f0;
+  --color-fuchsia-200: #f6b3e0;
+  --color-fuchsia-300: #f08ccf;
+  --color-fuchsia-400: #ea76cb;
+  --color-fuchsia-500: #e158bb;
+  --color-fuchsia-600: #d63ba8;
+  --color-fuchsia-700: #b52f8d;
+  --color-fuchsia-800: #932673;
+  --color-fuchsia-900: #721d59;
+
   /* Utility — feedback & focus */
   --color-utility-feedback-info: #1e66f5;
   --color-utility-feedback-info-subtle: #eef3ff;
