@@ -1,5 +1,5 @@
 # Horizon Quantum Computing — LIVING BRIEF
-_Last updated: 2026-08-04 15:23 UTC_
+_Last updated: 2026-09-04 17:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -23,6 +23,10 @@ _Last material event: 2026-08-04 — Reported Q2 2026 results as Nasdaq-listed H
 _Total disclosed: $22.2M._
 
 ## Recent signals
+- **2026-08-31** — Straits Times feature on how Singapore turns billion-dollar science research into commercial success spotlights Horizon Quantum, per the company's newsroom coverage list — [straitstimes.com](https://www.straitstimes.com/singapore/how-singapore-turns-billion-dollar-science-research-into-real-world-success)
+- **2026-08-27** — Fast Company's 48-expert roundup arguing it's time to stop sleeping on quantum computing includes Horizon Quantum, per the company's newsroom coverage list — [fastcompany.com](https://www.fastcompany.com/91581596/its-time-to-stop-sleeping-on-quantum-computing-48-experts-on-what-to-watch-for-next)
+
+## Older signals
 - **2026-08-04** — As Nasdaq-listed Horizon Quantum Holdings (HQ), reported Q2 2026 results: $113.3M cash after warrant exercises, $7.2M operating loss, and a $115.2M net loss dominated by a $108.3M non-cash warrant-remEASUREMENT charge; Beryllium entered early access and Ember-1 opened to first users — [horizonquantum.com](https://www.horizonquantum.com/resources/newsroom/horizon-quantum-announces-second-quarter-2026-financial-results) (Also reported by: [thequantuminsider.com](https://thequantuminsider.com/2026/08/04/horizon-quantum-reports-q2-2026-financial-results/))
   - Summary: Horizon Quantum Holdings Ltd. (Nasdaq: HQ), the listed parent of Singapore-based Horizon Quantum, reported Q2 2026 (ended June 30, 2026) with cash and equivalents of $113.3M, up from $96.6M at Q1 after $27.5M of gross warrant-exercise proceeds in the quarter. Operating loss widened to $7.2M from $2.7M a year earlier, and net loss was $115.2M including a $108.3M non-cash loss from remeasuring warrant-related derivative liabilities. Operationally, Beryllium — the object-oriented programming language layered atop Triple Alpha — became available to early-access users, and the Ember-1 Singapore testbed opened to first users.
   - People: Dr. Joe Fitzsimons (CEO and Founder)
@@ -32,8 +36,6 @@ _Total disclosed: $22.2M._
   - Summary: Horizon Quantum promoted Amanda Chew to Chief Product Officer, effective August 17, 2026, after she advanced through Director and VP of Product since joining in 2020. Before Horizon, Chew was a Senior Program Manager at Microsoft, working on Visual Studio App Center. As CPO she will lead product strategy and development across the company's software infrastructure, including Triple Alpha.
   - People: Amanda Chew (Chief Product Officer), Dr. Joe Fitzsimons (CEO)
   - Quote: "Her promotion to Chief Product Officer reflects both the impact she has already made in shaping the direction of the company and our confidence in her ability to lead the next phase of Horizon's product strategy." — Dr. Joe Fitzsimons, CEO
-
-## Older signals
 - **2026-07-29** — Strategic collaboration with Quantum Machines to develop embedded calibration technologies for the Ember-1 modular superconducting quantum computer, aiming to reduce downtime and improve operational reliability — [horizonquantum.com](https://www.horizonquantum.com/resources/newsroom/horizon-quantum-and-quantum-machines-announce-strategic-collaboration-to-increase-efficiency-of-quantum-systems)
   - Summary: Horizon Quantum and Quantum Machines will collaborate on embedded calibration technologies to enable lightweight calibration routines to run during normal system operation, reducing the need for lengthy full-system calibration cycles. The effort targets Horizon's first in-house hardware testbed, Ember-1, which uses QM's OPX1000 control system.
   - People: Dr. Joe Fitzsimons (CEO, Horizon Quantum), Dr. Itamar Sivan (CEO, Quantum Machines)

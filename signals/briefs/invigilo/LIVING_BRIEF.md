@@ -1,11 +1,11 @@
 # INVIGILO — LIVING BRIEF
-_Last updated: 2026-08-27 23:00 UTC_
+_Last updated: 2026-09-04 17:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 INVIGILO is an NUS GRIP-incubated Singapore deep-tech startup developing AI-powered video analytics for workplace safety across construction, oil & gas, and industrial sites. Recent milestones include winning Galp's global safety challenge (selected from 300+ applicants) and being awarded a JTC Innovative Procurement Partnership tender, signaling growing traction in both commercial and government markets.
 
-_Last material event: 2026-07-17 — Awarded JTC Innovative Procurement Partnership tender as one of three start-ups selected for worksite productivity monitoring_
+_Last material event: 2026-08-26 — Integrated technology partnership with HSI Donesafe connecting AI-powered risk detection with enterprise safety management_
 
 ## Profile
 - Sector: AI / Deep tech
@@ -17,7 +17,12 @@ _Last material event: 2026-07-17 — Awarded JTC Innovative Procurement Partners
 _Total disclosed: $0.5M._
 
 ## Recent signals
-_none_
+- **2026-08-26** — Integrated technology partnership with HSI Donesafe pairing INVIGILO's AI CCTV-based risk detection with HSI Donesafe's enterprise EHS incident-management platform — [donesafe.com](https://www.donesafe.com/blog/company/ai-workplace-safety-invigilo-donesafe-partnership)
+  - Summary: HSI Donesafe (an enterprise EHS platform backed by HSI, serving 22,000+ organisations) and INVIGILO announced an integrated technology partnership: INVIGILO's computer-vision detection of 40+ workplace risk scenarios over existing CCTV feeds into HSI Donesafe's incident, investigation, corrective-action and compliance workflows. The joint offering targets construction, manufacturing, logistics and warehousing, plus mining, resources and energy, and will be showcased at OS+H Asia in Singapore.
+  - People: Vishnu Saran (CEO and Co-founder, INVIGILO), Louise Minty (Partnerships Manager, HSI Donesafe)
+  - Counterparties: HSI Donesafe (technology partner)
+  - Numbers: 40+ workplace risk scenarios detected; HSI supports 22,000+ organisations
+  - Quote: "Most sites already have the cameras. What they do not have is someone watching every camera, all day, and that is the part we automate." — Vishnu Saran, CEO and Co-founder, INVIGILO
 
 ## Older signals
 - **2026-07-24** — Published thought leadership on underground construction safety challenges specific to Singapore's Cross Island Line — [invigilo.ai](https://www.invigilo.ai/post/underground-changes-every-safety-rule-you-know)
@@ -39,7 +44,7 @@ _none_
 - **2026-05-20** — Strategic partnership with Aespada to expand safety capabilities — [INVIGILO](https://www.invigilo.ai/post/invigilo-partnership-with-aespada)
 
 ## Open questions
-- How will NVIDIA Inception membership accelerate product development?
 - What is the commercial outcome of the Galp pilot program?
 - What is the scope and value of the JTC IPP tender for INVIGILO?
 - Will the Motorola Solutions | Avigilon Alta MOU convert into a commercial agreement, and does it signal expansion beyond the construction and industrial verticals in Southeast Asia?
+- Will the HSI Donesafe integration extend INVIGILO beyond Asia-Pacific into HSI's global EHS customer base, and is it a technology-integration or commercial resale arrangement?

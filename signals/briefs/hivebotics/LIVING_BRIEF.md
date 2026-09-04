@@ -1,11 +1,11 @@
 # Hivebotics — LIVING BRIEF
-_Last updated: 2026-08-26 14:21 UTC_
+_Last updated: 2026-09-04 17:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-Hivebotics is a Singapore-headquartered robotics startup incubated under NUS GRIP, developing autonomous cleaning robots for commercial and industrial environments. The company's toilet-cleaning robot has attracted serious commercial interest, suggesting strong early product-market fit in the janitorial robotics space.
+Hivebotics is a Singapore-headquartered robotics startup incubated under NUS GRIP, developing autonomous cleaning robots for commercial and industrial environments. The company closed a US$6M Series A led by Vertex Ventures in September 2026 to take its Abluo restroom-cleaning robot into volume production, building on 100+ first-year orders and a strategic investment from Nimbus.
 
-_Last material event: 2026-05-19 — Nimbus strategic investment in Hivebotics (terms undisclosed)_
+_Last material event: 2026-09-04 — Raised US$6M Series A led by Vertex Ventures to take the Abluo restroom-cleaning robot into volume production_
 
 ## Profile
 - Sector: Robotics
@@ -16,6 +16,7 @@ _Last material event: 2026-05-19 — Nimbus strategic investment in Hivebotics (
 _Total disclosed: $1.0M._
 
 ## Recent signals
+- **2026-09-04** — Raised US$6M in a Series A led by Vertex Ventures, with proceeds earmarked to take the Abluo restroom-cleaning robot into volume production — [techinasia.com](https://www.techinasia.com/news/vertex-ventures-leads-6m-sg-robotics-firm-hivebotics) (Also reported by: [businesstimes.com.sg](https://www.businesstimes.com.sg/companies-markets/robotics-startup-hivebotics-raises-us6-million-series-round-led-vertex-ventures), [e27.co](https://e27.co/hivebotics-nets-us6m-to-take-restroom-cleaning-robot-abluo-into-volume-production-20260904/))
 - **2026-08-26** — PickNik case study details how MoveIt Pro motion planning, autonomous navigation and simulation cut an estimated 10 months off Abluo's development and testing timeline — [picknik.ai](https://picknik.ai/case-study-hivebotics/)
   - Summary: PickNik Robotics published a case study on its work with Hivebotics to productionize the Abluo cleaning robot: customized MoveIt Pro arm path planning for confined spaces, autonomous navigation software for consistent mobile-base placement, and real-time simulations to de-risk physical deployment. PickNik estimates the collaboration saved roughly 10 months of product development and testing time against a typical year-plus timeline.
   - People: Rishab Patwari (CEO)
@@ -44,5 +45,5 @@ _Total disclosed: $1.0M._
 
 ## Open questions
 - What is Hivebotics' commercial model — robot sales, leasing, or robotics-as-a-service (RaaS)?
-- Is the Nimbus investment part of Hivebotics' Series A round or a separate strategic tranche, and who leads the Series A?
+- Is the Nimbus strategic investment part of Hivebotics' Series A round or a separate tranche?
 - Which verticals (hospitality, healthcare, commercial real estate, transport) is Hivebotics targeting for its broader facilities management vision?

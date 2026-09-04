@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-08-12 14:23 UTC_
+_Last updated: 2026-09-04 17:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -22,6 +22,9 @@ _Last material event: 2026-06-15 — Confidential dual IPO filing in Hong Kong a
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **date unknown** — Patsnap's own page announcing the CAS partnership now carries the note "this partnership concluded in 2026", marking the end of the CAS collaboration — [patsnap.com](https://www.patsnap.com/resources/blog/patsnap-and-cas-form-strategic-partnership)
+  - Summary: Patsnap's blog post announcing the CAS (Chemical Abstracts Service, a division of the American Chemical Society) partnership now opens with an editorial note that the partnership concluded in 2026, indicating the collaboration announced earlier this year has ended. The retained body text describes combining CAS's human-curated scientific data with Patsnap's AI/ML and data-visualization technologies for life- and material-science customers; no reason or exact end date is given. The conclusion makes the partnership's commercial structure moot and retires the open question on how CAS data was being delivered.
+
 ### Hiring
 - **2026-08-12** — 50+ roles posted since May 2026 across Life Sciences, Material, and AI verticals plus account-management/sales roles in Singapore, Toronto, London, Shanghai, and North America; Aug 12 adds an AI Product Manager for IP/AI Agent products in Data & Technology, extending the AI-agent build-out ahead of the dual HK/SG IPO — [jobs.lever.co](https://jobs.lever.co/patsnap)
 - **2026-06-27** — Forward Deployed Engineer for Japan (Japanese required), configuring AI Agent workflows for IP, R&D, and innovation enterprise customers — [jobs.lever.co](https://jobs.lever.co/patsnap/e80dcb4a-0644-4883-95f3-8e6a0c01e846)
@@ -63,4 +66,3 @@ _Total disclosed: $351.6M._
 - What is the expected valuation and timeline for the dual HK/Singapore IPO? Which exchange will be the primary listing?
 - Is the AI Agent Platform a new product line or an evolution of existing IP analytics? How does it differ from the core Patsnap offering?
 - Is the life sciences hiring push related to a specific product launch or market expansion in pharma R&D?
-- What is the commercial structure of the CAS-Patsnap partnership — is CAS data being integrated into Patsnap's platform, resold as a standalone dataset, or something else?
