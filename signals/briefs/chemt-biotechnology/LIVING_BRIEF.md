@@ -1,11 +1,11 @@
 # ChemT Biotechnology — LIVING BRIEF
-_Last updated: 2026-08-28 23:00 UTC_
+_Last updated: 2026-09-05 15:57 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 BLOCK71 Singapore-resident AI-driven biotechnology startup building an intelligence layer for biomanufacturing. Core assets are CelMo™, an AI-driven Virtual Cell platform simulating how cells respond to manufacturing conditions, and Chemplify™, an AI-designed small molecule for T-cell manufacturing (50% faster development, 3× scalability, 60% lower costs, 10× higher cell expansion yield). Co-founders Sun Jie and Wu Ling were named to the Prestige Singapore 40 Under 40 list for 2026, and the company has raised $5M total ($1M angel plus a $4M seed led by Wavemaker Ventures) — its first publicly disclosed funding.
 
-_Last material event: 2026-06-22 — $5M raise: $4M seed led by Wavemaker Ventures plus $1M angel_
+_Last material event: 2026-08-25 — Named to Forbes Asia 100 to Watch 2026 (Biotechnology & Healthcare category)_
 
 ## Profile
 - Sector: Biotechnology
@@ -15,7 +15,9 @@ _Last material event: 2026-06-22 — $5M raise: $4M seed led by Wavemaker Ventur
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-08-25** — ChemT named to Forbes Asia 100 to Watch 2026 in the Biotechnology & Healthcare category, its second major public recognition after the June Prestige 40 Under 40 nod — [chemtbio.com](https://www.chemtbio.com/news18-1)
+  - Summary: ChemT announced on 25 August 2026 that it was named to the Forbes Asia 100 to Watch 2026 list, the sixth edition of the annual list spotlighting 100 emerging companies across Asia-Pacific. The company attributes the recognition to its work applying AI to make biologics development and manufacturing more predictable, efficient and scalable, anchored on the CelMo™ AI-powered Virtual Cell platform. ChemT says the nod arrives as it expands CelMo™ development across different cellular systems and biomanufacturing workflows, and points to the underlying Forbes Asia article of 24 August 2026.
+  - Counterparties: Forbes Asia (list publisher)
 
 ## Older signals
 - **2026-06-22** — Tech in Asia reports Singapore biotech startup ChemT raised $5m, its first publicly disclosed funding — [techinasia.com](https://www.techinasia.com/news/singapore-ai-biotech-startup-chemt-raises-5m) (Also reported by: [biospectrumasia.com](https://www.biospectrumasia.com/news/26/27872/singapore-based-startup-chemt-biotechnology-raises-5-m-to-bring-ai-to-biomanufacturing.html), [technode.global](https://technode.global/2026/06/23/singapores-chemt-biotechnology-raises-4m-seed-round-to-build-ai-intelligence-layer-for-biomanufacturing/))

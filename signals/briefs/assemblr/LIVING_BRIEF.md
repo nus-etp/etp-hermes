@@ -1,5 +1,5 @@
 # Assemblr — LIVING BRIEF
-_Last updated: 2026-09-02 17:10 UTC_
+_Last updated: 2026-09-05 15:57 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -19,7 +19,7 @@ _Last material event: 2026-08-11 — Assemblr EDU listed on Learning Cabinet, a 
 _No disclosed funding._
 
 ## Recent signals
-- **2026-08-11** — Assemblr EDU added to Learning Cabinet, a curated global EdTech platform built on the EdTech for Good Framework (UNICEF, Finland's MFA, Arm, ADB), extending its 3D/AR distribution beyond Indonesia — [assemblrworld.com](https://www.assemblrworld.com/id/blog/assemblr-edu-kini-hadir-di-learning-cabinet-perluas-akses-pembelajaran-interaktif-berbasis-3d-ar-untuk-guru-dan-murid-di-seluruh-dunia)
+- **2026-08-11** — Assemblr EDU added to Learning Cabinet, a curated global EdTech platform built on the EdTech for Good Framework (UNICEF, Finland's MFA, Arm, ADB), extending its 3D/AR distribution beyond Indonesia — [assemblrworld.com](https://www.assemblrworld.com/id/blog/assemblr-edu-kini-hadir-di-learning-cabinet-perluas-akses-pembelajaran-interaktif-berbasis-3d-ar-untuk-guru-dan-murid-di-seluruh-dunia) (Also reported by: [assemblrworld.com](https://www.assemblrworld.com/blog/assemblr-edu-now-available-on-learning-cabinet-expanding-access-to-interactive-3d-ar-learning-for-teachers-and-students-worldwide))
   - Summary: Assemblr EDU has officially joined Learning Cabinet, a curated platform for EdTech solutions that have demonstrated real learning impact and scale potential, developed on the EdTech for Good Framework assembled by UNICEF, Finland's Ministry for Foreign Affairs, Arm and the Asian Development Bank with global partners. The Indonesian-language announcement frames the listing as a step toward making 3D and AR learning accessible worldwide — complementing Assemblr's Kemendikdasmen partnership in Indonesia, which it says reaches more than 16 million teachers and students, and its offline platform version for schools with limited internet access. Learning Cabinet curators assess solutions for safe, high-quality, impactful use of education technology.
   - Counterparties: Learning Cabinet (distribution platform), Kemendikdasmen (Indonesian ministry partner)
   - Numbers: 16M+ teachers and students reached in Indonesia via Kemendikdasmen partnership
