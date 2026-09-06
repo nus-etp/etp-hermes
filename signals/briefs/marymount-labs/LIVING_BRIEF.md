@@ -1,5 +1,5 @@
 # Marymount Labs — LIVING BRIEF
-_Last updated: 2026-09-03 17:01 UTC_
+_Last updated: 2026-09-06 16:05 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -17,7 +17,7 @@ _Last material event: 2025-11-15 — Partnership with Tzu-Chi Foundation to brin
 _No disclosed funding._
 
 ## Recent signals
-- **2026-08-26** — The Tzu-Chi Foundation deployment of Marymount Labs' WhatsApp Companion has engaged ~700 seniors, with a 50% rise in programme participation, per The Straits Times — [straitstimes.com](https://www.straitstimes.com/singapore/health/new-suss-initiative-to-boost-student-start-ups-and-social-ventures-tackling-social-challenges)
+- **2026-08-26** — The Tzu-Chi Foundation deployment of Marymount Labs' WhatsApp Companion has engaged ~700 seniors across two Active Ageing Centres, with a 50% rise in programme participation; highlighted by Health Minister Ong Ye Kung at the SUSS GOOD Incubator launch, per The Straits Times — [straitstimes.com](https://www.straitstimes.com/singapore/health/new-suss-initiative-to-boost-student-start-ups-and-social-ventures-tackling-social-challenges)
 
 ## Older signals
 - **2026-06-26** — Marymount Labs — Turn Care Plans into Patient Action — [marymountlabs.com](https://www.marymountlabs.com)

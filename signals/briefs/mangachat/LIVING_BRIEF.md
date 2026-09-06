@@ -1,5 +1,5 @@
 # MangaChat — LIVING BRIEF
-_Last updated: 2026-08-15 13:35 UTC_
+_Last updated: 2026-09-06 16:05 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -18,14 +18,15 @@ _Last material event: 2026-08-06 — Signed with one of Japan's largest educatio
 _No disclosed funding._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-08-06** — AlumNUS feature on co-founder Renee Chong: Taiwan origins, IMDA AI Verify validation, signed Japan education-distributor deal — [alumni.nus.edu.sg](https://alumni.nus.edu.sg/thealumnus/2026/08/06/when-manga-meets-mental-health)
-  - Summary: Profile of co-founder Renee Chong (Engineering '04), who left a 17-year education career to bring MangaChat to Singapore as a social enterprise in late 2023. The platform was built in Taiwan by Tzu Chi University's Assoc Prof Joe Huang and deployed by the Taiwanese government in 150 schools; it now includes emotional-literacy content and interactive social stories for younger children. The article reports MangaChat has signed with one of Japan's largest education distributors and is in talks with Vietnam partners.
+  - Summary: Profile of co-founder Renee Chong (Engineering '04), who left a 17-year education career to bring MangaChat to Singapore as a social enterprise in late 2023. The platform was built in Taiwan by Tzu Chi University's Assoc Prof Joe Huang and deployed by the Taiwanese government in 150 schools; it now includes emotional-literacy content and interactive social stories for younger children. The article reports MangaChat has signed with one of Japan's largest education distributors and is in talks with Vietnam partners. It notes MangaChat runs lean on grants, including a S$250K DBS Foundation grant.
   - People: Renee Chong (co-founder), Bernard Soo (co-founder), Joe Huang (Associate Professor, Tzu Chi University)
   - Counterparties: Japan education distributor (signed partner), IMDA (AI Verify validator), Singapore Association for Mental Health (pilot partner)
   - Numbers: 150 schools (Taiwan government deployment); ~20 journal entries before a young user disclosed distress to her counsellor; founded 2023
   - Quote: "But using AI in this space is very foreign in Singapore. I need to ask: how can I build trust with stakeholders and convince them that AI usage here can be responsible?" — Renee Chong
-
-## Older signals
 - **2026-06-26** — MangaChat — Youth wellness platform (LinkedIn) — [sg.linkedin.com](https://sg.linkedin.com/company/mangachat)
 - **2026-06-26** — MangaChat — EMMET INSIGHT profile — [emmetinsight.com](https://emmetinsight.com/mangachat)
   - Summary: MangaChat has 126 schools in Taiwan, 100K+ students impacted. Secured TS2 Startup Accelerator grant by NUS Enterprise. Selected for UC Berkeley Health Innovation Accelerator. Expanding to Singapore, Hong Kong, Vietnam via Emmet Insight partnership.
@@ -36,4 +37,3 @@ _No disclosed funding._
 ## Open questions
 - Has the company raised any equity funding beyond BLOCK71 incubation support and accelerator participation?
 - Which Japanese education distributor has MangaChat signed with, and what does the deal cover (scope, schools, revenue share)?
-- What revenue model sustains MangaChat as a social enterprise — per-school licensing, counselling subscriptions, or grants?
