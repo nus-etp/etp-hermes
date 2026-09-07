@@ -17,9 +17,15 @@ build-backend = "setuptools.build_meta"
 # This is a tests-only project; no importable package ships from the repo root.
 packages = []
 
+[tool.pyright]
+# Resolve the pipeline scripts' sibling imports (user_agents, entity_terms, …).
+extraPaths = ["scripts"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["."]
+# "scripts" lets the pipeline scripts import their sibling helpers (user_agents,
+# entity_terms, …) under pytest without in-code sys.path manipulation.
+pythonpath = [".", "scripts"]
 markers = [
     "llm: end-to-end LLM behaviour eval (slow, requires DEEPSEEK_API_KEY)",
 ]

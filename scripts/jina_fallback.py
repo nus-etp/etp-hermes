@@ -19,8 +19,10 @@ import re
 from typing import Any
 from urllib import parse, request
 
+from user_agents import honest_ua
+
 READER_BASE = "https://r.jina.ai/"
-USER_AGENT = "etp-hermes-jina/1 (+https://github.com/nus-etp/etp-hermes)"
+USER_AGENT = honest_ua("jina")
 TIMEOUT_SECS = 30
 
 # Heuristic constants for extract_items().
