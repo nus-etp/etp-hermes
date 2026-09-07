@@ -90,7 +90,7 @@ TAG_STRIP = re.compile(r"<[^>]+>")
 
 
 def fetch(url: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (etp-hermes portfolio-discovery)"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (portfolio-discovery)"})
     with urllib.request.urlopen(req, timeout=30) as resp:
         return resp.read().decode("utf-8", errors="replace")
 

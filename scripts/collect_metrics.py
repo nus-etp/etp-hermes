@@ -53,11 +53,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Iterable
 
+from user_agents import honest_ua
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 COMPANIES_PATH = REPO_ROOT / "data" / "companies.json"
 METRICS_DIR = REPO_ROOT / "data" / "metrics"
 
-USER_AGENT = "etp-hermes-metrics/1.0 (+https://github.com)"
+USER_AGENT = honest_ua("metrics")
 GDELT_PAUSE_S = 5.5  # GDELT enforces ~one request per 5s per IP.
 GDELT_TIMEOUT_S = 45  # GDELT's tail latency is high; give it more headroom than other endpoints.
 GDELT_BACKOFF_S = 12  # Initial backoff after a 429/rate-limit signal; doubled each retry.
