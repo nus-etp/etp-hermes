@@ -1,18 +1,17 @@
 # Carousell — LIVING BRIEF
-_Last updated: 2026-08-21 13:47 UTC_
+_Last updated: 2026-09-08 17:14 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Singapore-headquartered online classifieds and consumer marketplace platform operating across Southeast Asia and Taiwan, Carousell has evolved from a classifieds marketplace into a multicategory recommerce platform. The group achieved its first EBITDA-positive year in FY2025, marking a milestone in its multiyear business model transformation, and is now targeting AI-driven growth and recommerce scaling as its FY26 strategic priorities.
 
-_Last material event: 2026-08-21 — Carousell Malaysia partners with SPX Express for label-less delivery at 1,000+ West Malaysia service points_
+_Last material event: 2026-09-07 — Carousell Autos launches Car Drops, Singapore's first consumer car auction_
 
 ## Profile
 - Sector: Marketplace
 - Region: Southeast Asia (Singapore HQ; operates in Malaysia, Indonesia, Philippines, Taiwan, Vietnam)
 - Stage / funding: Late-stage private (unicorn since 2021)
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/carousellgroup), [Crunchbase](https://www.crunchbase.com/organization/carousell)
-
 
 ## Funding history
 - **2013-11** — Seed, $800K — Rakuten Ventures; Golden Gate Ventures, 500 Global, QuestVC — [en.wikipedia.org](https://en.wikipedia.org/wiki/Carousell_(company))
@@ -28,6 +27,11 @@ _Last material event: 2026-08-21 — Carousell Malaysia partners with SPX Expres
 _Total disclosed: $440.6M._
 
 ## Recent signals
+- **2026-09-08** — Carousell Autos launches Car Drops, billed as Singapore's first consumer car auction: owner-listed cars drop daily and verified consumers bid online at dealer-level prices — [techinasia.com](https://www.techinasia.com/news/carousell-autos-launches-consumer-car-auction-singapore) (Also reported by: [oneshift.com](https://www.oneshift.com/articles/news/carousell-autos-launches-singapores-first-consumer-car-auction/))
+  - Summary: Carousell Autos opened its dealer-auction listings to consumer bidders with Car Drops, which it describes as Singapore's first consumer car auction: fresh owner-listed cars drop daily with 48-hour bidding windows, and verified everyday buyers bid alongside professional dealers without an upfront viewing. If a bid is accepted, a Carousell Autos specialist arranges a joint viewing and can coordinate inspection, financing, insurance, ownership transfer, and repairs. The company frames it as an additional consumer channel that widens the seller's buyer pool and supports vehicle circulation in Singapore's automotive recommerce market.
+  - People: Melissa Wong (Marketing Manager, Carousell Autos)
+  - Numbers: 48-hour bidding window per car, daily drops of owner-listed cars
+  - Quote: "This new auction experience is designed as an additional consumer channel alongside Carousell Autos’ existing dealer auction process, giving sellers a wider pool of potential buyers while allowing consumers to discover more pre-owned cars" — Melissa Wong, Marketing Manager, Carousell Autos
 - **2026-08-21** — Carousell Malaysia adds Shopee's SPX Express as a Carousell Official Delivery logistics partner, bringing label-less shipping and 1,000+ drop-off points across West Malaysia — [press.carousell.com](https://press.carousell.com/2026/08/21/carousell-malaysia-expands-delivery-options-through-partnership-with-spx-express-malaysia/) (Also reported by: [lowyat.net](https://www.lowyat.net/2026/401934/carousell-spx-express-expand-delivery))
   - Summary: Carousell Malaysia partnered with SPX Express Malaysia to expand Carousell Official Delivery: sellers get label-less shipping (in-app digital shipping info, printed by service-point staff) across more than 1,000 SPX service points in West Malaysia, while buyers get doorstep delivery and promotional rates from RM3.50. Carousell cites H1 2026 marketplace data showing nearly 9 in 10 orders delivery-fulfilled as the rationale for cutting seller shipping friction.
   - People: Vishal Salunkhe (Chief Business Officer, Carousell), Cheah Lee Sun (Head of SPX Express Malaysia)
@@ -69,7 +73,7 @@ _Total disclosed: $440.6M._
 - **2026-05-20** — A serial scammer exploited the Carousell platform to lure victims with counterfeit Rolex listings, highlighting ongoing trust-and-safety risks for peer-to-peer marketplaces — [The Straits Times](https://news.google.com/rss/articles/CBMivAFBVV95cUxQbEVVRWdWSnhFTGp0eHhOdU1CX0wzZlBRRHBUYUxteHhBUjc5X0FPOHprMXdLU1VfNkx)
 
 ## Open questions
-- How is Carousell responding to this specific fraud incident — are there new platform safeguards being rolled out?
 - With EBITDA profitability achieved and a strong cash position, does the company plan to pursue a public listing or further strategic investment rounds?
 - How is Carousell executing its FY26 AI roadmap to differentiate against competitors like Facebook Marketplace and other regional players?
 - Does the Mudah.my-to-Carousell Malaysia car-listing flow presage deeper cross-brand integration across the group's marketplaces, and could it extend to other group brands or markets?
+- How will Carousell Autos monetize Car Drops, and does consumer access to dealer-auction pricing risk alienating its dealer base?
