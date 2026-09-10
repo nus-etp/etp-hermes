@@ -77,6 +77,12 @@ jobs:
   # ---------------------------------------------------------------------------
   hermes:
     runs-on: ubuntu-latest
+    outputs:
+      # 'true' only after Install Hermes fetched, checksum-verified, installed,
+      # and confirmed `hermes` is on PATH. Empty on any download/install failure
+      # (the step exits before setting it). The commit job gates on this so a
+      # failed hermes download can't ship a misleading metrics-only sync.
+      install_ok: ${{ steps.install.outputs.install_ok }}
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
@@ -89,16 +95,93 @@ jobs:
         # so a push to hermes-agent@main can't execute in this job, which
         # holds every pipeline secret plus a contents:write GITHUB_TOKEN.
         # To upgrade: `make pin-hermes REF=<new tag>` rewrites both values.
+        #
+        # Fail-closed + robust download: the 2026-09-09 run died because the
+        # anonymous curl of install.sh from raw.githubusercontent.com hit an
+        # HTTP 429 rate-limit on all retries, leaving `hermes` uninstalled —
+        # yet the metrics-only commit still shipped as a normal "sync". This
+        # step now (a) fetches install.sh from three independent, each
+        # checksum-verified sources — the authenticated GitHub Contents API
+        # first (per-token limit ~50x the anonymous raw bucket that 429'd),
+        # then raw.githubusercontent, then the codeload tarball on a separate
+        # host — with retry/backoff; (b) authenticates the installer's own
+        # `git clone github.com` so it doesn't hit the anonymous limit either;
+        # and (c) verifies `hermes` is actually on PATH and runnable, exiting
+        # non-zero (and NOT setting install_ok) otherwise. The commit job gates
+        # on install_ok, so a download failure blocks the misleading sync
+        # commit instead of shipping metrics-only.
+        id: install
         env:
           HERMES_COMMIT: 3c231eb3979ab9c57d5cd6d02f1d577a3b718b43 # v2026.6.5
           HERMES_INSTALL_SHA256: 5562d544934751313f16c57ed3dd17b052600cd8fae9f6e6977bfc9ef1e72f38
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors \
-            "https://raw.githubusercontent.com/NousResearch/hermes-agent/${HERMES_COMMIT}/scripts/install.sh" \
-            -o /tmp/hermes-install.sh
-          echo "${HERMES_INSTALL_SHA256}  /tmp/hermes-install.sh" | sha256sum -c -
-          bash /tmp/hermes-install.sh --commit "${HERMES_COMMIT}"
+          set -euo pipefail
+          dst=/tmp/hermes-install.sh
+
+          # Try each source in turn; each must checksum-match the pinned value
+          # (a mismatch is a failed source, not a hard stop, so we fall through).
+          fetch_install() {
+            echo "fetching install.sh via authenticated GitHub Contents API..."
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
+                 -H "Authorization: Bearer ${GH_TOKEN}" \
+                 -H "Accept: application/vnd.github.raw" \
+                 -H "X-GitHub-Api-Version: 2022-11-28" \
+                 "https://api.github.com/repos/NousResearch/hermes-agent/contents/scripts/install.sh?ref=${HERMES_COMMIT}" \
+                 -o "$dst"; then return 0; fi
+            echo "::warning::GitHub API fetch failed; trying raw.githubusercontent" >&2
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
+                 "https://raw.githubusercontent.com/NousResearch/hermes-agent/${HERMES_COMMIT}/scripts/install.sh" \
+                 -o "$dst"; then return 0; fi
+            echo "::warning::raw.githubusercontent fetch failed; trying codeload tarball" >&2
+            local tgz=/tmp/hermes-src.tgz
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 120 \
+                 -H "Authorization: Bearer ${GH_TOKEN}" \
+                 "https://codeload.github.com/NousResearch/hermes-agent/tar.gz/${HERMES_COMMIT}" \
+                 -o "$tgz"; then
+              tar -xzf "$tgz" -C /tmp "hermes-agent-${HERMES_COMMIT}/scripts/install.sh" \
+                && cp "/tmp/hermes-agent-${HERMES_COMMIT}/scripts/install.sh" "$dst" \
+                && return 0
+            fi
+            return 1
+          }
+
+          ok=false
+          for attempt in 1 2 3; do
+            if fetch_install && echo "${HERMES_INSTALL_SHA256}  $dst" | sha256sum -c -; then
+              ok=true; break
+            fi
+            echo "::warning::install.sh fetch/verify attempt ${attempt} failed; retrying in $((attempt*15))s" >&2
+            sleep "$((attempt*15))"
+          done
+          if [ "$ok" != true ]; then
+            echo "::error::Could not download a checksum-verified Hermes installer from any source" >&2
+            exit 1
+          fi
+
+          # Authenticate the installer's own `git clone github.com` (scoped to
+          # this one process via GIT_CONFIG_* — no global config mutation) so it
+          # rides the per-token limit instead of the anonymous one.
+          GIT_CONFIG_COUNT=1 \
+          GIT_CONFIG_KEY_0="url.https://x-access-token:${GH_TOKEN}@github.com/.insteadOf" \
+          GIT_CONFIG_VALUE_0="https://github.com/" \
+            bash "$dst" --commit "${HERMES_COMMIT}"
+
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+
+          # Fail closed: prove the binary is present and runnable before letting
+          # the pipeline proceed. Without this the failure only surfaces as an
+          # opaque "hermes: command not found" mid-run, after other steps have
+          # already produced partial output.
+          if ! command -v hermes >/dev/null 2>&1; then
+            echo "::error::hermes not found on PATH after install" >&2
+            exit 1
+          fi
+          # Best-effort runnable probe — logged, not gated, since the exact CLI
+          # flags vary by version; `command -v` above is the fail-closed gate.
+          hermes --version 2>/dev/null || echo "note: 'hermes --version' returned non-zero (flag may not exist); binary is on PATH"
+          echo "install_ok=true" >> "$GITHUB_OUTPUT"
 
       - name: Restore previous backup from cache
         # Round-trips ~/.hermes/ state across runs via a hermes-native zip.
@@ -540,7 +623,15 @@ jobs:
   # ---------------------------------------------------------------------------
   commit:
     needs: [metrics, hermes]
-    if: always() && (needs.metrics.result == 'success' || needs.hermes.result == 'success')
+    # Fail closed on a hermes download/install failure: require install_ok. When
+    # `hermes` never installed (e.g. the 2026-09-09 raw.githubusercontent 429),
+    # this skips the commit entirely rather than shipping a metrics-only
+    # "sync <date>" that masks the fact that no news was processed. install_ok
+    # is set early in the hermes job, so a LATER hermes failure (a layer crash
+    # after signals were produced) still commits the partial output — only the
+    # never-installed case is blocked. That day's metrics snapshot is dropped,
+    # but collection is idempotent per UTC day and resumes on the next run.
+    if: always() && needs.hermes.outputs.install_ok == 'true' && (needs.metrics.result == 'success' || needs.hermes.result == 'success')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
