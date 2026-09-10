@@ -1,5 +1,5 @@
 # Carousell — LIVING BRIEF
-_Last updated: 2026-09-08 17:14 UTC_
+_Last updated: 2026-09-10 00:27 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -27,7 +27,7 @@ _Last material event: 2026-09-07 — Carousell Autos launches Car Drops, Singapo
 _Total disclosed: $440.6M._
 
 ## Recent signals
-- **2026-09-08** — Carousell Autos launches Car Drops, billed as Singapore's first consumer car auction: owner-listed cars drop daily and verified consumers bid online at dealer-level prices — [techinasia.com](https://www.techinasia.com/news/carousell-autos-launches-consumer-car-auction-singapore) (Also reported by: [oneshift.com](https://www.oneshift.com/articles/news/carousell-autos-launches-singapores-first-consumer-car-auction/))
+- **2026-09-08** — Carousell Autos launches Car Drops, billed as Singapore's first consumer car auction: owner-listed cars drop daily and verified consumers bid online at dealer-level prices — [techinasia.com](https://www.techinasia.com/news/carousell-autos-launches-consumer-car-auction-singapore) (Also reported by: [oneshift.com](https://www.oneshift.com/articles/news/carousell-autos-launches-singapores-first-consumer-car-auction/), [press.carousell.com](https://press.carousell.com/2026/09/09/carousell-autos-launches-singapores-first-consumer-car-auction/))
   - Summary: Carousell Autos opened its dealer-auction listings to consumer bidders with Car Drops, which it describes as Singapore's first consumer car auction: fresh owner-listed cars drop daily with 48-hour bidding windows, and verified everyday buyers bid alongside professional dealers without an upfront viewing. If a bid is accepted, a Carousell Autos specialist arranges a joint viewing and can coordinate inspection, financing, insurance, ownership transfer, and repairs. The company frames it as an additional consumer channel that widens the seller's buyer pool and supports vehicle circulation in Singapore's automotive recommerce market.
   - People: Melissa Wong (Marketing Manager, Carousell Autos)
   - Numbers: 48-hour bidding window per car, daily drops of owner-listed cars
