@@ -1,6 +1,6 @@
 model:
   provider: deepseek
-  default: deepseek-v4-flash
+  default: deepseek-v4.1-flash
 
 # Credential/provider failover. When the primary (deepseek) is exhausted —
 # rate-limit, billing, 5xx, or connection failure after agent.api_max_retries —
