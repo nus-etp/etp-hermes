@@ -10,10 +10,10 @@ Dead **firehose/rss** feeds are auto-recovered each run via the r.jina.ai fallba
 | Feed | Kind | Fails | Last status | Jina-recoverable | Last error | URL |
 | --- | --- | --- | --- | --- | --- | --- |
 | https://microtube.tech/feed/ |  | 24 | 404 | False | HTTP 404 | https://microtube.tech/feed/ |
-| The Low Down | firehose | 19 | 403 | True | HTTP 403 | https://thelowdown.momentum.asia/feed/ |
+| The Low Down | firehose | 20 | 403 | True | HTTP 403 | https://thelowdown.momentum.asia/feed/ |
 
 ## Stale feeds
 
 | Feed | Kind | Days since new item | Last change | URL |
 | --- | --- | --- | --- | --- |
-| PharLyfe+ · news | rss | 112 | 2026-05-20T06:53:27+00:00 | https://pharlyfeplus.com/news-update/f.rss |
+| PharLyfe+ · news | rss | 113 | 2026-05-20T06:53:27+00:00 | https://pharlyfeplus.com/news-update/f.rss |
