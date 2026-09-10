@@ -100,16 +100,21 @@ jobs:
         # anonymous curl of install.sh from raw.githubusercontent.com hit an
         # HTTP 429 rate-limit on all retries, leaving `hermes` uninstalled —
         # yet the metrics-only commit still shipped as a normal "sync". This
-        # step now (a) fetches install.sh from three independent, each
-        # checksum-verified sources — the authenticated GitHub Contents API
-        # first (per-token limit ~50x the anonymous raw bucket that 429'd),
-        # then raw.githubusercontent, then the codeload tarball on a separate
-        # host — with retry/backoff; (b) authenticates the installer's own
+        # step now (a) fetches install.sh from four sources, each independently
+        # checksum-gated against the pin — the Nous-hosted installer first (a
+        # Vercel host, entirely off GitHub's rate limits), then the
+        # authenticated GitHub Contents API (per-token limit ~50x the anonymous
+        # raw bucket that 429'd), then raw.githubusercontent, then the codeload
+        # tarball; a source that downloads but fails the checksum is treated as
+        # a miss and we fall through, so the pin still fully governs what runs
+        # in this secret-bearing job (the Nous host serves current `main`, so it
+        # only matches right after a `make pin-hermes` bump — otherwise it's
+        # skipped harmlessly). (b) authenticates the installer's own
         # `git clone github.com` so it doesn't hit the anonymous limit either;
-        # and (c) verifies `hermes` is actually on PATH and runnable, exiting
-        # non-zero (and NOT setting install_ok) otherwise. The commit job gates
-        # on install_ok, so a download failure blocks the misleading sync
-        # commit instead of shipping metrics-only.
+        # and (c) verifies `hermes` is actually on PATH, exiting non-zero (and
+        # NOT setting install_ok) otherwise. The commit job gates on install_ok,
+        # so a download failure blocks the misleading sync commit instead of
+        # shipping metrics-only.
         id: install
         env:
           HERMES_COMMIT: 3c231eb3979ab9c57d5cd6d02f1d577a3b718b43 # v2026.6.5
@@ -119,38 +124,45 @@ jobs:
           set -euo pipefail
           dst=/tmp/hermes-install.sh
 
-          # Try each source in turn; each must checksum-match the pinned value
-          # (a mismatch is a failed source, not a hard stop, so we fall through).
+          verify() { echo "${HERMES_INSTALL_SHA256}  $1" | sha256sum -c - >/dev/null 2>&1; }
+
+          # Try each source in turn; each must checksum-match the pinned value.
+          # A download that succeeds but mismatches the pin is a failed source
+          # (not a hard stop), so we fall through to the next candidate.
           fetch_install() {
-            echo "fetching install.sh via authenticated GitHub Contents API..."
+            local tgz=/tmp/hermes-src.tgz
+            echo "trying Nous-hosted installer (github-independent)..."
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
+                 "https://hermes-agent.nousresearch.com/install.sh" -o "$dst" \
+               && verify "$dst"; then return 0; fi
+            echo "::warning::Nous-hosted installer unavailable or != pin; trying GitHub Contents API" >&2
             if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
                  -H "Authorization: Bearer ${GH_TOKEN}" \
                  -H "Accept: application/vnd.github.raw" \
                  -H "X-GitHub-Api-Version: 2022-11-28" \
                  "https://api.github.com/repos/NousResearch/hermes-agent/contents/scripts/install.sh?ref=${HERMES_COMMIT}" \
-                 -o "$dst"; then return 0; fi
+                 -o "$dst" \
+               && verify "$dst"; then return 0; fi
             echo "::warning::GitHub API fetch failed; trying raw.githubusercontent" >&2
             if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
                  "https://raw.githubusercontent.com/NousResearch/hermes-agent/${HERMES_COMMIT}/scripts/install.sh" \
-                 -o "$dst"; then return 0; fi
+                 -o "$dst" \
+               && verify "$dst"; then return 0; fi
             echo "::warning::raw.githubusercontent fetch failed; trying codeload tarball" >&2
-            local tgz=/tmp/hermes-src.tgz
             if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 120 \
                  -H "Authorization: Bearer ${GH_TOKEN}" \
                  "https://codeload.github.com/NousResearch/hermes-agent/tar.gz/${HERMES_COMMIT}" \
                  -o "$tgz"; then
               tar -xzf "$tgz" -C /tmp "hermes-agent-${HERMES_COMMIT}/scripts/install.sh" \
                 && cp "/tmp/hermes-agent-${HERMES_COMMIT}/scripts/install.sh" "$dst" \
-                && return 0
+                && verify "$dst" && return 0
             fi
             return 1
           }
 
           ok=false
           for attempt in 1 2 3; do
-            if fetch_install && echo "${HERMES_INSTALL_SHA256}  $dst" | sha256sum -c -; then
-              ok=true; break
-            fi
+            if fetch_install; then ok=true; break; fi
             echo "::warning::install.sh fetch/verify attempt ${attempt} failed; retrying in $((attempt*15))s" >&2
             sleep "$((attempt*15))"
           done
