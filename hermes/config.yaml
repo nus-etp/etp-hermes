@@ -94,6 +94,8 @@ mcp_servers:
 web:
   search_backend: tavily
   extract_backend: exa
+  cache_enabled: true
+  cache_ttl_minutes: 20
 
 plugins:
   # Streams live traces (LLM calls + tool calls) to Langfuse. Needs the
