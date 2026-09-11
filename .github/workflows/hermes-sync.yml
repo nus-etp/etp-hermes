@@ -90,7 +90,7 @@ jobs:
 
       - name: Install Hermes
         # Pinned install: the installer script is fetched at an immutable
-        # commit (tag v2026.6.5) and checksum-verified before execution, and
+        # commit (tag v2026.9.7) and checksum-verified before execution, and
         # --commit makes it check the agent code out at that same commit —
         # so a push to hermes-agent@main can't execute in this job, which
         # holds every pipeline secret plus a contents:write GITHUB_TOKEN.
@@ -117,8 +117,8 @@ jobs:
         # shipping metrics-only.
         id: install
         env:
-          HERMES_COMMIT: 3c231eb3979ab9c57d5cd6d02f1d577a3b718b43 # v2026.6.5
-          HERMES_INSTALL_SHA256: 5562d544934751313f16c57ed3dd17b052600cd8fae9f6e6977bfc9ef1e72f38
+          HERMES_COMMIT: 2237be355906fbe6065ce1815711eee52b2d646e # v2026.9.7
+          HERMES_INSTALL_SHA256: 5854b15670b51a8daae8f59ddfa917062de9f74be261eb73b4b8d719710f8968
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
