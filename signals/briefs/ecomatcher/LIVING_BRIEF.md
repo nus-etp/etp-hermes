@@ -1,5 +1,5 @@
 # EcoMatcher — LIVING BRIEF
-_Last updated: 2026-08-13 14:33 UTC_
+_Last updated: 2026-09-11 00:59 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -23,7 +23,7 @@ _none_
 
 ## Older signals
 - **2026-07-14** — Launched next-generation ForestTracker with drone-captured forest views, community messaging, and Forever Forests dedicated to life milestones — [ecomatcher.com](https://www.ecomatcher.com/ecomatcher-launches-next-generation-foresttracker)
-  - Summary: EcoMatcher announced a major upgrade to ForestTracker, its flagship forest visualization platform, adding three capabilities: drone-captured aerial views of forest growth and project progress, messaging within digital forest spaces aimed at employee and customer communities, and Forever Forests — forests dedicated to birthdays, weddings, and memorials as permanent legacies. The release targets transparency and engagement for corporate sustainability programs.
+  - Summary: EcoMatcher announced a major upgrade to ForestTracker, its flagship forest visualization platform, adding three capabilities: drone-captured aerial views of forest growth and project progress, messaging within digital forest spaces aimed at employee and customer communities, and Forever Forests — forests dedicated to birthdays, weddings, and memorials as permanent legacies. The release targets transparency and engagement for corporate sustainability programs. Forever Forests is marketed to individuals, families and organisations as well as corporate buyers, which points to a consumer gifting use case layered on the existing corporate platform rather than a separately sold direct-to-consumer product line; EcoMatcher has not disclosed pricing or a stand-alone revenue line for it.
   - People: Bas Fransen (Founder and CEO)
   - Numbers: 3 new capabilities (drone integration, community messaging, Forever Forests)
   - Quote: "By combining enhanced forest visibility with personalization and community, we are making environmental impact more transparent, more measurable, and more deeply human." — Bas Fransen, Founder and CEO
@@ -35,5 +35,4 @@ _none_
 
 ## Open questions
 - What is the adoption pipeline for custom Tree Personas among existing corporate clients?
-- Does the Forever Forests consumer feature signal a direct-to-consumer revenue line, or is it purely a corporate engagement add-on?
 - Does EcoMatcher plan to raise external equity funding, or will it continue to grow as a revenue-funded B-Corp?

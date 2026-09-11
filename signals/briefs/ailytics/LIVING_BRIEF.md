@@ -1,9 +1,11 @@
 # Ailytics — LIVING BRIEF
-_Last updated: 2026-06-10 16:43 UTC_
+_Last updated: 2026-09-11 00:59 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 NUS GRIP-incubated Singapore deep-tech startup developing AI-powered video analytics for heavy industries. Ailytics is building momentum through strategic partnerships (Japan expansion with Safie), industry recognition, and a major technology leap by integrating NVIDIA Cosmos 3 world models into its Ailyssa platform — unlocking spatio-temporal reasoning and SOP-verification capabilities that were previously unsolvable with traditional computer vision.
+
+_Last material event: 2026-06-02 — Signed an MOU with Japan cloud video platform Safie; deployed NVIDIA Cosmos 3 world models into its Ailyssa platform_
 
 ## Profile
 - Sector: AI / Deep tech
@@ -21,6 +23,11 @@ _Total disclosed: $2.7M._
 _none_
 
 ## Older signals
+- **2026-07-28** — Named to the inaugural eight-company Dare to Scale cohort, the Enterprise Singapore–EDB–Endeavor programme launched alongside Endeavor's first Asia-Pacific Global Hub in Singapore — [indiplomacy.com](https://indiplomacy.com/2026/07/28/enterprisesg-edb-and-endeavor-launch-asia-pacific-global-hub-to-support-startup-growth-in-singapore)
+  - Summary: Enterprise Singapore, the Singapore Economic Development Board and Endeavor opened Endeavor's first Asia-Pacific Global Hub in Singapore at Jewel Changi Airport, alongside Dare to Scale, a new programme for high-potential early-stage startups expanding internationally. The inaugural cohort is eight Singapore-based companies — AIDX, Ailytics, Bluente, FailSafe Cybersecurity, HeyMax, Level3AI, Otonomi and ProfilePrint — spanning AI, fintech, agrifood technology and enterprise software. The programme provides access to international networks, mentorship and strategic support; the launch event drew more than 170 founders, investors and ecosystem partners.
+  - People: Alvin Tan (Minister of State)
+  - Counterparties: Enterprise Singapore, Singapore EDB, Endeavor (programme partners)
+  - Numbers: 8 cohort companies; 170+ launch attendees
 - **2026-06-10** — Posted a general news update (category: news) on its website — [Ailytics · news](https://cdn.prod.website-files.com/69649f66a99bea9a8e7b067c/6a1e86e8a804c20618a89ada_Untitled%20design%20(1)
 - **2026-06-02** — Deployed NVIDIA Cosmos 3 world models into its Ailyssa platform, enabling spatio-temporal reasoning for industrial safety that was previously unsolvable with traditional CV — [Ailytics](https://www.ailytics.ai/news/industrial-video-intelligence-reimagined-ailytics-deploys-nvidia-cosmos-3-across-heavy-industry)
   - Summary: Ailytics integrated NVIDIA Cosmos 3 across four capabilities of its Ailyssa platform — contextual natural-language search across CCTV footage, periodic image reasoning for slow-moving hazards, second-layer false-positive reduction on generated alerts, and spatio-temporal SOP verification. The company positions this as a complement to its existing fast specialized models, not a replacement. Customers include Changi Airport Group, DHL, Laing O'Rourke, and Leonardo da Vinci International Airport.
@@ -40,3 +47,4 @@ _none_
 
 ## Open questions
 - Is Ailytics currently fundraising for its next round, given the 2024 pre-seed and growing momentum?
+- What does the Dare to Scale cohort actually provide — capital, or network and mentorship access only?
