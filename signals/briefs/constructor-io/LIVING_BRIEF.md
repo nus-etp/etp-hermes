@@ -1,11 +1,11 @@
 # Constructor.io — LIVING BRIEF
-_Last updated: 2026-09-02 17:10 UTC_
+_Last updated: 2026-09-12 16:14 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 US-based enterprise eCommerce search and product-discovery platform using NLP and ML ranking to power personalized search, browse, and recommendations for major retailers. Already profitable and serving brands like Sephora, Petco, and Under Armour, Constructor recently raised a $25M Series B as an insurance policy — with minimal planned spend and a focus on R&D and EMEA expansion.
 
-_Last material event: 2026-08-27 — Partnered with IMPACT Commerce to pair AI product discovery with commerce strategy and implementation expertise_
+_Last material event: 2026-08-29 — Won three Gold Stevie Company of the Year awards across three programmes, plus Gold product awards for its AI Product Insights Agent_
 
 ## Profile
 - Sector: AI / SaaS
@@ -20,6 +20,11 @@ _Last material event: 2026-08-27 — Partnered with IMPACT Commerce to pair AI p
 _Total disclosed: $55.0M._
 
 ## Recent signals
+- **2026-08-29** — Won three Gold "Company of the Year" honours across the International Business Awards, the Stevie Awards for Technology Excellence and the American Business Awards, plus Gold product awards for its AI Product Insights Agent — [techday.com](https://techday.com/story/constructor-wins-trio-of-stevie-gold-awards-for-ecommerce)
+  - Summary: Constructor took Gold for Company of the Year: Ecommerce in the International Business Awards, Gold for Company of the Year: Retail and Ecommerce in the Stevie Awards for Technology Excellence, and Gold for Company of the Year: Retail in the American Business Awards. Its AI Product Insights Agent (PIA), which answers shopper questions conversationally on product detail pages, won Gold for New Product of the Year: Electronic Commerce Solution in the IBAs and Gold for New Product of the Year: Ecommerce and Retail in the Technology Excellence programme, plus Silver and a People's Choice Award in the American Business Awards. The article lists Sephora, Under Armour, The Very Group, White Stuff, Target Australia and AMI Paris as customers, and notes Constructor alongside Accenture, Cisco, Google, IBM, Lenovo, Walmart and Wells Fargo in this year's Stevie AI categories.
+  - People: Eli Finkelshteyn (Co-Founder & CEO)
+  - Numbers: 3 Gold Company of the Year awards; 2 Gold product awards for PIA; 1 Silver; 1 People's Choice Award
+  - Quote: "Ultimately, though, the test of any technology is what happens when customers put it to work - and seeing retailers use ours every day to drive meaningful results is what matters most." — Eli Finkelshteyn, Co-Founder and CEO, Constructor
 - **2026-08-27** — Partnered with IMPACT Commerce so retailers can combine Constructor's AI search and product discovery with IMPACT's commerce strategy, customer-experience and implementation expertise, building on joint work for beauty brand ELEMIS across the UK, US and EU — [constructor.com](https://constructor.com/blog/constructor-and-impact-commerce-partner-to-drive-better-ecommerce-experiences-with-ai)
   - Summary: Constructor is partnering with IMPACT Commerce to offer retailers a bundled path from AI-powered product discovery to measurable growth: Constructor supplies search, browse, recommendations and conversational shopping built on real shopper behaviour, while IMPACT brings commerce strategy, customer experience and implementation capabilities. The partnership formalises an existing working relationship — the two teams previously ran a successful project for global beauty brand ELEMIS across the UK, US and EU. Constructor's 2025 State of Ecommerce research found 68% of shoppers think retail website search needs an upgrade and 40% say their favourite retailer still treats them like a stranger.
   - Counterparties: IMPACT Commerce (partner), ELEMIS (joint customer reference)

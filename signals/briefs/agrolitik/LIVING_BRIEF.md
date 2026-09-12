@@ -1,5 +1,5 @@
 # Agrolitik — LIVING BRIEF
-_Last updated: 2026-08-27 23:00 UTC_
+_Last updated: 2026-09-12 16:13 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -27,4 +27,3 @@ _none_
 ## Open questions
 - Are the 40+ Indonesia users paying customers or pilot participants, and what is the sensor-plus-app pricing model?
 - What support does the UNDP–Microsoft Climate Catalysts Programme selection provide beyond recognition?
-- What funding and timeline back the planned Malaysia, Thailand and Vietnam expansion?

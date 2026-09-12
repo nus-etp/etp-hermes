@@ -1,5 +1,5 @@
 # ChemT Biotechnology — LIVING BRIEF
-_Last updated: 2026-09-11 17:06 UTC_
+_Last updated: 2026-09-12 16:14 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,10 @@ _No disclosed funding._
   - Counterparties: Forbes Asia (list publisher)
 
 ## Older signals
+- **2026-07-24** — Named an awardee of Johnson & Johnson's Data & AI Fueling R&D of Tomorrow QuickFire Challenge (Singapore & Beyond), bringing grant funding, J&J mentorship and a year of virtual JLABS Singapore membership — [chemtbio.com](https://www.chemtbio.com/news17-1)
+  - Summary: ChemT was one of the awardees of Johnson & Johnson's Data & AI Fueling R&D of Tomorrow QuickFire Challenge: Singapore & Beyond, a programme aimed at approaches that use data, artificial intelligence and machine learning to change drug discovery and research. The award carries grant funding, mentorship from Johnson & Johnson and one-year virtual membership of the JLABS Singapore network. ChemT frames the recognition as support for its work applying AI to understand and modulate cellular behaviour, targeting more efficient, scalable and predictable biomanufacturing.
+  - Counterparties: Johnson & Johnson (challenge organiser), JLABS Singapore (network)
+  - Quote: "The award provides grant funding, mentorship, & one-year virtual membership at JLABS Singapore to help scale our innovations." — ChemT Biotechnology
 - **2026-06-22** — Tech in Asia reports Singapore biotech startup ChemT raised $5m, its first publicly disclosed funding — [techinasia.com](https://www.techinasia.com/news/singapore-ai-biotech-startup-chemt-raises-5m) (Also reported by: [biospectrumasia.com](https://www.biospectrumasia.com/news/26/27872/singapore-based-startup-chemt-biotechnology-raises-5-m-to-bring-ai-to-biomanufacturing.html), [technode.global](https://technode.global/2026/06/23/singapores-chemt-biotechnology-raises-4m-seed-round-to-build-ai-intelligence-layer-for-biomanufacturing/), [wavemaker.vc](https://wavemaker.vc/chemt-biotechnology-raises-us5-million-bring-ai-to-biomanufacturing))
   - Summary: BioSpectrum Asia's June 23 report details the $5M total: a $4M seed round led by Wavemaker Ventures (Wavemaker Partners' early-stage fund) with participation from SEEDS (an arm of SG Growth Capital, the investment platform of EDB and Enterprise Singapore), plus $1M in angel funding. ChemT builds intelligence directly into the biomanufacturing process: CelMo™, an AI-driven Virtual Cell platform trained on billions-to-trillions of proprietary biological sequencing reads and validated in the lab, simulates cell responses to manufacturing conditions; Chemplify™ applies the same approach to T-cell manufacturing for advanced cancer therapies. Proceeds fund AI and experimental infrastructure, GMP and regulatory readiness, and commercial partnerships. TNGlobal's June 23 report adds that ChemT has built commercial partnerships with more than 40 pharmaceutical, biotech and CDMO companies globally within roughly a year and a half of launch, and that CelMo development will expand beyond CHO and T cells into stem cells, NK cells and HEK cells. Wavemaker Ventures' own write-up of the round (published 22 June, the lead investor's account) confirms the $5M total raised in 18 months and the 40+ partnership count.
   - People: Jie Sun (Co-founder & CEO)
@@ -31,3 +35,4 @@ _No disclosed funding._
 ## Open questions
 - What is ChemT's current commercial stage — has CelMo™ or Chemplify™ reached paying customers, and is any revenue being generated?
 - Which of the 40+ pharma/biotech/CDMO partners is ChemT closest to deployment with, and in which geographies?
+- What is the size of the Johnson & Johnson QuickFire grant, and does the JLABS membership open a path to a direct J&J collaboration?
