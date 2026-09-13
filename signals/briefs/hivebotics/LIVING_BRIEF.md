@@ -1,5 +1,5 @@
 # Hivebotics — LIVING BRIEF
-_Last updated: 2026-09-04 17:00 UTC_
+_Last updated: 2026-09-13 16:55 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -16,7 +16,12 @@ _Last material event: 2026-09-04 — Raised US$6M Series A led by Vertex Venture
 _Total disclosed: $1.0M._
 
 ## Recent signals
-- **2026-09-04** — Raised US$6M in a Series A led by Vertex Ventures, with proceeds earmarked to take the Abluo restroom-cleaning robot into volume production — [techinasia.com](https://www.techinasia.com/news/vertex-ventures-leads-6m-sg-robotics-firm-hivebotics) (Also reported by: [businesstimes.com.sg](https://www.businesstimes.com.sg/companies-markets/robotics-startup-hivebotics-raises-us6-million-series-round-led-vertex-ventures), [e27.co](https://e27.co/hivebotics-nets-us6m-to-take-restroom-cleaning-robot-abluo-into-volume-production-20260904/))
+- **2026-09-04** — Raised US$6M in a Series A led by Vertex Ventures, with proceeds earmarked to take the Abluo restroom-cleaning robot into volume production — [techinasia.com](https://www.techinasia.com/news/vertex-ventures-leads-6m-sg-robotics-firm-hivebotics) (Also reported by: [businesstimes.com.sg](https://www.businesstimes.com.sg/companies-markets/robotics-startup-hivebotics-raises-us6-million-series-round-led-vertex-ventures), [e27.co](https://e27.co/hivebotics-nets-us6m-to-take-restroom-cleaning-robot-abluo-into-volume-production-20260904/), [cde.nus.edu.sg](https://cde.nus.edu.sg/news/nus-cde-alumni-startup-hivebotics-secures-us6-million-to-scale-autonomous-cleaning-robots), [vertexventures.sg](https://www.vertexventures.sg/projects/hivebotics))
+  - Summary: Hivebotics raised a US$6M Series A led by Vertex Ventures Southeast Asia & India to begin volume production of Abluo, its autonomous restroom-cleaning robot, and expand globally; the round was reported on 4 September 2026 by Tech in Asia, The Business Times and e27, and separately by NUS CDE — whose Innovation and Design Programme and GRIP incubated the founding team — and by lead investor Vertex. Abluo cleans toilets, urinals, sinks and floors with contactless high-pressure steam and runs on HiveIntelligence, the company's proprietary operating platform; Vertex's portfolio entry says Abluo is deployed across hospitals, airports and commercial buildings in Asia, Europe and the Middle East. The company positions Abluo as market entry for a longer-term autonomous facilities-management ecosystem.
+  - People: Rishab Patwari (co-founder and CEO), Tuan Dung Nguyen (co-founder and COO), Liu Genping (General Partner, Vertex Ventures SEA & India), Khushbu Topandasani (Associate Director, Investment, Vertex Ventures SEA & India)
+  - Counterparties: Vertex Ventures Southeast Asia & India (lead investor)
+  - Numbers: US$6M Series A
+  - Quote: "We may not only be building our own robots, but we will be collaborating with other robotics companies to integrate with our ecosystem," — Rishab Patwari, co-founder
 - **2026-08-26** — PickNik case study details how MoveIt Pro motion planning, autonomous navigation and simulation cut an estimated 10 months off Abluo's development and testing timeline — [picknik.ai](https://picknik.ai/case-study-hivebotics/)
   - Summary: PickNik Robotics published a case study on its work with Hivebotics to productionize the Abluo cleaning robot: customized MoveIt Pro arm path planning for confined spaces, autonomous navigation software for consistent mobile-base placement, and real-time simulations to de-risk physical deployment. PickNik estimates the collaboration saved roughly 10 months of product development and testing time against a typical year-plus timeline.
   - People: Rishab Patwari (CEO)
@@ -47,3 +52,4 @@ _Total disclosed: $1.0M._
 - What is Hivebotics' commercial model — robot sales, leasing, or robotics-as-a-service (RaaS)?
 - Is the Nimbus strategic investment part of Hivebotics' Series A round or a separate tranche?
 - Which verticals (hospitality, healthcare, commercial real estate, transport) is Hivebotics targeting for its broader facilities management vision?
+- Is HiveIntelligence meant only for Abluo, or licensed to the third-party robotics companies Hivebotics plans to integrate into its ecosystem?

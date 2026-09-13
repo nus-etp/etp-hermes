@@ -1,5 +1,5 @@
 # INVIGILO — LIVING BRIEF
-_Last updated: 2026-09-04 17:00 UTC_
+_Last updated: 2026-09-13 16:55 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -27,8 +27,8 @@ _Total disclosed: $0.5M._
 ## Older signals
 - **2026-07-24** — Published thought leadership on underground construction safety challenges specific to Singapore's Cross Island Line — [invigilo.ai](https://www.invigilo.ai/post/underground-changes-every-safety-rule-you-know)
   - Summary: INVIGILO published a detailed analysis of how underground construction (specifically the Cross Island Line at 70m depth) inverts standard safety hazards like work at height and confined-space plant proximity. The piece positions INVIGILO's computer-vision platform as adapted for low-light, dust-heavy underground environments where conventional monitoring falls short.
-- **2026-07-17** — Invigilo AI awarded JTC Innovative Procurement Partnership tender as one of three start-ups selected for worksite productivity monitoring — [sg.news.yahoo.com](https://sg.news.yahoo.com/more-support-construction-tech-firms-022000931.html) (Also reported by: [invigilo.ai](https://www.invigilo.ai/news/jtc-innovative-procurement-partnership-straits-times))
-  - Summary: National Development Minister Chee Hong Tat announced INVIGILO is one of three start-ups awarded tenders under JTC's Innovative Procurement Partnership for computer-vision solutions that monitor worksite productivity. The government is waiving sandbox rental fees and extending support for proven construction tech solutions.
+- **2026-07-17** — Invigilo AI awarded JTC Innovative Procurement Partnership tender as one of three start-ups selected for worksite productivity monitoring — [sg.news.yahoo.com](https://sg.news.yahoo.com/more-support-construction-tech-firms-022000931.html) (Also reported by: [invigilo.ai](https://www.invigilo.ai/news/jtc-innovative-procurement-partnership-straits-times), [tradelinkmedia.biz](https://www.tradelinkmedia.biz/publications/7/news/6373))
+  - Summary: National Development Minister Chee Hong Tat announced INVIGILO is one of three start-ups awarded tenders under JTC's Innovative Procurement Partnership for computer-vision solutions that monitor worksite productivity. Trade-press reporting on the 17 July 2026 ConTech@PDD announcement fills in the scope: JTC received close to 20 submissions for its first two IPPs and awarded the computer-vision worksite-productivity solution to Invigilo AI and Vebits AI, with a separate robotics award for automated covered-drain inspection going to MyrLabs. Contracts are split into a pilot phase plus an option for deployment, and JTC waives security deposits and liquidated damages during pilot testing; no contract value has been disclosed. The government is also waiving sandbox rental fees and extending support for proven construction tech solutions.
   - Counterparties: JTC
 - **2026-07-01** — Won Galp's Next-Gen Integrated Safety innovation challenge; pilot with Galp teams to follow — [invigilo.ai](https://www.invigilo.ai/news/galp-next-gen-safety-challenge-win)
   - Summary: INVIGILO won the Next-Gen Integrated Safety challenge run by Portuguese energy company Galp through its Startup the Future programme. Selected from over 300 applicants, INVIGILO presented at Galp Safety Day and pilot work with Galp teams is expected to follow.
@@ -45,6 +45,6 @@ _Total disclosed: $0.5M._
 
 ## Open questions
 - What is the commercial outcome of the Galp pilot program?
-- What is the scope and value of the JTC IPP tender for INVIGILO?
+- What is the contract value of the JTC IPP award, and when does the pilot convert into the deployment option?
 - Will the Motorola Solutions | Avigilon Alta MOU convert into a commercial agreement, and does it signal expansion beyond the construction and industrial verticals in Southeast Asia?
 - Will the HSI Donesafe integration extend INVIGILO beyond Asia-Pacific into HSI's global EHS customer base, and is it a technology-integration or commercial resale arrangement?

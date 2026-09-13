@@ -1,12 +1,14 @@
 # Forte Biotech — LIVING BRIEF
-_Last updated: 2026-06-07 15:01 UTC_
+_Last updated: 2026-09-13 16:55 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Forte Biotech is a Singapore aquaculture diagnostics startup that developed the RAPID platform — a point-of-care molecular testing system for shrimp disease detection (EHP, WSSV, AHPND) delivering results in under one hour at ~US$500 per kit. With 95+ customers across Southeast Asia, a TechCrunch Startup Battlefield 200 selection, and a P4G Partnership grant to scale in Vietnam, the company is emerging as a leading cost-effective alternative to conventional PCR testing for smallholder shrimp farmers.
 
+_Last material event: 2026-09-10 — Named a finalist for the 2026 Responsible Seafood Innovation Award (aquaculture) for the RAPID Plus shrimp-disease test_
+
 ## Profile
-- Sector: Agri-tech / aquaculture diagnostics
+- Sector: Agritech / Biotechnology
 - Region: Singapore (NUS spin-off)
 - Founded: 2021
 - Stage / funding: Grant-funded; multiple non-dilutive awards
@@ -14,12 +16,17 @@ Forte Biotech is a Singapore aquaculture diagnostics startup that developed the 
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/forte-biotech), [Crunchbase](https://www.crunchbase.com/organization/forte-biotech)
 
 ## Funding history
-- **2023-12** — Grant, SGD 200K — Temasek Foundation, Net Zero Challenge 2023 — [source](technode.global)
+- **2023-12** — Grant, SGD 200K — Temasek Foundation; Net Zero Challenge 2023 — [technode.global](https://technode.global/2023/12/08/alterno-forte-biotech-and-airx-carbon-win-630000-in-grant-funding-from-net-zero-challenge-2023/)
 
 _Total disclosed: $0.2M._
 
 ## Recent signals
-_none_
+- **2026-09-10** — Named a finalist for the 2026 Responsible Seafood Innovation Award (aquaculture) for RAPID Plus, its on-site shrimp-disease test that returns a result in about an hour — [globalseafood.org](https://www.globalseafood.org/advocate/responsible-seafood-innovation-award-finalist-learning-from-farm-failures-to-develop-an-on-site-rapid-test-to-detect-shrimp-diseases/)
+  - Summary: Global Seafood Alliance's Responsible Seafood Advocate profiled Forte Biotech as a finalist for the 2026 Responsible Seafood Innovation Award in the aquaculture category, on the strength of RAPID Plus — a quantitative molecular diagnostic platform co-founder Kit Yong describes as "akin to a qPCR" but engineered to strip out the cost and complexity of laboratory equipment. Yong said Forte has placed around 130 machines with more than 100 customers across nine countries since commercial sales began in January 2024, with Vietnam its largest market; the company is exploring Ecuador, is developing tests for tilapia and swine, and is seeking around US$1.5M after funding the business so far on angels, grants and founder funds. The awards will be presented at the Responsible Seafood Summit in Bangkok.
+  - People: Kit Yong (co-founder), Rob Fletcher (Responsible Seafood Advocate)
+  - Counterparties: Global Seafood Alliance (award body)
+  - Numbers: ~130 machines placed; 100+ customers; 9 countries; machine price ~US$1,000–1,300; 50,000 kits/month production capacity; ~US$1.5M raise sought
+  - Quote: "[The company's] greatest achievement will be every harvest that we prevent from being lost," — Kit Yong, co-founder
 
 ## Older signals
 - **2026-06-07** — Selected for TechCrunch Startup Battlefield 200, gaining global visibility among early-stage tech startups — [TechCrunch](https://techcrunch.com/startup-battlefield/company/forte-biotech/)
@@ -41,5 +48,6 @@ _none_
   - Quote: "In this industry, time is everything. Just a few days can mean the difference between saving a harvest or losing everything." — Kit Yong, Founder
 
 ## Open questions
-- Is Forte Biotech raising its first priced equity round, or does the P4G grant and Startup SG Tech funding cover near-term runway?
+- Will the roughly US$1.5M raise close, and is it equity or non-dilutive given Forte has so far relied on angel investors, grants and founder funds?
 - What is the subscription-model uptake in Vietnam — are farmers adopting the device-rental model as intended?
+- Does the channel shift toward feed mills, distributors and animal-health players change the unit economics versus selling directly to smallholders?

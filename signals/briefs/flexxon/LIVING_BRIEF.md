@@ -1,5 +1,5 @@
 # Flexxon — LIVING BRIEF
-_Last updated: 2026-09-02 17:10 UTC_
+_Last updated: 2026-09-13 16:55 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,7 @@ _No disclosed funding._
 _none_
 
 ## Older signals
+- **2026-08-13** — Tech in Asia feature traces Flexxon's X-PHY IP strategy from the 2021 AI-embedded SSD launch to a hardware-rooted security product portfolio, with co-founder May Chng saying IP is developed alongside R&D and shapes global expansion — [techinasia.com](https://techinasia.com/innovative-firms-turned-great-ideas-global-growth)
 - **2026-07-27** — Co-founder and CEO Camellia Chan recognized on the SG 100 Women in Tech list (2023 edition by Singapore Computer Society and IMDA); the underlying award dates to September 2023, with the page updated 27 July 2026 — [flexxon.com](https://www.flexxon.com/flexxon-ceo-camellia-chan-named-one-of-singapores-100-women-in-tech)
   - Summary: Flexxon's news page records that Co-Founder and CEO Camellia Chan was named an SG 100 Women in Tech 2023 honouree by the Singapore Computer Society and IMDA — the third edition of the list, unveiled at a closed-door forum by Minister Josephine Teo from more than 850 applications. Nominees had to demonstrate tech expertise, leadership and vision, and community advocacy. Note: the underlying recognition dates to September 2023; this item surfaced via a page update rather than a new award.
   - People: Camellia Chan (Co-Founder & CEO), Josephine Teo (Minister for Communications and Information; SGWIT patron)
@@ -43,3 +44,4 @@ _none_
 - What is Flexxon's funding or revenue stage — bootstrapped, VC-backed, or generating revenue from X-PHY hardware sales?
 - How does X-PHY's hardware-level approach to deepfake detection compare to software-only alternatives in terms of efficacy and cost?
 - How does X-PHY commercialize — direct sales, OEM, or through the Dell/Lenovo/HP system-partner channel?
+- Is Flexxon monetising the X-PHY IP portfolio through licensing or OEM arrangements in addition to selling its own hardware?
