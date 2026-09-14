@@ -19,13 +19,14 @@ _Last material event: 2026-05-25 — Named among Vercel AI Accelerator alumni wi
 _Total disclosed: $2.4M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-08-14** — Web in Travel profile (reposted by Belli) details the company's March 2024 founding, the US$500K Iterative pre-seed secured after 60 investor rejections, and breakeven within nine months with multiple airline clients — [belli.ai](https://www.belli.ai/news/read-what-web-in-travel-wit-wrote-about-belli-from-early-challenges-to-building-product-to-the-air-cargo-market)
   - Summary: A Web in Travel profile (by Till Welzel, reposted on Belli's news page) recounts the company's early path: Belli AI was founded in March 2024 by Jeff Pan (ex-Booking.com, Flymya, McKinsey) and Alexander Khor (molecular biology background; product management at AirAsia Teleport) to attack a US$6 trillion air-cargo sector — roughly 35% of world trade by value — that still runs on paper-based processes and legacy systems up to 15 years behind passenger technology. Pan and Khor faced 60 investor rejections before securing US$500,000 in pre-seed funding from Iterative, and reached breakeven within nine months of founding while signing multiple airline clients through hands-on, conference-led acquisition. Belli's software functions as an operating system for cargo spanning planning, load balancing, revenue management and automation; the profile notes cargo generates significantly higher operating margins than passenger services.
   - People: Jeff Pan (Co-Founder & CEO), Alexander Khor (Co-Founder)
   - Counterparties: Iterative (pre-seed investor)
   - Numbers: US$500K pre-seed (Iterative); 60 investor rejections; breakeven within 9 months; multiple airline clients; US$6T annual goods value; ~35% of world trade by value
-
-## Older signals
 - **2026-06-23** — Belli takes the stage at The Pitch by Deel — [belli.ai](https://www.belli.ai/blog)
   - Summary: Belli AI was selected to pitch at The Pitch by Deel, a global startup tournament by Deel with a $15M prize pool. Co-founder and CEO Jeff Pan and Associate Product Engineer Asael Jalocha presented Belli's airline cargo software in separate editions of the competition.
   - People: Jeff Pan (Co-founder & CEO), Asael Jalocha (Associate Product Engineer)
