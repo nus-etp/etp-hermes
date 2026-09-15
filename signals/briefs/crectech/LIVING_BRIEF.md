@@ -1,11 +1,11 @@
 # CRecTech — LIVING BRIEF
-_Last updated: 2026-09-12 16:14 UTC_
+_Last updated: 2026-09-15 17:34 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 CRecTech is an NUS GRIP-incubated Singapore carbon-recycling startup converting waste biogas into bio-methanol for green maritime fuel and sustainable chemical production. Its Pertamina NRE partnership has moved from MOU to project development: a Joint Development Agreement signed 14 August 2026 covers a ~50 t/yr biogas-to-bio-methanol demonstration facility at Sei Mangkei, North Sumatra, and anchors an end-to-end value chain spanning domestic offtake (Pertachem) and international marine-fuel supply (PIMD, with Singapore as the reference market around 2028). The project carries strong bilateral endorsement, having been highlighted at the Singapore-Indonesia 6WG Ministerial Meeting and Leaders' Retreat.
 
-_Last material event: 2026-08-29 — CEO Lim Kang Hui named Young Innovator at the inaugural IP for Growth Awards 2026_
+_Last material event: 2026-09-08 — Co-founders Lim Kang Hui and Haw Kok Giap named to Activate's inaugural Singapore Global Fellows cohort, the programme's first outside the United States_
 
 ## Profile
 - Sector: Climate tech
@@ -15,6 +15,11 @@ _Last material event: 2026-08-29 — CEO Lim Kang Hui named Young Innovator at t
 - **2024** — Grant, undisclosed — Breakthrough Energy Fellows; Breakthrough Energy, Temasek, Enterprise Singapore, SGInnovate — [temasek.com.sg](https://www.temasek.com.sg/en/news-and-resources/news-room/news/2024/BEF-SEA_announce_first_cohort)
 
 ## Recent signals
+- **2026-09-08** — Co-founders Lim Kang Hui and Haw Kok Giap were named to Activate's inaugural Singapore Global Fellows cohort — the fellowship's first outside the United States, backed by an S$12M National Research Foundation commitment and delivered with NTU — [crectech.net](https://www.crectech.net/news/crectech-founders-activate-global-fellows-singapore-2026)
+  - Summary: Activate announced its first fellowship outside the United States on 8 September 2026, selecting eight founders from five deep-tech teams — AeroFlux, CRecTech, HealBac, LAPIS and LoopForBio — for a year-long programme delivered with Nanyang Technological University, funded by the National Research Foundation Singapore and supported by Enterprise Singapore, with an S$12 million commitment and capacity for up to 20 fellows and 20 co-fellows across three cohorts. CRecTech is the only team in the cohort with both founders selected. Fellows receive funding, coaching, technical and business workshops, structured mentorship and investor access in Singapore and the United States, with the cohort's first US market immersion planned for the San Francisco Bay Area from 17 to 25 October 2026.
+  - People: Dr. Lim Kang Hui (Co-founder & CEO), Dr. Haw Kok Giap (Co-founder)
+  - Counterparties: Activate (fellowship programme), Nanyang Technological University (delivery partner), National Research Foundation Singapore (funder), Enterprise Singapore (supporter)
+  - Numbers: 8 founders / 5 teams; S$12M programme commitment; up to 20 fellows + 20 co-fellows over 3 cohorts; US immersion 2026-10-17 to 2026-10-25
 - **2026-08-31** — Selected as one of nine CIIC 2026 finalists (Energy Transition track) competing for the Rp15 billion prize pool, with its palm-oil-biogas-to-bio-methanol solution; final pitch 6 Oct 2026 at IISF Jakarta — [crectech.net](https://crectech.net/news/crectech-finalist-climate-impact-innovations-challenge-2026) (Also reported by: [climateimpactinnovations.com](https://climateimpactinnovations.com/nine-finalists-of-climate-impact-innovations-challenge-2026-to-compete-for-rp15-billion-to-advance-indonesias-climate-solutions))
   - Summary: CRecTech was selected from more than 850 applications across roughly 60 countries as one of nine finalists of the Climate Impact Innovations Challenge (CIIC) 2026, presented by East Ventures, Temasek Foundation and Tencent, and one of three Energy Transition track finalists alongside Phase Two Chemicals and Sun Ice Energy. Its winning solution converts palm oil biogas into bio-methanol at 50% lower production cost with emissions cuts of up to 93% versus conventional pathways. The challenge offers a Rp15 billion prize pool plus a possible special award of pre-purchased carbon credits worth up to US$1 million, with mentorship on partnerships, go-to-market and commercialisation ahead of the Grand Finale on 6 October 2026 at the Indonesia International Sustainability Forum in Jakarta. CRecTech frames the placement as a chance to deepen Indonesian partnerships and accelerate commercial-scale deployment of its biogas-to-bio-methanol technology.
   - Counterparties: East Ventures (challenge presenter), Temasek Foundation (challenge presenter), Tencent (challenge presenter)
@@ -48,7 +53,7 @@ _Last material event: 2026-08-29 — CEO Lim Kang Hui named Young Innovator at t
 - **2026-05-21** — featured in Manifold Times — [crectech.net](https://crectech.net/news/feature-on-manifold-times)
 
 ## Open questions
-- What is the size and valuation of the seed funding round?
-- Who led the seed round and who are the other investors?
+- What are the size, valuation and investor line-up of the seed round CRecTech announced in May 2026, and will the disclosed funding history ever reflect it?
 - What does CRecTech's IP portfolio around CRecREF consist of (patents filed vs trade secrets), and could the IP for Growth recognition support an IP-backed licensing or financing push?
 - What capacity, investment cost and start-up date are planned for the ~2028 commercial-scale plant, and what export volumes would Singapore absorb as the reference market?
+- What does the Activate fellowship provide CRecTech beyond the cohort itself — funding amount, equity or IP terms — and will the October US immersion produce named customers or offtake partners?

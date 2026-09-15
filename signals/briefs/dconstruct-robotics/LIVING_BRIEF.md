@@ -1,11 +1,11 @@
 # dConstruct Robotics — LIVING BRIEF
-_Last updated: 2026-08-13 14:33 UTC_
+_Last updated: 2026-09-15 17:34 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 dConstruct Robotics is a Singapore-headquartered deep-tech robotics startup building SLAM-based autonomous navigation and 3D digital-twin systems (d.ASH platform) for construction, defense, and logistics. Founded in 2021 by Chinn Hwa Lim, the company emerged from Singapore's RoboNexus accelerator and closed a $125M Series A in mid-2026, the largest round from the inaugural cohort, backed by the National Robotics Program. It has signed a manufacturing MOU with Foxconn, appointed robotics veteran He Ruijie to its Tech Council, and is establishing a 42,000 sqm global headquarters at Punggol Digital District (dC Plus) targeting completion by end-2026.
 
-_Last material event: 2026-07-03 — Closed $125M Series A led by JRE Ventures with SGInnovate, M7 Holdings, D.Camp, IMDA Spark Programme_
+_Last material event: 2026-09-14 — Straits Times feature discloses a Persona AI humanoid partnership and CEO Lim saying an IPO or M&A may be needed to fund scaling_
 
 ## Profile
 - Sector: Robotics
@@ -15,7 +15,7 @@ _Last material event: 2026-07-03 — Closed $125M Series A led by JRE Ventures w
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-09-14** — Straits Times feature details how the US$125M Series A is being deployed, naming a Persona AI humanoid partnership alongside the 42,000 sqm Punggol Digital District headquarters, with CEO Lim saying an IPO or M&A may be needed to fund scaling — [straitstimes.com](https://www.straitstimes.com/business/economy/singapore-start-ups-show-that-ai-isnt-just-a-big-tech-playground)
 
 ## Older signals
 - **2026-07-03** — dConstruct closed a $125M Series A round led by JRE Ventures, the flagship outcome of Singapore's RoboNexus accelerator inaugural cohort under the National Robotics Program — [technode.global](https://technode.global/2026/07/03/singapores-dconstruct-raises-125m-series-a-as-robonexus-accelerator-concludes-inaugural-cohort) (Also reported by: [ai-market-watch.com](https://www.ai-market-watch.com/company/dconstruct-robotics), [jtc.gov.sg](https://www.jtc.gov.sg/about-jtc/news-and-stories/industry-news/pdd-dconstruct-secures-usd125-million-series-a-funding))
@@ -33,4 +33,4 @@ _none_
 - What is the commercial structure of the Foxconn MOU — manufacturing partnership, joint development, or licensing?
 - Which disclosed clients (Boustead Projects, DSTA, SBS Transit, Softbank Robotics Singapore) are revenue-generating deployments versus pilots?
 - JRE Ventures appears both as Series A lead and as a named client — strategic investor-customer or coincidental roles?
-- What post-money valuation did the Series A imply?
+- What does the Persona AI humanoid partnership cover — joint development, integration or deployment — and does it take dConstruct beyond SLAM-based navigation into humanoid platforms?

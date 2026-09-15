@@ -1,11 +1,11 @@
 # Ailytics — LIVING BRIEF
-_Last updated: 2026-09-12 16:14 UTC_
+_Last updated: 2026-09-15 17:34 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 NUS GRIP-incubated Singapore deep-tech startup developing AI-powered video analytics for heavy industries. Ailytics is building momentum through strategic partnerships (Japan expansion with Safie), industry recognition, and a major technology leap by integrating NVIDIA Cosmos 3 world models into its Ailyssa platform — unlocking spatio-temporal reasoning and SOP-verification capabilities that were previously unsolvable with traditional computer vision.
 
-_Last material event: 2026-06-02 — Signed an MOU with Japan cloud video platform Safie; deployed NVIDIA Cosmos 3 world models into its Ailyssa platform_
+_Last material event: 2026-07-24 — Safie moved "Ailytics (SF)" to full commercial rollout for construction and manufacturing sites after confirming effectiveness in JR Kyushu and Obayashi pilots_
 
 ## Profile
 - Sector: AI / Deep tech
@@ -28,6 +28,11 @@ _none_
   - People: Alvin Tan (Minister of State), Tan Wei Zhuang, Lenard (Co-Founder & CEO, Ailytics)
   - Counterparties: Enterprise Singapore, Singapore EDB, Endeavor (programme partners)
   - Numbers: 8 cohort companies; 170+ launch attendees; Ailytics operating in 10+ countries
+- **2026-07-24** — Safie began full commercial rollout of the "Ailytics (SF)" unsafe-behaviour detection AI for construction and manufacturing sites, after confirming effectiveness in pilots with JR Kyushu and Obayashi — [safie.co.jp](https://safie.co.jp/news/4975)
+  - Summary: Safie, Japan's largest cloud recording service by registered cameras (54.3% share, Techno Systems Research), said it has moved from its April 2026 strategic tie-up with Ailytics to full commercial provision of "Ailytics (SF)", which analyses Safie cloud-camera footage with Ailytics' AI to detect five unsafe behaviours: entry beneath suspended loads, entry into restricted areas, proximity to heavy machinery, missing safety equipment, and speeding. Trials ran 1 October–30 November 2025 at a JR Kyushu railway bridge construction site (61 days, 2 cameras, 2 licences) and 1 February–31 May 2026 at Obayashi's Sendai City Hall joint-venture site (120 days, 3 cameras, 3 licences). The product auto-clips the five seconds either side of a detection and reports through a per-site safety dashboard.
+  - People: Tan Wei Zhuang (CEO, Ailytics); 佐渡島隆平 (President & CEO, Safie)
+  - Counterparties: Safie (partner), JR Kyushu (pilot site), Obayashi (pilot site)
+  - Numbers: 5 unsafe-behaviour categories; JR Kyushu trial 61 days / 2 cameras (Oct–Nov 2025); Obayashi trial 120 days / 3 cameras (Feb–May 2026); Safie 54.3% cloud-camera share
 - **2026-06-10** — Posted a general news update (category: news) on its website — [Ailytics · news](https://cdn.prod.website-files.com/69649f66a99bea9a8e7b067c/6a1e86e8a804c20618a89ada_Untitled%20design%20(1)
 - **2026-06-02** — Deployed NVIDIA Cosmos 3 world models into its Ailyssa platform, enabling spatio-temporal reasoning for industrial safety that was previously unsolvable with traditional CV — [Ailytics](https://www.ailytics.ai/news/industrial-video-intelligence-reimagined-ailytics-deploys-nvidia-cosmos-3-across-heavy-industry)
   - Summary: Ailytics integrated NVIDIA Cosmos 3 across four capabilities of its Ailyssa platform — contextual natural-language search across CCTV footage, periodic image reasoning for slow-moving hazards, second-layer false-positive reduction on generated alerts, and spatio-temporal SOP verification. The company positions this as a complement to its existing fast specialized models, not a replacement. Customers include Changi Airport Group, DHL, Laing O'Rourke, and Leonardo da Vinci International Airport.
@@ -48,3 +53,4 @@ _none_
 ## Open questions
 - Is Ailytics currently fundraising for its next round, given the 2024 pre-seed and growing momentum?
 - What is the scope and timeline of Ailytics' US market entry, and will it go direct, through a reseller, or with a local partner?
+- On what commercial terms does the Safie rollout run — licence, reseller or revenue share — and what share of Ailytics' revenue does Japan now represent?
