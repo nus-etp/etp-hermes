@@ -1,5 +1,5 @@
 # Flyoro Technologies — LIVING BRIEF
-_Last updated: 2026-09-05 15:57 UTC_
+_Last updated: 2026-09-16 17:33 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -30,7 +30,13 @@ _none_
   - Counterparties: Aether Fuels (partner), Wagner Sustainable Fuels (prior deployment partner), Boeing (prior deployment partner)
   - Numbers: up to 50 bpd / ~2,000 t/yr at Project Beacon; >70% lifecycle emissions cut; 500,000+ litres SAF blended; TRL 9 after Wellcamp
   - Quote: "Singapore is one of the few markets where advanced fuel production, airport demand, logistics capability and policy momentum can come together at meaningful speed. Through this MOU, we want to explore how smarter downstream infrastructure can complement next-generation SAF production and help make supply more flexible, transparent and practical for the local market." — Jonathan Yeo, Chief Executive Officer, FlyORO
+- **2026-03-01** — FlyORO published a nine-page AlphaLite technical briefing paper setting out the unit's design envelope, blend-control and certification workflow, and the Toowoomba Wellcamp deployment — [flyoro.co](https://flyoro.co/wp-content/uploads/2026/03/FlyORO-AlphaLite-Technical-Document-2026.pdf)
+  - Summary: FlyORO's briefing paper describes AlphaLite as a containerised blending system fitted into a standard 40-foot container, with side-mounted inlet and outlet lines for tie-in to existing airport fuel-farm infrastructure and positive segregation of neat Jet A/A-1 from the synthetic blending component. It answers how blends are approved: batches are certified to ASTM D7566 Table 1 at batch origination, then redesignated to ASTM D1655 and handled exactly like conventional Jet A/A-1 as a fully drop-in fuel for hydrant, storage and into-plane operations, under EI/JIG 1530 quality assurance (the standard ICAO Doc 9977 recognises for jet fuel supply chains) with EI 1581 filter/water-separator performance at transfer points. On transferability, the paper points to the operational unit at Toowoomba Wellcamp Airport but frames capacity as project-specific — throughput depends on site storage, feed connectivity and fuel-farm integration points, and expands through added storage or parallel AlphaLite units rather than a fixed footprint, so each new airport site carries its own engineering package.
+  - Counterparties: Toowoomba Wellcamp Airport (deployment site; the 2025 build was with Wagner Sustainable Fuels and Boeing)
+  - Numbers: 40 ft containerised unit; up to 20,000 L per batch; ~20-30 minute blending cycle; ATEX/IECEx-compliant electricals with PLC permissives; certification to ASTM D7566 Table 1 then redesignation to ASTM D1655; QA to EI/JIG 1530/1533, filtration to EI 1581
+  - Quote: "Fuel blending complexities come from the risks where one of its components is not certified jet fuel. Hence, blend control is critical to assure the compliance of the final blend." — FlyORO, AlphaLite Technical Briefing Paper
 
 ## Open questions
-- What are AlphaLite's practical blend-ratio limits and certification workflow, and how transferable is its TRL 9 Wellcamp validation to new airport sites?
+- Does AlphaLite impose a numeric ceiling on the synthetic blending component share per batch, or is the maximum blend ratio set case-by-case under ASTM D7566 Table 1? The briefing paper defers to the specification without stating a figure.
+- At a high-uplift airport, how many parallel AlphaLite units would the 20,000-litre batch ceiling require, and what does a multi-unit deployment cost against the alternative of a fixed blending terminal?
 - Will the Aether Fuels MOU convert into a definitive supply or blending-services agreement as Project Beacon reaches FID (construction 2026, operations targeted 2028)?
