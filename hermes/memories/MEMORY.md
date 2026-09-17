@@ -10,4 +10,4 @@ The etp-hermes GHA runner can boot with a corrupted PATH (env `declare -x` outpu
 §
 In etp-hermes Layer 1 runs, MCP jina read endpoints return 401 (no key wired), and since 2026-09-11 the r.jina.ai bearer fallback (JINA_API_KEY) returns 402 InsufficientBalanceError (out of credit). Working path: direct curl with a browser UA.
 §
-Layer 4 infographics have NO fallback image path: image_gen is fal-only (use_gateway:false), only FAL_KEY seeded. A fal 403 'User is locked. Reason: TOP_UP' fails every slug — log 'infographic failed for <slug>', leave existing PNGs, write nothing; never substitute a hand-rendered PNG.
+Layer 4 infographics have NO fallback: image_gen is fal-only (use_gateway:false, model fal-ai/gpt-image-2); fallback_providers is LLM-only. fal 'Exhausted balance'/'TOP_UP' fails every slug — log 'infographic failed for <slug>', leave existing PNGs, write nothing; never hand-render a substitute PNG.
