@@ -1,5 +1,5 @@
 # Constructor.io — LIVING BRIEF
-_Last updated: 2026-09-15 17:34 UTC_
+_Last updated: 2026-09-18 16:59 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,7 +20,7 @@ _Last material event: 2026-08-29 — Won three Gold Stevie Company of the Year a
 _Total disclosed: $55.0M._
 
 ## Recent signals
-- **2026-08-29** — Won three Gold "Company of the Year" honours across the International Business Awards, the Stevie Awards for Technology Excellence and the American Business Awards, plus Gold product awards for its AI Product Insights Agent — [techday.com](https://techday.com/story/constructor-wins-trio-of-stevie-gold-awards-for-ecommerce) (Also reported by: [prnewswire.com](https://www.prnewswire.com/news-releases/ai-innovation-at-constructor-leads-to-3-gold-company-of-the-year-wins-across-3-stevie-awards-programs-302861732.html))
+- **2026-08-29** — Won three Gold "Company of the Year" honours across the International Business Awards, the Stevie Awards for Technology Excellence and the American Business Awards, plus Gold product awards for its AI Product Insights Agent — [techday.com](https://techday.com/story/constructor-wins-trio-of-stevie-gold-awards-for-ecommerce) (Also reported by: [prnewswire.com](https://www.prnewswire.com/news-releases/ai-innovation-at-constructor-leads-to-3-gold-company-of-the-year-wins-across-3-stevie-awards-programs-302861732.html), [martechcube.com](https://martechcube.com/constructor-wins-3-gold-stevie-awards-for-ai-innovation))
   - Summary: Constructor took Gold for Company of the Year: Ecommerce in the International Business Awards, Gold for Company of the Year: Retail and Ecommerce in the Stevie Awards for Technology Excellence, and Gold for Company of the Year: Retail in the American Business Awards. Its AI Product Insights Agent (PIA), which answers shopper questions conversationally on product detail pages, won Gold for New Product of the Year: Electronic Commerce Solution in the IBAs and Gold for New Product of the Year: Ecommerce and Retail in the Technology Excellence programme, plus Silver and a People's Choice Award in the American Business Awards. The article lists Sephora, Under Armour, The Very Group, White Stuff, Target Australia and AMI Paris as customers, and notes Constructor alongside Accenture, Cisco, Google, IBM, Lenovo, Walmart and Wells Fargo in this year's Stevie AI categories. Constructor's own release of the sweep (27 August 2026) adds that the company was also named to the 2026 Inc. 5000, took "Best Use of AI in Retail and Ecommerce" at the inaugural Champions in AI Awards, and earned a 2026 Agent Ready Award from the MACH Alliance for agentic solutions in production at scale; it puts the Stevie programmes at 12,000+ nominations a year from over 70 nations.
   - People: Eli Finkelshteyn (Co-Founder & CEO)
   - Numbers: 3 Gold Company of the Year awards; 2 Gold product awards for PIA; 1 Silver; 1 People's Choice Award

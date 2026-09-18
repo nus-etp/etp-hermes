@@ -1,5 +1,5 @@
 # Ailytics — LIVING BRIEF
-_Last updated: 2026-09-15 17:34 UTC_
+_Last updated: 2026-09-18 16:59 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -29,7 +29,7 @@ _none_
   - Counterparties: Enterprise Singapore, Singapore EDB, Endeavor (programme partners)
   - Numbers: 8 cohort companies; 170+ launch attendees; Ailytics operating in 10+ countries
 - **2026-07-24** — Safie began full commercial rollout of the "Ailytics (SF)" unsafe-behaviour detection AI for construction and manufacturing sites, after confirming effectiveness in pilots with JR Kyushu and Obayashi — [safie.co.jp](https://safie.co.jp/news/4975)
-  - Summary: Safie, Japan's largest cloud recording service by registered cameras (54.3% share, Techno Systems Research), said it has moved from its April 2026 strategic tie-up with Ailytics to full commercial provision of "Ailytics (SF)", which analyses Safie cloud-camera footage with Ailytics' AI to detect five unsafe behaviours: entry beneath suspended loads, entry into restricted areas, proximity to heavy machinery, missing safety equipment, and speeding. Trials ran 1 October–30 November 2025 at a JR Kyushu railway bridge construction site (61 days, 2 cameras, 2 licences) and 1 February–31 May 2026 at Obayashi's Sendai City Hall joint-venture site (120 days, 3 cameras, 3 licences). The product auto-clips the five seconds either side of a detection and reports through a per-site safety dashboard.
+  - Summary: Safie, Japan's largest cloud recording service by registered cameras (54.3% share, Techno Systems Research), said it has moved from its April 2026 strategic tie-up with Ailytics to full commercial provision of "Ailytics (SF)", which analyses Safie cloud-camera footage with Ailytics' AI to detect five unsafe behaviours: entry beneath suspended loads, entry into restricted areas, proximity to heavy machinery, missing safety equipment, and speeding. Trials ran 1 October–30 November 2025 at a JR Kyushu railway bridge construction site (61 days, 2 cameras, 2 licences) and 1 February–31 May 2026 at Obayashi's Sendai City Hall joint-venture site (120 days, 3 cameras, 3 licences). The product auto-clips the five seconds either side of a detection and reports through a per-site safety dashboard. Safie sells the product under its own brand as "Ailytics (SF)" with per-camera licences (the two pilots ran two and three licences respectively); the revenue split to Ailytics is not disclosed.
   - People: Tan Wei Zhuang (CEO, Ailytics); 佐渡島隆平 (President & CEO, Safie)
   - Counterparties: Safie (partner), JR Kyushu (pilot site), Obayashi (pilot site)
   - Numbers: 5 unsafe-behaviour categories; JR Kyushu trial 61 days / 2 cameras (Oct–Nov 2025); Obayashi trial 120 days / 3 cameras (Feb–May 2026); Safie 54.3% cloud-camera share
@@ -53,4 +53,4 @@ _none_
 ## Open questions
 - Is Ailytics currently fundraising for its next round, given the 2024 pre-seed and growing momentum?
 - What is the scope and timeline of Ailytics' US market entry, and will it go direct, through a reseller, or with a local partner?
-- On what commercial terms does the Safie rollout run — licence, reseller or revenue share — and what share of Ailytics' revenue does Japan now represent?
+- What revenue does Ailytics book per Safie-branded deployment, and how much of total revenue does Japan now contribute?

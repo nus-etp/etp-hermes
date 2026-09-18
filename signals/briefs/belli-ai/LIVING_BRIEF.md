@@ -1,11 +1,11 @@
 # Belli AI — LIVING BRIEF
-_Last updated: 2026-09-02 17:10 UTC_
+_Last updated: 2026-09-18 16:59 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Belli AI is a BLOCK71 Singapore-resident air-cargo software startup founded by veterans of McKinsey, SpaceX, Boeing, Booking.com, and AirAsia, digitising end-to-end airline cargo operations. The company has raised a US$2.4M seed round and been selected for the Vercel AI Accelerator program. Its inclusion as a named alumni with signed enterprise customers signals product-market validation and growing traction in the air-cargo digitisation space.
 
-_Last material event: 2026-05-25 — Named among Vercel AI Accelerator alumni with signed enterprise customers_
+_Last material event: 2026-09-11 — Crowned champion of the 2026 SWC Asia Finale, earning a place at November's San Francisco Grand Finale and a shot at its US$1M investment prize_
 
 ## Profile
 - Sector: Logistics
@@ -19,7 +19,9 @@ _Last material event: 2026-05-25 — Named among Vercel AI Accelerator alumni wi
 _Total disclosed: $2.4M._
 
 ## Recent signals
-_none_
+- **2026-09-11** — Belli was crowned champion of the 2026 SWC Asia Finale and will represent Asia at the San Francisco Grand Finale in November, competing for a US$1M investment prize — [belli.ai](https://belli.ai/company/news/belli-crowned-champion-at-the-2026-swc-asia-finale)
+  - Summary: Belli took the top spot at the 2026 SWC Asia Finale, where it was judged on its enterprise-grade SaaS for aviation cargo and its commercial scalability. As regional champion the team travels to San Francisco in November 2026 for the SWC Grand Finale and a US$1,000,000 investment prize; DPBIO Technology Limited and Set Sail AI were named first and second runner-up respectively.
+  - Numbers: US$1,000,000 Grand Finale investment prize; November 2026 Grand Finale
 
 ## Older signals
 - **2026-08-14** — Web in Travel profile (reposted by Belli) details the company's March 2024 founding, the US$500K Iterative pre-seed secured after 60 investor rejections, and breakeven within nine months with multiple airline clients — [belli.ai](https://www.belli.ai/news/read-what-web-in-travel-wit-wrote-about-belli-from-early-challenges-to-building-product-to-the-air-cargo-market)
@@ -40,3 +42,4 @@ _none_
 - Which enterprise customers has Belli AI signed, and what is the scale of deployment (pilot vs. production across how many airlines)?
 - What is the specific revenue or ARR trajectory after the Vercel Accelerator program?
 - Does the directory-listed 2024-01-01 seed date predate Belli's March 2024 founding (per the WiT profile), and is the US$500K Iterative pre-seed a separate priced round or was it folded into the seed?
+- What is the cash value and structure of the 2026 SWC Asia Finale win, and would a Grand Finale US$1M prize arrive as equity investment or a grant?
