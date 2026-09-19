@@ -1,5 +1,5 @@
 # INVIGILO — LIVING BRIEF
-_Last updated: 2026-09-13 16:55 UTC_
+_Last updated: 2026-09-19 16:23 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -17,6 +17,7 @@ _Last material event: 2026-08-26 — Integrated technology partnership with HSI 
 _Total disclosed: $0.5M._
 
 ## Recent signals
+- **2026-09-14** — Straits Times feature on Singapore AI startups recaps INVIGILO's June 2026 selection as one of the first three JTC Innovative Procurement Partnership startups and reports a 60 per cent fall in safety incidents on one HDB project — [straitstimes.com](https://www.straitstimes.com/business/economy/singapore-start-ups-show-that-ai-isnt-just-a-big-tech-playground)
 - **2026-08-26** — Integrated technology partnership with HSI Donesafe pairing INVIGILO's AI CCTV-based risk detection with HSI Donesafe's enterprise EHS incident-management platform — [donesafe.com](https://www.donesafe.com/blog/company/ai-workplace-safety-invigilo-donesafe-partnership)
   - Summary: HSI Donesafe (an enterprise EHS platform backed by HSI, serving 22,000+ organisations) and INVIGILO announced an integrated technology partnership: INVIGILO's computer-vision detection of 40+ workplace risk scenarios over existing CCTV feeds into HSI Donesafe's incident, investigation, corrective-action and compliance workflows. The joint offering targets construction, manufacturing, logistics and warehousing, plus mining, resources and energy, and will be showcased at OS+H Asia in Singapore.
   - People: Vishnu Saran (CEO and Co-founder, INVIGILO), Louise Minty (Partnerships Manager, HSI Donesafe)

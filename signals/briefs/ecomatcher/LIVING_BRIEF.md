@@ -1,5 +1,5 @@
 # EcoMatcher — LIVING BRIEF
-_Last updated: 2026-09-11 17:06 UTC_
+_Last updated: 2026-09-19 16:23 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -22,6 +22,8 @@ _No disclosed funding._
 _none_
 
 ## Older signals
+- **2026-08-18** — Founder Bas Fransen's blog post sets out the transparency standard he says corporate tree-planting buyers should demand in 2026 and positions EcoMatcher's TreeCorder/TreeTracker/blockchain/drone/API stack and TREES+ against project-level estimates — [ecomatcher.com](https://www.ecomatcher.com/transparent-corporate-tree-planting-what-companies-should-look-for-in-2026/)
+  - Summary: EcoMatcher founder and CEO Bas Fransen published a company blog post arguing that corporate tree-planting claims now carry enough reputational and compliance risk that buyers should require tree-level records — species, planting date, GPS coordinates, geotagged photos and planter identity — rather than the project-level hectare estimates he says leave double-counting, mortality and attribution unresolved. The piece walks through drone and satellite monitoring and API hooks that drop tree gifts into e-commerce, HR and CRM workflows, then closes by positioning EcoMatcher as the vendor connecting each tree to verifiable field data, including TREES+ carbon removal. It is company-authored positioning, not a product or commercial announcement — no customers, volumes or pricing are disclosed.
 - **2026-07-14** — Launched next-generation ForestTracker with drone-captured forest views, community messaging, and Forever Forests dedicated to life milestones — [ecomatcher.com](https://www.ecomatcher.com/ecomatcher-launches-next-generation-foresttracker)
   - Summary: EcoMatcher announced a major upgrade to ForestTracker, its flagship forest visualization platform, adding three capabilities: drone-captured aerial views of forest growth and project progress, messaging within digital forest spaces aimed at employee and customer communities, and Forever Forests — forests dedicated to birthdays, weddings, and memorials as permanent legacies. The release targets transparency and engagement for corporate sustainability programs. Forever Forests is marketed to individuals, families and organisations as well as corporate buyers, which points to a consumer gifting use case layered on the existing corporate platform rather than a separately sold direct-to-consumer product line; EcoMatcher has not disclosed pricing or a stand-alone revenue line for it.
   - People: Bas Fransen (Founder and CEO)

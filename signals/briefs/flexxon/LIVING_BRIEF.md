@@ -1,5 +1,5 @@
 # Flexxon — LIVING BRIEF
-_Last updated: 2026-09-13 16:55 UTC_
+_Last updated: 2026-09-19 16:23 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,6 +20,10 @@ _No disclosed funding._
 _none_
 
 ## Older signals
+- **2026-08-14** — CEO Camellia Chan uses a vendor-bylined op-ed to argue that securing enterprise AI agents needs hardware-level controls, citing the Model Context Protocol vulnerability and a Meta agent data leak as evidence that software guardrails get bypassed — [techticker.net](https://techticker.net/2026/08/14/ai-agents-are-inside-the-enterprise-are-your-security-foundations-ready-for-them)
+  - Summary: Camellia Chan, billed as CEO and founder of X-PHY, a Flexxon brand, published a bylined piece (carried by techticker.net as TechRadar Pro Perspectives syndicated content) arguing that AI agents have moved from chatbots to systems holding database access, API keys and system privileges, while defences still rely on the software-only strategy that failed against ChatGPT jailbreaks in 2023. She points to the Model Context Protocol vulnerability CVE-2025-49596 (CVSS 9.4) and a data leak attributed to a Meta AI agent as evidence that input guardrails and permission monitoring sit inside the software trust boundary, and argues the answer is a hardware root of trust — the layer X-PHY sells. It is vendor-authored positioning rather than independent reporting; no product launch, customer or figure is attached to it.
+  - People: Camellia Chan (CEO and Founder, X-PHY, a Flexxon brand)
+  - Quote: "Guardrails, permissions, and monitoring are necessary, but they are insufficient, and they represent the security layers that history shows will eventually be bypassed."
 - **2026-08-13** — Tech in Asia feature traces Flexxon's X-PHY IP strategy from the 2021 AI-embedded SSD launch to a hardware-rooted security product portfolio, with co-founder May Chng saying IP is developed alongside R&D and shapes global expansion — [techinasia.com](https://techinasia.com/innovative-firms-turned-great-ideas-global-growth)
 - **2026-07-27** — Co-founder and CEO Camellia Chan recognized on the SG 100 Women in Tech list (2023 edition by Singapore Computer Society and IMDA); the underlying award dates to September 2023, with the page updated 27 July 2026 — [flexxon.com](https://www.flexxon.com/flexxon-ceo-camellia-chan-named-one-of-singapores-100-women-in-tech)
   - Summary: Flexxon's news page records that Co-Founder and CEO Camellia Chan was named an SG 100 Women in Tech 2023 honouree by the Singapore Computer Society and IMDA — the third edition of the list, unveiled at a closed-door forum by Minister Josephine Teo from more than 850 applications. Nominees had to demonstrate tech expertise, leadership and vision, and community advocacy. Note: the underlying recognition dates to September 2023; this item surfaced via a page update rather than a new award.
@@ -43,5 +47,5 @@ _none_
 ## Open questions
 - What is Flexxon's funding or revenue stage — bootstrapped, VC-backed, or generating revenue from X-PHY hardware sales?
 - How does X-PHY's hardware-level approach to deepfake detection compare to software-only alternatives in terms of efficacy and cost?
+- Does the AI-agent security pitch correspond to a shipping X-PHY product line, or is it positioning ahead of one?
 - How does X-PHY commercialize — direct sales, OEM, or through the Dell/Lenovo/HP system-partner channel?
-- Is Flexxon monetising the X-PHY IP portfolio through licensing or OEM arrangements in addition to selling its own hardware?

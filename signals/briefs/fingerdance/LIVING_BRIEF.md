@@ -1,15 +1,20 @@
 # FingerDance — LIVING BRIEF
-_Last updated: 2026-06-11 17:02 UTC_
+_Last updated: 2026-09-19 16:23 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 FingerDance is a Singapore social-impact deep-tech startup building SiLViA (Sign Language Virtual Assistant), an AI-powered platform that converts audio announcements into sign language in real time. It partnered with SBS Transit to deploy SiLViA at Chinatown MRT Station, achieving a 99.7% translation success rate and winning the 2025 Global Rail Innovation Award. The company is now adapting SiLViA for international deployment, starting with Abu Dhabi using Emirati Sign Language.
+
+_Last material event: 2026-04-15 — SiLViA won the Transportation category at the Singapore Business Review National Business Awards 2026_
 
 ## Profile
 - Sector: AI / Social impact
 - Region: Singapore
 - Stage / funding: Accelerator stage (TS2 cohort)
 - Key people: Gong He (co-founder, technologist)
+
+## Funding history
+_No disclosed funding._
 
 ## Recent signals
 - **date unknown** — GovInsider profiles SBS Transit's AI accessibility initiatives including SiLViA, with expansion planned to more transport hubs within 12 months — [govinsider.asia](https://govinsider.asia/intl-en/article/making-transportation-user-friendly-for-the-hearing-impaired)
@@ -31,8 +36,13 @@ FingerDance is a Singapore social-impact deep-tech startup building SiLViA (Sign
   - Counterparties: SBS Transit, Singapore Association of the Deaf (SADeaf)
   - Numbers: ~2,000 queries during pilot, 1.2M daily ridership (SBS Transit network)
   - Quote: "Strong early adoption post-launch, handling some 2,000 queries during its pilot phase at Chinatown MRT station between October and November 2025."
+- **2024-05-31** — An MTI speech at the launch of SBS Transit's MINNOVA mobility centre records FingerDance as SiLViA's co-developer and one of the startups SBS Transit signed MOUs with that day, dating the partnership to more than a year before the Chinatown MRT rollout surfaced in press coverage — [mti.gov.sg](https://www.mti.gov.sg/newsroom/speech-by-sms-low-yen-ling-at-the-launch-of-sbs-transit-mobility-innovation-centre--minnova-)
+  - Summary: A 31 May 2024 speech by Senior Minister of State Low Yen Ling at the launch of SBS Transit's Mobility Innovation Centre (MINNOVA) confirms the SiLViA lineage: SBS Transit and FingerDance, described as a National University of Singapore startup, co-developed the Sign Language Virtual Assistant, which translates spoken words or text into sign language in real time using generative AI. SBS Transit signed Memorandums of Understanding that day with FingerDance, RSP Architects, Aviation Virtual and other industry partners; MINNOVA was set up with Enterprise Singapore in November 2023 and 12 startups and SMEs had worked with SBS Transit since its inception. The speech is Singapore government primary-source confirmation of the SBS Transit relationship rather than a new deployment.
+  - People: Low Yen Ling (Senior Minister of State, MTI), Jeffrey Sim (Group Chief Executive, SBS Transit)
+  - Counterparties: SBS Transit (co-development partner), Enterprise Singapore (MINNOVA co-founder)
+  - Numbers: 12 startups and SMEs engaged through MINNOVA since November 2023
+  - Quote: "SBS Transit and FingerDance, a National University of Singapore startup, have co-developed a Sign Language Virtual Assistant, SiLViA" — Low Yen Ling, Senior Minister of State for Trade and Industry
 
 ## Open questions
 - What is FingerDance's business model — licensing SiLViA to transit operators, or a SaaS/subscription model?
 - Has FingerDance raised any institutional equity funding beyond the TS2 accelerator commitment?
-- What is the deployment pipeline beyond Abu Dhabi — any other transit operators evaluating SiLViA?

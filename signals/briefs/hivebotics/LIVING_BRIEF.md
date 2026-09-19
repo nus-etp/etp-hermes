@@ -1,5 +1,5 @@
 # Hivebotics — LIVING BRIEF
-_Last updated: 2026-09-16 17:32 UTC_
+_Last updated: 2026-09-19 16:23 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -51,5 +51,4 @@ _Total disclosed: $1.0M._
 ## Open questions
 - What is Hivebotics' commercial model — outright robot sales through distributors, leasing, or robotics-as-a-service? The Series A release funds "expansion of the distributor network", which points to hardware sales rather than a per-cleaning service model, but the pricing model is not stated.
 - Are the Series A co-investors strategic? Fareast Land Development (Farglory Group, a property developer) and Rigel (restroom products) both sit in Hivebotics' target verticals or supply chain — are there deployment or distribution commitments attached, and was Nimbus's May 2026 investment folded into this round or held separately?
-- Which are the "four core markets" the distributor expansion targets, and does North America — where Abluo already has operating sites — count as a market or only as a deployment footprint?
 - Is HiveIntelligence meant only for Abluo, or licensed to the third-party robotics companies Hivebotics plans to integrate into its ecosystem?

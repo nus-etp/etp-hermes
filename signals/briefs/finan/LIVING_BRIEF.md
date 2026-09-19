@@ -1,11 +1,11 @@
 # Finan — LIVING BRIEF
-_Last updated: 2026-09-13 16:55 UTC_
+_Last updated: 2026-09-19 16:23 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Finan is a Singapore-headquartered SME operating system startup serving Vietnamese micro-businesses through its SoBanHang platform, with over 800,000 active users and US$5B+ in transaction volume. In May 2026 it raised a US$3.8M pre-Series A led by Hong Leong Bank to scale its AI-native Finan One OS and expand embedded financial services across Southeast Asia.
 
-_Last material event: 2026-08-05 — Launched the VPBiz FinanONE Mastercard virtual corporate debit card with VPBank and Mastercard_
+_Last material event: 2026-08-25 — Hong Leong Bank Vietnam's banking services integrated directly into the SoBanHang app, launched at a joint Ho Chi Minh City event_
 
 ## Profile
 - Sector: Fintech / SaaS
@@ -18,10 +18,14 @@ _Last material event: 2026-08-05 — Launched the VPBiz FinanONE Mastercard virt
 _Total disclosed: $3.8M._
 
 ## Recent signals
-_none_
+- **2026-08-25** — Hong Leong Bank Vietnam's banking services are live inside SoBanHang, launched at a joint Ho Chi Minh City event for a voice-driven "Multitasking AI Assistant" that books orders, reconciles HLB account balances and preps period tax returns — [vietnam.vn](https://vietnam.vn/en/trai-nghiem-tro-ly-ai-da-nhiem-tieu-thuong-go-duoc-nut-that-van-hanh-kinh-doanh)
+  - Summary: Hong Leong Bank Vietnam (HLB) and SoBanHang staged a "Multitasking AI Assistant" launch in Ho Chi Minh City on 20 August 2026, reported by Báo Tiền Phong on 25 August. The assistant takes Vietnamese voice commands — a spoken order creates the order, deducts inventory, applies the discount and posts to the receivables ledger — and reconciles balance changes from the linked HLB account against real-time revenue and expenditure, flagging invoice discrepancies, chasing overdue debts and helping compile period tax returns. HLB frames the tie-up as banking embedded in the seller's existing sales-management app rather than a separate product, and the article sets out a longer-term plan to turn transparent sales data into a credit record that unlocks unsecured lending for household businesses — evidence that May's Hong Leong-led investment came with a broader strategic partnership, not just capital.
+  - People: Fred Lim (Director of Digital Commercialization, Hong Leong Bank Berhad)
+  - Counterparties: Hong Leong Bank Vietnam (banking partner and lead investor)
+  - Quote: "Hong Leong Bank is not simply a provider of funding, but also actively partners with businesses to help them operate more efficiently. By democratizing AI to help small business owners manage their cash flow accurately, we aim to provide every business owner with a smart digital assistant to save time, make accurate decisions, and achieve breakthrough growth." — Fred Lim, Director of Digital Commercialization, Hong Leong Bank Berhad
 
 ## Older signals
-- **2026-08-05** — VPBank, Finan and Mastercard launched the VPBiz FinanONE Mastercard, a virtual corporate debit card opened entirely online on the FinanOne platform and activated through VPBank NEO Biz — [vietnam.vn](https://www.vietnam.vn/en/vpbank-finan-va-mastercard-hop-tac-ra-mat-dong-the-ghi-no-phi-vat-ly)
+- **2026-08-05** — VPBank, Finan and Mastercard launched the VPBiz FinanONE Mastercard, a virtual corporate debit card opened entirely online on the FinanOne platform and activated through VPBank NEO Biz — [vietnam.vn](https://www.vietnam.vn/en/vpbank-finan-va-mastercard-hop-tac-ra-mat-dong-the-ghi-no-phi-vat-ly) (Also reported by: [vietnam.vn](https://vietnam.vn/en/ai-mo-them-loi-giai-cho-bai-toan-quan-tri-tai-chinh-doanh-nghiep))
   - Summary: VPBank, Finan and Mastercard launched the VPBiz FinanONE Mastercard on 5 August 2026 — a non-physical corporate debit card that businesses register for on the FinanOne platform and activate through VPBank NEO Biz, after which it works for domestic and international online payments across Mastercard's acceptance network. From a main card, businesses can create multiple online sub-cards with their own spending limits, user permissions and validity periods, and all transactions update in real time so spend is tracked per department, employee or project as it happens rather than at settlement. CEO Bui Hai Nam framed the launch as FinanOne's move beyond sales and cash-flow tooling into controlling spend before a transaction occurs.
   - People: Bui Hai Nam (General Director, Finan)
   - Counterparties: VPBank (issuing bank partner), Mastercard (payment network)
@@ -42,5 +46,5 @@ _none_
 ## Open questions
 - What is the revenue model for Finan One vs SoBanHang — subscription, transaction-based, or both?
 - Which Southeast Asian markets are the initial expansion targets beyond Vietnam?
-- Does the Hong Leong Bank investment signal a broader strategic partnership or just financial backing?
 - Does the VPBiz FinanONE card push Finan upmarket from household businesses to registered SMEs, and if so does it need a different sales motion from SoBanHang?
+- If sales data becomes a credit record, does Finan carry lending risk or does Hong Leong underwrite while Finan supplies the rails?

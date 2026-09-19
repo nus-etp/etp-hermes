@@ -1,5 +1,5 @@
 # Forte Biotech — LIVING BRIEF
-_Last updated: 2026-09-13 16:55 UTC_
+_Last updated: 2026-09-19 16:23 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
