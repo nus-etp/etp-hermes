@@ -1,5 +1,5 @@
 # Rongbient Biotech — LIVING BRIEF
-_Last updated: 2026-08-08 13:48 UTC_
+_Last updated: 2026-09-20 16:46 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -19,6 +19,10 @@ _No disclosed funding._
 _none_
 
 ## Older signals
+- **2026-08-14** — Rongbient pitched at NIC Scale X Demo Day in Hanoi as one of the programme's top 10 startups, carrying its seaweed biofiltration systems, shrimp-survival feed additives and biomaterial by-products to Vietnamese and Japanese investors — [vietnam.vn](https://www.vietnam.vn/en/ket-noi-startup-viet-nam-voi-he-sinh-thai-cong-nghe-va-dau-tu-nhat-ban)
+  - Summary: Vietnam.vn reports the Demo Day ran on the morning of 13 Aug 2026 inside a Vietnam–Japan technology and investment forum, with the top 10 startups of the NIC Scale X acceleration programme pitching to businesses, investors and experts from both countries. Rongbient's listed offering was seaweed cultivation systems for biofiltration, feed additives that raise shrimp survival rates and absorb carbon, and by-products sold as biomaterials.
+  - Counterparties: NIC Scale X (programme host), Vietnam–Japan investment and business forum
+  - Quote: "Startup Rongbient Biotech provides seaweed cultivation systems for biological filtration; feed additives that increase shrimp survival rates, absorb carbon, and improve farmers' income; and by-products used as biomaterials." — Vietnam.vn
 - **2026-06-01** — WEF profiled Rongbient's seaweed-and-biotech approach to reducing shrimp farming's environmental impact in Vietnam, the world's second-largest supplier. — [weforum.org](https://www.weforum.org/videos/this-start-up-is-using-seaweed-to-clean-up-shrimp-farming/)
   - Summary: The World Economic Forum featured Rongbient's approach of combining seaweed and biotechnology to address carbon-heavy shrimp farming in Vietnam. The piece notes that producing 1kg of shrimp generates approximately 15kg of CO2 emissions and describes the industry as inefficient and highly polluting.
   - Numbers: 15kg CO2 per 1kg shrimp; Vietnam is world's second-largest shrimp supplier
@@ -33,3 +37,4 @@ _none_
 - Did the US$500K pre-seed round (in progress as of Jan 2025) close, and has any further funding been disclosed?
 - Has Rongbient scaled beyond its Cà Mau pilot hectares, and did the planned pilot with one of Vietnam's largest shrimp exporters materialize?
 - Has the feed-additive line reached its 50% additive-reduction target, and is the government-backed 20,000–30,000 ha expansion progressing?
+- Did the NIC Scale X Demo Day pitch convert into Japanese investment, partners or orders?

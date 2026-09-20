@@ -2,10 +2,12 @@ Hermes venv at ~/.hermes/hermes-agent/venv/ ships without pip. To install packag
 §
 Webflow republishes unchanged so changed-feed detection refetches seen links. sensorihealthcare.com serves gzip to plain curl (looks JS-empty/binary) — use curl --compressed.
 §
-Layer 3 (etp-hermes) merges agent/updates signals into briefs from `data/touched-companies.json` (H2/H3=company); writes only under signals/briefs/<slug>/; the `_Last updated:_` bump is unconditional even when nothing new (repo docs confirm synthesis always bumps it); Sector silent-corrected to c.sector; funding re-rendered from c.funding_rounds. Layer-2 gap-fill URLs often differ from on-disk cites only by trailing slash or www (same article) — dedupe, never re-card.
+Layer 3 (etp-hermes) merges agent/updates signals into briefs from `data/touched-companies.json` (H2/H3=company); writes only under signals/briefs/<slug>/; `_Last updated:_` bump unconditional even when nothing new; Sector silent-corrected to c.sector; funding re-rendered from c.funding_rounds. Layer-2 gap-fill URLs differ from on-disk cites only by trailing slash/www — dedupe, never re-card.
 §
 The etp-hermes GHA runner can boot with a corrupted PATH (env `declare -x` output embedded into it, so /usr/bin is missing and `cat`/`rm`/`ls` fail for tools that shell out, incl. write_file). Fix: `export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin` per command, or symlink coreutils into /home/runner/.local/bin (it's on PATH). Verify with `command -v cat` before assuming tools work.
 §
 etp-hermes Layers 1-2 tooling: MCP jina read/search 401 (no key), r.jina.ai fallback 402 — use direct curl with browser UA + --compressed, and MCP keenable search_web_pages or parallel web_search for search. Search dates are often index dates: verify pub date by curling the page (JSON-LD datePublished, <time>, visible date); Wayback CDX settles ambiguity; WP/Next post-sitemap.xml (lastmod+slugs) finds dated posts when listings 404.
 §
 Layer 4 infographics have NO fallback: image_gen is fal-only (use_gateway:false, model fal-ai/gpt-image-2); fallback_providers is LLM-only. fal 'Exhausted balance'/'TOP_UP' fails every slug — log 'infographic failed for <slug>', leave existing PNGs, write nothing; never hand-render a substitute PNG.
+§
+Zero-candidate days: candidates.json has empty `companies` → firehose fetch_failed retries can't word-match.

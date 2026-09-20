@@ -38,13 +38,13 @@ _Total disclosed: $440.6M._
   - Counterparties: SPX Express Malaysia (logistics partner)
   - Numbers: 1,000+ SPX service points (West Malaysia), ~9 in 10 orders delivery-fulfilled (H1 2026), promo delivery rates from RM3.50
   - Quote: "Delivery is an integral part of recommerce, and we are delighted to welcome SPX as our latest logistics partner under Carousell Official Delivery in Malaysia." — Vishal Salunkhe, Chief Business Officer, Carousell
+
+## Older signals
 - **2026-08-20** — Mudah.my Auto's used-car inventory goes live on Carousell Malaysia, with up to 35,000 cars expected discoverable by end-September — [voiceofalexandria.com](https://www.voiceofalexandria.com/news/national_business_news/mudah-my-brings-cars-to-carousell-malaysia-giving-dealers-a-new-way-to-reach-millions/article_cb00c229-56cd-5059-85fc-ed1c87002ddb.html)
   - Summary: Mudah.my announced its car inventory is now available on Carousell Malaysia: eligible Mudah.my Auto vehicles appear automatically on Carousell, so dealers list once across both platforms. Up to 35,000 cars are expected to be discoverable on Carousell by end-September, and the two platforms together reach almost 6 million online users. Mudah Auto continues to add AI-powered highlights, price insights, and a redesigned search experience.
   - People: Jacky Tan Nguyen (CEO, Mudah.my)
   - Counterparties: Mudah.my (sister marketplace within Carousell Group)
   - Numbers: up to 35,000 cars by end-September; ~6M combined online users
-
-## Older signals
 - **2026-07-07** — Singapore's recommerce platform Carousell reaches EBITDA profitability as revenue hits $141M — [technode.global](https://technode.global/2026/07/07/singapores-recommerce-platform-carousell-reaches-ebitda-profitability-as-revenue-hits-141m) (Also reported by: [finance.biggo.com](https://finance.biggo.com/news/61a1dc7a-9a2d-4681-be9d-f97921c72339), [southeastasiaconnect.com](https://www.southeastasiaconnect.com/articles/carousell-ebitda-ai-recommerce-fy26.html))
   - Summary: Corroborates the 2026-07-07 announcement; no new facts.
 - **2026-07-07** — Carousell Group reported its first EBITDA-positive FY2025 with 18% revenue growth to $141M, driven by 40% recommerce growth, and outlined FY26 AI and recommerce scaling priorities — [Carousell Press](https://press.carousell.com/2026/07/07/carousell-group-reaches-ebitda-profitability-milestone-as-recommerce-scales-sets-ai-priorities-for-fy26/)

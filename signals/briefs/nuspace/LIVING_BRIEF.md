@@ -1,5 +1,5 @@
 # NuSPACE — LIVING BRIEF
-_Last updated: 2026-08-19 13:49 UTC_
+_Last updated: 2026-09-20 16:46 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -16,7 +16,10 @@ _Last material event: 2026-05-03 — NuLink 1 and 2 satellites launched on Falco
 - **2019-10** — Seed, undisclosed — BEENEXT — [e27.co](https://e27.co/space-tech-company-nuspace-raises-funding-to-bring-iot-connectivity-to-remote-places-20191003/)
 
 ## Recent signals
-_none_
+- **2026-08-25** — Apolink's plan to put a relay ground station in orbit leans on NuSpace: the Palo Alto startup expects to use NuLink spacecraft for a backward-compatible RF relay demonstration in late summer or early autumn 2026 — [goldsea.com](https://goldsea.com/article_details/onkar-batra-wants-to-put-the-ground-station-in-orbit)
+  - Summary: A Goldsea profile of Apolink founder Onkar Singh Batra names Singapore's NuSpace as the partner for Apolink's next demonstration, in which NuLink spacecraft would receive telemetry from another satellite without that satellite carrying purpose-built Apolink hardware. The relay test is framed as Apolink's critical experiment after its IPoS-TDsM 3U spacecraft reached orbit on SpaceX's Transporter-17 rideshare on 7 Jul 2026.
+  - Counterparties: Apolink (relay demonstration partner)
+  - Quote: "Singapore’s NuSpace has launched NuLink spacecraft that Apolink expects to use in a relay demonstration in late summer or early fall 2026." — Goldsea
 
 ## Older signals
 - **2026-07-30** — NuLink-1 and NuLink-2 confirmed operational after July 2026 commissioning; NuLink-3 and NuLink-4 target a 30 Dec 2026 launch — [nanosats.eu](https://www.nanosats.eu/sat/nulink.html)
@@ -40,3 +43,4 @@ _none_
 - What is the total planned constellation size beyond NuLink-3 and NuLink-4?
 - What IoT applications (logistics, agriculture, maritime) is NuSpace targeting for its connectivity service?
 - What is NuSpace's commercial model — satellite connectivity subscriptions, data relay services, or hardware sales?
+- Is the NuLink role in Apolink's relay demonstration a paid relay service or an unpaid technical proof-of-concept?
