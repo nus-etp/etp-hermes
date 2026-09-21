@@ -89,16 +89,11 @@ jobs:
           echo "--- hermes via NVIDIA NIM ---"
           hermes --provider nvidia --model "meta/llama-3.3-70b-instruct" -z "Reply with exactly one word: OK" 2>&1 | tail -20 || true
 
-      - name: Direct curl from runner (seeded NVIDIA key — isolation)
+      - name: List live NVIDIA NIM models
         continue-on-error: true
         run: |
-          # Curl NVIDIA NIM with the exact key hermes uses (from ~/.hermes/.env).
-          # Prints only HTTP status + body (no key). Distinguishes key vs hermes vs model.
           key=$(grep '^NVIDIA_API_KEY=' ~/.hermes/.env | cut -d= -f2-)
-          echo "key len from .env: ${#key}"
-          echo "--- HTTP status + body ---"
-          curl -s -o /tmp/nv.json -w "HTTP %{http_code}\n" \
-            https://integrate.api.nvidia.com/v1/chat/completions \
-            -H "Authorization: Bearer ${key}" -H "Content-Type: application/json" \
-            -d '{"model":"meta/llama-3.3-70b-instruct","messages":[{"role":"user","content":"say OK"}],"max_tokens":8}'
-          head -c 600 /tmp/nv.json; echo
+          echo "--- available model ids (deepseek/llama/qwen/nemotron/kimi) ---"
+          curl -s https://integrate.api.nvidia.com/v1/models \
+            -H "Authorization: Bearer ${key}" \
+          | python3 -c "import sys,json; d=json.load(sys.stdin); ids=sorted(m['id'] for m in d.get('data',[])); print(len(ids),'models'); [print(i) for i in ids if any(x in i.lower() for x in ('deepseek','llama-3.3','llama-4','qwen3','nemotron','kimi','gpt-oss'))]"
