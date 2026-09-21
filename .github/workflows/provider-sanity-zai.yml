@@ -112,6 +112,6 @@ jobs:
           MODEL: ${{ inputs.model }}
         run: |
           echo "### Z.AI probe — ${MODEL} (free)" >> "$GITHUB_STEP_SUMMARY"
-          out=$(hermes -z --provider zai --model "${MODEL}" "Reply with exactly one word: OK") || true
+          out=$(hermes --provider zai --model "${MODEL}" -z "Reply with exactly one word: OK") || true
           echo "$out"
           echo '```' >> "$GITHUB_STEP_SUMMARY"; echo "$out" >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
