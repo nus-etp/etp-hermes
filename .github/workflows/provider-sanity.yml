@@ -120,3 +120,17 @@ jobs:
         run: |
           echo "--- with OPENROUTER_BASE_URL ---"
           hermes --provider openrouter --model "meta-llama/llama-3.3-70b-instruct:free" -z "Reply with exactly one word: OK" 2>&1 | tail -20 || true
+
+      - name: Direct curl from runner (uses the SEEDED .env key)
+        continue-on-error: true
+        run: |
+          # Pull the exact key hermes uses (from ~/.hermes/.env), curl OpenRouter.
+          # Prints only HTTP status + body — no key. Isolates hermes vs key vs egress.
+          key=$(grep '^OPENROUTER_API_KEY=' ~/.hermes/.env | cut -d= -f2-)
+          echo "key len from .env: ${#key}"
+          echo "--- HTTP status + body ---"
+          curl -s -o /tmp/or.json -w "HTTP %{http_code}\n" \
+            https://openrouter.ai/api/v1/chat/completions \
+            -H "Authorization: Bearer ${key}" -H "Content-Type: application/json" \
+            -d '{"model":"meta-llama/llama-3.3-70b-instruct:free","messages":[{"role":"user","content":"say OK"}]}'
+          head -c 600 /tmp/or.json; echo
