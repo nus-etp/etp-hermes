@@ -107,16 +107,16 @@ jobs:
             *) echo "unexpected prefix (not sk-or-)" ;;
           esac
 
-      - name: Probe OpenRouter (env key, verbose)
+      - name: Probe OpenRouter (no base_url — expect 401)
         continue-on-error: true
         run: |
-          echo "--- env-key probe (full stderr) ---"
-          hermes --provider openrouter --model "meta-llama/llama-3.3-70b-instruct:free" -z "Reply with exactly one word: OK" 2>&1 | tail -40 || true
+          echo "--- without OPENROUTER_BASE_URL ---"
+          hermes --provider openrouter --model "meta-llama/llama-3.3-70b-instruct:free" -z "Reply with exactly one word: OK" 2>&1 | tail -20 || true
 
-      - name: Probe OpenRouter (explicit --api-key)
+      - name: Probe OpenRouter (with base_url — expect OK)
         continue-on-error: true
         env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_BASE_URL: https://openrouter.ai/api/v1
         run: |
-          echo "--- explicit --api-key probe ---"
-          hermes --provider openrouter --api-key "$OPENROUTER_API_KEY" --model "meta-llama/llama-3.3-70b-instruct:free" -z "Reply with exactly one word: OK" 2>&1 | tail -40 || true
+          echo "--- with OPENROUTER_BASE_URL ---"
+          hermes --provider openrouter --model "meta-llama/llama-3.3-70b-instruct:free" -z "Reply with exactly one word: OK" 2>&1 | tail -20 || true
