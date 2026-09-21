@@ -86,14 +86,16 @@ jobs:
       - name: Probe NVIDIA NIM (primary)
         continue-on-error: true
         run: |
-          echo "--- hermes via NVIDIA NIM ---"
-          hermes --provider nvidia --model "meta/llama-3.3-70b-instruct" -z "Reply with exactly one word: OK" 2>&1 | tail -20 || true
+          echo "--- hermes via NVIDIA NIM (deepseek-v4-flash) ---"
+          hermes --provider nvidia --model "deepseek-ai/deepseek-v4-flash-0731" -z "Reply with exactly one word: OK" 2>&1 | tail -20 || true
 
-      - name: List live NVIDIA NIM models
+      - name: Direct curl NVIDIA (deepseek-v4-flash — confirm 200)
         continue-on-error: true
         run: |
           key=$(grep '^NVIDIA_API_KEY=' ~/.hermes/.env | cut -d= -f2-)
-          echo "--- available model ids (deepseek/llama/qwen/nemotron/kimi) ---"
-          curl -s https://integrate.api.nvidia.com/v1/models \
-            -H "Authorization: Bearer ${key}" \
-          | python3 -c "import sys,json; d=json.load(sys.stdin); ids=sorted(m['id'] for m in d.get('data',[])); print(len(ids),'models'); [print(i) for i in ids if any(x in i.lower() for x in ('deepseek','llama-3.3','llama-4','qwen3','nemotron','kimi','gpt-oss'))]"
+          echo "--- HTTP status + body ---"
+          curl -s -o /tmp/nv.json -w "HTTP %{http_code}\n" \
+            https://integrate.api.nvidia.com/v1/chat/completions \
+            -H "Authorization: Bearer ${key}" -H "Content-Type: application/json" \
+            -d '{"model":"deepseek-ai/deepseek-v4-flash-0731","messages":[{"role":"user","content":"say OK"}],"max_tokens":8}'
+          head -c 400 /tmp/nv.json; echo

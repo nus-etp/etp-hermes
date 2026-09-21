@@ -1,7 +1,8 @@
 model:
   # Primary: NVIDIA NIM (reads NVIDIA_API_KEY, base_url baked in). Rollback: provider: deepseek.
+  # deepseek-v4-flash via NIM == the same model family the pipeline was tuned for.
   provider: nvidia
-  default: meta/llama-3.3-70b-instruct
+  default: deepseek-ai/deepseek-v4-flash-0731
 
 # Turn-scoped failover: exhausted primary → next entry; missing key → skipped.
 fallback_providers:
