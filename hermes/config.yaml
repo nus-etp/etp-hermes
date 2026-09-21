@@ -32,8 +32,10 @@ memory:
 agent:
   max_turns: 90
   # DeepSeek V4 thinking mode is enabled by default server-side; reasoning_effort
-  # controls how much it thinks. Set high for news dedup/summarization quality.
-  reasoning_effort: high
+  # controls how much it thinks. medium keeps dedup/summarization quality while
+  # cutting the thinking-token latency/cost that `high` incurs on deepseek-v4-flash
+  # (a reasoning model) via NVIDIA NIM. Bump back to high if quality regresses.
+  reasoning_effort: medium
   # Disable hermes' native `web` toolset (web_search + web_extract) so the only
   # web search/fetch surface across all layers is the keyless Parallel Search
   # MCP server registered under `mcp_servers.parallel` below. Honored by
