@@ -2,7 +2,7 @@ name: hermes-sync
 
 on:
   schedule:
-    - cron: '0 13 * * *'        # daily 13:00 UTC = 21:00 SGT
+    - cron: '0 17 * * *'        # daily 17:00 UTC = 01:00 SGT (inside DeepSeek off-peak 16:30–00:30 UTC, ~50–75% cheaper; harmless on Gemini)
   workflow_dispatch:
     inputs:
       layers:
@@ -16,6 +16,7 @@ concurrency:
 
 permissions:
   contents: write
+  models: read          # copilot fallback provider
 
 jobs:
   # ---------------------------------------------------------------------------
@@ -221,6 +222,8 @@ jobs:
 
       - name: Bootstrap config
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           XIAOMI_API_KEY: ${{ secrets.XIAOMI_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_KEY }}

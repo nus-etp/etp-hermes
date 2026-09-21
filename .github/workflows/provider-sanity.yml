@@ -1,0 +1,102 @@
+name: provider-sanity
+
+# Throwaway sanity check for the Gemini/GitHub-Models provider wiring before it
+# goes into hermes-sync.yml. Manual dispatch only. Installs hermes, runs the
+# real bootstrap-hermes.sh, then probes each provider with a one-word prompt.
+# Delete this file once the wiring is confirmed.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  models: read          # copilot fallback provider
+
+jobs:
+  sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+
+      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
+
+      - name: Install Hermes
+        id: install
+        env:
+          HERMES_COMMIT: 2237be355906fbe6065ce1815711eee52b2d646e # v2026.9.7
+          HERMES_INSTALL_SHA256: 5854b15670b51a8daae8f59ddfa917062de9f74be261eb73b4b8d719710f8968
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          dst=/tmp/hermes-install.sh
+          verify() { echo "${HERMES_INSTALL_SHA256}  $1" | sha256sum -c - >/dev/null 2>&1; }
+          fetch_install() {
+            local tgz=/tmp/hermes-src.tgz
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
+                 "https://hermes-agent.nousresearch.com/install.sh" -o "$dst" \
+               && verify "$dst"; then return 0; fi
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
+                 -H "Authorization: Bearer ${GH_TOKEN}" \
+                 -H "Accept: application/vnd.github.raw" \
+                 -H "X-GitHub-Api-Version: 2022-11-28" \
+                 "https://api.github.com/repos/NousResearch/hermes-agent/contents/scripts/install.sh?ref=${HERMES_COMMIT}" \
+                 -o "$dst" \
+               && verify "$dst"; then return 0; fi
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
+                 "https://raw.githubusercontent.com/NousResearch/hermes-agent/${HERMES_COMMIT}/scripts/install.sh" \
+                 -o "$dst" \
+               && verify "$dst"; then return 0; fi
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 120 \
+                 -H "Authorization: Bearer ${GH_TOKEN}" \
+                 "https://codeload.github.com/NousResearch/hermes-agent/tar.gz/${HERMES_COMMIT}" \
+                 -o "$tgz"; then
+              tar -xzf "$tgz" -C /tmp "hermes-agent-${HERMES_COMMIT}/scripts/install.sh" \
+                && cp "/tmp/hermes-agent-${HERMES_COMMIT}/scripts/install.sh" "$dst" \
+                && verify "$dst" && return 0
+            fi
+            return 1
+          }
+          ok=false
+          for attempt in 1 2 3; do
+            if fetch_install; then ok=true; break; fi
+            sleep "$((attempt*15))"
+          done
+          if [ "$ok" != true ]; then
+            echo "::error::Could not download a checksum-verified Hermes installer" >&2
+            exit 1
+          fi
+          GIT_CONFIG_COUNT=1 \
+          GIT_CONFIG_KEY_0="url.https://x-access-token:${GH_TOKEN}@github.com/.insteadOf" \
+          GIT_CONFIG_VALUE_0="https://github.com/" \
+            bash "$dst" --commit "${HERMES_COMMIT}"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+          command -v hermes >/dev/null 2>&1 || { echo "::error::hermes not on PATH" >&2; exit 1; }
+          hermes --version 2>/dev/null || echo "note: hermes --version returned non-zero"
+
+      - name: Bootstrap config
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          XIAOMI_API_KEY: ${{ secrets.XIAOMI_API_KEY }}
+        run: |
+          bash scripts/bootstrap-hermes.sh
+          echo "keys seeded into ~/.hermes/.env:"
+          cut -d= -f1 ~/.hermes/.env | sort
+
+      - name: Probe Gemini (primary)
+        continue-on-error: true
+        run: |
+          echo "### Gemini probe" >> "$GITHUB_STEP_SUMMARY"
+          out=$(hermes -z --provider gemini --model gemini-2.5-flash "Reply with exactly one word: OK") || true
+          echo "$out"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"; echo "$out" >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Probe GitHub Models (copilot fallback)
+        continue-on-error: true
+        run: |
+          echo "### copilot probe" >> "$GITHUB_STEP_SUMMARY"
+          out=$(hermes -z --provider copilot --model gpt-4o-mini "Reply with exactly one word: OK") || true
+          echo "$out"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"; echo "$out" >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"

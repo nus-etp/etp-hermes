@@ -1,16 +1,13 @@
 model:
-  provider: deepseek
-  default: deepseek-flash
+  # Primary: Gemini (reads GEMINI_API_KEY). Rollback: provider: deepseek.
+  provider: gemini
+  default: gemini-2.5-flash
 
-# Credential/provider failover. When the primary (deepseek) is exhausted —
-# rate-limit, billing, 5xx, or connection failure after agent.api_max_retries —
-# hermes swaps to the next entry mid-turn. The xiaomi provider profile reads
-# XIAOMI_API_KEY from ~/.hermes/.env (seeded by bootstrap-hermes.sh from the
-# GHA secret). If that key is absent the chain entry resolves to no client and
-# is skipped, so the fallback is a no-op until the secret is seeded — safe for
-# forks. Failover is turn-scoped: each new turn restores deepseek first.
+# Turn-scoped failover: exhausted primary → next entry; missing key → skipped.
 fallback_providers:
-  - provider: xiaomi
+  - provider: copilot        # GitHub Models — GITHUB_TOKEN (needs models:read)
+    model: gpt-4o-mini
+  - provider: xiaomi         # Xiaomi MiMo — XIAOMI_API_KEY
     model: mimo-v2.5
 
 terminal:
