@@ -6,6 +6,8 @@ model:
 
 # Turn-scoped failover: exhausted primary → next entry; missing key → skipped.
 fallback_providers:
+  - provider: zai            # free backstop (Z.AI/GLM) — ZAI_API_KEY; cost-0 model
+    model: glm-4.7-flash
   - provider: deepseek       # paid backstop (off-peak) — DEEPSEEK_API_KEY
     model: deepseek-flash
   - provider: xiaomi         # Xiaomi MiMo — XIAOMI_API_KEY

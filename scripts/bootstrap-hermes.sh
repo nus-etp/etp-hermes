@@ -42,6 +42,9 @@ fi
 if [ -n "${DEEPSEEK_API_KEY:-}" ]; then    # fallback (off-peak) / rollback primary
   echo "DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}" >> "$HERMES_HOME/.env"
 fi
+if [ -n "${ZAI_API_KEY:-}" ]; then         # zai/GLM fallback (free tier) — the zai provider reads ZAI_API_KEY
+  echo "ZAI_API_KEY=${ZAI_API_KEY}" >> "$HERMES_HOME/.env"
+fi
 if [ -n "${XIAOMI_API_KEY:-}" ]; then      # xiaomi fallback
   echo "XIAOMI_API_KEY=${XIAOMI_API_KEY}" >> "$HERMES_HOME/.env"
 fi
