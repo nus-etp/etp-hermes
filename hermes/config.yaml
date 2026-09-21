@@ -1,16 +1,14 @@
 model:
-  provider: deepseek
-  default: deepseek-flash
+  # Primary: NVIDIA NIM (reads NVIDIA_API_KEY, base_url baked in). Rollback: provider: deepseek.
+  # deepseek-v4-flash via NIM == the same model family the pipeline was tuned for.
+  provider: nvidia
+  default: deepseek-ai/deepseek-v4-flash-0731
 
-# Credential/provider failover. When the primary (deepseek) is exhausted —
-# rate-limit, billing, 5xx, or connection failure after agent.api_max_retries —
-# hermes swaps to the next entry mid-turn. The xiaomi provider profile reads
-# XIAOMI_API_KEY from ~/.hermes/.env (seeded by bootstrap-hermes.sh from the
-# GHA secret). If that key is absent the chain entry resolves to no client and
-# is skipped, so the fallback is a no-op until the secret is seeded — safe for
-# forks. Failover is turn-scoped: each new turn restores deepseek first.
+# Turn-scoped failover: exhausted primary → next entry; missing key → skipped.
 fallback_providers:
-  - provider: xiaomi
+  - provider: deepseek       # paid backstop (off-peak) — DEEPSEEK_API_KEY
+    model: deepseek-flash
+  - provider: xiaomi         # Xiaomi MiMo — XIAOMI_API_KEY
     model: mimo-v2.5
 
 terminal:
@@ -34,8 +32,10 @@ memory:
 agent:
   max_turns: 90
   # DeepSeek V4 thinking mode is enabled by default server-side; reasoning_effort
-  # controls how much it thinks. Set high for news dedup/summarization quality.
-  reasoning_effort: high
+  # controls how much it thinks. medium keeps dedup/summarization quality while
+  # cutting the thinking-token latency/cost that `high` incurs on deepseek-v4-flash
+  # (a reasoning model) via NVIDIA NIM. Bump back to high if quality regresses.
+  reasoning_effort: medium
   # Disable hermes' native `web` toolset (web_search + web_extract) so the only
   # web search/fetch surface across all layers is the keyless Parallel Search
   # MCP server registered under `mcp_servers.parallel` below. Honored by

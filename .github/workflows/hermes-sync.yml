@@ -2,7 +2,7 @@ name: hermes-sync
 
 on:
   schedule:
-    - cron: '0 13 * * *'        # daily 13:00 UTC = 21:00 SGT
+    - cron: '0 17 * * *'        # daily 17:00 UTC = 01:00 SGT (DeepSeek off-peak 16:30–00:30 UTC for the fallback path)
   workflow_dispatch:
     inputs:
       layers:
@@ -221,6 +221,7 @@ jobs:
 
       - name: Bootstrap config
         env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           XIAOMI_API_KEY: ${{ secrets.XIAOMI_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_KEY }}

@@ -31,17 +31,24 @@ mkdir -p "$HERMES_HOME"
 # without further script changes.
 cp -a "$SRC_DIR/." "$HERMES_HOME/"
 
-: "${DEEPSEEK_API_KEY:?DEEPSEEK_API_KEY is required}"
 umask 077
-# Hermes' built-in `deepseek` provider reads DEEPSEEK_API_KEY directly.
-echo "DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}" > "$HERMES_HOME/.env"
-# Provider failover: hermes/config.yaml lists xiaomi (Xiaomi MiMo) as a
-# fallback_providers entry. The bundled xiaomi provider profile reads
-# XIAOMI_API_KEY directly. Optional — if unset, the fallback chain entry
-# resolves to no client and is skipped, so the primary deepseek path is
-# unaffected (safe for forks without the secret).
-if [ -n "${XIAOMI_API_KEY:-}" ]; then
+# Fresh .env; each key is appended only when set.
+: > "$HERMES_HOME/.env"
+
+# Model providers (at least one required; guarded below).
+if [ -n "${NVIDIA_API_KEY:-}" ]; then      # primary (NVIDIA NIM, build.nvidia.com)
+  echo "NVIDIA_API_KEY=${NVIDIA_API_KEY}" >> "$HERMES_HOME/.env"
+fi
+if [ -n "${DEEPSEEK_API_KEY:-}" ]; then    # fallback (off-peak) / rollback primary
+  echo "DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}" >> "$HERMES_HOME/.env"
+fi
+if [ -n "${XIAOMI_API_KEY:-}" ]; then      # xiaomi fallback
   echo "XIAOMI_API_KEY=${XIAOMI_API_KEY}" >> "$HERMES_HOME/.env"
+fi
+
+if ! grep -qE '^(NVIDIA_API_KEY|DEEPSEEK_API_KEY)=' "$HERMES_HOME/.env"; then
+  echo "no model provider key set (need NVIDIA_API_KEY or DEEPSEEK_API_KEY)" >&2
+  exit 1
 fi
 # Layer 4 (infographics) calls Hermes' image_generate, which reads FAL_KEY.
 # Optional — if unset, Layer 4 fails gracefully (continue-on-error in the
