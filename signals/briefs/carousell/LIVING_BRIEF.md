@@ -32,14 +32,14 @@ _Total disclosed: $440.6M._
   - People: Melissa Wong (Marketing Manager, Carousell Autos)
   - Numbers: 48-hour bidding window per car, daily drops of owner-listed cars
   - Quote: "This new auction experience is designed as an additional consumer channel alongside Carousell Autos’ existing dealer auction process, giving sellers a wider pool of potential buyers while allowing consumers to discover more pre-owned cars" — Melissa Wong, Marketing Manager, Carousell Autos
+
+## Older signals
 - **2026-08-21** — Carousell Malaysia adds Shopee's SPX Express as a Carousell Official Delivery logistics partner, bringing label-less shipping and 1,000+ drop-off points across West Malaysia — [press.carousell.com](https://press.carousell.com/2026/08/21/carousell-malaysia-expands-delivery-options-through-partnership-with-spx-express-malaysia/) (Also reported by: [lowyat.net](https://www.lowyat.net/2026/401934/carousell-spx-express-expand-delivery))
   - Summary: Carousell Malaysia partnered with SPX Express Malaysia to expand Carousell Official Delivery: sellers get label-less shipping (in-app digital shipping info, printed by service-point staff) across more than 1,000 SPX service points in West Malaysia, while buyers get doorstep delivery and promotional rates from RM3.50. Carousell cites H1 2026 marketplace data showing nearly 9 in 10 orders delivery-fulfilled as the rationale for cutting seller shipping friction.
   - People: Vishal Salunkhe (Chief Business Officer, Carousell), Cheah Lee Sun (Head of SPX Express Malaysia)
   - Counterparties: SPX Express Malaysia (logistics partner)
   - Numbers: 1,000+ SPX service points (West Malaysia), ~9 in 10 orders delivery-fulfilled (H1 2026), promo delivery rates from RM3.50
   - Quote: "Delivery is an integral part of recommerce, and we are delighted to welcome SPX as our latest logistics partner under Carousell Official Delivery in Malaysia." — Vishal Salunkhe, Chief Business Officer, Carousell
-
-## Older signals
 - **2026-08-20** — Mudah.my Auto's used-car inventory goes live on Carousell Malaysia, with up to 35,000 cars expected discoverable by end-September — [voiceofalexandria.com](https://www.voiceofalexandria.com/news/national_business_news/mudah-my-brings-cars-to-carousell-malaysia-giving-dealers-a-new-way-to-reach-millions/article_cb00c229-56cd-5059-85fc-ed1c87002ddb.html)
   - Summary: Mudah.my announced its car inventory is now available on Carousell Malaysia: eligible Mudah.my Auto vehicles appear automatically on Carousell, so dealers list once across both platforms. Up to 35,000 cars are expected to be discoverable on Carousell by end-September, and the two platforms together reach almost 6 million online users. Mudah Auto continues to add AI-powered highlights, price insights, and a redesigned search experience.
   - People: Jacky Tan Nguyen (CEO, Mudah.my)

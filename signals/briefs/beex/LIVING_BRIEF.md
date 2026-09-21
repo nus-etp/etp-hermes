@@ -20,14 +20,14 @@ _Last material event: 2026-08-21 — Copper Turtle partnership to bring BeeX's a
 _Total disclosed: $9.8M._
 
 ## Recent signals
+- **date unknown** — BeeX publishes a technical explainer on autonomy levels in unmanned underwater vehicles, positioning A.IKANBILIS's integrated autonomy for inspection missions — [beex.sg](https://beex.sg/blogs/levels-of-autonomy-in-unmanned-underwater-vehicles-use-cases-limitations-and-a-ikanbilis-integrated-autonomy)
+
+## Older signals
 - **2026-08-21** — Copper Turtle, a UK defence-market specialist, will bring BeeX's hovering AUVs to naval forces across the UK and Europe for underwater infrastructure inspection, clearance diving and mine countermeasures — [copperturtle.co.uk](https://www.copperturtle.co.uk/insights/insights/beexcopperturtle) (Also reported by: [beex.sg](https://www.beex.sg/news/copper-turtle-announce-partnership-with-beex))
   - Summary: Copper Turtle announced a partnership with BeeX to support its hovering AUVs, pairing Copper Turtle's European defence-market expertise with BeeX's technology to reach UK and NATO naval customers across inspection, clearance-diving and mine-countermeasures missions.
   - People: Christopher Wardman (Director, Copper Turtle), Elaine Plested (Founder and CEO, Copper Turtle)
   - Counterparties: Copper Turtle (Distribution Partner)
   - Quote: "This is a step change in enhancing our offering on the European stage. With our other complimentary partners, offering sensor and positioning solutions in the underwater battlespace will be key to supporting the UK and NATO countries." — Christopher Wardman, Director, Copper Turtle
-- **date unknown** — BeeX publishes a technical explainer on autonomy levels in unmanned underwater vehicles, positioning A.IKANBILIS's integrated autonomy for inspection missions — [beex.sg](https://beex.sg/blogs/levels-of-autonomy-in-unmanned-underwater-vehicles-use-cases-limitations-and-a-ikanbilis-integrated-autonomy)
-
-## Older signals
 - **2026-07-07** — SepcoTech A/S, Europe's largest ROV reseller and long-standing Nordic defense supplier, will distribute BeeX's Hovering Autonomous Underwater Vehicle (HAUV) platform to naval and defense customers across Europe, covering Denmark, the Nordics and wider Europe. — [daloindustrydays.com](https://www.daloindustrydays.com/news-inspiration/article/sepcotech-partners-with-beex-to-bring-autonomous-underwater-vehicles-to-the-european-defense-market)
   - Summary: SepcoTech A/S will serve as the defense-sector partner for BeeX's A.IKANBILIS HAUV in Denmark, the Nordics and wider Europe, offering local sales support, technical demonstrations, and after-sales service to European navies, coast guards, and defense agencies.
   - Counterparties: SepcoTech A/S (Distribution Partner)
