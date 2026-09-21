@@ -39,8 +39,8 @@ umask 077
 if [ -n "${GEMINI_API_KEY:-}" ]; then      # primary
   echo "GEMINI_API_KEY=${GEMINI_API_KEY}" >> "$HERMES_HOME/.env"
 fi
-if [ -n "${GITHUB_TOKEN:-}" ]; then        # copilot fallback (needs models:read)
-  echo "GITHUB_TOKEN=${GITHUB_TOKEN}" >> "$HERMES_HOME/.env"
+if [ -n "${OPENROUTER_API_KEY:-}" ]; then  # openrouter fallback (free tier)
+  echo "OPENROUTER_API_KEY=${OPENROUTER_API_KEY}" >> "$HERMES_HOME/.env"
 fi
 if [ -n "${DEEPSEEK_API_KEY:-}" ]; then    # optional (rollback primary)
   echo "DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}" >> "$HERMES_HOME/.env"
@@ -49,8 +49,8 @@ if [ -n "${XIAOMI_API_KEY:-}" ]; then      # xiaomi fallback
   echo "XIAOMI_API_KEY=${XIAOMI_API_KEY}" >> "$HERMES_HOME/.env"
 fi
 
-if ! grep -qE '^(GEMINI_API_KEY|GITHUB_TOKEN|DEEPSEEK_API_KEY)=' "$HERMES_HOME/.env"; then
-  echo "no model provider key set (need GEMINI_API_KEY, GITHUB_TOKEN, or DEEPSEEK_API_KEY)" >&2
+if ! grep -qE '^(GEMINI_API_KEY|OPENROUTER_API_KEY|DEEPSEEK_API_KEY)=' "$HERMES_HOME/.env"; then
+  echo "no model provider key set (need GEMINI_API_KEY, OPENROUTER_API_KEY, or DEEPSEEK_API_KEY)" >&2
   exit 1
 fi
 # Layer 4 (infographics) calls Hermes' image_generate, which reads FAL_KEY.

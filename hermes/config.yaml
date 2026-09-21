@@ -5,8 +5,8 @@ model:
 
 # Turn-scoped failover: exhausted primary → next entry; missing key → skipped.
 fallback_providers:
-  - provider: copilot        # GitHub Models — GITHUB_TOKEN (needs models:read)
-    model: gpt-4o-mini
+  - provider: openrouter     # OpenRouter free tier — OPENROUTER_API_KEY
+    model: deepseek/deepseek-chat-v3.1:free
   - provider: xiaomi         # Xiaomi MiMo — XIAOMI_API_KEY
     model: mimo-v2.5
 

@@ -10,7 +10,6 @@ on:
 
 permissions:
   contents: read
-  models: read          # copilot fallback provider
 
 jobs:
   sanity:
@@ -77,7 +76,7 @@ jobs:
       - name: Bootstrap config
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           XIAOMI_API_KEY: ${{ secrets.XIAOMI_API_KEY }}
         run: |
@@ -93,10 +92,10 @@ jobs:
           echo "$out"
           echo '```' >> "$GITHUB_STEP_SUMMARY"; echo "$out" >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Probe GitHub Models (copilot fallback)
+      - name: Probe OpenRouter (fallback)
         continue-on-error: true
         run: |
-          echo "### copilot probe" >> "$GITHUB_STEP_SUMMARY"
-          out=$(hermes --provider copilot --model gpt-4o-mini -z "Reply with exactly one word: OK") || true
+          echo "### openrouter probe" >> "$GITHUB_STEP_SUMMARY"
+          out=$(hermes --provider openrouter --model "deepseek/deepseek-chat-v3.1:free" -z "Reply with exactly one word: OK") || true
           echo "$out"
           echo '```' >> "$GITHUB_STEP_SUMMARY"; echo "$out" >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
