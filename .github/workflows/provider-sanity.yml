@@ -92,10 +92,25 @@ jobs:
           echo "$out"
           echo '```' >> "$GITHUB_STEP_SUMMARY"; echo "$out" >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Diagnose OpenRouter secret
+        continue-on-error: true
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          # Length + whitespace check on the raw secret (value stays masked).
+          v="${OPENROUTER_API_KEY:-}"
+          echo "len=${#v}"
+          case "$v" in
+            *[[:space:]]) echo "TRAILING/EMBEDDED WHITESPACE DETECTED" ;;
+            sk-or-*) echo "prefix ok (sk-or-)" ;;
+            "") echo "EMPTY" ;;
+            *) echo "unexpected prefix (not sk-or-)" ;;
+          esac
+
       - name: Probe OpenRouter (fallback)
         continue-on-error: true
         run: |
           echo "### openrouter probe" >> "$GITHUB_STEP_SUMMARY"
-          out=$(hermes --provider openrouter --model "deepseek/deepseek-chat-v3.1:free" -z "Reply with exactly one word: OK") || true
+          out=$(hermes --provider openrouter --model "meta-llama/llama-3.3-70b-instruct:free" -z "Reply with exactly one word: OK") || true
           echo "$out"
           echo '```' >> "$GITHUB_STEP_SUMMARY"; echo "$out" >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
