@@ -221,8 +221,7 @@ jobs:
 
       - name: Bootstrap config
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           XIAOMI_API_KEY: ${{ secrets.XIAOMI_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_KEY }}

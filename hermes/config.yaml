@@ -1,12 +1,12 @@
 model:
-  # Primary: Gemini (reads GEMINI_API_KEY). Rollback: provider: deepseek.
-  provider: gemini
-  default: gemini-2.5-flash
+  # Primary: NVIDIA NIM (reads NVIDIA_API_KEY, base_url baked in). Rollback: provider: deepseek.
+  provider: nvidia
+  default: meta/llama-3.3-70b-instruct
 
 # Turn-scoped failover: exhausted primary → next entry; missing key → skipped.
 fallback_providers:
-  - provider: openrouter     # OpenRouter free tier — OPENROUTER_API_KEY
-    model: deepseek/deepseek-chat-v3.1:free
+  - provider: deepseek       # paid backstop (off-peak) — DEEPSEEK_API_KEY
+    model: deepseek-flash
   - provider: xiaomi         # Xiaomi MiMo — XIAOMI_API_KEY
     model: mimo-v2.5
 

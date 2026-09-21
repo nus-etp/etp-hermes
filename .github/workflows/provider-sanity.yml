@@ -75,8 +75,7 @@ jobs:
 
       - name: Bootstrap config
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           XIAOMI_API_KEY: ${{ secrets.XIAOMI_API_KEY }}
         run: |
@@ -84,53 +83,22 @@ jobs:
           echo "keys seeded into ~/.hermes/.env:"
           cut -d= -f1 ~/.hermes/.env | sort
 
-      - name: Probe Gemini (primary)
+      - name: Probe NVIDIA NIM (primary)
         continue-on-error: true
         run: |
-          echo "### Gemini probe" >> "$GITHUB_STEP_SUMMARY"
-          out=$(hermes --provider gemini --model gemini-2.5-flash -z "Reply with exactly one word: OK") || true
-          echo "$out"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"; echo "$out" >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "--- hermes via NVIDIA NIM ---"
+          hermes --provider nvidia --model "meta/llama-3.3-70b-instruct" -z "Reply with exactly one word: OK" 2>&1 | tail -20 || true
 
-      - name: Diagnose OpenRouter secret
-        continue-on-error: true
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-        run: |
-          # Length + whitespace check on the raw secret (value stays masked).
-          v="${OPENROUTER_API_KEY:-}"
-          echo "len=${#v}"
-          case "$v" in
-            *[[:space:]]) echo "TRAILING/EMBEDDED WHITESPACE DETECTED" ;;
-            sk-or-*) echo "prefix ok (sk-or-)" ;;
-            "") echo "EMPTY" ;;
-            *) echo "unexpected prefix (not sk-or-)" ;;
-          esac
-
-      - name: Probe OpenRouter (no base_url — expect 401)
+      - name: Direct curl from runner (seeded NVIDIA key — isolation)
         continue-on-error: true
         run: |
-          echo "--- without OPENROUTER_BASE_URL ---"
-          hermes --provider openrouter --model "meta-llama/llama-3.3-70b-instruct:free" -z "Reply with exactly one word: OK" 2>&1 | tail -20 || true
-
-      - name: Probe OpenRouter (with base_url — expect OK)
-        continue-on-error: true
-        env:
-          OPENROUTER_BASE_URL: https://openrouter.ai/api/v1
-        run: |
-          echo "--- with OPENROUTER_BASE_URL ---"
-          hermes --provider openrouter --model "meta-llama/llama-3.3-70b-instruct:free" -z "Reply with exactly one word: OK" 2>&1 | tail -20 || true
-
-      - name: Direct curl from runner (uses the SEEDED .env key)
-        continue-on-error: true
-        run: |
-          # Pull the exact key hermes uses (from ~/.hermes/.env), curl OpenRouter.
-          # Prints only HTTP status + body — no key. Isolates hermes vs key vs egress.
-          key=$(grep '^OPENROUTER_API_KEY=' ~/.hermes/.env | cut -d= -f2-)
+          # Curl NVIDIA NIM with the exact key hermes uses (from ~/.hermes/.env).
+          # Prints only HTTP status + body (no key). Distinguishes key vs hermes vs model.
+          key=$(grep '^NVIDIA_API_KEY=' ~/.hermes/.env | cut -d= -f2-)
           echo "key len from .env: ${#key}"
           echo "--- HTTP status + body ---"
-          curl -s -o /tmp/or.json -w "HTTP %{http_code}\n" \
-            https://openrouter.ai/api/v1/chat/completions \
+          curl -s -o /tmp/nv.json -w "HTTP %{http_code}\n" \
+            https://integrate.api.nvidia.com/v1/chat/completions \
             -H "Authorization: Bearer ${key}" -H "Content-Type: application/json" \
-            -d '{"model":"meta-llama/llama-3.3-70b-instruct:free","messages":[{"role":"user","content":"say OK"}]}'
-          head -c 600 /tmp/or.json; echo
+            -d '{"model":"meta/llama-3.3-70b-instruct","messages":[{"role":"user","content":"say OK"}],"max_tokens":8}'
+          head -c 600 /tmp/nv.json; echo

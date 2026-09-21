@@ -36,21 +36,18 @@ umask 077
 : > "$HERMES_HOME/.env"
 
 # Model providers (at least one required; guarded below).
-if [ -n "${GEMINI_API_KEY:-}" ]; then      # primary
-  echo "GEMINI_API_KEY=${GEMINI_API_KEY}" >> "$HERMES_HOME/.env"
+if [ -n "${NVIDIA_API_KEY:-}" ]; then      # primary (NVIDIA NIM, build.nvidia.com)
+  echo "NVIDIA_API_KEY=${NVIDIA_API_KEY}" >> "$HERMES_HOME/.env"
 fi
-if [ -n "${OPENROUTER_API_KEY:-}" ]; then  # openrouter fallback (free tier)
-  echo "OPENROUTER_API_KEY=${OPENROUTER_API_KEY}" >> "$HERMES_HOME/.env"
-fi
-if [ -n "${DEEPSEEK_API_KEY:-}" ]; then    # optional (rollback primary)
+if [ -n "${DEEPSEEK_API_KEY:-}" ]; then    # fallback (off-peak) / rollback primary
   echo "DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}" >> "$HERMES_HOME/.env"
 fi
 if [ -n "${XIAOMI_API_KEY:-}" ]; then      # xiaomi fallback
   echo "XIAOMI_API_KEY=${XIAOMI_API_KEY}" >> "$HERMES_HOME/.env"
 fi
 
-if ! grep -qE '^(GEMINI_API_KEY|OPENROUTER_API_KEY|DEEPSEEK_API_KEY)=' "$HERMES_HOME/.env"; then
-  echo "no model provider key set (need GEMINI_API_KEY, OPENROUTER_API_KEY, or DEEPSEEK_API_KEY)" >&2
+if ! grep -qE '^(NVIDIA_API_KEY|DEEPSEEK_API_KEY)=' "$HERMES_HOME/.env"; then
+  echo "no model provider key set (need NVIDIA_API_KEY or DEEPSEEK_API_KEY)" >&2
   exit 1
 fi
 # Layer 4 (infographics) calls Hermes' image_generate, which reads FAL_KEY.
