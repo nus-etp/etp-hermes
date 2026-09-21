@@ -89,7 +89,7 @@ jobs:
         continue-on-error: true
         run: |
           echo "### Gemini probe" >> "$GITHUB_STEP_SUMMARY"
-          out=$(hermes -z --provider gemini --model gemini-2.5-flash "Reply with exactly one word: OK") || true
+          out=$(hermes --provider gemini --model gemini-2.5-flash -z "Reply with exactly one word: OK") || true
           echo "$out"
           echo '```' >> "$GITHUB_STEP_SUMMARY"; echo "$out" >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
 
@@ -97,6 +97,6 @@ jobs:
         continue-on-error: true
         run: |
           echo "### copilot probe" >> "$GITHUB_STEP_SUMMARY"
-          out=$(hermes -z --provider copilot --model gpt-4o-mini "Reply with exactly one word: OK") || true
+          out=$(hermes --provider copilot --model gpt-4o-mini -z "Reply with exactly one word: OK") || true
           echo "$out"
           echo '```' >> "$GITHUB_STEP_SUMMARY"; echo "$out" >> "$GITHUB_STEP_SUMMARY"; echo '```' >> "$GITHUB_STEP_SUMMARY"
