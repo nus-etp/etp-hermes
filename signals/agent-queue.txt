@@ -13,6 +13,6 @@ BioActivX
 CBE Eco-Solutions
 ChemT Biotechnology
 ConcreteAI
-Constructor.io
 Craft Health
 CRecTech
+dConstruct Robotics

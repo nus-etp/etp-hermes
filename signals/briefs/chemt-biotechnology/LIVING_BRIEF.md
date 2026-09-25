@@ -15,11 +15,12 @@ _Last material event: 2026-08-25 — Named to Forbes Asia 100 to Watch 2026 (Bio
 _No disclosed funding._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-08-25** — ChemT named to Forbes Asia 100 to Watch 2026 in the Biotechnology & Healthcare category, its second major public recognition after the June Prestige 40 Under 40 nod — [chemtbio.com](https://www.chemtbio.com/news18-1)
   - Summary: ChemT announced on 25 August 2026 that it was named to the Forbes Asia 100 to Watch 2026 list, the sixth edition of the annual list spotlighting 100 emerging companies across Asia-Pacific. The company attributes the recognition to its work applying AI to make biologics development and manufacturing more predictable, efficient and scalable, anchored on the CelMo™ AI-powered Virtual Cell platform. ChemT says the nod arrives as it expands CelMo™ development across different cellular systems and biomanufacturing workflows, and points to the underlying Forbes Asia article of 24 August 2026.
   - Counterparties: Forbes Asia (list publisher)
-
-## Older signals
 - **2026-07-24** — Named an awardee of Johnson & Johnson's Data & AI Fueling R&D of Tomorrow QuickFire Challenge (Singapore & Beyond), bringing grant funding, J&J mentorship and a year of virtual JLABS Singapore membership — [chemtbio.com](https://www.chemtbio.com/news17-1)
   - Summary: ChemT was one of the awardees of Johnson & Johnson's Data & AI Fueling R&D of Tomorrow QuickFire Challenge: Singapore & Beyond, a programme aimed at approaches that use data, artificial intelligence and machine learning to change drug discovery and research. The award carries grant funding, mentorship from Johnson & Johnson and one-year virtual membership of the JLABS Singapore network. ChemT frames the recognition as support for its work applying AI to understand and modulate cellular behaviour, targeting more efficient, scalable and predictable biomanufacturing.
   - Counterparties: Johnson & Johnson (challenge organiser), JLABS Singapore (network)
