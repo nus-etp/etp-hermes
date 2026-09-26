@@ -52,6 +52,9 @@ overrides:
   # gets bumped across a brace-expansion major.
   'minimatch@3>brace-expansion': '^1.1.18'
   'minimatch@10>brace-expansion': '^5.0.12'
+  # GHSA-w5vr-8v7q-w6rv: process.exit() on invalid/conflicting input instead
+  # of throwing, DoS. Pinned by next -> browserslist's baseline data package.
+  'baseline-browser-mapping': '^2.11.0'
   # GHSA-28wg-ghj8-5hjv (nanoid infinite loop on negative size): only the
   # @opengovsg/oui chain pulls the vulnerable 5.x line; nanoid@3.3.19 elsewhere
   # is unaffected and left alone.
