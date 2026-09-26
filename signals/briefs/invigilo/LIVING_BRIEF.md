@@ -18,14 +18,14 @@ _Total disclosed: $0.5M._
 
 ## Recent signals
 - **2026-09-14** — Straits Times feature on Singapore AI startups recaps INVIGILO's June 2026 selection as one of the first three JTC Innovative Procurement Partnership startups and reports a 60 per cent fall in safety incidents on one HDB project — [straitstimes.com](https://www.straitstimes.com/business/economy/singapore-start-ups-show-that-ai-isnt-just-a-big-tech-playground)
+
+## Older signals
 - **2026-08-26** — Integrated technology partnership with HSI Donesafe pairing INVIGILO's AI CCTV-based risk detection with HSI Donesafe's enterprise EHS incident-management platform — [donesafe.com](https://www.donesafe.com/blog/company/ai-workplace-safety-invigilo-donesafe-partnership)
   - Summary: HSI Donesafe (an enterprise EHS platform backed by HSI, serving 22,000+ organisations) and INVIGILO announced an integrated technology partnership: INVIGILO's computer-vision detection of 40+ workplace risk scenarios over existing CCTV feeds into HSI Donesafe's incident, investigation, corrective-action and compliance workflows. The joint offering targets construction, manufacturing, logistics and warehousing, plus mining, resources and energy, and will be showcased at OS+H Asia in Singapore.
   - People: Vishnu Saran (CEO and Co-founder, INVIGILO), Louise Minty (Partnerships Manager, HSI Donesafe)
   - Counterparties: HSI Donesafe (technology partner)
   - Numbers: 40+ workplace risk scenarios detected; HSI supports 22,000+ organisations
   - Quote: "Most sites already have the cameras. What they do not have is someone watching every camera, all day, and that is the part we automate." — Vishnu Saran, CEO and Co-founder, INVIGILO
-
-## Older signals
 - **2026-07-24** — Published thought leadership on underground construction safety challenges specific to Singapore's Cross Island Line — [invigilo.ai](https://www.invigilo.ai/post/underground-changes-every-safety-rule-you-know)
   - Summary: INVIGILO published a detailed analysis of how underground construction (specifically the Cross Island Line at 70m depth) inverts standard safety hazards like work at height and confined-space plant proximity. The piece positions INVIGILO's computer-vision platform as adapted for low-light, dust-heavy underground environments where conventional monitoring falls short.
 - **2026-07-17** — Invigilo AI awarded JTC Innovative Procurement Partnership tender as one of three start-ups selected for worksite productivity monitoring — [sg.news.yahoo.com](https://sg.news.yahoo.com/more-support-construction-tech-firms-022000931.html) (Also reported by: [invigilo.ai](https://www.invigilo.ai/news/jtc-innovative-procurement-partnership-straits-times), [tradelinkmedia.biz](https://www.tradelinkmedia.biz/publications/7/news/6373))

@@ -22,14 +22,14 @@ _Total disclosed: $1.0M._
   - Counterparties: Vertex Ventures Southeast Asia & India (lead investor), Fareast Land Development / Farglory Group (co-investor), Rigel (co-investor, restroom products)
   - Numbers: US$6M Series A; ~10,000 operating hours over 12 months; 20+ sites across four regions; 30 minutes of manual cleaning replaced by a five-minute human inspection; soft facilities management market US$770B (2024) to US$1.23T (2033) per Grand View Research
   - Quote: "We may not only be building our own robots, but we will be collaborating with other robotics companies to integrate with our ecosystem," — Rishab Patwari, co-founder
+
+## Older signals
 - **2026-08-26** — PickNik case study details how MoveIt Pro motion planning, autonomous navigation and simulation cut an estimated 10 months off Abluo's development and testing timeline — [picknik.ai](https://picknik.ai/case-study-hivebotics/)
   - Summary: PickNik Robotics published a case study on its work with Hivebotics to productionize the Abluo cleaning robot: customized MoveIt Pro arm path planning for confined spaces, autonomous navigation software for consistent mobile-base placement, and real-time simulations to de-risk physical deployment. PickNik estimates the collaboration saved roughly 10 months of product development and testing time against a typical year-plus timeline.
   - People: Rishab Patwari (CEO)
   - Counterparties: PickNik Robotics (technology partner)
   - Numbers: ~10 months of development/testing time saved
   - Quote: "Their contributions allowed us to overcome significant technical challenges and accelerated our path to market with confidence." — Rishab Patwari, CEO, Hivebotics
-
-## Older signals
 - **2026-06-19** — Dealroom recap reports Hivebotics' Abluo robot cuts toilet cleaning time by 50%, confirming Series A fundraising is underway — [app.dealroom.co](https://app.dealroom.co/news/feed/hivebotics-abluo-robot-cuts-toilet-cleaning-time-by-50-with-ai-and-robotic-arms)
   - Summary: Dealroom reports Hivebotics' Abluo robot achieves a 50% reduction in cleaning time using AI-driven 3D perception and robotic arms. The article confirms Hivebotics is actively raising Series A funding to expand toward autonomous facilities management, citing 100+ orders since the July 2024 commercial launch.
   - People: Rishab Patwari (founder), Tuan Dung Nguyen (co-founder)

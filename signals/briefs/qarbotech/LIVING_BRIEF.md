@@ -22,12 +22,13 @@ _Last material event: 2026-05-31 — Won SusHi Tech Global Pitch Challenge 2026 
 _Total disclosed: $2.2M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-08-26** — Founder and chief scientist Dr Suraya Rashid profiled in The Peak's Power List 2026; carbon-quantum-dot photosynthesis enhancer framed as raising yields without extra agricultural inputs — [thepeakmagazine.com.sg](https://www.thepeakmagazine.com.sg/people/qarbotech-wants-plants-be-more-efficient-photosynthesis)
   - Summary: The Peak Power List 2026 profile traces Dr Suraya Rashid's path from materials-science research on carbon quantum dots to founding Qarbotech, a Malaysian deep-tech spin-off whose patented biocompatible solution enhances plants' photosynthetic efficiency. The piece emphasises the company's farmer-first philosophy — growers care about yield and input efficiency, not the underlying quantum mechanics. No new financial or commercial disclosures beyond prior signals.
   - People: Dr Suraya Rashid (founder and chief scientist)
   - Quote: "Farmers don't start by asking how the technology works. They start by asking what problem it solves." — Dr Suraya Rashid
-
-## Older signals
 - **2026-08-14** — Qarbotech published a field case study showing QarboGrow lifted total eggplant yield 10.6% and Grade A revenue 11.3% at Braintree Technologies' Selangor farms, framing the gain as better returns without extra labour — [qarbotech.com](https://qarbotech.com/a-case-study-on-qarbogrow-at-braintree-technologies-sungai-tangkas-bangi-selangor/)
   - Summary: Qarbotech's own case study covers a QarboGrow deployment at Braintree Technologies, a Malaysian agritech company farming at Sungai Tangkas, Bangi and Olak Lempit in Selangor, on the Leckat 313 "Little Nyonya" eggplant variety. Braintree combined QarboGrow with JADAM-based natural farming to address inconsistent yields, a heavy lower-grade mix and rising crop-protection costs; total yield, Grade A yield and premium-grade revenue all improved against the comparison plots. Braintree CEO Arif Makhdzir adopted the product from July 2024, making the farm one of QarboGrow's earliest adopters.
   - People: Arif Makhdzir (CEO, Braintree Technologies), Syazwan Sofian (farm manager, Braintree Technologies)

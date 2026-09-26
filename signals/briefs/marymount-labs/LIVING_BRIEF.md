@@ -17,9 +17,10 @@ _Last material event: 2026-08-13 — NUS Medicine's DATA accelerator discloses p
 _No disclosed funding._
 
 ## Recent signals
-- **2026-08-26** — The Tzu-Chi Foundation deployment of Marymount Labs' WhatsApp Companion has engaged ~700 seniors across two Active Ageing Centres, with a 50% rise in programme participation; highlighted by Health Minister Ong Ye Kung at the SUSS GOOD Incubator launch, per The Straits Times — [straitstimes.com](https://www.straitstimes.com/singapore/health/new-suss-initiative-to-boost-student-start-ups-and-social-ventures-tackling-social-challenges)
+_none_
 
 ## Older signals
+- **2026-08-26** — The Tzu-Chi Foundation deployment of Marymount Labs' WhatsApp Companion has engaged ~700 seniors across two Active Ageing Centres, with a 50% rise in programme participation; highlighted by Health Minister Ong Ye Kung at the SUSS GOOD Incubator launch, per The Straits Times — [straitstimes.com](https://www.straitstimes.com/singapore/health/new-suss-initiative-to-boost-student-start-ups-and-social-ventures-tackling-social-challenges)
 - **2026-08-13** — NUS Medicine's DATA accelerator discloses that Marymount Labs drew pre-seed funding through the programme and now runs its AI care workflows across GP practices and Active Ageing Centres, with multiple pilots underway at Singapore public healthcare institutions — [medicine.nus.edu.sg](https://medicine.nus.edu.sg/data/programmes/healthhack)
   - Summary: NUS Medicine's HealthHack legacy page states Marymount Labs was started by two brothers — an NUS Computer Science student and an AI/ML researcher — after winning 1st Prize at HealthHack 2024, and that the team has received pre-seed funding through NUS Medicine's Digital Health Accelerator. It describes the company as having expanded beyond patient activation into autonomous AI care workers for healthcare and social care organisations, spanning socially isolated seniors and preventive health through to clinical and administrative work.
   - Counterparties: NUS Medicine Digital Health Accelerator (pre-seed funder)
