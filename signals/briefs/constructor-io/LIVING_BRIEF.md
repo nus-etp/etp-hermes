@@ -25,12 +25,12 @@ _Total disclosed: $55.0M._
   - People: Eli Finkelshteyn (Co-Founder & CEO)
   - Numbers: 3 Gold Company of the Year awards; 2 Gold product awards for PIA; 1 Silver; 1 People's Choice Award
   - Quote: "Ultimately, though, the test of any technology is what happens when customers put it to work - and seeing retailers use ours every day to drive meaningful results is what matters most." — Eli Finkelshteyn, Co-Founder and CEO, Constructor
+
+## Older signals
 - **2026-08-27** — Partnered with IMPACT Commerce so retailers can combine Constructor's AI search and product discovery with IMPACT's commerce strategy, customer-experience and implementation expertise, building on joint work for beauty brand ELEMIS across the UK, US and EU — [constructor.com](https://constructor.com/blog/constructor-and-impact-commerce-partner-to-drive-better-ecommerce-experiences-with-ai)
   - Summary: Constructor is partnering with IMPACT Commerce to offer retailers a bundled path from AI-powered product discovery to measurable growth: Constructor supplies search, browse, recommendations and conversational shopping built on real shopper behaviour, while IMPACT brings commerce strategy, customer experience and implementation capabilities. The partnership formalises an existing working relationship — the two teams previously ran a successful project for global beauty brand ELEMIS across the UK, US and EU. Constructor's 2025 State of Ecommerce research found 68% of shoppers think retail website search needs an upgrade and 40% say their favourite retailer still treats them like a stranger.
   - Counterparties: IMPACT Commerce (partner), ELEMIS (joint customer reference)
   - Numbers: 68% of shoppers say retail search needs an upgrade; 40% say favourite retailer treats them like a stranger
-
-## Older signals
 - **2026-07-09** — Ranked #1 in 3 of 5 use cases in Gartner's Critical Capabilities for Search and Product Discovery — GenAI Product Discovery, Product Search and Discovery, and Multisite and Globalization — the only vendor to score highest in 3 of 5 use cases for the second straight year — [prnewswire.com](https://www.prnewswire.com/news-releases/constructor-has-the-most-1-rankings-in-gartner-critical-capabilities-for-search-and-product-discovery-report-302821039.html)
   - Summary: Gartner's Critical Capabilities for Search and Product Discovery report evaluated 12 vendors across five use cases, with Constructor ranked #1 in three — "GenAI Product Discovery," "Product Search and Discovery," and "Multisite and Globalization" — the second year running that Constructor is the only vendor to score highest in three of five use cases. The report is the companion to the Gartner Magic Quadrant for Search and Product Discovery, where Constructor was recently named a Leader placing furthest in Vision and highest in Execution.
   - People: Eli Finkelshteyn (CEO & Co-Founder)
