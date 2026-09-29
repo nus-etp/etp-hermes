@@ -5,7 +5,7 @@ _Last updated: 2026-09-18 16:59 UTC_
 ## Thesis
 CBE Eco-Solutions is a Singapore eco-tech startup incubated by NUS GRIP, developing solutions to address climate change. It was featured in CNA's "Young Changemakers" documentary series, and has completed seed and Series A rounds backed by Sembcorp Industries and Juniper Capital.
 
-_Last material event: 2024 — Completed a SGD 5.5M Series A alongside its Jurong Island demonstration plant_
+_Last material event: none on record_
 
 ## Profile
 - Sector: Climate tech
