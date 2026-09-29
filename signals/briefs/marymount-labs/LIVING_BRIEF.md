@@ -15,10 +15,8 @@ _Last material event: 2026-08-26 — Health Minister Ong Ye Kung names Marymount
 - Identifiers: NUS Medicine DATA Accelerator (NUS Enterprise), 500 Startups, Tzu-Chi Foundation
 
 ## Funding history
-## Funding history
 _No disclosed funding._
 
-## Recent signals
 ## Recent signals
 - **2026-08-26** — Health Ministry names Marymount Labs' WhatsApp Companion as a showcase project at SUSS Geronpreneurship Innovation Festival — [moh.gov.sg](https://moh.gov.sg/newsroom/speech-by-mr-ong-ye-kung--minister-for-health-and-coordinating-minister-for-social-policies--at-the-singapore-university-of-social-sciences-geronpreneurship-innovation-festival--26-august-2026)
 
