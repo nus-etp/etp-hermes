@@ -18,14 +18,11 @@ _Last material event: 2026-08-26 — Health Minister Ong Ye Kung names Marymount
 _No disclosed funding._
 
 ## Recent signals
-- **2026-08-26** — Health Ministry names Marymount Labs' WhatsApp Companion as a showcase project at SUSS Geronpreneurship Innovation Festival — [moh.gov.sg](https://moh.gov.sg/newsroom/speech-by-mr-ong-ye-kung--minister-for-health-and-coordinating-minister-for-social-policies--at-the-singapore-university-of-social-sciences-geronpreneurship-innovation-festival--26-august-2026)
-
-
 ### Hiring
 - **date unknown** — Hiring and deployment activity ongoing across Singapore public healthcare institutions — [lever.co](<url>)
 
 ## Older signals
-_none_
+- **2026-08-26** — Health Ministry names Marymount Labs' WhatsApp Companion as a showcase project at SUSS Geronpreneurship Innovation Festival — [moh.gov.sg](https://moh.gov.sg/newsroom/speech-by-mr-ong-ye-kung--minister-for-health-and-coordinating-minister-for-social-policies--at-the-singapore-university-of-social-sciences-geronpreneurship-innovation-festival--26-august-2026)
 
 ## Open questions
 - _none open_
