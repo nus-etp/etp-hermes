@@ -3,7 +3,6 @@
 # (default 30) so a false-negative drop gets re-judged instead of being lost
 # forever; scripts/collect-candidates.py prunes expired lines at the start of
 # each run. Keys we KEPT go to signals/seen-urls.txt (permanent) instead.
-2026-09-01	https://www.akro.ai/newsroom/singapore-based-ai-startup-akro-raises-usd-700000-pre-seed-to-automate-data-workflows-in-regulated-industries
 2026-09-02	https://www.thefastmode.com/technology-solutions/48940-celcomdigi-advanced-intelligent-warehouse-showcases-5g-sa-ai-robotics-for-smart-logistics
 2026-09-02	https://www.linkedin.com/posts/ailytics_exciting-week-for-us-in-malaysia-as-we-officially-activity-7470339556408508416-Ub1Y
 2026-09-02	https://aircargoweek.com/why-southeast-asias-cargo-tech-shift-is-being-driven-by-airline-engineers
