@@ -1,0 +1,100 @@
+{
+  "base_url": "https://cloud.langfuse.com",
+  "by_environment": {
+    "eval": {
+      "countObservations": 210,
+      "countTraces": 90,
+      "days": 29,
+      "inputUsage": 38211,
+      "outputUsage": 12294,
+      "totalCost": 0.0,
+      "totalUsage": 50505
+    },
+    "production": {
+      "countObservations": 7650,
+      "countTraces": 114,
+      "days": 29,
+      "inputUsage": 130191643,
+      "outputUsage": 1943156,
+      "totalCost": 0.0,
+      "totalUsage": 133322622
+    }
+  },
+  "by_model": [
+    {
+      "countObservations": 2834,
+      "countTraces": 84,
+      "inputUsage": 118795989,
+      "model": "deepseek-v4-flash",
+      "outputUsage": 1800747,
+      "totalCost": 0.0,
+      "totalUsage": 121752998
+    },
+    {
+      "countObservations": 4457,
+      "countTraces": 203,
+      "inputUsage": 0,
+      "model": "(unknown)",
+      "outputUsage": 0,
+      "totalCost": 0.0,
+      "totalUsage": 0
+    },
+    {
+      "countObservations": 120,
+      "countTraces": 90,
+      "inputUsage": 38211,
+      "model": "deepseek-chat",
+      "outputUsage": 12294,
+      "totalCost": 0.0,
+      "totalUsage": 50505
+    },
+    {
+      "countObservations": 32,
+      "countTraces": 32,
+      "inputUsage": 0,
+      "model": "deepseek-ai/deepseek-v4-flash-0731",
+      "outputUsage": 0,
+      "totalCost": 0.0,
+      "totalUsage": 0
+    },
+    {
+      "countObservations": 408,
+      "countTraces": 32,
+      "inputUsage": 11395654,
+      "model": "glm-4.7-flash",
+      "outputUsage": 142409,
+      "totalCost": 0.0,
+      "totalUsage": 11569624
+    },
+    {
+      "countObservations": 5,
+      "countTraces": 5,
+      "inputUsage": 0,
+      "model": "mimo-v2.5",
+      "outputUsage": 0,
+      "totalCost": 0.0,
+      "totalUsage": 0
+    },
+    {
+      "countObservations": 4,
+      "countTraces": 4,
+      "inputUsage": 0,
+      "model": "deepseek-v4.1-flash",
+      "outputUsage": 0,
+      "totalCost": 0.0,
+      "totalUsage": 0
+    }
+  ],
+  "from": "2026-09-01T00:00:00Z",
+  "month": "2026-09",
+  "to": "2026-10-01T00:00:00Z",
+  "totals": {
+    "countObservations": 7860,
+    "countTraces": 204,
+    "days": 30,
+    "inputUsage": 130229854,
+    "outputUsage": 1955450,
+    "totalCost": 0.0,
+    "totalUsage": 133373127
+  }
+}
