@@ -2,9 +2,17 @@
 """Discover new BLOCK71 / NUS GRIP portfolio companies not yet in the watchlist.
 
 Scrapes two public directories:
-  - https://block71.co/startup/          (all BLOCK71 hubs incl. The Hangar,
-                                          NUS@SSP, Social Impact Hub)
+  - https://nusx.edu.sg/startups/b71/<region>/  (BLOCK71 hub showcases: the
+                                          per-region logo walls — Singapore,
+                                          Indonesia, Vietnam, China, Japan, USA)
   - https://www.nus.edu.sg/grip/portfolio/  (NUS GRIP ventures)
+
+Both upstreams were reworked in 2026: block71.co became a client-rendered SPA
+that serves the same shell for every path (no scrapable directory), so the
+BLOCK71 companies are now read from the server-rendered logo walls on
+nusx.edu.sg instead; and the GRIP portfolio page went behind Incapsula bot
+protection (a 212-byte JS challenge to urllib), so it is fetched through
+r.jina.ai — the same gated/unreachable-host fallback the collector uses.
 
 Cross-checks every venture against data/companies.json names + aliases using a
 normalised key (case/spacing/hyphen/trademark-insensitive), drafts a watchlist
@@ -33,46 +41,28 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 COMPANIES_JSON = REPO_ROOT / "data" / "companies.json"
 OUT_JSON = REPO_ROOT / "data" / "portfolio-new-entries.json"
 
-BLOCK71_URL = "https://block71.co/startup/"
 GRIP_URL = "https://www.nus.edu.sg/grip/portfolio/"
+JINA_PREFIX = "https://r.jina.ai/"
 
-HUB_LABELS = {
-    "block71-singapore": "BLOCK71 Singapore",
-    "the-hangar": "The Hangar (NUS Enterprise)",
-    "nus-enterprisesingapore-science-park": "NUS Enterprise @ Singapore Science Park",
-    "social-impact-hub": "NUS Social Impact Hub",
-    "block71-jakarta": "BLOCK71 Jakarta",
-    "block71-saigon": "BLOCK71 Saigon",
-    "block71-suzhou": "BLOCK71 Suzhou",
-    "block71-chongqing": "BLOCK71 Chongqing",
-    "block71-guangzhou": "BLOCK71 Guangzhou",
-    "block71-silicon-valley": "BLOCK71 Silicon Valley",
-    "block71-tokyo": "BLOCK71 Tokyo",
-    "block71-yogyakarta": "BLOCK71 Yogyakarta",
-    "select-block71-bandung-block71-bandung": "BLOCK71 Bandung",
-}
+# BLOCK71 hub region pages on nusx.edu.sg. block71.co itself is a client-rendered
+# SPA (serves the same shell for every path), so the companies are read from the
+# server-rendered logo walls here instead. Each entry: (slug, hub_label, country).
+# The hub_label sets the drafted description/notes; the country is set explicitly
+# because the regional labels don't spell out their country, so
+# scripts/derive_country.py's regex heuristic can't infer it from the blurb (see
+# tests/static/test_companies_schema.py's test_every_company_has_country).
+BLOCK71_REGIONS = [
+    ("singapore", "BLOCK71 Singapore", "Singapore"),
+    ("indonesia", "BLOCK71 Indonesia", "Indonesia"),
+    ("vietnam", "BLOCK71 Vietnam", "Vietnam"),
+    ("china", "BLOCK71 China", "China"),
+    ("japan", "BLOCK71 Japan", "Japan"),
+    ("usa", "BLOCK71 USA", "United States"),
+]
 
-# HQ country per hub, keyed the same as HUB_LABELS. Some domestic hub labels
-# ("The Hangar (NUS Enterprise)", "NUS Social Impact Hub") never spell out
-# "Singapore", so scripts/derive_country.py's regex heuristic can't resolve a
-# country from the drafted description alone — set it explicitly here instead
-# of leaving it to inference (see tests/static/test_companies_schema.py's
-# test_every_company_has_country).
-HUB_COUNTRY = {
-    "block71-singapore": "Singapore",
-    "the-hangar": "Singapore",
-    "nus-enterprisesingapore-science-park": "Singapore",
-    "social-impact-hub": "Singapore",
-    "block71-jakarta": "Indonesia",
-    "block71-saigon": "Vietnam",
-    "block71-suzhou": "China",
-    "block71-chongqing": "China",
-    "block71-guangzhou": "China",
-    "block71-silicon-valley": "United States",
-    "block71-tokyo": "Japan",
-    "block71-yogyakarta": "Indonesia",
-    "select-block71-bandung-block71-bandung": "Indonesia",
-}
+
+def block71_region_url(slug: str) -> str:
+    return f"https://nusx.edu.sg/startups/b71/{slug}/"
 
 LEGAL_SUFFIX = re.compile(
     r"\s*[,(]?\s*"
@@ -86,12 +76,12 @@ LEGAL_SUFFIX = re.compile(
 )
 
 RUN_IN_URL = re.compile(r"[Rr]un[-_ ]?(\d+)")
-TAG_STRIP = re.compile(r"<[^>]+>")
 
 
-def fetch(url: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (portfolio-discovery)"})
-    with urllib.request.urlopen(req, timeout=30) as resp:
+def fetch(url: str, *, via_jina: bool = False) -> str:
+    target = f"{JINA_PREFIX}{url}" if via_jina else url
+    req = urllib.request.Request(target, headers={"User-Agent": "Mozilla/5.0 (portfolio-discovery)"})
+    with urllib.request.urlopen(req, timeout=90) as resp:
         return resp.read().decode("utf-8", errors="replace")
 
 
@@ -132,63 +122,75 @@ def norm_key(s: str) -> str:
     return re.sub(r"[^a-z0-9]", "", s)
 
 
-def text_of(fragment: str) -> str:
-    return html.unescape(TAG_STRIP.sub(" ", fragment)).strip()
-
-
 # --------------------------------------------------------------------------
-# BLOCK71 directory (startup cards)
+# BLOCK71 hub showcases (per-region logo walls)
 # --------------------------------------------------------------------------
 
-def parse_block71_cards(src: str) -> list[dict]:
+# Logo-wall alts that are placeholders, not company names.
+LOGO_WALL_JUNK = re.compile(r"\bunknown\b|^b71\b", re.IGNORECASE)
+# Trailing cruft some alts carry: "AIPath Visual Logo" → "AIPath".
+LOGO_WALL_SUFFIX = re.compile(r"\s*(visual\s+)?logo\s*$", re.IGNORECASE)
+
+
+def parse_block71_region(src: str, hub_label: str, country: str) -> list[dict]:
     pattern = re.compile(
-        r'class="startup-card"\s+'
-        r'data-industry="([^"]*)"\s+'
-        r'data-location="([^"]*)"\s+'
-        r'data-date="[^"]*"\s+'
-        r'data-views="[^"]*">'
-        r".*?"
-        r'<h3 class="startup-name">([^<]+)</h3>',
+        r'data-logo-wall-item[^>]*>\s*<img[^>]*\balt="([^"]*)"',
         re.DOTALL,
     )
     out: list[dict] = []
-    for industry, location, name in pattern.findall(src):
-        raw_name = html.unescape(name).strip()
+    for alt in pattern.findall(src):
+        raw = LOGO_WALL_SUFFIX.sub("", html.unescape(alt)).strip()
+        if not raw or LOGO_WALL_JUNK.search(raw):
+            continue
         out.append(
             {
                 "source": "block71",
-                "name": normalize_name(raw_name),
-                "hub_label": HUB_LABELS.get(location, location),
-                "hub_country": HUB_COUNTRY.get(location),
-                "industry": industry.replace("-", " ").strip() or None,
+                "name": normalize_name(raw),
+                "hub_label": hub_label,
+                "hub_country": country,
+                "industry": None,
             }
         )
     return out
 
 
 # --------------------------------------------------------------------------
-# NUS GRIP portfolio (Essential-Addons lightboxes)
+# NUS GRIP portfolio (r.jina.ai markdown — the page is Incapsula-gated)
 # --------------------------------------------------------------------------
 
-def parse_grip_lightboxes(src: str) -> list[dict]:
+# Non-company section headings in the GRIP portfolio markdown (page chrome, not
+# ventures). Compared case-insensitively.
+GRIP_HEADING_SKIP = {
+    "portfolio",
+    "solving problems with research",
+    "our portfolio",
+    "access our world-class deal flow",
+}
+
+
+def parse_grip_portfolio(md: str) -> list[dict]:
     out: list[dict] = []
-    blocks = re.split(r'<h2 class="eael-lightbox-title">', src)[1:]
+    blocks = re.split(r"^##\s+", md, flags=re.MULTILINE)[1:]
     for block in blocks:
-        name_match = re.match(r"([^<]+)</h2>", block)
-        if not name_match:
+        name_line, _, rest = block.partition("\n")
+        name = name_line.strip()
+        if not name or name.lower() in GRIP_HEADING_SKIP:
             continue
-        content_match = re.search(
-            r'<div class="eael-lightbox-content">(.*?)</div>\s*</div>', block, re.DOTALL
-        )
-        content = content_match.group(1) if content_match else ""
-        paras = [text_of(p) for p in re.findall(r"<p>(.*?)</p>", content, re.DOTALL)]
-        paras = [p for p in paras if p and not p.lower().startswith("click here")]
-        link_match = re.search(r'<a href="([^"]+)"[^>]*>\s*Click here', content)
-        run_match = RUN_IN_URL.search(link_match.group(1) if link_match else "")
+        # The venture's blurb runs until its first image; the leading
+        # "###### TAGLINE" line and the "Click here to find out more" link are
+        # dropped, matching the old lightbox parser's output.
+        body = rest.split("\n![", 1)[0]
+        run_match = RUN_IN_URL.search(rest)
+        paras: list[str] = []
+        for para in re.split(r"\n\s*\n", body):
+            text = " ".join(para.split())
+            if not text or text.startswith("#") or text.lower().startswith("click here"):
+                continue
+            paras.append(text)
         out.append(
             {
                 "source": "grip",
-                "name": html.unescape(name_match.group(1)).strip(),
+                "name": name,
                 "description": "\n\n".join(paras) or None,
                 "grip_run": int(run_match.group(1)) if run_match else None,
             }
@@ -292,10 +294,12 @@ def find_new(companies: list[dict], ventures: list[dict]) -> list[dict]:
 
 
 def main() -> int:
-    block71 = parse_block71_cards(fetch(BLOCK71_URL))
-    grip = parse_grip_lightboxes(fetch(GRIP_URL))
+    block71: list[dict] = []
+    for slug, hub_label, country in BLOCK71_REGIONS:
+        block71 += parse_block71_region(fetch(block71_region_url(slug)), hub_label, country)
+    grip = parse_grip_portfolio(fetch(GRIP_URL, via_jina=True))
     if not block71:
-        print(f"FATAL: zero startup cards parsed from {BLOCK71_URL}; markup changed?", file=sys.stderr)
+        print("FATAL: zero companies parsed from BLOCK71 region logo walls; markup changed?", file=sys.stderr)
         return 1
     if not grip:
         print(f"FATAL: zero ventures parsed from {GRIP_URL}; markup changed?", file=sys.stderr)

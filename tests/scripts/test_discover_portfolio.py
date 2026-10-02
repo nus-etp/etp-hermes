@@ -17,47 +17,66 @@ def merge_mod(scripts_module_loader):
 
 
 BLOCK71_HTML = """
-<div class="startup-card" data-industry="fintech" data-location="block71-singapore" data-date="2026-01-01" data-views="12">
-  <div class="startup-logo"></div>
-  <div class="startupdetails">
-    <h3 class="startup-name">ACME PAYMENTS PTE. LTD.</h3>
-    <a href="https://block71.co/directory/startups/acme-payments/" class="view-btn">View</a>
+<div class="logo-wall">
+  <div data-logo-wall-item data-logo-index="0">
+    <img src="/wp-media/2026/08/acme.webp" alt="ACME PAYMENTS PTE. LTD." class="object-contain" loading="lazy">
   </div>
-</div>
-<div class="startup-card" data-industry="health-tech" data-location="the-hangar" data-date="2026-02-01" data-views="3">
-  <div class="startupdetails">
-    <h3 class="startup-name">CarePal</h3>
-    <a href="https://block71.co/directory/startups/carepal/" class="view-btn">View</a>
+  <div data-logo-wall-item data-logo-index="1">
+    <img src="/wp-media/2026/08/carepal.webp" alt="CarePal" class="object-contain" loading="lazy">
+  </div>
+  <div data-logo-wall-item data-logo-index="2">
+    <img src="/wp-media/2026/08/aipath.webp" alt="AIPath Visual Logo" class="object-contain" loading="lazy">
+  </div>
+  <div data-logo-wall-item data-logo-index="3">
+    <img src="/wp-media/2026/08/placeholder.webp" alt="B71 US : Unknown Logo 1" class="object-contain" loading="lazy">
   </div>
 </div>
 """
 
-GRIP_HTML = """
-<h2 class="eael-lightbox-title">WaveSense</h2>
-<div class="eael-lightbox-content"><h6 class="uk-text-meta">SENSING THE FUTURE</h6>
-<div><p>WaveSense builds acoustic sensors for pipelines. It detects leaks early.</p></div>
-<p><a href="http://nus.edu.sg/grip/wp-content/uploads/Run-9-Booklet.pdf">Click here to find out more</a></p></div>
-</div>
-<h2 class="eael-lightbox-title">ArmasTec™</h2>
-<div class="eael-lightbox-content"><div><p>Exosuits for industrial workers.</p></div></div>
-</div>
+GRIP_MARKDOWN = """Title: NUS Graduate Research Innovation Programme
+
+Markdown Content:
+## Portfolio
+
+## Our Portfolio
+
+![Image 2](http://nus.edu.sg/grip/wp-content/uploads/WaveSense.jpg)
+
+## WaveSense
+
+###### SENSING THE FUTURE
+
+WaveSense builds acoustic sensors for pipelines. It detects leaks early.
+
+![Image 3](http://nus.edu.sg/grip/wp-content/uploads/more.jpg)
+
+[Click here to find out more](http://nus.edu.sg/grip/wp-content/uploads/Run-9-Booklet.pdf)
+
+## ArmasTec™
+
+###### STRENGTH TO SPARE
+
+Exosuits for industrial workers.
+
+![Image 4](http://nus.edu.sg/grip/wp-content/uploads/armastec.jpg)
 """
 
 
-def test_parse_block71_cards(discover):
-    cards = discover.parse_block71_cards(BLOCK71_HTML)
-    assert [c["name"] for c in cards] == ["Acme Payments", "CarePal"]
+def test_parse_block71_region(discover):
+    cards = discover.parse_block71_region(BLOCK71_HTML, "BLOCK71 Singapore", "Singapore")
+    assert [c["name"] for c in cards] == ["Acme Payments", "CarePal", "AIPath"]
     assert cards[0]["hub_label"] == "BLOCK71 Singapore"
-    assert cards[0]["industry"] == "fintech"
-    assert cards[1]["hub_label"] == "The Hangar (NUS Enterprise)"
+    assert cards[0]["hub_country"] == "Singapore"
+    assert cards[0]["industry"] is None
 
 
-def test_parse_grip_lightboxes(discover):
-    ventures = discover.parse_grip_lightboxes(GRIP_HTML)
+def test_parse_grip_portfolio(discover):
+    ventures = discover.parse_grip_portfolio(GRIP_MARKDOWN)
     assert [v["name"] for v in ventures] == ["WaveSense", "ArmasTec™"]
     assert ventures[0]["grip_run"] == 9
     assert "acoustic sensors" in ventures[0]["description"]
     assert "Click here" not in ventures[0]["description"]
+    assert "SENSING THE FUTURE" not in ventures[0]["description"]
     assert ventures[1]["grip_run"] is None
 
 
@@ -72,7 +91,7 @@ def test_find_new_excludes_overlaps_and_dedupes(discover):
         {"name": "ARMAS TEC", "aliases": []},
         {"name": "Other Co", "aliases": ["WaveSense"]},
     ]
-    ventures = discover.parse_grip_lightboxes(GRIP_HTML) + [
+    ventures = discover.parse_grip_portfolio(GRIP_MARKDOWN) + [
         {"source": "grip", "name": "Wave-Sense", "description": None, "grip_run": None},  # dup of alias
         {"source": "block71", "name": "Fresh Startup", "hub_label": "BLOCK71 Jakarta", "industry": None},
         {"source": "block71", "name": "FRESH STARTUP", "hub_label": "BLOCK71 Jakarta", "industry": None},  # dup within batch
@@ -160,10 +179,12 @@ def test_draft_entry_sets_country_for_hubs_without_country_in_label(discover):
     assert grip_entry["country"] == "Singapore"
 
 
-def test_parse_block71_cards_sets_hub_country(discover):
-    cards = discover.parse_block71_cards(BLOCK71_HTML)
-    assert cards[0]["hub_country"] == "Singapore"  # block71-singapore
-    assert cards[1]["hub_country"] == "Singapore"  # the-hangar
+def test_parse_block71_region_skips_placeholder_alts(discover):
+    cards = discover.parse_block71_region(BLOCK71_HTML, "BLOCK71 USA", "United States")
+    names = [c["name"] for c in cards]
+    assert "B71 Us : Unknown" not in " ".join(names)  # "Unknown" placeholder dropped
+    assert all(not n.lower().endswith("logo") for n in names)  # "… Logo" suffix stripped
+    assert all(c["hub_country"] == "United States" for c in cards)
 
 
 def test_first_sentences_trims_long_blurbs(discover):
