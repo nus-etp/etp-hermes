@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/littlelives/littlelives-blog.ghost.io",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "generic blog content with no specific company news",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Medication, allergies and 'Did the teacher remember?'' for LittleLives",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0005",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "LittleLives"
+      ],
+      "source": "littlelives.com (blog)",
+      "title": "Medication, allergies and 'Did the teacher remember?'",
+      "url": "https://littlelives-blog.ghost.io/medication-allergies-and-did-the-teacher-remember"
+    },
+    "companies": {
+      "LittleLives": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

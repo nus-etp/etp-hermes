@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/ro/roplus.sg",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "headline is a generic event name with no description linking it to the specific Singapore startup RO+",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'ATXSG InnovFest 2023' for RO+",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-22-0009",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "RO+"
+      ],
+      "source": "RO+",
+      "title": "ATXSG InnovFest 2023",
+      "url": "https://www.roplus.sg/2023/07/03/atxsg-innovfest-2023"
+    },
+    "companies": {
+      "RO+": {
+        "description": "NUS GRIP-incubated Singapore automation startup. Very short brand — drop any item not clearly about this specific Singapore startup."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-22",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

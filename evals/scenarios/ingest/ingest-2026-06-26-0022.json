@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/peris.ai/peris.ai",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "No new information about the company; headline and description are generic and lack specific events or updates.",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Peris.ai — Agentic-AI Cybersecurity Platform' for Peris.ai",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0022",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Peris.ai"
+      ],
+      "source": "peris.ai",
+      "title": "Peris.ai — Agentic-AI Cybersecurity Platform",
+      "url": "https://www.peris.ai"
+    },
+    "companies": {
+      "Peris.ai": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
