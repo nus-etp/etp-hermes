@@ -27,6 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import scenarios
 
 DEFAULT_MIN_SIZE = 3
+DEFAULT_LAYERS = "ingest"
 DEFAULT_OUT = scenarios.REPO_ROOT / "data" / "harness" / "cluster.json"
 SUMMARY_MAX_CHARS = 400
 
@@ -174,12 +175,18 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--min-size", type=int, default=DEFAULT_MIN_SIZE)
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
     parser.add_argument("--scenarios", type=Path, default=scenarios.SCENARIOS_DIR)
+    parser.add_argument("--layers", default=DEFAULT_LAYERS, help="Comma-separated layers the loop may propose for.")
     return parser.parse_args(argv)
+
+
+def parse_layers(spec: str) -> set[str]:
+    return {layer.strip() for layer in spec.split(",") if layer.strip()}
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-    cards = scenarios.load_all(args.scenarios, status="active")
+    allowed = parse_layers(args.layers)
+    cards = [card for card in scenarios.load_all(args.scenarios, status="active") if card["layer"] in allowed]
     result = select_cluster(cards, args.min_size)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

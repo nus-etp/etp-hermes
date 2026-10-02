@@ -26,6 +26,7 @@ permissions:
 
 env:
   HARNESS_MIN_SIZE: ${{ github.event.inputs.min_size || '3' }}
+  HARNESS_LAYERS: ingest
   HARNESS_DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
   HARNESS_ASSIGNEE: luarss
   HARNESS_LABEL: 'harness:auto'
@@ -71,7 +72,7 @@ jobs:
         id: cluster
         if: steps.open_pr.outputs.run == 'true'
         run: |
-          python3 scripts/harness/cluster.py --min-size "$HARNESS_MIN_SIZE" --out data/harness/cluster.json
+          python3 scripts/harness/cluster.py --min-size "$HARNESS_MIN_SIZE" --layers "$HARNESS_LAYERS" --out data/harness/cluster.json
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json
           cluster = json.load(open("data/harness/cluster.json"))
@@ -234,9 +235,14 @@ jobs:
               warn "no champion prompt for layer ${layer} at ${HARNESS_CHAMPION_REF}"
               return 0
             fi
+            if ! git show "${HARNESS_CHAMPION_REF}:data/companies.json" > /tmp/champion-companies.json; then
+              warn "no champion companies.json at ${HARNESS_CHAMPION_REF}"
+              return 0
+            fi
             for runtime in $HARNESS_RUNTIMES; do
               status=0
               python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "/tmp/champion-${layer}.md" \
+                --companies /tmp/champion-companies.json \
                 --runtime "$runtime" --out "data/harness/sim/champion-${runtime}.json" || status=$?
               if [ "$status" != 0 ]; then warn "champion simulate on $runtime exited $status"; continue; fi
               python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "prompts/${layer}.md" \

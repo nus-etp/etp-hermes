@@ -131,3 +131,22 @@ def test_main_not_eligible_exits_zero(tmp_path: Path):
     out = tmp_path / "cluster.json"
     assert cluster.main(["--scenarios", str(root), "--out", str(out), "--min-size", "5"]) == 0
     assert json.loads(out.read_text())["eligible"] is False
+
+
+def test_main_filters_to_allowed_layers(tmp_path: Path):
+    root = tmp_path / "scenarios"
+    for seq in range(3):
+        scenarios.save(make_card(seq + 1, "ingest/false_keep/arch"), root)
+    synth = make_card(9, "synthesis/template_drift/hiring")
+    synth["id"] = "synthesis-2026-10-01-0009"
+    synth["layer"] = "synthesis"
+    synth["graders"] = ["template_invariants"]
+    for seq in range(4):
+        card = dict(synth, id=f"synthesis-2026-10-01-{seq + 1:04d}")
+        card["input"] = {"candidate": {"url": f"https://example.com/s{seq}"}}
+        scenarios.save(card, root)
+    out = tmp_path / "cluster.json"
+    assert cluster.main(["--scenarios", str(root), "--out", str(out), "--layers", "ingest"]) == 0
+    assert json.loads(out.read_text())["layer"] == "ingest"
+    assert cluster.main(["--scenarios", str(root), "--out", str(out), "--layers", "ingest,synthesis"]) == 0
+    assert json.loads(out.read_text())["layer"] == "synthesis"
