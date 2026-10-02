@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/pinhome/cnbc.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "headline describes a generic founder story, not a specific event about Pinhome",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Indonesian startup founder bootstrapped a company out of her garage (CNBC)' for Pinhome",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0014",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Pinhome"
+      ],
+      "source": "cnbc.com",
+      "title": "Indonesian startup founder bootstrapped a company out of her garage (CNBC)",
+      "url": "https://www.cnbc.com/indonesia-startup-founder-bootstrapped-garage"
+    },
+    "companies": {
+      "Pinhome": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

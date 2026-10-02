@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/finan/fintechnews.sg",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "company description is empty and headline identifies it as Vietnamese, not Singapore-linked",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Vietnamese fintech SoBanHang (Finan) raises further $3.8 million to expand micro-business management/embedded banking tools' for Finan",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-24-0004",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Finan"
+      ],
+      "source": "Fintech News Singapore",
+      "title": "Vietnamese fintech SoBanHang (Finan) raises further $3.8 million to expand micro-business management/embedded banking tools",
+      "url": "https://fintechnews.sg/131334/vietnam/sobanhang-funding-pre-series-a"
+    },
+    "companies": {
+      "Finan": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-24",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/patsnap/patsnap.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "company description is empty, cannot confirm it is the correct early-stage Singapore-linked company",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Patsnap Expands Hiro AI Conversational Search' for Patsnap",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-28-0002",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Patsnap"
+      ],
+      "source": "patsnap.com",
+      "title": "Patsnap Expands Hiro AI Conversational Search",
+      "url": "https://www.patsnap.com/resources/blog/press_release/patsnap-expands-hiro-ai-conversational-search"
+    },
+    "companies": {
+      "Patsnap": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-28",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

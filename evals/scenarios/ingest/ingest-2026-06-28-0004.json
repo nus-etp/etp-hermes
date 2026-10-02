@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/patsnap/patsnap.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "no company description provided to confirm identity, and headline describes a generic advisory board launch with no specific details about funding, product, or partnerships",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Patsnap Launches Inaugural Life Sciences Customer Advisory Board' for Patsnap",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-28-0004",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Patsnap"
+      ],
+      "source": "patsnap.com",
+      "title": "Patsnap Launches Inaugural Life Sciences Customer Advisory Board",
+      "url": "https://www.patsnap.com/resources/blog/press_release/patsnap-launches-inaugural-life-sciences-customer-advisory-board"
+    },
+    "companies": {
+      "Patsnap": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-28",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

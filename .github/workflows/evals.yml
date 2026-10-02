@@ -12,6 +12,7 @@ on:
       - 'scripts/**'
       - 'signals/briefs/**'
       - 'tests/**'
+      - 'evals/**'
       - 'pyproject.toml'
       - '.github/workflows/evals.yml'
   schedule:
@@ -50,6 +51,9 @@ jobs:
       - name: Run scripts suite
         if: github.event.inputs.suite == '' || github.event.inputs.suite == 'scripts' || github.event.inputs.suite == 'all' || github.event_name == 'pull_request'
         run: .venv/bin/pytest tests/scripts -q
+
+      - name: Check scenario cards
+        run: python3 scripts/harness/check_scenarios.py
 
   # ---------------------------------------------------------------------------
   # LLM suite: nightly cron + opt-in workflow_dispatch. Never runs on PR.

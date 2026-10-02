@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/beex/beex.sg",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "no company description to confirm identity, and headline reads as generic marketing without specific company news",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Successful Adaptive Autonomous Inspection at 4-Legged Jacket Platform for Major O&G Company' for BEEX",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-22-0005",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "BEEX"
+      ],
+      "source": "BeeX Blog",
+      "title": "Successful Adaptive Autonomous Inspection at 4-Legged Jacket Platform for Major O&G Company",
+      "url": "https://www.beex.sg/case-studies/successful-adaptive-autonomous-inspection-at-4-legged-jacket-platform-for-major-o-g-company"
+    },
+    "companies": {
+      "BEEX": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-22",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

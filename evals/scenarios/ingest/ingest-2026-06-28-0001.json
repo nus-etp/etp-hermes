@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_drop/carousell/press.carousell.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": "Carousell",
+    "reason": "Reports a new product launch for Carousell Autos, a specific company unit",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Carousell Autos launches Singapore's first AI-powered car finder' for Carousell",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-28-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Carousell"
+      ],
+      "source": "press.carousell.com",
+      "title": "Carousell Autos launches Singapore's first AI-powered car finder",
+      "url": "https://press.carousell.com/2026/06/18/carousell-autos-launches-singapores-first-ai-powered-car-finder"
+    },
+    "companies": {
+      "Carousell": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-28",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

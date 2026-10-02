@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/littlelives/littlelives-blog.ghost.io",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "generic marketing headline with no specific company news",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'You Deserve Better: No more juggling WhatsApp, emails, and paper forms' for LittleLives",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0006",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "LittleLives"
+      ],
+      "source": "littlelives.com (blog)",
+      "title": "You Deserve Better: No more juggling WhatsApp, emails, and paper forms",
+      "url": "https://littlelives-blog.ghost.io/you-deserve-better-no-more-juggling-whatsapp-emails-and-paper-forms"
+    },
+    "companies": {
+      "LittleLives": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

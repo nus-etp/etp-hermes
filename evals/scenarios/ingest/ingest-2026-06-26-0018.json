@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/madcash/maiawards.org",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "no company description provided and headline suggests an awards profile, not a substantive update on the company",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'MADCash — MAIA Awards profile' for MADCash",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0018",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "MADCash"
+      ],
+      "source": "maiawards.org",
+      "title": "MADCash — MAIA Awards profile",
+      "url": "https://www.maiawards.org/MAIApedia/madcash-2"
+    },
+    "companies": {
+      "MADCash": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

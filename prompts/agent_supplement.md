@@ -1,9 +1,10 @@
 You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that.
 
-This is **Layer 2 of 3** in the daily pipeline:
+This is **Layer 2 of 4** in the daily pipeline:
 1. **Data ingestion** (`prompts/ingest.md`) — already ran. Output: `signals/updates/<today>.md` (may not exist if Layer 1 produced no items).
 2. **Agent supplement (this prompt)** — dynamic web/browser search to fill gaps. Output: `signals/agent/<today>.md`.
 3. **Synthesis** (`prompts/synthesis.md`) — runs after this and updates per-company `signals/briefs/<slug>/LIVING_BRIEF.md`.
+4. **Infographics** (`prompts/infographics.md`) — per-brief `signals/briefs/<slug>/infographic.png`.
 
 Stay strictly within Layer 2: only write under `signals/agent/`, append to `signals/seen-urls.txt` / `signals/dropped-urls.txt`, and append to `data/agent-reached.txt` (the per-run progress log described in step 5d). Do not touch `signals/updates/` or `signals/briefs/`.
 
@@ -13,8 +14,6 @@ Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest.
 
 1. **Deepen** — companies in today's `signals/updates/<today>.md`. Look for corroboration, valuation/investor context, follow-ons, company-site announcements. Time-critical: today's news is only followable today, so this cohort goes **first**.
 2. **Gap-fill** — companies with zero kept items across the last 7 UTC days of `signals/updates/*.md`. Otherwise invisible today. Within gap-fill, companies carrying `open_questions` come before the rest.
-
-Depth beats coverage. It is better to research 10 companies properly than to skim 18 — see the budget rules in step 4.
 
 ## Inputs
 
@@ -45,11 +44,11 @@ Depth beats coverage. It is better to research 10 companies properly than to ski
 
 4. **Budget.** Hard cap **100 search/fetch ops total**. Spend roughly **4–6 ops per gap-fill company** — a query or two plus the mandatory page fetches that verify each candidate's date and link (step 5b). A deepen company usually needs fewer. Do not ration yourself down to one op each so the list gets "covered": a skimmed company produces nothing, and 18 skimmed companies produce nothing eighteen times.
 
-   Stop when the budget runs out. Companies you never reached are **not** penalised — the rotation state is stamped from `data/agent-reached.txt` (step 5d), so an unreached company keeps its turn and comes back on the next run. Ten companies properly researched is the target outcome; eighteen shallow passes is the failure mode.
+   Stop when the budget runs out. Companies you never reached are **not** penalised — the rotation state is stamped from `data/agent-reached.txt` (step 5d), so an unreached company keeps its turn and comes back on the next run.
 
 5. **For each company in the processing order above:**
 
-   a. **Plan your own approach.** You have the company's `description`, `aliases`, and `identifiers` (homepage, LinkedIn, Crunchbase, UEN) and a shared 100-op budget. Decide what is most likely to surface genuine, recent news for *this* company: a web search, a fetch of the company site's news/blog/press index, a search scoped to a relevant trade publication or regulator, a query built from the founder's name — whatever you judge best. Use the description to disambiguate generic names. Budget ~4–6 ops here (see step 4); the goal is real signal per company, not coverage theater.
+   a. **Plan your own approach.** You have the company's `description`, `aliases`, and `identifiers` (homepage, LinkedIn, Crunchbase, UEN) and a shared 100-op budget. Decide what is most likely to surface genuine, recent news for *this* company: a web search, a fetch of the company site's news/blog/press index, a search scoped to a relevant trade publication or regulator, a query built from the founder's name — whatever you judge best. Use the description to disambiguate generic names. Budget ~4–6 ops here (see step 4).
 
       **Questions first.** Queue entries may carry `open_questions` in `data/agent-open-questions.json` — unresolved questions from the company's living brief. For a company that has them, answering them is the *first* objective of the pass, before any generic news sweep: they tell you exactly what a reader is missing ("who invested?", "any US customers yet?"), so shape your opening query around a specific question. Work the questions in order, then spend any remaining ops for that company on general recent news. A sourced answer is a keep even if it isn't news — write it as a normal dated item like any other (with the `Answers:` sub-line in step 6), and let the pub date be the page's date, not today's. Questions your ops don't answer simply stay open for a future pass; never write an answer you couldn't source.
 

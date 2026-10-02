@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/peris.ai/crunchbase.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "Crunchbase profile is a directory listing, not a news event about the company",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Peris.ai — Crunchbase Company Profile' for Peris.ai",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0015",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Peris.ai"
+      ],
+      "source": "crunchbase.com",
+      "title": "Peris.ai — Crunchbase Company Profile",
+      "url": "https://www.crunchbase.com/organization/peris-ai"
+    },
+    "companies": {
+      "Peris.ai": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

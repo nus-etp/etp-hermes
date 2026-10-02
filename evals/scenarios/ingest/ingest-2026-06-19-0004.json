@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/neu-battery-materials/neumaterials.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "announcement of a trade show appearance, not a substantive company event",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'NEU Battery Materials at The Battery Show Europe 2026 in Stuttgart' for NEU Battery Materials",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-19-0004",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "NEU Battery Materials"
+      ],
+      "source": "NEU Battery Materials",
+      "title": "NEU Battery Materials at The Battery Show Europe 2026 in Stuttgart",
+      "url": "https://www.neumaterials.com/news/neu-the-battery-show-europe-2026-in-stuttgart"
+    },
+    "companies": {
+      "NEU Battery Materials": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-19",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
