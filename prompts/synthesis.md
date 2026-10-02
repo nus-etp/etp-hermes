@@ -1,9 +1,10 @@
 You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that.
 
-This is **Layer 3 of 3** in the daily pipeline:
+This is **Layer 3 of 4** in the daily pipeline:
 1. **Data ingestion** (`prompts/ingest.md`) — already ran. Output: `signals/updates/<today>.md` (may not exist if nothing new).
 2. **Agent supplement** (`prompts/agent_supplement.md`) — already ran. Output: `signals/agent/<today>.md`.
 3. **Synthesis (this prompt)** — for every company touched by Layers 1–2 today, update a rolling per-company `signals/briefs/<slug>/LIVING_BRIEF.md`.
+4. **Infographics** (`prompts/infographics.md`) — runs after this and renders a per-brief `signals/briefs/<slug>/infographic.png`.
 
 Stay strictly within Layer 3: only write under `signals/briefs/<slug>/`. Do not modify `signals/updates/`, `signals/agent/`, `signals/seen-urls.txt`, `signals/dropped-urls.txt`, or `data/`.
 
@@ -62,7 +63,7 @@ Merge today's new signals into each touched company's living brief. Preserve pri
       - **Recent signals**: prepend today's `NEW_SIGNALS[c.name]` cards. URL-level dedup against the existing brief (skip if URL already in `Recent signals` or `Older signals`; never re-fetch on-disk URLs). Event-level dedup too: if a new URL merely corroborates an event already carded in the brief, don't add a bullet — append to the existing one per "Corroboration merging". Job postings go into the `### Hiring` subsection and routine GitHub events fold into one-line notes per "Hiring & routine-event aggregation" (when merging into a legacy brief that carries per-posting bullets, you may consolidate them into the roll-up). Cap: 20 **top-level** bullets — sub-bullets don't count. If exceeded, demote oldest excess to `Older signals`, moving each card as a single subtree (top bullet + its sub-bullets), oldest at the bottom.
       - **Open questions**: this list is not write-only — retire before you append. **Start with `ANSWERED[c.name]`** from step 2: every question Layer 2 flagged with an `Answers:` line is answered by definition — delete the matching brief question (match on the question text; a near-miss in punctuation or wording still counts, the marker is the authority) and fold the answer into the relevant signal bullet. Then re-read every *remaining* existing question against today's signals: if one is now answered, **delete it** (optionally folding the answer into the relevant signal bullet or the Thesis — e.g. "Is the company generating revenue?" dies the day an ARR figure lands, and the figure belongs in that signal's `Numbers:` sub-bullet). Then append genuinely new questions. Keep the list to at most ~4 live questions — if over, drop the stalest/least decision-relevant ones. If empty after editing, render `_none open_`.
 
-   e. **No-write check**: if after the merge the brief file's contents are byte-identical to the existing file, **do not write**. This preserves git history and avoids meaningless commits.
+   e. **No-write check**: if after the merge the brief is identical to the existing file apart from the `_Last updated:_` line, **do not write** (leave the old timestamp too). This preserves git history and avoids meaningless commits.
 
    f. **Write the merged brief** to `signals/briefs/<slug>/LIVING_BRIEF.md`, creating the directory if needed. Overwrite the existing file in a single write — do not append.
 
@@ -160,7 +161,7 @@ A second (or later) source covering the **same event** is confirmation, not a ne
 
 ## Hiring & routine-event aggregation
 
-Job postings are context, not events — a brief where Lever ads outnumber real signals (59 bullets, most of them individual job ads including a part-time intern and a junior IT-support role) has lost the plot. All job-posting signals for a company go into a single `### Hiring` subsection at the end of `## Recent signals` (never as ordinary signal cards), containing:
+Job postings are context, not events: individually they bury the real signals. All job-posting signals for a company go into a single `### Hiring` subsection at the end of `## Recent signals` (never as ordinary signal cards), containing:
 
 - **One rolled-up read** of what the hiring pattern means, as a single dated bullet (date = most recent posting; link = the careers page or one representative posting). Synthesize, don't enumerate — e.g. `- **2026-07-20** — 14 life-sciences roles opened since May across Singapore/Toronto/Japan → LS vertical + North American commercial build-out — [lever.co](<url>)`. Update this bullet in place as new postings land; fold retired detail out rather than stacking bullets.
 - **At most 2–3 individual postings**, kept only when a single posting is itself strategically revealing — a Japan Forward Deployed Engineer implying an unannounced market entry, a designer for an unannounced product. A routine engineer/sales/intern/IT-support opening is never individually worth a bullet.
