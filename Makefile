@@ -1,4 +1,4 @@
-# Repo automation helpers. The pipeline itself is documented in CLAUDE.md.
+# Repo automation helpers. The pipeline itself is documented in AGENTS.md.
 
 HERMES_REPO := NousResearch/hermes-agent
 WORKFLOW    := .github/workflows/hermes-sync.yml
