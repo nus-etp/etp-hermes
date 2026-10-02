@@ -73,15 +73,21 @@ def fake_chat(monkeypatch) -> FakeChat:
 def layout(tmp_path: Path) -> dict:
     prompt = tmp_path / "ingest.md"
     prompt.write_text("PRODUCTION INGEST POLICY")
+    companies = tmp_path / "companies.json"
+    write_watchlist(companies, [{"name": "Unrelated", "description": "other"}])
     return {"root": tmp_path / "scenarios", "window": tmp_path / "replay", "prompt": prompt,
-            "out": tmp_path / "sim" / "champion-nvidia.json"}
+            "out": tmp_path / "sim" / "champion-nvidia.json", "companies": companies}
+
+
+def write_watchlist(path: Path, entries: list[dict]) -> None:
+    path.write_text(json.dumps(entries))
 
 
 def run(layout: dict, *extra: str, layer: str = "ingest") -> int:
     return simulate.main([
         "--layer", layer, "--prompt-path", str(layout["prompt"]), "--runtime", "nvidia",
         "--out", str(layout["out"]), "--scenarios", str(layout["root"]), "--window", str(layout["window"]),
-        "--today", "2026-10-03", "--sleep", "0", *extra,
+        "--companies", str(layout["companies"]), "--today", "2026-10-03", "--sleep", "0", *extra,
     ])
 
 
@@ -164,4 +170,45 @@ def test_unimplemented_layers_write_empty_result(layout, monkeypatch, layer) -> 
 
 def test_explicit_arm_label(layout, fake_chat) -> None:
     assert run(layout, "--arm", "proposal") == 0
-    assert read_out(layout)["arm"] == "proposal"
+    result = read_out(layout)
+    assert result["arm"] == "proposal"
+    assert result["companies_path"] == str(layout["companies"])
+
+
+def test_live_description_overlays_frozen_one(layout, fake_chat) -> None:
+    make_card(layout["root"], headline="Acme raises seed", expected="keep")
+    write_snapshot(layout["window"], "2026-10-02", [candidate("acme-raises-b")])
+    write_watchlist(layout["companies"], [{"name": "Acme", "description": "LIVE: Singapore warehouse robots"}])
+    assert run(layout) == 0
+    descriptions = [call["user"]["company_description"] for call in fake_chat.calls]
+    assert descriptions == ["LIVE: Singapore warehouse robots"] * 2
+    assert read_out(layout)["window_results"][0]["company_description"] == "LIVE: Singapore warehouse robots"
+
+
+def test_live_exclude_terms_veto_without_model_call(layout, fake_chat) -> None:
+    card = make_card(layout["root"], headline="Acme stablecoin raises", expected="drop")
+    write_snapshot(layout["window"], "2026-10-02", [
+        candidate("acme-raises-stablecoin", description="a stablecoin issuer"),
+        candidate("acme-raises-robots"),
+    ])
+    write_watchlist(layout["companies"], [{"name": "Acme", "description": "robots", "exclude_terms": ["stablecoin"]}])
+    assert run(layout) == 0
+    result = read_out(layout)
+    assert result["scenario_results"][card["id"]] == {
+        "verdict": "drop", "company": None, "raw": None, "via": "exclude_terms",
+    }
+    by_url = {row["url"]: row for row in result["window_results"]}
+    assert by_url["https://news.test/acme-raises-stablecoin"]["verdict"] == "drop"
+    assert by_url["https://news.test/acme-raises-stablecoin"]["via"] == "exclude_terms"
+    assert by_url["https://news.test/acme-raises-robots"]["via"] == "llm"
+    assert [call["user"]["headline"] for call in fake_chat.calls] == ["acme-raises-robots"]
+
+
+def test_companies_default_prefers_cwd(tmp_path, monkeypatch) -> None:
+    local = tmp_path / "data" / "companies.json"
+    local.parent.mkdir()
+    local.write_text("[]")
+    monkeypatch.chdir(tmp_path)
+    assert simulate.resolve_companies_path(None) == local
+    monkeypatch.chdir(tmp_path / "data")
+    assert simulate.resolve_companies_path(None) == simulate.REPO_ROOT / "data" / "companies.json"

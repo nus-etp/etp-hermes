@@ -10,6 +10,14 @@ active scenario card's frozen candidate, then every candidate in the trailing
 The override asks for ``{"keep": bool, "company": str | null}``; each reply is
 recorded as verdict ``keep`` / ``drop`` / ``null`` (call or parse failure).
 
+The live watchlist (``--companies``, default ``./data/companies.json`` so a
+reverted worktree replays its own config) is applied on top of the frozen
+inputs: the matched company's live ``description`` replaces the card/snapshot
+one, and its live ``exclude_terms`` veto the candidate deterministically
+(``entity_terms.is_excluded``) — recorded as ``drop`` with ``via:
+"exclude_terms"`` and no model call. A rung-1 config proposal therefore
+changes the replay exactly as it would change production.
+
 Run once per (arm, runtime); ``grade.py`` pairs the outputs. ``pre_extracted``
 window candidates auto-keep in production and are skipped; the window is
 deduplicated by normalized URL (newest snapshot wins) and capped at
@@ -24,6 +32,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import importlib
 import json
 import re
 import sys
@@ -35,6 +44,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import ab_compare
 import ab_llm
 import scenarios
+
+entity_terms = importlib.import_module("entity_terms")
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_WINDOW_DIR = REPO_ROOT / "data" / "replay"
@@ -95,18 +106,59 @@ def parse_reply(reply: str | None) -> tuple[str | None, str | None]:
     return verdict, company
 
 
-def replay_candidate(system_prompt: str, candidate: dict, companies: dict, runtime: str, model: str | None) -> dict:
+def resolve_companies_path(value: Path | None) -> Path:
+    if value is not None:
+        return value
+    local = Path.cwd() / "data" / "companies.json"
+    return local if local.exists() else REPO_ROOT / "data" / "companies.json"
+
+
+def load_live_companies(path: Path) -> dict[str, dict]:
+    try:
+        entries = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        print(f"no readable watchlist at {path}; replaying frozen descriptions only", file=sys.stderr)
+        return {}
+    if not isinstance(entries, list):
+        return {}
+    return {entry["name"]: entry for entry in entries if isinstance(entry, dict) and entry.get("name")}
+
+
+def overlay_live_description(companies: dict, live: dict[str, dict], name: str) -> dict:
+    description = (live.get(name) or {}).get("description")
+    if not isinstance(description, str) or not description.strip():
+        return companies
+    return {**companies, name: description}
+
+
+def vetoed_by_exclude_terms(candidate: dict, live: dict[str, dict]) -> bool:
+    entry = live.get(candidate_company(candidate))
+    if not entry:
+        return False
+    matcher = entity_terms.build_company_matchers([entry])[entry["name"]]
+    headline = candidate.get("headline") or candidate.get("title") or ""
+    return entity_terms.is_excluded(matcher, headline, candidate.get("description") or "")
+
+
+def call_model(system_prompt: str, candidate: dict, companies: dict, args: argparse.Namespace) -> dict:
     reply = ab_llm.chat(
         [
             {"role": "system", "content": system_prompt + REPLAY_OVERRIDE},
             {"role": "user", "content": build_user_message(candidate, companies)},
         ],
-        model=model,
+        model=args.model,
         max_tokens=80,
-        runtime=runtime,
+        runtime=args.runtime,
     )
+    time.sleep(args.sleep)
     verdict, company = parse_reply(reply)
-    return {"verdict": verdict, "company": company, "raw": (reply or "")[:RAW_REPLY_CHARS] or None}
+    return {"verdict": verdict, "company": company, "raw": (reply or "")[:RAW_REPLY_CHARS] or None, "via": "llm"}
+
+
+def replay_candidate(system_prompt: str, candidate: dict, companies: dict, args: argparse.Namespace) -> dict:
+    if vetoed_by_exclude_terms(candidate, args.live_companies):
+        return {"verdict": "drop", "company": None, "raw": None, "via": "exclude_terms"}
+    return call_model(system_prompt, candidate, companies, args)
 
 
 def snapshot_date(path: Path) -> dt.date | None:
@@ -164,17 +216,19 @@ def simulate_scenarios(cards: list[dict], system_prompt: str, args: argparse.Nam
     for card in cards:
         card_input = card.get("input") or {}
         candidate = card_input.get("candidate") or {}
-        companies = card_input.get("companies") or {}
-        results[card["id"]] = replay_candidate(system_prompt, candidate, companies, args.runtime, args.model)
-        time.sleep(args.sleep)
+        companies = overlay_live_description(
+            card_input.get("companies") or {}, args.live_companies, candidate_company(candidate)
+        )
+        results[card["id"]] = replay_candidate(system_prompt, candidate, companies, args)
     return results
 
 
 def simulate_window(items: list[tuple[str, dict, dict]], system_prompt: str, args: argparse.Namespace) -> list[dict]:
     results = []
-    for date, candidate, companies in items:
-        outcome = replay_candidate(system_prompt, candidate, companies, args.runtime, args.model)
+    for date, candidate, snapshot_companies in items:
         company = candidate_company(candidate)
+        companies = overlay_live_description(snapshot_companies, args.live_companies, company)
+        outcome = replay_candidate(system_prompt, candidate, companies, args)
         results.append(
             {
                 "date": date,
@@ -186,9 +240,9 @@ def simulate_window(items: list[tuple[str, dict, dict]], system_prompt: str, arg
                 "company_description": company_description(companies, company),
                 "verdict": outcome["verdict"],
                 "predicted_company": outcome["company"],
+                "via": outcome["via"],
             }
         )
-        time.sleep(args.sleep)
     return results
 
 
@@ -198,6 +252,7 @@ def empty_result(args: argparse.Namespace, implemented: bool) -> dict:
         "runtime": args.runtime,
         "layer": args.layer,
         "prompt_path": str(args.prompt_path),
+        "companies_path": str(args.companies),
         "implemented": implemented,
         "scenario_results": {},
         "window_results": [],
@@ -229,8 +284,14 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=0, help="Max window candidates (0 = all).")
     parser.add_argument("--sleep", type=float, default=0.2, help="Seconds between model calls.")
     parser.add_argument("--model", default=None, help="Override the runtime's model.")
+    parser.add_argument(
+        "--companies", type=Path, default=None,
+        help="Live watchlist (default: ./data/companies.json, else the repo's).",
+    )
     args = parser.parse_args(argv)
     args.arm = args.arm or default_arm(args.out, args.runtime)
+    args.companies = resolve_companies_path(args.companies)
+    args.live_companies = {}
     return args
 
 
@@ -251,6 +312,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     system_prompt = args.prompt_path.read_text(encoding="utf-8")
+    args.live_companies = load_live_companies(args.companies)
     cards = scenarios.load_all(args.scenarios, layer=args.layer, status="active")
     items = window_items(args.window, resolve_today(args.today), args.window_days, args.limit)
     usage_before = ab_llm.usage_total(args.runtime)
