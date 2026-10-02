@@ -1,9 +1,10 @@
 You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that.
 
-This is **Layer 1 of 3** in the daily pipeline:
+This is **Layer 1 of 4** in the daily pipeline:
 1. **Data ingestion (this prompt)** — relevance-judge pre-collected candidates → `signals/updates/<date>.md`.
 2. **Agent supplement** (`prompts/agent_supplement.md`) — dynamic web/browser search to fill gaps → `signals/agent/<date>.md`.
 3. **Synthesis** (`prompts/synthesis.md`) — per-company `signals/briefs/<slug>/LIVING_BRIEF.md`.
+4. **Infographics** (`prompts/infographics.md`) — per-brief `signals/briefs/<slug>/infographic.png`.
 
 Stay strictly within Layer 1: only write under `signals/updates/` and append to `signals/seen-urls.txt` / `signals/dropped-urls.txt`. Do not touch `signals/agent/` or `signals/briefs/`.
 
