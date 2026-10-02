@@ -1,0 +1,56 @@
+name: harness-ledger
+
+# When a `harness:auto` proposal PR is merged, record it in
+# signals/harness/ledger.jsonl (cluster/rung/files/scenarios parsed from the
+# pr_body.py lines, merge SHA from gh) and refresh the auto-merge trust streak
+# in signals/harness/trust.json. Both files are committed to main; the monthly
+# harness-prune workflow reads the ledger.
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: harness-ledger
+  cancel-in-progress: false
+
+jobs:
+  record:
+    if: github.event.pull_request.merged && contains(github.event.pull_request.labels.*.name, 'harness:auto')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: '3.11'
+
+      - name: Record merge in ledger and refresh trust
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/harness/on_merge.py --pr "${{ github.event.pull_request.number }}"
+
+      - name: Commit ledger and trust
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add signals/harness/ledger.jsonl signals/harness/trust.json
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "chore(harness): ledger + trust for #${{ github.event.pull_request.number }}"
+          for attempt in 1 2 3 4 5; do
+            git push origin "HEAD:${BASE_REF}" && exit 0
+            echo "push attempt ${attempt} rejected; rebasing..." >&2
+            git pull --rebase origin "${BASE_REF}" || { git rebase --abort; exit 1; }
+          done
+          exit 1
