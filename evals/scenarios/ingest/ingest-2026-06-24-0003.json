@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_drop/beex/beex.sg",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": "BEEX",
+    "reason": "Reports a new product launch (live underwater drone test-zone) for the specific company BeeX.",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'BeeX Launches Live Underwater Drone Test-Zone with Opening of Autonomous Marine Foundry at SIT Punggol Campus' for BEEX",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-24-0003",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "BEEX"
+      ],
+      "source": "BeeX Press Release",
+      "title": "BeeX Launches Live Underwater Drone Test-Zone with Opening of Autonomous Marine Foundry at SIT Punggol Campus",
+      "url": "https://beex.sg/news/beex-opens-autonomous-marine-foundry-and-live-test-zone-at-sit-punggol"
+    },
+    "companies": {
+      "BEEX": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-24",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_drop/beex/theedgesingapore.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": "BEEX",
+    "reason": "Reports a new test site launch for BeeX's AI underwater inspection systems, a product/partnership event.",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'BeeX, SIT launch test site for AI underwater inspection systems' for BEEX",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-22-0017",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "BEEX"
+      ],
+      "source": "The Edge Singapore",
+      "title": "BeeX, SIT launch test site for AI underwater inspection systems",
+      "url": "https://www.theedgesingapore.com/digitaledge/technopreneurs/beex-sit-launch-test-site-ai-underwater-inspection-systems"
+    },
+    "companies": {
+      "BEEX": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-22",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

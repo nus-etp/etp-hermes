@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/mangachat/sg.mangachat.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "Item is just a company website link with no new information about the company.",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'MangaChat — Company website' for MangaChat",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0012",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "MangaChat"
+      ],
+      "source": "sg.mangachat.com",
+      "title": "MangaChat — Company website",
+      "url": "https://sg.mangachat.com"
+    },
+    "companies": {
+      "MangaChat": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

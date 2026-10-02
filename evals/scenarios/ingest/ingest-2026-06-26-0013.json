@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/cbe-eco-solutions/sgpgrid.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "Company profile is not a news event; it provides no new information about funding, product, partnerships, or other tracked events.",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'CBE Eco-Solutions Pte Ltd — Company profile' for CBE Eco-Solutions",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0013",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "CBE Eco-Solutions"
+      ],
+      "source": "sgpgrid.com",
+      "title": "CBE Eco-Solutions Pte Ltd — Company profile",
+      "url": "https://sgpgrid.com/company-details/cbe-ecosolutions-pte-ltd"
+    },
+    "companies": {
+      "CBE Eco-Solutions": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

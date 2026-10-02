@@ -111,28 +111,29 @@ needle — retire it and free the slot for the next hypothesis.
 ## Reference implementation (this repo)
 
 The pipeline above is wired here for Layers 1–2 of the hermes signal pipeline.
-Read the `## v2 A/B arm` section of `AGENTS.md` for the full description; this is
-the file map.
+No challenger is live: the v1-vs-v2 run concluded and v2 was promoted (see
+`## A/B experiment — concluded` in `AGENTS.md`). The scoring harness is dormant;
+this is the file map for wiring the next arm (`v3` below).
 
 | Concept above | Here |
 |---|---|
-| Arm registry | `scripts/ab_arms.py` — `CHAMPION="v1"` (production at `signals/`), `DEFAULT_CHALLENGERS=("v2",)`; override per-run with `AB_CHALLENGERS=v2,v3` |
-| Champion / challenger policy | `prompts/ingest.md` / `prompts/v2/ingest.md` (+ `agent_supplement.md`), kept structurally parallel for diffing |
+| Arm registry | `scripts/ab_arms.py` — `CHAMPION="v1"` (production at `signals/`), `DEFAULT_CHALLENGERS=()`; override per-run with `AB_CHALLENGERS=v3` |
+| Champion / challenger policy | `prompts/ingest.md` / `prompts/v3/ingest.md` (+ `agent_supplement.md`), kept structurally parallel for diffing |
 | Shared input | `data/candidates.json` from `scripts/collect-candidates.py` (both arms judge the identical candidate set) |
-| Isolated state | champion `signals/`; challenger `signals/v2/{updates,agent}/`, `signals/v2/seen-urls.txt` (seeded from v1) |
+| Isolated state | champion `signals/`; challenger `signals/v3/{updates,agent}/`, `signals/v3/seen-urls.txt` (seeded from `signals/seen-urls.txt`) |
 | Fairness cohort | shared `signals/agent-queue.txt` (both arms work the same gap-fill rotation) |
 | Diff kept-sets → disagreements | `scripts/ab_compare.py` → `signals/ab/{metrics.jsonl,report.md,disagreements.jsonl}` |
 | Blind judge | `scripts/ab_judge.py` (DeepSeek via `scripts/ab_llm.py`, fail-open, never sees `kept_by`) |
 | Per-arm McNemar + guardrail | `scripts/ab_stats.py` → `signals/ab/significance.json` (keyed by arm) + report subsections |
 | Sample backfill (offline) | `scripts/ab_backfill.py` — replays champion + each challenger over a candidate pool |
-| Toggle / non-fatal | `v2` workflow dispatch input; every v2 + scoring step is `continue-on-error` |
+| Toggle / non-fatal | a per-arm workflow dispatch input (e.g. `v3`); every challenger + scoring step is `continue-on-error` |
 | Trace split | each arm sed-swaps `HERMES_LANGFUSE_ENV` to `production-<arm>` for its run |
 | Tests | `tests/scripts/test_ab_{compare,llm,judge,stats,backfill}.py` |
 
 **Adding a `v3` here is the checklist above:** append `"v3"` to
 `DEFAULT_CHALLENGERS`, add `prompts/v3/ingest.md` + `signals/v3/` (seed its
-seen-urls from v1), and copy the v2 workflow steps (the `hermes -z` call wrapped
-in the Langfuse env-swap, `continue-on-error`, gated on a `v3` input). The
+seen-urls from `signals/seen-urls.txt`), and add the arm's workflow step (the
+`hermes -z` call wrapped in the Langfuse env-swap, `continue-on-error`, gated on a `v3` input). The
 scoring scripts (`ab_compare`/`ab_judge`/`ab_stats`/`ab_backfill`) read the
 registry and adapt with **no further edits** — `ab_stats` will emit a separate
 `v1 vs v3` significance subsection and guardrail automatically.
@@ -140,10 +141,10 @@ registry and adapt with **no further edits** — `ab_stats` will emit a separate
 Run/read locally:
 
 ```bash
-export DEEPSEEK_API_KEY=...
+export NVIDIA_API_KEY=...
 python3 scripts/collect-candidates.py          # shared candidate pool
 hermes -z "$(cat prompts/ingest.md)"           # champion
-hermes -z "$(cat prompts/v2/ingest.md)"        # challenger(s)
+hermes -z "$(cat prompts/v3/ingest.md)"        # challenger(s)
 python3 scripts/filter_exclusions.py
 python3 scripts/ab_compare.py                  # diff → signals/ab/report.md
 python3 scripts/ab_judge.py                    # blind labels (needs key)

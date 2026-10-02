@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/pinhome/linkedin.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "LinkedIn profile page is not a news event and provides no new information about the company.",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Pinhome — LinkedIn' for Pinhome",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0017",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Pinhome"
+      ],
+      "source": "linkedin.com",
+      "title": "Pinhome — LinkedIn",
+      "url": "https://www.linkedin.com/company/pinhome"
+    },
+    "companies": {
+      "Pinhome": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

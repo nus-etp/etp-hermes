@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/horizon-quantum-computing/investors.horizonquantum.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "headline refers to a public company's quarterly results, not a private Singapore-linked startup",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Horizon Quantum Announces First Quarter 2026 Financial Results' for Horizon Quantum Computing",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-24-0006",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Horizon Quantum Computing"
+      ],
+      "source": "horizonquantum.com",
+      "title": "Horizon Quantum Announces First Quarter 2026 Financial Results",
+      "url": "https://investors.horizonquantum.com/news-releases/news-release-details/horizon-quantum-announces-first-quarter-2026-financial-results"
+    },
+    "companies": {
+      "Horizon Quantum Computing": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-24",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

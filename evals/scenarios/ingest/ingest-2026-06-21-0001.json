@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/polybee/international.austrade.gov.au",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "generic growth story with no specific company details",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'How Polybee found growth, innovation and collaboration in Australia' for polybee",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-21-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "polybee"
+      ],
+      "source": "austrade.gov.au",
+      "title": "How Polybee found growth, innovation and collaboration in Australia",
+      "url": "https://international.austrade.gov.au/en/news-and-analysis/success-stories/how-Polybee-found-growth-innovation-and-collaboration-in-Australia"
+    },
+    "companies": {
+      "polybee": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-21",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

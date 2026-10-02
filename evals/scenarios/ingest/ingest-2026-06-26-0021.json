@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/otrafy/otrafy.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "headline and description are generic, no specific news about the company",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Otrafy — Smart Supplier Management platform' for Otrafy",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0021",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Otrafy"
+      ],
+      "source": "otrafy.com",
+      "title": "Otrafy — Smart Supplier Management platform",
+      "url": "https://www.otrafy.com"
+    },
+    "companies": {
+      "Otrafy": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

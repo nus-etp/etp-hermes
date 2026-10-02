@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/hivebotics/linkedin.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "company description is empty, so identity cannot be confirmed as the tracked entity",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Hivebotics Expands Global Footprint with Robot Cleaning Trials' for Hivebotics",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-19-0003",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Hivebotics"
+      ],
+      "source": "linkedin.com (company pulse)",
+      "title": "Hivebotics Expands Global Footprint with Robot Cleaning Trials",
+      "url": "https://www.linkedin.com/pulse/hivebotics-expands-global-footprint-robot-cleaning-lfj2c"
+    },
+    "companies": {
+      "Hivebotics": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-19",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
