@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+> **After any code change that alters behaviour, update the team LLMWiki.** This repo doesn't need the wiki to do its job — it's a lightweight pointer, not a dependency. But the durable *why* behind changes lives in `nus-etp/wiki` under `../wiki/wiki/projects/etp-hermes/`. When `../wiki/` is checked out, update the matching page (e.g. `learnings.md`), append to `../wiki/wiki/log.md`, then commit and push the wiki (`git -C ../wiki add -A && git -C ../wiki commit && git -C ../wiki push` — the wiki deploys from `main`). See `../wiki/agents.md` for its ingestion/lint flow. If `../wiki/` isn't present, skip it.
+
 ## What this is
 
 A scheduled hermes-agent deployment. No app to build/test — the "product" is the daily signal set under `signals/` (dated updates, agent supplements, per-company living briefs). Behavior is configured by editing the prompts, the deterministic pre-step scripts, and the data files.
