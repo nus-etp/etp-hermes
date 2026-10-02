@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/finan/techinasia.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "The headline is about SoBanHang, not Finan, and the company description is empty, so no link to the tracked company.",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Tech in Asia: SoBanHang serves 800k merchants, raises funding for AI-powered SME finance tools' for Finan",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-24-0011",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Finan"
+      ],
+      "source": "techinasia.com",
+      "title": "Tech in Asia: SoBanHang serves 800k merchants, raises funding for AI-powered SME finance tools",
+      "url": "https://www.techinasia.com/news/sobanhang-funding-pre-series-a"
+    },
+    "companies": {
+      "Finan": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-24",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

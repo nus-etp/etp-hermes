@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/belli-ai/belli.ai",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "no substantive information about the company beyond a generic event mention",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Belli takes the stage at The Pitch by Deel' for Belli AI",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-23-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Belli AI"
+      ],
+      "source": "belli.ai/blog",
+      "title": "Belli takes the stage at The Pitch by Deel",
+      "url": "https://www.belli.ai/blog"
+    },
+    "companies": {
+      "Belli AI": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-23",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

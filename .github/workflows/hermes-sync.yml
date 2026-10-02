@@ -367,6 +367,33 @@ jobs:
         if: steps.layers.outputs.run_l1 == 'true'
         run: python3 scripts/filter_seen_updates.py
 
+      - name: Snapshot candidates for replay
+        # Self-optimising harness memory: freeze today's Layer 1 input as
+        # data/replay/<date>.json (committed, newest 30 kept) so proposals can
+        # be replayed against a fresh window of real candidates.
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        run: python3 scripts/harness/snapshot_replay.py --date "$(date -u +%F)"
+
+      - name: Daily blind-judge sample
+        # ~40 kept + ~40 dropped Layer 1 verdicts re-ruled by the blind
+        # ab_judge prompt → data/harness/judged/<date>.jsonl (committed).
+        # Fail-open: no key writes nothing.
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python3 scripts/harness/daily_judge_sample.py --date "$(date -u +%F)"
+
+      - name: Write scenario cards
+        # Every judge/pipeline disagreement from the sample above becomes a
+        # scenario card under evals/scenarios/ingest/ (idempotent per URL).
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        run: |
+          TODAY="$(date -u +%F)"
+          python3 scripts/harness/write_scenarios.py --date "$TODAY" --judged "data/harness/judged/$TODAY.jsonl"
+
       - name: Build gap-fill queue (fairness rotation)
         # Deterministic pre-step: writes signals/agent-queue.txt with the N
         # gap-fill companies ordered questions-first, then by ascending
@@ -627,6 +654,9 @@ jobs:
             signals/agent-queue-state.json
             signals/ab/
             hermes/memories/
+            data/replay/
+            data/harness/judged/
+            evals/scenarios/
           if-no-files-found: ignore
           retention-days: 1
 
@@ -677,6 +707,11 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add signals/ data/metrics/ hermes/memories/
+          for harness_path in data/replay data/harness/judged evals/scenarios; do
+            if [ -e "$harness_path" ]; then
+              git add "$harness_path"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "nothing to commit"
             exit 0

@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/mangachat/emmetinsight.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "The item is a generic profile page with no specific news about the company.",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'MangaChat — EMMET INSIGHT profile' for MangaChat",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0002",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "MangaChat"
+      ],
+      "source": "emmetinsight.com",
+      "title": "MangaChat — EMMET INSIGHT profile",
+      "url": "https://emmetinsight.com/mangachat"
+    },
+    "companies": {
+      "MangaChat": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

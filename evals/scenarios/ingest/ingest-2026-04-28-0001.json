@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/patsnap/jobs.lever.co",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "evergreen job req with no information",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Sales Development Representative (Life Science Graduates) — Life Sciences Sales' for Patsnap",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-04-28-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Patsnap"
+      ],
+      "source": "Patsnap · careers",
+      "title": "Sales Development Representative (Life Science Graduates) — Life Sciences Sales",
+      "url": "https://jobs.lever.co/patsnap/9a625f6f-9b2e-441e-9a69-5d5c46bf324e"
+    },
+    "companies": {
+      "Patsnap": {
+        "description": "Singapore-headquartered IP intelligence and innovation analytics SaaS company."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-04-28",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

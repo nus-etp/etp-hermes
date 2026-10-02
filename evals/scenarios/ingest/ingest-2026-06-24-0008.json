@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_drop/horizon-quantum-computing/cnbc.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": "Horizon Quantum Computing",
+    "reason": "Reports a specific milestone for Horizon Quantum Computing: deploying Singapore's first commercial quantum computer.",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Horizon Quantum Computing deploys Singapore's first quantum computer for commercial use' for Horizon Quantum Computing",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-24-0008",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Horizon Quantum Computing"
+      ],
+      "source": "CNBC",
+      "title": "Horizon Quantum Computing deploys Singapore's first quantum computer for commercial use",
+      "url": "https://www.cnbc.com/2025/12/04/horizon-quantum-software-startup-deploys-singapores-first-quantum-computer-for-commercial-use.html"
+    },
+    "companies": {
+      "Horizon Quantum Computing": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-24",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/littlelives/littlelives-blog.ghost.io",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "headline is generic and description is empty, no specific company information",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'From paper forms to push notifications' for LittleLives",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0004",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "LittleLives"
+      ],
+      "source": "littlelives.com (blog)",
+      "title": "From paper forms to push notifications",
+      "url": "https://littlelives-blog.ghost.io/from-paper-forms-to-push-notifications"
+    },
+    "companies": {
+      "LittleLives": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

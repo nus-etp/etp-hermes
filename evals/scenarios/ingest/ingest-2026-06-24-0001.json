@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/duluin/aseanstartupinnovationweekend.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "no company description provided to confirm identity, and the item is an award mention without substantive business details",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Duluin named Startup of the Year at ASEAN Startup Innovation Weekend 2026, Phnom Penh' for Duluin",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-24-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Duluin"
+      ],
+      "source": "ASEAN SIW",
+      "title": "Duluin named Startup of the Year at ASEAN Startup Innovation Weekend 2026, Phnom Penh",
+      "url": "https://aseanstartupinnovationweekend.com/awards-2026"
+    },
+    "companies": {
+      "Duluin": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-24",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
