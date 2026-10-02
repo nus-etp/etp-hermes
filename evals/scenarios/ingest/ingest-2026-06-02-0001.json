@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/patsnap/jobs.lever.co",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "evergreen job req with no information",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Senior Account Executive  - Life Sciences — Life Sciences Sales' for Patsnap",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-02-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Patsnap"
+      ],
+      "source": "Patsnap · careers",
+      "title": "Senior Account Executive  - Life Sciences — Life Sciences Sales",
+      "url": "https://jobs.lever.co/patsnap/6886b6d9-1aaa-40a0-9df3-08b0993a6abc"
+    },
+    "companies": {
+      "Patsnap": {
+        "description": "Singapore-headquartered IP intelligence and innovation analytics SaaS company."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-02",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

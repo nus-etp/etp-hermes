@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/marymount-labs/marymountlabs.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "headline and source are generic marketing copy, not a news event about the company",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Marymount Labs — Turn Care Plans into Patient Action' for Marymount Labs",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0019",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Marymount Labs"
+      ],
+      "source": "marymountlabs.com",
+      "title": "Marymount Labs — Turn Care Plans into Patient Action",
+      "url": "https://www.marymountlabs.com"
+    },
+    "companies": {
+      "Marymount Labs": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

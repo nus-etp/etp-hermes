@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/ro/roplus.sg",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "headline is a generic job req with no specific information about the company",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Computer Vision – Cereal Box Picking' for RO+",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-22-0013",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "RO+"
+      ],
+      "source": "RO+",
+      "title": "Computer Vision – Cereal Box Picking",
+      "url": "https://www.roplus.sg/2023/11/05/computer-vision-cereal-box-picking"
+    },
+    "companies": {
+      "RO+": {
+        "description": "NUS GRIP-incubated Singapore automation startup. Very short brand — drop any item not clearly about this specific Singapore startup."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-22",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

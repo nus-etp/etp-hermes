@@ -1,0 +1,423 @@
+name: harness-optimise
+
+on:
+  schedule:
+    - cron: '0 15 * * 0'
+  workflow_dispatch:
+    inputs:
+      min_size:
+        description: 'Minimum weighted cluster size to act on.'
+        required: false
+        default: '3'
+      dry_run:
+        description: 'Run the loop but do not push, open a PR, or file an issue.'
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: harness-optimise
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+env:
+  HARNESS_MIN_SIZE: ${{ github.event.inputs.min_size || '3' }}
+  HARNESS_LAYERS: ingest
+  HARNESS_DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+  HARNESS_ASSIGNEE: luarss
+  HARNESS_LABEL: 'harness:auto'
+  HARNESS_RUNTIMES: 'nvidia zai'
+  HARNESS_CHAMPION_REF: origin/main
+  HARNESS_MAX_REVIEW_ROUNDS: '2'
+
+jobs:
+  optimise:
+    runs-on: ubuntu-latest
+    env:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+      ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
+      HERMES_LANGFUSE_PUBLIC_KEY: ${{ secrets.HERMES_LANGFUSE_PUBLIC_KEY }}
+      HERMES_LANGFUSE_SECRET_KEY: ${{ secrets.HERMES_LANGFUSE_SECRET_KEY }}
+      HERMES_LANGFUSE_BASE_URL: ${{ secrets.HERMES_LANGFUSE_BASE_URL }}
+      HERMES_LANGFUSE_ENV: harness
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: '3.11'
+
+      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
+
+      - name: Skip if a harness PR is already open
+        id: open_pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          open=$(gh pr list --label "$HARNESS_LABEL" --state open --json number --jq length)
+          if [ "$open" = "0" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "an open $HARNESS_LABEL PR exists; skipping this week"
+          fi
+
+      - name: Pick the top failure cluster
+        id: cluster
+        if: steps.open_pr.outputs.run == 'true'
+        run: |
+          python3 scripts/harness/cluster.py --min-size "$HARNESS_MIN_SIZE" --layers "$HARNESS_LAYERS" --out data/harness/cluster.json
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          cluster = json.load(open("data/harness/cluster.json"))
+          print(f"eligible={'true' if cluster['eligible'] else 'false'}")
+          print(f"key={cluster['cluster'] or ''}")
+          print(f"slug={cluster['slug'] or ''}")
+          print(f"layer={cluster['layer'] or ''}")
+          PY
+
+      - name: Install Hermes
+        id: install
+        if: steps.cluster.outputs.eligible == 'true'
+        continue-on-error: true
+        env:
+          HERMES_COMMIT: 2237be355906fbe6065ce1815711eee52b2d646e # v2026.9.7
+          HERMES_INSTALL_SHA256: 5854b15670b51a8daae8f59ddfa917062de9f74be261eb73b4b8d719710f8968
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          dst=/tmp/hermes-install.sh
+
+          verify() { echo "${HERMES_INSTALL_SHA256}  $1" | sha256sum -c - >/dev/null 2>&1; }
+
+          fetch_install() {
+            local tgz=/tmp/hermes-src.tgz
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
+                 "https://hermes-agent.nousresearch.com/install.sh" -o "$dst" \
+               && verify "$dst"; then return 0; fi
+            echo "::warning::Nous-hosted installer unavailable or != pin; trying GitHub Contents API" >&2
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
+                 -H "Authorization: Bearer ${GH_TOKEN}" \
+                 -H "Accept: application/vnd.github.raw" \
+                 -H "X-GitHub-Api-Version: 2022-11-28" \
+                 "https://api.github.com/repos/NousResearch/hermes-agent/contents/scripts/install.sh?ref=${HERMES_COMMIT}" \
+                 -o "$dst" \
+               && verify "$dst"; then return 0; fi
+            echo "::warning::GitHub API fetch failed; trying raw.githubusercontent" >&2
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 60 \
+                 "https://raw.githubusercontent.com/NousResearch/hermes-agent/${HERMES_COMMIT}/scripts/install.sh" \
+                 -o "$dst" \
+               && verify "$dst"; then return 0; fi
+            echo "::warning::raw.githubusercontent fetch failed; trying codeload tarball" >&2
+            if curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors --max-time 120 \
+                 -H "Authorization: Bearer ${GH_TOKEN}" \
+                 "https://codeload.github.com/NousResearch/hermes-agent/tar.gz/${HERMES_COMMIT}" \
+                 -o "$tgz"; then
+              tar -xzf "$tgz" -C /tmp "hermes-agent-${HERMES_COMMIT}/scripts/install.sh" \
+                && cp "/tmp/hermes-agent-${HERMES_COMMIT}/scripts/install.sh" "$dst" \
+                && verify "$dst" && return 0
+            fi
+            return 1
+          }
+
+          ok=false
+          for attempt in 1 2 3; do
+            if fetch_install; then ok=true; break; fi
+            echo "::warning::install.sh fetch/verify attempt ${attempt} failed; retrying in $((attempt*15))s" >&2
+            sleep "$((attempt*15))"
+          done
+          if [ "$ok" != true ]; then
+            echo "::error::Could not download a checksum-verified Hermes installer from any source" >&2
+            exit 1
+          fi
+
+          GIT_CONFIG_COUNT=1 \
+          GIT_CONFIG_KEY_0="url.https://x-access-token:${GH_TOKEN}@github.com/.insteadOf" \
+          GIT_CONFIG_VALUE_0="https://github.com/" \
+            bash "$dst" --commit "${HERMES_COMMIT}"
+
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+
+          if ! command -v hermes >/dev/null 2>&1; then
+            echo "::error::hermes not found on PATH after install" >&2
+            exit 1
+          fi
+          hermes --version 2>/dev/null || echo "note: 'hermes --version' returned non-zero; binary is on PATH"
+          echo "install_ok=true" >> "$GITHUB_OUTPUT"
+
+      - name: Bootstrap config
+        id: bootstrap
+        if: steps.install.outputs.install_ok == 'true'
+        continue-on-error: true
+        env:
+          XIAOMI_API_KEY: ${{ secrets.XIAOMI_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+        run: |
+          bash scripts/bootstrap-hermes.sh
+          echo "ok=true" >> "$GITHUB_OUTPUT"
+
+      - name: Install ddgs + langfuse into hermes venv
+        if: steps.bootstrap.outputs.ok == 'true'
+        continue-on-error: true
+        run: uv pip install --quiet --python "$HOME/.hermes/hermes-agent/venv/bin/python" --require-hashes -r requirements-hermes.txt
+
+      - name: Write harness shell helpers
+        if: steps.bootstrap.outputs.ok == 'true'
+        run: |
+          cat > /tmp/harness-lib.sh <<'SH'
+          HERMES_CONFIG="$HOME/.hermes/config.yaml"
+          HERMES_CONFIG_BACKUP=/tmp/hermes-config.primary.yaml
+
+          warn() { echo "::warning::$*" >&2; }
+
+          use_reviewer_runtime() {
+            cp "$HERMES_CONFIG" "$HERMES_CONFIG_BACKUP"
+            sed -i -e '/^model:/,/^[^ #]/{s/^\(  provider:\) nvidia/\1 zai/;s/^\(  default:\) .*/\1 glm-4.7-flash/}' "$HERMES_CONFIG"
+            grep -A3 '^model:' "$HERMES_CONFIG" || true
+          }
+
+          restore_primary_runtime() {
+            if [ -f "$HERMES_CONFIG_BACKUP" ]; then cp "$HERMES_CONFIG_BACKUP" "$HERMES_CONFIG"; fi
+          }
+
+          run_session() {
+            hermes -z "$1" || warn "hermes session failed: ${2:-unnamed}"
+          }
+
+          proposal_rung() {
+            python3 -c 'import json; print(json.load(open("data/harness/proposal.json"))["rung"])' 2>/dev/null
+          }
+
+          run_propose() {
+            local prompt
+            prompt="$(cat prompts/harness/propose.md)"
+            if [ -n "${HARNESS_REVIEW_FEEDBACK:-}" ]; then
+              prompt="${prompt}"$'\n\n## Reviewer feedback\n\n'"${HARNESS_REVIEW_FEEDBACK}"
+            fi
+            run_session "$prompt" propose
+          }
+
+          check_proposal() {
+            local rung
+            rung="$(proposal_rung)"
+            if [ -z "$rung" ]; then
+              warn "proposer wrote no usable data/harness/proposal.json"
+              return 1
+            fi
+            python3 scripts/harness/check_scope.py --session propose --rung "$rung" || exit 1
+            python3 scripts/harness/check_scenarios.py || exit 1
+          }
+
+          commit_proposal() {
+            git add -A
+            git diff --cached HEAD > data/harness/proposal.diff
+            git commit -q -m "chore(harness): propose rung $(proposal_rung) fix for ${CLUSTER_KEY}"
+          }
+
+          uncommit_proposal() {
+            git reset -q --mixed "$BASE_SHA"
+          }
+
+          simulate_and_grade() {
+            local layer="$CLUSTER_LAYER" champions=() proposals=() runtime status
+            mkdir -p data/harness/sim
+            if ! git show "${HARNESS_CHAMPION_REF}:prompts/${layer}.md" > "/tmp/champion-${layer}.md"; then
+              warn "no champion prompt for layer ${layer} at ${HARNESS_CHAMPION_REF}"
+              return 0
+            fi
+            if ! git show "${HARNESS_CHAMPION_REF}:data/companies.json" > /tmp/champion-companies.json; then
+              warn "no champion companies.json at ${HARNESS_CHAMPION_REF}"
+              return 0
+            fi
+            for runtime in $HARNESS_RUNTIMES; do
+              status=0
+              python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "/tmp/champion-${layer}.md" \
+                --companies /tmp/champion-companies.json \
+                --runtime "$runtime" --out "data/harness/sim/champion-${runtime}.json" || status=$?
+              if [ "$status" != 0 ]; then warn "champion simulate on $runtime exited $status"; continue; fi
+              python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "prompts/${layer}.md" \
+                --runtime "$runtime" --out "data/harness/sim/proposal-${runtime}.json" || status=$?
+              if [ "$status" != 0 ]; then warn "proposal simulate on $runtime exited $status"; continue; fi
+              champions+=("data/harness/sim/champion-${runtime}.json")
+              proposals+=("data/harness/sim/proposal-${runtime}.json")
+            done
+            rm -f data/harness/verdict.json data/harness/replay-table.md
+            if [ "${#champions[@]}" = 0 ]; then
+              warn "no runtime simulated; no verdict"
+              return 0
+            fi
+            python3 scripts/harness/grade.py --champion "${champions[@]}" --proposal "${proposals[@]}" \
+              --out-table data/harness/replay-table.md --out-verdict data/harness/verdict.json \
+              || warn "grade.py failed"
+          }
+
+          run_review() {
+            rm -f data/harness/review.json
+            use_reviewer_runtime
+            run_session "$(cat prompts/harness/review.md)" review
+            restore_primary_runtime
+            python3 scripts/harness/check_scope.py --session review || exit 1
+          }
+          SH
+
+      - name: Cluster session — name the root cause
+        if: steps.bootstrap.outputs.ok == 'true'
+        continue-on-error: true
+        run: |
+          source /tmp/harness-lib.sh
+          run_session "$(cat prompts/harness/cluster.md)" cluster
+
+      - name: Check cluster session scope
+        if: steps.bootstrap.outputs.ok == 'true'
+        run: python3 scripts/harness/check_scope.py --session cluster
+
+      - name: Create proposal branch
+        if: steps.bootstrap.outputs.ok == 'true'
+        env:
+          CLUSTER_SLUG: ${{ steps.cluster.outputs.slug }}
+          CLUSTER_KEY_OUTPUT: ${{ steps.cluster.outputs.key }}
+          CLUSTER_LAYER_OUTPUT: ${{ steps.cluster.outputs.layer }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "harness/${CLUSTER_SLUG}"
+          echo "BASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "HARNESS_BRANCH=harness/${CLUSTER_SLUG}" >> "$GITHUB_ENV"
+          echo "CLUSTER_KEY=${CLUSTER_KEY_OUTPUT}" >> "$GITHUB_ENV"
+          echo "CLUSTER_LAYER=${CLUSTER_LAYER_OUTPUT}" >> "$GITHUB_ENV"
+
+      - name: Propose session
+        if: steps.bootstrap.outputs.ok == 'true'
+        continue-on-error: true
+        run: |
+          source /tmp/harness-lib.sh
+          run_propose
+
+      - name: Check proposal scope and scenarios
+        id: proposal
+        if: steps.bootstrap.outputs.ok == 'true'
+        run: |
+          source /tmp/harness-lib.sh
+          if check_proposal; then
+            commit_proposal
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Simulate champion and proposal, grade
+        if: steps.proposal.outputs.ok == 'true'
+        continue-on-error: true
+        run: |
+          source /tmp/harness-lib.sh
+          simulate_and_grade
+
+      - name: Review loop
+        if: steps.proposal.outputs.ok == 'true'
+        run: |
+          source /tmp/harness-lib.sh
+          run_review
+          for round in $(seq 1 "$HARNESS_MAX_REVIEW_ROUNDS"); do
+            feedback="$(python3 scripts/harness/pr_body.py --unresolved || true)"
+            if [ -z "$feedback" ]; then
+              echo "no unresolved blocking findings after round $((round - 1))"
+              break
+            fi
+            echo "round ${round}: re-proposing against:"
+            echo "$feedback"
+            export HARNESS_REVIEW_FEEDBACK="$feedback"
+            uncommit_proposal
+            run_propose
+            if ! check_proposal; then
+              warn "re-proposal round ${round} produced no proposal"
+              commit_proposal || true
+              break
+            fi
+            commit_proposal || warn "re-proposal round ${round} changed nothing"
+            simulate_and_grade
+            run_review
+          done
+
+      - name: Decide
+        id: decide
+        if: steps.bootstrap.outputs.ok == 'true'
+        continue-on-error: true
+        env:
+          PROPOSAL_OK: ${{ steps.proposal.outputs.ok }}
+        run: |
+          accept=false
+          if [ "$PROPOSAL_OK" = "true" ] && [ -f data/harness/verdict.json ]; then
+            accept=$(python3 -c 'import json; print("true" if json.load(open("data/harness/verdict.json")).get("accept") is True else "false")' || echo false)
+          fi
+          unresolved="$(python3 scripts/harness/pr_body.py --unresolved || true)"
+          if [ -n "$unresolved" ]; then
+            echo "unresolved blocking findings:"
+            echo "$unresolved"
+            accept=false
+          fi
+          python3 scripts/harness/pr_body.py > /tmp/harness-body.md || echo "_PR body unavailable_" > /tmp/harness-body.md
+          cat /tmp/harness-body.md >> "$GITHUB_STEP_SUMMARY"
+          echo "accept=$accept" >> "$GITHUB_OUTPUT"
+          echo "accept=$accept"
+
+      - name: Open or refresh PR
+        if: steps.decide.outputs.accept == 'true' && env.HARNESS_DRY_RUN != 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rung=$(python3 -c 'import json; print(json.load(open("data/harness/proposal.json"))["rung"])')
+          title="harness: ${CLUSTER_KEY} (rung ${rung})"
+          git push -f origin "$HARNESS_BRANCH"
+          gh label create "$HARNESS_LABEL" --color 5319e7 --description "Opened by harness-optimise" 2>/dev/null || true
+          existing=$(gh pr list --head "$HARNESS_BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" --title "$title" --body-file /tmp/harness-body.md --add-label "$HARNESS_LABEL"
+            echo "refreshed PR #$existing"
+          else
+            gh pr create --base main --head "$HARNESS_BRANCH" --title "$title" \
+              --body-file /tmp/harness-body.md --label "$HARNESS_LABEL" --assignee "$HARNESS_ASSIGNEE"
+          fi
+
+      - name: File rejection evidence and delete branch
+        if: steps.bootstrap.outputs.ok == 'true' && steps.decide.outputs.accept != 'true' && env.HARNESS_DRY_RUN != 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          title="harness: proposal for ${CLUSTER_KEY} rejected"
+          {
+            echo "The weekly harness run (${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}) did not produce an acceptable proposal for this cluster. Evidence below; the branch was deleted."
+            echo
+            cat /tmp/harness-body.md 2>/dev/null || echo "_no evidence rendered_"
+          } > /tmp/harness-issue.md
+          existing=$(gh issue list --state open --search "\"$title\" in:title" --json number,title \
+            --jq "map(select(.title == \"$title\")) | .[0].number // empty")
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file /tmp/harness-issue.md
+            echo "commented on issue #$existing"
+          else
+            gh issue create --title "$title" --body-file /tmp/harness-issue.md --assignee "$HARNESS_ASSIGNEE"
+          fi
+          git switch -q --detach "$BASE_SHA"
+          git branch -D "$HARNESS_BRANCH" || true
+          if git ls-remote --exit-code --heads origin "$HARNESS_BRANCH" >/dev/null 2>&1; then
+            git push origin --delete "$HARNESS_BRANCH"
+          fi
+
+      - name: Upload harness artifacts
+        if: always() && steps.cluster.outputs.eligible == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: harness-optimise-${{ github.run_id }}
+          path: data/harness/
+          if-no-files-found: ignore
+          retention-days: 14

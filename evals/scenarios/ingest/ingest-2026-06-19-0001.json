@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/hivebotics/app.dealroom.co",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "company description is empty, cannot confirm it is the tracked Singapore-linked company",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Hivebotics' Abluo robot cuts toilet cleaning time by 50% with AI and robotic arms' for Hivebotics",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-19-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Hivebotics"
+      ],
+      "source": "Dealroom",
+      "title": "Hivebotics' Abluo robot cuts toilet cleaning time by 50% with AI and robotic arms",
+      "url": "https://app.dealroom.co/news/feed/hivebotics-abluo-robot-cuts-toilet-cleaning-time-by-50-with-ai-and-robotic-arms"
+    },
+    "companies": {
+      "Hivebotics": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-19",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/finan/ibsintelligence.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "headline mentions SoBanHang, not Finan",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'SoBanHang targets SME digitisation with new funding' for Finan",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-24-0005",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Finan"
+      ],
+      "source": "ibsintelligence.com",
+      "title": "SoBanHang targets SME digitisation with new funding",
+      "url": "https://ibsintelligence.com/ibsi-news/sobanhang-targets-sme-digitisation-with-new-funding"
+    },
+    "companies": {
+      "Finan": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-24",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

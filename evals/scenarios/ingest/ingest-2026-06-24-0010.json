@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_drop/horizon-quantum-computing/horizonquantum.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": "Horizon Quantum Computing",
+    "reason": "Announces a new testbed location for the company",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Horizon Quantum Announces Dublin as Its Second Quantum Computer Testbed Location' for Horizon Quantum Computing",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-24-0010",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Horizon Quantum Computing"
+      ],
+      "source": "Horizon Quantum Computing",
+      "title": "Horizon Quantum Announces Dublin as Its Second Quantum Computer Testbed Location",
+      "url": "https://www.horizonquantum.com/resources/newsroom/horizon-quantum-announces-dublin-as-its-second-quantum-computer-testbed-location"
+    },
+    "companies": {
+      "Horizon Quantum Computing": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-24",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

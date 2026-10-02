@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+
 import pytest
 
 
@@ -34,3 +36,108 @@ def test_extract_json_variants(mod) -> None:
     assert mod.extract_json("") is None
     # a bare JSON array is not an object -> None
     assert mod.extract_json("[1, 2, 3]") is None
+
+
+class _FakeResponse:
+    def __init__(self, body: dict) -> None:
+        self._payload = json.dumps(body).encode("utf-8")
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc_info) -> None:
+        return None
+
+    def read(self) -> bytes:
+        return self._payload
+
+
+def _capture_requests(mod, monkeypatch, body: dict) -> list:
+    captured: list = []
+
+    def fake_urlopen(req, timeout=None):
+        captured.append(req)
+        return _FakeResponse(body)
+
+    monkeypatch.setattr(mod.urllib.request, "urlopen", fake_urlopen)
+    return captured
+
+
+REPLY = {"choices": [{"message": {"content": "ok"}}], "usage": {"total_tokens": 7}}
+
+RUNTIME_ENV = (
+    "DEEPSEEK_API_KEY", "DEEPSEEK_BASE_URL", "AB_JUDGE_MODEL",
+    "NVIDIA_API_KEY", "NVIDIA_BASE_URL", "NVIDIA_MODEL",
+    "ZAI_API_KEY", "ZAI_BASE_URL", "ZAI_MODEL",
+)
+
+
+@pytest.fixture()
+def clean_env(monkeypatch):
+    for name in RUNTIME_ENV:
+        monkeypatch.delenv(name, raising=False)
+    return monkeypatch
+
+
+def test_have_key_per_runtime(mod, clean_env) -> None:
+    clean_env.setenv("NVIDIA_API_KEY", "n")
+    assert mod.have_key("nvidia") is True
+    assert mod.have_key("zai") is False
+    assert mod.have_key() is False
+    assert mod.have_key("unknown") is False
+
+
+def test_default_runtime_is_deepseek_and_backward_compatible(mod, clean_env) -> None:
+    clean_env.setenv("DEEPSEEK_API_KEY", "d")
+    captured = _capture_requests(mod, clean_env, REPLY)
+    assert mod.chat([{"role": "user", "content": "hi"}]) == "ok"
+    request = captured[0]
+    assert request.full_url == mod.DEFAULT_URL
+    assert json.loads(request.data)["model"] == mod.DEFAULT_MODEL
+    assert request.get_header("Authorization") == "Bearer d"
+
+
+@pytest.mark.parametrize(
+    ("runtime", "key_env", "url", "model"),
+    [
+        ("nvidia", "NVIDIA_API_KEY", "https://integrate.api.nvidia.com/v1/chat/completions",
+         "deepseek-ai/deepseek-v4-flash-0731"),
+        ("zai", "ZAI_API_KEY", "https://api.z.ai/api/paas/v4/chat/completions", "glm-4.7-flash"),
+    ],
+)
+def test_runtime_defaults(mod, clean_env, runtime, key_env, url, model) -> None:
+    clean_env.setenv(key_env, "k")
+    captured = _capture_requests(mod, clean_env, REPLY)
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime=runtime) == "ok"
+    assert captured[0].full_url == url
+    assert json.loads(captured[0].data)["model"] == model
+    assert captured[0].get_header("Authorization") == "Bearer k"
+
+
+def test_runtime_env_overrides(mod, clean_env) -> None:
+    clean_env.setenv("ZAI_API_KEY", "z")
+    clean_env.setenv("ZAI_BASE_URL", "https://example.test/v1/chat")
+    clean_env.setenv("ZAI_MODEL", "glm-custom")
+    captured = _capture_requests(mod, clean_env, REPLY)
+    mod.chat([{"role": "user", "content": "hi"}], runtime="zai")
+    assert captured[0].full_url == "https://example.test/v1/chat"
+    assert json.loads(captured[0].data)["model"] == "glm-custom"
+    mod.chat([{"role": "user", "content": "hi"}], runtime="zai", model="explicit")
+    assert json.loads(captured[1].data)["model"] == "explicit"
+
+
+def test_chat_failopen_without_runtime_key(mod, clean_env) -> None:
+    clean_env.setenv("DEEPSEEK_API_KEY", "d")
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="nvidia") is None
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="unknown") is None
+
+
+def test_usage_accumulates_per_runtime(mod, clean_env) -> None:
+    clean_env.setenv("NVIDIA_API_KEY", "n")
+    _capture_requests(mod, clean_env, REPLY)
+    before_nvidia = mod.usage_total("nvidia")
+    before_zai = mod.usage_total("zai")
+    mod.chat([{"role": "user", "content": "hi"}], runtime="nvidia")
+    mod.chat([{"role": "user", "content": "hi"}], runtime="nvidia")
+    assert mod.usage_total("nvidia") == before_nvidia + 14
+    assert mod.usage_total("zai") == before_zai

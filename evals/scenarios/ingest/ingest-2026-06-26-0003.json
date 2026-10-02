@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/madcash/getmadcash.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "The headline and source suggest a generic company description or landing page, not a news event about the specific company.",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Micro Funding For Malaysian Women Entrepreneurs — About MADCash' for MADCash",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0003",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "MADCash"
+      ],
+      "source": "getmadcash.com",
+      "title": "Micro Funding For Malaysian Women Entrepreneurs — About MADCash",
+      "url": "https://getmadcash.com/about-us"
+    },
+    "companies": {
+      "MADCash": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

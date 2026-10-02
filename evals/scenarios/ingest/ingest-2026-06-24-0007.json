@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/finan/backscoop.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "company description is empty, so identity is ambiguous; headline suggests it is a Vietnamese company, not Singapore-linked",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Vietnamese merchant app SoBanHang (Finan) raises $3.8M Pre-Series A' for Finan",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-24-0007",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Finan"
+      ],
+      "source": "backscoop.com",
+      "title": "Vietnamese merchant app SoBanHang (Finan) raises $3.8M Pre-Series A",
+      "url": "https://www.backscoop.com/newsletter-posts/vietnamese-market-app-sobanhang-raises-fresh-funds"
+    },
+    "companies": {
+      "Finan": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-24",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

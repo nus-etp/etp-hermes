@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/nuspace/namic.sg",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "headline is generic and lacks specific company details about funding, product launches, or partnerships",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'From Lab to Orbit: How Singapore's 3D-Printed Antenna is Redefining Space-Ready Manufacturing' for NuSPACE",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-20-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "NuSPACE"
+      ],
+      "source": "NAMIC",
+      "title": "From Lab to Orbit: How Singapore's 3D-Printed Antenna is Redefining Space-Ready Manufacturing",
+      "url": "https://namic.sg/news/from-lab-to-orbit-how-singapores-3d-printed-antenna-is-redefining-space-ready-manufacturing"
+    },
+    "companies": {
+      "NuSPACE": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-20",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

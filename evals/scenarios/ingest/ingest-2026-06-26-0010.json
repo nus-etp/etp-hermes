@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/mangachat/sg.linkedin.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "LinkedIn profile page with no substantive news about the company",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'MangaChat — Youth wellness platform (LinkedIn)' for MangaChat",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0010",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "MangaChat"
+      ],
+      "source": "sg.linkedin.com",
+      "title": "MangaChat — Youth wellness platform (LinkedIn)",
+      "url": "https://sg.linkedin.com/company/mangachat"
+    },
+    "companies": {
+      "MangaChat": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

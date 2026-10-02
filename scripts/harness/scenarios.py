@@ -148,3 +148,34 @@ def cluster_key(layer: str, failure_kind: str, root_term: str, host: str | None 
     if host:
         parts.append(slug(host))
     return "/".join(parts)
+
+
+def card_url(card: dict) -> str | None:
+    """The input URL a card replays: the ingest candidate url, else input.url."""
+    card_input = card.get("input")
+    if not isinstance(card_input, dict):
+        return None
+    candidate = card_input.get("candidate")
+    if isinstance(candidate, dict) and candidate.get("url"):
+        return str(candidate["url"])
+    url = card_input.get("url")
+    return str(url) if url else None
+
+
+def find_by_url(url: str, root: Path = SCENARIOS_DIR, *, layer: str | None = None) -> dict | None:
+    """First card of any status whose input URL equals ``url``, else None."""
+    for card in load_all(root, layer=layer, status=None):
+        if card_url(card) == url:
+            return card
+    return None
+
+
+def find_by_issue(number: int | None, root: Path = SCENARIOS_DIR) -> dict | None:
+    """First card of any status created from GitHub issue ``number``, else None."""
+    if number is None:
+        return None
+    for card in load_all(root, status=None):
+        origin = card.get("origin")
+        if isinstance(origin, dict) and origin.get("issue") == number:
+            return card
+    return None

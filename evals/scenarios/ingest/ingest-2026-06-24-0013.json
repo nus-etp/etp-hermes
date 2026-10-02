@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/flexxon/x-phy.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "no new information about Flexxon beyond a product award nomination",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'X-PHY SSD Named Finalist at the 2026 UK Cyber OSPAs' for Flexxon",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-24-0013",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Flexxon"
+      ],
+      "source": "x-phy.com",
+      "title": "X-PHY SSD Named Finalist at the 2026 UK Cyber OSPAs",
+      "url": "https://x-phy.com/x-phy-ssd-named-finalist-at-the-2026-uk-cyber-ospas"
+    },
+    "companies": {
+      "Flexxon": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-24",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

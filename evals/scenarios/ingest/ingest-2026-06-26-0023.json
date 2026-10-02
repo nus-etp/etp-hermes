@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/pqcee/sginnovate.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "generic startup profile with no specific company news",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'How this quantum cybersecurity startup is enabling businesses to stay ahead (SGInnovate)' for pQCee",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-26-0023",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "pQCee"
+      ],
+      "source": "sginnovate.com",
+      "title": "How this quantum cybersecurity startup is enabling businesses to stay ahead (SGInnovate)",
+      "url": "https://www.sginnovate.com/investments/pqcee"
+    },
+    "companies": {
+      "pQCee": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-26",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_keep/patsnap/jobs.lever.co",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": null,
+    "reason": "evergreen job req with no information",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'AI Solutions Lead – IP Legal / Patent Drafting — Product Management' for Patsnap",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-12-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Patsnap"
+      ],
+      "source": "Patsnap · careers",
+      "title": "AI Solutions Lead – IP Legal / Patent Drafting — Product Management",
+      "url": "https://jobs.lever.co/patsnap/ef9106c4-4b87-4158-9b68-eeca47e00926"
+    },
+    "companies": {
+      "Patsnap": {
+        "description": "Singapore-headquartered IP intelligence and innovation analytics SaaS company."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-12",
+    "kept_by": "v1",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

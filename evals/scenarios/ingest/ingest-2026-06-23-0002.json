@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_drop/patsnap/bloomberg.com",
+  "created_by": "write_scenarios@local",
+  "expected": {
+    "company": "Patsnap",
+    "reason": "Reports a major regulatory/funding event (confidential IPO filing) for the specific company Patsnap.",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Patsnap Said to Confidentially File for HK, Singapore Dual IPO' for Patsnap",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-06-23-0002",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Patsnap"
+      ],
+      "source": "Bloomberg",
+      "title": "Patsnap Said to Confidentially File for HK, Singapore Dual IPO",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-15/patsnap-said-to-confidentially-file-for-hk-singapore-dual-ipo"
+    },
+    "companies": {
+      "Patsnap": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-06-23",
+    "kept_by": "v2",
+    "kind": "ab_seed",
+    "label_model": "deepseek-chat",
+    "source": "signals/ab/disagreements.jsonl"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
