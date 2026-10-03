@@ -3,8 +3,6 @@
 # (default 30) so a false-negative drop gets re-judged instead of being lost
 # forever; scripts/collect-candidates.py prunes expired lines at the start of
 # each run. Keys we KEPT go to signals/seen-urls.txt (permanent) instead.
-2026-09-03	https://www.jelawangcapital.com/our-resources/from-unbankable-to-creditworthy-how-madcash-is-turning-behavioural-data-int
-2026-09-03	https://medium.com/@marymountlabs/honest-reflections-from-joining-nus-medicines-startup-accelerator-9c3677d1fede
 2026-09-04	https://technode.global/2026/09/04/singapores-hivebotics-raises-6m-led-by-vertex-to-scale-restroom-cleaning-robots
 2026-09-04	https://www.startupresearcher.com/news/hivebotics-raises-usd6-million-series-a-for-restroom-cleaning-robots
 2026-09-04	https://www.asiabusinessoutlook.com/news/hivebotics-raises-us-6m-to-expand-aipowered-cleaning-robots-nwid-12402.html

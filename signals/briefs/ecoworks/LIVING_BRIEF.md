@@ -16,9 +16,10 @@ _Last material event: 2026-07-23 — S$1M investment from Lam Soon to expand ref
 _No disclosed funding._
 
 ## Recent signals
-- **2026-09-02** — Named among 8 startups shortlisted from hundreds for the L'Oréal Big Bang Southeast Asia finals — [instagram.com](https://www.instagram.com/p/DcvVcsES8k7/)
+_none_
 
 ## Older signals
+- **2026-09-02** — Named among 8 startups shortlisted from hundreds for the L'Oréal Big Bang Southeast Asia finals — [instagram.com](https://www.instagram.com/p/DcvVcsES8k7/)
 - **2026-07-23** — Ecoworks secured S$1M (US$776,216) investment from Lam Soon to expand refill station infrastructure for household care products across Singapore; plans over 100 stations in 12 months — [techinasia.com](https://www.techinasia.com/news/singapore-refill-startup-ecoworks-secures-lam-soon-investment) (Also reported by: [mothership.sg](https://mothership.sg/2026/07/refill-stations-detergent-household-products), [app.dealroom.co](https://app.dealroom.co/news/note/singapore-s-ecoworks-gets-lam-soon-backing-to-grow-refill-stations), [backscoop.com](https://backscoop.com/startups/ecoworks-raises-fresh-funding-to-roll-out-more-refill-stations-across-singapore))
   - Numbers: S$1M (~US$776K) from Lam Soon; 14 refill stations operational today; 100+ planned in the next 12 months
 
