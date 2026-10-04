@@ -17,9 +17,9 @@ Writes:
 
 This is a reporting/observability step, not a gate: it always exits 0 (a
 missing cache just yields an empty report). The actual recovery is the
-deterministic r.jina.ai fallback in collect-candidates.py, which refetches
-failed firehose/rss feeds through Jina Reader on the same run — so a DEAD
-firehose/rss feed here is one that even Jina couldn't help, or a kind
+deterministic Parallel reader fallback in collect-candidates.py, which refetches
+failed firehose/rss feeds through the reader on the same run — so a DEAD
+firehose/rss feed here is one that even the reader couldn't help, or a kind
 (github_org/lever_jobs) the Markdown fallback doesn't cover.
 """
 
@@ -153,8 +153,8 @@ def render_markdown(
             f"stale = no new items in >{stale_days} days)"
         ),
         "",
-        "Dead **firehose/rss** feeds are auto-recovered each run via the r.jina.ai "
-        "fallback in `collect-candidates.py`; a dead feed below is one even Jina "
+        "Dead **firehose/rss** feeds are auto-recovered each run via the Parallel reader "
+        "fallback in `collect-candidates.py`; a dead feed below is one even the reader "
         "couldn't reach, or a kind (`github_org`/`lever_jobs`) the Markdown "
         "fallback doesn't cover. Prune or replace those in `data/feeds.json` / "
         "`data/companies.json`.",

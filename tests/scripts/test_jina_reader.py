@@ -14,9 +14,10 @@ import pytest
 
 
 class _FakeResponse:
-    def __init__(self, body: bytes, status: int = 200) -> None:
+    def __init__(self, body: bytes, status: int = 200, headers: dict[str, str] | None = None) -> None:
         self._body = body
         self.status = status
+        self.headers = headers or {}
 
     def read(self) -> bytes:
         return self._body
@@ -28,19 +29,39 @@ class _FakeResponse:
         return None
 
 
+SESSION_ID = "session-abc"
+
+
+def _mcp_fetch_body(page_text: str) -> bytes:
+    fetch_result = {"results": [{"url": "u", "full_content": page_text, "excerpts": []}], "errors": []}
+    message = {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": {"content": [{"type": "text", "text": json.dumps(fetch_result)}]},
+    }
+    return json.dumps(message).encode("utf-8")
+
+
 def _make_urlopen(responses: dict[str, list[Any]]):
+    """Fake the Parallel MCP endpoint; responses are keyed by the fetched page URL."""
     calls: list[tuple[str, dict[str, str]]] = []
 
     def urlopen(req: Request, timeout: float | None = None) -> Any:  # noqa: ARG001
-        url = req.full_url
+        payload = json.loads(req.data)
+        method = payload.get("method")
+        if method == "initialize":
+            return _FakeResponse(b"{}", headers={"Mcp-Session-Id": SESSION_ID})
+        if method != "tools/call":
+            return _FakeResponse(b"", status=202)
+        url = payload["params"]["arguments"]["urls"][0]
         hdrs = {k: v for k, v in req.header_items()}
         calls.append((url, hdrs))
         if url not in responses or not responses[url]:
-            raise AssertionError(f"unexpected urlopen({url!r})")
+            raise AssertionError(f"unexpected fetch({url!r})")
         spec = responses[url].pop(0)
         if isinstance(spec, Exception):
             raise spec
-        return _FakeResponse(spec["body"], spec.get("status", 200))
+        return _FakeResponse(_mcp_fetch_body(spec["body"].decode("utf-8")), spec.get("status", 200))
 
     return urlopen, calls
 
@@ -77,7 +98,7 @@ def _write_inputs(
         )
 
 
-READER = "https://r.jina.ai/"
+READER = ""
 
 
 def test_extracts_items_from_listing_page(jina, tmp_repo, monkeypatch) -> None:
@@ -242,7 +263,7 @@ def test_skips_html_scrape_not_in_changed_list(jina, tmp_repo, monkeypatch) -> N
     assert [c[0] for c in calls] == [READER + "https://acme.example/fresh"]
 
 
-def test_authorization_header_set_when_api_key_present(jina, tmp_repo, monkeypatch) -> None:
+def test_reader_is_keyless_and_forwards_mcp_session(jina, tmp_repo, monkeypatch) -> None:
     companies = [
         {
             "name": "Acme",
@@ -250,15 +271,46 @@ def test_authorization_header_set_when_api_key_present(jina, tmp_repo, monkeypat
         }
     ]
     urlopen, calls = _make_urlopen(
-        {READER + "https://acme.example/n": [{"body": b"## h\n[link](https://acme.example/post)\n"}]}
+        {"https://acme.example/n": [{"body": b"## h\n[link](https://acme.example/post)\n"}]}
     )
     monkeypatch.setattr(jina.request, "urlopen", urlopen)
-    monkeypatch.setenv("JINA_API_KEY", "jina_secret_xyz")
     _write_inputs(tmp_repo, companies, {"Acme": ["https://acme.example/n"]})
 
     assert jina.main() == 0
-    hdrs = dict(calls[0][1])
-    assert hdrs.get("Authorization") == "Bearer jina_secret_xyz"
+    hdrs = {k.lower(): v for k, v in calls[0][1].items()}
+    assert "authorization" not in hdrs
+    assert hdrs.get("mcp-session-id") == SESSION_ID
+
+
+def test_failed_fetch_does_not_serve_stale_cache_next_run(jina, tmp_repo, monkeypatch) -> None:
+    companies = [
+        {
+            "name": "Acme",
+            "sources": [{"type": "html_scrape", "label": "n", "url": "https://acme.example/n"}],
+        }
+    ]
+    cache_dir = tmp_repo / "data" / "jina-cache"
+    cache_dir.mkdir(parents=True)
+    jina._cache_path_for("https://acme.example/n").write_text("## Stale\n[old](https://acme.example/old)\n")
+    long_ago = datetime.now(timezone.utc) - timedelta(days=3)
+    (cache_dir / "index.json").write_text(
+        json.dumps({"https://acme.example/n": {"fetched_at": long_ago.isoformat(), "status": 200}})
+    )
+    _write_inputs(tmp_repo, companies, {"Acme": ["https://acme.example/n"]})
+
+    failing, _ = _make_urlopen({"https://acme.example/n": [error.URLError("down")]})
+    monkeypatch.setattr(jina.request, "urlopen", failing)
+    assert jina.main() == 0
+
+    fresh_md = b"## Fresh\n[new](https://acme.example/new)\n"
+    succeeding, calls = _make_urlopen({"https://acme.example/n": [{"body": fresh_md}]})
+    monkeypatch.setattr(jina.request, "urlopen", succeeding)
+    assert jina.main() == 0
+
+    assert len(calls) == 1
+    out = json.loads((tmp_repo / "data" / "jina-items.json").read_text())
+    links = [i["link"] for i in out["per_company"]["Acme"]["https://acme.example/n"]]
+    assert links == ["https://acme.example/new"]
 
 
 def test_fresh_cache_reuses_without_network(jina, tmp_repo, monkeypatch) -> None:

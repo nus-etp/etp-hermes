@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Prefetch html_scrape sources via Jina Reader, extract items deterministically.
+"""Prefetch html_scrape sources via the Parallel reader, extract items deterministically.
 
 Reads data/companies.json + data/changed-sources.json. For every html_scrape
-source listed as changed, fetches https://r.jina.ai/<source-url> to get clean
-Markdown, then runs a heading-plus-link heuristic to extract candidate items.
+source listed as changed, fetches the page through the keyless Parallel MCP
+web_fetch (scripts/jina_fallback.py) to get clean Markdown, then runs a
+heading-plus-link heuristic to extract candidate items.
 Writes data/jina-items.json (consumed by prompts/ingest.md) and a markdown
 cache under data/jina-cache/ (gitignored).
 
@@ -11,7 +12,8 @@ Fails open: HTTP errors and extraction misses are recorded and the prompt's
 existing LLM fallback path picks them up. The script always exits 0.
 
 Daily call budget is bounded by JINA_DAILY_BUDGET (default 80) so a flaky
-cache or a hand-triggered re-run can't blow Jina's 100/day free quota.
+cache or a hand-triggered re-run can't hammer the anonymous rate limit. A failed
+fetch is never recorded as fresh, so an old cached page is not re-served as a hit.
 """
 
 from __future__ import annotations
@@ -117,7 +119,6 @@ def main() -> int:
     cache_index = _load_cache_index()
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-    api_key = os.environ.get("JINA_API_KEY") or None
     try:
         budget = int(os.environ.get("JINA_DAILY_BUDGET", str(DEFAULT_BUDGET)))
     except ValueError:
@@ -156,13 +157,13 @@ def main() -> int:
                 )
                 continue
             try:
-                status, markdown = fetch_reader(url, api_key)
+                status, markdown = fetch_reader(url)
                 network_calls += 1
             except error.HTTPError as e:
                 errors += 1
                 extraction_failed.append(url)
                 cache_index[url] = {
-                    "fetched_at": _now_iso(),
+                    "failed_at": _now_iso(),
                     "status": e.code,
                     "error": str(e)[:200],
                 }
@@ -172,7 +173,7 @@ def main() -> int:
                 errors += 1
                 extraction_failed.append(url)
                 cache_index[url] = {
-                    "fetched_at": _now_iso(),
+                    "failed_at": _now_iso(),
                     "status": -1,
                     "error": str(e)[:200],
                 }
