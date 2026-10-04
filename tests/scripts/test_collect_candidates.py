@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from email.utils import format_datetime
+
 import json
 from datetime import date, datetime, timedelta, timezone
 from urllib import error
@@ -579,13 +581,13 @@ def test_undated_items_pass_window(cc):
     assert [c["link"] for c in out["candidates"]] == ["https://x.example/undated"]
 
 
-# --- r.jina.ai dead-feed fallback ---------------------------------------------
+# --- reader dead-feed fallback ---------------------------------------------
 
 
 def _reader(responses: dict[str, str], status: int = 200):
-    """Fake fetch_reader: url -> markdown. Missing url raises URLError."""
+    """Fake fetch_reader: url -> page text. Missing url raises URLError."""
 
-    def read(url: str, api_key: str | None = None):
+    def read(url: str):
         if url not in responses:
             raise error.URLError(f"unexpected reader {url}")
         return status, responses[url]
@@ -622,6 +624,25 @@ def test_jina_fallback_recovers_unreachable_firehose(cc):
     assert out["fetch_failed"] == []
     assert out["jina_recovered"] == [FEEDS[0]["url"]]
     assert out["stats"]["jina_candidates"] == 1
+
+
+def test_reader_fallback_parses_raw_feed_xml(cc):
+    pub = format_datetime(datetime.now(timezone.utc) - timedelta(days=1))
+    feed = _rss([("Acme Robotics opens Jakarta office", "https://j.example/feed-win", "Q &; A", pub)])
+    page_text = "```xml\n" + feed.decode("utf-8").replace("&amp;", "&;") + "\n```"
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [FEEDS[0]["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),
+        reader=_reader({FEEDS[0]["url"]: page_text}),
+    )
+    assert [c["link"] for c in out["candidates"]] == ["https://j.example/feed-win"]
+    assert out["candidates"][0]["pubDate"] == pub
+    assert out["candidates"][0]["via_jina_fallback"] is True
+    assert out["fetch_failed"] == []
 
 
 def test_jina_fallback_recovers_per_company_rss(cc):

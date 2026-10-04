@@ -44,7 +44,7 @@ from entity_terms import (  # noqa: E402
     is_excluded,
     match_kind,
 )
-from jina_fallback import extract_items, fetch_reader  # noqa: E402
+from jina_fallback import as_feed_xml, extract_items, fetch_reader  # noqa: E402
 from user_agents import GATED_STATUSES, build_ladder  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -85,11 +85,11 @@ PER_COMPANY_WINDOW = _window_days("COLLECT_PER_COMPANY_DAYS", 14)
 LEVER_WINDOW = _window_days("COLLECT_LEVER_DAYS", 30)
 
 
-# Jina Reader fallback: when a firehose/rss feed's direct fetch or parse fails
-# (host unreachable from the runner, but Jina can reach it), refetch it through
-# r.jina.ai → Markdown → the shared heading/link heuristic. Keyless by default;
-# JINA_API_KEY lifts the rate limit. Bounded per run so a wave of dead feeds
-# can't blow Jina's free quota. Only firehose + rss are recovered this way —
+# Reader fallback: when a firehose/rss feed's direct fetch or parse fails
+# (host unreachable or gated from the runner), refetch it through the keyless
+# Parallel MCP web_fetch. A raw feed comes back as XML and is parsed as a feed;
+# anything else goes through the shared heading/link heuristic. Bounded per run
+# so a wave of dead feeds can't hammer the anonymous rate limit. Only firehose + rss are recovered this way —
 # github_org/lever_jobs need fields (author/id, JSON) Markdown can't carry, so
 # those stay in fetch_failed for the prompt to retry.
 DEFAULT_JINA_FALLBACK_BUDGET = 25
@@ -155,7 +155,7 @@ def fetch(url: str) -> bytes:
     """Fetch a URL, escalating the User-Agent only when the host gates us.
 
     On a 401/403/429 the next UA in the ladder is tried; any other HTTP error
-    (404, 5xx) or the exhaustion of the ladder re-raises so the caller's Jina
+    (404, 5xx) or the exhaustion of the ladder re-raises so the caller's reader
     fallback / fetch_failed path still runs unchanged.
     """
     last_exc: error.HTTPError | None = None
@@ -275,7 +275,6 @@ def collect(
     seen: set[str],
     fetcher=fetch,
     reader=None,
-    jina_api_key: str | None = None,
     jina_budget: int = DEFAULT_JINA_FALLBACK_BUDGET,
     pre_extracted_source_cap: int = DEFAULT_PRE_EXTRACTED_SOURCE_CAP,
 ) -> dict[str, Any]:
@@ -319,7 +318,7 @@ def collect(
                 hits.append(name)
         return hits
 
-    # Jina Reader fallback state. reader=None disables it entirely (the default,
+    # Reader fallback state. reader=None disables it entirely (the default,
     # so existing callers/tests keep the direct-fetch-only behaviour); main()
     # passes the real fetch_reader.
     jina_state = {"calls": 0, "recovered": []}  # type: dict[str, Any]
@@ -327,21 +326,38 @@ def collect(
     def jina_recover(
         url: str, *, kind: str, company: str | None, source_label: str, window: timedelta
     ) -> bool:
-        """Refetch a failed feed via r.jina.ai and emit candidates from its items.
+        """Refetch a failed feed via the Parallel reader and emit candidates from its items.
 
-        Returns True when Jina reached the URL (caller should NOT record a fetch
-        failure), False when the fallback is disabled, budget-capped, or Jina
-        also failed.
+        Returns True when the reader reached the URL (caller should NOT record a
+        fetch failure), False when the fallback is disabled, budget-capped, or
+        the reader also failed.
         """
         if reader is None or jina_state["calls"] >= jina_budget:
             return False
         try:
-            _status, markdown = reader(url, jina_api_key)
+            _status, markdown = reader(url)
         except (error.HTTPError, error.URLError, TimeoutError, OSError):
             return False
         jina_state["calls"] += 1
         jina_state["recovered"].append(url)
-        for it in extract_items(markdown, url):
+        feed_xml = as_feed_xml(markdown)
+        try:
+            feed_entries = parse_feed(feed_xml) if feed_xml else None
+        except ET.ParseError:
+            feed_entries = None
+        if feed_entries is not None:
+            recovered = [
+                {
+                    "headline": e["title"],
+                    "description": e["description"],
+                    "pubDate": e["pubDate"],
+                    "link": e["link"],
+                }
+                for e in feed_entries
+            ]
+        else:
+            recovered = extract_items(markdown, url)
+        for it in recovered:
             link = it["link"]
             if not link or link in seen:
                 continue
@@ -666,7 +682,6 @@ def main() -> int:
         jina,
         seen,
         reader=fetch_reader,
-        jina_api_key=os.environ.get("JINA_API_KEY") or None,
         jina_budget=jina_budget,
         pre_extracted_source_cap=pre_extracted_source_cap,
     )

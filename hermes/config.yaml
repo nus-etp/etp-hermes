@@ -67,8 +67,8 @@ mcp_servers:
   # parallel_read_url (URL → clean Markdown) work anonymously at lower rate
   # limits — the agent sees them as `mcp_jina_read_url` /
   # `mcp_jina_parallel_read_url` and can use them as a second fetch surface when
-  # a page resists Parallel's fetcher. The deterministic feed fallback uses the
-  # same Jina engine via r.jina.ai in scripts/collect-candidates.py. NOTE: the
+  # a page resists Parallel's fetcher. The deterministic pre-steps
+  # (scripts/jina_fallback.py) use the keyless Parallel endpoint above. NOTE: the
   # search_* tools (search_web/search_arxiv/...) require a JINA key and error out
   # keyless, so search stays on Parallel. To lift the read limits, add an
   # `Authorization: Bearer ${JINA_API_KEY}` header here and seed it in

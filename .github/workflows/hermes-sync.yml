@@ -278,7 +278,7 @@ jobs:
 
       - name: Restore Jina cache
         # Carries data/jina-cache/ across runs so multi-runs within the 23h
-        # TTL skip the network and don't burn Jina's 100/day free quota.
+        # TTL skip the network and don't hammer the reader's anonymous rate limit.
         if: steps.layers.outputs.run_l1 == 'true'
         id: jina-cache-restore
         uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
@@ -299,15 +299,15 @@ jobs:
         # wrote to data/feed-cache.json and classifies dead (≥3 consecutive
         # failures) + stale (>45d no new items) sources into
         # signals/feed-health.md (committed) + data/dead-feeds.json. Pure
-        # observability — collect-candidates does the actual r.jina.ai recovery
+        # observability — collect-candidates does the actual reader recovery
         # inline — so it never gates the run.
         if: steps.layers.outputs.run_l1 == 'true'
         continue-on-error: true
         run: python3 scripts/detect-dead-feeds.py
 
-      - name: Prefetch html_scrape via Jina Reader
+      - name: Prefetch html_scrape via Parallel reader
         # For every html_scrape source listed as changed by preflight,
-        # fetch https://r.jina.ai/<source-url> to get clean Markdown and
+        # fetch the page through the keyless Parallel MCP web_fetch to get clean Markdown and
         # heuristically extract candidate items into data/jina-items.json.
         # The Layer 1 prompt reads that file first and only falls back to
         # LLM-driven HTML parsing for URLs the heuristic couldn't extract.
@@ -315,7 +315,6 @@ jobs:
         # degrade to the prompt's existing path.
         if: steps.layers.outputs.run_l1 == 'true'
         env:
-          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
           JINA_DAILY_BUDGET: "80"
         continue-on-error: true
         run: python3 scripts/jina-reader.py
@@ -328,11 +327,10 @@ jobs:
         # LLM relevance pass over that small file instead of holding
         # companies.json + seen-urls.txt + raw feeds in context.
         # Stdlib-only. Not continue-on-error: a crash here must surface,
-        # since Layer 1 depends on its output. JINA_API_KEY (optional) lifts
-        # the r.jina.ai fallback's rate limit; it fails open to keyless.
+        # since Layer 1 depends on its output. Unreachable feeds are retried
+        # through the keyless Parallel reader (JINA_FALLBACK_BUDGET calls).
         if: steps.layers.outputs.run_l1 == 'true'
         env:
-          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
           JINA_FALLBACK_BUDGET: "25"
         run: python3 scripts/collect-candidates.py
 
