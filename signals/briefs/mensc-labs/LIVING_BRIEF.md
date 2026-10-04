@@ -1,16 +1,25 @@
 # MenSC Labs — LIVING BRIEF
-_Last updated: 2026-05-30 14:39 UTC_
+_Last updated: 2026-10-04 20:11 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 The Hangar (NUS Enterprise)-resident Singapore biotech startup focused on menstrual-blood-derived stem cell research (MenSC = Menstrual Stem Cells). Named INNO4HER 2026 Champion at 1337 Ventures' FemTech Demo Day in March 2026, the company is developing a non-invasive, cost-effective approach to stem cell research alongside peers Navo Health and Bosom.
 
+_Last material event: 2026-09-13 — Began launching a menstrual-blood analysis service; products now in use at 10+ research labs across Singapore, Australia and the US_
+
 ## Profile
-- Sector: Biotech / FemTech
+- Sector: Biotechnology / Digital health
 - Region: Singapore (The Hangar, NUS Enterprise)
 
+## Funding history
+_No disclosed funding._
+
 ## Recent signals
-_none_
+- **2026-09-13** — The Straits Times profiled MenSC Labs' menstrual-blood stem cell work: products now used by 10+ research labs across Singapore, Australia and the US, and a menstrual-blood analysis service is launching for clinical screening — [comp.nus.edu.sg](https://comp.nus.edu.sg/news-media/cna-digital-cna-explains-why-ai-leaders-are-calling-for-a-slowdown-and-what-makes-it-so-difficult-copy)
+  - Summary: The Straits Times featured MenSC Labs, the femtech startup co-founded by NUS Business Analytics alumnus Kyle Lao with life-sciences specialist Immanuella Indradjaja, who set the company up in November 2024 to work with stem cells from menstrual blood for women's health. Its products are now used by more than 10 research labs in Singapore, Australia and the United States, and the company is launching a menstrual blood analysis service to help clinicians screen for conditions such as endometriosis, with longer-term ambitions to develop regenerative treatments for Asherman's syndrome and premature ovarian insufficiency. The founders said they have raised just under $100,000 so far, including a grant from NUS Enterprise.
+  - People: Kyle Lao (Co-founder), Immanuella Indradjaja (Co-founder)
+  - Counterparties: NUS Enterprise (grant provider)
+  - Numbers: products used by 10+ research labs (Singapore, Australia, US); just under $100,000 raised to date incl. NUS Enterprise grant
 
 ## Older signals
 - **2026-05-30** — 1337 Ventures named MenSC Labs among the Top 10 FemTech startups for INNO4HER 2026, listing the company alongside nine other startups spanning women's health, fertility, and maternal care — [hiswai.com](https://hiswai.com/1337-ventures-names-top-10-femtech-startups-for-inno4her-2026)
@@ -23,5 +32,4 @@ _none_
   - Quote: "These founders didn't come to build incremental solutions. They came to close real clinical gaps, the kind that have been overlooked for far too long." — Bikesh Lakhmichand, 1337 Ventures
 
 ## Open questions
-- What is MenSC Labs' current funding status, and does it plan to raise a seed round following the INNO4HER win?
 - What specific research or clinical milestones does the pilot study target?

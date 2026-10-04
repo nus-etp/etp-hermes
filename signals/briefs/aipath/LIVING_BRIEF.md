@@ -1,5 +1,5 @@
 # AIPath — LIVING BRIEF
-_Last updated: 2026-08-27 23:00 UTC_
+_Last updated: 2026-10-04 20:11 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -15,7 +15,12 @@ _Last material event: 2026-07-13 — AIPath launched Growth Decision Intelligenc
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-09-18** — AIPath argued on an InnoLead panel that general-purpose AI platforms leave the CEO's growth-strategy decision uncovered, positioning its Growth Decision Intelligence tool as the missing specialised layer — [aipath.one](https://aipath.one/post/every-department-got-ai-business-tools)
+  - Summary: In a founder-authored post, AIPath's David Isaac recapped an InnoLead LinkedIn Live held 17 September 2026 on whether specialised AI business tools still make sense once enterprises have bought general-purpose platforms such as Copilot or Claude. Isaac argued the gap is the CEO's growth-strategy decision: every department owns execution tools that start after the growth strategy already exists, while the person who funds them works off a slide and a spreadsheet. He said general assistants cannot supply state and action — they will not hold a ranking still between quarters or run a live market test — and pointed to the panel's shared conclusion that the enterprise stack will be both general and specialised, joined by an integration layer or protocol such as MCP.
+  - People: David Isaac (Founder, AIPath), Scott Kirsner (host, InnoLead), Curtis Michelson (host, InnoLead), James Hantho (Aucctus)
+  - Counterparties: InnoLead (panel host)
+  - Numbers: panel held 2026-09-17; Aucctus research — 100+ interviews, 50% reported no measurable cycle-time improvement, 55% had no AI-impact metrics
+  - Quote: "We've all got plenty of investments in data. We've got plenty of investments in execution tools. But the CEO pays for everybody else's tools, and doesn't actually have their own AI growth decision strategy tool." — David Isaac, Founder, AIPath
 
 ## Older signals
 - **2026-07-15** — AIPath published a founder-authored explainer staking out "Growth Decision Intelligence" as the strategic-decision slice of the category Gartner's January 2026 Decision Intelligence Magic Quadrant doesn't cover — [aipath.one](https://www.aipath.one/post/what-is-growth-decision-intelligence)

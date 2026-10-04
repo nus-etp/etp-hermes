@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_drop/synectify/energytechchallengers.com",
+  "created_by": "write_scenarios@run 37230199115",
+  "expected": {
+    "company": "Synectify",
+    "reason": "Recognition as a finalist in an energy tech challenge is a new competitive/industry milestone for the company.",
+    "verdict": "keep"
+  },
+  "goal": "Keep '**one of 10 finalists in the Future Energy Grid category of Energy Tech Challengers**' for Synectify",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-04-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Synectify"
+      ],
+      "source": "Synectify · news",
+      "title": "**one of 10 finalists in the Future Energy Grid category of Energy Tech Challengers**",
+      "url": "https://energytechchallengers.com/"
+    },
+    "companies": {
+      "Synectify": {
+        "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-04",
+    "kind": "judge_disagreement",
+    "run_id": "37230199115",
+    "source": "2026-10-04.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
