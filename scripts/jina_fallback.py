@@ -44,6 +44,62 @@ DATE_PATTERNS = [
         re.IGNORECASE,
     ),
 ]
+NAV_HEADINGS = {
+    "about",
+    "about us",
+    "company",
+    "connect",
+    "contact",
+    "contact us",
+    "country/region",
+    "explore",
+    "follow us",
+    "help",
+    "language",
+    "legal",
+    "menu",
+    "navigation",
+    "newsletter",
+    "platform",
+    "pricing",
+    "product",
+    "products",
+    "quick links",
+    "resources",
+    "social",
+    "solutions",
+    "subscribe",
+    "support",
+}
+SECTION_HEADING_RE = re.compile(
+    r"^(?:[\w.&'-]+\s+)?(?:news|newsroom|blog|press|press releases|in the news|media|updates|latest news|articles|insights)$",
+    re.IGNORECASE,
+)
+UTILITY_PATH_SEGMENTS = {
+    "account",
+    "cart",
+    "checkout",
+    "contact",
+    "cookie-policy",
+    "cookies",
+    "download",
+    "legal",
+    "login",
+    "media-kit",
+    "pricing",
+    "privacy",
+    "privacy-policy",
+    "register",
+    "search",
+    "sign-in",
+    "sign-up",
+    "signin",
+    "signup",
+    "terms",
+    "workspace",
+}
+UTILITY_PATH_MARKERS = ("newsletter", "subscribe")
+EMPHASIS_RE = re.compile(r"\*\*|__")
 LINK_SCAN_LINES = 5
 DATE_SCAN_LINES = 4
 IGNORE_LINK_HOSTS = {
@@ -196,6 +252,19 @@ def _resolve(href: str, base_url: str) -> str | None:
     return parse.urljoin(base_url, href)
 
 
+def _is_utility_path(path: str) -> bool:
+    lowered = path.lower()
+    if any(marker in lowered for marker in UTILITY_PATH_MARKERS):
+        return True
+    segments = [segment.rsplit(".", 1)[0] for segment in lowered.split("/") if segment]
+    return any(segment in UTILITY_PATH_SEGMENTS for segment in segments)
+
+
+def _is_nav_heading(text: str) -> bool:
+    plain = text.strip().strip("*_").strip()
+    return plain.casefold() in NAV_HEADINGS or bool(SECTION_HEADING_RE.match(plain))
+
+
 def _is_useful_news_link(link: str, base_url: str) -> bool:
     if not link:
         return False
@@ -205,6 +274,8 @@ def _is_useful_news_link(link: str, base_url: str) -> bool:
     if lp.netloc.lower().lstrip("www.") in IGNORE_LINK_HOSTS:
         return False
     if lp.path.lower().endswith(IGNORE_LINK_EXTENSIONS):
+        return False
+    if _is_utility_path(lp.path):
         return False
     bp = parse.urlparse(base_url)
     if (lp.netloc, lp.path.rstrip("/")) == (bp.netloc, bp.path.rstrip("/")):
@@ -239,6 +310,8 @@ def extract_items(markdown: str, base_url: str) -> list[dict[str, Any]]:
         if not m:
             continue
         heading_text = m.group(2).strip()
+        if _is_nav_heading(heading_text):
+            continue
 
         title: str | None = None
         link: str | None = None
@@ -293,6 +366,8 @@ def extract_items(markdown: str, base_url: str) -> list[dict[str, Any]]:
                 title = heading_text
                 link = chosen
 
+        if title:
+            title = EMPHASIS_RE.sub("", title).strip()
         if not title or not link:
             continue
         if link in seen_links:

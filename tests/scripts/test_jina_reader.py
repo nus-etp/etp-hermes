@@ -182,7 +182,7 @@ def test_http_error_marks_extraction_failed_and_continues(jina, tmp_repo, monkey
         hdrs=None,  # type: ignore[arg-type]
         fp=io.BytesIO(b""),
     )
-    good_md = b"## Acme news\n[link](https://acme.example/b/post)\n"
+    good_md = b"## Acme raises seed round\n[link](https://acme.example/b/post)\n"
     urlopen, _ = _make_urlopen(
         {
             READER + "https://acme.example/a": [err],
@@ -467,6 +467,67 @@ def test_case3_falls_back_to_first_useful_link_when_no_same_host(fallback) -> No
     items = fallback.extract_items(markdown, base)
     assert len(items) == 1
     assert items[0]["link"] == "https://partner.example/story"
+
+
+def test_skips_footer_nav_columns(fallback) -> None:
+    base = "https://www.spacejot.app/blog"
+    markdown = """### Product
+
+* [Studio](https://www.spacejot.app/workspace)
+* [Pricing](https://www.spacejot.app/pricing)
+
+### Company
+
+* [Blog](https://www.spacejot.app/blog)
+* [Contact](https://www.spacejot.app/contact)
+
+### Legal
+
+* [Privacy Policy](https://www.spacejot.app/privacy-policy)
+"""
+    assert fallback.extract_items(markdown, base) == []
+
+
+def test_skips_storefront_chrome_but_keeps_press_cards(fallback) -> None:
+    base = "https://curatedculture.sg/pages/in-the-news"
+    markdown = """## Country/region
+
+Singapore | SGD $
+
+Search  [Cart](https://curatedculture.sg/cart)
+
+### Vulcanpost, May 2025
+
+[Read More](https://vulcanpost.com/886777/curated-culture-nus/)
+"""
+    items = fallback.extract_items(markdown, base)
+    assert [item["link"] for item in items] == ["https://vulcanpost.com/886777/curated-culture-nus/"]
+    assert items[0]["headline"] == "Vulcanpost, May 2025"
+
+
+def test_skips_listing_section_title_and_strips_emphasis(fallback) -> None:
+    base = "https://www.synectify.com/news.html"
+    markdown = """## Synectify News
+
+For updates via email, please [subscribe to our Newsletter.](https://www.synectify.com/Forms/sign-up-newsletter.html) For media enquires, please refer to our [media kit](https://www.synectify.com/media-kit.html) .
+
+[Photo of a panel](https://www.digitalinnovatesummit.com/)
+
+### **one of 10 finalists in the Future Energy Grid category**
+
+[Energy Tech Challengers](https://energytechchallengers.com/)
+"""
+    items = fallback.extract_items(markdown, base)
+    assert [(item["headline"], item["link"]) for item in items] == [
+        ("one of 10 finalists in the Future Energy Grid category", "https://energytechchallengers.com/")
+    ]
+
+
+def test_utility_paths_are_not_news_links(fallback) -> None:
+    base = "https://example.com/news"
+    for path in ("/cart", "/account/login", "/privacy-policy", "/Forms/sign-up-newsletter.html", "/media-kit.html"):
+        assert not fallback._is_useful_news_link(f"https://example.com{path}", base)
+    assert fallback._is_useful_news_link("https://example.com/news/2026/funding-round", base)
 
 
 def test_missing_changed_sources_cold_starts_all_html_scrape(jina, tmp_repo, monkeypatch) -> None:
