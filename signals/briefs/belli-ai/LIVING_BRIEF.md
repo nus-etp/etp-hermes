@@ -1,5 +1,5 @@
 # Belli AI — LIVING BRIEF
-_Last updated: 2026-09-18 16:59 UTC_
+_Last updated: 2026-10-05 23:23 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -19,6 +19,11 @@ _Last material event: 2026-09-11 — Crowned champion of the 2026 SWC Asia Final
 _Total disclosed: $2.4M._
 
 ## Recent signals
+- **2026-09-22** — Co-founders Jeff Pan and Alex Khor presented "Building an AI Operating System for Cargo" at a Jakarta AI meetup hosted with OCBC, detailing a forward-deployed, ontology-first deployment model and naming Etihad, Emirates and the Lion Air Group as airlines whose operations Belli works inside — [belli.ai](https://belli.ai/company/news/belli-jakarta-ai-meetup)
+  - Summary: Belli recapped its 6 June 2026 Jakarta meetup with OCBC, supported by Vercel and Singapore Global Network, where co-founders Jeff Pan and Alex Khor walked through how the company builds an AI operating system for air cargo. Khor described a plain-markdown cargo knowledge base written once and reused both to onboard new engineers and as direct context for Belli's AI agents; Pan framed unglamorous infrastructure work as the precondition for later speed. Belli's engineers deploy on-site with airlines including Etihad, Emirates and the Lion Air Group, spending the first days of each engagement mapping every point where data leaks into a spreadsheet or a single person's memory before writing code.
+  - People: Jeff Pan (Co-Founder & CEO), Alex Khor (Co-Founder)
+  - Counterparties: OCBC (meetup host), Vercel (supporter), Singapore Global Network (supporter)
+  - Numbers: meetup held 2026-06-06 in Jakarta
 - **2026-09-11** — Belli was crowned champion of the 2026 SWC Asia Finale and will represent Asia at the San Francisco Grand Finale in November, competing for a US$1M investment prize — [belli.ai](https://belli.ai/company/news/belli-crowned-champion-at-the-2026-swc-asia-finale)
   - Summary: Belli took the top spot at the 2026 SWC Asia Finale, where it was judged on its enterprise-grade SaaS for aviation cargo and its commercial scalability. As regional champion the team travels to San Francisco in November 2026 for the SWC Grand Finale and a US$1,000,000 investment prize; DPBIO Technology Limited and Set Sail AI were named first and second runner-up respectively.
   - Numbers: US$1,000,000 Grand Finale investment prize; November 2026 Grand Finale
@@ -39,7 +44,7 @@ _Total disclosed: $2.4M._
   - Numbers: Over $200K in credits and infrastructure per team; 40 alumni have raised $100M+ in venture funding collectively
 
 ## Open questions
-- Which enterprise customers has Belli AI signed, and what is the scale of deployment (pilot vs. production across how many airlines)?
+- What is the deployment scale at Belli's named airlines (Etihad, Emirates, Lion Air Group) — pilot or production, and how many carriers are live?
 - What is the specific revenue or ARR trajectory after the Vercel Accelerator program?
 - Does the directory-listed 2024-01-01 seed date predate Belli's March 2024 founding (per the WiT profile), and is the US$500K Iterative pre-seed a separate priced round or was it folded into the seed?
 - What is the cash value and structure of the 2026 SWC Asia Finale win, and would a Grand Finale US$1M prize arrive as equity investment or a grant?

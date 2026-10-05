@@ -3,12 +3,6 @@
 # (default 30) so a false-negative drop gets re-judged instead of being lost
 # forever; scripts/collect-candidates.py prunes expired lines at the start of
 # each run. Keys we KEPT go to signals/seen-urls.txt (permanent) instead.
-2026-09-05	https://techcrunch.com/2026/09/04/no-little-kids-allowed-and-other-new-info-about-teslas-cybercab/
-2026-09-05	https://aircargoweek.com/why-southeast-asias-cargo-tech-shift-is-being-driven-by-airline-engineers
-2026-09-05	https://technode.global/2026/08/26/singapores-bioactivx-raises-3m-for-synthetic-skin-substitute-wound-care-technology
-2026-09-05	https://x-phy.com/x-phy-deepfake-detector-wins-global-infosec-award-for-innovative-ai-security-and-safety-at-rsac-2026
-2026-09-05	https://sg.finance.yahoo.com/news/x-phy-inc-ensign-infosecurity-040800499.html
-2026-09-05	https://agilebrandguide.com/constructor-unveils-retail-media-suite-with-personalized-sponsored-listings-and-retail-media-network-integrations
 2026-09-06	https://cyberindemnity.org/2026/06/preschool-data-breach-pdpc-probes-littlelives-after-pcf-sparkletots-records-exposed
 2026-09-06	https://blog.rankiteo.com/pcflit1780412041-littlelives-pcf-sparkletots-breach-june-2026
 2026-09-06	https://www.enterprisesg.gov.sg/resources/inspiring-stories/littlelives
@@ -823,3 +817,38 @@
 2026-10-04	https://soundeye.ai/news
 2026-10-04	https://soundeye.ai/solutions
 2026-10-04	https://api.finexus.net/api/news/events/5b6541d2-8356-4d45-83be-1944345d8f7a/html
+2026-10-05	https://nusx.edu.sg/startups/stories/cbe-eco-solutions
+2026-10-05	https://biospectrumasia.com/news/54/27872/singapore-based-startup-chemt-biotechnology-raises-5-m-to-bring-ai-to-biomanufacturing.html
+2026-10-05	https://nusx.edu.sg/startups/stories/chemtbio
+2026-10-05	https://en.prnasia.com/releases/global/chemt-biotechnology-raises-us-5-million-in-18-months-to-bring-ai-to-biomanufacturing-538040.shtml
+2026-10-05	https://technode.global/prnasia/chemt-biotechnology-raises-us5-million-in-18-months-to-bring-ai-to-biomanufacturing
+2026-10-05	https://chemtbio.com/funding
+2026-10-05	https://sgpc.gov.sg/detail?HomePage=home&page=/detail&url=/media_releases/bca/press_release/P-20260903-1
+2026-10-05	https://ecommerce-times.com/adobe-commerce-clouds-2-1b-acquisition-of-constructor-io-reshapes-ecommerce-search
+2026-10-05	https://ecommerce-times.com/adobe-commerce-cloud-acquires-constructor-io-in-310m-deal
+2026-10-05	https://demg.ai/blog/adobe-constructor-io-21b-product-discovery-owner-operators
+2026-10-05	https://demg.ai/blog/sovereignty-stack-67-billion-martech-ma-platform-risk-2026
+2026-10-05	https://velocitystartups.com/story/1f821365-1ae2-4484-8e66-07cd8d05caaf
+2026-10-05	https://toolglade.com/tool/constructor-io
+2026-10-05	https://3dprintingindustry.com/news/craft-healths-craftmake-platform-gets-a-peptide-test-run-253591
+2026-10-05	https://voxelmatters.com/pharmather-and-craft-health-to-evaluate-3d-printed-peptide-platform
+2026-10-05	https://business.thepilotnews.com/thepilotnews/article/newsfile-2026-7-29-pharmather-collaborates-with-craft-health-to-evaluate-craftmaketm-gmp-ready-pharmaceutical-3d-printing-platform-for-personalized-peptides
+2026-10-05	https://themarketonline.ca/pharmather-out-to-evaluate-3d-printing-for-personalized-peptide-medicines-2026-07-30
+2026-10-05	https://sginnovate.com/event/beyond-pill-3d-printing-personalised-medicine-and-nutrition
+2026-10-05	https://ntu.edu.sg/news/detail/new-national-fellowship-backs-five-singapore-start-ups-for-global-growth
+2026-10-05	https://eurekalert.org/news-releases/1143281
+2026-10-05	https://indexed.vc/companies/otrafy
+2026-10-05	https://podcasts.apple.com/us/podcast/why-the-need-for-speed-dictates-decision-making/id1875399584
+2026-10-05	https://builtin.com/articles/otrafy-wins-43north-startup-competition-1m-funding
+2026-10-05	https://briefglance.com/articles/vibefams-1m-seed-round-signals-ai-and-fintechs-takeover-of-fitness
+2026-10-05	https://app.dealroom.co/news/note/singapore-s-dconstruct-raises-125m-series-a-dwarfing-regional-robotics-norms
+2026-10-05	https://beamp.sg/stories/autonomous-robots-for-smarter-building-inspections
+2026-10-05	https://linkedin.com/company/duluin
+2026-10-05	https://eco-business.com/press-releases/ecomatcher-introduces-next-generation-mobile-tree-chnologies
+2026-10-05	https://imq21.com/en/ecomatcher-and-vnv-advisory-announce-strategic-partnership-to-launch-trees
+2026-10-05	https://goodnet.org/planet/singapore-is-opening-refill-stations-for-household-cleaners-across-the-country-1
+2026-10-05	https://agenticindex.io/vendors/akro-ai
+2026-10-05	https://hamarondo.org/akro-ai-funding.html
+2026-10-05	https://vokasi.kemendikdasmen.go.id/read/berita/kemendikdasmen-bersama-assemblr-edu-luncurkan-imajination-2026-perkuat-implementasi-pembelajaran-koding-dan-kecerdasan-artifisial
+2026-10-05	https://www.assemblrworld.com/blog/imajination-2026-is-here-registration-opens-for-indonesias-national-visual-coding-competition
+2026-10-05	https://mataberita.net/kemendikdasmen-luncurkan-imajination-2026-bersama-assemblr-edu-dan-didukung-samsung-for-education-perkuat-implementasi-pembelajaran-koding-dan-kecerdasan-artifisial/

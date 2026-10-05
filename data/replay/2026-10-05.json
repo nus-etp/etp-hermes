@@ -1,0 +1,182 @@
+{
+  "candidates": [],
+  "companies": {},
+  "fetch_failed": [
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "kind": "firehose",
+      "url": "https://thelowdown.momentum.asia/feed/"
+    },
+    {
+      "company": "PharLyfe+",
+      "error": "HTTP Error 404: Not Found",
+      "kind": "rss",
+      "url": "https://pharlyfeplus.com/news-update/f.rss"
+    }
+  ],
+  "generated_at": "2026-10-05T23:09:06+00:00",
+  "jina_recovered": [],
+  "llm_fetch_required": [
+    {
+      "company": "Horizon Quantum Computing",
+      "hint": "Newsroom page lists press releases and media coverage as vertically-stacked cards. Each card has a headline (h4), descriptive text, a 'See more' link, and a publication date. Relative links resolve against https://www.horizonquantum.com/.",
+      "label": "newsroom",
+      "url": "https://www.horizonquantum.com/resources/newsroom"
+    },
+    {
+      "company": "Ailytics",
+      "hint": "Webflow CMS listing under div.collection-list-wrapper-2.w-dyn-list. Each item is a div.div-block-78 containing a category label in div.category, a headline in div.text-block-27 (treat as the title), and a date as plain text in div.text-block-29 (e.g. 'April 28, 2026'). About 6 items shown in reverse chronological order. Resolve relative item links against https://www.ailytics.ai/.",
+      "label": "news",
+      "url": "https://www.ailytics.ai/news"
+    },
+    {
+      "company": "Aurora Food",
+      "hint": "WordPress site rendered with Elementor. News entries appear as Elementor icon-box widgets with headline in h3.elementor-icon-box-title and the date displayed as a plain-text label (e.g. 'September 12th, 2022') directly above each headline; descriptive body text follows. Roughly 4 items, ordered newest-first. Note that the most recent item is from 2022, so the feed may be stale. Resolve any relative links against https://aurorafoodsg.com/.",
+      "label": "news",
+      "url": "https://aurorafoodsg.com/news/"
+    },
+    {
+      "company": "BEEX",
+      "hint": "BeeX blog listing. Each post is a card with a featured image, author byline ('BeeX Team'), an h3-style headline link and a publication date below the headline (e.g. 'May 13, 2024'). Resolve relative links against https://beex.sg/.",
+      "label": "blog",
+      "url": "https://beex.sg/blogs/"
+    },
+    {
+      "company": "CBE Eco-Solutions",
+      "hint": "CBE Eco-Solutions 'Our News' listing. Items are vertically stacked rows (no card border) with a heading-style (h2/h3) clickable headline linking out to external articles or LinkedIn posts; brief description below. No publication dates shown inline. Resolve relative links against https://www.cbeecosolutions.com/.",
+      "label": "news",
+      "url": "https://www.cbeecosolutions.com/news"
+    },
+    {
+      "company": "Cellivate Technologies",
+      "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/.",
+      "label": "press",
+      "url": "https://www.cellivatetech.com/recognition"
+    },
+    {
+      "company": "Craft Health",
+      "hint": "Craft Health 'Latest News' page is a chronological press/achievements timeline organised by year and month headers (e.g. '2021', then 'January 2021'). Each entry is a bullet line of plain text describing a media mention or award, often with an inline '[<Read_More>]' or named hyperlink to an external article. Dates come from the month/year section headings, not per-item. Resolve relative links against https://www.crafthealth.me/.",
+      "label": "news",
+      "url": "https://www.crafthealth.me/newsletter"
+    },
+    {
+      "company": "Curated Culture",
+      "hint": "Curated Culture 'In The News' press listing on Shopify. Each item is a card with a featured image, headline, publication name and date, a short excerpt and a 'Read More' or 'Listen Here' link to the external source. Roughly 8 features from 2022 to 2025. Resolve relative links against https://curatedculture.sg/.",
+      "label": "press",
+      "url": "https://curatedculture.sg/pages/in-the-news"
+    },
+    {
+      "company": "enlipsium",
+      "hint": "News listing on Wix-hosted site at https://www.enlipsium.com. Each item is a block with a Month-Year text label (e.g. 'Aug 2024'), an h3 headline, a short description, and an external 'Link' anchor. Dates are plain text (no <time> tag). Resolve relative links against https://www.enlipsium.com.",
+      "label": "news",
+      "url": "https://www.enlipsium.com/general-5"
+    },
+    {
+      "company": "Forte Biotech",
+      "hint": "News listing at https://www.fortebio.tech/news. Each item is an <article>-style block with a category label and date in format 'Category | Year' or 'Category | Month YYYY' (e.g. 'Press | November 2025') rendered as plain text before the headline. Headlines are <h3>. A short description and 'Read more' link follow. Filterable categories: Awards, Press, Publications, Events, Announcements. Resolve relative links against https://www.fortebio.tech.",
+      "label": "news",
+      "url": "https://www.fortebio.tech/news"
+    },
+    {
+      "company": "FRONKA",
+      "hint": "WordPress news listing at https://fronkatech.com/news/. Each item has an <h3> headline followed by an <h6> or <em> line containing the date and location (e.g. '06/15/2021, Singapore'). Body paragraphs and embedded images follow. Only ~3 items, dating from 2020-2021. Resolve relative links against https://fronkatech.com.",
+      "label": "news",
+      "url": "https://fronkatech.com/news/"
+    },
+    {
+      "company": "HiCura",
+      "hint": "WordPress (Yoast SEO) press-release page on hicuramedical.com. Each item is a row containing a publisher logo/thumbnail, a bolded headline (in <strong> tags rather than h2/h3), a short description, and a 'View Article' link to an external publisher URL. No explicit per-item date elements; dates only appear inline within some headlines (e.g. '2023'). Resolve relative links against https://hicuramedical.com/.",
+      "label": "press",
+      "url": "https://hicuramedical.com/press-release/"
+    },
+    {
+      "company": "insightic",
+      "hint": "Card-based blog listing on insightic.io. Each card contains a thumbnail image (from /img/), a category badge ('insightic research', 'community resource', 'new partnership'), a clickable headline that links to the individual post URL, and a publication date in 'Day Mon DD YYYY' format (e.g. 'Tue Oct 31 2023') displayed below the headline. Resolve relative links against https://insightic.io/.",
+      "label": "blog",
+      "url": "https://insightic.io/blog"
+    },
+    {
+      "company": "INVIGILO",
+      "hint": "Wix-built site (canonical content lives at invigilo.sg but invigilo.ai is the active marketing domain). Card-based blog listing; each card is a linked container with a thumbnail image, a category label above the title (e.g. 'Oil & Gas Safety Insights'), an <h3> headline, a short excerpt, and a 'Read more' link. No publication date is shown on the listing view. Individual post URLs follow the pattern /post/<slug>; resolve relative links against https://www.invigilo.ai/ (Wix renders /post/<slug> there too).",
+      "label": "blog",
+      "url": "https://www.invigilo.ai/blog"
+    },
+    {
+      "company": "lalia",
+      "hint": "Card-based press listing for Lalia Pte Ltd (Singapore). Each card has a thumbnail image, an <h3> headline (often in Japanese), a secondary line with the source URL, and a publication date in 'YYYY/MM/DD' format below it. Each card wraps in an <a> tag linking to the full article (often external publishers). Resolve relative links against https://read.lalia.com.sg/.",
+      "label": "press",
+      "url": "https://read.lalia.com.sg/press"
+    },
+    {
+      "company": "NEU Battery Materials",
+      "hint": "News listing is vertically-stacked article cards; each card has a headline, publication date, brief description, and 'Read more' link. Relative links resolve against https://www.neumaterials.com/.",
+      "label": "newsroom",
+      "url": "https://www.neumaterials.com/news"
+    },
+    {
+      "company": "polybee",
+      "hint": "Blog index lists posts as clickable cards; cards may not display a publish date inline \u2014 extract title and link, and treat missing date as 'within window' rather than dropping. Relative links resolve against https://polybee.co/.",
+      "label": "blog",
+      "url": "https://polybee.co/blog"
+    },
+    {
+      "company": "RO+",
+      "hint": "WordPress news listing under category /all/news/. Each post is rendered as an article block: headline in an <h2> link (e.g. 'RoPlus Shortlisted as TOP100 startup of X-PITCH 2023'), byline 'By roplus' followed by the published date in 'Month Day, Year' format (e.g. 'November 5, 2023'). Relative links resolve against https://www.roplus.sg.",
+      "label": "news",
+      "url": "https://www.roplus.sg/category/all/news/"
+    },
+    {
+      "company": "seamless",
+      "hint": "Seamless XR (NUS spin-off) news page. Each entry is a link block: headline text directly followed by the publication date in 'Mon DD, YYYY' format (e.g. 'Nov 30, 2025'). No dedicated <article> tag; items appear as anchor links with the date bundled inline after the title. A 'Load More' button loads additional items. Resolve relative links against https://www.seamless.sg.",
+      "label": "news",
+      "url": "https://www.seamless.sg/news"
+    },
+    {
+      "company": "seamless",
+      "hint": "Seamless XR blog index. Each post is a link element with the headline followed by the date in 'Mon DD, YYYY' format and a path like /blog/<slug>. About 11 entries listed, dated through Mar 2026. Resolve relative links against https://www.seamless.sg.",
+      "label": "blog",
+      "url": "https://www.seamless.sg/blog"
+    },
+    {
+      "company": "SENSORi",
+      "hint": "SENSORI Healthcare news listing. Each item is an anchor (<a>) wrapping the entry with the headline rendered as an <h4> (e.g. 'SENSORI Healthcare Wins Third Prize at Two Innovation and Entrepreneurship Competitions') and the date below in YYYY-MM-DD format (e.g. '2025-12-03'). Items are tagged 'News' and ordered newest-first. Resolve relative links against https://www.sensorihealthcare.com.",
+      "label": "news",
+      "url": "https://www.sensorihealthcare.com/h-col-157.html"
+    },
+    {
+      "company": "SINGROW",
+      "hint": "Wix-hosted media/press listing for SINGROW (NUS agritech spin-off). Items are <div> grid tiles (no semantic <article>); each tile has the headline in <h4>, the publication date in <h4> below the title in 'DD Month YYYY' format, then a 'By <Publication Name>' attribution and a 'Read More' link. About 25+ external news items aggregated, newest-first. Resolve relative links against https://www.singrow.com.",
+      "label": "media",
+      "url": "https://www.singrow.com/media"
+    },
+    {
+      "company": "Soynergy",
+      "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com.",
+      "label": "news",
+      "url": "https://www.soynergy.com/category/news/"
+    },
+    {
+      "company": "spacejot",
+      "hint": "Blog listing on Spacejot's web app. Each post is rendered with an h3 headline that links to /blog/<slug>, with the publication date (e.g. 'Jul 06, 2024') displayed adjacent to the title. Resolve relative links against https://www.spacejot.app/.",
+      "label": "blog",
+      "url": "https://www.spacejot.app/blog"
+    },
+    {
+      "company": "Synectify",
+      "hint": "Synectify newsroom listing multiple dated entries (14+ items, Sep 2021 onward). Each item appears as a div block with an h3 title and a date string shown above or near it (e.g. 'January, 9th 2023'). Resolve relative links against https://www.synectify.com/.",
+      "label": "news",
+      "url": "https://www.synectify.com/news.html"
+    }
+  ],
+  "stats": {
+    "candidates": 0,
+    "companies_matched": 0,
+    "excluded_by_terms": 0,
+    "fetch_failed": 2,
+    "jina_candidates": 0,
+    "jina_recovered": 0,
+    "llm_fetch_required": 25,
+    "pre_extracted_capped": 0,
+    "weak_term_suppressed": 1
+  }
+}
