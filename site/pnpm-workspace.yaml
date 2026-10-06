@@ -62,6 +62,9 @@ overrides:
   # GHSA-c83g-rgw3-j3cx / GHSA-73wf-gq98-2v4g (browserslist unbounded cache growth /
   # prototype write via untrusted stats): single instance in the tree, patch bump.
   browserslist: '^4.28.9'
+  # GHSA-68fv-2mgg-jv7q (source-map-js event-loop DoS via unvalidated indexed
+  # source-map offsets): pulled in by @tailwindcss/node; patch bump.
+  'source-map-js': '^1.2.2'
 
 publicHoistPattern:
   - '*prettier*'
