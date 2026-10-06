@@ -141,3 +141,60 @@ def test_usage_accumulates_per_runtime(mod, clean_env) -> None:
     mod.chat([{"role": "user", "content": "hi"}], runtime="nvidia")
     assert mod.usage_total("nvidia") == before_nvidia + 14
     assert mod.usage_total("zai") == before_zai
+
+
+def test_http_error_emits_status_and_body_diagnostic(mod, clean_env, capsys) -> None:
+    import io
+
+    clean_env.setenv("NVIDIA_API_KEY", "n")
+
+    def boom(req, timeout=None):  # noqa: ARG001
+        raise mod.urllib.error.HTTPError(
+            req.full_url, 404, "Not Found", {}, io.BytesIO(b'{"detail": "model not found"}')
+        )
+
+    clean_env.setattr(mod.urllib.request, "urlopen", boom)
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="nvidia") is None
+    err = capsys.readouterr().err
+    assert "nvidia" in err and "HTTP 404" in err and "model not found" in err
+
+
+def test_other_exception_emits_class_and_message(mod, clean_env, capsys) -> None:
+    clean_env.setenv("DEEPSEEK_API_KEY", "d")
+
+    def boom(req, timeout=None):  # noqa: ARG001
+        raise OSError("network down")
+
+    clean_env.setattr(mod.urllib.request, "urlopen", boom)
+    assert mod.chat([{"role": "user", "content": "hi"}]) is None
+    assert "OSError: network down" in capsys.readouterr().err
+
+
+def test_empty_content_falls_back_to_reasoning_content(mod, clean_env, capsys) -> None:
+    clean_env.setenv("ZAI_API_KEY", "z")
+    message = {"content": "", "reasoning_content": '{"keep": true}'}
+    _capture_requests(mod, clean_env, {"choices": [{"finish_reason": "length", "message": message}]})
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="zai") == '{"keep": true}'
+    err = capsys.readouterr().err
+    assert "empty content" in err and "finish_reason=length" in err and "reasoning_content=present" in err
+
+
+def test_empty_content_without_reasoning_returns_none(mod, clean_env, capsys) -> None:
+    clean_env.setenv("ZAI_API_KEY", "z")
+    body = {"choices": [{"finish_reason": "stop", "message": {"content": None}}]}
+    _capture_requests(mod, clean_env, body)
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="zai") is None
+    assert "reasoning_content=absent" in capsys.readouterr().err
+
+
+def test_runtime_extra_payload_merged_into_request_body(mod, clean_env) -> None:
+    clean_env.setenv("ZAI_API_KEY", "z")
+    clean_env.setenv("DEEPSEEK_API_KEY", "d")
+    captured = _capture_requests(mod, clean_env, REPLY)
+    mod.chat([{"role": "user", "content": "hi"}], runtime="zai")
+    mod.chat([{"role": "user", "content": "hi"}])
+    zai_body = json.loads(captured[0].data)
+    deepseek_body = json.loads(captured[1].data)
+    assert zai_body["thinking"] == {"type": "disabled"}
+    assert zai_body["model"] == "glm-4.7-flash"
+    assert "thinking" not in deepseek_body

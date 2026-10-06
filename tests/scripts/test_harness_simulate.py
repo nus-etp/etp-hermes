@@ -153,6 +153,28 @@ def test_failopen_per_item_records_null(layout, monkeypatch) -> None:
     assert verdicts == [None, None, "keep"]
 
 
+def test_all_null_verdicts_exit_2_with_loud_message(layout, monkeypatch, capsys) -> None:
+    monkeypatch.setattr(simulate.ab_llm, "chat", lambda *a, **k: None)
+    monkeypatch.setattr(simulate.ab_llm, "have_key", lambda runtime="deepseek": True)
+    write_snapshot(layout["window"], "2026-10-02", [candidate("a"), candidate("b")])
+    assert run(layout) == 2
+    assert "unreachable or misconfigured" in capsys.readouterr().err
+
+
+def test_replay_calls_use_reasoning_safe_max_tokens(layout, monkeypatch) -> None:
+    seen = []
+
+    def fake(messages, *, max_tokens=0, **_):
+        seen.append(max_tokens)
+        return '{"keep": false, "company": null}'
+
+    monkeypatch.setattr(simulate.ab_llm, "chat", fake)
+    monkeypatch.setattr(simulate.ab_llm, "have_key", lambda runtime="deepseek": True)
+    write_snapshot(layout["window"], "2026-10-02", [candidate("a")])
+    assert run(layout) == 0
+    assert seen and all(tokens >= 1024 for tokens in seen)
+
+
 def test_missing_key_exits_2(layout, monkeypatch) -> None:
     monkeypatch.delenv("NVIDIA_API_KEY", raising=False)
     assert run(layout) == 2

@@ -24,7 +24,7 @@ deduplicated by normalized URL (newest snapshot wins) and capped at
 ``--limit``. Layers ``agent_supplement`` / ``synthesis`` are accepted but not
 implemented yet: they write an empty result and exit 0.
 
-Fail-open per item, exit 0; exit 2 when the runtime has no API key. Pure
+Fail-open per item, exit 0; exit 2 when the runtime has no API key or every verdict is null (unreachable/misconfigured runtime). Pure
 stdlib (uses ``scripts/ab_llm.py``).
 """
 
@@ -52,6 +52,7 @@ DEFAULT_WINDOW_DIR = REPO_ROOT / "data" / "replay"
 IMPLEMENTED_LAYERS = ("ingest",)
 SNAPSHOT_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})$")
 RAW_REPLY_CHARS = 500
+REPLAY_MAX_TOKENS = 1024
 
 REPLAY_OVERRIDE = (
     "\n\n---\n\nHARNESS REPLAY MODE. Ignore every instruction above about fetching "
@@ -147,7 +148,7 @@ def call_model(system_prompt: str, candidate: dict, companies: dict, args: argpa
             {"role": "user", "content": build_user_message(candidate, companies)},
         ],
         model=args.model,
-        max_tokens=80,
+        max_tokens=REPLAY_MAX_TOKENS,
         runtime=args.runtime,
     )
     time.sleep(args.sleep)
@@ -331,6 +332,14 @@ def main(argv: list[str] | None = None) -> int:
         f"{args.arm}/{args.runtime}: {len(cards)} scenarios, {len(items)} window candidates, "
         f"{failed} null verdicts -> {args.out}"
     )
+    total = len(cards) + len(items)
+    if total and failed == total:
+        print(
+            f"runtime {args.runtime} returned no usable verdict for any of {total} candidates; "
+            "it is unreachable or misconfigured (see ab_llm diagnostics above)",
+            file=sys.stderr,
+        )
+        return 2
     return 0
 
 

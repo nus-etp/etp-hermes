@@ -26,9 +26,10 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import urllib.error
 import urllib.request
-from typing import NamedTuple
+from typing import Any, NamedTuple
 
 DEFAULT_URL = "https://api.deepseek.com/chat/completions"
 DEFAULT_MODEL = "deepseek-chat"
@@ -41,6 +42,7 @@ class Runtime(NamedTuple):
     key_env: str
     model_env: str
     model_default: str
+    extra_payload: dict[str, Any] = {}
 
 
 RUNTIMES: dict[str, Runtime] = {
@@ -58,8 +60,11 @@ RUNTIMES: dict[str, Runtime] = {
         "ZAI_API_KEY",
         "ZAI_MODEL",
         "glm-4.7-flash",
+        {"thinking": {"type": "disabled"}},
     ),
 }
+
+ERROR_BODY_CHARS = 300
 
 _usage_tokens: dict[str, int] = {}
 
@@ -118,6 +123,7 @@ def chat(
     url = runtime_url(runtime)
     model = model or runtime_model(runtime)
     payload = {
+        **RUNTIMES[runtime].extra_payload,
         "model": model,
         "messages": messages,
         "temperature": temperature,
@@ -136,11 +142,37 @@ def chat(
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             body = json.loads(resp.read().decode("utf-8"))
-        content = body["choices"][0]["message"]["content"]
-    except (urllib.error.URLError, OSError, KeyError, IndexError, TypeError, ValueError):
+        choice = body["choices"][0]
+        message = choice["message"]
+    except urllib.error.HTTPError as error:
+        _warn(runtime, f"HTTP {error.code}: {_error_body(error)}")
+        return None
+    except (urllib.error.URLError, OSError, KeyError, IndexError, TypeError, ValueError) as error:
+        _warn(runtime, f"{type(error).__name__}: {error}")
         return None
     _record_usage(runtime, body.get("usage"))
-    return content
+    content = message.get("content")
+    reasoning = message.get("reasoning_content")
+    if content:
+        return content
+    _warn(
+        runtime,
+        f"empty content (finish_reason={choice.get('finish_reason')}, "
+        f"reasoning_content={'present' if reasoning else 'absent'})",
+    )
+    return reasoning if isinstance(reasoning, str) and reasoning.strip() else None
+
+
+def _warn(runtime: str, detail: str) -> None:
+    print(f"ab_llm[{runtime}]: {detail}", file=sys.stderr)
+
+
+def _error_body(error: urllib.error.HTTPError) -> str:
+    try:
+        text = error.read().decode("utf-8", "replace")
+    except (OSError, ValueError):
+        return str(error.reason)
+    return " ".join(text.split())[:ERROR_BODY_CHARS]
 
 
 def extract_json(text: str) -> dict | None:
