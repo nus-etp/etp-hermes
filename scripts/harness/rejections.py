@@ -96,7 +96,7 @@ def append_record(out: Path, record: str, run_url: str) -> bool:
 
 
 def parse_args(argv: list[str] | None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser = argparse.ArgumentParser(description="Record a rejected harness proposal in signals/harness/rejections.md")
     sub = parser.add_subparsers(dest="command", required=True)
     append = sub.add_parser("append")
     append.add_argument("--run-id", required=True)
