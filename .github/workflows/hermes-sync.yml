@@ -390,7 +390,8 @@ jobs:
         continue-on-error: true
         run: |
           TODAY="$(date -u +%F)"
-          python3 scripts/harness/write_scenarios.py --date "$TODAY" --judged "data/harness/judged/$TODAY.jsonl"
+          python3 scripts/harness/write_scenarios.py --date "$TODAY" --judged "data/harness/judged/$TODAY.jsonl" \
+            --labels signals/harness/human-labels.jsonl
 
       - name: Build gap-fill queue (fairness rotation)
         # Deterministic pre-step: writes signals/agent-queue.txt with the N
