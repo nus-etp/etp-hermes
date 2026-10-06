@@ -8,7 +8,9 @@ Used by two callers:
 
 The reader is the keyless Parallel Search MCP (`web_fetch` with
 `full_content`), the same free endpoint hermes uses as its web surface
-(hermes/config.yaml → mcp_servers.parallel). It replaced r.jina.ai, whose keyed
+(hermes/config.yaml → mcp_servers.parallel). It stays keyless on purpose (a key
+means metered calls); the anonymous rate limit is handled by reusing one MCP
+session per process, pacing calls, and backing off on 429. It replaced r.jina.ai, whose keyed
 tier went 402 once the token balance ran out. Importable as a sibling module
 (`import jina_fallback`) because scripts are run from the repo with scripts/ on
 sys.path; both callers also insert their own directory on sys.path so the
@@ -18,7 +20,9 @@ import resolves under pytest's file-path module loader.
 from __future__ import annotations
 
 import json
+import os
 import re
+import time
 from typing import Any
 from urllib import error, parse, request
 
@@ -28,6 +32,13 @@ PARALLEL_MCP_URL = "https://search.parallel.ai/mcp"
 MCP_PROTOCOL_VERSION = "2025-03-26"
 USER_AGENT = honest_ua("reader")
 TIMEOUT_SECS = 60
+RETRY_STATUSES = {429, 503}
+BACKOFF_SECS = (5.0, 15.0, 45.0)
+MAX_RETRY_WAIT_SECS = 120.0
+DEFAULT_MIN_INTERVAL_SECS = 2.0
+SLEEP = time.sleep
+MONOTONIC = time.monotonic
+_session: dict[str, Any] = {"id": None, "last_call": 0.0}
 
 # Heuristic constants for extract_items().
 HEADING_RE = re.compile(r"^(#{1,4})\s+(.+?)\s*$")
@@ -190,14 +201,50 @@ def _page_text(fetch_result: dict[str, Any], url: str) -> str:
     raise ValueError(f"no content for {url}: {', '.join(reasons) or 'empty result'}")
 
 
-def fetch_reader(url: str) -> tuple[int, str]:
-    """Return (status, page_text) via Parallel's keyless MCP web_fetch.
-
-    Any protocol or content failure surfaces as URLError so both callers'
-    existing fail-open handling applies unchanged.
-    """
+def min_interval_secs() -> float:
     try:
-        session_id, _ = _mcp_post(
+        return max(0.0, float(os.environ.get("READER_MIN_INTERVAL_SECS", DEFAULT_MIN_INTERVAL_SECS)))
+    except ValueError:
+        return DEFAULT_MIN_INTERVAL_SECS
+
+
+def reset_session() -> None:
+    _session["id"] = None
+    _session["last_call"] = 0.0
+
+
+def _retry_wait(exc: error.HTTPError, attempt: int) -> float:
+    retry_after = exc.headers.get("Retry-After") if exc.headers else None
+    if retry_after:
+        try:
+            return min(max(float(retry_after), 0.0), MAX_RETRY_WAIT_SECS)
+        except ValueError:
+            pass
+    return BACKOFF_SECS[min(attempt, len(BACKOFF_SECS) - 1)]
+
+
+def _pace() -> None:
+    wait = _session["last_call"] + min_interval_secs() - MONOTONIC()
+    if wait > 0:
+        SLEEP(wait)
+    _session["last_call"] = MONOTONIC()
+
+
+def _post_with_backoff(payload: dict[str, Any], session_id: str | None) -> tuple[str | None, str]:
+    for attempt in range(len(BACKOFF_SECS) + 1):
+        _pace()
+        try:
+            return _mcp_post(payload, session_id)
+        except error.HTTPError as e:
+            if e.code not in RETRY_STATUSES or attempt == len(BACKOFF_SECS):
+                raise
+            SLEEP(_retry_wait(e, attempt))
+    raise AssertionError("unreachable")
+
+
+def _session_id() -> str | None:
+    if _session["id"] is None:
+        session_id, _ = _post_with_backoff(
             {
                 "jsonrpc": "2.0",
                 "id": 1,
@@ -210,19 +257,39 @@ def fetch_reader(url: str) -> tuple[int, str]:
             },
             None,
         )
-        _mcp_post({"jsonrpc": "2.0", "method": "notifications/initialized"}, session_id)
-        _, body = _mcp_post(
-            {
-                "jsonrpc": "2.0",
-                "id": 2,
-                "method": "tools/call",
-                "params": {
-                    "name": "web_fetch",
-                    "arguments": {"urls": [url], "full_content": True},
-                },
-            },
-            session_id,
-        )
+        _post_with_backoff({"jsonrpc": "2.0", "method": "notifications/initialized"}, session_id)
+        _session["id"] = session_id or ""
+    return _session["id"] or None
+
+
+def _web_fetch(url: str) -> str:
+    payload = {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "tools/call",
+        "params": {"name": "web_fetch", "arguments": {"urls": [url], "full_content": True}},
+    }
+    try:
+        _, body = _post_with_backoff(payload, _session_id())
+    except error.HTTPError as e:
+        if e.code not in (400, 404) or _session["id"] is None:
+            raise
+        reset_session()
+        _, body = _post_with_backoff(payload, _session_id())
+    return body
+
+
+def fetch_reader(url: str) -> tuple[int, str]:
+    """Return (status, page_text) via Parallel's keyless MCP web_fetch.
+
+    One MCP session is initialised per process and reused for every fetch, calls
+    are paced READER_MIN_INTERVAL_SECS apart, and 429/503 replies are retried
+    with Retry-After or exponential backoff before giving up. Any protocol or
+    content failure surfaces as URLError so both callers' existing fail-open
+    handling applies unchanged.
+    """
+    try:
+        body = _web_fetch(url)
         return 200, _page_text(_fetch_result(_jsonrpc_message(body)), url)
     except error.URLError:
         raise

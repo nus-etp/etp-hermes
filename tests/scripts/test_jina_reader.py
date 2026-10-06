@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import io
 import json
+import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -77,7 +78,28 @@ def jina(tmp_repo: Path, monkeypatch, scripts_module_loader):
     monkeypatch.setattr(mod, "ITEMS_FILE", tmp_repo / "data" / "jina-items.json")
     monkeypatch.delenv("JINA_API_KEY", raising=False)
     monkeypatch.delenv("JINA_DAILY_BUDGET", raising=False)
+    monkeypatch.delenv("JINA_ERROR_RATE_ALARM", raising=False)
+    reader = sys.modules["jina_fallback"]
+    reader.reset_session()
+    monkeypatch.setattr(reader, "SLEEP", lambda _secs: None)
+    monkeypatch.setattr(reader, "MONOTONIC", lambda: 0.0)
     return mod
+
+
+def _reader_module():
+    return sys.modules["jina_fallback"]
+
+
+def _http_error(url: str, code: int, headers: dict[str, str] | None = None) -> error.HTTPError:
+    return error.HTTPError(url, code, "err", _Headers(headers or {}), io.BytesIO(b""))
+
+
+class _Headers(dict):
+    def get(self, key, default=None):
+        for k, v in self.items():
+            if k.lower() == key.lower():
+                return v
+        return default
 
 
 def _write_inputs(
@@ -549,3 +571,137 @@ def test_missing_changed_sources_cold_starts_all_html_scrape(jina, tmp_repo, mon
 
     assert jina.main() == 0
     assert [c[0] for c in calls] == [READER + "https://acme.example/news"]
+
+
+def _one_company(*urls: str) -> list[dict[str, Any]]:
+    return [
+        {
+            "name": "Acme",
+            "sources": [{"type": "html_scrape", "label": "n", "url": u} for u in urls],
+        }
+    ]
+
+
+def _count_initialize(urlopen):
+    count = {"initialize": 0}
+
+    def counting(req: Request, timeout: float | None = None) -> Any:
+        if json.loads(req.data).get("method") == "initialize":
+            count["initialize"] += 1
+        return urlopen(req, timeout)
+
+    return counting, count
+
+
+def test_reader_reuses_one_mcp_session_across_fetches(jina, tmp_repo, monkeypatch) -> None:
+    urls = ["https://acme.example/a", "https://acme.example/b", "https://acme.example/c"]
+    md = b"## h\n[link](https://acme.example/post)\n"
+    urlopen, calls = _make_urlopen({u: [{"body": md}] for u in urls})
+    counting, count = _count_initialize(urlopen)
+    monkeypatch.setattr(jina.request, "urlopen", counting)
+    _write_inputs(tmp_repo, _one_company(*urls), {"Acme": urls})
+
+    assert jina.main() == 0
+    assert [c[0] for c in calls] == urls
+    assert count["initialize"] == 1
+    assert all(hdrs.get("Mcp-session-id") == SESSION_ID for _, hdrs in calls)
+
+
+def test_reader_retries_429_honouring_retry_after(jina, tmp_repo, monkeypatch) -> None:
+    url = "https://acme.example/n"
+    md = b"## h\n[link](https://acme.example/post)\n"
+    urlopen, calls = _make_urlopen({url: [_http_error(url, 429, {"Retry-After": "7"}), {"body": md}]})
+    monkeypatch.setattr(jina.request, "urlopen", urlopen)
+    sleeps: list[float] = []
+    monkeypatch.setattr(_reader_module(), "SLEEP", sleeps.append)
+    _write_inputs(tmp_repo, _one_company(url), {"Acme": [url]})
+
+    assert jina.main() == 0
+    assert [c[0] for c in calls] == [url, url]
+    assert 7.0 in sleeps
+    out = json.loads((tmp_repo / "data" / "jina-items.json").read_text())
+    assert out["per_company"]["Acme"][url][0]["link"] == "https://acme.example/post"
+    assert out["extraction_failed"] == []
+
+
+def test_reader_backs_off_exponentially_without_retry_after(jina, tmp_repo, monkeypatch) -> None:
+    url = "https://acme.example/n"
+    reader = _reader_module()
+    md = b"## h\n[link](https://acme.example/post)\n"
+    urlopen, calls = _make_urlopen(
+        {url: [_http_error(url, 429), _http_error(url, 503), {"body": md}]}
+    )
+    monkeypatch.setattr(jina.request, "urlopen", urlopen)
+    sleeps: list[float] = []
+    monkeypatch.setattr(reader, "SLEEP", sleeps.append)
+    _write_inputs(tmp_repo, _one_company(url), {"Acme": [url]})
+
+    assert jina.main() == 0
+    assert len(calls) == 3
+    assert sleeps[:2] == [reader.BACKOFF_SECS[0], reader.BACKOFF_SECS[1]] or set(reader.BACKOFF_SECS[:2]) <= set(sleeps)
+
+
+def test_reader_gives_up_after_backoff_is_exhausted(jina, tmp_repo, monkeypatch, capsys) -> None:
+    url = "https://acme.example/n"
+    reader = _reader_module()
+    attempts = len(reader.BACKOFF_SECS) + 1
+    urlopen, calls = _make_urlopen({url: [_http_error(url, 429) for _ in range(attempts)]})
+    monkeypatch.setattr(jina.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, _one_company(url), {"Acme": [url]})
+
+    assert jina.main() == 0
+    assert len(calls) == attempts
+    assert "HTTP 429" in capsys.readouterr().err
+    index = json.loads((tmp_repo / "data" / "jina-cache" / "index.json").read_text())
+    assert "failed_at" in index[url] and "fetched_at" not in index[url]
+
+
+def test_reader_does_not_retry_other_http_errors(jina, tmp_repo, monkeypatch) -> None:
+    url = "https://acme.example/n"
+    urlopen, calls = _make_urlopen({url: [_http_error(url, 500)]})
+    monkeypatch.setattr(jina.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, _one_company(url), {"Acme": [url]})
+
+    assert jina.main() == 0
+    assert len(calls) == 1
+
+
+def test_reader_paces_calls_by_min_interval(jina, tmp_repo, monkeypatch) -> None:
+    urls = ["https://acme.example/a", "https://acme.example/b"]
+    reader = _reader_module()
+    md = b"## h\n[link](https://acme.example/post)\n"
+    urlopen, _ = _make_urlopen({u: [{"body": md}] for u in urls})
+    monkeypatch.setattr(jina.request, "urlopen", urlopen)
+    monkeypatch.setenv("READER_MIN_INTERVAL_SECS", "3")
+    clock = {"now": 100.0}
+    sleeps: list[float] = []
+
+    def sleep(secs: float) -> None:
+        sleeps.append(secs)
+        clock["now"] += secs
+
+    monkeypatch.setattr(reader, "MONOTONIC", lambda: clock["now"])
+    monkeypatch.setattr(reader, "SLEEP", sleep)
+    _write_inputs(tmp_repo, _one_company(*urls), {"Acme": urls})
+
+    assert jina.main() == 0
+    assert sleeps and all(abs(s - 3.0) < 1e-6 for s in sleeps)
+
+
+def test_error_rate_alarm_exits_nonzero_but_still_writes_outputs(jina, tmp_repo, monkeypatch, capsys) -> None:
+    urls = [f"https://acme.example/{i}" for i in range(4)]
+    urlopen, _ = _make_urlopen({u: [_http_error(u, 500)] for u in urls})
+    monkeypatch.setattr(jina.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, _one_company(*urls), {"Acme": urls})
+
+    assert jina.main() == 1
+    out = json.loads((tmp_repo / "data" / "jina-items.json").read_text())
+    assert out["error_rate_alarm"] is True
+    assert sorted(out["extraction_failed"]) == sorted(urls)
+    assert "::warning::" in capsys.readouterr().err
+
+
+def test_error_rate_alarm_needs_minimum_attempts(jina) -> None:
+    assert jina.error_rate_alarm(network_calls=0, errors=3) is False
+    assert jina.error_rate_alarm(network_calls=2, errors=2) is True
+    assert jina.error_rate_alarm(network_calls=3, errors=1) is False

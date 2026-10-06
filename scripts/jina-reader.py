@@ -14,6 +14,11 @@ existing LLM fallback path picks them up. The script always exits 0.
 Daily call budget is bounded by JINA_DAILY_BUDGET (default 80) so a flaky
 cache or a hand-triggered re-run can't hammer the anonymous rate limit. A failed
 fetch is never recorded as fresh, so an old cached page is not re-served as a hit.
+
+Rate alarm: when at least JINA_ERROR_RATE_ALARM (default 0.5) of the network
+fetches attempted fail, the script still writes its outputs but exits 1 so the
+(continue-on-error) workflow step shows red instead of a green run that quietly
+produced nothing.
 """
 
 from __future__ import annotations
@@ -41,7 +46,23 @@ CACHE_INDEX_FILE = CACHE_DIR / "index.json"
 ITEMS_FILE = REPO_ROOT / "data" / "jina-items.json"
 
 DEFAULT_BUDGET = 80
+DEFAULT_ERROR_RATE_ALARM = 0.5
+MIN_ATTEMPTS_FOR_ALARM = 4
 CACHE_TTL = timedelta(hours=23)
+
+
+def _error_rate_alarm_threshold() -> float:
+    try:
+        return float(os.environ.get("JINA_ERROR_RATE_ALARM", str(DEFAULT_ERROR_RATE_ALARM)))
+    except ValueError:
+        return DEFAULT_ERROR_RATE_ALARM
+
+
+def error_rate_alarm(network_calls: int, errors: int) -> bool:
+    attempted = network_calls + errors
+    if attempted < MIN_ATTEMPTS_FOR_ALARM:
+        return False
+    return errors / attempted >= _error_rate_alarm_threshold()
 
 
 def _now_iso() -> str:
@@ -218,6 +239,7 @@ def main() -> int:
         "budget_used": network_calls,
         "budget_limit": budget,
         "cache_hits": cache_hits,
+        "error_rate_alarm": error_rate_alarm(network_calls, errors),
     }
     ITEMS_FILE.parent.mkdir(parents=True, exist_ok=True)
     with ITEMS_FILE.open("w", encoding="utf-8") as f:
@@ -233,6 +255,13 @@ def main() -> int:
         f"deferred={len(deferred)}",
         file=sys.stderr,
     )
+    if output["error_rate_alarm"]:
+        print(
+            f"::warning::jina-reader: {errors} of {network_calls + errors} reader fetches failed; "
+            "collection is starved, check the Parallel rate limit",
+            file=sys.stderr,
+        )
+        return 1
     return 0
 
 
