@@ -144,3 +144,47 @@ def test_main_fails_open_on_missing_and_bad_sources(tmp_path: Path, capsys) -> N
     )
     assert exit_code == 0
     assert "wrote 0 cards" in capsys.readouterr().out
+
+
+def label_row(url: str, label: str, company: str = "Acme", note: str = "operator note", date: str = "2026-10-05") -> dict:
+    return {"url": url, "company": company, "label": label, "note": note, "date": date}
+
+
+def test_from_labels_maps_labels_to_human_cards(tmp_path: Path) -> None:
+    root = tmp_path / "scenarios"
+    source = write_jsonl(
+        tmp_path / "human-labels.jsonl",
+        [
+            label_row("https://news.com/x", "wrong-keep"),
+            label_row("https://beta.io/raise", "missed", company="Beta Labs"),
+            label_row("https://gamma.ai/p", "brief-error", company="Gamma"),
+            label_row("https://delta.io/p", "bogus"),
+            label_row("", "missed"),
+        ],
+    )
+    assert write_scenarios.from_labels(source, root, "2026-10-06") == 3
+    ingest = scenarios.load_all(root, layer="ingest")
+    synthesis = scenarios.load_all(root, layer="synthesis")
+    assert [c["expected"]["verdict"] for c in ingest] == ["drop", "keep"]
+    assert ingest[0]["expected"]["reason"] == "operator note"
+    assert ingest[1]["expected"]["company"] == "Beta Labs"
+    assert all(c["origin"]["kind"] == "human" and c["origin"]["date"] == "2026-10-05" for c in ingest + synthesis)
+    assert synthesis[0]["cluster"] == "synthesis/brief_error/gamma/gamma.ai"
+    assert all(scenarios.validate(c) == [] for c in ingest + synthesis)
+
+
+def test_from_labels_is_idempotent_by_url(tmp_path: Path) -> None:
+    root = tmp_path / "scenarios"
+    source = write_jsonl(
+        tmp_path / "human-labels.jsonl",
+        [label_row("https://news.com/x", "wrong-keep"), label_row("https://news.com/x", "wrong-keep")],
+    )
+    assert write_scenarios.from_labels(source, root, "2026-10-06") == 1
+    assert write_scenarios.from_labels(source, root, "2026-10-06") == 0
+
+
+def test_main_accepts_labels_flag(tmp_path: Path, capsys) -> None:
+    root = tmp_path / "scenarios"
+    source = write_jsonl(tmp_path / "human-labels.jsonl", [label_row("https://news.com/x", "missed")])
+    assert write_scenarios.main(["--root", str(root), "--labels", str(source)]) == 0
+    assert "human=1" in capsys.readouterr().out

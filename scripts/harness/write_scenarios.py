@@ -13,7 +13,12 @@ is reported and skipped, never fatal):
   --issues   data/harness/issues.json — ``gh issue list --json
              number,title,body,labels,url`` output; issues labelled
              harness:wrong-keep / harness:missed / harness:brief-error become
-             ``human`` cards (weight 3 in grading).
+             ``human`` cards (weight 3 in grading). Needs GitHub Issues enabled.
+  --labels   signals/harness/human-labels.jsonl — one JSON object per line,
+             ``{url, company, label, note, date}`` with ``label`` one of
+             wrong-keep / missed / brief-error (optional ``headline``). The
+             issue-free way for an operator to file a human correction; becomes
+             the same ``human`` cards, idempotent per URL.
 
 Idempotent: a candidate whose URL already has a card (any status) is skipped,
 and an issue that already produced a card is skipped. Cards are written
@@ -281,6 +286,41 @@ def from_issues(path: Path, root: Path, today: str) -> int:
     return written
 
 
+def label_origin(row: dict, today: str) -> dict:
+    return {"kind": "human", "date": row_date(row, today), "source": "human-labels.jsonl"}
+
+
+def card_for_label(row: dict, root: Path, today: str) -> dict | None:
+    label = ISSUE_LABELS.get(f"harness:{row.get('label')}")
+    url = str(row.get("url") or "").strip()
+    company = str(row.get("company") or "").strip()
+    if label is None or not url or not company:
+        print(f"write_scenarios: label row for {url or 'no url'} invalid; skipping", file=sys.stderr)
+        return None
+    layer, expected_verdict = label
+    if scenarios.find_by_url(url, root, layer=layer) is not None:
+        return None
+    note = str(row.get("note") or "").strip()
+    origin = label_origin(row, today)
+    if layer == "synthesis":
+        headline = str(row.get("headline") or note).strip()
+        parsed = {"url": url, "company": company, "headline": headline}
+        card = synthesis_card({"title": note, "body": note}, parsed, root, origin["date"])
+        card["origin"] = origin
+        return card
+    parsed = {"url": url, "company": company, "headline": str(row.get("headline") or note or url).strip()}
+    return ingest_card(parsed, expected_verdict=expected_verdict, origin=origin, reason=note, root=root)
+
+
+def from_labels(path: Path, root: Path, today: str) -> int:
+    written = 0
+    for row in read_jsonl(path):
+        card = card_for_label(row, root, today)
+        if card is not None:
+            written += save_card(card, root)
+    return written
+
+
 def run_source(name: str, writer, path: Path | None, root: Path, today: str) -> int:
     if path is None:
         return 0
@@ -300,13 +340,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--from-ab", type=Path, default=None)
     parser.add_argument("--judged", type=Path, default=None)
     parser.add_argument("--issues", type=Path, default=None)
+    parser.add_argument("--labels", type=Path, default=None)
     parser.add_argument("--root", type=Path, default=scenarios.SCENARIOS_DIR)
     args = parser.parse_args(argv)
 
     counts = {
         "ab_seed": run_source("ab", from_ab, args.from_ab, args.root, args.date),
         "judge_disagreement": run_source("judged", from_judged, args.judged, args.root, args.date),
-        "human": run_source("issues", from_issues, args.issues, args.root, args.date),
+        "human": run_source("issues", from_issues, args.issues, args.root, args.date)
+        + run_source("labels", from_labels, args.labels, args.root, args.date),
     }
     detail = " ".join(f"{kind}={count}" for kind, count in counts.items())
     print(f"write_scenarios: wrote {sum(counts.values())} cards ({detail})")

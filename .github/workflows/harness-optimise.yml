@@ -10,7 +10,7 @@ on:
         required: false
         default: '3'
       dry_run:
-        description: 'Run the loop but do not push, open a PR, or file an issue.'
+        description: 'Run the loop but do not push, open a PR, or record a rejection.'
         required: false
         type: boolean
         default: false
@@ -22,7 +22,6 @@ concurrency:
 permissions:
   contents: write
   pull-requests: write
-  issues: write
 
 env:
   HARNESS_MIN_SIZE: ${{ github.event.inputs.min_size || '3' }}
@@ -387,31 +386,32 @@ jobs:
               --body-file /tmp/harness-body.md --label "$HARNESS_LABEL" --assignee "$HARNESS_ASSIGNEE"
           fi
 
-      - name: File rejection evidence and delete branch
+      - name: Record rejection and delete branch
         if: steps.bootstrap.outputs.ok == 'true' && steps.decide.outputs.accept != 'true' && env.HARNESS_DRY_RUN != 'true'
         continue-on-error: true
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          title="harness: proposal for ${CLUSTER_KEY} rejected"
-          {
-            echo "The weekly harness run (${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}) did not produce an acceptable proposal for this cluster. Evidence below; the branch was deleted."
-            echo
-            cat /tmp/harness-body.md 2>/dev/null || echo "_no evidence rendered_"
-          } > /tmp/harness-issue.md
-          existing=$(gh issue list --state open --search "\"$title\" in:title" --json number,title \
-            --jq "map(select(.title == \"$title\")) | .[0].number // empty")
-          if [ -n "$existing" ]; then
-            gh issue comment "$existing" --body-file /tmp/harness-issue.md
-            echo "commented on issue #$existing"
-          else
-            gh issue create --title "$title" --body-file /tmp/harness-issue.md --assignee "$HARNESS_ASSIGNEE"
-          fi
           git switch -q --detach "$BASE_SHA"
           git branch -D "$HARNESS_BRANCH" || true
           if git ls-remote --exit-code --heads origin "$HARNESS_BRANCH" >/dev/null 2>&1; then
             git push origin --delete "$HARNESS_BRANCH"
           fi
+          python3 scripts/harness/rejections.py append \
+            --run-id "$GITHUB_RUN_ID" \
+            --run-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add signals/harness/rejections.md
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "chore(harness): record rejected proposal for ${CLUSTER_KEY}"
+          for attempt in 1 2 3 4 5; do
+            git push origin HEAD:main && exit 0
+            echo "push attempt ${attempt} rejected; rebasing..." >&2
+            git pull --rebase origin main || { git rebase --abort; exit 1; }
+          done
+          exit 1
 
       - name: Upload harness artifacts
         if: always() && steps.cluster.outputs.eligible == 'true'

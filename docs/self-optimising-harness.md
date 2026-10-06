@@ -111,7 +111,7 @@ Where failures come from (the "failing call traces"):
 | Open question queued ≥3 times, never retired | agent cannot answer | `agent/unanswered_question` |
 | `agent-reached.txt` shorter than the queue | budget arithmetic | `agent/budget_shortfall` |
 | `tests/static` red on `main` after a sync commit | template drift | `synthesis/template_drift` |
-| Human correction (GitHub issue with label `harness:wrong-keep`, `harness:missed`, `harness:brief-error`) | authoritative | any; `origin.kind: human` and weight 3× in grading |
+| Human correction (a line in `signals/harness/human-labels.jsonl` — `{url, company, label, note, date}`, label `wrong-keep`/`missed`/`brief-error` — or, where Issues are enabled, a GitHub issue with the matching `harness:*` label) | authoritative | any; `origin.kind: human` and weight 3× in grading |
 
 The daily judge sample is the only new daily cost: ~40 kept + ~40 dropped
 candidates through `ab_judge.py` ≈ 80 cheap calls/day.
@@ -189,7 +189,13 @@ cards it touches, and must emit findings as
   would have caught the finding;
 - for each finding the proposer rejects: requires the id of an existing
   passing scenario that demonstrates the claim is wrong; otherwise the
-  finding stands and the PR is closed.
+  finding stands and the proposal is rejected.
+
+Rejected proposals are not filed as issues (Issues are disabled on this
+repository). `scripts/harness/rejections.py append` adds one section per
+rejected run — date, cluster, run URL, rung, verdict reasons, unresolved
+blocking findings, replay table — to `signals/harness/rejections.md`
+(oldest first, idempotent per run URL) and the workflow commits it to `main`.
 
 The reviewer runs on the *other* runtime from the proposer (nvidia proposes,
 zai reviews, or vice versa) so model-specific blind spots are less
@@ -218,7 +224,8 @@ correlated.
 - `harness-optimise.yml` — weekly (Sunday 15:00 UTC) + `workflow_dispatch`.
   Steps: write_scenarios → cluster → gate (any eligible cluster?) → propose →
   simulate on runtime A and B (matrix) → grade → review loop → open/refresh
-  PR on branch `harness/<cluster-slug>` or close with evidence. One PR open
+  PR on branch `harness/<cluster-slug>` or delete the branch and append the
+  evidence to `signals/harness/rejections.md`. One PR open
   at a time per layer; a second eligible cluster waits a week.
 - `harness-prune.yml` — monthly (1st, 07:00 UTC).
 - `evals.yml` `fast` job additionally runs the **deterministic** graders over
