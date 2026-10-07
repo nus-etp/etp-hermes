@@ -1,9 +1,11 @@
 # Addlly AI — LIVING BRIEF
-_Last updated: 2026-07-24 14:40 UTC_
+_Last updated: 2026-10-07 22:38 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 BLOCK71 Singapore-resident GenAI content-marketing startup operating a zero-prompt AI content-creation suite covering blog writing, social media posts, and multi-language Asian-market support. Its GEO (Generative Engine Optimization) Audit Agent helps brands understand their AI search visibility across platforms like ChatGPT, Google AI Overviews, and Perplexity.
+
+_Last material event: 2026-06-02 — Named to the SuperAI 2026 Genesis Top 50 startup cohort_
 
 ## Profile
 - Sector: AI / SaaS
@@ -18,14 +20,13 @@ BLOCK71 Singapore-resident GenAI content-marketing startup operating a zero-prom
 _none_
 
 ## Older signals
-- **2026-06-02** — Corroborates the 2026-06-02 SuperAI Genesis Top 50 announcement via wire syndication; no new facts. — [smartsbusinesswire.com](https://www.smartsbusinesswire.com/article/916758240-addlly-ai-named-superai-genesis-top-50-startup-strengthening-its-position-as-a-trusted-enterprise-geo-platform)
-- **2026-06-02** — Addlly AI selected for the SuperAI Genesis Top 50 Startup cohort, powered by OpenAI and Microsoft for Startups, strengthening its position as an enterprise GEO platform — [addlly.ai](https://addlly.ai/press/addlly-ai-named-superai-genesis-top-50-startup)
+- **2026-06-02** — Addlly AI selected for the SuperAI Genesis Top 50 Startup cohort, powered by OpenAI and Microsoft for Startups, strengthening its position as an enterprise GEO platform — [addlly.ai](https://addlly.ai/press/addlly-ai-named-superai-genesis-top-50-startup) (Also reported by: [smartsbusinesswire.com](https://www.smartsbusinesswire.com/article/916758240-addlly-ai-named-superai-genesis-top-50-startup-strengthening-its-position-as-a-trusted-enterprise-geo-platform), [natlawreview.com](https://natlawreview.com/press-releases/addlly-ai-named-superai-genesis-top-50-startup-strengthening-its-position))
   - Summary: Addlly AI was named to the Genesis Top 50 Startup Cohort at SuperAI 2026, one of Asia's leading AI conferences held in Singapore June 10-11. The recognition highlights the company's enterprise-grade AI Marketing Agents and GEO Audit Agent, which help brands manage visibility across AI-generated search results.
   - People: Tina Chopra (Co-founder & CEO)
   - Counterparties: OpenAI, Microsoft for Startups
+  - Numbers: 35+ enterprise customers; brand customers include Johnson's Baby, Aveeno, Stayfree, MetLife, Organic India, Kenvue Group, Shiseido and Tata Sampann; SOC 2 compliant
   - Quote: "The next battleground for brands will not just be search rankings, but how they are understood, cited, and recommended by AI engines." — Tina Chopra, Co-Founder and CEO
 
 ## Open questions
-- What is Addlly's current customer count and revenue trajectory?
 - Has Addlly raised a follow-on round beyond its Seed at SGD 5M valuation cap?
 - How does Addlly differentiate from incumbent AI content and SEO platforms entering the GEO space?

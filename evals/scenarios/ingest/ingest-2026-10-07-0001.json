@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_drop/flow-coffee/vulcanpost.com",
+  "created_by": "write_scenarios@run 37692032897",
+  "expected": {
+    "company": "Flow Coffee",
+    "reason": "Profiles the specific Singapore Flow Coffee startup's vending machine product and traction (23K cups/month).",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'These S’poreans built a vending machine that makes cafe-style coffee—& it’s selling 23K cups/ mth' for Flow Coffee",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-07-0001",
+  "input": {
+    "candidate": {
+      "description": "They thought vending machine coffee was terrible, so they built one themselves Vending machine coffee often has a reputation for being watery and bitter—it&#8217;s the kind of drink you settle for just because it&#8217;s convenient. But Flow Coffee is trying to change that assumption. Over the past year, its vending machines have used real Meiji [&#8230;]",
+      "matched": [
+        "Flow Coffee"
+      ],
+      "source": "Vulcan Post",
+      "title": "These S’poreans built a vending machine that makes cafe-style coffee—& it’s selling 23K cups/ mth",
+      "url": "https://vulcanpost.com/913366/flow-coffee-vending-machine"
+    },
+    "companies": {
+      "Flow Coffee": {
+        "description": "The Hangar (NUS Enterprise)-resident Singapore coffee / F&B startup. Limited public-English information beyond the directory listing — drop unrelated 'Flow' (Bay Area co-living) and other 'Flow Coffee' cafe brand mentions unless the article explicitly references this Hangar entity."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-07",
+    "kind": "judge_disagreement",
+    "run_id": "37692032897",
+    "source": "2026-10-07.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

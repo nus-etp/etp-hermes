@@ -1,0 +1,123 @@
+{
+  "candidates": [
+    {
+      "company": "Flow Coffee",
+      "dedup_key": "https://vulcanpost.com/913366/flow-coffee-vending-machine/",
+      "description": "They thought vending machine coffee was terrible, so they built one themselves Vending machine coffee often has a reputation for being watery and bitter\u2014it&#8217;s the kind of drink you settle for just because it&#8217;s convenient. But Flow Coffee is trying to change that assumption. Over the past year, its vending machines have used real Meiji [&#8230;]",
+      "headline": "These S\u2019poreans built a vending machine that makes cafe-style coffee\u2014& it\u2019s selling 23K cups/ mth",
+      "link": "https://vulcanpost.com/913366/flow-coffee-vending-machine/",
+      "pubDate": "Wed, 07 Oct 2026 09:29:24 +0000",
+      "source": "Vulcan Post",
+      "source_kind": "firehose"
+    }
+  ],
+  "companies": {
+    "Flow Coffee": "The Hangar (NUS Enterprise)-resident Singapore coffee / F&B startup. Limited public-English information beyond the directory listing \u2014 drop unrelated 'Flow' (Bay Area co-living) and other 'Flow Coffee' cafe brand mentions unless the article explicitly references this Hangar entity."
+  },
+  "fetch_failed": [
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "kind": "firehose",
+      "url": "https://thelowdown.momentum.asia/feed/"
+    },
+    {
+      "company": "PharLyfe+",
+      "error": "HTTP Error 404: Not Found",
+      "kind": "rss",
+      "url": "https://pharlyfeplus.com/news-update/f.rss"
+    }
+  ],
+  "generated_at": "2026-10-07T21:57:51+00:00",
+  "jina_recovered": [],
+  "llm_fetch_required": [
+    {
+      "company": "Ailytics",
+      "hint": "Webflow CMS listing under div.collection-list-wrapper-2.w-dyn-list. Each item is a div.div-block-78 containing a category label in div.category, a headline in div.text-block-27 (treat as the title), and a date as plain text in div.text-block-29 (e.g. 'April 28, 2026'). About 6 items shown in reverse chronological order. Resolve relative item links against https://www.ailytics.ai/.",
+      "label": "news",
+      "url": "https://www.ailytics.ai/news"
+    },
+    {
+      "company": "Cellivate Technologies",
+      "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/.",
+      "label": "press",
+      "url": "https://www.cellivatetech.com/recognition"
+    },
+    {
+      "company": "Craft Health",
+      "hint": "Craft Health 'Latest News' page is a chronological press/achievements timeline organised by year and month headers (e.g. '2021', then 'January 2021'). Each entry is a bullet line of plain text describing a media mention or award, often with an inline '[<Read_More>]' or named hyperlink to an external article. Dates come from the month/year section headings, not per-item. Resolve relative links against https://www.crafthealth.me/.",
+      "label": "news",
+      "url": "https://www.crafthealth.me/newsletter"
+    },
+    {
+      "company": "HiCura",
+      "hint": "WordPress (Yoast SEO) press-release page on hicuramedical.com. Each item is a row containing a publisher logo/thumbnail, a bolded headline (in <strong> tags rather than h2/h3), a short description, and a 'View Article' link to an external publisher URL. No explicit per-item date elements; dates only appear inline within some headlines (e.g. '2023'). Resolve relative links against https://hicuramedical.com/.",
+      "label": "press",
+      "url": "https://hicuramedical.com/press-release/"
+    },
+    {
+      "company": "insightic",
+      "hint": "Card-based blog listing on insightic.io. Each card contains a thumbnail image (from /img/), a category badge ('insightic research', 'community resource', 'new partnership'), a clickable headline that links to the individual post URL, and a publication date in 'Day Mon DD YYYY' format (e.g. 'Tue Oct 31 2023') displayed below the headline. Resolve relative links against https://insightic.io/.",
+      "label": "blog",
+      "url": "https://insightic.io/blog"
+    },
+    {
+      "company": "lalia",
+      "hint": "Card-based press listing for Lalia Pte Ltd (Singapore). Each card has a thumbnail image, an <h3> headline (often in Japanese), a secondary line with the source URL, and a publication date in 'YYYY/MM/DD' format below it. Each card wraps in an <a> tag linking to the full article (often external publishers). Resolve relative links against https://read.lalia.com.sg/.",
+      "label": "press",
+      "url": "https://read.lalia.com.sg/press"
+    },
+    {
+      "company": "NEU Battery Materials",
+      "hint": "News listing is vertically-stacked article cards; each card has a headline, publication date, brief description, and 'Read more' link. Relative links resolve against https://www.neumaterials.com/.",
+      "label": "newsroom",
+      "url": "https://www.neumaterials.com/news"
+    },
+    {
+      "company": "seamless",
+      "hint": "Seamless XR (NUS spin-off) news page. Each entry is a link block: headline text directly followed by the publication date in 'Mon DD, YYYY' format (e.g. 'Nov 30, 2025'). No dedicated <article> tag; items appear as anchor links with the date bundled inline after the title. A 'Load More' button loads additional items. Resolve relative links against https://www.seamless.sg.",
+      "label": "news",
+      "url": "https://www.seamless.sg/news"
+    },
+    {
+      "company": "seamless",
+      "hint": "Seamless XR blog index. Each post is a link element with the headline followed by the date in 'Mon DD, YYYY' format and a path like /blog/<slug>. About 11 entries listed, dated through Mar 2026. Resolve relative links against https://www.seamless.sg.",
+      "label": "blog",
+      "url": "https://www.seamless.sg/blog"
+    },
+    {
+      "company": "SENSORi",
+      "hint": "SENSORI Healthcare news listing. Each item is an anchor (<a>) wrapping the entry with the headline rendered as an <h4> (e.g. 'SENSORI Healthcare Wins Third Prize at Two Innovation and Entrepreneurship Competitions') and the date below in YYYY-MM-DD format (e.g. '2025-12-03'). Items are tagged 'News' and ordered newest-first. Resolve relative links against https://www.sensorihealthcare.com.",
+      "label": "news",
+      "url": "https://www.sensorihealthcare.com/h-col-157.html"
+    },
+    {
+      "company": "Soynergy",
+      "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com.",
+      "label": "news",
+      "url": "https://www.soynergy.com/category/news/"
+    },
+    {
+      "company": "spacejot",
+      "hint": "Blog listing on Spacejot's web app. Each post is rendered with an h3 headline that links to /blog/<slug>, with the publication date (e.g. 'Jul 06, 2024') displayed adjacent to the title. Resolve relative links against https://www.spacejot.app/.",
+      "label": "blog",
+      "url": "https://www.spacejot.app/blog"
+    },
+    {
+      "company": "Synectify",
+      "hint": "Synectify newsroom listing multiple dated entries (14+ items, Sep 2021 onward). Each item appears as a div block with an h3 title and a date string shown above or near it (e.g. 'January, 9th 2023'). Resolve relative links against https://www.synectify.com/.",
+      "label": "news",
+      "url": "https://www.synectify.com/news.html"
+    }
+  ],
+  "stats": {
+    "candidates": 1,
+    "companies_matched": 1,
+    "excluded_by_terms": 0,
+    "fetch_failed": 2,
+    "jina_candidates": 0,
+    "jina_recovered": 0,
+    "llm_fetch_required": 13,
+    "pre_extracted_capped": 0,
+    "weak_term_suppressed": 1
+  }
+}
