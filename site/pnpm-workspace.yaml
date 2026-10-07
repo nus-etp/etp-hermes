@@ -65,6 +65,10 @@ overrides:
   # GHSA-68fv-2mgg-jv7q (source-map-js event-loop DoS via unvalidated indexed
   # source-map offsets): pulled in by @tailwindcss/node; patch bump.
   'source-map-js': '^1.2.2'
+  # GHSA-wq5f-xc86-pv6w / CVE-2026-96889 (librsvg memory-safety bug enabling
+  # possible RCE on glibc Linux): sharp bundles librsvg and next pulls sharp
+  # in as an optional dep; patch bump.
+  sharp: '^0.35.5'
 
 publicHoistPattern:
   - '*prettier*'
