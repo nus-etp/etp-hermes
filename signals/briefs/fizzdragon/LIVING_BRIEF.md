@@ -1,5 +1,5 @@
 # FizzDragon — LIVING BRIEF
-_Last updated: 2026-09-11 17:06 UTC_
+_Last updated: 2026-10-09 21:44 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -16,12 +16,16 @@ _Last material event: 2026-08-09 — AI-generated feature “Trace Project” pr
 _No disclosed funding._
 
 ## Recent signals
+- **2026-10-07** — Fortune's Asia entertainment feature centers AI-made film on FizzDragon's Trace Project and quotes founder-CEO Pax Chen on the medium's diversity upside — [fortune.com](https://fortune.com/2026/10/07/ai-entertainment-china-technology)
+  - Summary: Fortune's feature on whether generative AI will kill or reinvent Asian entertainment names FizzDragon's Trace Project — one of two AI-generated films that marked Singapore's 61st birthday — and quotes founder-CEO Pax Chen, who argues AI helps creators whose audiences are under-represented in Hollywood. The piece situates FizzDragon in a regional wave, citing Chinese state media that over 95% of the 120,000-plus Chinese microdramas released in Q1 2026 were AI-generated, while noting industry anxiety over lost jobs and unresolved authorship. It discloses no new FizzDragon figures on funding, viewership or revenue.
+  - People: Pax Chen (Founder and CEO, FizzDragon)
+  - Quote: "People like to watch films because they see themselves in them. Asian people, however, may not often see themselves in Hollywood films" — Pax Chen, FizzDragon
+
+## Older signals
 - **2026-09-08** — CNA AI-filmmaking feature quotes FizzDragon's Pax Chen on cost and speed gains, and records the critical reception of Trace Project — [channelnewsasia.com](https://www.channelnewsasia.com/singapore/ai-films-what-does-it-mean-singapore-film-industry-6367711)
   - Summary: A CNA feature on what AI filmmaking means for Singapore's film industry cites FizzDragon founder and CEO Pax Chen on generative AI lowering entry barriers for creators and shortening production; FizzDragon is described as a Singapore-headquartered AI filmmaking and digital creator platform. The piece also records that Trace Project, released over the National Day weekend, drew criticism over its characters, dialogue and inaccuracies, including a Singapore flag with six stars. Industry voices quoted — B-01 Films' Boi Kwong, SUTD's Debbie Ding, NTU's Pei Sze Chow and The Actors' Society's Laura Kee — argue that AI cannot yet replicate human performance, removes "creative friction", and leaves authorship and performer protections unresolved in Singapore.
   - People: Pax Chen (Founder and CEO, FizzDragon), Boi Kwong (Executive Producer, B-01 Films), Debbie Ding (Assistant Professor of Practice, SUTD), Laura Kee (Chairperson, The Actors' Society)
   - Quote: "First, it lowers the entry barrier to get into the creative industry for many creators, and secondly, that (production) is much faster and it's easy to modify" — Pax Chen, founder and CEO, FizzDragon
-
-## Older signals
 - **2026-08-06** — FizzDragon's AI-generated sci-fi feature "Trace Project" premieres Aug 9 at Golden Village VivoCity before release on the FizzDragon App; distribution confirmed in Malaysia and the US — [mothership.sg](https://mothership.sg/2026/08/singapore-ai-film-national-day/)
   - Summary: Mothership profiles "Trace Project", a 64-minute AI-generated sci-fi feature produced by FizzDragon and slated for a single National Day (Aug 9) screening at Golden Village VivoCity before release on the FizzDragon App. Founder and CEO Pax Chen, who wrote the source novel, says the roughly 10-person, three-country production is an experiment in whether small teams using new-generation creative technology can reach beyond the limitations that traditionally determine what stories get made — following FizzDragon's earlier feature "Pirate Queen: Zheng Yi Sao", built by more than 130 creators from 13 countries. Chen publicly pushed back on "AI slop" criticism of the film, and FizzDragon said distribution is confirmed across platforms and markets in Malaysia and the US.
   - People: Pax Chen (Founder and CEO, FizzDragon)

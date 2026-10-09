@@ -27,13 +27,14 @@ _Last material event: 2026-09-07 — Carousell Autos launches Car Drops, Singapo
 _Total disclosed: $440.6M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-09-08** — Carousell Autos launches Car Drops, billed as Singapore's first consumer car auction: owner-listed cars drop daily and verified consumers bid online at dealer-level prices — [techinasia.com](https://www.techinasia.com/news/carousell-autos-launches-consumer-car-auction-singapore) (Also reported by: [oneshift.com](https://www.oneshift.com/articles/news/carousell-autos-launches-singapores-first-consumer-car-auction/), [press.carousell.com](https://press.carousell.com/2026/09/09/carousell-autos-launches-singapores-first-consumer-car-auction/))
   - Summary: Carousell Autos opened its dealer-auction listings to consumer bidders with Car Drops, which it describes as Singapore's first consumer car auction: fresh owner-listed cars drop daily with 48-hour bidding windows, and verified everyday buyers bid alongside professional dealers without an upfront viewing. If a bid is accepted, a Carousell Autos specialist arranges a joint viewing and can coordinate inspection, financing, insurance, ownership transfer, and repairs. The company frames it as an additional consumer channel that widens the seller's buyer pool and supports vehicle circulation in Singapore's automotive recommerce market.
   - People: Melissa Wong (Marketing Manager, Carousell Autos)
   - Numbers: 48-hour bidding window per car, daily drops of owner-listed cars
   - Quote: "This new auction experience is designed as an additional consumer channel alongside Carousell Autos’ existing dealer auction process, giving sellers a wider pool of potential buyers while allowing consumers to discover more pre-owned cars" — Melissa Wong, Marketing Manager, Carousell Autos
-
-## Older signals
 - **2026-08-21** — Carousell Malaysia adds Shopee's SPX Express as a Carousell Official Delivery logistics partner, bringing label-less shipping and 1,000+ drop-off points across West Malaysia — [press.carousell.com](https://press.carousell.com/2026/08/21/carousell-malaysia-expands-delivery-options-through-partnership-with-spx-express-malaysia/) (Also reported by: [lowyat.net](https://www.lowyat.net/2026/401934/carousell-spx-express-expand-delivery))
   - Summary: Carousell Malaysia partnered with SPX Express Malaysia to expand Carousell Official Delivery: sellers get label-less shipping (in-app digital shipping info, printed by service-point staff) across more than 1,000 SPX service points in West Malaysia, while buyers get doorstep delivery and promotional rates from RM3.50. Carousell cites H1 2026 marketplace data showing nearly 9 in 10 orders delivery-fulfilled as the rationale for cutting seller shipping friction.
   - People: Vishal Salunkhe (Chief Business Officer, Carousell), Cheah Lee Sun (Head of SPX Express Malaysia)

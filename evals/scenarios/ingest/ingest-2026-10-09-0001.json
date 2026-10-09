@@ -1,0 +1,42 @@
+{
+  "cluster": "ingest/false_drop/concreteai/techinasia.com",
+  "created_by": "write_scenarios@run 37993859704",
+  "expected": {
+    "company": "ConcreteAI",
+    "reason": "Profiles ConcreteAI's sensor product and its construction-cycle impact",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Replacing century-old concrete tests with IoT' for ConcreteAI",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-09-0001",
+  "input": {
+    "candidate": {
+      "description": "ConcreteAI replaces outdated lab tests with smart sensors and specialized curing tanks to speed up construction cycles by up to 30%.",
+      "matched": [
+        "ConcreteAI"
+      ],
+      "source": "Tech in Asia",
+      "title": "Replacing century-old concrete tests with IoT",
+      "url": "https://www.techinasia.com/replacing-centuryold-concrete-tests-iot"
+    },
+    "companies": {
+      "ConcreteAI": {
+        "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-09",
+    "kind": "judge_disagreement",
+    "run_id": "37993859704",
+    "source": "2026-10-09.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

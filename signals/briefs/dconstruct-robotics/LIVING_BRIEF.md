@@ -1,5 +1,5 @@
 # dConstruct Robotics — LIVING BRIEF
-_Last updated: 2026-09-15 17:34 UTC_
+_Last updated: 2026-10-09 21:44 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -28,9 +28,14 @@ _No disclosed funding._
   - Summary: He Ruijie (RJ), PhD joins dConstruct's Tech Council to advise on engineering talent acquisition in the United States and provide strategic guidance on product direction and engineering excellence. RJ brings over a decade of experience in autonomous systems and is currently a Founding Technical Member at Mind Robotics, having previously co-founded two robotics startups from concept to deployment.
   - People: He Ruijie (RJ) (Tech Council Advisor); Chinn Hwa Lim (CEO and Founder)
   - Numbers: Founded 2021; three offices globally
+- **2025-12-09** — dConstruct and Texas humanoid-robot builder Persona AI announced a strategic partnership to pursue Singapore's automation market and the wider Asia-Pacific humanoid market, launched with a joint showing at the NRP-hosted RoboSG! event — [dconstruct.ai](https://www.dconstruct.ai/news/persona-ai-and-dconstruct-robotics-announce-partnership-for-humanoid-market-growth-in-asia-pacific)
+  - Summary: dConstruct Robotics and Persona AI, a Texas-based startup building a heavy-duty humanoid robot, announced a strategic partnership to pursue Singapore's automation market, industrial customers and government programs. Persona AI is considering Singapore for a future expansion site and, with Persona's input, dConstruct is targeting US expansion; the two were to appear together at the NRP-hosted RoboSG! showcase (Mar 14-15). The tie-up is market development and co-marketing rather than joint product work — it does not take dConstruct's SLAM and reality-capture stack into humanoid platforms.
+  - People: Nicolaus Radford (CEO, Persona AI), Jide Akinyode (COO, Persona AI), Jerry Pratt (CTO, Persona AI), Chinn Lim (CEO, dConstruct Robotics)
+  - Counterparties: Persona AI (partner)
+  - Numbers: Persona AI raised an 8-figure pre-seed; RoboSG! showcase Mar 14-15
 
 ## Open questions
 - What is the commercial structure of the Foxconn MOU — manufacturing partnership, joint development, or licensing?
 - Which disclosed clients (Boustead Projects, DSTA, SBS Transit, Softbank Robotics Singapore) are revenue-generating deployments versus pilots?
 - JRE Ventures appears both as Series A lead and as a named client — strategic investor-customer or coincidental roles?
-- What does the Persona AI humanoid partnership cover — joint development, integration or deployment — and does it take dConstruct beyond SLAM-based navigation into humanoid platforms?
+- Has the Persona AI partnership progressed beyond its launch showcase into any joint product, deployment or commercial arrangement?
