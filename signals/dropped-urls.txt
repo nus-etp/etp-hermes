@@ -3,8 +3,6 @@
 # (default 30) so a false-negative drop gets re-judged instead of being lost
 # forever; scripts/collect-candidates.py prunes expired lines at the start of
 # each run. Keys we KEPT go to signals/seen-urls.txt (permanent) instead.
-2026-09-10	https://www.businesstimes.com.sg/companies-markets/energy-commodities/brent-oil-hits-us100-us-iran-war-shows-little-sign-abating
-2026-09-10	https://technode.global/2026/09/08/carousell-autos-consumer-car-auction-singapore
 2026-09-11	https://ecommerce-times.com/adobe-commerce-cloud-acquires-constructor-io-in-310m-deal
 2026-09-11	https://ecommerce-times.com/adobe-commerce-clouds-2-1b-acquisition-of-constructor-io-reshapes-ecommerce-search
 2026-09-11	https://velocitystartups.com/story/1f821365-1ae2-4484-8e66-07cd8d05caaf
