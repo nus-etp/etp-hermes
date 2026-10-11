@@ -1,5 +1,5 @@
 # Assemblr — LIVING BRIEF
-_Last updated: 2026-09-15 17:34 UTC_
+_Last updated: 2026-10-11 22:12 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -19,7 +19,9 @@ _Last material event: 2026-08-11 — Assemblr EDU listed on Learning Cabinet, a 
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-09-24** — ImajiNation 2026 closed registration with 6,800 student and educator participants, moving into national judging — [assemblrworld.com](https://www.assemblrworld.com/blog/imajination-2026-registration-and-project-submission-officially-closed-6800-students-and-educators-enter-the-judging-stage)
+  - Summary: Assemblr EDU closed registration and project submission for ImajiNation 2026 — the national Visual Coding competition it runs with Indonesia's Kemendikdasmen and Samsung for Education — with 6,800 student and educator participants, short of the 11,000+ the launch announcement targeted. Submitted projects now enter national judging running 22 September to 22 October 2026, scored by a panel against category-specific criteria.
+  - Numbers: 6,800 participants; judging 22 Sep–22 Oct 2026
 
 ## Older signals
 - **2026-08-11** — Assemblr EDU added to Learning Cabinet, a curated global EdTech platform built on the EdTech for Good Framework (UNICEF, Finland's MFA, Arm, ADB), extending its 3D/AR distribution beyond Indonesia — [assemblrworld.com](https://www.assemblrworld.com/id/blog/assemblr-edu-kini-hadir-di-learning-cabinet-perluas-akses-pembelajaran-interaktif-berbasis-3d-ar-untuk-guru-dan-murid-di-seluruh-dunia) (Also reported by: [assemblrworld.com](https://www.assemblrworld.com/blog/assemblr-edu-now-available-on-learning-cabinet-expanding-access-to-interactive-3d-ar-learning-for-teachers-and-students-worldwide))

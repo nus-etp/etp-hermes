@@ -1,5 +1,5 @@
 # ConcreteAI — LIVING BRIEF
-_Last updated: 2026-10-05 23:23 UTC_
+_Last updated: 2026-10-11 22:12 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -17,7 +17,7 @@ _Last material event: 2026-08-04 — Selected as one of six APAC Pitch Day final
 _Total disclosed: $0.6M._
 
 ## Recent signals
-_none_
+- **2026-10-09** — Tech in Asia coverage of ConcreteAI's IoT approach to replacing century-old concrete cube testing — [techinasia.com](https://www.techinasia.com/replacing-centuryold-concrete-tests-iot)
 
 ## Older signals
 - **2026-08-04** — Named one of six APAC Pitch Day finalists in the Construction Startup Competition 2026, pitching at IBEW Singapore on 2 September 2026 — [cemexventures.com](https://www.cemexventures.com/startup-competition-2026-apac-finalists) (Also reported by: [bca.gov.sg](https://www1.bca.gov.sg/resources/newsroom/winner-of-the-inaugural-asia-pacific-edition-of-the-world-s-largest-competition-for-construction-start-ups), [intelligentbuild.tech](https://intelligentbuild.tech/2026/08/18/construction-startup-competition-2026-apac-pitch-day-finalists-announced))

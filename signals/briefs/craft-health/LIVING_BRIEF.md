@@ -1,11 +1,11 @@
 # Craft Health — LIVING BRIEF
-_Last updated: 2026-09-12 16:14 UTC_
+_Last updated: 2026-10-11 22:12 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-Craft Health is a Singapore pharmaceutical-technology startup, incubated under NUS GRIP, building CraftMake — a GMP-ready pharmaceutical 3D printing platform combining printer hardware, CraftControl software and CraftBlends printable formulations for customized medicine and compounding. In July 2026, Canadian specialty-pharma company PharmaTher (CSE: PHRM) agreed to evaluate CraftMake for personalized peptide production under its Personaliz3D Peptides initiative, including a potential broader commercial deployment to US Section 503A compounding pharmacies — a validation step that moves the platform from lab-scale toward commercial adoption.
+Craft Health is a Singapore pharmaceutical-technology startup, incubated under NUS GRIP, building CraftMake — a GMP-ready pharmaceutical 3D printing platform combining printer hardware, CraftControl software and CraftBlends printable formulations for customized medicine and compounding. Canadian specialty-pharma company PharmaTher (CSE: PHRM) is now its exclusive North American distributor: after agreeing in July 2026 to evaluate CraftMake for personalized peptides under its PERSONALIZ3D initiative, PharmaTher signed a distribution agreement in October 2026 covering CraftMake printers, CraftControl software, CraftBlends formulations, consumables and service across 503A/503B compounding pharmacies, telehealth, CDMOs, hospitals, academia, government and pharma/biotech customers — moving the platform from lab-scale validation toward commercial deployment in the US and Canada.
 
-_Last material event: 2026-07-29 — PharmaTher collaboration to evaluate CraftMake for personalized peptide manufacturing_
+_Last material event: 2026-10-01 — PharmaTher signs exclusive North American distribution agreement for the CraftMake platform_
 
 ## Profile
 - Sector: MedTech
@@ -19,7 +19,11 @@ _Last material event: 2026-07-29 — PharmaTher collaboration to evaluate CraftM
 _Total disclosed: $1.0M._
 
 ## Recent signals
-_none_
+- **2026-10-01** — PharmaTher (CSE: PHRM) signed an exclusive North American distribution agreement for CraftMake, opening the US and Canadian markets across all customer segments — [newsfilecorp.com](https://www.newsfilecorp.com/release/316740/PharmaTher-Enters-into-Exclusive-North-American-Distribution-Agreement-with-Craft-Heal)
+  - Summary: PharmaTher Holdings became the exclusive North American distributor of Craft Health's CraftMake 3D printers, CraftControl software, CraftBlends printable formulations, consumables and service, covering compounding pharmacies (503A and 503B), telehealth and digital-health companies, CDMOs, hospitals, academic and government institutions, and pharma/biotech customers. The agreement builds on the July 2026 collaboration to evaluate CraftMake for personalized peptides and underpins PharmaTher's PERSONALIZ3D platform. PharmaTher plans initial CraftMake platform orders in Q4 2026 and estimates more than 10,000 potential placement sites in North America, each designed to generate recurring revenue.
+  - People: Fabio Chianelli (CEO, PharmaTher)
+  - Counterparties: PharmaTher Holdings (exclusive North American distributor)
+  - Numbers: 10,000+ potential North American placement sites; ~7,500 US compounding pharmacies (APhA estimate); ±1% dosing accuracy; first orders planned Q4 2026; personalized-medicine market US$567B (2024) → US$1.2T (2033)
 
 ## Older signals
 - **2026-07-29** — PharmaTher (CSE: PHRM) signs collaboration to evaluate Craft Health's CraftMake 3D-printing platform for personalized peptide doses, with a path toward US compounding-pharmacy deployment — [newsfilecorp.com](https://www.newsfilecorp.com/release/307086/PharmaTher-Collaborates-with-Craft-Health-to-Evaluate-CraftMakeTM-GMPReady-Pharmaceutical-3D-Printing-Platform-for-Personalized-Peptides) (Also reported by: [3dprintingindustry.com](https://3dprintingindustry.com/news/craft-healths-craftmake-platform-gets-a-peptide-test-run-253591/), [investingnews.com](https://investingnews.com/pharmather-collaborates-with-craft-health-to-evaluate-craftmake-gmp-ready-pharmaceutical-3d-printing-platform-for-personalized-peptides), [biospace.com](https://www.biospace.com/press-releases/pharmather-collaborates-with-craft-health-to-evaluate-craftmaketm-gmp-ready-pharmaceutical-3d-printing-platform-for-personalized-peptides))
@@ -31,4 +35,4 @@ _none_
 
 ## Open questions
 - Has Craft Health raised a further round since its May 2024 Series A, and at what valuation?
-- Will either party publish the evaluation's formulation or release-profile results before committing to commercial deployment?
+- What initial CraftMake order volume and revenue-sharing terms does the PharmaTher North American distribution agreement carry?

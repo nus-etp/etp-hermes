@@ -1,11 +1,11 @@
 # Constructor.io — LIVING BRIEF
-_Last updated: 2026-09-18 16:59 UTC_
+_Last updated: 2026-10-11 22:12 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 US-based enterprise eCommerce search and product-discovery platform using NLP and ML ranking to power personalized search, browse, and recommendations for major retailers. Already profitable and serving brands like Sephora, Petco, and Under Armour, Constructor recently raised a $25M Series B as an insurance policy — with minimal planned spend and a focus on R&D and EMEA expansion.
 
-_Last material event: 2026-08-29 — Won three Gold Stevie Company of the Year awards across three programmes, plus Gold product awards for its AI Product Insights Agent_
+_Last material event: 2026-10-05 — Launched Agentic Checkout with Stripe, embedding Stripe-powered payment inside its AI shopping agents_
 
 ## Profile
 - Sector: AI / SaaS
@@ -20,7 +20,10 @@ _Last material event: 2026-08-29 — Won three Gold Stevie Company of the Year a
 _Total disclosed: $55.0M._
 
 ## Recent signals
-_none_
+- **2026-10-05** — Launched Agentic Checkout with Stripe, letting shoppers complete a purchase from inside Constructor's AI shopping agents without leaving the conversation — [constructor.com](https://constructor.com/blog/introducing-agentic-checkout-from-constructor-and-stripe)
+  - Summary: Constructor partnered with Stripe to launch Agentic Checkout, which lets shoppers ask an AI agent for recommendations, refine their choices and pay — via Stripe Checkout or Pay with Link — within the same agentic chat. Constructor says it is the first company to offer Stripe-powered checkout directly within onsite shopping agents, fusing discovery and checkout into one interface and removing a conversion handoff. The post cites Baymard Institute research that 17% of shoppers abandon an order because checkout is too long or complicated, and that roughly 70% of shopping carts are abandoned overall.
+  - Counterparties: Stripe (payments partner)
+  - Numbers: 17% abandon due to long or complicated checkout (Baymard); ~70% cart abandonment overall
 
 ## Older signals
 - **2026-08-29** — Won three Gold "Company of the Year" honours across the International Business Awards, the Stevie Awards for Technology Excellence and the American Business Awards, plus Gold product awards for its AI Product Insights Agent — [techday.com](https://techday.com/story/constructor-wins-trio-of-stevie-gold-awards-for-ecommerce) (Also reported by: [prnewswire.com](https://www.prnewswire.com/news-releases/ai-innovation-at-constructor-leads-to-3-gold-company-of-the-year-wins-across-3-stevie-awards-programs-302861732.html), [martechcube.com](https://martechcube.com/constructor-wins-3-gold-stevie-awards-for-ai-innovation))
@@ -53,3 +56,4 @@ _none_
 - How does Constructor's AI Shopping Assistant (ASA) tool differentiate from broader generative AI search products?
 - What drove the 45% YoY headcount growth if the company wasn't actively fundraising?
 - Will the Series B trigger any changes to Constructor's ownership or board structure?
+- What commercial terms govern the Constructor–Stripe Agentic Checkout partnership, and does Constructor share payment-conversion revenue?

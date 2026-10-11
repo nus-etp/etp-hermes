@@ -1,5 +1,5 @@
 # Stratificare — LIVING BRIEF
-_Last updated: 2026-10-07 22:38 UTC_
+_Last updated: 2026-10-11 22:12 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,7 +20,9 @@ _Last material event: 2026-06-29 — S$500,000 Deep SAGE programme award from TI
 _Total disclosed: $0.7M._
 
 ## Recent signals
-_none_
+- **2026-09-30** — StratifiCare showcased its precision-diagnostics pipeline at the A5X Global Innovation & Venture Summit startup showcase on 24 September, courting global investors — [stratificare.com](https://www.stratificare.com/post/showcasing-our-vision-at-the-a5x-global-innovation-venture-summit-2026)
+  - Summary: StratifiCare joined the startup showcase at the A5X Global Innovation & Venture Summit on 24 September 2026, presenting its precision-diagnostics pipeline to an audience of global innovators, investors and industry leaders. The company said it engaged with Heng Swee Keat, the former Deputy Prime Minister of Singapore.
+  - People: Heng Swee Keat (former Deputy Prime Minister of Singapore)
 
 ## Older signals
 - **2026-06-29** — S$500,000 award from TIS Inc. after its Deep SAGE demo-day pitch, earmarked for the StratifiREY liver-cancer blood test — [stratificare.com](https://www.stratificare.com/post/stratificare-secures-s-500-000-investment-from-tis-inc-to-advance-precision-diagnostics) (Also reported by: [en.prnasia.com](https://en.prnasia.com/releases/apac/deep-sage-plugs-execution-gap-as-global-deep-tech-start-ups-demonstrate-scalable-growth-at-inaugural-demo-day-527058.shtml), [prnewswire.com](https://prnewswire.com/apac/news-releases/deep-sage-plugs-execution-gap-as-global-deep-tech-start-ups-demonstrate-scalable-growth-at-inaugural-demo-day-302727036.html))

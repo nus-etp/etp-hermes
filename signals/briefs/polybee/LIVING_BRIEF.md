@@ -1,5 +1,5 @@
 # polybee — LIVING BRIEF
-_Last updated: 2026-09-17 17:33 UTC_
+_Last updated: 2026-10-11 22:12 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -22,10 +22,10 @@ _Total disclosed: $4.3M._
 _none_
 
 ## Older signals
-- **2026-07-20** — Polybee signed a new non-exclusive commercial partnership with Bayer to scale its AI yield-forecasting platform through Bayer's existing grower relationships, extending it from fruit into spinach and broccoli with lettuce due by end-2026 — [freshplaza.com](https://www.freshplaza.com/north-america/article/9858864/ai-crop-forecaster-takes-the-next-step-in-scaling-up/)
-  - Summary: FreshPlaza reports that Polybee's new commercial partnership with Bayer expands access to its yield-forecasting technology via Bayer's existing customer relationships, which founder-CEO Siddharth Jadhav frames as the next stage of scaling after years of proving grower returns. Polybee charges a flat fee per hectare covering equipment, software, setup, maintenance and support, and says growers who follow its harvest-timing recommendations see three to seven times return within the same crop cycle. Split-field trials across varieties, seasons and locations produced a consistent 8-15% yield uplift at no marginal cost, and the Bayer relationship pushed the company beyond fruit into vegetable crops.
-  - People: Siddharth Jadhav (founder and CEO, Polybee)
-  - Counterparties: Bayer (channel partner)
+- **2026-07-20** — Polybee signed a new non-exclusive commercial partnership with Bayer to scale its AI yield-forecasting platform through Bayer's existing grower relationships, extending it from fruit into spinach and broccoli with lettuce due by end-2026 — [freshplaza.com](https://www.freshplaza.com/north-america/article/9858864/ai-crop-forecaster-takes-the-next-step-in-scaling-up/) (Also reported by: [rbmagazine.com.au](https://www.rbmagazine.com.au/news/partnership-brings-ai-intelligence-to-aussie-growers/))
+  - Summary: FreshPlaza reports that Polybee's new commercial partnership with Bayer expands access to its yield-forecasting technology via Bayer's existing customer relationships, which founder-CEO Siddharth Jadhav frames as the next stage of scaling after years of proving grower returns. Polybee charges a flat fee per hectare covering equipment, software, setup, maintenance and support, and says growers who follow its harvest-timing recommendations see three to seven times return within the same crop cycle. Split-field trials across varieties, seasons and locations produced a consistent 8-15% yield uplift at no marginal cost, and the Bayer relationship pushed the company beyond fruit into vegetable crops. Rural Business Magazine's 4 September report on the same partnership — which it frames as a collaboration between Vegetables by Bayer and Polybee — adds that Bayer will introduce and support growers while Polybee deploys the platform and manages service delivery, and that Polybee's Farm Intelligence Platform scans whole fields with autonomous drones and near-infrared cameras to generate harvest forecasts, cutting schedules and planting plans and to flag crop disease.
+  - People: Siddharth Jadhav (founder and CEO, Polybee), Darren Wood (ANZ vegetables unit lead, Vegetables by Bayer)
+  - Counterparties: Vegetables by Bayer (channel partner)
   - Numbers: 8-15% yield uplift in split-field trials; 3x-7x grower return in the same crop cycle; fixed fee per hectare; 2 crops proven (spinach, broccoli); lettuce expected by end-2026
   - Quote: "Bayer pointed us to the opportunity of doing yield forecasting in vegetable crops" — Siddharth Jadhav, founder and CEO, Polybee
 - **2026-06-21** — Polybee opened ANZ headquarters in Victoria, Australia, with partnerships at La Trobe University, Hort Innovation, and Western Sydney University; Perfection Fresh and Flavourite Group are customers — [austrade.gov.au](https://international.austrade.gov.au/en/news-and-analysis/success-stories/how-Polybee-found-growth-innovation-and-collaboration-in-Australia)

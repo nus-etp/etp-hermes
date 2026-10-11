@@ -21,14 +21,15 @@ _Last material event: 2026-09-10 — Named a finalist for the 2026 Responsible S
 _Total disclosed: $0.2M._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-09-10** — Named a finalist for the 2026 Responsible Seafood Innovation Award (aquaculture) for RAPID Plus, its on-site shrimp-disease test that returns a result in about an hour — [globalseafood.org](https://www.globalseafood.org/advocate/responsible-seafood-innovation-award-finalist-learning-from-farm-failures-to-develop-an-on-site-rapid-test-to-detect-shrimp-diseases/)
   - Summary: Global Seafood Alliance's Responsible Seafood Advocate profiled Forte Biotech as a finalist for the 2026 Responsible Seafood Innovation Award in the aquaculture category, on the strength of RAPID Plus — a quantitative molecular diagnostic platform co-founder Kit Yong describes as "akin to a qPCR" but engineered to strip out the cost and complexity of laboratory equipment. Yong said Forte has placed around 130 machines with more than 100 customers across nine countries since commercial sales began in January 2024, with Vietnam its largest market; the company is exploring Ecuador, is developing tests for tilapia and swine, and is seeking around US$1.5M after funding the business so far on angels, grants and founder funds. The awards will be presented at the Responsible Seafood Summit in Bangkok.
   - People: Kit Yong (co-founder), Rob Fletcher (Responsible Seafood Advocate)
   - Counterparties: Global Seafood Alliance (award body)
   - Numbers: ~130 machines placed; 100+ customers; 9 countries; machine price ~US$1,000–1,300; 50,000 kits/month production capacity; ~US$1.5M raise sought
   - Quote: "[The company's] greatest achievement will be every harvest that we prevent from being lost," — Kit Yong, co-founder
-
-## Older signals
 - **2026-06-07** — Selected for TechCrunch Startup Battlefield 200, gaining global visibility among early-stage tech startups — [TechCrunch](https://techcrunch.com/startup-battlefield/company/forte-biotech/)
 - **2026-06-07** — Received US$172K P4G Partnership grant to scale RAPID test kits in Vietnam's Mekong Delta, targeting 600 farms with disease-detection and farmer training — [P4G](https://p4gpartnerships.org/pioneering-green-partnerships/all-p4g-partnerships/forte-biotech-action-poverty)
   - Summary: The P4G-funded partnership with Action on Poverty aims to bring RAPID kits to 600 farms in the Mekong Delta, raise US$1M in investment, reduce over 3,500 metric tons of carbon emissions, and raise awareness for 8,200+ beneficiaries. The RAPID system has applications in fish, crab, and poultry farming beyond shrimp.
