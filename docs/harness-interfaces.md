@@ -26,7 +26,7 @@ Tests import it via pytest `pythonpath` (`scripts`): `from harness import scenar
 
 | runtime | base URL env (default) | key env | model env (default) |
 |---|---|---|---|
-| nvidia | `NVIDIA_BASE_URL` (`https://integrate.api.nvidia.com/v1/chat/completions`) | `NVIDIA_API_KEY` | `NVIDIA_MODEL` (`deepseek-ai/deepseek-v4-flash-0731`) |
+| nvidia | `NVIDIA_BASE_URL` (`https://integrate.api.nvidia.com/v1/chat/completions`) | `NVIDIA_API_KEY` | `NVIDIA_MODEL` (`deepseek-ai/deepseek-v4.1-flash`) |
 | zai | `ZAI_BASE_URL` (`https://api.z.ai/api/paas/v4/chat/completions`) | `ZAI_API_KEY` | `ZAI_MODEL` (`glm-4.7-flash`) |
 | deepseek | `DEEPSEEK_BASE_URL` | `DEEPSEEK_API_KEY` | `AB_JUDGE_MODEL` (`deepseek-chat`) |
 

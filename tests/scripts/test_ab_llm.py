@@ -101,7 +101,7 @@ def test_default_runtime_is_deepseek_and_backward_compatible(mod, clean_env) -> 
     ("runtime", "key_env", "url", "model"),
     [
         ("nvidia", "NVIDIA_API_KEY", "https://integrate.api.nvidia.com/v1/chat/completions",
-         "deepseek-ai/deepseek-v4-flash-0731"),
+         "deepseek-ai/deepseek-v4.1-flash"),
         ("zai", "ZAI_API_KEY", "https://api.z.ai/api/paas/v4/chat/completions", "glm-4.7-flash"),
     ],
 )
@@ -198,3 +198,99 @@ def test_runtime_extra_payload_merged_into_request_body(mod, clean_env) -> None:
     assert zai_body["thinking"] == {"type": "disabled"}
     assert zai_body["model"] == "glm-4.7-flash"
     assert "thinking" not in deepseek_body
+
+
+def _http_error(mod, code: int, headers: dict | None = None):
+    import io
+
+    return mod.urllib.error.HTTPError(
+        "https://example.test", code, "err", headers or {}, io.BytesIO(b'{"code": "1302"}')
+    )
+
+
+def _scripted_urlopen(mod, monkeypatch, outcomes: list) -> list:
+    calls: list = []
+
+    def fake_urlopen(req, timeout=None):  # noqa: ARG001
+        calls.append(req)
+        outcome = outcomes[len(calls) - 1]
+        if isinstance(outcome, Exception):
+            raise outcome
+        return _FakeResponse(outcome)
+
+    monkeypatch.setattr(mod.urllib.request, "urlopen", fake_urlopen)
+    return calls
+
+
+@pytest.fixture()
+def sleeps(mod, clean_env):
+    recorded: list = []
+    clean_env.setattr(mod.time, "sleep", recorded.append)
+    clean_env.setenv("ZAI_API_KEY", "z")
+    clean_env.setenv("AB_LLM_BACKOFF_SECS", "5")
+    return recorded
+
+
+def test_retries_429_then_succeeds(mod, clean_env, sleeps) -> None:
+    calls = _scripted_urlopen(mod, clean_env, [_http_error(mod, 429), _http_error(mod, 503), REPLY])
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="zai") == "ok"
+    assert len(calls) == 3
+    assert len(sleeps) == 2
+    assert 5 <= sleeps[0] <= 5.6
+    assert 15 <= sleeps[1] <= 16.6
+
+
+def test_retries_timeout_and_url_error(mod, clean_env, sleeps) -> None:
+    outcomes = [TimeoutError("read timed out"), mod.urllib.error.URLError("dns"), REPLY]
+    calls = _scripted_urlopen(mod, clean_env, outcomes)
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="zai") == "ok"
+    assert len(calls) == 3
+
+
+def test_does_not_retry_410(mod, clean_env, sleeps) -> None:
+    calls = _scripted_urlopen(mod, clean_env, [_http_error(mod, 410), REPLY])
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="zai") is None
+    assert len(calls) == 1
+    assert sleeps == []
+
+
+def test_does_not_retry_other_4xx(mod, clean_env, sleeps) -> None:
+    calls = _scripted_urlopen(mod, clean_env, [_http_error(mod, 401), REPLY])
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="zai") is None
+    assert len(calls) == 1
+
+
+def test_gives_up_after_max_attempts(mod, clean_env, sleeps, capsys) -> None:
+    clean_env.setenv("AB_LLM_MAX_ATTEMPTS", "3")
+    calls = _scripted_urlopen(mod, clean_env, [_http_error(mod, 429)] * 5)
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="zai") is None
+    assert len(calls) == 3
+    assert len(sleeps) == 2
+    err = capsys.readouterr().err
+    assert "HTTP 429" in err and "giving up after 3 attempts" in err
+
+
+def test_single_attempt_via_env(mod, clean_env, sleeps) -> None:
+    clean_env.setenv("AB_LLM_MAX_ATTEMPTS", "1")
+    calls = _scripted_urlopen(mod, clean_env, [_http_error(mod, 429), REPLY])
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="zai") is None
+    assert len(calls) == 1
+    assert sleeps == []
+
+
+def test_retry_after_header_is_honoured(mod, clean_env, sleeps) -> None:
+    calls = _scripted_urlopen(mod, clean_env, [_http_error(mod, 429, {"Retry-After": "7"}), REPLY])
+    assert mod.chat([{"role": "user", "content": "hi"}], runtime="zai") == "ok"
+    assert len(calls) == 2
+    assert sleeps == [7.0]
+
+
+def test_min_interval_spaces_consecutive_calls(mod, clean_env, sleeps) -> None:
+    clean_env.setenv("AB_LLM_MIN_INTERVAL_SECS", "1")
+    mod._last_call_started.clear()
+    _scripted_urlopen(mod, clean_env, [REPLY, REPLY])
+    mod.chat([{"role": "user", "content": "hi"}], runtime="zai")
+    assert sleeps == []
+    mod.chat([{"role": "user", "content": "hi"}], runtime="zai")
+    assert len(sleeps) == 1
+    assert 0 < sleeps[0] <= 1

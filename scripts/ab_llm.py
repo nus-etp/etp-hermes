@@ -26,7 +26,9 @@ from __future__ import annotations
 
 import json
 import os
+import random
 import sys
+import time
 import urllib.error
 import urllib.request
 from typing import Any, NamedTuple
@@ -52,7 +54,7 @@ RUNTIMES: dict[str, Runtime] = {
         "https://integrate.api.nvidia.com/v1/chat/completions",
         "NVIDIA_API_KEY",
         "NVIDIA_MODEL",
-        "deepseek-ai/deepseek-v4-flash-0731",
+        "deepseek-ai/deepseek-v4.1-flash",
     ),
     "zai": Runtime(
         "ZAI_BASE_URL",
@@ -65,8 +67,93 @@ RUNTIMES: dict[str, Runtime] = {
 }
 
 ERROR_BODY_CHARS = 300
+RETRYABLE_STATUSES = frozenset({429, 500, 502, 503})
+DEFAULT_MAX_ATTEMPTS = 4
+DEFAULT_BACKOFF_SECS = 5.0
+BACKOFF_MULTIPLIER = 3
+BACKOFF_JITTER_FRACTION = 0.1
+MAX_RETRY_AFTER_SECS = 120.0
 
 _usage_tokens: dict[str, int] = {}
+_last_call_started: dict[str, float] = {}
+
+
+def _env_number(name: str, default: float) -> float:
+    try:
+        return float(os.environ.get(name, default))
+    except ValueError:
+        return default
+
+
+def max_attempts() -> int:
+    return max(1, int(_env_number("AB_LLM_MAX_ATTEMPTS", DEFAULT_MAX_ATTEMPTS)))
+
+
+def backoff_base_secs() -> float:
+    return max(0.0, _env_number("AB_LLM_BACKOFF_SECS", DEFAULT_BACKOFF_SECS))
+
+
+def min_interval_secs() -> float:
+    return max(0.0, _env_number("AB_LLM_MIN_INTERVAL_SECS", 0.0))
+
+
+def _space_calls(runtime: str) -> None:
+    interval = min_interval_secs()
+    last_started = _last_call_started.get(runtime)
+    if interval > 0 and last_started is not None:
+        wait = interval - (time.monotonic() - last_started)
+        if wait > 0:
+            time.sleep(wait)
+    _last_call_started[runtime] = time.monotonic()
+
+
+def _retry_after_secs(error: urllib.error.HTTPError) -> float | None:
+    value = error.headers.get("Retry-After") if error.headers else None
+    if value is None:
+        return None
+    try:
+        return min(max(0.0, float(value)), MAX_RETRY_AFTER_SECS)
+    except ValueError:
+        return None
+
+
+def _backoff_secs(attempt: int, retry_after: float | None) -> float:
+    if retry_after is not None:
+        return retry_after
+    base = backoff_base_secs() * BACKOFF_MULTIPLIER ** (attempt - 1)
+    return base * (1 + random.uniform(0, BACKOFF_JITTER_FRACTION))
+
+
+def _is_retryable(error: Exception) -> bool:
+    if isinstance(error, urllib.error.HTTPError):
+        return error.code in RETRYABLE_STATUSES
+    return isinstance(error, (urllib.error.URLError, TimeoutError))
+
+
+def _post_with_retries(req: urllib.request.Request, runtime: str, timeout: float) -> dict | None:
+    attempts = max_attempts()
+    for attempt in range(1, attempts + 1):
+        _space_calls(runtime)
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as error:
+            _warn(runtime, f"HTTP {error.code}: {_error_body(error)}")
+            retry_after = _retry_after_secs(error)
+            failure: Exception = error
+        except (urllib.error.URLError, OSError, ValueError) as error:
+            _warn(runtime, f"{type(error).__name__}: {error}")
+            retry_after = None
+            failure = error
+        if not _is_retryable(failure):
+            return None
+        if attempt == attempts:
+            _warn(runtime, f"giving up after {attempts} attempts")
+            return None
+        delay = _backoff_secs(attempt, retry_after)
+        _warn(runtime, f"retrying in {delay:.1f}s (attempt {attempt + 1}/{attempts})")
+        time.sleep(delay)
+    return None
 
 
 def runtime_key(runtime: str = DEFAULT_RUNTIME) -> str | None:
@@ -139,15 +226,13 @@ def chat(
         },
         method="POST",
     )
+    body = _post_with_retries(req, runtime, timeout)
+    if body is None:
+        return None
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            body = json.loads(resp.read().decode("utf-8"))
         choice = body["choices"][0]
         message = choice["message"]
-    except urllib.error.HTTPError as error:
-        _warn(runtime, f"HTTP {error.code}: {_error_body(error)}")
-        return None
-    except (urllib.error.URLError, OSError, KeyError, IndexError, TypeError, ValueError) as error:
+    except (KeyError, IndexError, TypeError) as error:
         _warn(runtime, f"{type(error).__name__}: {error}")
         return None
     _record_usage(runtime, body.get("usage"))

@@ -1,8 +1,9 @@
 model:
   # Primary: NVIDIA NIM (reads NVIDIA_API_KEY, base_url baked in). Rollback: provider: deepseek.
-  # deepseek-v4-flash via NIM == the same model family the pipeline was tuned for.
+  # deepseek-v4.1-flash via NIM == the same model family the pipeline was tuned for.
+  # deepseek-v4-flash-0731 was retired on NIM (HTTP 410) on 2026-09-21.
   provider: nvidia
-  default: deepseek-ai/deepseek-v4-flash-0731
+  default: deepseek-ai/deepseek-v4.1-flash
 
 # Turn-scoped failover: exhausted primary → next entry; missing key → skipped.
 fallback_providers:
