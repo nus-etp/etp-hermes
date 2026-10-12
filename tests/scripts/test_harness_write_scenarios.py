@@ -107,6 +107,59 @@ def test_from_judged_writes_only_disagreements(tmp_path: Path, monkeypatch) -> N
     assert write_scenarios.from_judged(source, root, "2026-10-03") == 0
 
 
+def jev_row(url: str, confidence: float | None, layer: str | None = None) -> dict:
+    row = judged_row(url, "keep", "drop")
+    row.update({"judge": "jev", "judge_confidence": confidence})
+    if layer:
+        row["layer"] = layer
+    return row
+
+
+def test_from_judged_applies_confidence_floor_to_jev_only(tmp_path: Path) -> None:
+    root = tmp_path / "scenarios"
+    deepseek = judged_row("https://a.com/ds", "keep", "drop")
+    deepseek["judge"] = "deepseek"
+    source = write_jsonl(
+        tmp_path / "2026-10-03.jsonl",
+        [
+            jev_row("https://a.com/low", 0.5),
+            jev_row("https://a.com/none", None),
+            jev_row("https://a.com/high", 0.9),
+            deepseek,
+        ],
+    )
+    assert write_scenarios.from_judged(source, root, "2026-10-03") == 2
+    urls = {scenarios.card_url(c) for c in scenarios.load_all(root)}
+    assert urls == {"https://a.com/high", "https://a.com/ds"}
+    assert write_scenarios.from_judged(source, tmp_path / "other", "2026-10-03", min_confidence=0.4) == 3
+
+
+def test_from_judged_records_judge_in_origin(tmp_path: Path) -> None:
+    root = tmp_path / "scenarios"
+    source = write_jsonl(tmp_path / "d.jsonl", [jev_row("https://a.com/1", 0.9)])
+    write_scenarios.from_judged(source, root, "2026-10-03")
+    origin = scenarios.load_all(root)[0]["origin"]
+    assert origin["judge"] == "jev"
+    assert origin["judge_confidence"] == 0.9
+
+
+def test_from_judged_routes_agent_rows_to_agent_supplement(tmp_path: Path) -> None:
+    root = tmp_path / "scenarios"
+    source = write_jsonl(
+        tmp_path / "d.jsonl",
+        [jev_row("https://a.com/ag", 0.9, "agent_supplement"), jev_row("https://a.com/in", 0.9, "ingest")],
+    )
+    assert write_scenarios.from_judged(source, root, "2026-10-03") == 2
+    agent_cards = scenarios.load_all(root, layer="agent_supplement")
+    assert len(agent_cards) == 1
+    card = agent_cards[0]
+    assert card["id"].startswith("agent_supplement-2026-10-03-")
+    assert card["cluster"].startswith("agent_supplement/false_keep/")
+    assert card["expected"]["verdict"] == "drop"
+    assert len(scenarios.load_all(root, layer="ingest")) == 1
+    assert write_scenarios.from_judged(source, root, "2026-10-03") == 0
+
+
 def issue(number: int, label: str, body: str, title: str = "Wrong item") -> dict:
     return {"number": number, "title": title, "body": body, "labels": [{"name": label}], "url": f"https://gh/{number}"}
 

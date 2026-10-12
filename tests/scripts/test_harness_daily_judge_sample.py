@@ -39,6 +39,16 @@ def fake_llm(real_llm, verdict: str | None, *, has_key: bool = True):
     return llm, calls
 
 
+def fake_jev(verdict: str | None, confidence: float | None = 0.9, *, has_key: bool = True):
+    calls: list[dict] = []
+
+    def judge_item(row):
+        calls.append(row)
+        return {"verdict": verdict, "confidence": confidence, "reason": "jev", "probabilities": {}, "usage": {}}
+
+    return types.SimpleNamespace(have_key=lambda: has_key, judge_item=judge_item), calls
+
+
 def seed_repo(root: Path, n_dropped: int = 3) -> None:
     (root / "data").mkdir()
     (root / "signals" / "updates").mkdir(parents=True)
@@ -65,15 +75,18 @@ def read_rows(root: Path) -> list[dict]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
 
 
-def run(root: Path, llm, modules, kept: int = 40, dropped: int = 40) -> int:
-    judge, compare, _ = modules
-    return daily_judge_sample.run(root, "2026-10-03", kept, dropped, llm, judge, compare, None)
+def deepseek_judger(modules, llm):
+    return daily_judge_sample.deepseek_judger(llm, modules[0], None)
+
+
+def run(root: Path, judger, modules, kept: int | None = None, dropped: int | None = None) -> int:
+    return daily_judge_sample.run(root, "2026-10-03", kept, dropped, judger, modules[1])
 
 
 def test_writes_kept_and_dropped_rows(tmp_path: Path, modules) -> None:
     seed_repo(tmp_path)
     llm, calls = fake_llm(modules[2], "drop")
-    assert run(tmp_path, llm, modules) == 0
+    assert run(tmp_path, deepseek_judger(modules, llm), modules) == 0
     rows = read_rows(tmp_path)
     assert [r["verdict_pipeline"] for r in rows] == ["keep", "drop", "drop", "drop"]
     kept = rows[0]
@@ -82,45 +95,117 @@ def test_writes_kept_and_dropped_rows(tmp_path: Path, modules) -> None:
     assert kept["company_description"] == "Singapore robotics startup."
     assert kept["verdict_judge"] == "drop"
     assert kept["origin"] == "daily"
+    assert kept["layer"] == "ingest"
+    assert kept["judge"] == "deepseek"
+    assert kept["judge_confidence"] is None
     assert kept["date"] == "2026-10-03"
     assert len(calls) == 4
     assert "verdict_pipeline" not in calls[0][1]["content"]
 
 
-def test_sample_caps_and_is_deterministic(tmp_path: Path, modules) -> None:
+def test_deepseek_sample_caps_and_is_deterministic(tmp_path: Path, modules) -> None:
     seed_repo(tmp_path, n_dropped=10)
     llm, _ = fake_llm(modules[2], "keep")
-    run(tmp_path, llm, modules, kept=1, dropped=3)
+    judger = deepseek_judger(modules, llm)
+    run(tmp_path, judger, modules, kept=1, dropped=3)
     first = [r["url"] for r in read_rows(tmp_path)]
-    run(tmp_path, llm, modules, kept=1, dropped=3)
+    run(tmp_path, judger, modules, kept=1, dropped=3)
     assert [r["url"] for r in read_rows(tmp_path)] == first
     assert len(first) == 4
+
+
+def test_deepseek_default_sample_is_forty(tmp_path: Path, modules) -> None:
+    seed_repo(tmp_path, n_dropped=60)
+    llm, _ = fake_llm(modules[2], "keep")
+    run(tmp_path, deepseek_judger(modules, llm), modules)
+    assert len(read_rows(tmp_path)) == 41
+
+
+def test_jev_judges_everything_by_default(tmp_path: Path, modules) -> None:
+    seed_repo(tmp_path, n_dropped=60)
+    jev, calls = fake_jev("drop", 0.85)
+    run(tmp_path, daily_judge_sample.jev_judger(jev), modules)
+    rows = read_rows(tmp_path)
+    assert len(rows) == 61
+    assert len(calls) == 61
+    assert {r["judge"] for r in rows} == {"jev"}
+    assert rows[0]["judge_confidence"] == 0.85
 
 
 def test_judge_failure_records_null(tmp_path: Path, modules) -> None:
     seed_repo(tmp_path, n_dropped=0)
     llm, _ = fake_llm(modules[2], None)
-    run(tmp_path, llm, modules)
+    run(tmp_path, deepseek_judger(modules, llm), modules)
     assert [r["verdict_judge"] for r in read_rows(tmp_path)] == [None]
 
 
-def test_fails_open_without_key(tmp_path: Path, modules) -> None:
+def test_no_judger_writes_nothing(tmp_path: Path, modules) -> None:
     seed_repo(tmp_path)
-    llm, calls = fake_llm(modules[2], "keep", has_key=False)
-    assert run(tmp_path, llm, modules) == 0
-    assert calls == []
-    assert not (tmp_path / "data" / "harness").exists()
-
-
-def test_main_without_key_writes_nothing(tmp_path: Path, monkeypatch) -> None:
-    monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
-    seed_repo(tmp_path)
-    assert daily_judge_sample.main(["--repo-root", str(tmp_path), "--date", "2026-10-03"]) == 0
+    assert run(tmp_path, None, modules) == 0
     assert not (tmp_path / "data" / "harness").exists()
 
 
 def test_nothing_to_judge_writes_nothing(tmp_path: Path, modules) -> None:
     llm, calls = fake_llm(modules[2], "keep")
-    assert run(tmp_path, llm, modules) == 0
+    assert run(tmp_path, deepseek_judger(modules, llm), modules) == 0
     assert calls == []
     assert not (tmp_path / "data" / "harness").exists()
+
+
+def test_select_judger_auto_prefers_jev(modules) -> None:
+    llm, _ = fake_llm(modules[2], "keep")
+    jev, _ = fake_jev("keep")
+    assert daily_judge_sample.select_judger("auto", llm, modules[0], jev, None).name == "jev"
+    no_jev, _ = fake_jev("keep", has_key=False)
+    assert daily_judge_sample.select_judger("auto", llm, modules[0], no_jev, None).name == "deepseek"
+    assert daily_judge_sample.select_judger("jev", llm, modules[0], no_jev, None) is None
+    no_llm, _ = fake_llm(modules[2], "keep", has_key=False)
+    assert daily_judge_sample.select_judger("auto", no_llm, modules[0], no_jev, None) is None
+
+
+def test_main_without_keys_writes_nothing(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
+    monkeypatch.delenv("TYPESAFE_API_KEY", raising=False)
+    seed_repo(tmp_path)
+    assert daily_judge_sample.main(["--repo-root", str(tmp_path), "--date", "2026-10-03"]) == 0
+    assert not (tmp_path / "data" / "harness").exists()
+
+
+AGENT_DIGEST = """# Agent supplement — 2026-10-03
+
+## Gap-fill (companies with no signals in last 7 days)
+### Acme
+- **Acme opens Tokyo office** — nikkei.com · 2026-09-30
+  https://nikkei.com/acme-tokyo?utm_source=x
+  Answers: "Where is Acme expanding?"
+
+## Deepen
+### Beta
+- **Beta wins grant** — straitstimes.com
+  https://straitstimes.com/beta
+"""
+
+
+def test_parse_agent_digest_reads_bullets_and_ignores_sublines(tmp_path: Path) -> None:
+    path = tmp_path / "agent.md"
+    path.write_text(AGENT_DIGEST, encoding="utf-8")
+    items = daily_judge_sample.parse_agent_digest(path)
+    assert [(i["company"], i["headline"], i["source"], i["item_date"]) for i in items] == [
+        ("Acme", "Acme opens Tokyo office", "nikkei.com", "2026-09-30"),
+        ("Beta", "Beta wins grant", "straitstimes.com", ""),
+    ]
+    assert items[0]["url"] == "https://nikkei.com/acme-tokyo?utm_source=x"
+
+
+def test_agent_items_are_judged_as_agent_supplement(tmp_path: Path, modules) -> None:
+    seed_repo(tmp_path, n_dropped=0)
+    (tmp_path / "signals" / "agent").mkdir(parents=True)
+    (tmp_path / "signals" / "agent" / "2026-10-03.md").write_text(AGENT_DIGEST, encoding="utf-8")
+    jev, calls = fake_jev("drop")
+    run(tmp_path, daily_judge_sample.jev_judger(jev), modules)
+    agent_rows = [r for r in read_rows(tmp_path) if r["layer"] == "agent_supplement"]
+    assert [r["company"] for r in agent_rows] == ["Acme", "Beta"]
+    assert {r["verdict_pipeline"] for r in agent_rows} == {"keep"}
+    assert agent_rows[0]["url"] == "https://nikkei.com/acme-tokyo"
+    assert agent_rows[0]["company_description"] == "Singapore robotics startup."
+    assert "2026-09-30" in agent_rows[0]["description"]

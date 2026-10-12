@@ -9,7 +9,10 @@ is reported and skipped, never fatal):
              blind judge's label.
   --judged   data/harness/judged/<date>.jsonl — rows from
              daily_judge_sample.py where the judge disagreed with the pipeline
-             become ``judge_disagreement`` ingest cards.
+             become ``judge_disagreement`` cards, filed under the row's
+             ``layer`` (``ingest`` when absent, ``agent_supplement`` for Layer 2
+             items). Jev rows below ``--min-confidence`` (default 0.7) are
+             skipped.
   --issues   data/harness/issues.json — ``gh issue list --json
              number,title,body,labels,url`` output; issues labelled
              harness:wrong-keep / harness:missed / harness:brief-error become
@@ -29,6 +32,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import functools
 import json
 import os
 import re
@@ -40,6 +44,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import scenarios
 
 INGEST_PERSONA = "Layer 1 relevance pass over data/candidates.json"
+AGENT_PERSONA = "Layer 2 agent supplement: dynamic search that keeps only items new and material to the company"
+DEFAULT_MIN_CONFIDENCE = 0.7
+JUDGE_LAYERS = ("ingest", "agent_supplement")
 SYNTHESIS_PERSONA = "Layer 3 synthesis of today's signals into the company's living brief"
 INGEST_GRADERS = ("verdict_match", "blind_judge")
 SYNTHESIS_GRADERS = ("no_fabrication",)
@@ -74,19 +81,21 @@ def failure_kind_for(expected_verdict: str) -> str:
     return "false_keep" if expected_verdict == "drop" else "false_drop"
 
 
-def ingest_card(row: dict, *, expected_verdict: str, origin: dict, reason: str, root: Path) -> dict:
+def ingest_card(
+    row: dict, *, expected_verdict: str, origin: dict, reason: str, root: Path, layer: str = "ingest"
+) -> dict:
     company = str(row.get("company", "")).strip()
     url = str(row["url"])
     headline = str(row.get("headline", "")).strip()
     action = "Keep" if expected_verdict == "keep" else "Drop"
     companies = {company: {"description": str(row.get("company_description", ""))}} if company else {}
     return {
-        "id": scenarios.next_id("ingest", origin["date"], root),
-        "layer": "ingest",
+        "id": scenarios.next_id(layer, origin["date"], root),
+        "layer": layer,
         "version": 1,
         "status": "active",
         "origin": origin,
-        "persona": INGEST_PERSONA,
+        "persona": AGENT_PERSONA if layer == "agent_supplement" else INGEST_PERSONA,
         "goal": f"{action} '{headline}' for {company or 'the matched company'}",
         "input": {
             "candidate": {
@@ -104,7 +113,7 @@ def ingest_card(row: dict, *, expected_verdict: str, origin: dict, reason: str, 
             "reason": reason,
         },
         "cluster": scenarios.cluster_key(
-            "ingest", failure_kind_for(expected_verdict), company or "unknown", host_of(url)
+            layer, failure_kind_for(expected_verdict), company or "unknown", host_of(url)
         ),
         "graders": list(INGEST_GRADERS),
         "created_by": created_by(),
@@ -140,8 +149,8 @@ def save_card(card: dict, root: Path) -> bool:
     return True
 
 
-def has_card_for(row: dict, root: Path) -> bool:
-    return scenarios.find_by_url(str(row["url"]), root, layer="ingest") is not None
+def has_card_for(row: dict, root: Path, layer: str = "ingest") -> bool:
+    return scenarios.find_by_url(str(row["url"]), root, layer=layer) is not None
 
 
 def ab_origin(row: dict, today: str) -> dict:
@@ -173,10 +182,25 @@ def judged_origin(row: dict, path: Path, today: str) -> dict:
         "source": path.name,
         "verdict_pipeline": row.get("verdict_pipeline"),
     }
+    for field in ("judge", "judge_confidence"):
+        if row.get(field) is not None:
+            origin[field] = row[field]
     run_id = os.environ.get("GITHUB_RUN_ID")
     if run_id:
         origin["run_id"] = run_id
     return origin
+
+
+def judged_layer(row: dict) -> str:
+    layer = row.get("layer")
+    return layer if layer in JUDGE_LAYERS else "ingest"
+
+
+def confident_enough(row: dict, min_confidence: float) -> bool:
+    if row.get("judge") != "jev":
+        return True
+    confidence = row.get("judge_confidence")
+    return isinstance(confidence, (int, float)) and confidence >= min_confidence
 
 
 def is_disagreement(row: dict) -> bool:
@@ -184,14 +208,19 @@ def is_disagreement(row: dict) -> bool:
     return judge_verdict in {"keep", "drop"} and judge_verdict != row.get("verdict_pipeline")
 
 
-def from_judged(path: Path, root: Path, today: str) -> int:
+def from_judged(path: Path, root: Path, today: str, min_confidence: float = DEFAULT_MIN_CONFIDENCE) -> int:
     written = 0
     for row in read_jsonl(path):
-        if not is_disagreement(row) or not row.get("url") or has_card_for(row, root):
+        layer = judged_layer(row)
+        if not is_disagreement(row) or not row.get("url") or has_card_for(row, root, layer):
+            continue
+        if not confident_enough(row, min_confidence):
             continue
         reason = str(row.get("judge_reason") or "")
         origin = judged_origin(row, path, today)
-        card = ingest_card(row, expected_verdict=row["verdict_judge"], origin=origin, reason=reason, root=root)
+        card = ingest_card(
+            row, expected_verdict=row["verdict_judge"], origin=origin, reason=reason, root=root, layer=layer
+        )
         written += save_card(card, root)
     return written
 
@@ -341,12 +370,19 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--judged", type=Path, default=None)
     parser.add_argument("--issues", type=Path, default=None)
     parser.add_argument("--labels", type=Path, default=None)
+    parser.add_argument("--min-confidence", type=float, default=DEFAULT_MIN_CONFIDENCE)
     parser.add_argument("--root", type=Path, default=scenarios.SCENARIOS_DIR)
     args = parser.parse_args(argv)
 
     counts = {
         "ab_seed": run_source("ab", from_ab, args.from_ab, args.root, args.date),
-        "judge_disagreement": run_source("judged", from_judged, args.judged, args.root, args.date),
+        "judge_disagreement": run_source(
+            "judged",
+            functools.partial(from_judged, min_confidence=args.min_confidence),
+            args.judged,
+            args.root,
+            args.date,
+        ),
         "human": run_source("issues", from_issues, args.issues, args.root, args.date)
         + run_source("labels", from_labels, args.labels, args.root, args.date),
     }

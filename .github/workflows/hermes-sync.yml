@@ -373,26 +373,6 @@ jobs:
         continue-on-error: true
         run: python3 scripts/harness/snapshot_replay.py --date "$(date -u +%F)"
 
-      - name: Daily blind-judge sample
-        # ~40 kept + ~40 dropped Layer 1 verdicts re-ruled by the blind
-        # ab_judge prompt → data/harness/judged/<date>.jsonl (committed).
-        # Fail-open: no key writes nothing.
-        if: steps.layers.outputs.run_l1 == 'true'
-        continue-on-error: true
-        env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: python3 scripts/harness/daily_judge_sample.py --date "$(date -u +%F)"
-
-      - name: Write scenario cards
-        # Every judge/pipeline disagreement from the sample above becomes a
-        # scenario card under evals/scenarios/ingest/ (idempotent per URL).
-        if: steps.layers.outputs.run_l1 == 'true'
-        continue-on-error: true
-        run: |
-          TODAY="$(date -u +%F)"
-          python3 scripts/harness/write_scenarios.py --date "$TODAY" --judged "data/harness/judged/$TODAY.jsonl" \
-            --labels signals/harness/human-labels.jsonl
-
       - name: Build gap-fill queue (fairness rotation)
         # Deterministic pre-step: writes signals/agent-queue.txt with the N
         # gap-fill companies ordered questions-first, then by ascending
@@ -453,6 +433,30 @@ jobs:
         # nothing matches.
         if: steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true'
         run: python3 scripts/filter_exclusions.py
+
+      - name: Daily blind-judge sample
+        # Every Layer 1 verdict (kept + dropped) and Layer 2 kept item re-ruled
+        # by the blind Jev judge (DeepSeek ~40+40 sample when no
+        # TYPESAFE_API_KEY) → data/harness/judged/<date>.jsonl (committed).
+        # Runs after Layer 2 and the exclusion filter so it sees final output.
+        # Fail-open: no key writes nothing.
+        if: steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true'
+        continue-on-error: true
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: python3 scripts/harness/daily_judge_sample.py --date "$(date -u +%F)"
+
+      - name: Write scenario cards
+        # Every confident judge/pipeline disagreement from the step above
+        # becomes a scenario card under evals/scenarios/<layer>/ (idempotent
+        # per URL).
+        if: steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true'
+        continue-on-error: true
+        run: |
+          TODAY="$(date -u +%F)"
+          python3 scripts/harness/write_scenarios.py --date "$TODAY" --judged "data/harness/judged/$TODAY.jsonl" \
+            --labels signals/harness/human-labels.jsonl
 
       - name: Gate synthesis on having signals
         id: l3gate
