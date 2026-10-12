@@ -238,15 +238,24 @@ jobs:
               warn "no champion companies.json at ${HARNESS_CHAMPION_REF}"
               return 0
             fi
+            rm -f data/harness/sim/champion-*.json data/harness/sim/proposal-*.json
             for runtime in $HARNESS_RUNTIMES; do
               status=0
-              python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "/tmp/champion-${layer}.md" \
+              AB_LLM_MIN_INTERVAL_SECS=1 python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "/tmp/champion-${layer}.md" \
                 --companies /tmp/champion-companies.json \
                 --runtime "$runtime" --out "data/harness/sim/champion-${runtime}.json" || status=$?
-              if [ "$status" != 0 ]; then warn "champion simulate on $runtime exited $status"; continue; fi
-              python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "prompts/${layer}.md" \
+              if [ "$status" != 0 ]; then
+                warn "champion simulate on $runtime exited $status; dropping $runtime"
+                rm -f "data/harness/sim/champion-${runtime}.json"
+                continue
+              fi
+              AB_LLM_MIN_INTERVAL_SECS=1 python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "prompts/${layer}.md" \
                 --runtime "$runtime" --out "data/harness/sim/proposal-${runtime}.json" || status=$?
-              if [ "$status" != 0 ]; then warn "proposal simulate on $runtime exited $status"; continue; fi
+              if [ "$status" != 0 ]; then
+                warn "proposal simulate on $runtime exited $status; dropping $runtime"
+                rm -f "data/harness/sim/champion-${runtime}.json" "data/harness/sim/proposal-${runtime}.json"
+                continue
+              fi
               champions+=("data/harness/sim/champion-${runtime}.json")
               proposals+=("data/harness/sim/proposal-${runtime}.json")
             done
@@ -255,9 +264,14 @@ jobs:
               warn "no runtime simulated; no verdict"
               return 0
             fi
+            status=0
             python3 scripts/harness/grade.py --champion "${champions[@]}" --proposal "${proposals[@]}" \
-              --out-table data/harness/replay-table.md --out-verdict data/harness/verdict.json \
-              || warn "grade.py failed"
+              --out-table data/harness/replay-table.md --out-verdict data/harness/verdict.json || status=$?
+            if [ "$status" = 3 ]; then
+              warn "grade.py inconclusive: too few usable simulation verdicts"
+            elif [ "$status" != 0 ]; then
+              warn "grade.py failed ($status)"
+            fi
           }
 
           run_review() {
@@ -353,8 +367,10 @@ jobs:
           PROPOSAL_OK: ${{ steps.proposal.outputs.ok }}
         run: |
           accept=false
+          inconclusive=false
           if [ "$PROPOSAL_OK" = "true" ] && [ -f data/harness/verdict.json ]; then
             accept=$(python3 -c 'import json; print("true" if json.load(open("data/harness/verdict.json")).get("accept") is True else "false")' || echo false)
+            inconclusive=$(python3 -c 'import json; print("true" if json.load(open("data/harness/verdict.json")).get("inconclusive") is True else "false")' || echo false)
           fi
           unresolved="$(python3 scripts/harness/pr_body.py --unresolved || true)"
           if [ -n "$unresolved" ]; then
@@ -366,6 +382,12 @@ jobs:
           cat /tmp/harness-body.md >> "$GITHUB_STEP_SUMMARY"
           echo "accept=$accept" >> "$GITHUB_OUTPUT"
           echo "accept=$accept"
+          echo "inconclusive=$inconclusive" >> "$GITHUB_OUTPUT"
+          echo "inconclusive=$inconclusive"
+          if [ "$inconclusive" = "true" ]; then
+            reasons=$(python3 -c 'import json; print("; ".join(json.load(open("data/harness/verdict.json")).get("reasons") or []))' || echo "see verdict.json")
+            echo "::warning::harness verdict inconclusive, no rejection recorded: ${reasons}"
+          fi
 
       - name: Open or refresh PR
         if: steps.decide.outputs.accept == 'true' && env.HARNESS_DRY_RUN != 'true'
@@ -386,8 +408,18 @@ jobs:
               --body-file /tmp/harness-body.md --label "$HARNESS_LABEL" --assignee "$HARNESS_ASSIGNEE"
           fi
 
+      - name: Delete branch after inconclusive verdict
+        if: steps.bootstrap.outputs.ok == 'true' && steps.decide.outputs.accept != 'true' && steps.decide.outputs.inconclusive == 'true' && env.HARNESS_DRY_RUN != 'true'
+        continue-on-error: true
+        run: |
+          git switch -q --detach "$BASE_SHA"
+          git branch -D "$HARNESS_BRANCH" || true
+          if git ls-remote --exit-code --heads origin "$HARNESS_BRANCH" >/dev/null 2>&1; then
+            git push origin --delete "$HARNESS_BRANCH"
+          fi
+
       - name: Record rejection and delete branch
-        if: steps.bootstrap.outputs.ok == 'true' && steps.decide.outputs.accept != 'true' && env.HARNESS_DRY_RUN != 'true'
+        if: steps.bootstrap.outputs.ok == 'true' && steps.decide.outputs.accept != 'true' && steps.decide.outputs.inconclusive != 'true' && env.HARNESS_DRY_RUN != 'true'
         continue-on-error: true
         run: |
           git switch -q --detach "$BASE_SHA"

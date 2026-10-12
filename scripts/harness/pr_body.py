@@ -119,6 +119,8 @@ def render_diff(stat: str) -> list[str]:
 def render_verdict(verdict: dict, table: str) -> list[str]:
     accept = verdict.get("accept")
     decision = MISSING if accept is None else ("**accept**" if accept else "**reject**")
+    if verdict.get("inconclusive"):
+        decision = "**inconclusive**"
     lines = ["## Replay", "", f"Verdict: {decision}", ""]
     for reason in verdict.get("reasons") or []:
         lines.append(f"- {reason}")

@@ -91,7 +91,7 @@ def write_sims(workspace: dict, sims: dict[str, dict[str, dict]]) -> dict[str, l
     return paths
 
 
-def run_grade(workspace: dict, sims: dict[str, dict[str, dict]], *extra: str) -> tuple[dict, str]:
+def run_grade(workspace: dict, sims: dict[str, dict[str, dict]], *extra: str, expected_exit: int = 0) -> tuple[dict, str]:
     paths = write_sims(workspace, sims)
     verdict_path = workspace["dir"] / "out" / "verdict.json"
     table_path = workspace["dir"] / "out" / "replay-table.md"
@@ -101,7 +101,7 @@ def run_grade(workspace: dict, sims: dict[str, dict[str, dict]], *extra: str) ->
         "--out-verdict", str(verdict_path), "--judge-cache", str(workspace["dir"] / "judge-cache.jsonl"),
         "--sleep", "0", *extra,
     ])
-    assert exit_code == 0
+    assert exit_code == expected_exit
     return json.loads(verdict_path.read_text()), table_path.read_text()
 
 
@@ -124,7 +124,8 @@ def test_accept_path(workspace, judge) -> None:
         "proposal": both_runtimes("proposal", results, baseline_window()),
     })
     assert verdict["accept"] is True and verdict["reasons"] == []
-    assert set(verdict) == {"accept", "reasons", "per_runtime"}
+    assert set(verdict) == {"accept", "inconclusive", "reasons", "per_runtime", "coverage"}
+    assert verdict["inconclusive"] is False
     assert set(verdict["per_runtime"]) == set(RUNTIMES)
     for row in verdict["per_runtime"].values():
         assert set(row) == PER_RUNTIME_KEYS
@@ -249,16 +250,6 @@ def test_cost_delta_over_threshold_rejects(workspace, judge) -> None:
     assert any("cost delta" in reason for reason in verdict["reasons"])
 
 
-def test_missing_runtime_pair_rejects(workspace, judge) -> None:
-    results = correct_results(workspace["root"])
-    verdict, _ = run_grade(workspace, {
-        "champion": both_runtimes("champion", results, baseline_window()),
-        "proposal": {"nvidia": sim("proposal", "nvidia", results, baseline_window())},
-    })
-    assert verdict["accept"] is False
-    assert "zai: missing proposal simulation" in verdict["reasons"]
-
-
 def test_unimplemented_layer_rejects(workspace, judge) -> None:
     empty = {"arm": "x", "runtime": "nvidia", "layer": "synthesis", "implemented": False,
              "scenario_results": {}, "window_results": []}
@@ -273,3 +264,84 @@ def test_unlabeled_disagreements_without_judge_key(workspace, monkeypatch) -> No
     row = verdict["per_runtime"]["nvidia"]
     assert row["champion_right"] == 0 and row["proposal_right"] == 0 and row["p_value"] is None
     assert "left unlabeled" in table
+
+
+def null_window(count: int = 10) -> list[dict]:
+    return [window_item(i, None) for i in range(count)]
+
+
+def null_results(root: Path) -> dict:
+    return {card_id: {"verdict": None, "company": None, "raw": ""} for card_id in correct_results(root)}
+
+
+def test_all_null_sims_are_inconclusive(workspace, judge) -> None:
+    results = null_results(workspace["root"])
+    verdict, table = run_grade(workspace, {
+        "champion": both_runtimes("champion", results, null_window()),
+        "proposal": both_runtimes("proposal", results, null_window()),
+    }, expected_exit=grade.INCONCLUSIVE_EXIT_CODE)
+    assert verdict["accept"] is False and verdict["inconclusive"] is True
+    assert verdict["per_runtime"] == {}
+    assert any("nvidia" in reason and "0%" in reason for reason in verdict["reasons"])
+    assert any("zai" in reason for reason in verdict["reasons"])
+    assert "**Decision: INCONCLUSIVE**" in table
+
+
+def test_null_runtime_is_skipped_and_good_runtime_graded(workspace, judge) -> None:
+    good = correct_results(workspace["root"])
+    bad = null_results(workspace["root"])
+    verdict, _ = run_grade(workspace, {
+        "champion": {"nvidia": sim("champion", "nvidia", bad, null_window()),
+                     "zai": sim("champion", "zai", good, baseline_window())},
+        "proposal": {"nvidia": sim("proposal", "nvidia", good, baseline_window()),
+                     "zai": sim("proposal", "zai", good, baseline_window())},
+    })
+    assert verdict["accept"] is True and verdict["inconclusive"] is False
+    assert set(verdict["per_runtime"]) == {"zai"}
+    assert verdict["coverage"]["nvidia"]["champion"] == 0.0
+
+
+def test_missing_proposal_runtime_is_not_graded(workspace, judge) -> None:
+    good = correct_results(workspace["root"])
+    verdict, _ = run_grade(workspace, {
+        "champion": both_runtimes("champion", good, baseline_window()),
+        "proposal": {"zai": sim("proposal", "zai", good, baseline_window())},
+    })
+    assert set(verdict["per_runtime"]) == {"zai"}
+    assert verdict["coverage"]["nvidia"]["proposal"] is None
+
+
+def test_coverage_just_under_threshold_is_inconclusive(workspace, judge) -> None:
+    good = correct_results(workspace["root"])
+    window = baseline_window(8)
+    for item in window[:3]:
+        item["verdict"] = None
+    results = both_runtimes("champion", good, window)
+    verdict, _ = run_grade(workspace, {
+        "champion": results,
+        "proposal": both_runtimes("proposal", good, baseline_window(8)),
+    }, expected_exit=grade.INCONCLUSIVE_EXIT_CODE)
+    assert verdict["inconclusive"] is True
+
+
+def test_coverage_at_threshold_is_graded(workspace, judge) -> None:
+    good = correct_results(workspace["root"])
+    window = baseline_window(8)
+    window[0]["verdict"] = None
+    verdict, _ = run_grade(workspace, {
+        "champion": both_runtimes("champion", good, window),
+        "proposal": both_runtimes("proposal", good, baseline_window(8)),
+    })
+    assert verdict["inconclusive"] is False
+
+
+def test_min_coverage_flag_overrides_default(workspace, judge) -> None:
+    good = correct_results(workspace["root"])
+    window = baseline_window(8)
+    window[0]["verdict"] = None
+    window[1]["verdict"] = None
+    verdict, _ = run_grade(workspace, {
+        "champion": both_runtimes("champion", good, window),
+        "proposal": both_runtimes("proposal", good, baseline_window(8)),
+    }, "--min-coverage", "0.5")
+    assert verdict["inconclusive"] is False

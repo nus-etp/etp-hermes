@@ -20,7 +20,12 @@ pre-registered rule of docs/self-optimising-harness.md §4 per runtime:
    ratio is checked with ``ab_stats.compute_guardrail``'s band; cost_delta is
    the relative change in recorded ``usage.total_tokens`` (0.0 when absent).
 
-ACCEPT iff, on every runtime: all active scenarios pass, no significant
+A runtime whose champion or proposal sim has fewer than ``--min-coverage``
+(default 0.8, env ``HARNESS_MIN_COVERAGE``) usable keep/drop verdicts, or is
+missing, is skipped as inconclusive. If no runtime is conclusive the verdict is
+``accept: false, inconclusive: true`` and the exit code is 3.
+
+ACCEPT iff, on every conclusive runtime: all active scenarios pass, no significant
 window regression (proposal_right < champion_right with p < 0.05), volume
 guardrail ok, cost_delta <= 0.15. Writes the markdown replay table and the
 verdict JSON in the contract shape. Pure stdlib.
@@ -31,6 +36,7 @@ from __future__ import annotations
 import argparse
 import importlib
 import json
+import os
 import sys
 import time
 from dataclasses import dataclass, field
@@ -53,6 +59,8 @@ PROPOSAL_ARM = "v2"
 GUARDRAIL_LO = 0.5
 GUARDRAIL_HI = 2.0
 MAX_COST_DELTA = 0.15
+DEFAULT_MIN_COVERAGE = 0.8
+INCONCLUSIVE_EXIT_CODE = 3
 LAYER_GRADERS = {"ingest": ("verdict_match", "company_match", "blind_judge")}
 
 
@@ -298,28 +306,78 @@ def grade_runtime(champion: dict, proposal: dict, scenario_root: Path, judge: Ju
     return row, reasons, notes
 
 
-def grade(champions: dict[str, dict], proposals: dict[str, dict], scenario_root: Path, judge: Judge) -> tuple[dict, list[str]]:
+def usable_coverage(sim: dict) -> float:
+    if sim.get("implemented", True) is False:
+        return 1.0
+    scenario_verdicts = [(result or {}).get("verdict") for result in (sim.get("scenario_results") or {}).values()]
+    window_verdicts = [item.get("verdict") for item in sim.get("window_results") or []]
+    verdicts = scenario_verdicts + window_verdicts
+    if not verdicts:
+        return 0.0
+    return sum(verdict in {"keep", "drop"} for verdict in verdicts) / len(verdicts)
+
+
+def runtime_coverage(champions: dict[str, dict], proposals: dict[str, dict], runtime: str) -> dict:
+    champion = champions.get(runtime)
+    proposal = proposals.get(runtime)
+    return {
+        "champion": None if champion is None else round(usable_coverage(champion), 4),
+        "proposal": None if proposal is None else round(usable_coverage(proposal), 4),
+    }
+
+
+def is_conclusive(coverage: dict, min_coverage: float) -> bool:
+    return all(side is not None and side >= min_coverage for side in coverage.values())
+
+
+def format_side(side: float | None) -> str:
+    return "missing" if side is None else f"{side:.0%}"
+
+
+def inconclusive_reason(runtime: str, coverage: dict, min_coverage: float) -> str:
+    return (
+        f"{runtime}: champion coverage {format_side(coverage['champion'])}, "
+        f"proposal coverage {format_side(coverage['proposal'])} (minimum {min_coverage:.0%})"
+    )
+
+
+def grade(
+    champions: dict[str, dict],
+    proposals: dict[str, dict],
+    scenario_root: Path,
+    judge: Judge,
+    min_coverage: float = DEFAULT_MIN_COVERAGE,
+) -> tuple[dict, list[str]]:
     reasons: list[str] = []
     notes: list[str] = []
+    inconclusive_reasons: list[str] = []
     per_runtime: dict[str, dict] = {}
-    runtimes = sorted(set(champions) | set(proposals))
-    if not runtimes:
-        reasons.append("no simulation files to grade")
-    for runtime in runtimes:
-        if runtime not in champions or runtime not in proposals:
-            missing = "champion" if runtime not in champions else "proposal"
-            reasons.append(f"{runtime}: missing {missing} simulation")
+    coverage: dict[str, dict] = {}
+    for runtime in sorted(set(champions) | set(proposals)):
+        coverage[runtime] = runtime_coverage(champions, proposals, runtime)
+        if not is_conclusive(coverage[runtime], min_coverage):
+            inconclusive_reasons.append(inconclusive_reason(runtime, coverage[runtime], min_coverage))
             continue
         row, runtime_failures, runtime_notes = grade_runtime(champions[runtime], proposals[runtime], scenario_root, judge)
         per_runtime[runtime] = row
         reasons.extend(runtime_failures)
         notes.extend(runtime_notes)
-    verdict = {"accept": not reasons, "reasons": reasons, "per_runtime": per_runtime}
+    if not per_runtime:
+        no_evidence = inconclusive_reasons or ["no simulation files to grade"]
+        return {"accept": False, "inconclusive": True, "reasons": no_evidence, "per_runtime": {}, "coverage": coverage}, notes
+    notes.extend(f"skipped, insufficient evidence: {reason}" for reason in inconclusive_reasons)
+    verdict = {"accept": not reasons, "inconclusive": False, "reasons": reasons, "per_runtime": per_runtime, "coverage": coverage}
     return verdict, notes
 
 
 def format_cell(value: object) -> str:
     return "n/a" if value is None else str(value)
+
+
+def decision_label(verdict: dict) -> str:
+    if verdict.get("inconclusive"):
+        return "INCONCLUSIVE"
+    return "ACCEPT" if verdict["accept"] else "REJECT"
 
 
 def render_table(verdict: dict, notes: list[str]) -> str:
@@ -336,7 +394,7 @@ def render_table(verdict: dict, notes: list[str]) -> str:
             f"{row['champion_right']} | {row['proposal_right']} | {format_cell(row['p_value'])} | "
             f"{format_cell(row['volume_ratio'])} | {row['cost_delta']} |"
         )
-    lines += ["", f"**Decision: {'ACCEPT' if verdict['accept'] else 'REJECT'}**", ""]
+    lines += ["", f"**Decision: {decision_label(verdict)}**", ""]
     lines += [f"- {reason}" for reason in verdict["reasons"]]
     if notes:
         lines += ["", "Notes:", ""] + [f"- {note}" for note in notes]
@@ -358,6 +416,12 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--judge-runtime", default=ab_llm.DEFAULT_RUNTIME, choices=sorted(ab_llm.RUNTIMES))
     parser.add_argument("--judge-model", default=None)
     parser.add_argument("--judge-cache", type=Path, default=DEFAULT_CACHE)
+    parser.add_argument(
+        "--min-coverage",
+        type=float,
+        default=float(os.environ.get("HARNESS_MIN_COVERAGE", DEFAULT_MIN_COVERAGE)),
+        help="Minimum fraction of non-null verdicts required on both arms of a runtime.",
+    )
     parser.add_argument("--sleep", type=float, default=0.2, help="Seconds between judge calls.")
     return parser.parse_args(argv)
 
@@ -365,11 +429,11 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     judge = Judge(args.judge_runtime, args.judge_model, args.judge_cache, args.sleep, load_cache(args.judge_cache))
-    verdict, notes = grade(load_sims(args.champion), load_sims(args.proposal), args.scenarios, judge)
+    verdict, notes = grade(load_sims(args.champion), load_sims(args.proposal), args.scenarios, judge, args.min_coverage)
     write_text(args.out_verdict, json.dumps(verdict, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
     write_text(args.out_table, render_table(verdict, notes))
-    print(f"{'ACCEPT' if verdict['accept'] else 'REJECT'}: {len(verdict['reasons'])} reasons -> {args.out_verdict}")
-    return 0
+    print(f"{decision_label(verdict)}: {len(verdict['reasons'])} reasons -> {args.out_verdict}")
+    return INCONCLUSIVE_EXIT_CODE if verdict["inconclusive"] else 0
 
 
 if __name__ == "__main__":

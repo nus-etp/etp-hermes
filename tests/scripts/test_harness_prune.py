@@ -21,11 +21,12 @@ def _flag(cmd: list[str], name: str) -> str:
 
 
 class FakeRunner:
-    def __init__(self, accept_prs=(), conflict_shas=(), merge_commit_shas=(), failing_runtime=None) -> None:
+    def __init__(self, accept_prs=(), conflict_shas=(), merge_commit_shas=(), failing_runtime=None, inconclusive=False) -> None:
         self.accept_prs = set(accept_prs)
         self.conflict_shas = set(conflict_shas)
         self.merge_commit_shas = set(merge_commit_shas)
         self.failing_runtime = failing_runtime
+        self.inconclusive = inconclusive
         self.calls: list[tuple[list[str], Path | None]] = []
         self.created_body = ""
 
@@ -77,9 +78,11 @@ class FakeRunner:
         accept = pr_number in self.accept_prs
         stats = {"scenarios_passed": 5, "scenarios_total": 5, "failed_ids": [], "champion_right": 8, "proposal_right": 8, "p_value": 1.0, "volume_ratio": 1.0, "cost_delta": 0.0}
         verdict = {"accept": accept, "reasons": [] if accept else ["scenario ingest-x failed"], "per_runtime": {"nvidia": stats, "zai": stats}}
+        if self.inconclusive:
+            verdict = {"accept": False, "inconclusive": True, "reasons": ["nvidia: coverage 0%"], "per_runtime": {}}
         verdict_path.write_text(json.dumps(verdict))
         Path(_flag(cmd, "--out-table")).write_text("| table |\n")
-        return _completed(cmd)
+        return _completed(cmd, returncode=3 if self.inconclusive else 0)
 
     def commands(self, *prefix: str) -> list[list[str]]:
         return [cmd for cmd, _ in self.calls if cmd[: len(prefix)] == list(prefix)]
@@ -189,6 +192,15 @@ def test_simulate_failure_skips_row(tmp_path: Path) -> None:
     report = _run(tmp_path, runner, "--open-prs")
     assert report["candidates"] == []
     assert "simulate" in report["skipped"][0]["reason"]
+
+
+def test_inconclusive_grade_is_not_an_accepted_revert(tmp_path: Path) -> None:
+    _setup(tmp_path, [_row(10)])
+    runner = FakeRunner(accept_prs={10}, inconclusive=True)
+    report = _run(tmp_path, runner, "--open-prs")
+    assert report["candidates"] == [] and report["kept"] == []
+    assert "inconclusive" in report["skipped"][0]["reason"]
+    assert runner.commands("gh", "pr", "create") == []
 
 
 def test_only_old_unpruned_rows_are_eligible(tmp_path: Path) -> None:

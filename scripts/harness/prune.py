@@ -42,6 +42,7 @@ import ledger
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 RUNTIMES = ("nvidia", "zai")
+INCONCLUSIVE_EXIT_CODE = 3
 PROMPT_FOR_LAYER = {
     "ingest": "prompts/ingest.md",
     "agent_supplement": "prompts/agent_supplement.md",
@@ -161,10 +162,14 @@ class Pruner:
             "--out-table", str(table_path),
             "--out-verdict", str(verdict_path),
         ]
-        self.require(self.run(cmd, cwd=self.repo_root), "grade")
+        result = self.run(cmd, cwd=self.repo_root)
+        if result.returncode != INCONCLUSIVE_EXIT_CODE:
+            self.require(result, "grade")
         verdict = ledger.load_verdict(verdict_path)
         if verdict is None:
             raise RowSkipped("grade wrote no readable verdict")
+        if result.returncode == INCONCLUSIVE_EXIT_CODE or verdict.get("inconclusive"):
+            raise RowSkipped(f"grade inconclusive: {'; '.join(verdict.get('reasons') or [])}")
         return verdict, table_path
 
     def revert_args(self, merge_sha: str, worktree: Path) -> list[str]:
