@@ -24,11 +24,11 @@ _Total disclosed: $2.4M._
   - People: Jeff Pan (Co-Founder & CEO), Alex Khor (Co-Founder)
   - Counterparties: OCBC (meetup host), Vercel (supporter), Singapore Global Network (supporter)
   - Numbers: meetup held 2026-06-06 in Jakarta
+
+## Older signals
 - **2026-09-11** — Belli was crowned champion of the 2026 SWC Asia Finale and will represent Asia at the San Francisco Grand Finale in November, competing for a US$1M investment prize — [belli.ai](https://belli.ai/company/news/belli-crowned-champion-at-the-2026-swc-asia-finale)
   - Summary: Belli took the top spot at the 2026 SWC Asia Finale, where it was judged on its enterprise-grade SaaS for aviation cargo and its commercial scalability. As regional champion the team travels to San Francisco in November 2026 for the SWC Grand Finale and a US$1,000,000 investment prize; DPBIO Technology Limited and Set Sail AI were named first and second runner-up respectively.
   - Numbers: US$1,000,000 Grand Finale investment prize; November 2026 Grand Finale
-
-## Older signals
 - **2026-08-14** — Web in Travel profile (reposted by Belli) details the company's March 2024 founding, the US$500K Iterative pre-seed secured after 60 investor rejections, and breakeven within nine months with multiple airline clients — [belli.ai](https://www.belli.ai/news/read-what-web-in-travel-wit-wrote-about-belli-from-early-challenges-to-building-product-to-the-air-cargo-market)
   - Summary: A Web in Travel profile (by Till Welzel, reposted on Belli's news page) recounts the company's early path: Belli AI was founded in March 2024 by Jeff Pan (ex-Booking.com, Flymya, McKinsey) and Alexander Khor (molecular biology background; product management at AirAsia Teleport) to attack a US$6 trillion air-cargo sector — roughly 35% of world trade by value — that still runs on paper-based processes and legacy systems up to 15 years behind passenger technology. Pan and Khor faced 60 investor rejections before securing US$500,000 in pre-seed funding from Iterative, and reached breakeven within nine months of founding while signing multiple airline clients through hands-on, conference-led acquisition. Belli's software functions as an operating system for cargo spanning planning, load balancing, revenue management and automation; the profile notes cargo generates significantly higher operating margins than passenger services.
   - People: Jeff Pan (Co-Founder & CEO), Alexander Khor (Co-Founder)
