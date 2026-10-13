@@ -5,13 +5,12 @@ WORKFLOW    := .github/workflows/hermes-sync.yml
 
 .PHONY: pin-hermes pin-hermes-extras
 
-# Re-resolve the ddgs/langfuse pins installed into hermes' venv on CI.
-# Upgrades to the latest versions and regenerates the hash-locked
-# requirements-hermes.txt. Review the diff, then commit.
+# Re-resolve the ddgs/langfuse pins (the `hermes-extras` group in uv.lock)
+# installed into hermes' venv on CI. Upgrades them and their transitive
+# deps to the latest versions. Review the diff, then commit.
 pin-hermes-extras:
-	uv pip compile --universal --generate-hashes --upgrade \
-	  --python-version 3.10 requirements-hermes.in -o requirements-hermes.txt
-	@git --no-pager diff --stat -- requirements-hermes.txt
+	uv lock --upgrade-package ddgs --upgrade-package langfuse
+	@git --no-pager diff --stat -- uv.lock
 
 # Re-pin the hermes-agent install in the daily workflow to a new release.
 # Resolves REF (tag, branch, or 40-char commit SHA) to a commit, fetches the

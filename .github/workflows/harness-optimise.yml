@@ -168,7 +168,9 @@ jobs:
       - name: Install ddgs + langfuse into hermes venv
         if: steps.bootstrap.outputs.ok == 'true'
         continue-on-error: true
-        run: uv pip install --quiet --python "$HOME/.hermes/hermes-agent/venv/bin/python" --require-hashes -r requirements-hermes.txt
+        run: |
+          uv export --locked --only-group hermes-extras --no-emit-project -o "$RUNNER_TEMP/hermes-extras.txt"
+          uv pip install --quiet --python "$HOME/.hermes/hermes-agent/venv/bin/python" --require-hashes -r "$RUNNER_TEMP/hermes-extras.txt"
 
       - name: Write harness shell helpers
         if: steps.bootstrap.outputs.ok == 'true'

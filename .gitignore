@@ -4,6 +4,7 @@
 
 *.log
 *.lock
+!uv.lock
 .DS_Store
 
 .hermes/
