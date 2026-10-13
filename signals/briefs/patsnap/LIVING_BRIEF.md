@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-09-04 17:00 UTC_
+_Last updated: 2026-10-13 22:50 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -22,6 +22,11 @@ _Last material event: 2026-06-15 — Confidential dual IPO filing in Hong Kong a
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-10-08** — Patsnap named Mark Davies, ex-Kiin Bio chief data and scientific officer and a nine-year BenevolentAI data executive, as Head of Product for its life sciences division, giving him the product strategy for its AI bio and chemistry intelligence tools — [patsnap.com](https://www.patsnap.com/resources/blog/press_release/patsnap-appoints-drug-discovery-data-leader-mark-davies-to-lead-life-sciences-product-strategy/)
+  - Summary: Patsnap announced that Mark Davies has joined as Head of Product for its life sciences division, where he owns product strategy for its AI-powered bio and chemistry intelligence tools. Davies co-founded Kiin Bio as Chief Data and Scientific Officer, spent nine years at BenevolentAI as SVP of Informatics and Data, and earlier led development of the ChEMBL and SureChEMBL open chemistry databases. Patsnap frames the appointment as a deliberate policy of putting practising scientists and attorneys into product leadership, saying it deepens its bench in computational drug discovery specifically.
+  - People: Mark Davies (Head of Product, Life Sciences, Patsnap), Haydn Evans (SVP Strategy, Patsnap)
+  - Numbers: 20+ years in AI-enabled drug discovery; 9 years at BenevolentAI
+  - Quote: "Some of the biggest delays in drug discovery come not from the science, but from getting to the right data at the right time." — Mark Davies, Head of Product, Life Sciences, Patsnap
 - **date unknown** — Patsnap's own page announcing the CAS partnership now carries the note "this partnership concluded in 2026", marking the end of the CAS collaboration — [patsnap.com](https://www.patsnap.com/resources/blog/patsnap-and-cas-form-strategic-partnership)
   - Summary: Patsnap's blog post announcing the CAS (Chemical Abstracts Service, a division of the American Chemical Society) partnership now opens with an editorial note that the partnership concluded in 2026, indicating the collaboration announced earlier this year has ended. The retained body text describes combining CAS's human-curated scientific data with Patsnap's AI/ML and data-visualization technologies for life- and material-science customers; no reason or exact end date is given. The conclusion makes the partnership's commercial structure moot and retires the open question on how CAS data was being delivered.
 
@@ -37,6 +42,11 @@ _Total disclosed: $351.6M._
 - **2026-07-29** — Head of Legal — Legal — [jobs.lever.co](https://jobs.lever.co/patsnap/6e3c63ca-2745-495c-9455-dab5f8fc58ae)
 
 ## Older signals
+- **2026-09-09** — Patsnap appointed European and UK patent attorney Matthew Birch as AI Solutions Lead for its IP division, owning the roadmap for its agentic patent drafting products — [patsnap.com](https://www.patsnap.com/resources/blog/press_release/patsnap-appoints-european-patent-attorney-matthew-birch-to-lead-ai-drafting-products/)
+  - Summary: Patsnap announced Matthew Birch has joined as AI Solutions Lead for its intellectual property division, owning the product roadmap for its agentic patent drafting tools. Birch is a Chartered UK Patent Attorney and a European Patent Attorney who practised patent prosecution and litigation at European and global firms with a focus on medical devices, renewable energy and AI. Patsnap says the appointment follows the same pattern as the life-sciences hire — moving practising attorneys into product leadership — and deepens the division's bench in European and UK practice.
+  - People: Matthew Birch (AI Solutions Lead, IP, Patsnap), Haydn Evans (SVP of Strategy, Patsnap)
+  - Numbers: 15+ years of IP experience
+  - Quote: "My interests have always been in incentivizing companies and individuals to innovate, and in facilitating reward for their ingenuity," — Matthew Birch, AI Solutions Lead, Patsnap
 - **2026-07-13** — Patsnap Joins ASEAN IP Cooperation to Support Trusted Regional IP Data and AI-Assisted Examination — [patsnap.com](https://www.patsnap.com/resources/blog/patsnap-joins-asean-ip-cooperation-to-support-trusted-regional-ip-data-and-ai-assisted-examination/)
 - **2026-06-24** — Patsnap and Intellegens announce strategic partnership integrating Patsnap's global patent dataset with Intellegens' Alchemite Suite for AI-driven formulation design, enabling real-time patentability and freedom-to-operate checks during R&D experiments — [intellegens.com](https://intellegens.com/patsnap-and-intellegens-announce-strategic-partnership-bringing-real-time-ip-intelligence-into-ai-driven-formulation-design/)
   - Summary: Patsnap integrates its global patent dataset with Intellegens' Alchemite Suite, an AI-driven formulation design platform. R&D teams gain access to patentability and freedom-to-operate checks during experimental design, bridging the gap between IP intelligence and materials R&D workflows.
@@ -66,3 +76,4 @@ _Total disclosed: $351.6M._
 - What is the expected valuation and timeline for the dual HK/Singapore IPO? Which exchange will be the primary listing?
 - Is the AI Agent Platform a new product line or an evolution of existing IP analytics? How does it differ from the core Patsnap offering?
 - Is the life sciences hiring push related to a specific product launch or market expansion in pharma R&D?
+- Do the life-sciences and IP product-leadership appointments signal vertical divisions with their own roadmaps and P&Ls ahead of the dual IPO?

@@ -1,11 +1,11 @@
 # pQCee — LIVING BRIEF
-_Last updated: 2026-09-12 16:13 UTC_
+_Last updated: 2026-10-13 22:50 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 pQCee is a Singapore-based post-quantum cybersecurity startup (founded 2022) building NIST-aligned quantum-safe encryption and key-lifecycle management tools, with a flagship SafeQuard™ document-protection product. In August 2026 the company signed a definitive share exchange agreement under which Vancouver-based digital-assets investment firm Universal Digital Inc. (CSE: LFG) will acquire all of pQCee's shares in a change-of-business transaction, alongside a concurrent US$5–10M private placement at a US$72.5M combined pre-money valuation. Closing is subject to shareholder and CSE approvals, with Universal Digital's shares suspended until the transaction completes or terminates.
 
-_Last material event: 2026-08-05 — Definitive share exchange agreement with Universal Digital Inc. (CSE: LFG); US$72.5M combined pre-money, US$5–10M concurrent placement_
+_Last material event: 2026-09-30 — Long stop date on the Universal Digital Inc. (CSE: LFG) share-exchange acquisition extended from 30 Sep to 30 Dec 2026 to complete the concurrent financing_
 
 ## Profile
 - Sector: Cybersecurity / Quantum computing
@@ -19,7 +19,12 @@ _Last material event: 2026-08-05 — Definitive share exchange agreement with Un
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-09-30** — Universal Digital and pQCee extended the long stop date on their US$72.5M share-exchange acquisition from 30 September to 30 December 2026, citing the unfinished concurrent financing and remaining closing conditions, and flagging the risk the deal misses the new deadline — [sedar-filings-backup.thecse.com](https://sedar-filings-backup.thecse.com/000053666/06499347-00000001-000053666-universal09302026nr-PDF.pdf)
+  - Summary: Universal Digital Inc. (CSE: LFG; OTCID: LFGMF; FSE: 8R20) said it and PQCEE Pte. Ltd. agreed in writing to extend the long stop date under their previously announced share exchange agreement — the deal under which Universal Digital acquires all issued and outstanding pQCee shares — from 30 September 2026 to 30 December 2026. The extension buys time to complete the concurrent financing and satisfy the remaining closing conditions; all other terms and conditions are unchanged. The release flags the risk that the transaction does not close by 31 December 2026 or at all, and that trading in Universal Digital's common shares stays suspended in the meantime.
+  - People: Chris Yeung (CEO and Director, Universal Digital Inc.)
+  - Counterparties: Universal Digital Inc. (acquirer), CSE (regulator)
+  - Numbers: long stop date moved 2026-09-30 → 2026-12-30; US$72.5M combined pre-money valuation (unchanged); closing risk flagged if not done by 2026-12-31
+  - Quote: "The extension provides additional time to complete the concurrent financing and satisfy the remaining closing conditions for the Transaction." — Universal Digital Inc.
 
 ## Older signals
 - **2026-08-05** — Signed a definitive share exchange agreement for Vancouver-based Universal Digital Inc. (CSE: LFG) to acquire all of pQCee in a change-of-business deal; US$72.5M combined pre-money, concurrent US$5–10M placement — [kalkinemedia.com](https://kalkinemedia.com/ca/news/announcements/universal-digital-inc-to-acquire-singapore-based-post-quantum-cybersecurity-firm-pqcee-in-definitive-share-exchange-agreement) (Also reported by: [pqcee.com](https://www.pqcee.com/blog/universal-digital-inc-announces-definitive-share-exchange-agreement-to-acquire-pqcee-pte-ltd), [sedar-filings-backup.thecse.com](https://sedar-filings-backup.thecse.com/000053666/06473867-00000001-000053666-universaldigital08052026nr-PDF.pdf))
@@ -45,3 +50,4 @@ _none_
 - How does the deal's US$72.5M pre-money valuation and ~88% share issuance treat existing seed investors (SGInnovate, Lotus One, Wavemaker)?
 - Is the TechCreate integration a paid contract or a joint proof-of-concept?
 - What name will the resulting issuer carry, who will lead it, and when is the shareholder meeting expected to approve the change of business?
+- Will the concurrent financing close within the US$5–10M target before the 30 December long stop, and what happens to pQCee if it does not?

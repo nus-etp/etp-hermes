@@ -1,16 +1,16 @@
 # NEU Battery Materials — LIVING BRIEF
-_Last updated: 2026-09-01 17:23 UTC_
+_Last updated: 2026-10-13 22:50 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 NUS GRIP-incubated battery-materials startup developing low-cost electrochemical recycling for lithium iron phosphate (LFP) batteries. Founded by Dr. Bryan Oh and Dr. Chen Junting, the company aims to make recycled LFP feedstock economically competitive with mined lithium, particularly as China's new lithium futures market introduces global price volatility.
 
-_Last material event: 2026-01-06 — Pre-Series A first close led by SGInnovate and Shift4Good_
+_Last material event: 2026-10-13 — Closed an oversubscribed US$7.6M round co-led by Shift4Good and SGInnovate, off its newly commissioned 1,300 t/yr Singapore LFP recycling plant_
 
 ## Profile
 - Sector: Climate tech
 - Region: Singapore
-- Stage / funding: Pre-Series A
+- Stage / funding: Series A (US$7.6M round closed 2026-10-13)
 - Identifiers: [LinkedIn](https://sg.linkedin.com/company/neu-battery-materials), [Crunchbase](https://www.crunchbase.com/organization/neu-battery-materials), UEN: 202119965Z, [SGInnovate](https://www.sginnovate.com/investments/neu-battery-materials), [NUS CDE](https://cde.nus.edu.sg/research/industry-partnership/neu-battery-materials/)
 
 ## Funding history
@@ -21,7 +21,12 @@ _Last material event: 2026-01-06 — Pre-Series A first close led by SGInnovate 
 _Total disclosed: $4.3M._
 
 ## Recent signals
-_none_
+- **2026-10-13** — NEU closed an oversubscribed US$7.6M round co-led by Shift4Good and SGInnovate, off its newly commissioned 1,300 t/yr Singapore LFP recycling plant, to ramp battery-grade lithium output and fund international expansion — [neumaterials.com](https://www.neumaterials.com/news/neu-battery-materials-closes-funding-round-to-scale-lfp-recycling-and-strengthen-lithium-supply-chain-resilience) (Also reported by: [techinasia.com](https://www.techinasia.com/news/neu-battery-materials-raises-76m-scale-lfp-recycling), [businesstimes.com.sg](https://www.businesstimes.com.sg/esg/singapore-lithium-battery-recycling-startup-neu-battery-materials-raises-us7-6-million), [e27.co](https://e27.co/neu-battery-materials-bags-us7-6m-to-mine-lithium-from-the-worlds-least-loved-battery-20261013/), [prnewswire.com](https://www.prnewswire.com/news-releases/neu-battery-materials-closes-oversubscribed-us7-6-million-funding-round-to-scale-lfp-recycling-and-strengthen-lithium-supply-chain-resilience-302905285.html))
+  - Summary: NEU Battery Materials announced the oversubscribed close of a US$7.6M round co-led by Shift4Good and SGInnovate, saying the capital follows the commissioning of its 1,300-tonne-per-year Singapore plant and moves the company from technology development to industrial scale-up. Proceeds fund the ramp-up of battery-grade lithium from LFP feedstock such as cathode production scrap and end-of-life black mass, plus international expansion. The company lists Lotus Singapore Group and M7 Holdings among new participants and Paragon Ventures I among existing backers; The Business Times identifies the two new names as family offices and reports the close coincides with the facility launch.
+  - People: Bryan Oh (Co-founder and CEO), Sebastien Guillaud (Co-founder and Managing Partner, Shift4Good), Hsien-Hui (Head of Investments, SGInnovate), Kenneth Palmer (Co-founder)
+  - Counterparties: Lotus Singapore Group (new investor), M7 Holdings (new investor)
+  - Numbers: US$7.6M round; 1,300 t/yr plant capacity; LFP >90% of global battery energy storage and >55% of EV batteries (IEA); up to 83% lower emissions than hydrometallurgy/pyrometallurgy
+  - Quote: "The funding will catalyse the scale-up and deployment of our modular LFP recycling technology, enabling us to expand the production of vital battery-grade lithium, and at progressively lower costs to our customers." — Bryan Oh, Co-founder and CEO, NEU Battery Materials
 
 ## Older signals
 - **2026-09-01** — Published analysis arguing Europe's grid-scale ESS buildout — Chinese suppliers booked ~120 GWh of LFP storage orders in H1 2026 — creates recycling demand that must be sited in Europe, positioning its electrochemical process for the wave — [neumaterials.com](https://www.neumaterials.com/news/european-ev-and-ess-batteries-fuel-recycling-demand)
@@ -47,6 +52,6 @@ _none_
   - Quote: "As a major importer, [China] logically wants to have some say in benchmark pricing," — Lucas Zhang Liutong, WaterRock Energy Economics
 
 ## Open questions
-- When will NEU's first commercial-scale recycling facility come online and at what capacity?
 - Has NEU secured feedstock supply agreements with battery manufacturers or EV OEMs?
 - Does the US policy push change NEU's go-to-market — is it pursuing North American deployment of its modular recycling systems?
+- What is NEU's current battery-grade lithium output and unit cost now that the 1,300 t/yr plant is commissioned, and when does it reach nameplate?

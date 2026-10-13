@@ -2,7 +2,7 @@ Hermes venv at ~/.hermes/hermes-agent/venv/ ships without pip. To install packag
 §
 Webflow republishes unchanged, so changed-feed detection refetches seen links. Curated-page 403s (sensorihealthcare.com, curatedculture.sg) need a full browser header set (UA + Accept + Accept-Language + Sec-Fetch-*) — --compressed alone still 403s.
 §
-Layer 3 (etp-hermes) merges agent/updates signals into briefs from `data/touched-companies.json` (H2/H3=company); writes only under signals/briefs/<slug>/; `_Last updated:_` bump unconditional even when nothing new; Sector silent-corrected to c.sector; funding re-rendered from c.funding_rounds. Layer-2 gap-fill URLs differ from on-disk cites only by trailing slash/www — dedupe, never re-card.
+Layer 3 (etp-hermes) merges agent/updates signals into briefs from `data/touched-companies.json` (H2/H3=company); writes only under signals/briefs/<slug>/; no-write check = if only `_Last updated:_` would differ, skip the write and keep the old timestamp; Sector silent-corrected to c.sector; funding re-rendered from c.funding_rounds. Layer-2 gap-fill URLs differ from on-disk cites only by trailing slash/www — dedupe, never re-card.
 §
 The etp-hermes GHA runner can boot with a corrupted PATH (env `declare -x` output embedded into it, so /usr/bin is missing and `cat`/`rm`/`ls` fail for tools that shell out, incl. write_file). Fix: `export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin` per command, or symlink coreutils into /home/runner/.local/bin (it's on PATH). Verify with `command -v cat` before assuming tools work.
 §
