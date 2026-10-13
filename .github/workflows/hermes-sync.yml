@@ -250,7 +250,7 @@ jobs:
         # The hermes installer builds the venv with uv and doesn't seed pip,
         # so we install via `uv pip` against the existing interpreter.
         # Versions + hashes come from the `hermes-extras` group in uv.lock;
-        # bump via `make pin-hermes-extras`.
+        # bump via `uv lock --upgrade-package ddgs --upgrade-package langfuse`.
         run: |
           uv export --locked --only-group hermes-extras --no-emit-project -o "$RUNNER_TEMP/hermes-extras.txt"
           uv pip install --quiet --python "$HOME/.hermes/hermes-agent/venv/bin/python" --require-hashes -r "$RUNNER_TEMP/hermes-extras.txt"
