@@ -1,9 +1,9 @@
 # Constructor.io — LIVING BRIEF
-_Last updated: 2026-10-11 22:12 UTC_
+_Last updated: 2026-10-14 22:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-US-based enterprise eCommerce search and product-discovery platform using NLP and ML ranking to power personalized search, browse, and recommendations for major retailers. Already profitable and serving brands like Sephora, Petco, and Under Armour, Constructor recently raised a $25M Series B as an insurance policy — with minimal planned spend and a focus on R&D and EMEA expansion.
+US-based enterprise eCommerce search and product-discovery platform using NLP and ML ranking to power personalized search, browse, and recommendations for major retailers. Already profitable and serving brands like Sephora, Petco, and Under Armour, Constructor raised a $25M Series B in June 2026 as an insurance policy — with minimal planned spend and a focus on R&D and EMEA expansion. Finovate's read on the Stripe launch adds a rare traction datapoint: Constructor says the number of companies deploying its AI agents rose tenfold over the past year, and it plans to extend Agentic Checkout beyond the AI Shopping Agent later in 2026.
 
 _Last material event: 2026-10-05 — Launched Agentic Checkout with Stripe, embedding Stripe-powered payment inside its AI shopping agents_
 
@@ -20,10 +20,10 @@ _Last material event: 2026-10-05 — Launched Agentic Checkout with Stripe, embe
 _Total disclosed: $55.0M._
 
 ## Recent signals
-- **2026-10-05** — Launched Agentic Checkout with Stripe, letting shoppers complete a purchase from inside Constructor's AI shopping agents without leaving the conversation — [constructor.com](https://constructor.com/blog/introducing-agentic-checkout-from-constructor-and-stripe)
-  - Summary: Constructor partnered with Stripe to launch Agentic Checkout, which lets shoppers ask an AI agent for recommendations, refine their choices and pay — via Stripe Checkout or Pay with Link — within the same agentic chat. Constructor says it is the first company to offer Stripe-powered checkout directly within onsite shopping agents, fusing discovery and checkout into one interface and removing a conversion handoff. The post cites Baymard Institute research that 17% of shoppers abandon an order because checkout is too long or complicated, and that roughly 70% of shopping carts are abandoned overall.
+- **2026-10-05** — Launched Agentic Checkout with Stripe, letting shoppers complete a purchase from inside Constructor's AI shopping agents without leaving the conversation — [constructor.com](https://constructor.com/blog/introducing-agentic-checkout-from-constructor-and-stripe) (Also reported by: [finovate.com](https://finovate.com/stripe-to-power-constructors-agentic-checkout/))
+  - Summary: Constructor partnered with Stripe to launch Agentic Checkout, which lets shoppers ask an AI agent for recommendations, refine their choices and pay — via Stripe Checkout or Pay with Link — within the same agentic chat. Constructor says it is the first company to offer Stripe-powered checkout directly within onsite shopping agents, fusing discovery and checkout into one interface and removing a conversion handoff. The post cites Baymard Institute research that 17% of shoppers abandon an order because checkout is too long or complicated, and that roughly 70% of shopping carts are abandoned overall. Finovate adds that Agentic Checkout is powered by Constructor's Commerce Reasoning Engine and AI Product Insights Agent, that existing Constructor customers can switch it on by updating Constructor's UI library and adding Stripe credentials, and that Constructor plans to extend it beyond the AI Shopping Agent to other parts of retailers' digital shopping experiences later in 2026.
   - Counterparties: Stripe (payments partner)
-  - Numbers: 17% abandon due to long or complicated checkout (Baymard); ~70% cart abandonment overall
+  - Numbers: 17% abandon due to long or complicated checkout (Baymard); ~70% cart abandonment overall; 10x rise in companies deploying Constructor AI agents over the past year; 5M+ businesses on Stripe; 250M+ Link by Stripe customers
 
 ## Older signals
 - **2026-08-29** — Won three Gold "Company of the Year" honours across the International Business Awards, the Stevie Awards for Technology Excellence and the American Business Awards, plus Gold product awards for its AI Product Insights Agent — [techday.com](https://techday.com/story/constructor-wins-trio-of-stevie-gold-awards-for-ecommerce) (Also reported by: [prnewswire.com](https://www.prnewswire.com/news-releases/ai-innovation-at-constructor-leads-to-3-gold-company-of-the-year-wins-across-3-stevie-awards-programs-302861732.html), [martechcube.com](https://martechcube.com/constructor-wins-3-gold-stevie-awards-for-ai-innovation))

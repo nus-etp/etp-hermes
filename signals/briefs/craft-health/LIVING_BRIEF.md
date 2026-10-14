@@ -1,5 +1,5 @@
 # Craft Health — LIVING BRIEF
-_Last updated: 2026-10-11 22:12 UTC_
+_Last updated: 2026-10-14 22:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -19,7 +19,7 @@ _Last material event: 2026-10-01 — PharmaTher signs exclusive North American d
 _Total disclosed: $1.0M._
 
 ## Recent signals
-- **2026-10-01** — PharmaTher (CSE: PHRM) signed an exclusive North American distribution agreement for CraftMake, opening the US and Canadian markets across all customer segments — [newsfilecorp.com](https://www.newsfilecorp.com/release/316740/PharmaTher-Enters-into-Exclusive-North-American-Distribution-Agreement-with-Craft-Heal)
+- **2026-10-01** — PharmaTher (CSE: PHRM) signed an exclusive North American distribution agreement for CraftMake, opening the US and Canadian markets across all customer segments — [newsfilecorp.com](https://www.newsfilecorp.com/release/316740/PharmaTher-Enters-into-Exclusive-North-American-Distribution-Agreement-with-Craft-Heal) (Also reported by: [pharmather.com](https://www.pharmather.com/invest/pharmather-enters-into-exclusive-north-american-distribution-agreement-with-craft-health-for-craftmaketm-pharmaceutical-3d-printing-platform))
   - Summary: PharmaTher Holdings became the exclusive North American distributor of Craft Health's CraftMake 3D printers, CraftControl software, CraftBlends printable formulations, consumables and service, covering compounding pharmacies (503A and 503B), telehealth and digital-health companies, CDMOs, hospitals, academic and government institutions, and pharma/biotech customers. The agreement builds on the July 2026 collaboration to evaluate CraftMake for personalized peptides and underpins PharmaTher's PERSONALIZ3D platform. PharmaTher plans initial CraftMake platform orders in Q4 2026 and estimates more than 10,000 potential placement sites in North America, each designed to generate recurring revenue.
   - People: Fabio Chianelli (CEO, PharmaTher)
   - Counterparties: PharmaTher Holdings (exclusive North American distributor)

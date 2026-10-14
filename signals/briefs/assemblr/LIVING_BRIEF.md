@@ -1,9 +1,9 @@
 # Assemblr — LIVING BRIEF
-_Last updated: 2026-10-11 22:12 UTC_
+_Last updated: 2026-10-14 22:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-Assemblr is an Indonesian AR / 3D-content platform building the Assemblr EDU product for K-12 STEM education, with a growing teacher-training program across all 38 Indonesian provinces. The 2026 return of its Roadshow Webinar, which engaged over 63,718 teachers in 2025, indicates sustained adoption of AR technology in Indonesia's education system.
+Assemblr is an Indonesian AR / 3D-content platform building the Assemblr EDU product for K-12 STEM education, with a growing teacher-training program across all 38 Indonesian provinces and a Kemendikdasmen partnership the company says reaches more than 16 million teachers and students. A US$400,000 Shariah-compliant investment from Malaysian VC Ficus Capital's SEA Fund into subsidiary Assemblr Studio Sdn Bhd funded its November 2025 entry into Malaysia — the company's first disclosed institutional money and its first market outside Indonesia. The 2026 return of its Roadshow Webinar, which engaged over 63,718 teachers in 2025, indicates sustained adoption of AR technology in Indonesia's education system.
 
 _Last material event: 2026-08-11 — Assemblr EDU listed on Learning Cabinet, a global curated EdTech platform built on the UNICEF-led EdTech for Good Framework_
 
@@ -11,8 +11,8 @@ _Last material event: 2026-08-11 — Assemblr EDU listed on Learning Cabinet, a 
 - Sector: EdTech / XR
 - Region: Indonesia (HQ Bandung), Singapore (CT HUB2, 336 Smith St)
 - Founded: ~2018
-- Stage / funding: Bootstrapped; no priced equity round disclosed
-- Key people: Not publicly identified
+- Stage / funding: Bootstrapped at parent level; Malaysian subsidiary Assemblr Studio Sdn Bhd funded by a US$400,000 Ficus SEA Fund investment (Nov 2025)
+- Key people: Hasbi Asyadiq (Founder & CEO)
 - Identifiers: [LinkedIn](https://www.linkedin.com/company/assemblr)
 
 ## Funding history
@@ -37,6 +37,12 @@ _No disclosed funding._
 - **2026-06-29** — Assemblr 2026 Updates: New Editor, Belajar.id & AI Presentation — [assemblrworld.com](https://www.assemblrworld.com/es/blog/latest-assemblr-updates-new-editor-belajar-id-and-lessoncrafts)
   - Summary: Assemblr redesigned its 3D/AR editor with Dark Mode/Light Mode, animations, visual coding templates, and real-time collaboration. Assemblr EDU expanded exclusive access to students with Belajar.id accounts across Indonesia (SD/SMP/SMA/SMK domains). LessonCrafts launched an AI Presentation feature generating editable slide drafts from a lesson topic, with a new Competition Page aggregating all monthly Assemblr EDU contests.
 - **2026-04-13** — Assemblr EDU Roadshow Webinar returns for 2026, targeting teachers across all 38 Indonesian provinces to enhance AR-based teaching skills — [Assemblr Blog](https://www.assemblrworld.com/blog/assemblre-edus-roadshow-webinar-returns-in-2026-to-enhance-teachers-skills-with-ar-technology)
+- **2025-11-12** — Ficus Capital put US$400,000 from its Ficus SEA Fund into Assemblr's Malaysian subsidiary Assemblr Studio Sdn Bhd, funding the company's first market outside Indonesia — [asiaeducationreview.com](https://www.asiaeducationreview.com/others/news/assemblr-edu-expands-to-malaysia-boosts-education-in-indonesia-nwid-5041.html)
+  - Summary: Asia Education Review reported that Assemblr is entering Malaysia on the back of a US$400,000 Shariah-compliant investment from Malaysian venture firm Ficus Capital through its Ficus SEA Fund — Ficus Capital's first cross-border deal. The funding went to Assemblr Studio Sdn Bhd, the Malaysian subsidiary that will replicate the Indonesian immersive-education model; CEO Hasbi Asyadiq said it would serve as a hub for collaboration with Malaysian educators, ministries and educational organisations. The same piece recaps Assemblr EDU's Kemendikdasmen partnership announced at the ministry's inaugural CDT Talks, where teachers holding official @guru and @pendidik accounts get premium access to the 3D object library, AR teaching aids, experience builders and 3D editors, an initiative the ministry expects to benefit more than 16 million users.
+  - People: Hasbi Asyadiq (Founder & CEO, Assemblr), Yudistra Nugraha (Head of Pusdatin, Kemendikdasmen), Prof. Nunuk Suryani (Director General of Teachers and Education Personnel)
+  - Counterparties: Ficus Capital (investor), Kemendikdasmen / Pusdatin (ministry partner)
+  - Numbers: US$400,000 investment; 16M+ expected users; Ficus Capital's first cross-border deal
+  - Quote: "Assemblr was built on the idea to make education more engaging and accessible to anyone. Expanding into Malaysia is a proud milestone as we continue our journey to become a global platform that empowers educators and students through immersive learning" — Hasbi Asyadiq, Founder and CEO, Assemblr
 - **2025-05-05** — Assemblr EDU announced as an official Belajar.id partner platform at Kemendikdasmen's CDT Talks #1 seminar, joining Canva and Quizizz among the ministry's national platform partners — [assemblrworld.com](https://www.assemblrworld.com/blog/meet-assemblr-edu-the-first-official-partner-platform-of-belajar-id-from-indonesia)
   - Summary: Kemendikdasmen's CDT Talks #1 seminar (April 30, 2025) marked the official launch of the ministry's collaboration with Assemblr EDU, adding the 3D/AR platform to Belajar.id's partner list alongside Canva and Quizizz. Assemblr EDU (founded 2020) provides 3D/AR teaching aids, ready-to-use topics, and a drag-and-drop editor for teachers and students.
   - People: Hasbi Asyadiq (CEO & Founder, Assemblr EDU)
@@ -44,6 +50,5 @@ _No disclosed funding._
 
 ## Open questions
 - Is Assemblr generating meaningful revenue from its EDU product, or is growth primarily grant- and partnership-driven?
-- Has the company raised any institutional funding since joining the BLOCK71 / TS2 cohort?
-- What are the commercial terms of the Belajar.id partnership — paid government contract or freemium distribution?
 - Is LessonCrafts generating stand-alone revenue, or is it bundled into Assemblr EDU subscriptions?
+- What is the Malaysian go-to-market — a ministry-level partnership on the Indonesian model — and does the Ficus Capital investment sit at subsidiary or group level?

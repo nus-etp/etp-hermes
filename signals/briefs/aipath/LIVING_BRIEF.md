@@ -26,13 +26,13 @@ _No disclosed funding._
   - People: David Isaac (Founder, AIPath)
   - Numbers: 5 tests across 8 tool categories; 35 named tools; PwC 2016 Big Decisions survey — 13% of 2,100+ executives used prescriptive analytics
   - Quote: "The fear underneath most growth decisions is not choosing the wrong option. It is finding out later that the right one existed the whole time and nobody in the room thought of it." — David Isaac, Founder, AIPath
+
+## Older signals
 - **2026-09-13** — AIPath's founder states the company is deliberately not targeting Gartner's Decision Intelligence Platform Magic Quadrant, positioning "Growth Decision Intelligence for the CEO" as the growth-strategy layer above the 17 operational-risk vendors Gartner named in January 2026 — [aipath.one](https://www.aipath.one/post/what-growth-decision-intelligence-must-prove)
   - Summary: In a founder-authored post, David Isaac argues growth decision intelligence is a distinct field from the decision intelligence Gartner's January 2026 Magic Quadrant covers: the 17 evaluated platforms decide operational and risk questions such as fraud, credit, supply chain and pricing, while the growth decision — which segment, product, position and how much budget to point at each — is a separate, unaddressed parent decision. AIPath says it has been live in market since May 2024 on a method developed from 2023, that a tier-1 management consultancy runs AIPath itself, and that it is publishing the five capabilities it has not yet proved at scale.
   - People: David Isaac (Founder, AIPath)
   - Numbers: 17 vendors in Gartner's January 2026 Decision Intelligence Magic Quadrant; AIPath live in market since May 2024; observed acquisition cost fell from USD 240 to USD 43 over ten weeks for one financial-services customer; a telco CEO matched a 50-person team's 18-month output in 17 minutes
   - Quote: "A recommendation that arrives without the case against it is an opinion with a logo on it." — David Isaac, Founder, AIPath
-
-## Older signals
 - **2026-07-15** — AIPath published a founder-authored explainer staking out "Growth Decision Intelligence" as the strategic-decision slice of the category Gartner's January 2026 Decision Intelligence Magic Quadrant doesn't cover — [aipath.one](https://www.aipath.one/post/what-is-growth-decision-intelligence)
   - Summary: Founder David Isaac's post defines Growth Decision Intelligence as decision intelligence applied to the growth decision — which segments, positions, and initiatives a company funds next. It argues Gartner's inaugural January 2026 Magic Quadrant for Decision Intelligence Platforms (17 vendors, including FICO, SAS, IBM, Quantexa) covers only high-frequency operational decisions such as credit, fraud, and pricing, leaving the rare, high-stakes growth decision unaddressed. AIPath says it closes that gap by generating and ranking hundreds of thousands of growth-option combinations in simulation, then pre-testing the strongest in live market conditions against a control before budget commits; the post links a live demo at library.aipath.one/home and a free 45-minute working session.
   - People: David Isaac (Founder)

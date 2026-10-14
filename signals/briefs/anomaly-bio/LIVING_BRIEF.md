@@ -1,9 +1,9 @@
 # Anomaly Bio — LIVING BRIEF
-_Last updated: 2026-10-11 22:12 UTC_
+_Last updated: 2026-10-14 22:00 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-The Hangar (NUS Enterprise)-resident biomanufacturing startup using fermentation and strain engineering to turn microbes into 'micro-factories' producing bio-based ingredients for crop protection, nutrition, and personal care. Founded in 2022 at NUS by Armaan Dhanda and Samyak Baid, the company was one of five startups in Mars Petcare's Next Generation Pet Food Program 2024 and an MIT WFA Prize 2025 awardee.
+The Hangar (NUS Enterprise)-resident biomanufacturing startup using fermentation and strain engineering to turn microbes into 'micro-factories' producing bio-based ingredients for crop protection, nutrition, and personal care. Founded in 2022 at NUS by Armaan Dhanda and Samyak Baid, the company was one of five startups in Mars Petcare's Next Generation Pet Food Program 2024 and an MIT WFA Prize 2025 awardee. The co-founders' own account on NUS's iDP podcast adds a paid Mars Petcare pilot to the previously public record of prizes and grants, and its first paid customer relationship now sits alongside the Ingredion/AAK/Bühler/Givaudan programme as evidence the ingredient platform is being bought rather than only awarded.
 
 _Last material event: 2026-10-07 — Selected as one of five APAC startups for the Ingredion/AAK/Bühler/Givaudan Healthy Snacks Challenge 2027_
 
@@ -34,7 +34,12 @@ _Total disclosed: $2.6M._
 - **2026-05-28** — Co-founders Samyak Baid and Armaan Dhanda named to Forbes 30 Under 30 Asia 2026 list in the Healthcare and Science category — [mustsharenews.com](https://mustsharenews.com/forbes-30-under-30-2026)
   - Summary: The Anomaly Bio co-founders were among 18 Singaporeans selected for Forbes 30 Under 30 Asia 2026. They were recognised in the Healthcare and Science category from nearly 4,000 nominations across Asia-Pacific.
   - People: Samyak Baid (Co-founder), Armaan Dhanda (Co-founder)
+- **2026-05-08** — Co-founders told NUS's iDP podcast that Anomaly Bio has a paid pilot with Mars Petcare, alongside the US$2.6M pre-seed, the 2025 MIT Water, Food & Agriculture prize and a hackathon award from Prime Minister Lawrence Wong — [rss.com](https://rss.com/podcasts/intriguedtoinnovate/2805315)
+  - Summary: In episode 11 of the NUS Innovation & Design Programme's "Intrigued to Innovate" podcast, host Dr Jovan Tan interviewed co-founders Armaan Dhanda and Samyak Baid, who began the company as a CDE3301 proof-of-concept named Pawsible converting food waste into alternative protein for pet nutrition. The episode notes state Anomaly Bio has secured a paid pilot with Mars Petcare, won the 2025 MIT Water, Food & Agriculture Innovation Prize, received a hackathon award from Singapore Prime Minister Lawrence Wong, and raised US$2.6M in pre-seed funding led by Pebblebed Ventures. The company is described as engineering microbes into micro-factories that convert sugar into bio-based ingredients for crop protection, nutrition and personal care, targeting more resilient ingredient supply chains.
+  - People: Armaan Dhanda (Co-founder), Samyak Baid (Co-founder), Dr Jovan Tan (host, NUS Innovation & Design Programme)
+  - Counterparties: Mars Petcare (paid pilot)
+  - Numbers: US$2.6M pre-seed; paid pilot with Mars Petcare; both founders under 23 at recording
 
 ## Open questions
-- Does Anomaly Bio have pilot or commercial offtake agreements for Pruv®, its protein–fibre ingredient, beyond the 9+ markets where it is approved?
+- What is the scale, term and application scope of the Mars Petcare paid pilot, and does it cover pet nutrition only or human-nutrition ingredient supply as well?
 - What does the ProVeg Incubator programme provide beyond mentorship — funding, pilot facilities, or industry introductions — and does it take equity?
