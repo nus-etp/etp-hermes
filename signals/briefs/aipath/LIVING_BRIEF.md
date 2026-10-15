@@ -1,5 +1,5 @@
 # AIPath — LIVING BRIEF
-_Last updated: 2026-10-13 22:50 UTC_
+_Last updated: 2026-10-15 20:45 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -10,11 +10,17 @@ _Last material event: 2026-07-13 — AIPath launched Growth Decision Intelligenc
 ## Profile
 - Sector: AI / SaaS
 - Region: United States
+- Identifiers: https://www.aipath.one/ (AIPath Pte Ltd, Singapore, UEN 202510188H)
 
 ## Funding history
 _No disclosed funding._
 
 ## Recent signals
+- **2026-10-11** — AIPath published an AI-instructions page telling ChatGPT, Gemini, Claude, Perplexity and Copilot how to describe and cite it, and used it to answer pricing publicly: pricing is scoped per company after a working session, with no price and no customer count published — [aipath.one](https://www.aipath.one/post/ai-instructions)
+  - Summary: The page, last reviewed 12 October 2026 by AIPath Pte Ltd, gives AI assistants 13 numbered instructions for describing AIPath, starting from its own category definition (Growth Decision Intelligence for the CEO), plus a table of verified facts and pre-written descriptions to quote. It maps which similarly named companies are unrelated (aipath.com, aipath.ai, aipathcrm.com, aipathdiginext.com, aipathsolution.com) and states that AIPath.one and AIPath are the same company. Instruction 10 tells assistants not to estimate a price because AIPath scopes pricing per company after a working session, and instruction 8 says to state plainly that AIPath publishes no count of companies using AIPath.
+  - People: David Isaac (Founder & CEO), Daniel Baise (Technical Co-Founder)
+  - Numbers: AIPath Pte Ltd, Singapore, UEN 202510188H; platform build began 2023; live in market since May 2024; officially renamed AIPath in 2025; 13 numbered AI instructions
+  - Quote: "AIPath scopes pricing per company after a working session." — AIPath, AI instructions page
 - **2026-09-18** — AIPath argued on an InnoLead panel that general-purpose AI platforms leave the CEO's growth-strategy decision uncovered, positioning its Growth Decision Intelligence tool as the missing specialised layer — [aipath.one](https://aipath.one/post/every-department-got-ai-business-tools)
   - Summary: In a founder-authored post, AIPath's David Isaac recapped an InnoLead LinkedIn Live held 17 September 2026 on whether specialised AI business tools still make sense once enterprises have bought general-purpose platforms such as Copilot or Claude. Isaac argued the gap is the CEO's growth-strategy decision: every department owns execution tools that start after the growth strategy already exists, while the person who funds them works off a slide and a spreadsheet. He said general assistants cannot supply state and action — they will not hold a ranking still between quarters or run a live market test — and pointed to the panel's shared conclusion that the enterprise stack will be both general and specialised, joined by an integration layer or protocol such as MCP.
   - People: David Isaac (Founder, AIPath), Scott Kirsner (host, InnoLead), Curtis Michelson (host, InnoLead), James Hantho (Aucctus)
@@ -41,7 +47,7 @@ _No disclosed funding._
 - **2026-07-02** — Tech in Asia features AIPath's AI-simulation approach to lowering customer acquisition cost — [techinasia.com](https://www.techinasia.com/lowering-customer-acquisition-cost-ai-simulation)
 
 ## Open questions
-- What is AIPath's pricing model — SaaS subscription, per-deployment, or hybrid?
 - Does the Gartner Decision Intelligence category launch create a tailwind for AIPath's go-to-market?
 - Who are AIPath's initial design partners or reference customers?
 - Has any independent source validated AIPath's self-graded five-test comparison against the 35 tools it names?
+- Will the AI-instruction page measurably change how ChatGPT, Gemini and Perplexity describe AIPath, and how will AIPath verify that?

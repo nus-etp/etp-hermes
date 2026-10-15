@@ -3,22 +3,6 @@
 # (default 30) so a false-negative drop gets re-judged instead of being lost
 # forever; scripts/collect-candidates.py prunes expired lines at the start of
 # each run. Keys we KEPT go to signals/seen-urls.txt (permanent) instead.
-2026-09-15	https://ifim.nus.edu.sg/decoding-cellular-chatter-acoerelas-novel-approach-to-decipher-how-cells-talk-to-one-another
-2026-09-15	https://akro.ai/newsroom/singapore-based-ai-startup-akro-raises-usd-700000-pre-seed-to-automate-data-workflows-in-regulated-industries
-2026-09-15	http://belli.ai/news/read-what-web-in-travel-wit-wrote-about-belli-from-early-challenges-to-building-product-to-the-air-cargo-market
-2026-09-15	https://www.belli.ai/news/belli-joins-palantirs-inaugural-startup-fellowship
-2026-09-15	https://www.belli.ai/news/belli-ceo-speaks-at-etihad-f1-forum
-2026-09-15	https://www.belli.ai/news/sunrise-airways-opens-nonstop-antigua-barbados-link
-2026-09-15	https://stockinvest.us/stock/HQ
-2026-09-15	https://tickernerd.com/stock/hq-forecast/
-2026-09-15	https://wallstsmart.com/stock/HQ
-2026-09-15	https://www.aistockfinder.com/stock-forecast/HQ/
-2026-09-15	https://trendonify.com/quote/HQ/market-cap
-2026-09-15	https://www.financialcontent.com/article/bizwire-2026-9-15-horizon-quantum-clarifies-certain-information-regarding-the-company
-2026-09-15	https://www.techinasia.com/news/cocoon-capital-coleads-3m-sg-biotech-startup-bioactivx
-2026-09-15	https://technode.global/2026/08/26/singapores-bioactivx-raises-3m-for-synthetic-skin-substitute-wound-care-technology
-2026-09-15	https://kr-asia.com/deals-in-brief-bioactivx-raises-pre-series-a-funding-smbc-and-singtel-innov8-back-fileai-latest-china-investments-and-more
-2026-09-15	https://dealroom.co/news/146951-bioactivx-raises-3m-for-synthetic-wound-care-technology-in-singapore
 2026-09-16	https://www.channelnewsasia.com/business/cohere-aleph-alpha-combine-target-enterprise-ai-market-6389396
 2026-09-16	https://www.pqcee.com/blog/pqcee-raises-us39-million-to-accelerate-global-expansion-of-quantum-safe-cybersecurity-solutions
 2026-09-16	https://www.ecomatcher.com/persona/
@@ -819,3 +803,10 @@
 2026-10-14	https://www.anomalybio.com/blog
 2026-10-14	https://www.seamless.sg/news
 2026-10-14	https://www.petfoodprocessing.net/articles/20947-alternative-protein-startups-selected-for-mars-petcare-big-idea-ventures-next-generation-pet-food-program
+2026-10-15	https://natlawreview.com/press-releases/fn-group-selects-addlly-ai-generative-engine-optimization-partner
+2026-10-15	https://www.ailytics.ai/news/ailytics-deploys-nvidia-cosmos-3-across-heavy-industry
+2026-10-15	https://acoerela.com/wp-content/uploads/2026/05/Acoerela-Aco-Dyes%E2%84%A2-Datasheet_V3.1.pdf
+2026-10-15	https://flyoro.co/insights/what-a-six-week-fuel-buffer-taught-us-about-building-a-resilient-saf-supply-chain/
+2026-10-15	https://news.nus.edu.sg/singapore-start-ups-show-ai-isnt-just-a-big-tech-playground
+2026-10-15	https://www.businesstimes.com.sg/pulse/article/9624728
+2026-10-15	https://x-phy.com/news/

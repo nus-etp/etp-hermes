@@ -1,11 +1,11 @@
 # dConstruct Robotics — LIVING BRIEF
-_Last updated: 2026-10-09 21:44 UTC_
+_Last updated: 2026-10-15 20:45 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 dConstruct Robotics is a Singapore-headquartered deep-tech robotics startup building SLAM-based autonomous navigation and 3D digital-twin systems (d.ASH platform) for construction, defense, and logistics. Founded in 2021 by Chinn Hwa Lim, the company emerged from Singapore's RoboNexus accelerator and closed a $125M Series A in mid-2026, the largest round from the inaugural cohort, backed by the National Robotics Program. It has signed a manufacturing MOU with Foxconn, appointed robotics veteran He Ruijie to its Tech Council, and is establishing a 42,000 sqm global headquarters at Punggol Digital District (dC Plus) targeting completion by end-2026.
 
-_Last material event: 2026-09-14 — Straits Times feature discloses a Persona AI humanoid partnership and CEO Lim saying an IPO or M&A may be needed to fund scaling_
+_Last material event: 2026-10-05 — Completed Singapore's first full LiDAR-based virtual inspection for an industrial project TOP with BCA and SoilBuild Construction_
 
 ## Profile
 - Sector: Robotics
@@ -15,9 +15,15 @@ _Last material event: 2026-09-14 — Straits Times feature discloses a Persona A
 _No disclosed funding._
 
 ## Recent signals
-- **2026-09-14** — Straits Times feature details how the US$125M Series A is being deployed, naming a Persona AI humanoid partnership alongside the 42,000 sqm Punggol Digital District headquarters, with CEO Lim saying an IPO or M&A may be needed to fund scaling — [straitstimes.com](https://www.straitstimes.com/business/economy/singapore-start-ups-show-that-ai-isnt-just-a-big-tech-playground)
+- **2026-10-05** — BCA, SoilBuild Construction and dConstruct Robotics completed Singapore's first full LiDAR-based virtual inspection for an industrial project TOP, using d.ASH Pack capture and d.ASH Xplorer review at SoilBuild's Tampines Connection site — [dconstruct.ai](https://www.dconstruct.ai/news/lidar-based-virtual-inspection-project)
+  - Summary: The Building and Construction Authority ran the exercise to test whether 3D LiDAR scanning could cut reliance on traditional inspection methods, with sandbox scans at Soitec and DB Schenker informing the first full LiDAR virtual inspection for an industrial Temporary Occupancy Permit. dConstruct scanned the Tampines Connection site with d.ASH Pack and BCA inspectors then reviewed and annotated the point cloud in d.ASH Xplorer, with SoilBuild's Architectural Qualified Person responding in the same environment. The outcomes contributed to the first edition of BCA's Guidebook for LiDAR Virtual Inspection; SoilBuild will next trial the workflow on an HDB site and a site spanning more than 14 hectares.
+  - People: Gerald Ho (Project Director, Head of Digitalisation, SoilBuild Construction)
+  - Counterparties: Building and Construction Authority (BCA), SoilBuild Construction
+  - Numbers: ~5.54-hectare site scanned in ~6 hours by a two-person team; measured accuracy ~1 cm; virtual TOP workflow ~4 weeks vs an estimated up to 6 weeks traditionally; next sites — an HDB project and a >14-hectare mega site
+  - Quote: "Working from a common, accurate digital representation gives developers, consultants, contractors, and BCA officers greater confidence in assessing project readiness." — Gerald Ho, SoilBuild Construction
 
 ## Older signals
+- **2026-09-14** — Straits Times feature details how the US$125M Series A is being deployed, naming a Persona AI humanoid partnership alongside the 42,000 sqm Punggol Digital District headquarters, with CEO Lim saying an IPO or M&A may be needed to fund scaling — [straitstimes.com](https://www.straitstimes.com/business/economy/singapore-start-ups-show-that-ai-isnt-just-a-big-tech-playground)
 - **2026-07-03** — dConstruct closed a $125M Series A round led by JRE Ventures, the flagship outcome of Singapore's RoboNexus accelerator inaugural cohort under the National Robotics Program — [technode.global](https://technode.global/2026/07/03/singapores-dconstruct-raises-125m-series-a-as-robonexus-accelerator-concludes-inaugural-cohort) (Also reported by: [ai-market-watch.com](https://www.ai-market-watch.com/company/dconstruct-robotics), [jtc.gov.sg](https://www.jtc.gov.sg/about-jtc/news-and-stories/industry-news/pdd-dconstruct-secures-usd125-million-series-a-funding))
   - Summary: dConstruct Technologies raised $125M in Series A funding led by JRE Ventures, with participation from SGInnovate, M7 Holdings, D.Camp, and the IMDA Spark Programme, marking the standout achievement of the inaugural RoboNexus accelerator cohort. The company will use the capital to scale its d.ASH autonomous robotics suite for GPS-denied environments and establish a 42,000 sqm global headquarters at Punggol Digital District (dC Plus), targeting completion by end-2026. The National Robotics Programme release (via JTC) names Boustead Projects, DSTA, SBS Transit, and Softbank Robotics Singapore among clients, and notes papers accepted at ICCV 2025 and CVPR 2026 plus an Australian patent for localisation and a Japanese patent for AutoDrive Level 2 vision-based autonomy.
   - People: Chinn Lim (CEO and Founder)
@@ -37,5 +43,5 @@ _No disclosed funding._
 ## Open questions
 - What is the commercial structure of the Foxconn MOU — manufacturing partnership, joint development, or licensing?
 - Which disclosed clients (Boustead Projects, DSTA, SBS Transit, Softbank Robotics Singapore) are revenue-generating deployments versus pilots?
-- JRE Ventures appears both as Series A lead and as a named client — strategic investor-customer or coincidental roles?
 - Has the Persona AI partnership progressed beyond its launch showcase into any joint product, deployment or commercial arrangement?
+- Does the BCA virtual-inspection pilot convert into a standing inspection requirement — and repeat d.ASH volume — or remain a one-off reference project?
