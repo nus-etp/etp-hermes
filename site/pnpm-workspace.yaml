@@ -15,17 +15,17 @@ catalog:
 
 catalogs:
   next:
-    '@next/env': 16.3.8
-    '@next/eslint-plugin-next': 16.3.8
-    next: 16.3.8
+    '@next/env': 16.4.1
+    '@next/eslint-plugin-next': 16.4.1
+    next: 16.4.1  # 2026-10-14 out-of-band release: React Flight RCE (GHSA-673q-mjm6-r5xr) + Server Functions DoS (GHSA-h3gv-c5rc-p453)
   oui:
     '@opengovsg/oui': 0.0.52
     '@opengovsg/oui-theme': 0.0.52
   react:
     '@types/react': ^19.2.14
     '@types/react-dom': ^19.2.3
-    react: ^19.2.5
-    react-dom: ^19.2.5
+    react: ^19.2.9  # companion fix for GHSA-673q-mjm6-r5xr (React Flight RCE), see next catalog
+    react-dom: ^19.2.9
   tailwindcss4:
     '@tailwindcss/postcss': ^4.2.2
     tailwindcss: ^4.2.2
