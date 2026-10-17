@@ -223,3 +223,44 @@ def test_main_fail_open_without_credentials(mod, monkeypatch) -> None:
         lambda *a, **k: (_ for _ in ()).throw(AssertionError("no network when creds absent")),
     )
     assert mod.main() == 0
+
+
+def test_layer_breakdown_and_markdown_share(mod) -> None:
+    by_env = {
+        "production": {"countTraces": 1, "countObservations": 1, "totalUsage": 100, "totalCost": 0.0},
+        "production-ingest": {"countTraces": 2, "countObservations": 2, "totalUsage": 300, "totalCost": 0.0},
+        "production-agent": {"countTraces": 3, "countObservations": 3, "totalUsage": 600, "totalCost": 0.0},
+        "eval": {"countTraces": 9, "countObservations": 9, "totalUsage": 9000, "totalCost": 0.0},
+    }
+    layers = mod.layer_breakdown(by_env)
+    assert [name for name, _ in layers] == ["agent", "ingest"]
+    snap = {
+        "month": "2026-10",
+        "from": "2026-10-01T00:00:00Z",
+        "to": "2026-11-01T00:00:00Z",
+        "totals": {"days": 1, "countTraces": 15, "countObservations": 15, "totalUsage": 10000, "totalCost": 0.0},
+        "by_environment": by_env,
+        "by_model": [],
+    }
+    md = mod.build_markdown([snap], "2026-11-01 06:00 UTC")
+    assert "### By layer" in md
+    assert "| agent | 3 | 600 | 60% |" in md
+    assert "| ingest | 2 | 300 | 30% |" in md
+    assert "| (untagged production) | 1 | 100 | 10% |" in md
+
+
+def test_build_markdown_without_layer_envs_has_no_layer_table(mod) -> None:
+    snap = {
+        "month": "2026-09",
+        "from": "2026-09-01T00:00:00Z",
+        "to": "2026-10-01T00:00:00Z",
+        "totals": {"days": 1, "countTraces": 1, "countObservations": 1, "totalUsage": 10, "totalCost": 0.0},
+        "by_environment": {"production": {"countTraces": 1, "countObservations": 1, "totalUsage": 10, "totalCost": 0.0}},
+        "by_model": [],
+    }
+    assert "### By layer" not in mod.build_markdown([snap], "2026-10-01 06:00 UTC")
+
+
+def test_default_environments_include_layers(mod) -> None:
+    for layer in ("ingest", "agent", "synthesis", "infographics"):
+        assert f"production-{layer}" in mod.DEFAULT_ENVIRONMENTS

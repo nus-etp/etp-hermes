@@ -356,7 +356,9 @@ jobs:
 
       - name: Layer 1 — data ingestion
         if: steps.layers.outputs.run_l1 == 'true'
-        run: hermes -z "$(cat prompts/ingest.md)"
+        run: |
+          bash scripts/set-langfuse-layer.sh ingest
+          hermes -z "$(cat prompts/ingest.md)"
 
       - name: Filter seen items from today's updates
         # Deterministic post-Layer-1 dedup: removes any item from today's
@@ -413,7 +415,9 @@ jobs:
       - name: Layer 2 — agent supplement
         if: steps.l2gate.outputs.run == 'true'
         continue-on-error: true
-        run: hermes -z "$(cat prompts/agent_supplement.md)"
+        run: |
+          bash scripts/set-langfuse-layer.sh agent
+          hermes -z "$(cat prompts/agent_supplement.md)"
 
       - name: Record gap-fill queue as queried
         # Deterministic post-step: stamps last_queried in
@@ -482,7 +486,9 @@ jobs:
 
       - name: Layer 3 — synthesis
         if: steps.l3gate.outputs.run == 'true'
-        run: hermes -z "$(cat prompts/synthesis.md)"
+        run: |
+          bash scripts/set-langfuse-layer.sh synthesis
+          hermes -z "$(cat prompts/synthesis.md)"
 
       - name: Normalize living briefs
         # Deterministic post-Layer-3 formatting pass over every
@@ -519,7 +525,9 @@ jobs:
         # sync — same precedent as Layer 2.
         if: steps.layers.outputs.run_l4 == 'true' && steps.l3gate.outputs.run == 'true'
         continue-on-error: true
-        run: hermes -z "$(cat prompts/infographics.md)"
+        run: |
+          bash scripts/set-langfuse-layer.sh infographics
+          hermes -z "$(cat prompts/infographics.md)"
 
       - name: Compress new infographics
         # The generated PNGs land at ~1.3MB each and are committed, so every

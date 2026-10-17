@@ -22,7 +22,10 @@ Reuses the production plugin's credentials so no new secret is needed:
 ``HERMES_LANGFUSE_PUBLIC_KEY`` / ``HERMES_LANGFUSE_SECRET_KEY`` /
 ``HERMES_LANGFUSE_BASE_URL`` (base URL defaults to Langfuse Cloud). The set of
 environments broken out is configurable via ``LANGFUSE_USAGE_ENVIRONMENTS``
-(comma-separated; default ``production,eval``).
+(comma-separated; default = production, the four ``production-<layer>``
+environments the daily workflow tags each ``hermes -z`` session with, eval,
+harness). Environments named ``production-<layer>`` are additionally rolled up
+into a per-layer table with each layer's share of production tokens.
 
 Fail-open on *missing* credentials: prints a notice and exits 0 so forks and
 local runs without the secrets don't break. A genuine API/HTTP failure when
@@ -50,7 +53,14 @@ OUT_DIR = REPO_ROOT / "data" / "langfuse-usage"
 MD_PATH = REPO_ROOT / "signals" / "langfuse-usage.md"
 
 DEFAULT_BASE_URL = "https://cloud.langfuse.com"
-DEFAULT_ENVIRONMENTS = ["production", "eval"]
+PRODUCTION_ENV = "production"
+LAYER_ENVIRONMENTS = [
+    "production-ingest",
+    "production-agent",
+    "production-synthesis",
+    "production-infographics",
+]
+DEFAULT_ENVIRONMENTS = [PRODUCTION_ENV, *LAYER_ENVIRONMENTS, "eval", "harness"]
 HTTP_TIMEOUT_S = 60  # Daily Metrics API uses a 1-minute server-side timeout.
 PAGE_LIMIT = 100  # A month has <=31 day-rows; one page nearly always suffices.
 
@@ -202,6 +212,38 @@ def _totals_row(label: str, t: dict[str, Any]) -> str:
     )
 
 
+def layer_breakdown(by_environment: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
+    """Return ``[(layer, totals)]`` for every ``production-<layer>`` environment."""
+    prefix = f"{PRODUCTION_ENV}-"
+    rows = [(env[len(prefix):], t) for env, t in by_environment.items() if env.startswith(prefix)]
+    return sorted(rows, key=lambda r: r[1].get("totalUsage", 0), reverse=True)
+
+
+def _layer_rows(by_environment: dict[str, Any]) -> list[str]:
+    layers = layer_breakdown(by_environment)
+    if not layers:
+        return []
+    untagged = by_environment.get(PRODUCTION_ENV)
+    total_tokens = sum(t.get("totalUsage", 0) for _, t in layers) + (
+        untagged.get("totalUsage", 0) if untagged else 0
+    )
+    lines = [
+        "### By layer",
+        "",
+        "| Layer | Traces | Tokens | Share | Cost |",
+        "|-------|-------:|-------:|------:|-----:|",
+    ]
+    rows = list(layers) + ([("(untagged production)", untagged)] if untagged else [])
+    for label, t in rows:
+        share = (t.get("totalUsage", 0) / total_tokens) if total_tokens else 0.0
+        lines.append(
+            f"| {label} | {t['countTraces']:,} | {humanize_count(t['totalUsage'])} "
+            f"| {share:.0%} | {fmt_cost(t['totalCost'])} |"
+        )
+    lines.append("")
+    return lines
+
+
 def build_markdown(snapshots: list[dict[str, Any]], generated_at: str) -> str:
     """Render the report: month history table + latest-month detail.
 
@@ -248,6 +290,7 @@ def build_markdown(snapshots: list[dict[str, Any]], generated_at: str) -> str:
         lines.append(_totals_row(env, t))
     lines.append(_totals_row("**all**", latest["totals"]))
     lines.append("")
+    lines += _layer_rows(latest.get("by_environment", {}))
 
     lines += [
         "### By model",
