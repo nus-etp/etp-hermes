@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/forte-biotech/fortebio.tech",
+  "created_by": "write_scenarios@run 39061001711",
+  "expected": {
+    "company": "Forte Biotech",
+    "reason": "jev material=0.74",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Người Lao Động reports on Forte Biotech's progress after the Net Zero Challenge' for Forte Biotech",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-17-0004",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Forte Biotech"
+      ],
+      "source": "Forte Biotech · news",
+      "title": "Người Lao Động reports on Forte Biotech's progress after the Net Zero Challenge",
+      "url": "https://fortebio.tech/news/nguoi-lao-dong-after-net-zero-challenge"
+    },
+    "companies": {
+      "Forte Biotech": {
+        "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-17",
+    "judge": "jev",
+    "judge_confidence": 0.84,
+    "kind": "judge_disagreement",
+    "run_id": "39061001711",
+    "source": "2026-10-17.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

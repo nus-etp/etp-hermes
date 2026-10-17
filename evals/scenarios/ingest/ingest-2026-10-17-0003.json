@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/forte-biotech/fortebio.tech",
+  "created_by": "write_scenarios@run 39061001711",
+  "expected": {
+    "company": "Forte Biotech",
+    "reason": "jev material=0.92",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Forte Biotech selected for TechCrunch Startup Battlefield 200 at Disrupt 2025' for Forte Biotech",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-17-0003",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Forte Biotech"
+      ],
+      "source": "Forte Biotech · news",
+      "title": "Forte Biotech selected for TechCrunch Startup Battlefield 200 at Disrupt 2025",
+      "url": "https://fortebio.tech/news/techcrunch-startup-battlefield-200"
+    },
+    "companies": {
+      "Forte Biotech": {
+        "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-17",
+    "judge": "jev",
+    "judge_confidence": 0.96,
+    "kind": "judge_disagreement",
+    "run_id": "39061001711",
+    "source": "2026-10-17.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
