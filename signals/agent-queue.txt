@@ -1,11 +1,10 @@
+ConcreteAI
 Akro
 Anomaly Bio
 Assemblr
 Belli AI
 BioActivX
 CBE Eco-Solutions
-ChemT Biotechnology
-Constructor.io
 Craft Health
 CRecTech
 Duluin
@@ -16,3 +15,4 @@ seamless
 SoundEye
 StaffAny
 Stratificare
+Acoerela

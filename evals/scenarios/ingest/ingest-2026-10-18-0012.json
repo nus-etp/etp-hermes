@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/marymount-labs/medicine.nus.edu.sg",
+  "created_by": "write_scenarios@run 39158206951",
+  "expected": {
+    "company": "Marymount Labs",
+    "reason": "jev material=0.92",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Marymount Labs wins first place at HealthHack 2024' for Marymount Labs",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-18-0012",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Marymount Labs"
+      ],
+      "source": "Marymount Labs · news",
+      "title": "Marymount Labs wins first place at HealthHack 2024",
+      "url": "https://medicine.nus.edu.sg/data/healthhack-2024-announces-winners"
+    },
+    "companies": {
+      "Marymount Labs": {
+        "description": "The Hangar (NUS Enterprise)-resident Singapore digital-health startup (co-founder Zacchaeus Chok, NUS Computing) building 'Broadcast', an AI-powered WhatsApp engagement platform that automates patient outreach (smoking-cessation assessments, Hospital@Home triage, preventive-care campaign reminders) in local languages. Joined NUS Medicine DATA accelerator (Sep), backed by NUS VIP and 500 Startups (SSGF); 2024 NUS Health Hack 1st Prize; sole SG/Asia team in 2024 Caelestinus Digital Health Incubator. Drop unrelated 'Marymount' (school/hospital brand) news."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-18",
+    "judge": "jev",
+    "judge_confidence": 0.9,
+    "kind": "judge_disagreement",
+    "run_id": "39158206951",
+    "source": "2026-10-18.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/dconstruct-robotics/dconstruct.ai",
+  "created_by": "write_scenarios@run 39158206951",
+  "expected": {
+    "company": "dConstruct Robotics",
+    "reason": "jev material=0.88",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'dConstruct Robotics Named Highlight Paper at ICCV 2025' for dConstruct Robotics",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-18-0010",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "dConstruct Robotics"
+      ],
+      "source": "dConstruct Robotics · news",
+      "title": "dConstruct Robotics Named Highlight Paper at ICCV 2025",
+      "url": "https://www.dconstruct.ai/news/dconstruct-robotics-named-highlight-paper-at-iccv-2025"
+    },
+    "companies": {
+      "dConstruct Robotics": {
+        "description": "BLOCK71 Silicon Valley-listed Singapore deep-tech robotics startup building SLAM-based autonomous navigation and 3D digital-twin systems for construction, defense and logistics (d.ASH platform, d.ASH Nav self-driving stack, d.ASH Xplorer 3D mapping). Founded 2021 by Chinn Hwa Lim; signed MOU with Foxconn on SLAM/AMR manufacturing. Generic 'construct' wording — drop items about unrelated construction software or DIY robotics kits."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-18",
+    "judge": "jev",
+    "judge_confidence": 0.9,
+    "kind": "judge_disagreement",
+    "run_id": "39158206951",
+    "source": "2026-10-18.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

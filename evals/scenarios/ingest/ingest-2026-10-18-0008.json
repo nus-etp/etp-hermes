@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/chemt-biotechnology/chemtbio.com",
+  "created_by": "write_scenarios@run 39158206951",
+  "expected": {
+    "company": "ChemT Biotechnology",
+    "reason": "jev material=0.88",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'ChemT Biotechnology Joins Ignition AI Accelerator' for ChemT Biotechnology",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-18-0008",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "ChemT Biotechnology"
+      ],
+      "source": "ChemT Biotechnology · news",
+      "title": "ChemT Biotechnology Joins Ignition AI Accelerator",
+      "url": "https://www.chemtbio.com/newsrelease5"
+    },
+    "companies": {
+      "ChemT Biotechnology": {
+        "description": "BLOCK71 Singapore-resident chemistry / biotechnology startup. Limited public-English information beyond the directory listing — drop unrelated 'ChemT' / chemistry brand mentions unless the article explicitly references this BLOCK71 SG entity."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-18",
+    "judge": "jev",
+    "judge_confidence": 0.76,
+    "kind": "judge_disagreement",
+    "run_id": "39158206951",
+    "source": "2026-10-18.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

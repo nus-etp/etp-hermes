@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/addlly-ai/addlly.ai",
+  "created_by": "write_scenarios@run 39158206951",
+  "expected": {
+    "company": "Addlly AI",
+    "reason": "jev material=0.89",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Addlly AI Joins HP Garage 2.0 to Expand Generative Engine Optimization Suite for Corporate Clients' for Addlly AI",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-18-0003",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Addlly AI"
+      ],
+      "source": "Addlly AI · press",
+      "title": "Addlly AI Joins HP Garage 2.0 to Expand Generative Engine Optimization Suite for Corporate Clients",
+      "url": "https://addlly.ai/press/addlly-ai-joins-hp-garage-2-0-to-expand-generative-engine-optimization-suite-for-corporate-clients"
+    },
+    "companies": {
+      "Addlly AI": {
+        "description": "BLOCK71 Singapore-resident GenAI content-marketing startup (co-founders Tina Chopra (CEO) and Ronie Ganguly) operating a 'zero-prompt' AI content-creation suite — 1-Click Blog Writer, AI Social Media Post Generator, multi-language Asian-market support; ASEAN Digital Awards 2025 Silver. Drop generic AI-marketing-tools coverage unless it names Addlly."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-18",
+    "judge": "jev",
+    "judge_confidence": 0.94,
+    "kind": "judge_disagreement",
+    "run_id": "39158206951",
+    "source": "2026-10-18.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
