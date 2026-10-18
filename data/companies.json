@@ -186,6 +186,11 @@
         "type": "lever_jobs",
         "label": "careers",
         "url": "https://api.lever.co/v0/postings/patsnap?mode=json"
+      },
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://www.patsnap.com/feed/"
       }
     ],
     "identifiers": {
@@ -446,6 +451,13 @@
     ],
     "description": "BLOCK71 Singapore-resident GenAI content-marketing startup (co-founders Tina Chopra (CEO) and Ronie Ganguly) operating a 'zero-prompt' AI content-creation suite — 1-Click Blog Writer, AI Social Media Post Generator, multi-language Asian-market support; ASEAN Digital Awards 2025 Silver. Drop generic AI-marketing-tools coverage unless it names Addlly.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "press",
+        "url": "https://addlly.ai/press/"
+      }
+    ],
     "funding_rounds": [
       {
         "date": "2024-01-01",
@@ -552,6 +564,13 @@
     ],
     "description": "BLOCK71 Silicon Valley-resident SaaS startup building a prescriptive-AI decision engine for product and go-to-market teams (AI customer-journey mapping, evidence-based feature prioritization, digital-twin simulations). Generic AI brand — drop items about unrelated AI-pathology / AI-routing tools.",
     "country": "United States",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://www.aipath.one/blog-feed.xml"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Silicon Valley cohort startup founded by David Isaac (CEO). No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -563,6 +582,13 @@
     ],
     "description": "BLOCK71 Saigon-resident Vietnamese AI/IoT smart-building management startup (founded late-2021 via Antler Singapore by three co-founders, seed-funded US$85K by Antler). Reduces residential operating staff (e.g., 10→3 per 1,000 rooms) and building op-costs up to 40% via AI maintenance prediction; 30+ clients, ~1,500 paid units across 60 locations in 5 cities; 2023 Smart City Award (IOC). Distinct from air-quality-monitoring vendors like tMonitor — drop pollution / AQI articles unless they name AirCity.",
     "country": "Vietnam",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://aircity.ai/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company; Antler Singapore seed (~US$85K). Public priced equity round details not verified beyond Antler seed."
   },
@@ -571,6 +597,13 @@
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — name is a portmanteau of 'air' + 'algorithm', suggesting aviation/airline-optimization or air-quality analytics; drop unrelated namesakes unless the article explicitly references this Hangar entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://www.airgorithm.com/blog-feed.xml"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
@@ -729,6 +762,13 @@
     ],
     "description": "BLOCK71 Saigon-resident Vietnamese tech & data consultancy (operating since Aug 2019, HCMC District 1) helping SMEs adopt modern BI tools and data-governance, embedded as in-house teams for 1.5-4 year engagements; clients include Heineken-Laos, Mercular (Thailand), Highlands Coffee, PTSC Group. Strategic platform partner: Holistics.io. Drop generic 'analytics' vendor news unless it names Anatics.",
     "country": "Vietnam",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://anatics.io/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -856,6 +896,13 @@
     ],
     "description": "BLOCK71 Social Impact Hub-listed Indonesian AR / 3D-content platform (HQ Bandung, SG offices at CT HUB2 and 336 Smith St) with Assemblr EDU for K-12 STEM AR experiences; 11,500+ teachers trained via the Assemblr Certified Trainer programme; joined the NUS Enterprise × raiSE Technology for Sustainable Social Impact (TS2) cohort. Drop generic 'assembler' / IKEA-style assembly news unless it names this AR platform.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.assemblrworld.com/blog/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub / TS2 cohort company. Public equity rounds not verified at time of writing.",
     "sector": "EdTech / XR"
@@ -1036,6 +1083,13 @@
     ],
     "description": "BLOCK71 Singapore-resident air-cargo software startup (founders ex-McKinsey, SpaceX, Boeing, Booking.com, AirAsia) digitising end-to-end airline cargo operations. Drop unrelated namesakes (Italian food brand, maternal-health apps named Belly/Bella) unless the article explicitly references the Singapore air-cargo Belli AI.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.belli.ai/company/news"
+      }
+    ],
     "funding_rounds": [
       {
         "date": "2024-01-01",
@@ -1330,6 +1384,13 @@
     ],
     "description": "BLOCK71 Singapore-resident chemistry / biotechnology startup. Limited public-English information beyond the directory listing — drop unrelated 'ChemT' / chemistry brand mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.chemtbio.com/news"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support.",
     "sector": "Biotechnology"
@@ -1627,6 +1688,13 @@
     ],
     "description": "BLOCK71 Singapore-resident genomics / ancestry / DNA-connection startup. Drop unrelated 'connecting DNA' / ancestry-genealogy vendor mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://connectingdna.com/rss.xml"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -1638,6 +1706,13 @@
     ],
     "description": "BLOCK71 Silicon Valley-affiliated US enterprise-eCommerce search and product-discovery platform (NLP + ML ranking, personalized search/browse/recommendations) used by Sephora, Petco, Bonobos, Target Australia. Drop items about unrelated 'constructor pattern' programming content or construction firms.",
     "country": "United States",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://constructor.com/blog/rss.xml"
+      }
+    ],
     "funding_rounds": [
       {
         "date": "2022-02-08",
@@ -1806,6 +1881,11 @@
         "label": "press",
         "url": "https://curatedculture.sg/pages/in-the-news",
         "hint": "Curated Culture 'In The News' press listing on Shopify. Each item is a card with a featured image, headline, publication name and date, a short excerpt and a 'Read More' or 'Listen Here' link to the external source. Roughly 8 features from 2022 to 2025. Resolve relative links against https://curatedculture.sg/."
+      },
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://curatedculture.sg/blogs/news.atom"
       }
     ],
     "funding_rounds": [
@@ -1878,6 +1958,13 @@
     ],
     "description": "BLOCK71 Silicon Valley-listed Singapore deep-tech robotics startup building SLAM-based autonomous navigation and 3D digital-twin systems for construction, defense and logistics (d.ASH platform, d.ASH Nav self-driving stack, d.ASH Xplorer 3D mapping). Founded 2021 by Chinn Hwa Lim; signed MOU with Foxconn on SLAM/AMR manufacturing. Generic 'construct' wording — drop items about unrelated construction software or DIY robotics kits.",
     "country": "United States",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.dconstruct.ai/news"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Silicon Valley portfolio (Singapore HQ). NRP RoboNexus participant. No publicly verifiable equity funding round announced; Foxconn collaboration is a manufacturing MOU, not an equity event."
   },
@@ -1909,6 +1996,13 @@
     ],
     "description": "BLOCK71 Singapore-resident APAC arm of Doinn — an online marketplace connecting hosts / property-managers with cleaning, laundry and linen services. Drop unrelated 'Doinn' brand mentions unless the article explicitly references this BLOCK71 SG-listed APAC entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://doinn.co/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -2010,6 +2104,13 @@
     ],
     "description": "BLOCK71 Bandung-listed Hong Kong-headquartered B-Corp (founded 2016 by Bas Fransen) operating a blockchain-tracked tree-planting / forest-management platform — TreeCorder data-capture app, TreeManager cloud system, Verra/Gold Standard carbon-certified TREES+ projects (partnership with VNV Advisory). Corporate customers include Grab and Procter & Gamble; ~50,000 customers globally. Drop generic 'eco' / matching-engine mentions.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://www.ecomatcher.com/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Bandung-listed; B-Corp since 2018. Strategic partnership with VNV Advisory announced for TREES+ carbon-certified projects. No publicly verifiable equity funding round announced.",
     "sector": "Climate tech"
@@ -2040,6 +2141,13 @@
     "aliases": [],
     "description": "BLOCK71 Singapore-resident sustainability / cleantech startup. Drop unrelated 'Ecoworks' brand mentions (US construction-decarbonisation vendor, German renewable-energy firm share the name) unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://www.ecoworks.sg/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -2256,6 +2364,13 @@
     ],
     "description": "BLOCK71 Saigon-listed Singapore-headquartered (founders Hai Long Bui and Hai Nam Bui, mid-2021) SME-operating-system startup whose Vietnamese app SoBanHang gives micro-businesses sales/order/inventory/invoicing/cash-flow tools plus embedded financial services; >800K active business users, >US$5B transaction volume processed; Shinhan Store partnership with Shinhan Bank Vietnam. Drop generic 'finan' / 'finance' branding unless it names Finan / SoBanHang.",
     "country": "Vietnam",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://finan.one/rss.xml"
+      }
+    ],
     "funding_rounds": [
       {
         "date": "2026-05-13",
@@ -2302,6 +2417,13 @@
     "aliases": [],
     "description": "BLOCK71 Saigon-resident Vietnamese fintech startup. Limited public-English information beyond the directory listing — drop generic fintech brand mentions unless the article explicitly references this BLOCK71 Saigon entity.",
     "country": "Vietnam",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://finsey.vn/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -2328,6 +2450,13 @@
     ],
     "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'FizzDragon' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://fizzdragon.com/en-US/news"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -2338,6 +2467,13 @@
     ],
     "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Flexi' / 'Flexii' brand mentions (Flexi loans, Flexi-Coil, etc.) unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://flexii.net/sg/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -2350,6 +2486,13 @@
     ],
     "description": "BLOCK71 Silicon Valley-listed Singapore cybersecurity-hardware startup (founded 2007) building X-PHY, the world's first AI-embedded SSD with hardware-level threat detection and physical-tamper response. Co-founded by Camellia Chan and May Chng. Drop items that only mention generic flash-storage or unrelated 'X-PHY' physics content.",
     "country": "United States",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.flexxon.com/blog/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Silicon Valley portfolio (Singapore HQ). NUS Enterprise startup-story alumnus; Enterprise Singapore feature company. Public equity rounds not verified in open sources at time of writing.",
     "sector": "Cybersecurity / Deep tech"
@@ -2367,6 +2510,13 @@
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore coffee / F&B startup. Limited public-English information beyond the directory listing — drop unrelated 'Flow' (Bay Area co-living) and other 'Flow Coffee' cafe brand mentions unless the article explicitly references this Hangar entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://www.flowcoffee.sg/blog-feed.xml"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
@@ -2377,6 +2527,13 @@
     ],
     "description": "BLOCK71 Singapore-resident technology startup (name suggests aviation / drone / aerial-imaging given 'fly'). Limited public-English information beyond the directory listing — drop unrelated brand mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "insights",
+        "url": "https://flyoro.co/insights/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -2482,6 +2639,13 @@
     ],
     "description": "BLOCK71 Singapore-resident AI startup ('Genii' play on 'genie' + 'AI'). CRITICAL: 'Genii' is also a Slack/Atlassian Cloud Fortress firm and Genie/GenAI brands proliferate; drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.geniiai.co/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -2546,6 +2710,13 @@
     ],
     "description": "BLOCK71 Social Impact Hub-resident Singapore B-Corp-certified fintech startup running a personalised investing-health platform for new retail investors — goal setting, portfolio coaching, sustainable / values-aligned investing tools. Drop pet/animal-care 'whale' brands or shipping news unless the article references the investing-health platform.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://goodwhale.com/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio; Certified B-Corp. Public equity rounds not verified at time of writing."
   },
@@ -2780,6 +2951,13 @@
     ],
     "description": "BLOCK71 Singapore-resident industrial-AI / robotics startup (Pte Ltd 200808305R, incorporated 2008, HQ Bukit Batok) offering process automation, digitisation, AI consulting and machine manufacturing; notable product is an autonomous drilling robot for aircraft structural drilling (passenger-to-freighter conversion). Selected as one of 10 AI startups to present at Echelon Singapore. Drop unrelated 'Helios' branded firms unless the article explicitly references this entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://www.heliosappliedsys.com/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced at time of writing."
   },
@@ -3046,6 +3224,13 @@
     ],
     "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'illumi' / 'illumiOne' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.illumi.one/post"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -3128,6 +3313,11 @@
         "label": "blog",
         "url": "https://www.invigilo.ai/blog",
         "hint": "Wix-built site (canonical content lives at invigilo.sg but invigilo.ai is the active marketing domain). Card-based blog listing; each card is a linked container with a thumbnail image, a category label above the title (e.g. 'Oil & Gas Safety Insights'), an <h3> headline, a short excerpt, and a 'Read more' link. No publication date is shown on the listing view. Individual post URLs follow the pattern /post/<slug>; resolve relative links against https://www.invigilo.ai/ (Wix renders /post/<slug> there too)."
+      },
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.invigilo.ai/news"
       }
     ],
     "funding_rounds": [
@@ -3186,6 +3376,13 @@
     ],
     "description": "BLOCK71 Bandung-listed Indonesian logistics-tech platform (HQ Jakarta, office in Bandung) connecting shippers, transporters and drivers; 3,000+ fleets reported on the platform. Drop generic 'Karlo' brand mentions (it's a common name) unless the article references the Indonesian logistics platform.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.karlo.id/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Bandung portfolio company; Startup4Industry alumnus. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -3563,6 +3760,13 @@
     "aliases": [],
     "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Manpack' (mens-grooming subscription) brand mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://manpack.sg/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -3574,6 +3778,13 @@
     ],
     "description": "BLOCK71 Bandung-resident Indonesian geospatial-intelligence startup (PT Multi Areal Planing Indonesia, led by Bagus Imam Darmawan) building GEO MAPID — a cloud GIS platform for collecting, managing, visualizing and analysing geospatial data, plus a community/competition layer for non-GIS-experts. Finalist of Making Indonesia 4.0 Startup4Industry (2018). Drop generic 'map ID' / map-API mentions.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://mapid.io/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Bandung portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / Startup4Industry incubation support."
   },
@@ -3600,6 +3811,13 @@
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore digital-health startup (co-founder Zacchaeus Chok, NUS Computing) building 'Broadcast', an AI-powered WhatsApp engagement platform that automates patient outreach (smoking-cessation assessments, Hospital@Home triage, preventive-care campaign reminders) in local languages. Joined NUS Medicine DATA accelerator (Sep), backed by NUS VIP and 500 Startups (SSGF); 2024 NUS Health Hack 1st Prize; sole SG/Asia team in 2024 Caelestinus Digital Health Incubator. Drop unrelated 'Marymount' (school/hospital brand) news.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://www.marymountlabs.com/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. NUS Medicine DATA cohort + NUS VIP + 500 Startups SSGF support. Public priced equity round details not verified at time of writing.",
     "sector": "Digital health"
@@ -3685,6 +3903,13 @@
     ],
     "description": "BLOCK71 Social Impact Hub-resident Singapore mobility/rehab venture (limited public-English information beyond the directory and a Facebook presence). Drop unrelated 'M:Move' / mobility-app branding unless the article references this BLOCK71 SIH entity. Likely focused on assistive-mobility for elderly / accessibility.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://www.memove.sg/blog-feed.xml"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
   },
@@ -3751,7 +3976,18 @@
     ],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
-    "sources": [],
+    "sources": [
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/MicrotubeTechnologies.atom"
+      },
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://microtube.tech/news"
+      }
+    ],
     "funding_rounds": [
       {
         "date": "2022-03-27",
@@ -3846,6 +4082,13 @@
     ],
     "description": "BLOCK71 Bandung-resident Indonesian biomaterials startup (founded 2015 by Adi Reza Nugroho and four co-founders, ITB-linked) using mycelium as a bio-adhesive to convert agricultural waste (cassava starch, corn bark, bagasse) into BIOBO interior boards and Mylea mycelium-leather for fashion and footwear. B-Corp since 2019. Solar Impulse Efficient Solution. Drop generic 'mycelium' / mushroom-cultivation articles unless they name MYCL.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://mycl.bio/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Bandung portfolio; Solar Impulse World Alliance member. No publicly verifiable equity funding round announced (revenue-funded with grant support)."
   },
@@ -4264,6 +4507,13 @@
     ],
     "description": "BLOCK71 Singapore-resident cybersecurity-AI startup (peris.ai). Drop unrelated 'peris' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.peris.ai/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -4289,6 +4539,11 @@
         "type": "rss",
         "label": "news",
         "url": "https://pharlyfeplus.com/news-update/f.rss"
+      },
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://www.pharlyfeplus.com/blog-feed.xml"
       }
     ],
     "funding_rounds": [
@@ -4346,6 +4601,13 @@
     ],
     "description": "BLOCK71 Bandung-listed Indonesian end-to-end proptech (founded January 2020 by ex-Gojek execs Dayu Dara Permata and Ahmed Aljunied): home search, transactions, conventional + sharia mortgage and refinancing, plus PinHome Home Service for cleaning, car wash and home maintenance. 1M+ housing inventories, 20+ banking partners. Generic 'pin home' wording — drop unrelated Pinterest / home-decor mentions.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.pinhome.id/blog/"
+      }
+    ],
     "funding_rounds": [
       {
         "date": "2022-04-22",
@@ -4477,6 +4739,13 @@
     ],
     "description": "BLOCK71 Singapore-resident post-quantum cybersecurity startup (founded 2022) building scalable encryption + key-lifecycle management; flagship SafeQuard™ document-protection tool (NIST-aligned post-quantum crypto); use cases span quantum-proofing docs, securing Web3 against quantum threats and protecting comms. Supported by the US$15M CyberSG Talent, Innovation and Growth (TIG) Collaboration Centre (NUS × CSA).",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.pqcee.com/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio; CyberSG TIG cohort. National Quantum-Safe Network ecosystem participant. Public priced equity round details not verified at time of writing.",
     "sector": "Cybersecurity / Quantum computing"
@@ -4524,6 +4793,13 @@
     ],
     "description": "BLOCK71 Jakarta-listed Tokyo-headquartered online coding-education / bootcamp startup (founded September 2014) — slide-based interactive learning across 14+ programming languages and frameworks, 60+ lessons, 800+ exercises; 2.8M+ users globally; backed by East Ventures for SEA expansion (India, Singapore, Malaysia, Indonesia, Philippines). Drop unrelated 'pro gate' / 'pro-grade' branding news.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/Progate.atom"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Jakarta portfolio (Tokyo HQ); East Ventures-backed SEA expansion. Public priced equity round details for SEA entity not verified at time of writing."
   },
@@ -4632,6 +4908,13 @@
     "aliases": [],
     "description": "BLOCK71 Silicon Valley-listed Singapore-headquartered equity-management platform (cap-table, ESOP administration, secondary-share workflows) founded 2019 by Ravi Ravulaparthi (CEO), Lakshman Gupta (COO) and Vamsee Mohan (CTO); serves ~2,700 SEA/India companies. Carta challenger now powering Schwab Private Issuer Equity Services in the US. Drop unrelated Qatar/Q-brands.",
     "country": "United States",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.qapita.com/blog"
+      }
+    ],
     "funding_rounds": [
       {
         "date": "2025-10-08",
@@ -4656,6 +4939,13 @@
     ],
     "description": "BLOCK71 Bandung-listed Malaysian agritech startup (founded 2018) commercialising a patented carbon-quantum-dot photosynthesis enhancer (QarboGrow) — an on-plant / in-soil biocompatible formulation that mimics chlorophyll and boosts crop yields by up to ~60%. 100,000 L/month QarboGrow production capacity. Expanding from Malaysia into Indonesia, Thailand, Vietnam. Drop generic 'carbon' / 'cleantech' news unless it names Qarbotech.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://qarbotech.com/feed/"
+      }
+    ],
     "funding_rounds": [
       {
         "date": "2023-12-04",
@@ -4798,6 +5088,13 @@
     ],
     "description": "BLOCK71 Social Impact Hub-resident Singapore silver-economy platform aggregating elderly-care services for the 'Silver Generation' — home-care providers, social services, dementia day-care, specialised care, home therapy, assisted-living and senior-group-home listings; complementary lifestyle and rental services. Drop unrelated retirement-planning / fintech tools branded similarly.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://www.retiregenie.com/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio company. Public equity rounds not verified at time of writing."
   },
@@ -4887,6 +5184,13 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "news",
+        "url": "https://roamassist.tech/news"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (robotic guide dogs for the visually impaired). No publicly announced funding rounds found."
   },
@@ -4917,6 +5221,13 @@
     ],
     "description": "BLOCK71 Tokyo-listed Singapore robotics startup (incorporated 2021, NUS-based) building intelligent soft-gripping automation — reconfigurable hybrid-finger actuators and computer-vision-integrated pick-and-place for food (tofu, pudding, cake), e-commerce and agriculture. Drop unrelated 'R+' / mathematics / pharma mentions.",
     "country": "Japan",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://www.roplus.sg/category/news/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Tokyo / Singapore portfolio. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -4961,6 +5272,13 @@
     "aliases": [],
     "description": "BLOCK71 Singapore-resident sales-AI startup. Drop unrelated 'SalesMind' branded vendors (Salesmind.ai LinkedIn outreach, etc.) unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://sales-mind.ai/en/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -5150,6 +5468,13 @@
     ],
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup (name suggests silent conversation / privacy messaging or sign-language). Drop unrelated 'silent conversation' wellness / mindfulness mentions unless the article explicitly references this Hangar entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://silentconvo.io/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
@@ -5239,6 +5564,13 @@
     "aliases": [],
     "description": "BLOCK71 Yogyakarta-resident Indonesian edutech startup building a gamified web learning platform — leaderboards, social discussion, performance analytics — targeting Indonesian primary/secondary education accessibility and engagement gaps. ~110,000 users across 502 of 514 Indonesian cities. Founded by Yudha Pratama Situmorang (Boston University Questrom MBA'24); 2024 Poets & Quants Most Disruptive MBA Startup. Drop generic 'schooling' / education-tech mentions.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://skuling.id/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Yogyakarta portfolio company. ~US$100K raised to date; no major equity round disclosed."
   },
@@ -5420,6 +5752,13 @@
     ],
     "description": "BLOCK71 Jakarta-listed Singapore HR-tech startup (founded by four NUS alumni) running a workforce-management app for hourly workers in F&B / retail — drag-and-drop rostering, time tracking, availability, payroll/accounting integration. ~100K+ shifts and ~700K hours tracked at the S$1M seed milestone; lead investor FreakOut Holdings; angels include ex-Zopim founders Lim Qing Ru, Kwok Yang Bin and Royston Tay plus Kenji Niwa.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://www.staffany.com/feed/"
+      }
+    ],
     "funding_rounds": [
       {
         "date": "2020-08-01",
@@ -5449,6 +5788,13 @@
     ],
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'stick em' branding (online card / sticker / shooter game references) unless the article explicitly references this Hangar entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "updates",
+        "url": "https://stickem.sg/updates/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
@@ -5475,6 +5821,13 @@
     "aliases": [],
     "description": "BLOCK71 Social Impact Hub-resident Singapore predictive medical-diagnostics startup (launched 2015, CEO Anthony Chua) building in-vitro diagnostic tests — flagship predictive test for life-threatening severe Dengue complications, plus pipeline for liver-cancer internal-radiation-therapy response and other oncology indications. Drop generic 'patient stratification' / clinical-trial-stratification industry copy.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://www.stratificare.com/blog-feed.xml"
+      }
+    ],
     "funding_rounds": [
       {
         "date": "2021-10-01",
@@ -5580,6 +5933,13 @@
     ],
     "description": "BLOCK71 Singapore-resident deep-tech tactile-sensor / Physical-AI startup (NUS spin-out, SGInnovate venture-built; founders Prof Harold Soh (NUS CS), Prof Benjamin Tee (NUS Enterprise AVP) and serial entrepreneur Aashish Mehta). Consumer product Kuushy = AI Posture-Coach smart cushion; B2B product Backy™ = AI safety wearable detecting risky postures with real-time haptic feedback for logistics / manufacturing. Drop unrelated 'Tacniq' / 'tactic' brand mentions unless the article references this NUS / SGInnovate entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "media",
+        "url": "https://www.tacniq.ai/media"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio; SGInnovate venture-built. Public priced equity round details not verified at time of writing."
   },
@@ -5688,6 +6048,13 @@
     ],
     "description": "BLOCK71 Social Impact Hub-resident Singapore sustainable-foodtech social enterprise (founded 2021 by NUS students Jia Wei Lim, Qi Herng Kong, Varden En Cheng Toh) upcycling brewer's spent grains (BSG) into high-fibre, high-protein snacks/granola; raiSE-registered; partners with Bettr Coffee for inclusive hiring; reports 1.55 tonnes waste diverted and 1,872 kg CO2-eq avoided. 2021/22 RISE 'Most Innovative' award. Drop generic 'moonbeam' beverage / brand mentions.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://themoonbeam.co/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio; raiSE-registered social enterprise. Public equity rounds not verified at time of writing."
   },
@@ -5803,6 +6170,13 @@
     ],
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'uniad' (Unilever Ad / university-ad / unidad) brand mentions unless the article explicitly references this Hangar entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://www.uniad.app/SG/blog"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
@@ -5886,6 +6260,13 @@
     ],
     "description": "BLOCK71 Singapore-resident community / wellness / events startup ('vibe' + 'fam'). Drop unrelated namesakes unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "html_scrape",
+        "label": "blog",
+        "url": "https://vibefam.com/blog/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },

@@ -53,5 +53,150 @@
     "name": "Fintech News SG",
     "type": "firehose",
     "url": "https://fintechnews.sg/feed/"
+  },
+  {
+    "name": "The Edge Singapore",
+    "type": "firehose",
+    "url": "https://www.theedgesingapore.com/rss.xml"
+  },
+  {
+    "name": "Business Times SG — Startups & Tech",
+    "type": "firehose",
+    "url": "https://www.businesstimes.com.sg/rss/startups-tech"
+  },
+  {
+    "name": "Business Times SG — Technology",
+    "type": "firehose",
+    "url": "https://www.businesstimes.com.sg/rss/technology"
+  },
+  {
+    "name": "Straits Times — Business",
+    "type": "firehose",
+    "url": "https://www.straitstimes.com/news/business/rss.xml"
+  },
+  {
+    "name": "NUS News",
+    "type": "firehose",
+    "url": "https://news.nus.edu.sg/feed/"
+  },
+  {
+    "name": "SMU IIE",
+    "type": "firehose",
+    "url": "https://iie.smu.edu.sg/rss.xml"
+  },
+  {
+    "name": "SMU News",
+    "type": "firehose",
+    "url": "https://news.smu.edu.sg/rss.xml"
+  },
+  {
+    "name": "TechNode Global",
+    "type": "firehose",
+    "url": "https://technode.global/feed/"
+  },
+  {
+    "name": "Digital News Asia",
+    "type": "firehose",
+    "url": "https://www.digitalnewsasia.com/rss.xml"
+  },
+  {
+    "name": "Singapore Business Review",
+    "type": "firehose",
+    "url": "https://sbr.com.sg/rss.xml"
+  },
+  {
+    "name": "Momentum Works (Substack)",
+    "type": "firehose",
+    "url": "https://momentumworks.substack.com/feed"
+  },
+  {
+    "name": "Cento Ventures",
+    "type": "firehose",
+    "url": "https://www.cento.vc/feed/"
+  },
+  {
+    "name": "Antler blog",
+    "type": "firehose",
+    "url": "https://www.antler.co/blog/rss.xml"
+  },
+  {
+    "name": "Wavemaker Partners",
+    "type": "firehose",
+    "url": "https://wavemaker.vc/feed/"
+  },
+  {
+    "name": "East Ventures",
+    "type": "firehose",
+    "url": "https://east.vc/feed/"
+  },
+  {
+    "name": "AC Ventures",
+    "type": "firehose",
+    "url": "https://acv.vc/feed/"
+  },
+  {
+    "name": "Entrepreneur First",
+    "type": "firehose",
+    "url": "https://www.joinef.com/feed/"
+  },
+  {
+    "name": "Quest Ventures",
+    "type": "firehose",
+    "url": "https://www.questventures.com/feed/"
+  },
+  {
+    "name": "Asian Scientist",
+    "type": "firehose",
+    "url": "https://www.asianscientist.com/feed/"
+  },
+  {
+    "name": "Healthcare Asia Magazine",
+    "type": "firehose",
+    "url": "https://healthcareasiamagazine.com/rss.xml"
+  },
+  {
+    "name": "Eco-Business",
+    "type": "firehose",
+    "url": "https://www.eco-business.com/feeds/news/"
+  },
+  {
+    "name": "Green Queen",
+    "type": "firehose",
+    "url": "https://www.greenqueen.com.hk/feed/"
+  },
+  {
+    "name": "FoodNavigator Asia",
+    "type": "firehose",
+    "url": "https://www.foodnavigator-asia.com/Info/FoodNavigator-Asia-RSS"
+  },
+  {
+    "name": "Frontier Enterprise",
+    "type": "firehose",
+    "url": "https://www.frontier-enterprise.com/feed/"
+  },
+  {
+    "name": "FinanceAsia",
+    "type": "firehose",
+    "url": "https://www.financeasia.com/rss/latest"
+  },
+  {
+    "name": "Inside Retail Asia",
+    "type": "firehose",
+    "url": "https://insideretail.asia/feed/"
+  },
+  {
+    "name": "The Quantum Insider",
+    "type": "firehose",
+    "url": "https://thequantuminsider.com/feed/"
+  },
+  {
+    "name": "HRM Asia",
+    "type": "firehose",
+    "url": "https://hrmasia.com/feed/"
+  },
+  {
+    "name": "Lowyat.NET",
+    "type": "firehose",
+    "url": "https://www.lowyat.net/feed/"
   }
 ]
