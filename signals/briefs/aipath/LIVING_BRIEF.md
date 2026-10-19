@@ -21,14 +21,14 @@ _No disclosed funding._
   - People: David Isaac (Founder & CEO), Daniel Baise (Technical Co-Founder)
   - Numbers: AIPath Pte Ltd, Singapore, UEN 202510188H; platform build began 2023; live in market since May 2024; officially renamed AIPath in 2025; 13 numbered AI instructions
   - Quote: "AIPath scopes pricing per company after a working session." — AIPath, AI instructions page
+
+## Older signals
 - **2026-09-18** — AIPath argued on an InnoLead panel that general-purpose AI platforms leave the CEO's growth-strategy decision uncovered, positioning its Growth Decision Intelligence tool as the missing specialised layer — [aipath.one](https://aipath.one/post/every-department-got-ai-business-tools)
   - Summary: In a founder-authored post, AIPath's David Isaac recapped an InnoLead LinkedIn Live held 17 September 2026 on whether specialised AI business tools still make sense once enterprises have bought general-purpose platforms such as Copilot or Claude. Isaac argued the gap is the CEO's growth-strategy decision: every department owns execution tools that start after the growth strategy already exists, while the person who funds them works off a slide and a spreadsheet. He said general assistants cannot supply state and action — they will not hold a ranking still between quarters or run a live market test — and pointed to the panel's shared conclusion that the enterprise stack will be both general and specialised, joined by an integration layer or protocol such as MCP.
   - People: David Isaac (Founder, AIPath), Scott Kirsner (host, InnoLead), Curtis Michelson (host, InnoLead), James Hantho (Aucctus)
   - Counterparties: InnoLead (panel host)
   - Numbers: panel held 2026-09-17; Aucctus research — 100+ interviews, 50% reported no measurable cycle-time improvement, 55% had no AI-impact metrics
   - Quote: "We've all got plenty of investments in data. We've got plenty of investments in execution tools. But the CEO pays for everybody else's tools, and doesn't actually have their own AI growth decision strategy tool." — David Isaac, Founder, AIPath
-
-## Older signals
 - **2026-09-17** — AIPath published a category-comparison post grading growth-strategy tools against five tests and scoring itself as the only category built for the CEO that both develops and pre-tests growth options, placing enterprise decision intelligence (FICO, SAS, Aera, Quantexa) and general AI assistants (ChatGPT, Claude, Copilot) one step short — [aipath.one](https://www.aipath.one/post/growth-strategy-tools-compared)
   - Summary: Founder David Isaac scored growth-strategy tooling on five tests — built for the CEO, prescribes rather than describes, continuous rather than episodic, develops the options, and pre-tests in market before the budget commits. AIPath passes all five; enterprise decision intelligence passes four but serves operations and data teams rather than the CEO; general AI assistants reach the CEO directly but hold no live model of the company and run no market test. OKR platforms (WorkBoard, Cascade, Perdoo), BI/CRM (Tableau, Amplitude, HubSpot), decision workflow (Cloverpop) and work management (Jira, Monday, Asana) are placed on the tracking side, and the post repeats that Gartner's January 2026 Decision Intelligence Platforms Magic Quadrant tests operations, not growth.
   - People: David Isaac (Founder, AIPath)

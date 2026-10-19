@@ -1,5 +1,5 @@
 # FingerDance — LIVING BRIEF
-_Last updated: 2026-09-19 16:23 UTC_
+_Last updated: 2026-10-19 23:16 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -10,8 +10,8 @@ _Last material event: 2026-04-15 — SiLViA won the Transportation category at t
 ## Profile
 - Sector: AI / Social impact
 - Region: Singapore
-- Stage / funding: Accelerator stage (TS2 cohort)
-- Key people: Gong He (co-founder, technologist)
+- Stage / funding: Accelerator stage — TS2 cohort; also in YZi Labs' EASY Residency Season 2 with an undisclosed investment
+- Key people: Gong He (co-founder, technologist; the YZi Labs post names "Kevin Gong" as co-founder), Alex Xu (co-founder), Enzo Xu (co-founder)
 
 ## Funding history
 _No disclosed funding._
@@ -36,6 +36,12 @@ _No disclosed funding._
   - Counterparties: SBS Transit, Singapore Association of the Deaf (SADeaf)
   - Numbers: ~2,000 queries during pilot, 1.2M daily ridership (SBS Transit network)
   - Quote: "Strong early adoption post-launch, handling some 2,000 queries during its pilot phase at Chinatown MRT station between October and November 2025."
+- **2025-12-09** — YZi Labs put FingerDance in its EASY Residency Season 2 cohort and published an investment rationale pitched on a sign-language LLM rather than the SBS Transit kiosk — [yzilabs.com](https://www.yzilabs.com/blog/meet-the-easy-residency-season-2-cohort)
+  - Summary: YZi Labs named FingerDance among the EASY Residency Season 2 companies debuting at Demo Day during Binance Blockchain Week, describing it as "AI infrastructure for 70M deaf people with sign language translation." The write-up attributes the product to a Sign Language Large Language Model (SL-LLM) rather than SiLViA's transit kiosks, and cites five years of work with the Deaf community. No cheque size, instrument or valuation is disclosed, and the post does not mention SBS Transit or the Abu Dhabi deployment.
+  - People: Kevin Gong (co-founder), Alex Xu (co-founder), Enzo Xu (co-founder)
+  - Counterparties: YZi Labs (residency programme and investor)
+  - Numbers: 70M deaf people (addressable market, per YZi Labs)
+  - Quote: "By deploying a state-of-the-art Sign Language Large Language Model (SL-LLM), FingerDance uses AI to provide real-time, scalable translation services that human infrastructure simply cannot match." — YZi Labs, EASY Residency Season 2 cohort post
 - **2024-05-31** — An MTI speech at the launch of SBS Transit's MINNOVA mobility centre records FingerDance as SiLViA's co-developer and one of the startups SBS Transit signed MOUs with that day, dating the partnership to more than a year before the Chinatown MRT rollout surfaced in press coverage — [mti.gov.sg](https://www.mti.gov.sg/newsroom/speech-by-sms-low-yen-ling-at-the-launch-of-sbs-transit-mobility-innovation-centre--minnova-)
   - Summary: A 31 May 2024 speech by Senior Minister of State Low Yen Ling at the launch of SBS Transit's Mobility Innovation Centre (MINNOVA) confirms the SiLViA lineage: SBS Transit and FingerDance, described as a National University of Singapore startup, co-developed the Sign Language Virtual Assistant, which translates spoken words or text into sign language in real time using generative AI. SBS Transit signed Memorandums of Understanding that day with FingerDance, RSP Architects, Aviation Virtual and other industry partners; MINNOVA was set up with Enterprise Singapore in November 2023 and 12 startups and SMEs had worked with SBS Transit since its inception. The speech is Singapore government primary-source confirmation of the SBS Transit relationship rather than a new deployment.
   - People: Low Yen Ling (Senior Minister of State, MTI), Jeffrey Sim (Group Chief Executive, SBS Transit)
@@ -45,4 +51,4 @@ _No disclosed funding._
 
 ## Open questions
 - What is FingerDance's business model — licensing SiLViA to transit operators, or a SaaS/subscription model?
-- Has FingerDance raised any institutional equity funding beyond the TS2 accelerator commitment?
+- What capital did YZi Labs commit through EASY Residency Season 2, and on what instrument — SAFE, equity, or programme grant?
