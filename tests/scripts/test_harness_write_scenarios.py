@@ -160,6 +160,48 @@ def test_from_judged_routes_agent_rows_to_agent_supplement(tmp_path: Path) -> No
     assert write_scenarios.from_judged(source, root, "2026-10-03") == 0
 
 
+def published_row(url: str, published: str, pipeline: str = "drop", judge: str = "keep") -> dict:
+    row = judged_row(url, pipeline, judge)
+    row["published"] = published
+    return row
+
+
+def test_from_judged_skips_undated_or_stale_false_drops(tmp_path: Path) -> None:
+    root = tmp_path / "scenarios"
+    source = write_jsonl(
+        tmp_path / "d.jsonl",
+        [
+            published_row("https://a.com/undated", ""),
+            published_row("https://a.com/garbage", "sometime soon"),
+            published_row("https://a.com/old", "9 June 2025"),
+            published_row("https://a.com/fresh-human", "30 September 2026"),
+            published_row("https://a.com/fresh-rfc", "Fri, 02 Oct 2026 08:00:00 GMT"),
+            published_row("https://a.com/fresh-iso", "2026-10-01T10:00:00Z"),
+            published_row("https://a.com/false-keep", "", pipeline="keep", judge="drop"),
+        ],
+    )
+    assert write_scenarios.from_judged(source, root, "2026-10-03") == 4
+    urls = {scenarios.card_url(c) for c in scenarios.load_all(root)}
+    assert urls == {
+        "https://a.com/fresh-human",
+        "https://a.com/fresh-rfc",
+        "https://a.com/fresh-iso",
+        "https://a.com/false-keep",
+    }
+
+
+def test_from_judged_max_age_is_configurable(tmp_path: Path) -> None:
+    source = write_jsonl(tmp_path / "d.jsonl", [published_row("https://a.com/old", "9 June 2025")])
+    assert write_scenarios.from_judged(source, tmp_path / "s", "2026-10-03", max_age_days=500) == 1
+
+
+def test_parse_published_formats() -> None:
+    assert str(write_scenarios.parse_published("07 October 2026")) == "2026-10-07"
+    assert str(write_scenarios.parse_published("Oct 7, 2026")) == "2026-10-07"
+    assert str(write_scenarios.parse_published("2026-10-07")) == "2026-10-07"
+    assert write_scenarios.parse_published(None) is None
+
+
 def issue(number: int, label: str, body: str, title: str = "Wrong item") -> dict:
     return {"number": number, "title": title, "body": body, "labels": [{"name": label}], "url": f"https://gh/{number}"}
 

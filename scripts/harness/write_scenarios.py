@@ -12,7 +12,11 @@ is reported and skipped, never fatal):
              become ``judge_disagreement`` cards, filed under the row's
              ``layer`` (``ingest`` when absent, ``agent_supplement`` for Layer 2
              items). Jev rows below ``--min-confidence`` (default 0.7) are
-             skipped.
+             skipped, and so is a judge "keep" over a pipeline drop when the
+             row carries a ``published`` date that is missing or older than
+             ``--max-age-days`` (default 30): the judge rates materiality, not
+             recency, so it would otherwise mint false_drop cards for stale
+             backlog pages a new html_scrape source surfaces on its first run.
   --issues   data/harness/issues.json — ``gh issue list --json
              number,title,body,labels,url`` output; issues labelled
              harness:wrong-keep / harness:missed / harness:brief-error become
@@ -38,6 +42,7 @@ import os
 import re
 import sys
 from pathlib import Path
+from email.utils import parsedate_to_datetime
 from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -46,6 +51,8 @@ import scenarios
 INGEST_PERSONA = "Layer 1 relevance pass over data/candidates.json"
 AGENT_PERSONA = "Layer 2 agent supplement: dynamic search that keeps only items new and material to the company"
 DEFAULT_MIN_CONFIDENCE = 0.7
+DEFAULT_MAX_AGE_DAYS = 30
+PUBLISHED_FORMATS = ("%d %B %Y", "%d %b %Y", "%B %d, %Y", "%b %d, %Y", "%B %d %Y", "%b %d %Y")
 JUDGE_LAYERS = ("ingest", "agent_supplement")
 SYNTHESIS_PERSONA = "Layer 3 synthesis of today's signals into the company's living brief"
 INGEST_GRADERS = ("verdict_match", "blind_judge")
@@ -208,13 +215,51 @@ def is_disagreement(row: dict) -> bool:
     return judge_verdict in {"keep", "drop"} and judge_verdict != row.get("verdict_pipeline")
 
 
-def from_judged(path: Path, root: Path, today: str, min_confidence: float = DEFAULT_MIN_CONFIDENCE) -> int:
+def parse_published(value: object) -> dt.date | None:
+    text = str(value or "").strip()
+    if not text:
+        return None
+    try:
+        return parsedate_to_datetime(text).date()
+    except (TypeError, ValueError):
+        pass
+    try:
+        return dt.datetime.fromisoformat(text.replace("Z", "+00:00")).date()
+    except ValueError:
+        pass
+    for fmt in PUBLISHED_FORMATS:
+        try:
+            return dt.datetime.strptime(text, fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
+def stale_backlog(row: dict, today: str, max_age_days: int) -> bool:
+    if "published" not in row or row.get("verdict_judge") != "keep":
+        return False
+    published = parse_published(row["published"])
+    if published is None:
+        return True
+    as_of = dt.date.fromisoformat(row_date(row, today))
+    return (as_of - published).days > max_age_days
+
+
+def from_judged(
+    path: Path,
+    root: Path,
+    today: str,
+    min_confidence: float = DEFAULT_MIN_CONFIDENCE,
+    max_age_days: int = DEFAULT_MAX_AGE_DAYS,
+) -> int:
     written = 0
     for row in read_jsonl(path):
         layer = judged_layer(row)
         if not is_disagreement(row) or not row.get("url") or has_card_for(row, root, layer):
             continue
         if not confident_enough(row, min_confidence):
+            continue
+        if stale_backlog(row, today, max_age_days):
             continue
         reason = str(row.get("judge_reason") or "")
         origin = judged_origin(row, path, today)
@@ -371,6 +416,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--issues", type=Path, default=None)
     parser.add_argument("--labels", type=Path, default=None)
     parser.add_argument("--min-confidence", type=float, default=DEFAULT_MIN_CONFIDENCE)
+    parser.add_argument("--max-age-days", type=int, default=DEFAULT_MAX_AGE_DAYS)
     parser.add_argument("--root", type=Path, default=scenarios.SCENARIOS_DIR)
     args = parser.parse_args(argv)
 
@@ -378,7 +424,7 @@ def main(argv: list[str] | None = None) -> int:
         "ab_seed": run_source("ab", from_ab, args.from_ab, args.root, args.date),
         "judge_disagreement": run_source(
             "judged",
-            functools.partial(from_judged, min_confidence=args.min_confidence),
+            functools.partial(from_judged, min_confidence=args.min_confidence, max_age_days=args.max_age_days),
             args.judged,
             args.root,
             args.date,

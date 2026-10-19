@@ -115,6 +115,7 @@ def dropped_items(compare, candidates: dict, kept_urls: set[str]) -> list[dict]:
                 "source": str(candidate.get("source") or ""),
                 "description": str(candidate.get("description") or "").strip(),
                 "company_description": str(company_descriptions.get(company) or ""),
+                "published": str(candidate.get("pubDate") or ""),
                 "verdict_pipeline": "drop",
                 "layer": "ingest",
             }

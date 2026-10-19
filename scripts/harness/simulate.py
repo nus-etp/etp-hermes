@@ -24,7 +24,7 @@ deduplicated by normalized URL (newest snapshot wins) and capped at
 ``--limit``. Layers ``agent_supplement`` / ``synthesis`` are accepted but not
 implemented yet: they write an empty result and exit 0.
 
-Fail-open per item, exit 0; exit 2 when the runtime has no API key or every verdict is null (unreachable/misconfigured runtime). Pure
+Fail-open per item, exit 0; exit 2 when the runtime has no API key, every verdict is null, or ``--max-consecutive-failures`` (default 5) calls fail in a row (unreachable/misconfigured runtime). Pure
 stdlib (uses ``scripts/ab_llm.py``).
 """
 
@@ -141,6 +141,20 @@ def vetoed_by_exclude_terms(candidate: dict, live: dict[str, dict]) -> bool:
     return entity_terms.is_excluded(matcher, headline, candidate.get("description") or "")
 
 
+class RuntimeUnavailable(RuntimeError):
+    pass
+
+
+def track_failure(reply: str | None, args: argparse.Namespace) -> None:
+    if reply is not None:
+        args.consecutive_failures = 0
+        return
+    args.consecutive_failures += 1
+    limit = args.max_consecutive_failures
+    if limit > 0 and args.consecutive_failures >= limit:
+        raise RuntimeUnavailable(f"{args.consecutive_failures} consecutive failed model calls")
+
+
 def call_model(system_prompt: str, candidate: dict, companies: dict, args: argparse.Namespace) -> dict:
     reply = ab_llm.chat(
         [
@@ -152,6 +166,7 @@ def call_model(system_prompt: str, candidate: dict, companies: dict, args: argpa
         runtime=args.runtime,
     )
     time.sleep(args.sleep)
+    track_failure(reply, args)
     verdict, company = parse_reply(reply)
     return {"verdict": verdict, "company": company, "raw": (reply or "")[:RAW_REPLY_CHARS] or None, "via": "llm"}
 
@@ -286,6 +301,10 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--sleep", type=float, default=0.2, help="Seconds between model calls.")
     parser.add_argument("--model", default=None, help="Override the runtime's model.")
     parser.add_argument(
+        "--max-consecutive-failures", type=int, default=5,
+        help="Abort the runtime (exit 2) after this many failed calls in a row (0 = never).",
+    )
+    parser.add_argument(
         "--companies", type=Path, default=None,
         help="Live watchlist (default: ./data/companies.json, else the repo's).",
     )
@@ -293,6 +312,7 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
     args.arm = args.arm or default_arm(args.out, args.runtime)
     args.companies = resolve_companies_path(args.companies)
     args.live_companies = {}
+    args.consecutive_failures = 0
     return args
 
 
@@ -319,8 +339,12 @@ def main(argv: list[str] | None = None) -> int:
     usage_before = ab_llm.usage_total(args.runtime)
 
     result = empty_result(args, implemented=True)
-    result["scenario_results"] = simulate_scenarios(cards, system_prompt, args)
-    result["window_results"] = simulate_window(items, system_prompt, args)
+    try:
+        result["scenario_results"] = simulate_scenarios(cards, system_prompt, args)
+        result["window_results"] = simulate_window(items, system_prompt, args)
+    except RuntimeUnavailable as error:
+        print(f"runtime {args.runtime} aborted: {error}; treating it as unreachable", file=sys.stderr)
+        return 2
     tokens = ab_llm.usage_total(args.runtime) - usage_before
     if tokens > 0:
         result["usage"] = {"total_tokens": tokens}

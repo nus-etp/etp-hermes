@@ -161,6 +161,31 @@ def test_all_null_verdicts_exit_2_with_loud_message(layout, monkeypatch, capsys)
     assert "unreachable or misconfigured" in capsys.readouterr().err
 
 
+def test_consecutive_failures_abort_runtime(layout, monkeypatch, capsys) -> None:
+    calls: list[int] = []
+
+    def failing(*a, **k):
+        calls.append(1)
+        return None
+
+    monkeypatch.setattr(simulate.ab_llm, "chat", failing)
+    monkeypatch.setattr(simulate.ab_llm, "have_key", lambda runtime="deepseek": True)
+    write_snapshot(layout["window"], "2026-10-02", [candidate(c) for c in "abcdef"])
+    assert run(layout, "--max-consecutive-failures", "3") == 2
+    assert len(calls) == 3
+    assert not layout["out"].exists()
+    assert "aborted: 3 consecutive failed model calls" in capsys.readouterr().err
+
+
+def test_a_success_resets_the_failure_streak(layout, monkeypatch) -> None:
+    replies = iter([None, None, '{"keep": true, "company": "Acme"}', None, None])
+    monkeypatch.setattr(simulate.ab_llm, "chat", lambda *a, **k: next(replies))
+    monkeypatch.setattr(simulate.ab_llm, "have_key", lambda runtime="deepseek": True)
+    write_snapshot(layout["window"], "2026-10-02", [candidate(c) for c in "abcde"])
+    assert run(layout, "--max-consecutive-failures", "3") == 0
+    assert [r["verdict"] for r in read_out(layout)["window_results"]] == [None, None, "keep", None, None]
+
+
 def test_replay_calls_use_reasoning_safe_max_tokens(layout, monkeypatch) -> None:
     seen = []
 

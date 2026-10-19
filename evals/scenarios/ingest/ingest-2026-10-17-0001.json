@@ -39,6 +39,7 @@
     "verdict_pipeline": "drop"
   },
   "persona": "Layer 1 relevance pass over data/candidates.json",
-  "status": "active",
+  "retired_reason": "stale or undated backlog page: judge rated materiality, not recency (write_scenarios --max-age-days)",
+  "status": "retired",
   "version": 1
 }

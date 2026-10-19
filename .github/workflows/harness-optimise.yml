@@ -32,6 +32,7 @@ env:
   HARNESS_RUNTIMES: 'nvidia zai'
   HARNESS_CHAMPION_REF: origin/main
   HARNESS_MAX_REVIEW_ROUNDS: '2'
+  HARNESS_SIM_TIMEOUT_SECS: '1500'
 
 jobs:
   optimise:
@@ -243,7 +244,7 @@ jobs:
             rm -f data/harness/sim/champion-*.json data/harness/sim/proposal-*.json
             for runtime in $HARNESS_RUNTIMES; do
               status=0
-              AB_LLM_MIN_INTERVAL_SECS=1 python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "/tmp/champion-${layer}.md" \
+              AB_LLM_MIN_INTERVAL_SECS=1 timeout "$HARNESS_SIM_TIMEOUT_SECS" python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "/tmp/champion-${layer}.md" \
                 --companies /tmp/champion-companies.json \
                 --runtime "$runtime" --out "data/harness/sim/champion-${runtime}.json" || status=$?
               if [ "$status" != 0 ]; then
@@ -251,7 +252,7 @@ jobs:
                 rm -f "data/harness/sim/champion-${runtime}.json"
                 continue
               fi
-              AB_LLM_MIN_INTERVAL_SECS=1 python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "prompts/${layer}.md" \
+              AB_LLM_MIN_INTERVAL_SECS=1 timeout "$HARNESS_SIM_TIMEOUT_SECS" python3 scripts/harness/simulate.py --layer "$layer" --prompt-path "prompts/${layer}.md" \
                 --runtime "$runtime" --out "data/harness/sim/proposal-${runtime}.json" || status=$?
               if [ "$status" != 0 ]; then
                 warn "proposal simulate on $runtime exited $status; dropping $runtime"

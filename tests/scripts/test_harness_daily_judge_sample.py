@@ -63,7 +63,14 @@ def seed_repo(root: Path, n_dropped: int = 3) -> None:
         }
     ]
     candidates += [
-        {"company": "Acme", "headline": f"Noise {i}", "description": "", "source": "Feed", "link": f"https://n.com/{i}"}
+        {
+            "company": "Acme",
+            "headline": f"Noise {i}",
+            "description": "",
+            "source": "Feed",
+            "link": f"https://n.com/{i}",
+            "pubDate": f"0{i + 1} October 2026",
+        }
         for i in range(n_dropped)
     ]
     payload = {"candidates": candidates, "companies": {"Acme": "Singapore robotics startup."}}
@@ -101,6 +108,8 @@ def test_writes_kept_and_dropped_rows(tmp_path: Path, modules) -> None:
     assert kept["date"] == "2026-10-03"
     assert len(calls) == 4
     assert "verdict_pipeline" not in calls[0][1]["content"]
+    assert "published" not in kept
+    assert [r["published"] for r in rows[1:]] == ["01 October 2026", "02 October 2026", "03 October 2026"]
 
 
 def test_deepseek_sample_caps_and_is_deterministic(tmp_path: Path, modules) -> None:
