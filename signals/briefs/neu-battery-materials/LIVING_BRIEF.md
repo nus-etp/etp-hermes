@@ -1,5 +1,5 @@
 # NEU Battery Materials — LIVING BRIEF
-_Last updated: 2026-10-13 22:50 UTC_
+_Last updated: 2026-10-20 20:46 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -21,11 +21,11 @@ _Last material event: 2026-10-13 — Closed an oversubscribed US$7.6M round co-l
 _Total disclosed: $4.3M._
 
 ## Recent signals
-- **2026-10-13** — NEU closed an oversubscribed US$7.6M round co-led by Shift4Good and SGInnovate, off its newly commissioned 1,300 t/yr Singapore LFP recycling plant, to ramp battery-grade lithium output and fund international expansion — [neumaterials.com](https://www.neumaterials.com/news/neu-battery-materials-closes-funding-round-to-scale-lfp-recycling-and-strengthen-lithium-supply-chain-resilience) (Also reported by: [techinasia.com](https://www.techinasia.com/news/neu-battery-materials-raises-76m-scale-lfp-recycling), [businesstimes.com.sg](https://www.businesstimes.com.sg/esg/singapore-lithium-battery-recycling-startup-neu-battery-materials-raises-us7-6-million), [e27.co](https://e27.co/neu-battery-materials-bags-us7-6m-to-mine-lithium-from-the-worlds-least-loved-battery-20261013/), [prnewswire.com](https://www.prnewswire.com/news-releases/neu-battery-materials-closes-oversubscribed-us7-6-million-funding-round-to-scale-lfp-recycling-and-strengthen-lithium-supply-chain-resilience-302905285.html))
-  - Summary: NEU Battery Materials announced the oversubscribed close of a US$7.6M round co-led by Shift4Good and SGInnovate, saying the capital follows the commissioning of its 1,300-tonne-per-year Singapore plant and moves the company from technology development to industrial scale-up. Proceeds fund the ramp-up of battery-grade lithium from LFP feedstock such as cathode production scrap and end-of-life black mass, plus international expansion. The company lists Lotus Singapore Group and M7 Holdings among new participants and Paragon Ventures I among existing backers; The Business Times identifies the two new names as family offices and reports the close coincides with the facility launch.
+- **2026-10-13** — NEU closed an oversubscribed US$7.6M round co-led by Shift4Good and SGInnovate, off its newly commissioned 1,300 t/yr Singapore LFP recycling plant, to ramp battery-grade lithium output and fund international expansion — [neumaterials.com](https://www.neumaterials.com/news/neu-battery-materials-closes-funding-round-to-scale-lfp-recycling-and-strengthen-lithium-supply-chain-resilience) (Also reported by: [techinasia.com](https://www.techinasia.com/news/neu-battery-materials-raises-76m-scale-lfp-recycling), [businesstimes.com.sg](https://www.businesstimes.com.sg/esg/singapore-lithium-battery-recycling-startup-neu-battery-materials-raises-us7-6-million), [e27.co](https://e27.co/neu-battery-materials-bags-us7-6m-to-mine-lithium-from-the-worlds-least-loved-battery-20261013/), [prnewswire.com](https://www.prnewswire.com/news-releases/neu-battery-materials-closes-oversubscribed-us7-6-million-funding-round-to-scale-lfp-recycling-and-strengthen-lithium-supply-chain-resilience-302905285.html), [straitstimes.com](https://www.straitstimes.com/singapore/environment/singapore-firm-neu-battery-materials-secures-us7-6m-to-scale-up-lithium-recycling-expand-overseas))
+  - Summary: NEU Battery Materials announced the oversubscribed close of a US$7.6M round co-led by Shift4Good and SGInnovate, saying the capital follows the commissioning of its 1,300-tonne-per-year Singapore plant and moves the company from technology development to industrial scale-up. Proceeds fund the ramp-up of battery-grade lithium from LFP feedstock such as cathode production scrap and end-of-life black mass, plus international expansion. The company lists Lotus Singapore Group and M7 Holdings among new participants and Paragon Ventures I among existing backers; The Business Times identifies the two new names as family offices and reports the close coincides with the facility launch. The Straits Times reports the post-round expansion targets Europe and the US through partnerships with battery manufacturers abroad, and that the Tuas plant will not run at full capacity initially and can double output within weeks.
   - People: Bryan Oh (Co-founder and CEO), Sebastien Guillaud (Co-founder and Managing Partner, Shift4Good), Hsien-Hui (Head of Investments, SGInnovate), Kenneth Palmer (Co-founder)
   - Counterparties: Lotus Singapore Group (new investor), M7 Holdings (new investor)
-  - Numbers: US$7.6M round; 1,300 t/yr plant capacity; LFP >90% of global battery energy storage and >55% of EV batteries (IEA); up to 83% lower emissions than hydrometallurgy/pyrometallurgy
+  - Numbers: US$7.6M round; 1,300 t/yr plant capacity; LFP >90% of global battery energy storage and >55% of EV batteries (IEA); up to 83% lower emissions than hydrometallurgy/pyrometallurgy; Tuas plant starts below nameplate with output able to double within weeks (Straits Times)
   - Quote: "The funding will catalyse the scale-up and deployment of our modular LFP recycling technology, enabling us to expand the production of vital battery-grade lithium, and at progressively lower costs to our customers." — Bryan Oh, Co-founder and CEO, NEU Battery Materials
 
 ## Older signals
@@ -53,5 +53,5 @@ _Total disclosed: $4.3M._
 
 ## Open questions
 - Has NEU secured feedstock supply agreements with battery manufacturers or EV OEMs?
-- Does the US policy push change NEU's go-to-market — is it pursuing North American deployment of its modular recycling systems?
-- What is NEU's current battery-grade lithium output and unit cost now that the 1,300 t/yr plant is commissioned, and when does it reach nameplate?
+- Which battery manufacturers is NEU partnering with for its Europe and US expansion, and are those agreements binding?
+- What is NEU's current battery-grade lithium output and unit cost, and how fast does the Tuas plant ramp from its initial sub-nameplate rate?

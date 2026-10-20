@@ -1,0 +1,834 @@
+{
+  "candidates": [
+    {
+      "company": "Librarian",
+      "dedup_key": "https://news.nus.edu.sg/temasek-foundation-nus-heritage-champions-programme-marks-a-year-of-documenting-lesser-known-stories-of-singapores-past/",
+      "description": "\u201cAren't libraries supposed to just shelve books and collect resources? Why run a youth heritage ambassador programme?\"  These are common questions that NUS University Librarian Associate Professor Natalie Pang, from the  Department of Communications and New Media  at the NUS  Faculty of Arts and Social Sciences , is used to fielding. To her, however, shelving books and collecting resources are merely functions of a library \u2014 not its fundamental purpose.  \u201cFunctions are not the same as purpose. T",
+      "headline": "Temasek Foundation-NUS Heritage Champions Programme marks a year of documenting lesser-known stories of Singapore\u2019s past",
+      "link": "https://news.nus.edu.sg/temasek-foundation-nus-heritage-champions-programme-marks-a-year-of-documenting-lesser-known-stories-of-singapores-past/",
+      "pubDate": "Wed, 14 Oct 2026 10:08:16 +0800",
+      "source": "NUS News",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Addlly AI",
+      "dedup_key": "https://addlly.ai/press/fn-group-selects-addlly-ai-geo-partner/",
+      "description": "",
+      "headline": "F&N Group Selects Addlly AI as GEO Partner",
+      "link": "https://addlly.ai/press/fn-group-selects-addlly-ai-geo-partner/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Addlly AI \u00b7 press",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Addlly AI",
+      "dedup_key": "https://addlly.ai/press/addlly-ai-named-superai-genesis-top-50-startup/",
+      "description": "",
+      "headline": "Addlly AI Named SuperAI Genesis Top 50 Startup, Strengthening Its Position as a Trusted Enterprise GEO Platform",
+      "link": "https://addlly.ai/press/addlly-ai-named-superai-genesis-top-50-startup/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Addlly AI \u00b7 press",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Addlly AI",
+      "dedup_key": "https://addlly.ai/press/addlly-ai-soc2-iso27001-certification/",
+      "description": "",
+      "headline": "Addlly AI Secures SOC 2 and ISO 27001 as Enterprise Demand for Its AI Visibility Platform Accelerates",
+      "link": "https://addlly.ai/press/addlly-ai-soc2-iso27001-certification/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Addlly AI \u00b7 press",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Addlly AI",
+      "dedup_key": "https://addlly.ai/press/addlly-ai-joins-hp-garage-2-0-to-expand-generative-engine-optimization-suite-for-corporate-clients/",
+      "description": "",
+      "headline": "Addlly AI Joins HP Garage 2.0 to Expand Generative Engine Optimization Suite for Corporate Clients",
+      "link": "https://addlly.ai/press/addlly-ai-joins-hp-garage-2-0-to-expand-generative-engine-optimization-suite-for-corporate-clients/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Addlly AI \u00b7 press",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Addlly AI",
+      "dedup_key": "https://addlly.ai/press/addlly-ai-launches-asias-first-ai-agents-to-help-ai-search-visibility/",
+      "description": "",
+      "headline": "Addlly AI Launches Asia\u2019s First GEO AI Agents to Help Brands Dominate AI Search Visibility",
+      "link": "https://addlly.ai/press/addlly-ai-launches-asias-first-ai-agents-to-help-ai-search-visibility/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Addlly AI \u00b7 press",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Addlly AI",
+      "dedup_key": "https://addlly.ai/press/addlly-ai-secures-seed-funding/",
+      "description": "",
+      "headline": "Addlly AI Secures Seed Funding to Scale AI Agents for 360-Degree Content Creation",
+      "link": "https://addlly.ai/press/addlly-ai-secures-seed-funding/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Addlly AI \u00b7 press",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Addlly AI",
+      "dedup_key": "https://addlly.ai/press/addlly-ai-finalist-asean-digital-awards-2025/",
+      "description": "",
+      "headline": "Addlly AI Emerges as Finalist for Prestigious ASEAN Digital Awards 2025, Second Time Running",
+      "link": "https://addlly.ai/press/addlly-ai-finalist-asean-digital-awards-2025/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Addlly AI \u00b7 press",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Addlly AI",
+      "dedup_key": "https://addlly.ai/press/addlly-ai-joins-block71-market-exploration-program-to-expand-presence-in-the-u-s-market/",
+      "description": "",
+      "headline": "Addlly AI Joins BLOCK71 Market Exploration Program to Expand Presence in the U.S. Market",
+      "link": "https://addlly.ai/press/addlly-ai-joins-block71-market-exploration-program-to-expand-presence-in-the-u-s-market/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Addlly AI \u00b7 press",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "AIPath",
+      "dedup_key": "https://www.aipath.one/post/growth-outcome-before-growth-strategy",
+      "description": "Revenue, margin or retention? AIPath explains why choosing the growth outcome first narrows the strategies worth testing, and where the CFO fits.",
+      "headline": "Revenue, Margin or Retention? Choose the Growth Outcome Before the Growth Strategy",
+      "link": "https://www.aipath.one/post/growth-outcome-before-growth-strategy",
+      "pubDate": "Tue, 20 Oct 2026 11:44:41 GMT",
+      "source": "AIPath \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "ChemT Biotechnology",
+      "dedup_key": "https://www.chemtbio.com/newsrelease",
+      "description": "",
+      "headline": "ChemT Biotechnology Showcases Chemplify at ISCT 2025 in New Orleans",
+      "link": "https://www.chemtbio.com/newsrelease",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "ChemT Biotechnology \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "ChemT Biotechnology",
+      "dedup_key": "https://www.chemtbio.com/newsrelease9",
+      "description": "",
+      "headline": "ChemT Biotechnology Presents AI Strategy to Address Biologics Bottlenecks at BILS 2025",
+      "link": "https://www.chemtbio.com/newsrelease9",
+      "pre_extracted": true,
+      "pubDate": "April 15, 2025",
+      "source": "ChemT Biotechnology \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "ChemT Biotechnology",
+      "dedup_key": "https://www.chemtbio.com/newsrelease10",
+      "description": "",
+      "headline": "ChemT Co-Founders Discuss AI\u2019s Role in Drug Discovery at April 2025 Panel",
+      "link": "https://www.chemtbio.com/newsrelease10",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "ChemT Biotechnology \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "ChemT Biotechnology",
+      "dedup_key": "https://www.chemtbio.com/newsrelease11",
+      "description": "",
+      "headline": "ChemT Biotechnology Received a Letter of Support from Cytiva to Advance Cell Therapy Manufacturing",
+      "link": "https://www.chemtbio.com/newsrelease11",
+      "pre_extracted": true,
+      "pubDate": "December 20, 2024",
+      "source": "ChemT Biotechnology \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "ChemT Biotechnology",
+      "dedup_key": "https://www.chemtbio.com/newsrelease12",
+      "description": "",
+      "headline": "ChemT Biotechnology Appoints Biomanufacturing Pioneer Prof. Charlie Cooney as Advisor",
+      "link": "https://www.chemtbio.com/newsrelease12",
+      "pre_extracted": true,
+      "pubDate": "December 15, 2024",
+      "source": "ChemT Biotechnology \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "ChemT Biotechnology",
+      "dedup_key": "https://www.chemtbio.com/funding",
+      "description": "",
+      "headline": "ChemT Biotechnology Raises US$5 Million in 18 months to bring AI to Biomanufacturing",
+      "link": "https://www.chemtbio.com/funding",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "ChemT Biotechnology \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "https://www.flexxon.com/industrial-nvme-ssds/",
+      "description": "",
+      "headline": "Industrial NVMe SSDs: When SATA Isn\u2019t Enough",
+      "link": "https://www.flexxon.com/industrial-nvme-ssds/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Flexxon \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "https://www.flexxon.com/storage-for-test-and-measurement/",
+      "description": "",
+      "headline": "Storage for Test and Measurement Equipment",
+      "link": "https://www.flexxon.com/storage-for-test-and-measurement/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Flexxon \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "https://www.flexxon.com/storage-for-life-sciences-instruments/",
+      "description": "",
+      "headline": "Storage for Life Sciences Instruments and Laboratory Equipment",
+      "link": "https://www.flexxon.com/storage-for-life-sciences-instruments/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Flexxon \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "https://www.flexxon.com/encrypted-sd-cards-aes/",
+      "description": "",
+      "headline": "Encrypted SD Cards: AES and the Regulated-Data Use Case",
+      "link": "https://www.flexxon.com/encrypted-sd-cards-aes/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Flexxon \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "https://www.flexxon.com/m2-2280-industrial-ssds/",
+      "description": "",
+      "headline": "M.2 2280 Industrial SSDs: When to Use Them",
+      "link": "https://www.flexxon.com/m2-2280-industrial-ssds/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Flexxon \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "https://www.flexxon.com/storage-for-automotive-and-ev-charging/",
+      "description": "",
+      "headline": "Storage for Automotive and EV Charging Systems",
+      "link": "https://www.flexxon.com/storage-for-automotive-and-ev-charging/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Flexxon \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "https://www.flexxon.com/disk-on-module-explained/",
+      "description": "",
+      "headline": "Disk-on-Module Explained: USB DOM, SATA DOM, and PATA DOM",
+      "link": "https://www.flexxon.com/disk-on-module-explained/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Flexxon \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "https://www.flexxon.com/storage-for-networking-and-telecom/",
+      "description": "",
+      "headline": "Storage for Networking and Telecom Infrastructure",
+      "link": "https://www.flexxon.com/storage-for-networking-and-telecom/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Flexxon \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Forte Biotech",
+      "dedup_key": "https://fortebio.tech/news/aqua-culture-asia-pacific-disease-management",
+      "description": "",
+      "headline": "Aqua Culture Asia Pacific reports on RAPID use on farms in Indonesia, Vietnam and the Philippines",
+      "link": "https://fortebio.tech/news/aqua-culture-asia-pacific-disease-management",
+      "pre_extracted": true,
+      "pubDate": "4 April 2025",
+      "source": "Forte Biotech \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Forte Biotech",
+      "dedup_key": "https://fortebio.tech/news/alumnus-prawn-farming-diagnostics",
+      "description": "",
+      "headline": "The AlumNUS features Forte Biotech's work on prawn farming diagnostics",
+      "link": "https://fortebio.tech/news/alumnus-prawn-farming-diagnostics",
+      "pre_extracted": true,
+      "pubDate": "20 February 2025",
+      "source": "Forte Biotech \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Forte Biotech",
+      "dedup_key": "https://fortebio.tech/news/foodtech-500",
+      "description": "",
+      "headline": "Forte Biotech listed in the FoodTech 500 in 2024 and 2025",
+      "link": "https://fortebio.tech/news/foodtech-500",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Forte Biotech \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Forte Biotech",
+      "dedup_key": "https://fortebio.tech/news/seafood-expo-asia-hatch-blue-pitch",
+      "description": "",
+      "headline": "Forte Biotech pitches at the Hatch Blue investor session at Seafood Expo Asia",
+      "link": "https://fortebio.tech/news/seafood-expo-asia-hatch-blue-pitch",
+      "pre_extracted": true,
+      "pubDate": "4 September 2024",
+      "source": "Forte Biotech \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Forte Biotech",
+      "dedup_key": "https://fortebio.tech/news/vietnam-trade-press-rapid-trials-2024",
+      "description": "",
+      "headline": "Vietnamese trade press reports on farmer trials of RAPID in 2024",
+      "link": "https://fortebio.tech/news/vietnam-trade-press-rapid-trials-2024",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Forte Biotech \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Forte Biotech",
+      "dedup_key": "https://fortebio.tech/news/p4g-partnership-action-on-poverty",
+      "description": "",
+      "headline": "Forte Biotech and Action on Poverty receive a P4G partnership grant for the Mekong Delta",
+      "link": "https://fortebio.tech/news/p4g-partnership-action-on-poverty",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Forte Biotech \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Forte Biotech",
+      "dedup_key": "https://fortebio.tech/news/nus-enterprise-startup-story",
+      "description": "",
+      "headline": "NUS Enterprise features Forte Biotech in its startup stories",
+      "link": "https://fortebio.tech/news/nus-enterprise-startup-story",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Forte Biotech \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Forte Biotech",
+      "dedup_key": "https://fortebio.tech/news/forbes-30-under-30-asia-2024",
+      "description": "",
+      "headline": "Kit Yong from Forte Biotech named to Forbes 30 Under 30 Asia 2024",
+      "link": "https://fortebio.tech/news/forbes-30-under-30-asia-2024",
+      "pre_extracted": true,
+      "pubDate": "15 May 2024",
+      "source": "Forte Biotech \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Marymount Labs",
+      "dedup_key": "https://medicine.nus.edu.sg/data/nic-conference-2025/",
+      "description": "",
+      "headline": "Marymount Labs presents at the NUS Medicine International Council",
+      "link": "https://medicine.nus.edu.sg/data/nic-conference-2025/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Marymount Labs \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Marymount Labs",
+      "dedup_key": "https://medicine.nus.edu.sg/news/nus-medicine-data-accelerator-programme-driving-health-innovations/",
+      "description": "",
+      "headline": "Marymount Labs joins the inaugural NUS Medicine DATA cohort",
+      "link": "https://medicine.nus.edu.sg/news/nus-medicine-data-accelerator-programme-driving-health-innovations/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Marymount Labs \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Marymount Labs",
+      "dedup_key": "https://medicine.nus.edu.sg/data/healthhack-2024-announces-winners/",
+      "description": "",
+      "headline": "Marymount Labs wins first place at HealthHack 2024",
+      "link": "https://medicine.nus.edu.sg/data/healthhack-2024-announces-winners/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Marymount Labs \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Pinhome",
+      "dedup_key": "https://www.pinhome.id/blog/category/pembeli-properti-pemula/",
+      "description": "",
+      "headline": "Artikel Terkini",
+      "link": "https://www.pinhome.id/blog/category/pembeli-properti-pemula/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Pinhome \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Pinhome",
+      "dedup_key": "https://www.pinhome.id/pages/tentang-kami/",
+      "description": "",
+      "headline": "Kenali Pinhome Lebih Dekat",
+      "link": "https://www.pinhome.id/pages/tentang-kami/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Pinhome \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Pinhome",
+      "dedup_key": "https://www.pinhome.id/blog/category/panduan-sewa-properti/",
+      "description": "",
+      "headline": "panduan sewa properti",
+      "link": "https://www.pinhome.id/blog/category/panduan-sewa-properti/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Pinhome \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Pinhome",
+      "dedup_key": "https://www.pinhome.id/blog/category/panduan-beli-properti/",
+      "description": "",
+      "headline": "panduan beli properti",
+      "link": "https://www.pinhome.id/blog/category/panduan-beli-properti/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Pinhome \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Pinhome",
+      "dedup_key": "https://www.pinhome.id/blog/category/panduan-kpr-kpa/",
+      "description": "",
+      "headline": "panduan kpr kpa",
+      "link": "https://www.pinhome.id/blog/category/panduan-kpr-kpa/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Pinhome \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Pinhome",
+      "dedup_key": "https://www.pinhome.id/blog/category/titip-jual-sewa-rumah-pemilik-properti/",
+      "description": "",
+      "headline": "titip jual sewa rumah pemilik properti",
+      "link": "https://www.pinhome.id/blog/category/titip-jual-sewa-rumah-pemilik-properti/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Pinhome \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Pinhome",
+      "dedup_key": "https://www.pinhome.id/blog/category/desain-hunian/",
+      "description": "",
+      "headline": "desain hunian",
+      "link": "https://www.pinhome.id/blog/category/desain-hunian/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Pinhome \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Pinhome",
+      "dedup_key": "https://www.pinhome.id/dijual/rumah-baru/properti-eksklusif-mulia-bekasi-residence-cibarusah",
+      "description": "",
+      "headline": "Properti Eksklusif: Mulia Bekasi Residence Cibarusah",
+      "link": "https://www.pinhome.id/dijual/rumah-baru/properti-eksklusif-mulia-bekasi-residence-cibarusah",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Pinhome \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "RoamAssist",
+      "dedup_key": "https://doi.org/10.1145/3613904.3642227",
+      "description": "",
+      "headline": "Papers",
+      "link": "https://doi.org/10.1145/3613904.3642227",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "RoamAssist \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "RoamAssist",
+      "dedup_key": "https://roamassist.tech/",
+      "description": "",
+      "headline": "raiSE Energise Grant",
+      "link": "https://roamassist.tech/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "RoamAssist \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "SalesMind AI",
+      "dedup_key": "https://sales-mind.ai/_next/image?url=https%3A%2F%2Fsales-mind.ai%2Fapi%2Fog%3Ftitle%3DCold%2520Email%2520Personalization%2520at%2520Scale%26description%3DHow%2520AI%2520makes%2520every%2520message%2520feel%2520one-to-one%26template%3Dutility%26size%3Dlandscape%26channel%3Dog%26locale%3Den&w=1920&q=75",
+      "description": "",
+      "headline": "Best White Label Sales Tools for Agencies in 2026",
+      "link": "https://sales-mind.ai/_next/image?url=https%3A%2F%2Fsales-mind.ai%2Fapi%2Fog%3Ftitle%3DCold%2520Email%2520Personalization%2520at%2520Scale%26description%3DHow%2520AI%2520makes%2520every%2520message%2520feel%2520one-to-one%26template%3Dutility%26size%3Dlandscape%26channel%3Dog%26locale%3Den&w=1920&q=75",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "SalesMind AI \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "SalesMind AI",
+      "dedup_key": "https://sales-mind.ai/_next/image?url=https%3A%2F%2Fsales-mind.ai%2Fapi%2Fog%3Ftitle%3DIntent%2520Data%2520for%2520Sales%26description%3DRead%2520buying%2520signals%2520and%2520book%2520more%2520meetings%26template%3Dutility%26size%3Dlandscape%26channel%3Dog%26locale%3Den&w=1920&q=75",
+      "description": "",
+      "headline": "AI Sales Enablement: A Practical Framework for 2026",
+      "link": "https://sales-mind.ai/_next/image?url=https%3A%2F%2Fsales-mind.ai%2Fapi%2Fog%3Ftitle%3DIntent%2520Data%2520for%2520Sales%26description%3DRead%2520buying%2520signals%2520and%2520book%2520more%2520meetings%26template%3Dutility%26size%3Dlandscape%26channel%3Dog%26locale%3Den&w=1920&q=75",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "SalesMind AI \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "SalesMind AI",
+      "dedup_key": "https://sales-mind.ai/_next/image?url=https%3A%2F%2Fsales-mind.ai%2Fapi%2Fog%3Ftitle%3DAI%2520Cold%2520Email%2520Generator%253A%2520Build%2520a%2520System%252C%2520Not%2520a%2520Spray%2520Tool%26description%3DThe%2520anatomy%2520of%2520a%2520cold%2520email%2520worth%2520sending%2520%25E2%2580%2594%2520and%2520how%2520to%2520generate%2520it%2520at%2520scale%26template%3Dutility%26size%3Dlandscape%26channel%3Dog%26locale%3Den&w=1920&q=75",
+      "description": "",
+      "headline": "AI BDR: What It Is and How to Deploy One in 2026",
+      "link": "https://sales-mind.ai/_next/image?url=https%3A%2F%2Fsales-mind.ai%2Fapi%2Fog%3Ftitle%3DAI%2520Cold%2520Email%2520Generator%253A%2520Build%2520a%2520System%252C%2520Not%2520a%2520Spray%2520Tool%26description%3DThe%2520anatomy%2520of%2520a%2520cold%2520email%2520worth%2520sending%2520%25E2%2580%2594%2520and%2520how%2520to%2520generate%2520it%2520at%2520scale%26template%3Dutility%26size%3Dlandscape%26channel%3Dog%26locale%3Den&w=1920&q=75",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "SalesMind AI \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "SalesMind AI",
+      "dedup_key": "https://sales-mind.ai/_next/image?url=https%3A%2F%2Fsales-mind.ai%2Fapi%2Fog%3Ftitle%3DAI%2520Funnel%2520Builder%253A%2520Build%2520a%2520Sales%2520Funnel%2520That%2520Fills%2520Itself%26description%3DA%2520stage-by-stage%2520build%2520guide%26template%3Dutility%26size%3Dlandscape%26channel%3Dog%26locale%3Den&w=1920&q=75",
+      "description": "",
+      "headline": "AI Cold Email Generator: Build a System, Not a Spray Tool",
+      "link": "https://sales-mind.ai/_next/image?url=https%3A%2F%2Fsales-mind.ai%2Fapi%2Fog%3Ftitle%3DAI%2520Funnel%2520Builder%253A%2520Build%2520a%2520Sales%2520Funnel%2520That%2520Fills%2520Itself%26description%3DA%2520stage-by-stage%2520build%2520guide%26template%3Dutility%26size%3Dlandscape%26channel%3Dog%26locale%3Den&w=1920&q=75",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "SalesMind AI \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "SalesMind AI",
+      "dedup_key": "https://sales-mind.ai/_next/image?url=https%3A%2F%2Fsales-mind.ai%2Fapi%2Fog%3Ftitle%3DAI%2520B2B%2520Lead%2520Finder%253A%2520How%2520Modern%2520Sales%2520Teams%2520Fill%2520the%2520Pipeline%2520in%25202026%26description%3DWhat%2520an%2520AI%2520B2B%2520lead%2520finder%2520really%2520does%252C%2520what%2520to%2520look%2520for%252C%2520and%2520a%252030-day%2520plan%2520to%2520start.%26template%3Dutility%26size%3Dlandscape%26channel%3Dog%26locale%3Den&w=1920&q=75",
+      "description": "",
+      "headline": "AI Funnel Builder: How to Build a Sales Funnel That Fills Itself",
+      "link": "https://sales-mind.ai/_next/image?url=https%3A%2F%2Fsales-mind.ai%2Fapi%2Fog%3Ftitle%3DAI%2520B2B%2520Lead%2520Finder%253A%2520How%2520Modern%2520Sales%2520Teams%2520Fill%2520the%2520Pipeline%2520in%25202026%26description%3DWhat%2520an%2520AI%2520B2B%2520lead%2520finder%2520really%2520does%252C%2520what%2520to%2520look%2520for%252C%2520and%2520a%252030-day%2520plan%2520to%2520start.%26template%3Dutility%26size%3Dlandscape%26channel%3Dog%26locale%3Den&w=1920&q=75",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "SalesMind AI \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "SalesMind AI",
+      "dedup_key": "https://meet.sales-mind.ai/widget/booking/hlG0t56x4bZa8l3KWyEK?utm_source=website&utm_medium=webBlog&utm_campaign=demo&utm_content=ctaPrimary",
+      "description": "",
+      "headline": "Ready to Automate Your Sales Pipeline?",
+      "link": "https://meet.sales-mind.ai/widget/booking/hlG0t56x4bZa8l3KWyEK?utm_source=website&utm_medium=webBlog&utm_campaign=demo&utm_content=ctaPrimary",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "SalesMind AI \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Skuling",
+      "dedup_key": "https://skuling.id/tes-skb-seleksi-kompetensi-bidang-sekolah-kedinasan/",
+      "description": "Salah satu faktor yang membedakan seleksi mahasiswa baru PTN Kedinasan dengan perguruan tinggi lainnya adalah adanya seleksi lanjutan atau yang acap kali disebut dengan Seleksi Kompetensi Bidang (SKB). Berbeda dengan tes CPNS, SKB sekolah kedinasan seringkali tidak hanya berupa computer based test, tetapi juga tes fisik. Hal ini khususnya untuk sekolah kedinasan berbasis militer seperti [&#8230;]",
+      "headline": "Mengenal Tes SKB (Seleksi Kompetensi Bidang) Sekolah Kedinasan dan Strategi Memantapkannya",
+      "link": "https://skuling.id/tes-skb-seleksi-kompetensi-bidang-sekolah-kedinasan/",
+      "pubDate": "Tue, 20 Oct 2026 02:00:00 +0000",
+      "source": "Skuling \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Skuling",
+      "dedup_key": "https://skuling.id/sekolah-kedinasan-tanpa-syarat-tinggi-badan/",
+      "description": "Mendaftar ke sekolah kedinasan memang bisa menjadi salah satu alternatif kuliah perguruan tinggi untuk kamu yang bercita-cita menjadi ASN. Namun demikian, syarat dan seleksi masuk kampus-kampus ini dikenal lebih ketat, khususnya untuk PTN Kedinasan ikatan dinas.&#160; Selain harus memiliki kemampuan akademik tingkat tertentu, calon taruna dan taruni PTN Kedinasan juga harus memiliki fisik yang prima. [&#8230;]",
+      "headline": "5 Sekolah Kedinasan Tanpa Syarat Tinggi Badan dan Mata Minus, Yuk Coba Daftar!",
+      "link": "https://skuling.id/sekolah-kedinasan-tanpa-syarat-tinggi-badan/",
+      "pubDate": "Sun, 18 Oct 2026 02:00:00 +0000",
+      "source": "Skuling \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Skuling",
+      "dedup_key": "https://skuling.id/cara-daftar-sekolah-kedinasan/",
+      "description": "Pada tahun 2026 ini, terdapat 4.770 formasi calon mahasiswa sekolah kedinasan ikatan dinas yang dibuka oleh 9 instansi pemerintahan. Berbeda dengan tahun-tahun sebelumnya, proses pendaftaran PTN Kedinasan kini secara langsung di website SSCASN BKN sebagaimana proses pendaftaran tes CPNS pada umumnya. Berikut ini tata cara daftar sekolah kedinasan tahun 2027 mendatang untuk kamu. Persiapan Pendaftaran [&#8230;]",
+      "headline": "Cara Daftar Sekolah Kedinasan 2027 Lengkap, Simak Informasi Terbarunya di Sini!",
+      "link": "https://skuling.id/cara-daftar-sekolah-kedinasan/",
+      "pubDate": "Fri, 16 Oct 2026 02:00:00 +0000",
+      "source": "Skuling \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Skuling",
+      "dedup_key": "https://skuling.id/cara-menumbuhkan-semangat-belajar-ujian-mandiri/",
+      "description": "Sama seperti UTBK SNBT, seleksi mandiri PTN dan PTS juga harus dipersiapkan sejak dini. Terlebih lagi kalau kamu ingin lolos seleksi mandiri menggunakan nilai rapor atau prestasi, yang mana jalur mandiri tipe ini memang menggunakan riwayat prestasi akademik dan non-akademik kamu sejak kelas 1 SMA.&#160; Adapun untuk seleksi mandiri tipe ujian tulis seperti UTUL UGM [&#8230;]",
+      "headline": "7 Cara Menumbuhkan Semangat Belajar Ujian Mandiri Sambil Menunggu Pengumuman UTBK SNBT",
+      "link": "https://skuling.id/cara-menumbuhkan-semangat-belajar-ujian-mandiri/",
+      "pubDate": "Wed, 14 Oct 2026 02:00:00 +0000",
+      "source": "Skuling \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Skuling",
+      "dedup_key": "https://skuling.id/profil-polinema/",
+      "description": "Politeknik Negeri Malang (Polinema) adalah salah satu Politeknik terbaik di Indonesia versi Webometrics. Maka dari itu, tidak heran jika perguruan tinggi negeri yang satu ini juga banyak diminati oleh calon mahasiswa dari seluruh Indonesia di pagelaran UTBK SNBT tahun 2026 lalu. Berikut ini profil lengkap Polinema Malang untuk kamu: Mengenal Sejarah POLINEMA Didirikan pada 9 [&#8230;]",
+      "headline": "Profil dan Info Lengkap Politeknik Negeri Malang (POLINEMA)",
+      "link": "https://skuling.id/profil-polinema/",
+      "pubDate": "Mon, 12 Oct 2026 02:00:00 +0000",
+      "source": "Skuling \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Skuling",
+      "dedup_key": "https://skuling.id/profil-poltekkes-malang/",
+      "description": "Kamu ingin menjadi tenaga ahli kesehatan yang handal? Politeknik Kesehatan Kemenkes Malang (POLTEKKES Malang) adalah salah satu pilihan kampus yang cocok. Yuk ketahui jurusan apa saja yang ada di kampus ini dengan membaca artikel berikut ini: Mengenal Sejarah Poltekkes Malang POLTEKKES Malang adalah salah satu perguruan tinggi kedinasan non-ikatan dinas yang dikelola oleh Kementerian Kesehatan. [&#8230;]",
+      "headline": "Profil dan Info Lengkap POLTEKKES Malang",
+      "link": "https://skuling.id/profil-poltekkes-malang/",
+      "pubDate": "Sat, 10 Oct 2026 02:00:00 +0000",
+      "source": "Skuling \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Skuling",
+      "dedup_key": "https://skuling.id/profil-isi-denpasar/",
+      "description": "Kamu tertarik menjadi seorang seniman? Atau ingin membangun karya di bidang animasi dan DKV? ISI Denpasar adalah salah satu pilihan kampus yang tepat! Yuk ketahui profil salah satu kampus seni di Bali ini secara lengkap dengan membaca artikel berikut ini: Sejarah ISI Denpasar Atas dasar kepedulian terhadap memudarnya seni kebudayaan Bali, para seniman dari tanah [&#8230;]",
+      "headline": "Profil dan Info Lengkap ISI Denpasar",
+      "link": "https://skuling.id/profil-isi-denpasar/",
+      "pubDate": "Thu, 08 Oct 2026 02:00:00 +0000",
+      "source": "Skuling \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Synectify",
+      "dedup_key": "https://energytechchallengers.com/",
+      "description": "",
+      "headline": "one of 10 finalists in the Future Energy Grid category of Energy Tech Challengers",
+      "link": "https://energytechchallengers.com/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Synectify \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Uniad",
+      "dedup_key": "https://open.uniad.app/",
+      "description": "",
+      "headline": "Join us now!",
+      "link": "https://open.uniad.app/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "Uniad \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Vibefam",
+      "dedup_key": "https://vibefam.com/starting-a-fitness-business-on-your-own/",
+      "description": "",
+      "headline": "Recent Posts",
+      "link": "https://vibefam.com/starting-a-fitness-business-on-your-own/",
+      "pre_extracted": true,
+      "pubDate": "October 8, 2026",
+      "source": "Vibefam \u00b7 blog",
+      "source_kind": "html_scrape"
+    }
+  ],
+  "companies": {
+    "AIPath": "BLOCK71 Silicon Valley-resident SaaS startup building a prescriptive-AI decision engine for product and go-to-market teams (AI customer-journey mapping, evidence-based feature prioritization, digital-twin simulations). Generic AI brand \u2014 drop items about unrelated AI-pathology / AI-routing tools.",
+    "Addlly AI": "BLOCK71 Singapore-resident GenAI content-marketing startup (co-founders Tina Chopra (CEO) and Ronie Ganguly) operating a 'zero-prompt' AI content-creation suite \u2014 1-Click Blog Writer, AI Social Media Post Generator, multi-language Asian-market support; ASEAN Digital Awards 2025 Silver. Drop generic AI-marketing-tools coverage unless it names Addlly.",
+    "ChemT Biotechnology": "BLOCK71 Singapore-resident chemistry / biotechnology startup. Limited public-English information beyond the directory listing \u2014 drop unrelated 'ChemT' / chemistry brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "Flexxon": "BLOCK71 Silicon Valley-listed Singapore cybersecurity-hardware startup (founded 2007) building X-PHY, the world's first AI-embedded SSD with hardware-level threat detection and physical-tamper response. Co-founded by Camellia Chan and May Chng. Drop items that only mention generic flash-storage or unrelated 'X-PHY' physics content.",
+    "Forte Biotech": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
+    "Librarian": "BLOCK71 Singapore-resident startup. CRITICAL: 'Librarian' is extremely generic (library staff, software-libraries, multiple branded products); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "Marymount Labs": "The Hangar (NUS Enterprise)-resident Singapore digital-health startup (co-founder Zacchaeus Chok, NUS Computing) building 'Broadcast', an AI-powered WhatsApp engagement platform that automates patient outreach (smoking-cessation assessments, Hospital@Home triage, preventive-care campaign reminders) in local languages. Joined NUS Medicine DATA accelerator (Sep), backed by NUS VIP and 500 Startups (SSGF); 2024 NUS Health Hack 1st Prize; sole SG/Asia team in 2024 Caelestinus Digital Health Incubator. Drop unrelated 'Marymount' (school/hospital brand) news.",
+    "Pinhome": "BLOCK71 Bandung-listed Indonesian end-to-end proptech (founded January 2020 by ex-Gojek execs Dayu Dara Permata and Ahmed Aljunied): home search, transactions, conventional + sharia mortgage and refinancing, plus PinHome Home Service for cleaning, car wash and home maintenance. 1M+ housing inventories, 20+ banking partners. Generic 'pin home' wording \u2014 drop unrelated Pinterest / home-decor mentions.",
+    "RoamAssist": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "SalesMind AI": "BLOCK71 Singapore-resident sales-AI startup. Drop unrelated 'SalesMind' branded vendors (Salesmind.ai LinkedIn outreach, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "Skuling": "BLOCK71 Yogyakarta-resident Indonesian edutech startup building a gamified web learning platform \u2014 leaderboards, social discussion, performance analytics \u2014 targeting Indonesian primary/secondary education accessibility and engagement gaps. ~110,000 users across 502 of 514 Indonesian cities. Founded by Yudha Pratama Situmorang (Boston University Questrom MBA'24); 2024 Poets & Quants Most Disruptive MBA Startup. Drop generic 'schooling' / education-tech mentions.",
+    "Synectify": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "Uniad": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing \u2014 drop unrelated 'uniad' (Unilever Ad / university-ad / unidad) brand mentions unless the article explicitly references this Hangar entity.",
+    "Vibefam": "BLOCK71 Singapore-resident community / wellness / events startup ('vibe' + 'fam'). Drop unrelated namesakes unless the article explicitly references this BLOCK71 SG entity."
+  },
+  "fetch_failed": [
+    {
+      "company": "PharLyfe+",
+      "error": "HTTP Error 404: Not Found",
+      "kind": "rss",
+      "url": "https://pharlyfeplus.com/news-update/f.rss"
+    }
+  ],
+  "generated_at": "2026-10-20T20:25:15+00:00",
+  "jina_recovered": [
+    "https://thelowdown.momentum.asia/feed/",
+    "https://www.theedgesingapore.com/rss.xml"
+  ],
+  "llm_fetch_required": [
+    {
+      "company": "Ailytics",
+      "hint": "Webflow CMS listing under div.collection-list-wrapper-2.w-dyn-list. Each item is a div.div-block-78 containing a category label in div.category, a headline in div.text-block-27 (treat as the title), and a date as plain text in div.text-block-29 (e.g. 'April 28, 2026'). About 6 items shown in reverse chronological order. Resolve relative item links against https://www.ailytics.ai/.",
+      "label": "news",
+      "url": "https://www.ailytics.ai/news"
+    },
+    {
+      "company": "Assemblr",
+      "hint": "",
+      "label": "blog",
+      "url": "https://www.assemblrworld.com/blog/"
+    },
+    {
+      "company": "Belli AI",
+      "hint": "",
+      "label": "news",
+      "url": "https://www.belli.ai/company/news"
+    },
+    {
+      "company": "Cellivate Technologies",
+      "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/.",
+      "label": "press",
+      "url": "https://www.cellivatetech.com/recognition"
+    },
+    {
+      "company": "Craft Health",
+      "hint": "Craft Health 'Latest News' page is a chronological press/achievements timeline organised by year and month headers (e.g. '2021', then 'January 2021'). Each entry is a bullet line of plain text describing a media mention or award, often with an inline '[<Read_More>]' or named hyperlink to an external article. Dates come from the month/year section headings, not per-item. Resolve relative links against https://www.crafthealth.me/.",
+      "label": "news",
+      "url": "https://www.crafthealth.me/newsletter"
+    },
+    {
+      "company": "Finsey",
+      "hint": "",
+      "label": "blog",
+      "url": "https://finsey.vn/blog"
+    },
+    {
+      "company": "GeniiAI",
+      "hint": "",
+      "label": "blog",
+      "url": "https://www.geniiai.co/blog"
+    },
+    {
+      "company": "HiCura",
+      "hint": "WordPress (Yoast SEO) press-release page on hicuramedical.com. Each item is a row containing a publisher logo/thumbnail, a bolded headline (in <strong> tags rather than h2/h3), a short description, and a 'View Article' link to an external publisher URL. No explicit per-item date elements; dates only appear inline within some headlines (e.g. '2023'). Resolve relative links against https://hicuramedical.com/.",
+      "label": "press",
+      "url": "https://hicuramedical.com/press-release/"
+    },
+    {
+      "company": "illumi one",
+      "hint": "",
+      "label": "news",
+      "url": "https://www.illumi.one/post"
+    },
+    {
+      "company": "insightic",
+      "hint": "Card-based blog listing on insightic.io. Each card contains a thumbnail image (from /img/), a category badge ('insightic research', 'community resource', 'new partnership'), a clickable headline that links to the individual post URL, and a publication date in 'Day Mon DD YYYY' format (e.g. 'Tue Oct 31 2023') displayed below the headline. Resolve relative links against https://insightic.io/.",
+      "label": "blog",
+      "url": "https://insightic.io/blog"
+    },
+    {
+      "company": "lalia",
+      "hint": "Card-based press listing for Lalia Pte Ltd (Singapore). Each card has a thumbnail image, an <h3> headline (often in Japanese), a secondary line with the source URL, and a publication date in 'YYYY/MM/DD' format below it. Each card wraps in an <a> tag linking to the full article (often external publishers). Resolve relative links against https://read.lalia.com.sg/.",
+      "label": "press",
+      "url": "https://read.lalia.com.sg/press"
+    },
+    {
+      "company": "Microtube Technologies",
+      "hint": "",
+      "label": "news",
+      "url": "https://microtube.tech/news"
+    },
+    {
+      "company": "NEU Battery Materials",
+      "hint": "News listing is vertically-stacked article cards; each card has a headline, publication date, brief description, and 'Read more' link. Relative links resolve against https://www.neumaterials.com/.",
+      "label": "newsroom",
+      "url": "https://www.neumaterials.com/news"
+    },
+    {
+      "company": "Qapita",
+      "hint": "",
+      "label": "blog",
+      "url": "https://www.qapita.com/blog"
+    },
+    {
+      "company": "seamless",
+      "hint": "Seamless XR (NUS spin-off) news page. Each entry is a link block: headline text directly followed by the publication date in 'Mon DD, YYYY' format (e.g. 'Nov 30, 2025'). No dedicated <article> tag; items appear as anchor links with the date bundled inline after the title. A 'Load More' button loads additional items. Resolve relative links against https://www.seamless.sg.",
+      "label": "news",
+      "url": "https://www.seamless.sg/news"
+    },
+    {
+      "company": "seamless",
+      "hint": "Seamless XR blog index. Each post is a link element with the headline followed by the date in 'Mon DD, YYYY' format and a path like /blog/<slug>. About 11 entries listed, dated through Mar 2026. Resolve relative links against https://www.seamless.sg.",
+      "label": "blog",
+      "url": "https://www.seamless.sg/blog"
+    },
+    {
+      "company": "SENSORi",
+      "hint": "SENSORI Healthcare news listing. Each item is an anchor (<a>) wrapping the entry with the headline rendered as an <h4> (e.g. 'SENSORI Healthcare Wins Third Prize at Two Innovation and Entrepreneurship Competitions') and the date below in YYYY-MM-DD format (e.g. '2025-12-03'). Items are tagged 'News' and ordered newest-first. Resolve relative links against https://www.sensorihealthcare.com.",
+      "label": "news",
+      "url": "https://www.sensorihealthcare.com/h-col-157.html"
+    },
+    {
+      "company": "SilentConvo",
+      "hint": "",
+      "label": "blog",
+      "url": "https://silentconvo.io/blog"
+    },
+    {
+      "company": "Soynergy",
+      "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com.",
+      "label": "news",
+      "url": "https://www.soynergy.com/category/news/"
+    },
+    {
+      "company": "Stick'Em",
+      "hint": "",
+      "label": "updates",
+      "url": "https://stickem.sg/updates/"
+    },
+    {
+      "company": "Tacniq",
+      "hint": "",
+      "label": "media",
+      "url": "https://www.tacniq.ai/media"
+    }
+  ],
+  "stats": {
+    "candidates": 61,
+    "companies_matched": 14,
+    "excluded_by_terms": 0,
+    "fetch_failed": 1,
+    "jina_candidates": 0,
+    "jina_recovered": 2,
+    "llm_fetch_required": 21,
+    "pre_extracted_capped": 13,
+    "weak_term_suppressed": 2
+  }
+}

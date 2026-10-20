@@ -1,5 +1,5 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-10-13 22:50 UTC_
+_Last updated: 2026-10-20 20:46 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -23,7 +23,7 @@ _Total disclosed: $351.6M._
 
 ## Recent signals
 - **2026-10-08** — Patsnap named Mark Davies, ex-Kiin Bio chief data and scientific officer and a nine-year BenevolentAI data executive, as Head of Product for its life sciences division, giving him the product strategy for its AI bio and chemistry intelligence tools — [patsnap.com](https://www.patsnap.com/resources/blog/press_release/patsnap-appoints-drug-discovery-data-leader-mark-davies-to-lead-life-sciences-product-strategy/)
-  - Summary: Patsnap announced that Mark Davies has joined as Head of Product for its life sciences division, where he owns product strategy for its AI-powered bio and chemistry intelligence tools. Davies co-founded Kiin Bio as Chief Data and Scientific Officer, spent nine years at BenevolentAI as SVP of Informatics and Data, and earlier led development of the ChEMBL and SureChEMBL open chemistry databases. Patsnap frames the appointment as a deliberate policy of putting practising scientists and attorneys into product leadership, saying it deepens its bench in computational drug discovery specifically.
+  - Summary: Patsnap announced that Mark Davies has joined as Head of Product for its life sciences division, where he owns product strategy for its AI-powered bio and chemistry intelligence tools. Davies co-founded Kiin Bio as Chief Data and Scientific Officer, spent nine years at BenevolentAI as SVP of Informatics and Data, and earlier led development of the ChEMBL and SureChEMBL open chemistry databases. Patsnap frames the appointment as a deliberate policy of putting practising scientists and attorneys into product leadership, saying it deepens its bench in computational drug discovery specifically. The hire is the clearest sign yet that the life-sciences push is organised as a standing product function for the existing bio and chemistry intelligence suite, rather than staffing a single named launch.
   - People: Mark Davies (Head of Product, Life Sciences, Patsnap), Haydn Evans (SVP Strategy, Patsnap)
   - Numbers: 20+ years in AI-enabled drug discovery; 9 years at BenevolentAI
   - Quote: "Some of the biggest delays in drug discovery come not from the science, but from getting to the right data at the right time." — Mark Davies, Head of Product, Life Sciences, Patsnap
@@ -75,5 +75,4 @@ _Total disclosed: $351.6M._
 ## Open questions
 - What is the expected valuation and timeline for the dual HK/Singapore IPO? Which exchange will be the primary listing?
 - Is the AI Agent Platform a new product line or an evolution of existing IP analytics? How does it differ from the core Patsnap offering?
-- Is the life sciences hiring push related to a specific product launch or market expansion in pharma R&D?
 - Do the life-sciences and IP product-leadership appointments signal vertical divisions with their own roadmaps and P&Ls ahead of the dual IPO?

@@ -1,5 +1,5 @@
 # pQCee — LIVING BRIEF
-_Last updated: 2026-10-13 22:50 UTC_
+_Last updated: 2026-10-20 20:46 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -25,6 +25,11 @@ _No disclosed funding._
   - Counterparties: Universal Digital Inc. (acquirer), CSE (regulator)
   - Numbers: long stop date moved 2026-09-30 → 2026-12-30; US$72.5M combined pre-money valuation (unchanged); closing risk flagged if not done by 2026-12-31
   - Quote: "The extension provides additional time to complete the concurrent financing and satisfy the remaining closing conditions for the Transaction." — Universal Digital Inc.
+- **2026-09-29** — Universal Digital's interim MD&A, prepared 29 September, confirms the concurrent financing behind the pQCee share exchange was still unraised, names Joseph Gunnar & Co. as exclusive placement agent on 7.5% cash plus 5% warrant fees, and rates Universal Digital's liquidity risk high — [newsfile.futunn.com](https://newsfile.futunn.com/public/NN-PersistNoticeAttachment/7781/20260930/911_CSA_SEDAR_PLUS_NOTICE_RECORD_ID_2518500_en-us_0.pdf)
+  - Summary: Universal Digital's management discussion and analysis for the six months ended 31 July 2026, prepared as of 29 September 2026, restates the pQCee share exchange as a fundamental change under CSE policy conditioned on a proposed 10:1 consolidation, pre-closing restructuring and debt-settlement work, and a concurrent financing of US$5M–US$10M in gross proceeds. It discloses that the concurrent financing had not been completed as of the MD&A date, so those proceeds are not yet available to fund operations, and that Joseph Gunnar & Co., LLC was engaged on 3 August 2026 as exclusive placement agent — a director of Universal Digital is a senior officer of JGUN, making the engagement a related-party transaction. The filing rates liquidity risk as high at 31 July 2026 on cash of C$50,520 against C$881,065 of current liabilities, and confirms LFG shares remained halted.
+  - Counterparties: Joseph Gunnar & Co., LLC (exclusive placement agent), CSE (regulator)
+  - Numbers: concurrent financing US$5M–US$10M gross, not yet raised; placement fee 7.5% of gross proceeds; agent warrants 5% of securities sold at 110% of offering price, 24-month term; cash C$50,520 vs C$881,065 current liabilities at 2026-07-31; 10:1 consolidation a closing condition; pQCee holders ~88% post-close pre-financing
+  - Quote: "The concurrent financing has not been completed as of the date of this MD&A and, accordingly, the contemplated proceeds are not presently available to fund the Company’s operations." — Universal Digital Inc. MD&A, 29 September 2026
 
 ## Older signals
 - **2026-08-05** — Signed a definitive share exchange agreement for Vancouver-based Universal Digital Inc. (CSE: LFG) to acquire all of pQCee in a change-of-business deal; US$72.5M combined pre-money, concurrent US$5–10M placement — [kalkinemedia.com](https://kalkinemedia.com/ca/news/announcements/universal-digital-inc-to-acquire-singapore-based-post-quantum-cybersecurity-firm-pqcee-in-definitive-share-exchange-agreement) (Also reported by: [pqcee.com](https://www.pqcee.com/blog/universal-digital-inc-announces-definitive-share-exchange-agreement-to-acquire-pqcee-pte-ltd), [sedar-filings-backup.thecse.com](https://sedar-filings-backup.thecse.com/000053666/06473867-00000001-000053666-universaldigital08052026nr-PDF.pdf))

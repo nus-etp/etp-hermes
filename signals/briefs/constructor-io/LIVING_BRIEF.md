@@ -1,5 +1,5 @@
 # Constructor.io — LIVING BRIEF
-_Last updated: 2026-10-14 22:00 UTC_
+_Last updated: 2026-10-20 20:46 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -24,6 +24,11 @@ _Total disclosed: $55.0M._
   - Summary: Constructor partnered with Stripe to launch Agentic Checkout, which lets shoppers ask an AI agent for recommendations, refine their choices and pay — via Stripe Checkout or Pay with Link — within the same agentic chat. Constructor says it is the first company to offer Stripe-powered checkout directly within onsite shopping agents, fusing discovery and checkout into one interface and removing a conversion handoff. The post cites Baymard Institute research that 17% of shoppers abandon an order because checkout is too long or complicated, and that roughly 70% of shopping carts are abandoned overall. Finovate adds that Agentic Checkout is powered by Constructor's Commerce Reasoning Engine and AI Product Insights Agent, that existing Constructor customers can switch it on by updating Constructor's UI library and adding Stripe credentials, and that Constructor plans to extend it beyond the AI Shopping Agent to other parts of retailers' digital shopping experiences later in 2026.
   - Counterparties: Stripe (payments partner)
   - Numbers: 17% abandon due to long or complicated checkout (Baymard); ~70% cart abandonment overall; 10x rise in companies deploying Constructor AI agents over the past year; 5M+ businesses on Stripe; 250M+ Link by Stripe customers
+- **2026-09-23** — CEO Eli Finkelshteyn argued in a company post that vertical commerce models beat generalist LLMs, claiming Constructor's Commerce Reasoning Engine has gone 13-0 in head-to-head A/B tests and that the moat is proprietary retail clickstream data rather than model capability — [constructor.com](https://constructor.com/blog/why-vertical-ai-beats-generalist-llms-in-commerce)
+  - Summary: Finkelshteyn frames the specialist-versus-generalist model choice as the decision that determines the rest of commerce discovery, and argues generalist LLMs are structurally inferior for retail search on four counts: no access to ecommerce clickstream data, slower and costlier inference, and missing merchandising, explainability and analytics tooling built for retail. He argues retailers will not hand the shopper relationship to an LLM that might redirect them to a competitor, and that specialist commerce models win because whole teams optimise conversion rate and revenue per visitor. The argument is Constructor's differentiation claim against generic generative search: proprietary behavioural data plus continuous conversion-focused A/B refinement, not model scale.
+  - People: Eli Finkelshteyn (CEO & Co-Founder)
+  - Numbers: 13 head-to-head A/B tests against generalist-LLM discovery tech over four years, no losses; 1,000+ A/B tests run by Constructor; ~70% of shoppers say retail site search needs an upgrade (2025 State of Ecommerce survey)
+  - Quote: "Building a much bigger model that knows far more information that isn’t useful for ecommerce discovery actually makes it more expensive and slower at the job we actually care about." — Eli Finkelshteyn, CEO & Co-Founder, Constructor
 
 ## Older signals
 - **2026-08-29** — Won three Gold "Company of the Year" honours across the International Business Awards, the Stevie Awards for Technology Excellence and the American Business Awards, plus Gold product awards for its AI Product Insights Agent — [techday.com](https://techday.com/story/constructor-wins-trio-of-stevie-gold-awards-for-ecommerce) (Also reported by: [prnewswire.com](https://www.prnewswire.com/news-releases/ai-innovation-at-constructor-leads-to-3-gold-company-of-the-year-wins-across-3-stevie-awards-programs-302861732.html), [martechcube.com](https://martechcube.com/constructor-wins-3-gold-stevie-awards-for-ai-innovation))
@@ -53,7 +58,7 @@ _Total disclosed: $55.0M._
   - Quote: "The next morning, I woke up with an offer to invest and a term sheet in my inbox… we had basically a hard decision in front of us—do you accept money just because you're offered it?" — Eli Finkelshteyn, CEO
 
 ## Open questions
-- How does Constructor's AI Shopping Assistant (ASA) tool differentiate from broader generative AI search products?
 - What drove the 45% YoY headcount growth if the company wasn't actively fundraising?
 - Will the Series B trigger any changes to Constructor's ownership or board structure?
 - What commercial terms govern the Constructor–Stripe Agentic Checkout partnership, and does Constructor share payment-conversion revenue?
+- Does Constructor's self-reported 13-0 A/B record against generalist LLMs hold up outside its own tests, and whose shopper traffic were those tests run on?
