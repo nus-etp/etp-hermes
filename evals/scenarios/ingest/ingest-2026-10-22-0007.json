@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/goodwhale/goodwhale.com",
+  "created_by": "write_scenarios@run 39848878808",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.02",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'GoodWhale Weekly: STI Bank Selloff Wipes 4.1%, Yields Hit a 24-Year High, AI Chips Wobble' for Goodwhale",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-22-0007",
+  "input": {
+    "candidate": {
+      "description": "STI bank selloff stole the spotlight this week. The STI bank selloff dominated the week in Singapore, with the index sliding about 4.1% to 5,401.89 as OCBC, UOB and DBS tumbled on Wednesday and Thursday. The trigger was global: the US 10-year Treasury yield hit 5.364%, a 24-year high, while Fed minutes showed most officials still expect one more hike. AI chips fell after an OpenAI revenue scare, Brent climbed to $104.72, and SpaceX's spectrum purchase knocked about 9% off the US telecom giants.",
+      "matched": [
+        "Goodwhale"
+      ],
+      "source": "Goodwhale",
+      "title": "GoodWhale Weekly: STI Bank Selloff Wipes 4.1%, Yields Hit a 24-Year High, AI Chips Wobble",
+      "url": "https://goodwhale.com/sti-bank-selloff-treasury-yields-oct-2026"
+    },
+    "companies": {
+      "Goodwhale": {
+        "description": "BLOCK71 Social Impact Hub-resident Singapore B-Corp-certified fintech startup running a personalised investing-health platform for new retail investors — goal setting, portfolio coaching, sustainable / values-aligned investing tools. Drop pet/animal-care 'whale' brands or shipping news unless the article references the investing-health platform."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-22",
+    "judge": "jev",
+    "judge_confidence": 0.96,
+    "kind": "judge_disagreement",
+    "run_id": "39848878808",
+    "source": "2026-10-22.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

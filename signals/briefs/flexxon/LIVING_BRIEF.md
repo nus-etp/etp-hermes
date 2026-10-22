@@ -1,23 +1,28 @@
 # Flexxon — LIVING BRIEF
-_Last updated: 2026-09-19 16:23 UTC_
+_Last updated: 2026-10-22 23:17 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-Flexxon is a Singapore cybersecurity-hardware company (founded 2007) that builds X-PHY, the world's first AI-embedded SSD with hardware-level threat detection and physical-tamper response. Co-founded by Camellia Chan and May Chng, the company has expanded into the US market through Maryland's Global Gateway Soft Landing Program at bwtech@UMBC, focusing on deepfake detection, server security, and endpoint protection built into the device itself.
+Flexxon is a Singapore-founded cybersecurity-hardware company whose X-PHY brand embeds AI threat detection inside the drive's own firmware and hardware, below the operating system, so protection survives a compromised host. Best known for the AI-embedded SSD and for deepfake detection, it now sells into endpoints, enterprise servers and healthcare, financial and government accounts, with 50+ patents and system-level relationships at Dell, Lenovo and HP. The October 2026 strategic investment in Bengaluru-based Tech4Biz Solutions marks a push up the stack from drives into secure-by-default server and data-centre builds, aimed at enterprises repatriating AI workloads; the bet is that on-premises AI creates demand for hardware-rooted security that software guardrails cannot supply.
 
-_Last material event: 2026-04-07 — Established US operations through Maryland's Global Gateway Soft Landing Program at bwtech@UMBC_
+_Last material event: 2026-10-20 — Made a strategic investment in Tech4Biz Solutions to co-develop secure-by-default server and data-centre infrastructure_
 
 ## Profile
 - Sector: Cybersecurity / Deep tech
-- Region: Singapore (HQ), US (Maryland)
+- Region: Singapore (HQ), US (California; Maryland — bwtech@UMBC soft-landing)
 - Founded: 2007
-- Key people: Camellia Chan (co-founder), May Chng (co-founder, COO)
+- Key people: Camellia Chan (co-founder, CEO), May Chng (co-founder, COO)
 
 ## Funding history
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-10-20** — Took a strategic stake in Tech4Biz Solutions, a Bengaluru cloud-infrastructure firm, to co-develop servers and data-centre builds with X-PHY security baked into the hardware rather than added after the fact — [x-phy.com](https://x-phy.com/flexxon-partners-with-tech4biz-solutions-to-co-develop-server-infrastructure-that-is-secure-by-default/)
+  - Summary: Flexxon announced a strategic investment in Tech4Biz Solutions, formalising a relationship of several years and extending joint development across Flexxon's X-PHY hardware security and Tech4Biz's Cloudtopiaa sovereign cloud and AI infrastructure platform. The immediate work is integrating X-PHY into Cloudtopiaa environments so server estates ship secured by default; Flexxon says development is already under way with commercial deployment expected in 2027. The tie-up targets governments, regulated enterprises, research institutions and data-centre operators first, in Singapore, India and North America, and is pitched at organisations bringing AI workloads — and the associated data, model and agent-memory risk — onto infrastructure they own. The release is Flexxon's own newsroom and discloses no investment amount or stake.
+  - People: Camellia Chan (Co-founder & CEO, Flexxon), Yasha Khandelwal (Co-founder & CEO, Tech4Biz Solutions)
+  - Counterparties: Tech4Biz Solutions (strategic-investment target, co-development partner), Cloudtopiaa (Tech4Biz cloud platform)
+  - Numbers: commercial deployment targeted 2027; US$80B sovereign-cloud IaaS spend forecast for 2026, +35.6% YoY (Gartner, cited by Flexxon); 50+ patents
+  - Quote: "We are building hardware that is secure by default, carrying that protection from devices into the servers and data centres enterprises now run themselves – the part of the stack where traditional security leaves the widest gaps." — Camellia Chan, Co-founder & CEO, Flexxon
 
 ## Older signals
 - **2026-08-14** — CEO Camellia Chan uses a vendor-bylined op-ed to argue that securing enterprise AI agents needs hardware-level controls, citing the Model Context Protocol vulnerability and a Meta agent data leak as evidence that software guardrails get bypassed — [techticker.net](https://techticker.net/2026/08/14/ai-agents-are-inside-the-enterprise-are-your-security-foundations-ready-for-them)
@@ -46,6 +51,6 @@ _none_
 
 ## Open questions
 - What is Flexxon's funding or revenue stage — bootstrapped, VC-backed, or generating revenue from X-PHY hardware sales?
-- How does X-PHY's hardware-level approach to deepfake detection compare to software-only alternatives in terms of efficacy and cost?
+- How much did Flexxon invest in Tech4Biz Solutions, and what stake did it acquire? The announcement discloses no figure.
+- Does bundling X-PHY into Cloudtopiaa server builds give Flexxon a volume channel beyond its Dell, Lenovo and HP drive business, or is 2027 deployment still a pilot-scale commitment?
 - Does the AI-agent security pitch correspond to a shipping X-PHY product line, or is it positioning ahead of one?
-- How does X-PHY commercialize — direct sales, OEM, or through the Dell/Lenovo/HP system-partner channel?

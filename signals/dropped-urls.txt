@@ -3,29 +3,6 @@
 # (default 30) so a false-negative drop gets re-judged instead of being lost
 # forever; scripts/collect-candidates.py prunes expired lines at the start of
 # each run. Keys we KEPT go to signals/seen-urls.txt (permanent) instead.
-2026-09-22	https://selidikpost.com/2026/05/06/duluin-raih-startup-terbaik-asean-siap-ekspansi-regional
-2026-09-22	http://instagram.com/p/DauC6aUk7Py
-2026-09-22	https://www.instagram.com/p/DV7c9M-kwSG
-2026-09-22	https://www.ecomatcher.com/how-urban-trees-can-keep-our-cities-livable/
-2026-09-22	https://www.ecomatcher.com/why-transparency-matters-for-nature-based-carbon-removal/
-2026-09-22	https://ecoworks.sg/
-2026-09-22	https://www.vietnam.vn/en/ra-mat-the-ghi-no-doanh-nghiep-phi-vat-ly-tich-hop-quan-tri-chi-tieu
-2026-09-22	https://flyoro.co/insights/flyoro-joins-rsb-as-a-member-to-strengthen-saf-deployment-infrastructure-and-book-and-claim-assurance
-2026-09-22	https://enterprisesg.gov.sg/resources/media-centre/news/2025/november/singapores-agri-tech-firms-find-fertile-ground
-2026-09-22	https://greencop.sg/news-1/green-cop-completes-phase-1-collaboration-with-ioi%2C-transitions-to-advanced-r%26d-facility-in-singapore
-2026-09-22	https://greencop.sg/news-1
-2026-09-22	https://greencop.sg/news-1/green-cop-and-chemtex-partner-to-scale-global-biobutanol-production
-2026-09-22	https://www.vertexventures.sg/news/hivebotics-raises-us-6-million-series-a-led-by-vertex-ventures-southeast-asia-india-to-automate-facilities-management-using-robots-starting-with-restroom-cleaning/
-2026-09-22	https://aitoolnet.com/compare/hyperpod-ai-vs-inferless
-2026-09-22	https://aitoolnet.com/compare/modal-vs-hyperpod-ai
-2026-09-22	https://aitoolnet.com/compare/substrate-vs-hyperpod-ai
-2026-09-22	https://straitstimes.com/business/economy/singapore-start-ups-show-that-ai-isnt-just-a-big-tech-playground
-2026-09-22	https://comp.nus.edu.sg/entrepreneurship/furnace/start
-2026-09-22	https://rocketreach.co/littlelives-profile_b5a247c3f65fdf48
-2026-09-22	https://littlelives.com/littlevoice/singapore
-2026-09-22	http://littlelives.com/littlevoice/blog
-2026-09-22	https://caplight.com/company/littlelives
-2026-09-22	https://littlelives.com/community-events/press
 2026-09-23	https://sg.mangachat.com/
 2026-09-23	https://www.mangachat.co/
 2026-09-23	https://ws.mangachat.co/
@@ -900,3 +877,23 @@
 2026-10-21	https://www.proteinproductiontechnology.com/post/proveg-selects-15-food-tech-startups-for-second-fast-track-to-impact-cohort
 2026-10-21	https://www.startupsg.gov.sg/profiles/52325
 2026-10-21	https://anomalybio.com/
+2026-10-22	https://www.prnewswire.com/apac/news-releases/flexxon-partners-with-tech4biz-solutions-to-co-develop-server-infrastructure-that-is-secure-by-default-302913346.html
+2026-10-22	https://dealroom.co/news/164118-flexxon-backs-tech4biz-to-harden-sovereign-ai-infrastructure
+2026-10-22	https://techcoffeehouse.com/2026/10/22/flexxon-invests-in-tech4biz-to-secure-ai-servers/
+2026-10-22	https://entelechyasia.com/2026/10/20/flexxon-invests-in-tech4biz-to-build-secure-ai-servers/
+2026-10-22	https://the420.in/flexxon-tech4biz-ai-security/
+2026-10-22	https://www.ptinews.com/press-release/flexxon-partners-with-tech4biz-solutions-to-co-develop-server-infrastructure-that-is-secure-by-default/4185348
+2026-10-22	http://themalaysianreserve.com/2026/10/20/flexxon-partners-with-tech4biz-solutions-to-co-develop-server-infrastructure-that-is-secure-by-default
+2026-10-22	https://www.techinasia.com/bringing-rapid-labgrade-diagnostics-pond-side
+2026-10-22	https://goodwhale.com/ready-to-invest-heres-how-much-you-actually-need/
+2026-10-22	https://ai-path.com/about-us
+2026-10-22	https://www.vietnam.vn/en/ra-mat-the-ghi-no-doanh-nghiep-phi-vat-ly-tich-hop-quan-tri-chi-tieu
+2026-10-22	https://fingerdance.ai/home
+2026-10-22	https://fortune.com/2026/10/07/ai-entertainment-china-technology/
+2026-10-22	https://flyoro.co/insights/flyoro-and-xcf-global-sign-memorandum-of-understanding-to-develop-global-saf-supply-chain-solutions/
+2026-10-22	https://www.qcintel.com/biofuels/article/singapore-biofuel-start-up-launches-pre-commercial-plant-in-malaysia-25178.html
+2026-10-22	https://dealroom.co/news/141449-green-cop-raises-angel-round-names-maritime-veteran-teo-teng-seng-chairm
+2026-10-22	https://www.vertexventures.sg/news/hivebotics-raises-us-6-million-series-a-led-by-vertex-ventures-southeast-asia-india-to-automate-facilities-management-using-robots-starting-with-restroom-cleaning/
+2026-10-22	https://vertexholdings.com/news/hivebotics-raises-us-6-million-to-make-robots-an-essential-service-in-facilities-management/
+2026-10-22	https://www.unite.ai/constructor-embeds-stripe-checkout-in-its-onsite-ai-shopping-agents/
+2026-10-22	https://www.retailtechinnovationhub.com/home/2026/10/4/constructor-claims-a-first-as-it-launches-agentic-checkout-solution-powered-by-stripe

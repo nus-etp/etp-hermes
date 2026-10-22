@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/skuling/skuling.id",
+  "created_by": "write_scenarios@run 39848878808",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.03",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Cara Seru Belajar TKA agar Tidak Jenuh dan Stres, Yuk Cobain!' for Skuling",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-22-0010",
+  "input": {
+    "candidate": {
+      "description": "Belajar TKA jangan dijadikan momok yang menakutkan. Serius boleh, namun memforsir diri untuk belajar sepanjang hari tanpa istirahat justru akan membebani mental kamu. Pada akhirnya kamu akan lebih cepat jenuh dan stres. Sebaiknya kamu atur strategi belajar yang lebih menyenangkan. Bagaimana sih cara seru belajar TKA? Selengkapnya simak di artikel ini! Cara belajar setiap orang [&#8230;]",
+      "matched": [
+        "Skuling"
+      ],
+      "source": "Skuling",
+      "title": "Cara Seru Belajar TKA agar Tidak Jenuh dan Stres, Yuk Cobain!",
+      "url": "https://skuling.id/cara-belajar-tka-agar-tidak-stres"
+    },
+    "companies": {
+      "Skuling": {
+        "description": "BLOCK71 Yogyakarta-resident Indonesian edutech startup building a gamified web learning platform — leaderboards, social discussion, performance analytics — targeting Indonesian primary/secondary education accessibility and engagement gaps. ~110,000 users across 502 of 514 Indonesian cities. Founded by Yudha Pratama Situmorang (Boston University Questrom MBA'24); 2024 Poets & Quants Most Disruptive MBA Startup. Drop generic 'schooling' / education-tech mentions."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-22",
+    "judge": "jev",
+    "judge_confidence": 0.96,
+    "kind": "judge_disagreement",
+    "run_id": "39848878808",
+    "source": "2026-10-22.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

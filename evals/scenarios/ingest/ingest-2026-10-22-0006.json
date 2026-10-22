@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/goodwhale/goodwhale.com",
+  "created_by": "write_scenarios@run 39848878808",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.02",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'GoodWhale Weekly: Chip Stock Selloff Hits 8 Days, Oil Nears $110, Singapore Exports Surge 68%' for Goodwhale",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-22-0006",
+  "input": {
+    "candidate": {
+      "description": "Chip stock selloff stole the spotlight this week. The chip stock selloff dominated the week, with the Philadelphia Semiconductor Index falling for an eighth straight session, its longest streak since 2008, and the Nasdaq sliding 4.5%. Yet TSMC posted a record profit up nearly 69% and ASML booked record sales, so the businesses kept growing while the share prices fell. Hot US inflation, Brent near $110 on Hormuz risks and a silent Fed added to the pressure, while Singapore's index held at 5,415.5",
+      "matched": [
+        "Goodwhale"
+      ],
+      "source": "Goodwhale",
+      "title": "GoodWhale Weekly: Chip Stock Selloff Hits 8 Days, Oil Nears $110, Singapore Exports Surge 68%",
+      "url": "https://goodwhale.com/chip-stock-selloff-oil-tsmc-oct-2026"
+    },
+    "companies": {
+      "Goodwhale": {
+        "description": "BLOCK71 Social Impact Hub-resident Singapore B-Corp-certified fintech startup running a personalised investing-health platform for new retail investors — goal setting, portfolio coaching, sustainable / values-aligned investing tools. Drop pet/animal-care 'whale' brands or shipping news unless the article references the investing-health platform."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-22",
+    "judge": "jev",
+    "judge_confidence": 0.98,
+    "kind": "judge_disagreement",
+    "run_id": "39848878808",
+    "source": "2026-10-22.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

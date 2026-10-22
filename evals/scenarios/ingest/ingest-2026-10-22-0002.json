@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/flexxon/flexxon.com",
+  "created_by": "write_scenarios@run 39848878808",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.17",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Storage for POS Terminals and Retail Payment Systems' for Flexxon",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-22-0002",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Flexxon"
+      ],
+      "source": "Flexxon",
+      "title": "Storage for POS Terminals and Retail Payment Systems",
+      "url": "https://www.flexxon.com/storage-for-pos-terminals"
+    },
+    "companies": {
+      "Flexxon": {
+        "description": "BLOCK71 Silicon Valley-listed Singapore cybersecurity-hardware startup (founded 2007) building X-PHY, the world's first AI-embedded SSD with hardware-level threat detection and physical-tamper response. Co-founded by Camellia Chan and May Chng. Drop items that only mention generic flash-storage or unrelated 'X-PHY' physics content."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-22",
+    "judge": "jev",
+    "judge_confidence": 0.92,
+    "kind": "judge_disagreement",
+    "run_id": "39848878808",
+    "source": "2026-10-22.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

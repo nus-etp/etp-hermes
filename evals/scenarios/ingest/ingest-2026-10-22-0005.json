@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/forte-biotech/fortebio.tech",
+  "created_by": "write_scenarios@run 39848878808",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.05",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Verticals' for Forte Biotech",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-22-0005",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Forte Biotech"
+      ],
+      "source": "Forte Biotech",
+      "title": "Verticals",
+      "url": "https://fortebio.tech/verticals/shrimp"
+    },
+    "companies": {
+      "Forte Biotech": {
+        "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-22",
+    "judge": "jev",
+    "judge_confidence": 1.0,
+    "kind": "judge_disagreement",
+    "run_id": "39848878808",
+    "source": "2026-10-22.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

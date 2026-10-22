@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/pinhome/pinhome.id",
+  "created_by": "write_scenarios@run 39848878808",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.05",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Properti Eksklusif: The Agathis' for Pinhome",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-22-0009",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Pinhome"
+      ],
+      "source": "Pinhome",
+      "title": "Properti Eksklusif: The Agathis",
+      "url": "https://www.pinhome.id/dijual/rumah-baru/properti-eksklusif-the-agathis"
+    },
+    "companies": {
+      "Pinhome": {
+        "description": "BLOCK71 Bandung-listed Indonesian end-to-end proptech (founded January 2020 by ex-Gojek execs Dayu Dara Permata and Ahmed Aljunied): home search, transactions, conventional + sharia mortgage and refinancing, plus PinHome Home Service for cleaning, car wash and home maintenance. 1M+ housing inventories, 20+ banking partners. Generic 'pin home' wording — drop unrelated Pinterest / home-decor mentions."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-22",
+    "judge": "jev",
+    "judge_confidence": 0.96,
+    "kind": "judge_disagreement",
+    "run_id": "39848878808",
+    "source": "2026-10-22.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

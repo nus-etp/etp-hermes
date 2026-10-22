@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/skuling/skuling.id",
+  "created_by": "write_scenarios@run 39848878808",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.02",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Bisakah Lulusan SMK Daftar Sekolah Kedinasan? Ini Penjelasan dan Daftar Instansinya!' for Skuling",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-22-0011",
+  "input": {
+    "candidate": {
+      "description": "Seleksi sekolah kedinasan pada dasarnya boleh diikuti oleh siswa dan siswi manapun. Tapi, pada dasarnya memang beberapa jurusan membutuhkan pengetahuan dan keterampilan khusus yang tidak bisa langsung dipelajari secara mendadak. Akibatnya, jurusan tersebut hanya terbuka untuk calon taruna taruni lulusan SMA dari jurusan tertentu saja.&#160; Tapi, apakah lulusan SMK berpeluang untuk menjadi taruna atau taruni [&#8230;]",
+      "matched": [
+        "Skuling"
+      ],
+      "source": "Skuling",
+      "title": "Bisakah Lulusan SMK Daftar Sekolah Kedinasan? Ini Penjelasan dan Daftar Instansinya!",
+      "url": "https://skuling.id/bisakah-lulusan-smk-daftar-sekolah-kedinasan"
+    },
+    "companies": {
+      "Skuling": {
+        "description": "BLOCK71 Yogyakarta-resident Indonesian edutech startup building a gamified web learning platform — leaderboards, social discussion, performance analytics — targeting Indonesian primary/secondary education accessibility and engagement gaps. ~110,000 users across 502 of 514 Indonesian cities. Founded by Yudha Pratama Situmorang (Boston University Questrom MBA'24); 2024 Poets & Quants Most Disruptive MBA Startup. Drop generic 'schooling' / education-tech mentions."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-22",
+    "judge": "jev",
+    "judge_confidence": 0.96,
+    "kind": "judge_disagreement",
+    "run_id": "39848878808",
+    "source": "2026-10-22.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
