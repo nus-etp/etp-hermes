@@ -1,11 +1,11 @@
 # CRecTech — LIVING BRIEF
-_Last updated: 2026-10-14 22:00 UTC_
+_Last updated: 2026-10-21 23:38 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-CRecTech is an NUS GRIP-incubated Singapore carbon-recycling startup converting waste biogas into bio-methanol for green maritime fuel and sustainable chemical production. Its Pertamina NRE partnership has moved from MOU to project development: a Joint Development Agreement signed 14 August 2026 covers a ~50 t/yr biogas-to-bio-methanol demonstration facility at Sei Mangkei, North Sumatra, and anchors an end-to-end value chain spanning domestic offtake (Pertachem) and international marine-fuel supply (PIMD, with Singapore as the reference market around 2028). The project carries strong bilateral endorsement, having been highlighted at the Singapore-Indonesia 6WG Ministerial Meeting and Leaders' Retreat, and the company's Activate Global Fellows selection is now corroborated by the programme host, NTU.
+CRecTech is an NUS GRIP-incubated Singapore carbon-recycling startup converting waste biogas into bio-methanol for green maritime fuel and sustainable chemical production. Its Pertamina NRE partnership has moved from MOU to project development: a Joint Development Agreement signed 14 August 2026 covers a ~50 t/yr biogas-to-bio-methanol demonstration facility at Sei Mangkei, North Sumatra, and anchors an end-to-end value chain spanning domestic offtake (Pertachem) and international marine-fuel supply (PIMD, with Singapore as the reference market around 2028). The project carries strong bilateral endorsement from the Singapore-Indonesia 6WG Ministerial Meeting and Leaders' Retreat, and the company's Activate Global Fellows selection is now corroborated by the programme host, NTU; on 6 October 2026 CRecTech won the CIIC 2026 Energy Transition track, adding Rp5bn in catalytic funding plus a US$50K Sinar Mas Agribusiness & Food grant and a US$50K Vinerock Capital investment to accelerate its Indonesian pilot.
 
-_Last material event: 2026-09-08 — Co-founders Lim Kang Hui and Haw Kok Giap named to Activate's inaugural Singapore Global Fellows cohort, the programme's first outside the United States_
+_Last material event: 2026-10-07 — Won the Energy Transition track at the Climate Impact Innovations Challenge 2026 (Rp5bn catalytic funding plus US$50K Sinar Mas grant and US$50K Vinerock Capital investment)_
 
 ## Profile
 - Sector: Climate tech
@@ -15,7 +15,12 @@ _Last material event: 2026-09-08 — Co-founders Lim Kang Hui and Haw Kok Giap n
 - **2024** — Grant, undisclosed — Breakthrough Energy Fellows; Breakthrough Energy, Temasek, Enterprise Singapore, SGInnovate — [temasek.com.sg](https://www.temasek.com.sg/en/news-and-resources/news-room/news/2024/BEF-SEA_announce_first_cohort)
 
 ## Recent signals
-_none_
+- **2026-10-07** — Won the Energy Transition track at the Climate Impact Innovations Challenge 2026, converting its August finalist selection into Rp5bn in catalytic funding plus two further prizes for its Indonesian bio-methanol pilot — [crectech.net](https://www.crectech.net/news/crectech-wins-ciic-2026-energy-transition-track)
+  - Summary: CRecTech was named Energy Transition winner of the fourth CIIC at the Grand Finale held 6 October 2026 in Jakarta as a thematic session of the Indonesia International Sustainability Forum 2026, beating eight other finalists drawn from more than 850 applications across roughly 60 countries. As winner it receives Rp5 billion in catalytic funding for an Indonesian pilot of its palm-oil-mill-effluent-to-bio-methanol solution, plus a US$50,000 grant from Sinar Mas Agribusiness & Food and a US$50,000 investment from Vinerock Capital. The company says the support will accelerate its pilot and commercial deployment with local partners including Pertamina, and frames the award as recognition of its proprietary catalyst and modular process platform.
+  - People: Lim Kang Hui (Co-founder & CEO, CRecTech)
+  - Counterparties: East Ventures / Temasek Foundation / Tencent (challenge presenters), Sinar Mas Agribusiness & Food (grant), Vinerock Capital (investor)
+  - Numbers: Rp5bn catalytic funding; US$50K Sinar Mas Agribusiness & Food grant; US$50K Vinerock Capital investment; 9 finalists across 3 tracks; 850+ applications from ~60 countries; 50% lower production cost / up to 93% emissions cut
+  - Quote: "we will accelerate our pilot and commercial deployment in Indonesia with local partners, including Pertamina" — Lim Kang Hui, Co-founder & CEO, CRecTech
 
 ## Older signals
 - **2026-09-08** — Co-founders Lim Kang Hui and Haw Kok Giap were named to Activate's inaugural Singapore Global Fellows cohort — the fellowship's first outside the United States, backed by an S$12M National Research Foundation commitment and delivered with NTU — [crectech.net](https://www.crectech.net/news/crectech-founders-activate-global-fellows-singapore-2026) (Also reported by: [ntu.edu.sg](https://www.ntu.edu.sg/news/detail/new-national-fellowship-backs-five-singapore-start-ups-for-global-growth))
@@ -52,7 +57,7 @@ _none_
 - **2026-05-21** — featured in Manifold Times — [crectech.net](https://crectech.net/news/feature-on-manifold-times)
 
 ## Open questions
-- What are the size, valuation and investor line-up of the seed round CRecTech announced in May 2026, and will the disclosed funding history ever reflect it?
+- How are the newly disclosed Rp5bn CIIC catalytic funding, US$50K Sinar Mas grant and US$50K Vinerock Capital investment structured (grant vs equity with milestones), and will the May 2026 seed round's size, valuation and investor line-up ever be disclosed?
 - What does CRecTech's IP portfolio around CRecREF consist of (patents filed vs trade secrets), and could the IP for Growth recognition support an IP-backed licensing or financing push?
 - What capacity, investment cost and start-up date are planned for the ~2028 commercial-scale plant, and what export volumes would Singapore absorb as the reference market?
 - Does the Activate fellowship take equity or IP rights in CRecTech, and will the October US immersion produce named customers or offtake partners?

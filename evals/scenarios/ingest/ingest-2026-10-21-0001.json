@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/chemt-biotechnology/iie.smu.edu.sg",
+  "created_by": "write_scenarios@run 39670611677",
+  "expected": {
+    "company": "ChemT Biotechnology",
+    "reason": "jev material=0.86",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'ChemT Biotechnology emerged winner of the Chancellor's Cup for Beta Innovation and Zhejiang Polar Code Technology was awarded the Chancellor's Cup for Infinity Impact' for ChemT Biotechnology",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-21-0001",
+  "input": {
+    "candidate": {
+      "description": "ChemT Biotechnology emerged winner of the Chancellor's Cup for Beta Innovation and Zhejiang Polar Code Technology was awarded the Chancellor's Cup for Infinity Impact \n\n  swaraalodha  \n\n  Wed, 10/21/2026 - 16:53 \n \n\n              \n      \n   \n     news_image \n           \n                  \n\n \n               \n       \n\n   \n     Source Link \n               https://en.prnasia.com/releases/apac/shaping-tomorrow-s-cities-smu-s-12th-lee-kuan-yew-global-business-plan-competition-spotlights-global-deep-te",
+      "matched": [
+        "ChemT Biotechnology"
+      ],
+      "source": "SMU IIE",
+      "title": "ChemT Biotechnology emerged winner of the Chancellor's Cup for Beta Innovation and Zhejiang Polar Code Technology was awarded the Chancellor's Cup for Infinity Impact",
+      "url": "https://iie.smu.edu.sg/lkygbpc/news/chemt-biotechnology-emerged-winner-chancellors-cup-beta-innovation-and-zhejiang-polar"
+    },
+    "companies": {
+      "ChemT Biotechnology": {
+        "description": "BLOCK71 Singapore-resident chemistry / biotechnology startup. Limited public-English information beyond the directory listing — drop unrelated 'ChemT' / chemistry brand mentions unless the article explicitly references this BLOCK71 SG entity."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-21",
+    "judge": "jev",
+    "judge_confidence": 0.86,
+    "kind": "judge_disagreement",
+    "run_id": "39670611677",
+    "source": "2026-10-21.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
