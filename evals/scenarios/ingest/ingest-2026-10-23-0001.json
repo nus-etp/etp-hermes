@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/vibefam/vibefam.com",
+  "created_by": "write_scenarios@run 40017708279",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.1",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Best Class Scheduling Software for Fitness Studios' for Vibefam",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-23-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Vibefam"
+      ],
+      "source": "Vibefam",
+      "title": "Best Class Scheduling Software for Fitness Studios",
+      "url": "https://vibefam.com/best-class-scheduling-software-for-fitness-studios"
+    },
+    "companies": {
+      "Vibefam": {
+        "description": "BLOCK71 Singapore-resident community / wellness / events startup ('vibe' + 'fam'). Drop unrelated namesakes unless the article explicitly references this BLOCK71 SG entity."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-23",
+    "judge": "jev",
+    "judge_confidence": 0.96,
+    "kind": "judge_disagreement",
+    "run_id": "40017708279",
+    "source": "2026-10-23.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

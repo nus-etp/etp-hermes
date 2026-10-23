@@ -15,14 +15,15 @@ _Last material event: 2026-09-22 — Signed a Letter of Intent with ICAO to join
 _No disclosed funding._
 
 ## Recent signals
+_none_
+
+## Older signals
 - **2026-09-22** — FlyORO signed a Letter of Intent with ICAO to join the Finvest Hub partner network, pitching its AlphaLite blending experience and delivered-volume traceability as the downstream SAF input to aviation decarbonisation financing — [flyoro.co](https://flyoro.co/insights/flyoro-joins-the-icao-finvest-hub-as-a-partner-bringing-modular-saf-blending-expertise-to-aviation-decarbonisation-finance/)
   - Summary: The Letter of Intent, signed by ICAO Secretary General Juan Carlos Salazar and FlyORO CEO Jonathan Yeo, covers cooperation on developing and implementing the ICAO Finvest Hub, established in February 2025 to connect aviation decarbonisation projects with public and private sources of investment. FlyORO joins from the downstream end of the SAF supply chain, contributing operating experience on where fuel is blended, what infrastructure sits between production and the aircraft, and how delivered volumes are evidenced — the questions the company argues lenders and investors increasingly weigh. The Hub facilitates and matches projects rather than funding them directly, and FlyORO states it is not a financing party; FlyORO also repeats its standing metrics, describing AlphaLite as a 40-foot modular unit at TRL 9 and more than 500,000 litres of SAF blended as of 2025.
   - People: Jonathan Yeo (Chief Executive Officer, FlyORO), Juan Carlos Salazar (Secretary General, ICAO), Robert Boyd (Chief, Finvest Hub, ICAO)
   - Counterparties: ICAO (partner; the Finvest Hub does not itself fund projects), International Renewable Energy Agency (partner on Finvest@ETAF)
   - Numbers: Finvest Hub established February 2025; five activity pillars; 193 ICAO Member States; 500,000+ litres of SAF blended as of 2025; AlphaLite 40-ft unit at TRL 9
   - Quote: "Every SAF project ultimately has to answer a practical question: how will the fuel reach the aircraft?" — Jonathan Yeo, Chief Executive Officer, FlyORO
-
-## Older signals
 - **2026-06-30** — FlyORO signed an MOU with Menzies Aviation to explore deploying its AlphaLite SAF blending system at European airports Menzies serves, leveraging Menzies' fuel farm and into-aircraft refueling operations — [aviationweek.com](https://aviationweek.com/aerospace/emerging-technologies/menzies-singapores-flyoro-explore-saf-distribution-europe) (Also reported by: [flyoro.co](https://flyoro.co/insights/flyoro-and-menzies-aviation-sign-mou-to-enhance-saf-across-fuel-networks/))
   - Summary: FlyORO's own release, issued 30 June 2026 from the IATA Aviation Energy Forum in Paris where the MoU was signed, frames the agreement as FlyORO selecting Menzies to explore deployment of the AlphaLite blending platform adjacent to airport fuel infrastructure, with Menzies providing fuel farm management and into-plane fuelling expertise. The scope is European fuel networks — no specific airports, timeline, or offtake commitments are named; the MoU is an exploratory assessment aimed at broadening SAF availability for airlines, airports and fuel suppliers, with emphasis on domestically produced and novel SAFs such as eSAF as ReFuelEU Aviation and the UK SAF Mandate accelerate demand.
   - People: Genevieve Toh (CMO, FlyORO), Marco di Mario (EVP Fuels, Menzies Aviation), Damian Mc Loughlin (CCO, FlyORO)
