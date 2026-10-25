@@ -28,3 +28,18 @@ Replay table:
 **Decision: REJECT**
 
 - zai: scenarios failed: ingest-2026-04-28-0001, ingest-2026-05-01-0001, ingest-2026-05-05-0001, ingest-2026-06-02-0001, ingest-2026-06-11-0001, ingest-2026-06-12-0001, ingest-2026-06-19-0001, ingest-2026-06-19-0002, ingest-2026-06-19-0003, ingest-2026-06-19-0004, ingest-2026-06-20-0001, ingest-2026-06-20-0002, ingest-2026-06-21-0001, ingest-2026-06-22-0001, ingest-2026-06-22-0002, ingest-2026-06-22-0003, ingest-2026-06-22-0004, ingest-2026-06-22-0005, ingest-2026-06-22-0006, ingest-2026-06-22-0007, ingest-2026-06-22-0008, ingest-2026-06-22-0009, ingest-2026-06-22-0010, ingest-2026-06-22-0011, ingest-2026-06-22-0012, ingest-2026-06-22-0013, ingest-2026-06-22-0014, ingest-2026-06-22-0015, ingest-2026-06-22-0016, ingest-2026-06-22-0017, ingest-2026-06-23-0001, ingest-2026-06-23-0002, ingest-2026-06-24-0001, ingest-2026-06-24-0002, ingest-2026-06-24-0003, ingest-2026-06-24-0004, ingest-2026-06-24-0005, ingest-2026-06-24-0006, ingest-2026-06-24-0007, ingest-2026-06-24-0008, ingest-2026-06-24-0009, ingest-2026-06-24-0011, ingest-2026-06-24-0012, ingest-2026-06-24-0013, ingest-2026-06-26-0001, ingest-2026-06-26-0002, ingest-2026-06-26-0003, ingest-2026-06-26-0004, ingest-2026-06-26-0005, ingest-2026-06-26-0006, ingest-2026-06-26-0007, ingest-2026-06-26-0008, ingest-2026-06-26-0009, ingest-2026-06-26-0010, ingest-2026-06-26-0011, ingest-2026-06-26-0012, ingest-2026-06-26-0013, ingest-2026-06-26-0014, ingest-2026-06-26-0015, ingest-2026-06-26-0016, ingest-2026-06-26-0017, ingest-2026-06-26-0018, ingest-2026-06-26-0019, ingest-2026-06-26-0020, ingest-2026-06-26-0021, ingest-2026-06-26-0022, ingest-2026-06-26-0023, ingest-2026-06-28-0001, ingest-2026-06-28-0002, ingest-2026-06-28-0003, ingest-2026-06-28-0004, ingest-2026-10-04-0001, ingest-2026-10-07-0001, ingest-2026-10-09-0001, ingest-2026-10-11-0001, ingest-2026-10-11-0002
+
+## 2026-10-25 — ingest/false_keep/ro/roplus.sg (run 40219792088)
+
+- Run: https://github.com/nus-etp/etp-hermes/actions/runs/40219792088
+- Rung: 2
+- Files: `prompts/ingest.md`
+- Verdict: not available
+
+Verdict reasons:
+
+- none recorded
+
+Unresolved blocking findings:
+
+- none
