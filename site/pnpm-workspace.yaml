@@ -11,7 +11,9 @@ catalog:
   react-aria-components: 1.16.0
   typescript: ^5.9.3
   vite: 8.1.6
-  zod: ^4.2.1
+  # GHSA-mrhx-c7xc-m3w5 / CVE-2023-54404 (unbounded memory use validating an
+  # oversized array with $ZodArray.handleArrayResult): patch bump.
+  zod: ^4.6.7
 
 catalogs:
   next:
@@ -69,6 +71,10 @@ overrides:
   # possible RCE on glibc Linux): sharp bundles librsvg and next pulls sharp
   # in as an optional dep; patch bump.
   sharp: '^0.35.5'
+  # GHSA-mrhx-c7xc-m3w5 / CVE-2023-54404 (zod unbounded memory use validating
+  # an oversized array): eslint-plugin-react-hooks pins its own zod resolution
+  # within a range the catalog bump doesn't dedupe against; force it too.
+  'eslint-plugin-react-hooks>zod': '^4.6.7'
 
 publicHoistPattern:
   - '*prettier*'
