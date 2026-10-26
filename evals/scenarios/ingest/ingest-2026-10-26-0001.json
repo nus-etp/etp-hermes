@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/qapita/qapita.com",
+  "created_by": "write_scenarios@run 40404851814",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.06",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'What Is a Startup? A Founder’s Guide for 2026' for Qapita",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-26-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Qapita"
+      ],
+      "source": "Qapita",
+      "title": "What Is a Startup? A Founder’s Guide for 2026",
+      "url": "https://www.qapita.com/blog/what-is-a-startup"
+    },
+    "companies": {
+      "Qapita": {
+        "description": ""
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-26",
+    "judge": "jev",
+    "judge_confidence": 0.98,
+    "kind": "judge_disagreement",
+    "run_id": "40404851814",
+    "source": "2026-10-26.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/skuling/skuling.id",
+  "created_by": "write_scenarios@run 40404851814",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.02",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Tips agar Kamu Lolos Seleksi Administrasi Sekolah Kedinasan, Ini yang Perlu Disiapkan!' for Skuling",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-26-0002",
+  "input": {
+    "candidate": {
+      "description": "Berbeda dengan tahapan seleksi lainnya, tahapan tes administrasi seringkali dianggap remeh dan mudah oleh peserta seleksi. Padahal, gagal di tahap ini termasuk paling menyakitkan karena kamu sudah “kalah” sebelum berperang. Untuk lolos seleksi administrasi sekolah kedinasan itu juga perlu trik tersendiri.&#160; Berikut ini tips lolos administrasi sekolah kedinasan untuk kamu supaya kamu tidak kalah sebelum [&#8230;]",
+      "matched": [
+        "Skuling"
+      ],
+      "source": "Skuling",
+      "title": "Tips agar Kamu Lolos Seleksi Administrasi Sekolah Kedinasan, Ini yang Perlu Disiapkan!",
+      "url": "https://skuling.id/tips-lolos-administrasi-sekolah-kedinasan"
+    },
+    "companies": {
+      "Skuling": {
+        "description": "BLOCK71 Yogyakarta-resident Indonesian edutech startup building a gamified web learning platform — leaderboards, social discussion, performance analytics — targeting Indonesian primary/secondary education accessibility and engagement gaps. ~110,000 users across 502 of 514 Indonesian cities. Founded by Yudha Pratama Situmorang (Boston University Questrom MBA'24); 2024 Poets & Quants Most Disruptive MBA Startup. Drop generic 'schooling' / education-tech mentions."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-26",
+    "judge": "jev",
+    "judge_confidence": 0.96,
+    "kind": "judge_disagreement",
+    "run_id": "40404851814",
+    "source": "2026-10-26.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
