@@ -1,0 +1,241 @@
+{
+  "candidates": [
+    {
+      "company": "LittleLives",
+      "dedup_key": "https://www.channelnewsasia.com/singapore/food-rescue-apps-surplus-food-discount-6495796",
+      "description": "\"They all want merchants near their home, near the office, and at a very steep discount and at a very convenient timing,\" says the founder of a food rescue app.",
+      "headline": "Too late, too far, too little choice: Why surplus food apps face challenges matching meals with takers",
+      "link": "https://www.channelnewsasia.com/singapore/food-rescue-apps-surplus-food-discount-6495796",
+      "pubDate": "Wed, 28 Oct 2026 06:00:00 +0800",
+      "source": "Channel News Asia",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Renaissance",
+      "dedup_key": "https://e27.co/from-conference-attendee-to-intelligence-node-my-experience-at-an-ai-native-conference-20261025/",
+      "description": "From 5\u20137 October, I organised and attended the Strategic Renaissance 21 (SR21) \u00d7 World Governments Summit workshop in Dubai. The three-day gathering brought together 48 senior leaders from government, finance, technology, defense, and academia to explore a common theme: The Breaking Point. The conference itself was an interesting experiment in AI-enabled event design. As my [&#8230;] \n The post  From conference attendee to intelligence node: My experience at an AI-native conference  appeared fir",
+      "headline": "From conference attendee to intelligence node: My experience at an AI-native conference",
+      "link": "https://e27.co/from-conference-attendee-to-intelligence-node-my-experience-at-an-ai-native-conference-20261025/",
+      "pubDate": "Tue, 27 Oct 2026 02:00:11 +0000",
+      "source": "e27",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "WiSe",
+      "dedup_key": "https://fintechnews.sg/139753/payments/grab-wise-liquid-group-singapore-payments-code/",
+      "description": "Grab, Wise and Liquid Group are the first to sign up to Singapore&#8217;s new payments industry code of conduct. The Singapore Fintech Association (SFA) introduced the voluntary code in August 2026 to improve transparency and consumer protection across the payments sector. It sets standards for payment service providers, including disclosing the full cost of transactions [...] \n The post  Grab, Wise and Liquid Group First to Back Singapore Payments Code  appeared first on  Fintech Singapore .",
+      "headline": "Grab, Wise and Liquid Group First to Back Singapore Payments Code",
+      "link": "https://fintechnews.sg/139753/payments/grab-wise-liquid-group-singapore-payments-code/",
+      "pubDate": "Tue, 27 Oct 2026 04:47:35 +0000",
+      "source": "Fintech News SG",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "EcoMatcher",
+      "dedup_key": "https://www.ecomatcher.com/what-is-false-autumn/",
+      "description": "What if autumn arrives weeks before it should? In many countries, trees that should still have full green canopies are already turning yellow or brown. This phenomenon is often called false autumn. It&#8217;s autumn-like changes that appear unusually early, especially when trees start browning or... \n The post  What is False Autumn?  appeared first on  EcoMatcher .",
+      "headline": "What is False Autumn?",
+      "link": "https://www.ecomatcher.com/what-is-false-autumn/",
+      "pubDate": "Sun, 25 Oct 2026 08:55:28 +0000",
+      "source": "EcoMatcher \u00b7 blog",
+      "source_kind": "rss"
+    }
+  ],
+  "companies": {
+    "EcoMatcher": "BLOCK71 Bandung-listed Hong Kong-headquartered B-Corp (founded 2016 by Bas Fransen) operating a blockchain-tracked tree-planting / forest-management platform \u2014 TreeCorder data-capture app, TreeManager cloud system, Verra/Gold Standard carbon-certified TREES+ projects (partnership with VNV Advisory). Corporate customers include Grab and Procter & Gamble; ~50,000 customers globally. Drop generic 'eco' / matching-engine mentions.",
+    "LittleLives": "BLOCK71 Jakarta-listed Singapore preschool SaaS (founded 2011 by Sun Ho, NUS Computing alumna) running a holistic school-management system for early-childhood centres \u2014 attendance, time-in/out, temperature/height/weight, child portfolios, log books, fees, parent communication; ~1,000 schools across Singapore, Malaysia, China, Vietnam, Cambodia; MOE/ECDA-accredited, AECES Top Preschool Software. Made strategic acquisition of Illume Technology. Drop generic 'small / little lives' branding unless it names this entity.",
+    "Renaissance": "The Hangar (NUS Enterprise)-resident Singapore startup. CRITICAL: 'Renaissance' is extremely generic (Renaissance Technologies hedge fund, Renaissance Re insurance, Renaissance Hotels, Renaissance learning); drop almost all 'Renaissance' news unless the article explicitly references the BLOCK71 / NUS Hangar entity.",
+    "WiSe": "NUS GRIP-incubated Singapore deep-tech startup. Very generic \u2014 drop any item not clearly about this specific Singapore startup."
+  },
+  "fetch_failed": [
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "kind": "firehose",
+      "url": "https://thelowdown.momentum.asia/feed/"
+    },
+    {
+      "error": "not well-formed (invalid token): line 1, column 119",
+      "kind": "firehose",
+      "url": "https://acv.vc/feed/"
+    },
+    {
+      "company": "PharLyfe+",
+      "error": "HTTP Error 404: Not Found",
+      "kind": "rss",
+      "url": "https://pharlyfeplus.com/news-update/f.rss"
+    },
+    {
+      "company": "RetireGenie",
+      "error": "not well-formed (invalid token): line 1, column 119",
+      "kind": "rss",
+      "url": "https://www.retiregenie.com/feed/"
+    }
+  ],
+  "generated_at": "2026-10-27T22:16:22+00:00",
+  "jina_recovered": [
+    "https://www.theedgesingapore.com/rss.xml"
+  ],
+  "llm_fetch_required": [
+    {
+      "company": "Ailytics",
+      "hint": "Webflow CMS listing under div.collection-list-wrapper-2.w-dyn-list. Each item is a div.div-block-78 containing a category label in div.category, a headline in div.text-block-27 (treat as the title), and a date as plain text in div.text-block-29 (e.g. 'April 28, 2026'). About 6 items shown in reverse chronological order. Resolve relative item links against https://www.ailytics.ai/.",
+      "label": "news",
+      "url": "https://www.ailytics.ai/news"
+    },
+    {
+      "company": "Assemblr",
+      "hint": "",
+      "label": "blog",
+      "url": "https://www.assemblrworld.com/blog/"
+    },
+    {
+      "company": "Belli AI",
+      "hint": "",
+      "label": "news",
+      "url": "https://www.belli.ai/company/news"
+    },
+    {
+      "company": "Cellivate Technologies",
+      "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/.",
+      "label": "press",
+      "url": "https://www.cellivatetech.com/recognition"
+    },
+    {
+      "company": "Craft Health",
+      "hint": "Craft Health 'Latest News' page is a chronological press/achievements timeline organised by year and month headers (e.g. '2021', then 'January 2021'). Each entry is a bullet line of plain text describing a media mention or award, often with an inline '[<Read_More>]' or named hyperlink to an external article. Dates come from the month/year section headings, not per-item. Resolve relative links against https://www.crafthealth.me/.",
+      "label": "news",
+      "url": "https://www.crafthealth.me/newsletter"
+    },
+    {
+      "company": "Finsey",
+      "hint": "",
+      "label": "blog",
+      "url": "https://finsey.vn/blog"
+    },
+    {
+      "company": "GeniiAI",
+      "hint": "",
+      "label": "blog",
+      "url": "https://www.geniiai.co/blog"
+    },
+    {
+      "company": "HiCura",
+      "hint": "WordPress (Yoast SEO) press-release page on hicuramedical.com. Each item is a row containing a publisher logo/thumbnail, a bolded headline (in <strong> tags rather than h2/h3), a short description, and a 'View Article' link to an external publisher URL. No explicit per-item date elements; dates only appear inline within some headlines (e.g. '2023'). Resolve relative links against https://hicuramedical.com/.",
+      "label": "press",
+      "url": "https://hicuramedical.com/press-release/"
+    },
+    {
+      "company": "illumi one",
+      "hint": "",
+      "label": "news",
+      "url": "https://www.illumi.one/post"
+    },
+    {
+      "company": "insightic",
+      "hint": "Card-based blog listing on insightic.io. Each card contains a thumbnail image (from /img/), a category badge ('insightic research', 'community resource', 'new partnership'), a clickable headline that links to the individual post URL, and a publication date in 'Day Mon DD YYYY' format (e.g. 'Tue Oct 31 2023') displayed below the headline. Resolve relative links against https://insightic.io/.",
+      "label": "blog",
+      "url": "https://insightic.io/blog"
+    },
+    {
+      "company": "lalia",
+      "hint": "Card-based press listing for Lalia Pte Ltd (Singapore). Each card has a thumbnail image, an <h3> headline (often in Japanese), a secondary line with the source URL, and a publication date in 'YYYY/MM/DD' format below it. Each card wraps in an <a> tag linking to the full article (often external publishers). Resolve relative links against https://read.lalia.com.sg/.",
+      "label": "press",
+      "url": "https://read.lalia.com.sg/press"
+    },
+    {
+      "company": "Microtube Technologies",
+      "hint": "",
+      "label": "news",
+      "url": "https://microtube.tech/news"
+    },
+    {
+      "company": "NEU Battery Materials",
+      "hint": "News listing is vertically-stacked article cards; each card has a headline, publication date, brief description, and 'Read more' link. Relative links resolve against https://www.neumaterials.com/.",
+      "label": "newsroom",
+      "url": "https://www.neumaterials.com/news"
+    },
+    {
+      "company": "Qapita",
+      "hint": "",
+      "label": "blog",
+      "url": "https://www.qapita.com/blog"
+    },
+    {
+      "company": "RoamAssist",
+      "hint": "",
+      "label": "news",
+      "url": "https://roamassist.tech/news"
+    },
+    {
+      "company": "SalesMind AI",
+      "hint": "",
+      "label": "blog",
+      "url": "https://sales-mind.ai/en/blog"
+    },
+    {
+      "company": "seamless",
+      "hint": "Seamless XR (NUS spin-off) news page. Each entry is a link block: headline text directly followed by the publication date in 'Mon DD, YYYY' format (e.g. 'Nov 30, 2025'). No dedicated <article> tag; items appear as anchor links with the date bundled inline after the title. A 'Load More' button loads additional items. Resolve relative links against https://www.seamless.sg.",
+      "label": "news",
+      "url": "https://www.seamless.sg/news"
+    },
+    {
+      "company": "seamless",
+      "hint": "Seamless XR blog index. Each post is a link element with the headline followed by the date in 'Mon DD, YYYY' format and a path like /blog/<slug>. About 11 entries listed, dated through Mar 2026. Resolve relative links against https://www.seamless.sg.",
+      "label": "blog",
+      "url": "https://www.seamless.sg/blog"
+    },
+    {
+      "company": "SENSORi",
+      "hint": "SENSORI Healthcare news listing. Each item is an anchor (<a>) wrapping the entry with the headline rendered as an <h4> (e.g. 'SENSORI Healthcare Wins Third Prize at Two Innovation and Entrepreneurship Competitions') and the date below in YYYY-MM-DD format (e.g. '2025-12-03'). Items are tagged 'News' and ordered newest-first. Resolve relative links against https://www.sensorihealthcare.com.",
+      "label": "news",
+      "url": "https://www.sensorihealthcare.com/h-col-157.html"
+    },
+    {
+      "company": "SilentConvo",
+      "hint": "",
+      "label": "blog",
+      "url": "https://silentconvo.io/blog"
+    },
+    {
+      "company": "SINGROW",
+      "hint": "Wix-hosted media/press listing for SINGROW (NUS agritech spin-off). Items are <div> grid tiles (no semantic <article>); each tile has the headline in <h4>, the publication date in <h4> below the title in 'DD Month YYYY' format, then a 'By <Publication Name>' attribution and a 'Read More' link. About 25+ external news items aggregated, newest-first. Resolve relative links against https://www.singrow.com.",
+      "label": "media",
+      "url": "https://www.singrow.com/media"
+    },
+    {
+      "company": "Soynergy",
+      "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com.",
+      "label": "news",
+      "url": "https://www.soynergy.com/category/news/"
+    },
+    {
+      "company": "spacejot",
+      "hint": "Blog listing on Spacejot's web app. Each post is rendered with an h3 headline that links to /blog/<slug>, with the publication date (e.g. 'Jul 06, 2024') displayed adjacent to the title. Resolve relative links against https://www.spacejot.app/.",
+      "label": "blog",
+      "url": "https://www.spacejot.app/blog"
+    },
+    {
+      "company": "Stick'Em",
+      "hint": "",
+      "label": "updates",
+      "url": "https://stickem.sg/updates/"
+    },
+    {
+      "company": "Tacniq",
+      "hint": "",
+      "label": "media",
+      "url": "https://www.tacniq.ai/media"
+    }
+  ],
+  "stats": {
+    "candidates": 4,
+    "companies_matched": 4,
+    "excluded_by_terms": 0,
+    "fetch_failed": 4,
+    "jina_candidates": 0,
+    "jina_recovered": 1,
+    "llm_fetch_required": 25,
+    "pre_extracted_capped": 0,
+    "weak_term_suppressed": 3
+  }
+}
