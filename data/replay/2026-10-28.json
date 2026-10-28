@@ -1,0 +1,257 @@
+{
+  "candidates": [
+    {
+      "company": "Renaissance",
+      "dedup_key": "https://e27.co/from-conference-attendee-to-intelligence-node-my-experience-at-an-ai-native-conference-20261025/",
+      "description": "From 5\u20137 October, I organised and attended the Strategic Renaissance 21 (SR21) \u00d7 World Governments Summit workshop in Dubai. The three-day gathering brought together 48 senior leaders from government, finance, technology, defense, and academia to explore a common theme: The Breaking Point. The conference itself was an interesting experiment in AI-enabled event design. As my [&#8230;] \n The post  From conference attendee to intelligence node: My experience at an AI-native conference  appeared fir",
+      "headline": "From conference attendee to intelligence node: My experience at an AI-native conference",
+      "link": "https://e27.co/from-conference-attendee-to-intelligence-node-my-experience-at-an-ai-native-conference-20261025/",
+      "pubDate": "Tue, 27 Oct 2026 02:00:11 +0000",
+      "source": "e27",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "EcoMatcher",
+      "dedup_key": "https://www.ecomatcher.com/what-is-false-autumn/",
+      "description": "What if autumn arrives weeks before it should? In many countries, trees that should still have full green canopies are already turning yellow or brown. This phenomenon is often called false autumn. It&#8217;s autumn-like changes that appear unusually early, especially when trees start browning or... \n The post  What is False Autumn?  appeared first on  EcoMatcher .",
+      "headline": "What is False Autumn?",
+      "link": "https://www.ecomatcher.com/what-is-false-autumn/",
+      "pubDate": "Sun, 25 Oct 2026 08:55:28 +0000",
+      "source": "EcoMatcher \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Flexii",
+      "dedup_key": "https://new.flexii.net/sg/employer-intelligence/reduce-no-shows-shift-work/",
+      "description": "A no-show costs about $16 when you have cover standing by, and up to $118 when you don't. What one missed shift really costs a Singapore outlet, and the levers that actually reduce them.",
+      "headline": "How to Reduce No-Shows in Shift Work: What One Missed Shift Actually Costs",
+      "link": "https://new.flexii.net/sg/employer-intelligence/reduce-no-shows-shift-work/",
+      "pubDate": "Thu, 15 Oct 2026 09:10:18 +0000",
+      "source": "Flexii \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Flexii",
+      "dedup_key": "https://new.flexii.net/sg/talent-hub/employers-look-for-part-time-workers/",
+      "description": "More than half of Singapore F&#038;B vacancies ask for no experience at all. Here is what employers really check when hiring part-time workers, and where your application effort actually counts.",
+      "headline": "What Do Employers Look For in Part-Time Workers? What They Actually Check",
+      "link": "https://new.flexii.net/sg/talent-hub/employers-look-for-part-time-workers/",
+      "pubDate": "Thu, 15 Oct 2026 03:05:37 +0000",
+      "source": "Flexii \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "RoamAssist",
+      "dedup_key": "https://doi.org/10.1145/3613904.3642227",
+      "description": "",
+      "headline": "Papers",
+      "link": "https://doi.org/10.1145/3613904.3642227",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "RoamAssist \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "RoamAssist",
+      "dedup_key": "https://roamassist.tech/",
+      "description": "",
+      "headline": "raiSE Energise Grant",
+      "link": "https://roamassist.tech/",
+      "pre_extracted": true,
+      "pubDate": "",
+      "source": "RoamAssist \u00b7 news",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Skuling",
+      "dedup_key": "https://skuling.id/persiapan-ujian-cat-bkn-sekolah-kedinasan/",
+      "description": "Setelah berbulan-bulan mempersiapkan diri dengan olahraga teratur, makan makanan bergizi dan belajar terus menerus, kini saatnya kamu mulai berperang. Ujian CAT BKN kini sudah ada di depan mata. Sudah bukan saatnya lagi kamu belajar mati-matian. Berikut ini beberapa hal yang perlu dipersiapkan H-7 menjelang ujian CAT BKN baik untuk calon mahasiswa sekolah kedinasan maupun untuk [&#8230;]",
+      "headline": "H-7 Pelaksanaan Ujian CAT-BKN, Apa yang Wajib Disiapkan Selain Belajar Materi Kedinasan?",
+      "link": "https://skuling.id/persiapan-ujian-cat-bkn-sekolah-kedinasan/",
+      "pubDate": "Wed, 28 Oct 2026 02:00:00 +0000",
+      "source": "Skuling \u00b7 blog",
+      "source_kind": "rss"
+    }
+  ],
+  "companies": {
+    "EcoMatcher": "BLOCK71 Bandung-listed Hong Kong-headquartered B-Corp (founded 2016 by Bas Fransen) operating a blockchain-tracked tree-planting / forest-management platform \u2014 TreeCorder data-capture app, TreeManager cloud system, Verra/Gold Standard carbon-certified TREES+ projects (partnership with VNV Advisory). Corporate customers include Grab and Procter & Gamble; ~50,000 customers globally. Drop generic 'eco' / matching-engine mentions.",
+    "Flexii": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing \u2014 drop unrelated 'Flexi' / 'Flexii' brand mentions (Flexi loans, Flexi-Coil, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "Renaissance": "The Hangar (NUS Enterprise)-resident Singapore startup. CRITICAL: 'Renaissance' is extremely generic (Renaissance Technologies hedge fund, Renaissance Re insurance, Renaissance Hotels, Renaissance learning); drop almost all 'Renaissance' news unless the article explicitly references the BLOCK71 / NUS Hangar entity.",
+    "RoamAssist": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "Skuling": "BLOCK71 Yogyakarta-resident Indonesian edutech startup building a gamified web learning platform \u2014 leaderboards, social discussion, performance analytics \u2014 targeting Indonesian primary/secondary education accessibility and engagement gaps. ~110,000 users across 502 of 514 Indonesian cities. Founded by Yudha Pratama Situmorang (Boston University Questrom MBA'24); 2024 Poets & Quants Most Disruptive MBA Startup. Drop generic 'schooling' / education-tech mentions."
+  },
+  "fetch_failed": [
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "kind": "firehose",
+      "url": "https://thelowdown.momentum.asia/feed/"
+    },
+    {
+      "company": "PharLyfe+",
+      "error": "HTTP Error 404: Not Found",
+      "kind": "rss",
+      "url": "https://pharlyfeplus.com/news-update/f.rss"
+    }
+  ],
+  "generated_at": "2026-10-28T22:40:16+00:00",
+  "jina_recovered": [
+    "https://www.theedgesingapore.com/rss.xml"
+  ],
+  "llm_fetch_required": [
+    {
+      "company": "Ailytics",
+      "hint": "Webflow CMS listing under div.collection-list-wrapper-2.w-dyn-list. Each item is a div.div-block-78 containing a category label in div.category, a headline in div.text-block-27 (treat as the title), and a date as plain text in div.text-block-29 (e.g. 'April 28, 2026'). About 6 items shown in reverse chronological order. Resolve relative item links against https://www.ailytics.ai/.",
+      "label": "news",
+      "url": "https://www.ailytics.ai/news"
+    },
+    {
+      "company": "Assemblr",
+      "hint": "",
+      "label": "blog",
+      "url": "https://www.assemblrworld.com/blog/"
+    },
+    {
+      "company": "Belli AI",
+      "hint": "",
+      "label": "news",
+      "url": "https://www.belli.ai/company/news"
+    },
+    {
+      "company": "Cellivate Technologies",
+      "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/.",
+      "label": "press",
+      "url": "https://www.cellivatetech.com/recognition"
+    },
+    {
+      "company": "Craft Health",
+      "hint": "Craft Health 'Latest News' page is a chronological press/achievements timeline organised by year and month headers (e.g. '2021', then 'January 2021'). Each entry is a bullet line of plain text describing a media mention or award, often with an inline '[<Read_More>]' or named hyperlink to an external article. Dates come from the month/year section headings, not per-item. Resolve relative links against https://www.crafthealth.me/.",
+      "label": "news",
+      "url": "https://www.crafthealth.me/newsletter"
+    },
+    {
+      "company": "Finsey",
+      "hint": "",
+      "label": "blog",
+      "url": "https://finsey.vn/blog"
+    },
+    {
+      "company": "GeniiAI",
+      "hint": "",
+      "label": "blog",
+      "url": "https://www.geniiai.co/blog"
+    },
+    {
+      "company": "HiCura",
+      "hint": "WordPress (Yoast SEO) press-release page on hicuramedical.com. Each item is a row containing a publisher logo/thumbnail, a bolded headline (in <strong> tags rather than h2/h3), a short description, and a 'View Article' link to an external publisher URL. No explicit per-item date elements; dates only appear inline within some headlines (e.g. '2023'). Resolve relative links against https://hicuramedical.com/.",
+      "label": "press",
+      "url": "https://hicuramedical.com/press-release/"
+    },
+    {
+      "company": "illumi one",
+      "hint": "",
+      "label": "news",
+      "url": "https://www.illumi.one/post"
+    },
+    {
+      "company": "insightic",
+      "hint": "Card-based blog listing on insightic.io. Each card contains a thumbnail image (from /img/), a category badge ('insightic research', 'community resource', 'new partnership'), a clickable headline that links to the individual post URL, and a publication date in 'Day Mon DD YYYY' format (e.g. 'Tue Oct 31 2023') displayed below the headline. Resolve relative links against https://insightic.io/.",
+      "label": "blog",
+      "url": "https://insightic.io/blog"
+    },
+    {
+      "company": "lalia",
+      "hint": "Card-based press listing for Lalia Pte Ltd (Singapore). Each card has a thumbnail image, an <h3> headline (often in Japanese), a secondary line with the source URL, and a publication date in 'YYYY/MM/DD' format below it. Each card wraps in an <a> tag linking to the full article (often external publishers). Resolve relative links against https://read.lalia.com.sg/.",
+      "label": "press",
+      "url": "https://read.lalia.com.sg/press"
+    },
+    {
+      "company": "Microtube Technologies",
+      "hint": "",
+      "label": "news",
+      "url": "https://microtube.tech/news"
+    },
+    {
+      "company": "NEU Battery Materials",
+      "hint": "News listing is vertically-stacked article cards; each card has a headline, publication date, brief description, and 'Read more' link. Relative links resolve against https://www.neumaterials.com/.",
+      "label": "newsroom",
+      "url": "https://www.neumaterials.com/news"
+    },
+    {
+      "company": "Qapita",
+      "hint": "",
+      "label": "blog",
+      "url": "https://www.qapita.com/blog"
+    },
+    {
+      "company": "SalesMind AI",
+      "hint": "",
+      "label": "blog",
+      "url": "https://sales-mind.ai/en/blog"
+    },
+    {
+      "company": "seamless",
+      "hint": "Seamless XR (NUS spin-off) news page. Each entry is a link block: headline text directly followed by the publication date in 'Mon DD, YYYY' format (e.g. 'Nov 30, 2025'). No dedicated <article> tag; items appear as anchor links with the date bundled inline after the title. A 'Load More' button loads additional items. Resolve relative links against https://www.seamless.sg.",
+      "label": "news",
+      "url": "https://www.seamless.sg/news"
+    },
+    {
+      "company": "seamless",
+      "hint": "Seamless XR blog index. Each post is a link element with the headline followed by the date in 'Mon DD, YYYY' format and a path like /blog/<slug>. About 11 entries listed, dated through Mar 2026. Resolve relative links against https://www.seamless.sg.",
+      "label": "blog",
+      "url": "https://www.seamless.sg/blog"
+    },
+    {
+      "company": "SENSORi",
+      "hint": "SENSORI Healthcare news listing. Each item is an anchor (<a>) wrapping the entry with the headline rendered as an <h4> (e.g. 'SENSORI Healthcare Wins Third Prize at Two Innovation and Entrepreneurship Competitions') and the date below in YYYY-MM-DD format (e.g. '2025-12-03'). Items are tagged 'News' and ordered newest-first. Resolve relative links against https://www.sensorihealthcare.com.",
+      "label": "news",
+      "url": "https://www.sensorihealthcare.com/h-col-157.html"
+    },
+    {
+      "company": "SilentConvo",
+      "hint": "",
+      "label": "blog",
+      "url": "https://silentconvo.io/blog"
+    },
+    {
+      "company": "SINGROW",
+      "hint": "Wix-hosted media/press listing for SINGROW (NUS agritech spin-off). Items are <div> grid tiles (no semantic <article>); each tile has the headline in <h4>, the publication date in <h4> below the title in 'DD Month YYYY' format, then a 'By <Publication Name>' attribution and a 'Read More' link. About 25+ external news items aggregated, newest-first. Resolve relative links against https://www.singrow.com.",
+      "label": "media",
+      "url": "https://www.singrow.com/media"
+    },
+    {
+      "company": "Soynergy",
+      "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com.",
+      "label": "news",
+      "url": "https://www.soynergy.com/category/news/"
+    },
+    {
+      "company": "spacejot",
+      "hint": "Blog listing on Spacejot's web app. Each post is rendered with an h3 headline that links to /blog/<slug>, with the publication date (e.g. 'Jul 06, 2024') displayed adjacent to the title. Resolve relative links against https://www.spacejot.app/.",
+      "label": "blog",
+      "url": "https://www.spacejot.app/blog"
+    },
+    {
+      "company": "Stick'Em",
+      "hint": "",
+      "label": "updates",
+      "url": "https://stickem.sg/updates/"
+    },
+    {
+      "company": "Tacniq",
+      "hint": "",
+      "label": "media",
+      "url": "https://www.tacniq.ai/media"
+    }
+  ],
+  "stats": {
+    "candidates": 7,
+    "companies_matched": 5,
+    "excluded_by_terms": 0,
+    "fetch_failed": 2,
+    "jina_candidates": 0,
+    "jina_recovered": 1,
+    "llm_fetch_required": 24,
+    "pre_extracted_capped": 0,
+    "weak_term_suppressed": 3
+  }
+}
