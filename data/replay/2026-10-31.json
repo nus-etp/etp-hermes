@@ -1,44 +1,11 @@
 {
   "candidates": [
     {
-      "company": "RoamAssist",
-      "dedup_key": "https://doi.org/10.1145/3613904.3642227",
-      "description": "",
-      "headline": "Papers",
-      "link": "https://doi.org/10.1145/3613904.3642227",
-      "pre_extracted": true,
-      "pubDate": "",
-      "source": "RoamAssist \u00b7 news",
-      "source_kind": "html_scrape"
-    },
-    {
-      "company": "RoamAssist",
-      "dedup_key": "https://roamassist.tech/",
-      "description": "",
-      "headline": "raiSE Energise Grant",
-      "link": "https://roamassist.tech/",
-      "pre_extracted": true,
-      "pubDate": "",
-      "source": "RoamAssist \u00b7 news",
-      "source_kind": "html_scrape"
-    },
-    {
       "company": "SalesMind AI",
-      "dedup_key": "https://sales-mind.ai/en/blog/post/sales-prediction-machine-learning-techniques",
+      "dedup_key": "https://sales-mind.ai/en/blog/post/ai-bdr",
       "description": "",
-      "headline": "Sales Prediction Using Machine Learning for Accurate Forecasting",
-      "link": "https://sales-mind.ai/en/blog/post/sales-prediction-machine-learning-techniques",
-      "pre_extracted": false,
-      "pubDate": "January 24, 2026",
-      "source": "SalesMind AI \u00b7 blog",
-      "source_kind": "html_scrape"
-    },
-    {
-      "company": "SalesMind AI",
-      "dedup_key": "https://sales-mind.ai/en/blog/post/ai-b2b-lead-finder",
-      "description": "",
-      "headline": "AI B2B Lead Finder: How Modern Sales Teams Fill the Pipeline in 2026",
-      "link": "https://sales-mind.ai/en/blog/post/ai-b2b-lead-finder",
+      "headline": "AI BDR: What It Is and How to Deploy One in 2026",
+      "link": "https://sales-mind.ai/en/blog/post/ai-bdr",
       "pre_extracted": false,
       "pubDate": "",
       "source": "SalesMind AI \u00b7 blog",
@@ -46,10 +13,10 @@
     },
     {
       "company": "SalesMind AI",
-      "dedup_key": "https://sales-mind.ai/en/blog/post/ai-cold-email-personalization-at-scale",
+      "dedup_key": "https://sales-mind.ai/en/blog/post/ai-sales-enablement",
       "description": "",
-      "headline": "Cold Email Personalization at Scale: How AI Makes Every Message Feel One-to-One",
-      "link": "https://sales-mind.ai/en/blog/post/ai-cold-email-personalization-at-scale",
+      "headline": "AI Sales Enablement: A Practical Framework for 2026",
+      "link": "https://sales-mind.ai/en/blog/post/ai-sales-enablement",
       "pre_extracted": false,
       "pubDate": "",
       "source": "SalesMind AI \u00b7 blog",
@@ -57,10 +24,10 @@
     },
     {
       "company": "SalesMind AI",
-      "dedup_key": "https://sales-mind.ai/en/blog/post/how-to-start-lead-generation-agency-white-label",
+      "dedup_key": "https://sales-mind.ai/en/blog/post/machine-learning-sales-forecasting",
       "description": "",
-      "headline": "How to Start a Lead Generation Agency with White Label Software in 2026",
-      "link": "https://sales-mind.ai/en/blog/post/how-to-start-lead-generation-agency-white-label",
+      "headline": "Machine Learning Sales Forecasting: How AI Predicts Which Deals Will Close",
+      "link": "https://sales-mind.ai/en/blog/post/machine-learning-sales-forecasting",
       "pre_extracted": false,
       "pubDate": "",
       "source": "SalesMind AI \u00b7 blog",
@@ -68,10 +35,10 @@
     },
     {
       "company": "SalesMind AI",
-      "dedup_key": "https://sales-mind.ai/en/blog/post/linkedin-lead-generation-agencies-white-label-solutions",
+      "dedup_key": "https://sales-mind.ai/en/blog/post/white-label-outreach-tools-complete-guide",
       "description": "",
-      "headline": "LinkedIn Lead Generation for Agencies: White Label Solutions That Scale",
-      "link": "https://sales-mind.ai/en/blog/post/linkedin-lead-generation-agencies-white-label-solutions",
+      "headline": "White Label Outreach Tools: The Complete Guide for Agencies",
+      "link": "https://sales-mind.ai/en/blog/post/white-label-outreach-tools-complete-guide",
       "pre_extracted": false,
       "pubDate": "",
       "source": "SalesMind AI \u00b7 blog",
@@ -79,10 +46,10 @@
     },
     {
       "company": "SalesMind AI",
-      "dedup_key": "https://sales-mind.ai/en/blog/post/best-white-label-sales-tools-agencies-2026",
+      "dedup_key": "https://sales-mind.ai/en/blog/post/intent-data-for-sales",
       "description": "",
-      "headline": "Best White Label Sales Tools for Agencies in 2026",
-      "link": "https://sales-mind.ai/en/blog/post/best-white-label-sales-tools-agencies-2026",
+      "headline": "Intent Data for Sales: Turn Buying Signals Into Meetings",
+      "link": "https://sales-mind.ai/en/blog/post/intent-data-for-sales",
       "pre_extracted": false,
       "pubDate": "",
       "source": "SalesMind AI \u00b7 blog",
@@ -90,10 +57,10 @@
     },
     {
       "company": "SalesMind AI",
-      "dedup_key": "https://sales-mind.ai/en/blog/post/ai-cold-email-generator",
+      "dedup_key": "https://sales-mind.ai/en/blog/post/ai-prompts-for-lead-generation",
       "description": "",
-      "headline": "AI Cold Email Generator: Build a System, Not a Spray Tool",
-      "link": "https://sales-mind.ai/en/blog/post/ai-cold-email-generator",
+      "headline": "AI Prompts for Lead Generation: 9 That Actually Fill Your Pipeline",
+      "link": "https://sales-mind.ai/en/blog/post/ai-prompts-for-lead-generation",
       "pre_extracted": false,
       "pubDate": "",
       "source": "SalesMind AI \u00b7 blog",
@@ -101,10 +68,21 @@
     },
     {
       "company": "SalesMind AI",
-      "dedup_key": "https://sales-mind.ai/en/blog/post/ai-funnel-builder",
+      "dedup_key": "https://sales-mind.ai/en/blog/post/what-is-an-mql",
       "description": "",
-      "headline": "AI Funnel Builder: How to Build a Sales Funnel That Fills Itself",
-      "link": "https://sales-mind.ai/en/blog/post/ai-funnel-builder",
+      "headline": "What Is an MQL? A Sales Leader's Guide to Marketing Qualified Leads",
+      "link": "https://sales-mind.ai/en/blog/post/what-is-an-mql",
+      "pre_extracted": false,
+      "pubDate": "",
+      "source": "SalesMind AI \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "SalesMind AI",
+      "dedup_key": "https://sales-mind.ai/en/blog/post/ai-sales-funnel-guide",
+      "description": "",
+      "headline": "How to Build an AI Sales Funnel That Books Meetings",
+      "link": "https://sales-mind.ai/en/blog/post/ai-sales-funnel-guide",
       "pre_extracted": false,
       "pubDate": "",
       "source": "SalesMind AI \u00b7 blog",
@@ -112,7 +90,6 @@
     }
   ],
   "companies": {
-    "RoamAssist": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "SalesMind AI": "BLOCK71 Singapore-resident sales-AI startup. Drop unrelated 'SalesMind' branded vendors (Salesmind.ai LinkedIn outreach, etc.) unless the article explicitly references this BLOCK71 SG entity."
   },
   "fetch_failed": [
@@ -120,16 +97,6 @@
       "error": "HTTP Error 403: Forbidden",
       "kind": "firehose",
       "url": "https://thelowdown.momentum.asia/feed/"
-    },
-    {
-      "error": "not well-formed (invalid token): line 1, column 119",
-      "kind": "firehose",
-      "url": "https://acv.vc/feed/"
-    },
-    {
-      "error": "HTTP Error 401: Unauthorized",
-      "kind": "firehose",
-      "url": "https://www.questventures.com/feed/"
     },
     {
       "company": "Flow Coffee",
@@ -142,48 +109,18 @@
       "error": "HTTP Error 404: Not Found",
       "kind": "rss",
       "url": "https://pharlyfeplus.com/news-update/f.rss"
-    },
-    {
-      "company": "RetireGenie",
-      "error": "not well-formed (invalid token): line 1, column 119",
-      "kind": "rss",
-      "url": "https://www.retiregenie.com/feed/"
     }
   ],
-  "generated_at": "2026-10-31T10:27:05+00:00",
+  "generated_at": "2026-10-31T20:31:51+00:00",
   "jina_recovered": [
     "https://www.theedgesingapore.com/rss.xml"
   ],
   "llm_fetch_required": [
     {
-      "company": "Ailytics",
-      "hint": "Webflow CMS listing under div.collection-list-wrapper-2.w-dyn-list. Each item is a div.div-block-78 containing a category label in div.category, a headline in div.text-block-27 (treat as the title), and a date as plain text in div.text-block-29 (e.g. 'April 28, 2026'). About 6 items shown in reverse chronological order. Resolve relative item links against https://www.ailytics.ai/.",
-      "label": "news",
-      "url": "https://www.ailytics.ai/news"
-    },
-    {
-      "company": "Assemblr",
-      "hint": "",
-      "label": "blog",
-      "url": "https://www.assemblrworld.com/blog/"
-    },
-    {
-      "company": "Belli AI",
-      "hint": "",
-      "label": "news",
-      "url": "https://www.belli.ai/company/news"
-    },
-    {
       "company": "Cellivate Technologies",
       "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/.",
       "label": "press",
       "url": "https://www.cellivatetech.com/recognition"
-    },
-    {
-      "company": "Craft Health",
-      "hint": "Craft Health 'Latest News' page is a chronological press/achievements timeline organised by year and month headers (e.g. '2021', then 'January 2021'). Each entry is a bullet line of plain text describing a media mention or award, often with an inline '[<Read_More>]' or named hyperlink to an external article. Dates come from the month/year section headings, not per-item. Resolve relative links against https://www.crafthealth.me/.",
-      "label": "news",
-      "url": "https://www.crafthealth.me/newsletter"
     },
     {
       "company": "Finsey",
@@ -192,64 +129,10 @@
       "url": "https://finsey.vn/blog"
     },
     {
-      "company": "GeniiAI",
-      "hint": "",
-      "label": "blog",
-      "url": "https://www.geniiai.co/blog"
-    },
-    {
-      "company": "HiCura",
-      "hint": "WordPress (Yoast SEO) press-release page on hicuramedical.com. Each item is a row containing a publisher logo/thumbnail, a bolded headline (in <strong> tags rather than h2/h3), a short description, and a 'View Article' link to an external publisher URL. No explicit per-item date elements; dates only appear inline within some headlines (e.g. '2023'). Resolve relative links against https://hicuramedical.com/.",
-      "label": "press",
-      "url": "https://hicuramedical.com/press-release/"
-    },
-    {
-      "company": "illumi one",
+      "company": "INVIGILO",
       "hint": "",
       "label": "news",
-      "url": "https://www.illumi.one/post"
-    },
-    {
-      "company": "insightic",
-      "hint": "Card-based blog listing on insightic.io. Each card contains a thumbnail image (from /img/), a category badge ('insightic research', 'community resource', 'new partnership'), a clickable headline that links to the individual post URL, and a publication date in 'Day Mon DD YYYY' format (e.g. 'Tue Oct 31 2023') displayed below the headline. Resolve relative links against https://insightic.io/.",
-      "label": "blog",
-      "url": "https://insightic.io/blog"
-    },
-    {
-      "company": "lalia",
-      "hint": "Card-based press listing for Lalia Pte Ltd (Singapore). Each card has a thumbnail image, an <h3> headline (often in Japanese), a secondary line with the source URL, and a publication date in 'YYYY/MM/DD' format below it. Each card wraps in an <a> tag linking to the full article (often external publishers). Resolve relative links against https://read.lalia.com.sg/.",
-      "label": "press",
-      "url": "https://read.lalia.com.sg/press"
-    },
-    {
-      "company": "Microtube Technologies",
-      "hint": "",
-      "label": "news",
-      "url": "https://microtube.tech/news"
-    },
-    {
-      "company": "NEU Battery Materials",
-      "hint": "News listing is vertically-stacked article cards; each card has a headline, publication date, brief description, and 'Read more' link. Relative links resolve against https://www.neumaterials.com/.",
-      "label": "newsroom",
-      "url": "https://www.neumaterials.com/news"
-    },
-    {
-      "company": "Qapita",
-      "hint": "",
-      "label": "blog",
-      "url": "https://www.qapita.com/blog"
-    },
-    {
-      "company": "seamless",
-      "hint": "Seamless XR (NUS spin-off) news page. Each entry is a link block: headline text directly followed by the publication date in 'Mon DD, YYYY' format (e.g. 'Nov 30, 2025'). No dedicated <article> tag; items appear as anchor links with the date bundled inline after the title. A 'Load More' button loads additional items. Resolve relative links against https://www.seamless.sg.",
-      "label": "news",
-      "url": "https://www.seamless.sg/news"
-    },
-    {
-      "company": "seamless",
-      "hint": "Seamless XR blog index. Each post is a link element with the headline followed by the date in 'Mon DD, YYYY' format and a path like /blog/<slug>. About 11 entries listed, dated through Mar 2026. Resolve relative links against https://www.seamless.sg.",
-      "label": "blog",
-      "url": "https://www.seamless.sg/blog"
+      "url": "https://www.invigilo.ai/news"
     },
     {
       "company": "SENSORi",
@@ -268,29 +151,17 @@
       "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com.",
       "label": "news",
       "url": "https://www.soynergy.com/category/news/"
-    },
-    {
-      "company": "Stick'Em",
-      "hint": "",
-      "label": "updates",
-      "url": "https://stickem.sg/updates/"
-    },
-    {
-      "company": "Tacniq",
-      "hint": "",
-      "label": "media",
-      "url": "https://www.tacniq.ai/media"
     }
   ],
   "stats": {
-    "candidates": 10,
-    "companies_matched": 2,
+    "candidates": 8,
+    "companies_matched": 1,
     "excluded_by_terms": 0,
-    "fetch_failed": 6,
+    "fetch_failed": 3,
     "jina_candidates": 0,
     "jina_recovered": 1,
-    "llm_fetch_required": 21,
-    "pre_extracted_capped": 18,
+    "llm_fetch_required": 6,
+    "pre_extracted_capped": 10,
     "weak_term_suppressed": 4
   }
 }

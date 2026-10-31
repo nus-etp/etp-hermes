@@ -1,11 +1,11 @@
 # Pinhome — LIVING BRIEF
-_Last updated: 2026-10-13 22:50 UTC_
+_Last updated: 2026-10-31 20:38 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-Pinhome is an Indonesian end-to-end proptech (founded 2019 by ex-Gojek execs Dayu Dara Permata and Ahmed Aljunied) covering home search, property transactions, conventional and sharia mortgage/refinancing, and home services. Backed by US$50M in Series B funding, it serves 1M+ housing inventories with 20+ banking partners.
+Pinhome is an Indonesian end-to-end proptech (founded 2019 by ex-Gojek execs Dayu Dara Permata and Ahmed Aljunied) covering home search, property transactions, conventional and sharia mortgage/refinancing, and home services. Backed by US$50M in Series B funding, it serves 1M+ housing inventories with 20+ banking partners. Its October 2026 Pinservice joint operation with facility manager Intercipta pushes it past residential and SME home services into corporate and industrial property management — a different buyer, sales cycle and operating model from consumer proptech.
 
-_Last material event: 2026-07-30 — Digital-mortgage partnership with state lender BTN, targeting 50-75% business growth through end-2026_
+_Last material event: 2026-10-27 — Launched Pinservice, a facility-management joint operation with Intercipta targeting office towers, malls and industrial estates_
 
 ## Profile
 - Sector: Marketplace / Fintech
@@ -18,7 +18,12 @@ _Last material event: 2026-07-30 — Digital-mortgage partnership with state len
 _Total disclosed: $50.0M._
 
 ## Recent signals
-_none_
+- **2026-10-27** — Pinhome launched Pinservice, a joint-operation facility-management business with Intercipta aimed at office towers, malls and industrial estates — its first move into corporate and commercial property — [propertiterkini.com](https://propertiterkini.com/pinhome-kelola-properti-komersial-pinservice/)
+  - Summary: PropertiTerkini reported Pinhome has widened its business from residential and SME home services into large-scale commercial property management through a service called Pinservice, run as a joint operation (kerja sama operasional) with Intercipta Corporation, a facility manager with more than 25 years in the sector. Offices are the first target segment, with shopping centres, retail and industrial facilities to follow. The offer bundles commercial and industrial cleaning and façade work, HVAC and M&E maintenance with energy-efficiency work, workplace management including reception and landscaping, and outsourced security, digital parking and retail staff, all tracked through a Pinhome dashboard with real-time attendance, defect reporting and electronic work plans. No contract value, revenue target or client list is disclosed.
+  - People: Dayu Dara Permata (CEO and Founder, Pinhome), Jeffrey Yanuar (Founder, Intercipta)
+  - Counterparties: Intercipta Corporation (joint-operation partner)
+  - Numbers: 25+ years Intercipta operating history; four ISO certifications (9001, 14001, 45001, 37000); no contract value disclosed
+  - Quote: "Seiring perkembangan bisnis, kami melihat peluang untuk memperluas jangkauan layanan ke pasar B2B Korporasi & Komersial dengan kebutuhan operasional yang lebih besar" — Dayu Dara Permata, CEO and Founder, Pinhome
 
 ## Older signals
 - **2026-07-31** — Pinhome's H1 2026 market report shows new-home sales contracting ~1%/month while home-search activity rose 13%/month; resale inventory up in Tangerang, Bekasi and Malang — [fortuneidn.com](https://www.fortuneidn.com/business/penjualan-rumah-melemah-pinhome-ungkap-tekanan-pasar-properti-2026-00-4vfn9-t5k1dr) (Also reported by: [pinhome.id](https://www.pinhome.id/research/en), [jakartadaily.id](https://www.jakartadaily.id/market-finance/16217442941/pinhome-report-finds-homebuyers-prioritising-quality-of-life-amid-economic-uncertainty), [infobanknews.com](https://infobanknews.com/demand-properti-lesu-di-semester-i-2026-pinhome-beberkan-pemicunya), [wartaekonomi.co.id](https://wartaekonomi.co.id/read625463/penjualan-properti-turun-2567-pinhome-catat-pencarian-rumah-justru-naik), [cnnindonesia.com](https://www.cnnindonesia.com/ekonomi/20260814200135-625-1392511/pinhome-ungkap-tren-hunian-berkualitas-kesehatan-jadi-prioritas), [pinhome.id](https://www.pinhome.id/research/market-report/indonesia-residential-property-market-report-2026-H1))
@@ -41,3 +46,4 @@ _none_
 - Is Pinhome generating revenue, and at what scale?
 - What share of the leads routed to BTN convert into actual disbursements, and how is Pinhome paid on a funded mortgage?
 - Is the BTN tie-up exclusive, and does Pinhome have comparable digital-mortgage arrangements with any of its other 20+ banking partners?
+- How does Pinhome get paid on Pinservice — facility-management fees, a share of joint-operation contract value, or software licensing to building owners?

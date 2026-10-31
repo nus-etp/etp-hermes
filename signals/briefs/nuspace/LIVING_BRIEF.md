@@ -1,5 +1,5 @@
 # NuSPACE — LIVING BRIEF
-_Last updated: 2026-09-20 16:46 UTC_
+_Last updated: 2026-10-31 20:38 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -16,7 +16,8 @@ _Last material event: 2026-05-03 — NuLink 1 and 2 satellites launched on Falco
 - **2019-10** — Seed, undisclosed — BEENEXT — [e27.co](https://e27.co/space-tech-company-nuspace-raises-funding-to-bring-iot-connectivity-to-remote-places-20191003/)
 
 ## Recent signals
-_none_
+### Hiring
+- **2026-09-28** — First dedicated commercial hire: a business-development executive working directly with the CEO, in a posting that names agriculture, logistics, maritime, energy and government as the markets to test and describes a "small, engineering-led team entering a commercial growth phase" selling two lines — the NuLink connectivity service and a CubeSat bus platform — [workmundi.com](https://workmundi.com/vaga/bXljYXJlZXJzZnV0dXJlOk1DRi0yMDI2LTE3MTQyODI)
 
 ## Older signals
 - **2026-08-25** — Apolink's plan to put a relay ground station in orbit leans on NuSpace: the Palo Alto startup expects to use NuLink spacecraft for a backward-compatible RF relay demonstration in late summer or early autumn 2026 — [goldsea.com](https://goldsea.com/article_details/onkar-batra-wants-to-put-the-ground-station-in-orbit)
@@ -42,6 +43,6 @@ _none_
 
 ## Open questions
 - What is the total planned constellation size beyond NuLink-3 and NuLink-4?
-- What IoT applications (logistics, agriculture, maritime) is NuSpace targeting for its connectivity service?
-- What is NuSpace's commercial model — satellite connectivity subscriptions, data relay services, or hardware sales?
+- Of agriculture, logistics, maritime, energy and government, which vertical does NuSpace commit to first?
+- How is NuLink priced and what share of revenue could the CubeSat bus line carry?
 - Is the NuLink role in Apolink's relay demonstration a paid relay service or an unpaid technical proof-of-concept?

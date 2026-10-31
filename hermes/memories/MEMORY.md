@@ -1,6 +1,6 @@
 Hermes venv at ~/.hermes/hermes-agent/venv/ ships without pip. To install packages into it, use `uv pip install <pkg> --python ~/.hermes/hermes-agent/venv/bin/python` — NOT `uvx --python ... pip install` (uvx installs into a temp ephemeral env, not the target venv). Root cause for "No adapter available for telegram/discord/slack" errors in gateway logs.
 §
-Webflow republishes unchanged, so changed-feed detection refetches seen links. Curated-page 403s (sensorihealthcare.com, curatedculture.sg) need a full browser header set (UA + Accept + Accept-Language + Sec-Fetch-*) — --compressed alone still 403s.
+Webflow republishes unchanged, so changed-feed detection refetches seen links. Curated-page 403s need full browser headers (UA+Accept+Accept-Language+Sec-Fetch-*); --compressed alone still 403s. SilentConvo /blog 404s; Finsey /blog items undated and all already-seen.
 §
 Layer 3 (etp-hermes) merges agent/updates signals into briefs from `data/touched-companies.json` (H2/H3=company); writes only under signals/briefs/<slug>/; no-write check = if only `_Last updated:_` would differ, skip the write and keep the old timestamp; Sector silent-corrected to c.sector; funding re-rendered from c.funding_rounds. Layer-2 gap-fill URLs differ from on-disk cites only by trailing slash/www — dedupe, never re-card.
 §

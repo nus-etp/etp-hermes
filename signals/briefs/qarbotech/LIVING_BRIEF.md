@@ -1,11 +1,11 @@
 # Qarbotech — LIVING BRIEF
-_Last updated: 2026-09-17 17:33 UTC_
+_Last updated: 2026-10-31 20:38 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 Qarbotech is a Malaysian agritech startup commercialising a patented nanocarbon-based photosynthesis enhancer (QarboGrow) that boosts crop yields by up to ~60% by improving plants' light-energy efficiency. The company recently won the SusHi Tech Global Pitch Challenge 2026 Grand Prize (¥10M), signalling strong international validation and positioning it for fast-track expansion across key Asian markets.
 
-_Last material event: 2026-05-31 — Won SusHi Tech Global Pitch Challenge 2026 Grand Prize (¥10M, ~US$62K)_
+_Last material event: 2026-10-28 — Founder disclosed a second Southeast Asian market launch and distributors taking QarboGrow into Thailand and Pakistan_
 
 ## Profile
 - Sector: Agritech / Biotechnology
@@ -22,7 +22,12 @@ _Last material event: 2026-05-31 — Won SusHi Tech Global Pitch Challenge 2026 
 _Total disclosed: $2.2M._
 
 ## Recent signals
-_none_
+- **2026-10-28** — Co-founder says QarboGrow is halfway through a 12-month sugar-cane pilot in the Philippines, is entering a second Southeast Asian market, and has a distributor taking the product into Thailand and Pakistan — with no yield figures disclosed — [news.smu.edu.sg](https://news.smu.edu.sg/news/2026/10/28/pitch-pilot-lee-kuan-yew-global-business-plan-competition-seeks-founders-tackling)
+  - Summary: Qarbotech appears in an SMU newsroom article launching the 13th Lee Kuan Yew Global Business Plan Competition, as a 12th-edition finalist and a member of the still-running inaugural Urban SustaInnovator (USI) accelerator cohort. Co-founder Chor Chee Hoe credits LKYGBPC and USI introductions to family offices with helping secure several pilot projects, then states the company is halfway through a 12-month pilot on a large sugar-cane plantation in the Philippines, is launching in another Southeast Asian market, and was connected through the SMU network to a distributor bringing the product into Thailand and Pakistan. The article names no yield results, planted area, contract value, plantation operator, distributor or second market.
+  - People: Chor Chee Hoe (Co-founder, Qarbotech), Rony Palathinkal (Head of LKYGBPC and Urban SustaInnovator, SMU IIE)
+  - Counterparties: SMU IIE / Urban SustaInnovator (accelerator), unnamed Philippines sugar-cane plantation (pilot host), unnamed distributor covering Thailand and Pakistan
+  - Numbers: 12-month pilot; distribution into Thailand and Pakistan; no yield figures disclosed
+  - Quote: "Right now, we are halfway through a 12-month pilot with a large sugar cane plantation in the Philippines and we're launching in another Southeast Asian market" — Chor Chee Hoe, co-founder, Qarbotech
 
 ## Older signals
 - **2026-08-26** — Founder and chief scientist Dr Suraya Rashid profiled in The Peak's Power List 2026; carbon-quantum-dot photosynthesis enhancer framed as raising yields without extra agricultural inputs — [thepeakmagazine.com.sg](https://www.thepeakmagazine.com.sg/people/qarbotech-wants-plants-be-more-efficient-photosynthesis)
@@ -57,4 +62,4 @@ _none_
 - How will the SusHi Tech prize proceeds be deployed — R&D, capacity expansion, or market-entry?
 - Do the yield gains in Qarbotech's own case studies replicate in third-party trials and outside eggplant?
 - Has a priced equity round been opened following the seed extension?
-- What share of the ~RM3M 2025 sales came from China, its largest market by farmer count?
+- What yield did QarboGrow deliver on the Philippines sugar-cane pilot, and which country is the second Southeast Asian launch?

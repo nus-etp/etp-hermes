@@ -1,5 +1,5 @@
 # Tacniq — LIVING BRIEF
-_Last updated: 2026-10-04 20:11 UTC_
+_Last updated: 2026-10-31 20:38 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -15,7 +15,10 @@ _Last material event: 2026-09-23 — Raised US$1.5M from In Group Holdings as pa
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-10-05** — Trade-press review puts the Backy demo kit at US$199 on TacniQ's own store, listed sold out, with volume discounts for full deployments and no public TAC-02 price — a hardware sale with no visible subscription tier — [dynamicbusiness.com](https://dynamicbusiness.com/ai-tools/tacniq-ai-tactile-ai-tools-for-safety.html)
+  - Summary: Dynamic Business published a vendor review of TacniQ.ai that traces its tactile foundation models, trained on wearable-collected data, into two products: the belt-worn Backy, which detects high-risk postures from force rather than motion alone and returns haptic feedback, and the TAC-02 robotic finger development kit. It is the first public pricing on the line: the Backy demo kit lists at US$199 on TacniQ's own store and is currently sold out, volume discounts apply to full deployments, and TAC-02 remains quote-only. The reviewer's substantive criticism is that unpublished pricing for robotics deployments may slow enterprise procurement; no customer names, contract values or subscription terms appear.
+  - Numbers: US$199 Backy demo kit; 64 taxels on TAC-02; 1 kHz sampling; <2 ms slip-detection latency; no TAC-02 list price
+  - Quote: "On the downside, detailed pricing (especially for robotics deployments) is not fully public, which may slow procurement processes for enterprise buyers." — Dynamic Business
 
 ## Older signals
 - **2026-09-23** — Singapore's TacniQ raised US$1.5M from In Group Holdings within a US$3M pre-seed round to build tactile-sensor AI, and is co-developing commercially deployable tactile-AI hardware with Synaptics — [apac.entrepreneur.com](https://apac.entrepreneur.com/business-news/singapores-tacniq-raises-1-5-mn-to-build-ai-that-learns-from-touch)
@@ -30,7 +33,7 @@ _none_
 - **2026-07-30** — "Singapore has been a great launchpad, owing to its structured safety frameworks" — [biospectrumasia.com](https://biospectrumasia.com/opinion/46/26573/singapore-has-been-a-great-launchpad-owing-to-its-structured-safety-frameworks.html)
 
 ## Open questions
-- What is the revenue model — hardware sale, SaaS subscription, or both?
+- Does the US$199 demo-kit price become the reference ASP for Backy deployments, and is there a software fee per worker or per site on top?
 - Which hospital and eldercare partners are piloting Backy outside DHL?
 - Will the US$3M pre-seed round close, and who are the other investors beyond In Group Holdings?
 - Does the Synaptics collaboration extend to a commercial supply agreement, and on what terms?
