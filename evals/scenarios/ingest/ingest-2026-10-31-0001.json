@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/pqcee/thequantuminsider.com",
+  "created_by": "write_scenarios@run 41130801533",
+  "expected": {
+    "company": "pQCee",
+    "reason": "jev material=0.97",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'pQCee and Carahsoft Partner on Post-Quantum Security for Government' for pQCee",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-10-31-0001",
+  "input": {
+    "candidate": {
+      "description": "Insider Brief PRESS RELEASE &#8212; pQCee Pte Ltd, a provider of post-quantum cryptography and quantum-safe cybersecurity solutions, and Carahsoft Technology Corp., The Trusted Government IT Solutions Provider®, today announced a strategic partnership to expand the availability of pQCee’s products and services to Federal, State and Local Government agencies, as well as Education and Healthcare organizations. [&#8230;]",
+      "matched": [
+        "pQCee"
+      ],
+      "source": "The Quantum Insider",
+      "title": "pQCee and Carahsoft Partner on Post-Quantum Security for Government",
+      "url": "https://thequantuminsider.com/2026/10/30/pqcee-carahsoft-post-quantum-security-government"
+    },
+    "companies": {
+      "pQCee": {
+        "description": "BLOCK71 Singapore-resident post-quantum cybersecurity startup (founded 2022) building scalable encryption + key-lifecycle management; flagship SafeQuard™ document-protection tool (NIST-aligned post-quantum crypto); use cases span quantum-proofing docs, securing Web3 against quantum threats and protecting comms. Supported by the US$15M CyberSG Talent, Innovation and Growth (TIG) Collaboration Centre (NUS × CSA)."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-10-31",
+    "judge": "jev",
+    "judge_confidence": 0.98,
+    "kind": "judge_disagreement",
+    "run_id": "41130801533",
+    "source": "2026-10-31.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

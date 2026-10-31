@@ -18,14 +18,14 @@ _No disclosed funding._
 
 ## Recent signals
 - **2026-10-01** — Began LIGHTO deployments in HDB homes, extending its sensing platform from institutional care into residential public housing — [linkedin.com](https://linkedin.com/company/soundeye)
+
+## Older signals
 - **2026-09-29** — Singapore General Hospital's Virtual Nursing Unit has run SoundEye's LASSO as a "Virtual Sitter" since December 2025, completing 90+ monitoring cases, cutting restraint use and recording no unwitnessed falls — [sgh.com.sg](https://www.sgh.com.sg/news/patient-care/more-help-keeping-an-eye-on-admitted-patients)
   - Summary: SGH set up a Virtual Nursing Unit in December 2025 in which a central-hub nurse watches high-risk, disoriented or suicide-prevention patients through SoundEye's LASSO — a depth-imaging (non-camera) bedside device with a two-way audio link — and prompts ward staff to the bedside when a patient tries to get up unassisted. Across 90+ cases since the pilot began, two-thirds of patients were under some form of physical restraint and 53% of those had restraint points reduced; the remaining third were monitored with no restraint. SGH reports no unwitnessed falls or fall-related injuries and says the system returned more than 20,000 hours of bedside observation time. The service remains in its pilot phase, with SGH planning to extend it to more wards and add remote vital-signs and medication-checking.
   - People: Teo Kai Yunn (Assistant Director, Nursing Safety & Quality, Virtual Nursing, Singapore General Hospital)
   - Counterparties: Singapore General Hospital (customer)
   - Numbers: 90+ monitoring cases since December 2025; 53% of restrained patients had restraint points reduced; 20,000+ hours of bedside observation time returned; 92 staff surveyed Jan-Jul 2026, >95% found it helpful; >90% of families reported improved safety and care
   - Quote: "Now, a single nurse from the virtual team can watch over several patients at once with the use of LASSO, which has given us back more than 20,000 hours of bedside observation time, allowing staff in the wards to focus on hands-on patient care." — Ms Teo Kai Yunn, Assistant Director, Nursing Safety & Quality, Virtual Nursing, Singapore General Hospital
-
-## Older signals
 - **2026-06-02** — Presented LASSO and LIGHTO products at an ASEAN-Japan Centre and Enterprise Singapore-organized webinar on Singapore technologies for aging societies, targeting the Japan market — [ASEAN-Japan Centre](https://www.asean.or.jp/en/event-info/20260318/)
   - Summary: SoundEye's CEO & Founder Dr. Tan Yeow Kee presented the company's two products at a free online webinar (March 25, 2026, 300 attendees max) co-organized by the ASEAN-Japan Centre and Enterprise Singapore. LASSO is described as the first mobile bed-exit detection system for nursing homes/hospitals requiring no nurse calibration, using privacy-preserving depth imaging for fall prevention. LIGHTO is a smart ceiling light for residential homes with discreet sensing for independent living. Both products were designed based on requirements from stakeholders in Japan and Singapore.
   - People: Dr. Tan Yeow Kee (CEO & Founder)
