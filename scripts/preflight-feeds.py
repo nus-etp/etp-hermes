@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 """Preflight HTTP conditional-GET against ingest sources.
 
-Reads data/feeds.json + rss/github_org/lever_jobs entries from
+Reads data/feeds.json + rss/github_org/lever_jobs/html_scrape entries from
 data/companies.json. Writes data/feed-cache.json (per-URL ETag /
 Last-Modified / body-SHA256) and data/changed-sources.json (whitelist of
-URLs the ingest prompt is allowed to fetch). html_scrape sources are
-emitted as always-changed since dynamic page chrome defeats hashing. Any
-per-URL failure is recorded and emitted as changed so the agent retries
-with its own fetcher.
+URLs the ingest prompt is allowed to fetch). html_scrape bodies are
+normalised before hashing (script/style/noscript blocks and HTML comments
+stripped, whitespace collapsed) so rotating nonces and cache stamps don't
+mark a page changed every run. Any per-URL failure is recorded and emitted
+as changed so the agent retries with its own fetcher.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -28,8 +30,13 @@ COMPANIES_FILE = REPO_ROOT / "data" / "companies.json"
 CACHE_FILE = REPO_ROOT / "data" / "feed-cache.json"
 CHANGED_FILE = REPO_ROOT / "data" / "changed-sources.json"
 
-PREFLIGHTED_TYPES = {"rss", "github_org", "lever_jobs"}
-ALWAYS_CHANGED_TYPES = {"html_scrape"}
+PREFLIGHTED_TYPES = {"rss", "github_org", "lever_jobs", "html_scrape"}
+NORMALISED_TYPES = {"html_scrape"}
+HTML_VOLATILE_RE = re.compile(
+    rb"<(script|style|noscript)\b[^>]*>.*?</\1\s*>|<!--.*?-->",
+    re.IGNORECASE | re.DOTALL,
+)
+WHITESPACE_RE = re.compile(rb"\s+")
 # UA-retry ladder — mirrors collect-candidates.py. A host that 403s an unknown
 # bot UA but serves the feed to a browser/Googlebot would otherwise get counted
 # as a dead feed here and refetched blindly every run; escalating on gate
@@ -56,7 +63,18 @@ def load_cache() -> dict[str, Any]:
         return {}
 
 
-def check_url(url: str, cache_entry: dict[str, Any] | None) -> tuple[bool, dict[str, Any]]:
+def normalise_html(body: bytes) -> bytes:
+    stripped = HTML_VOLATILE_RE.sub(b" ", body)
+    return WHITESPACE_RE.sub(b" ", stripped).strip()
+
+
+def body_digest(body: bytes, normalise: bool) -> str:
+    return hashlib.sha256(normalise_html(body) if normalise else body).hexdigest()
+
+
+def check_url(
+    url: str, cache_entry: dict[str, Any] | None, normalise: bool = False
+) -> tuple[bool, dict[str, Any]]:
     """Returns (changed, new_cache_entry). changed=True means the agent should process this URL."""
     headers = {"Accept": "*/*"}  # User-Agent is set per-attempt from UA_LADDER below
     if cache_entry:
@@ -83,7 +101,7 @@ def check_url(url: str, cache_entry: dict[str, Any] | None) -> tuple[bool, dict[
             with request.urlopen(req, timeout=TIMEOUT_SECS) as resp:
                 status = resp.status
                 body = resp.read()
-                new_hash = hashlib.sha256(body).hexdigest()
+                new_hash = body_digest(body, normalise)
                 new_etag = resp.headers.get("ETag")
                 new_lm = resp.headers.get("Last-Modified")
 
@@ -162,18 +180,18 @@ def main() -> int:
             url = s.get("url")
             if not url:
                 continue
-            if stype in ALWAYS_CHANGED_TYPES:
-                changed_for_company.append(url)
-                summary["html_scrape_passthrough"] += 1
-                continue
             if stype not in PREFLIGHTED_TYPES:
                 changed_for_company.append(url)
                 continue
             summary["checked"] += 1
-            changed, new_entry = check_url(url, cache.get(url))
+            changed, new_entry = check_url(
+                url, cache.get(url), normalise=stype in NORMALISED_TYPES
+            )
             cache[url] = new_entry
             if new_entry.get("last_status", 0) <= 0:
                 summary["errors"] += 1
+            if stype == "html_scrape" and new_entry.get("last_status") not in (200, 304):
+                summary["html_scrape_passthrough"] += 1
             if changed:
                 changed_for_company.append(url)
                 summary["changed"] += 1
