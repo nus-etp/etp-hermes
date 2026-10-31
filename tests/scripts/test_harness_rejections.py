@@ -89,3 +89,11 @@ def test_append_fails_open_on_missing_inputs(tmp_path: Path) -> None:
     assert "(run 42)" in text
     assert "- Verdict: not available" in text
     assert "- none recorded" in text
+
+
+def test_unavailable_verdict_is_not_labelled_reject(tmp_path: Path) -> None:
+    verdict = tmp_path / "unavailable.json"
+    verdict.write_text(json.dumps({"accept": False, "decision": "unavailable", "reasons": ["zai: sim missing"]}))
+    text = run_append(tmp_path, verdict=verdict).read_text()
+    assert "- Verdict: unavailable (not evaluated)" in text
+    assert "- Verdict: reject" not in text

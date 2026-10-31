@@ -113,8 +113,8 @@ def both_runtimes(arm: str, scenario_results: dict, window: list[dict], usage: i
     return {rt: sim(arm, rt, scenario_results, window, usage) for rt in RUNTIMES}
 
 
-PER_RUNTIME_KEYS = {"scenarios_passed", "scenarios_total", "failed_ids", "champion_right",
-                    "proposal_right", "p_value", "volume_ratio", "cost_delta"}
+PER_RUNTIME_KEYS = {"status", "scenarios_passed", "scenarios_total", "failed_ids", "scenarios_unevaluated",
+                    "champion_right", "proposal_right", "p_value", "volume_ratio", "cost_delta", "null_share"}
 
 
 def test_accept_path(workspace, judge) -> None:
@@ -124,8 +124,10 @@ def test_accept_path(workspace, judge) -> None:
         "proposal": both_runtimes("proposal", results, baseline_window()),
     })
     assert verdict["accept"] is True and verdict["reasons"] == []
-    assert set(verdict) == {"accept", "inconclusive", "reasons", "per_runtime", "coverage"}
-    assert verdict["inconclusive"] is False
+    assert set(verdict) == {"accept", "inconclusive", "decision", "reasons", "per_runtime", "coverage",
+                            "runtimes", "max_null_share"}
+    assert verdict["inconclusive"] is False and verdict["decision"] == "accept"
+    assert {status["status"] for status in verdict["runtimes"].values()} == {"graded"}
     assert set(verdict["per_runtime"]) == set(RUNTIMES)
     for row in verdict["per_runtime"].values():
         assert set(row) == PER_RUNTIME_KEYS
@@ -152,6 +154,7 @@ def test_scenario_failure_on_one_runtime_rejects(workspace, judge) -> None:
     assert verdict["per_runtime"]["zai"]["scenarios_passed"] == 1
     assert any(keep_id in reason and reason.startswith("zai") for reason in verdict["reasons"])
     assert keep_id in table and "**Decision: REJECT**" in table
+    assert verdict["decision"] == "reject"
 
 
 def test_company_mismatch_fails_card(workspace, judge) -> None:
@@ -274,17 +277,88 @@ def null_results(root: Path) -> dict:
     return {card_id: {"verdict": None, "company": None, "raw": ""} for card_id in correct_results(root)}
 
 
-def test_all_null_sims_are_inconclusive(workspace, judge) -> None:
+def test_all_null_sims_are_unavailable(workspace, judge) -> None:
     results = null_results(workspace["root"])
     verdict, table = run_grade(workspace, {
         "champion": both_runtimes("champion", results, null_window()),
         "proposal": both_runtimes("proposal", results, null_window()),
-    }, expected_exit=grade.INCONCLUSIVE_EXIT_CODE)
+    }, expected_exit=grade.UNAVAILABLE_EXIT_CODE)
     assert verdict["accept"] is False and verdict["inconclusive"] is True
+    assert verdict["decision"] == "unavailable"
     assert verdict["per_runtime"] == {}
-    assert any("nvidia" in reason and "0%" in reason for reason in verdict["reasons"])
-    assert any("zai" in reason for reason in verdict["reasons"])
-    assert "**Decision: INCONCLUSIVE**" in table
+    assert {status["status"] for status in verdict["runtimes"].values()} == {"unavailable"}
+    assert any(reason.startswith("nvidia: null share champion 1.00") for reason in verdict["reasons"])
+    assert any(reason.startswith("zai") for reason in verdict["reasons"])
+    assert "| nvidia | unavailable (null share 1.00) |" in table
+    assert "**Decision: UNAVAILABLE**" in table
+
+
+def test_near_all_null_runtime_is_unavailable_not_scenario_failures(tmp_path, judge) -> None:
+    root = tmp_path / "scenarios"
+    for _ in range(78):
+        make_card(root, "drop")
+    workspace = {"root": root, "dir": tmp_path}
+    results = null_results(root)
+    for card_id in list(results)[:2]:
+        results[card_id] = {"verdict": "drop", "company": None, "raw": "{}"}
+    verdict, table = run_grade(workspace, {
+        "champion": {"zai": sim("champion", "zai", results, [])},
+        "proposal": {"zai": sim("proposal", "zai", results, [])},
+    }, expected_exit=grade.UNAVAILABLE_EXIT_CODE)
+    assert verdict["decision"] == "unavailable" and verdict["accept"] is False
+    assert verdict["runtimes"]["zai"]["null_share"] == {"champion": 0.9744, "proposal": 0.9744}
+    assert not any("scenarios failed" in reason for reason in verdict["reasons"])
+    assert "| zai | unavailable (null share 0.97) |" in table
+    assert "2/78" not in table
+
+
+def test_mixed_nulls_are_graded_without_counting_null_cards_as_failures(tmp_path, judge) -> None:
+    root = tmp_path / "scenarios"
+    for _ in range(10):
+        make_card(root, "drop")
+    workspace = {"root": root, "dir": tmp_path}
+    good = correct_results(root)
+    patchy = dict(good)
+    null_ids = list(patchy)[:3]
+    for card_id in null_ids:
+        patchy[card_id] = {"verdict": None, "company": None, "raw": ""}
+    verdict, table = run_grade(workspace, {
+        "champion": both_runtimes("champion", good, baseline_window()),
+        "proposal": both_runtimes("proposal", patchy, baseline_window()),
+    })
+    assert verdict["decision"] == "accept" and verdict["accept"] is True
+    row = verdict["per_runtime"]["nvidia"]
+    assert row["failed_ids"] == [] and row["scenarios_unevaluated"] == null_ids
+    assert row["scenarios_passed"] == row["scenarios_total"] == 7
+    assert row["null_share"]["proposal"] == 0.3
+    assert "3 scenarios unevaluated" in table
+
+
+def test_all_null_scenarios_not_hidden_by_healthy_window(workspace, judge) -> None:
+    good = correct_results(workspace["root"])
+    verdict, _ = run_grade(workspace, {
+        "champion": both_runtimes("champion", good, baseline_window(50)),
+        "proposal": both_runtimes("proposal", null_results(workspace["root"]), baseline_window(50)),
+    }, expected_exit=grade.UNAVAILABLE_EXIT_CODE)
+    assert verdict["decision"] == "unavailable"
+    assert verdict["runtimes"]["nvidia"]["null_share"]["proposal"] == 1.0
+
+
+def test_one_unavailable_runtime_does_not_block_graded_one(workspace, judge) -> None:
+    good = correct_results(workspace["root"])
+    bad = null_results(workspace["root"])
+    verdict, table = run_grade(workspace, {
+        "champion": {"nvidia": sim("champion", "nvidia", bad, null_window()),
+                     "zai": sim("champion", "zai", good, baseline_window())},
+        "proposal": {"nvidia": sim("proposal", "nvidia", bad, null_window()),
+                     "zai": sim("proposal", "zai", good, baseline_window())},
+    })
+    assert verdict["decision"] == "accept"
+    assert verdict["runtimes"]["nvidia"]["status"] == "unavailable"
+    assert verdict["runtimes"]["zai"]["status"] == "graded"
+    assert set(verdict["per_runtime"]) == {"zai"}
+    assert "| nvidia | unavailable (null share 1.00) |" in table
+    assert "runtime unavailable, not graded: nvidia" in table
 
 
 def test_null_runtime_is_skipped_and_good_runtime_graded(workspace, judge) -> None:
@@ -303,39 +377,41 @@ def test_null_runtime_is_skipped_and_good_runtime_graded(workspace, judge) -> No
 
 def test_missing_proposal_runtime_is_not_graded(workspace, judge) -> None:
     good = correct_results(workspace["root"])
-    verdict, _ = run_grade(workspace, {
+    verdict, table = run_grade(workspace, {
         "champion": both_runtimes("champion", good, baseline_window()),
         "proposal": {"zai": sim("proposal", "zai", good, baseline_window())},
     })
     assert set(verdict["per_runtime"]) == {"zai"}
     assert verdict["coverage"]["nvidia"]["proposal"] is None
+    assert verdict["runtimes"]["nvidia"]["reason"] == "nvidia: proposal sim missing"
+    assert "| nvidia | unavailable (proposal missing) |" in table
 
 
-def test_coverage_just_under_threshold_is_inconclusive(workspace, judge) -> None:
+def test_null_share_just_over_threshold_is_unavailable(workspace, judge) -> None:
     good = correct_results(workspace["root"])
     window = baseline_window(8)
-    for item in window[:3]:
+    for item in window[:5]:
         item["verdict"] = None
-    results = both_runtimes("champion", good, window)
     verdict, _ = run_grade(workspace, {
-        "champion": results,
+        "champion": both_runtimes("champion", good, window),
         "proposal": both_runtimes("proposal", good, baseline_window(8)),
-    }, expected_exit=grade.INCONCLUSIVE_EXIT_CODE)
-    assert verdict["inconclusive"] is True
+    }, expected_exit=grade.UNAVAILABLE_EXIT_CODE)
+    assert verdict["decision"] == "unavailable"
 
 
-def test_coverage_at_threshold_is_graded(workspace, judge) -> None:
+def test_null_share_at_threshold_is_graded(workspace, judge) -> None:
     good = correct_results(workspace["root"])
     window = baseline_window(8)
-    window[0]["verdict"] = None
+    for item in window[:4]:
+        item["verdict"] = None
     verdict, _ = run_grade(workspace, {
         "champion": both_runtimes("champion", good, window),
         "proposal": both_runtimes("proposal", good, baseline_window(8)),
     })
-    assert verdict["inconclusive"] is False
+    assert verdict["inconclusive"] is False and verdict["decision"] != "unavailable"
 
 
-def test_min_coverage_flag_overrides_default(workspace, judge) -> None:
+def test_max_null_share_flag_overrides_default(workspace, judge) -> None:
     good = correct_results(workspace["root"])
     window = baseline_window(8)
     window[0]["verdict"] = None
@@ -343,5 +419,17 @@ def test_min_coverage_flag_overrides_default(workspace, judge) -> None:
     verdict, _ = run_grade(workspace, {
         "champion": both_runtimes("champion", good, window),
         "proposal": both_runtimes("proposal", good, baseline_window(8)),
-    }, "--min-coverage", "0.5")
-    assert verdict["inconclusive"] is False
+    }, "--max-null-share", "0.2", expected_exit=grade.UNAVAILABLE_EXIT_CODE)
+    assert verdict["decision"] == "unavailable" and verdict["max_null_share"] == 0.2
+
+
+def test_min_coverage_alias_sets_max_null_share(workspace, judge) -> None:
+    good = correct_results(workspace["root"])
+    window = baseline_window(8)
+    window[0]["verdict"] = None
+    window[1]["verdict"] = None
+    verdict, _ = run_grade(workspace, {
+        "champion": both_runtimes("champion", good, window),
+        "proposal": both_runtimes("proposal", good, baseline_window(8)),
+    }, "--min-coverage", "0.9", expected_exit=grade.UNAVAILABLE_EXIT_CODE)
+    assert verdict["max_null_share"] == 0.1
