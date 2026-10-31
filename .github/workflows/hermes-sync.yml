@@ -83,7 +83,23 @@ jobs:
       # (the step exits before setting it). The commit job gates on this so a
       # failed hermes download can't ship a misleading metrics-only sync.
       install_ok: ${{ steps.install.outputs.install_ok }}
+      run_date: ${{ steps.run_date.outputs.run_date }}
     steps:
+      - name: Pin run date
+        # The cron fires at 17:00 UTC but GitHub starts it as late as 23:30
+        # UTC and the pipeline runs 1.5-4h, so a run routinely crosses
+        # midnight UTC. Every step used to recompute `date -u +%F` on its own:
+        # on 2026-10-30 Layers 1-2 wrote 2026-10-30 files, then the synthesis
+        # gate ran at 00:56 UTC, looked for 2026-10-31 files and skipped
+        # Layers 3-4. RUN_DATE is computed once here and every later step,
+        # script --date argument, prompt and the commit message reads it.
+        id: run_date
+        run: |
+          run_date="$(date -u +%F)"
+          echo "RUN_DATE=$run_date" >> "$GITHUB_ENV"
+          echo "run_date=$run_date" >> "$GITHUB_OUTPUT"
+          echo "pinned RUN_DATE=$run_date"
+
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
       - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
@@ -236,7 +252,9 @@ jobs:
           # the eval suite (HERMES_LANGFUSE_ENV=eval) in Langfuse. Without this
           # the plugin falls back to the literal "default" environment.
           HERMES_LANGFUSE_ENV: production
-        run: bash scripts/bootstrap-hermes.sh
+        run: |
+          bash scripts/bootstrap-hermes.sh
+          echo "RUN_DATE=${RUN_DATE}" >> "$HOME/.hermes/.env"
 
       - name: Install ddgs + langfuse into hermes venv
         # ddgs: Layer 2's search_backend requires the `ddgs` PyPI package
@@ -367,7 +385,7 @@ jobs:
         # Exits 0 on all expected conditions (missing file/snapshot are no-ops);
         # NOT continue-on-error, so a parse-time crash surfaces as a real bug.
         if: steps.layers.outputs.run_l1 == 'true'
-        run: python3 scripts/filter_seen_updates.py
+        run: python3 scripts/filter_seen_updates.py --date "$RUN_DATE"
 
       - name: Snapshot candidates for replay
         # Self-optimising harness memory: freeze today's Layer 1 input as
@@ -375,7 +393,7 @@ jobs:
         # be replayed against a fresh window of real candidates.
         if: steps.layers.outputs.run_l1 == 'true'
         continue-on-error: true
-        run: python3 scripts/harness/snapshot_replay.py --date "$(date -u +%F)"
+        run: python3 scripts/harness/snapshot_replay.py --date "$RUN_DATE"
 
       - name: Build gap-fill queue (fairness rotation)
         # Deterministic pre-step: writes signals/agent-queue.txt with the N
@@ -390,7 +408,7 @@ jobs:
         if: steps.layers.outputs.run_l2 == 'true'
         run: |
           rm -f data/agent-reached.txt
-          python3 scripts/select_gapfill_queue.py
+          python3 scripts/select_gapfill_queue.py --date "$RUN_DATE"
 
       - name: Gate Layer 2 on having work
         id: l2gate
@@ -398,7 +416,7 @@ jobs:
         run: |
           # Skip the agent-supplement session(s) when there is no cohort at
           # all: empty gap-fill queue and no Layer 1 output to deepen.
-          date="$(date -u +%F)"
+          date="$RUN_DATE"
           if [ -s signals/agent-queue.txt ] || [ -s "signals/updates/$date.md" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
@@ -410,7 +428,7 @@ jobs:
         # companies, full entries. ~5KB instead of the ~300KB companies.json
         # the Layer 2 prompt used to read into context.
         if: steps.l2gate.outputs.run == 'true'
-        run: python3 scripts/slice_companies.py --layer agent
+        run: python3 scripts/slice_companies.py --layer agent --date "$RUN_DATE"
 
       - name: Layer 2 — agent supplement
         if: steps.l2gate.outputs.run == 'true'
@@ -430,7 +448,7 @@ jobs:
         # right after Layer 2, so the reached file is on disk here; gated on
         # Layer 2 having consumed the queue so a skipped Layer 2 burns nothing.
         if: steps.l2gate.outputs.run == 'true'
-        run: python3 scripts/update_gapfill_state.py
+        run: python3 scripts/update_gapfill_state.py --date "$RUN_DATE"
 
       - name: Filter exclusions
         # Deterministic post-filter: drops items whose headline matches a
@@ -438,7 +456,7 @@ jobs:
         # synthesis so Layer 3 reads cleaned files. Idempotent; no-op when
         # nothing matches.
         if: steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true'
-        run: python3 scripts/filter_exclusions.py
+        run: python3 scripts/filter_exclusions.py --date "$RUN_DATE"
 
       - name: Daily blind-judge sample
         # Every Layer 1 verdict (kept + dropped) and Layer 2 kept item re-ruled
@@ -451,7 +469,7 @@ jobs:
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
-        run: python3 scripts/harness/daily_judge_sample.py --date "$(date -u +%F)"
+        run: python3 scripts/harness/daily_judge_sample.py --date "$RUN_DATE"
 
       - name: Write scenario cards
         # Every confident judge/pipeline disagreement from the step above
@@ -460,7 +478,7 @@ jobs:
         if: steps.layers.outputs.run_l1 == 'true' || steps.layers.outputs.run_l2 == 'true'
         continue-on-error: true
         run: |
-          TODAY="$(date -u +%F)"
+          TODAY="$RUN_DATE"
           python3 scripts/harness/write_scenarios.py --date "$TODAY" --judged "data/harness/judged/$TODAY.jsonl" \
             --labels signals/harness/human-labels.jsonl
 
@@ -471,7 +489,7 @@ jobs:
           # Skip the synthesis session entirely when Layers 1-2 produced
           # nothing today — previously the agent burned a full session
           # (including reading the watchlist) just to conclude that.
-          date="$(date -u +%F)"
+          date="$RUN_DATE"
           if [ -s "signals/updates/$date.md" ] || grep -q '^### ' "signals/agent/$date.md" 2>/dev/null; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
@@ -482,7 +500,7 @@ jobs:
         # data/touched-companies.json = full entries for today's touched
         # companies only, so Layer 3 doesn't read the ~300KB companies.json.
         if: steps.l3gate.outputs.run == 'true'
-        run: python3 scripts/slice_companies.py --layer synthesis
+        run: python3 scripts/slice_companies.py --layer synthesis --date "$RUN_DATE"
 
       - name: Layer 3 — synthesis
         if: steps.l3gate.outputs.run == 'true'
@@ -501,7 +519,7 @@ jobs:
         # briefs are skipped with a warning), so a step failure here is a
         # real bug and should surface.
         if: steps.layers.outputs.run_l3 == 'true'
-        run: python3 scripts/normalize_briefs.py
+        run: python3 scripts/normalize_briefs.py --today "$RUN_DATE"
 
       - name: Select infographic queue
         # Deterministic pre-step for Layer 4: decides which briefs get a fresh
@@ -528,6 +546,17 @@ jobs:
         run: |
           bash scripts/set-langfuse-layer.sh infographics
           hermes -z "$(cat prompts/infographics.md)"
+
+      - name: Infographic alarm
+        # Deterministic post-Layer-4 check: exits 1 when
+        # data/infographic-queue.json was non-empty but no queued slug's
+        # infographic.png is new/modified vs HEAD (git status). From
+        # 2026-10-05 fal.ai rejected 15/15 image_generate calls ("Exhausted
+        # balance") while Layer 4's continue-on-error kept the run green.
+        # continue-on-error so it shows red without blocking the commit.
+        if: steps.layers.outputs.run_l4 == 'true' && steps.l3gate.outputs.run == 'true'
+        continue-on-error: true
+        run: python3 scripts/check_infographics.py
 
       - name: Compress new infographics
         # The generated PNGs land at ~1.3MB each and are committed, so every
@@ -716,6 +745,8 @@ jobs:
           python3 scripts/sanitize-seen-urls.py signals/dropped-urls.txt
 
       - name: Commit and push
+        env:
+          RUN_DATE: ${{ needs.hermes.outputs.run_date }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -729,7 +760,7 @@ jobs:
             echo "nothing to commit"
             exit 0
           fi
-          git commit -m "chore(hermes): sync $(date -u +%F)"
+          git commit -m "chore(hermes): sync ${RUN_DATE:-$(date -u +%F)}"
           # Rebase-and-retry on non-fast-forward. Dated signals/ files and
           # memory updates rarely conflict, so the rebase usually clean-applies.
           for attempt in 1 2 3 4 5; do

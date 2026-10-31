@@ -26,7 +26,7 @@ For every brief carrying a genuinely new signal this run, regenerate `infographi
 
 ## Steps
 
-1. **Compute today's UTC date** as `<UTC-date>` (format `YYYY-MM-DD`). Used only for logging.
+1. **Compute today's UTC date** as `<UTC-date>` (format `YYYY-MM-DD`): use the `RUN_DATE` environment variable (`echo "$RUN_DATE"` via the terminal tool) — the workflow pins it once at job start so every layer of a run that crosses midnight UTC agrees on one date; fall back to `date -u +%F` only when `RUN_DATE` is unset. Used only for logging.
 
 2. **Read `CHANGED_SLUGS`** — the `changed` array from `data/infographic-queue.json` (briefs that gained a genuinely new signal this run, decided by the deterministic pre-step). Do not derive it from a git diff.
 

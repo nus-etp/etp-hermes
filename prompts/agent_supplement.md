@@ -27,7 +27,7 @@ Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest.
 
 ## Steps
 
-1. **Compute today's UTC date** as `<YYYY-MM-DD>`. This is the date used by both Layer 1's output file and the file you write.
+1. **Compute today's UTC date** as `<YYYY-MM-DD>`: use the `RUN_DATE` environment variable (`echo "$RUN_DATE"` via the terminal tool) — the workflow pins it once at job start so every layer of a run that crosses midnight UTC agrees on one date; fall back to `date -u +%F` only when `RUN_DATE` is unset. This is the date used by both Layer 1's output file and the file you write.
 
 2. **Read inputs.** Load `data/agent-companies.json` (fallback: `data/companies.json`). Glob `signals/updates/*.md` and select files whose filename date is within the last 7 UTC days (inclusive of today). Leave `signals/seen-urls.txt` and `signals/dropped-urls.txt` on disk — membership checks happen via `grep` at judge time.
 
@@ -63,7 +63,7 @@ Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest.
       - **kept** → `signals/seen-urls.txt`, one bare key per line (permanent).
       - **dropped** → `signals/dropped-urls.txt`, date-stamped so the drop expires and a mistake gets a second chance:
         ```sh
-        printf '%s\t%s\n' "$(date -u +%F)" '<key>' >> signals/dropped-urls.txt
+        printf '%s\t%s\n' "${RUN_DATE:-$(date -u +%F)}" '<key>' >> signals/dropped-urls.txt
         ```
         Never write a bare key into this file without the date-and-tab prefix.
 

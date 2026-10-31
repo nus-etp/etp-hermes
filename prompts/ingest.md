@@ -78,11 +78,11 @@ If `data/candidates.json` is missing — checked with `terminal`: `test -f "${GI
    - Append the `dedup_key` of every **kept** candidate to `signals/seen-urls.txt`, one per line, deduplicated. Append only — do not rewrite the file.
    - Append the `dedup_key` of every **dropped** candidate to `signals/dropped-urls.txt` instead, one per line, deduplicated, each stamped with today's UTC date:
      ```sh
-     printf '%s\t%s\n' "$(date -u +%F)" '<dedup_key>' >> signals/dropped-urls.txt
+     printf '%s\t%s\n' "${RUN_DATE:-$(date -u +%F)}" '<dedup_key>' >> signals/dropped-urls.txt
      ```
      Append only — do not rewrite the file, and never write a bare key without the date-and-tab prefix. (Dropped keys stop us re-judging the same junk tomorrow, but they expire, so a mistaken drop gets a second chance rather than being lost forever.)
    - If `K[]` is empty: write nothing else. Final stdout: `no new items`.
-   - Otherwise write `signals/updates/<YYYY-MM-DD>.md` (UTC date). First line: `# Daily Updates — <YYYY-MM-DD>` (exactly this H1 — no other title variants). Then the kept items, grouped by company (use the canonical `company` value as the `## ` heading). Format per item:
+   - Otherwise write `signals/updates/<YYYY-MM-DD>.md` (UTC date — use the `RUN_DATE` environment variable (`echo "$RUN_DATE"` via the terminal tool) — the workflow pins it once at job start so every layer of a run that crosses midnight UTC agrees on one date; fall back to `date -u +%F` only when `RUN_DATE` is unset). First line: `# Daily Updates — <YYYY-MM-DD>` (exactly this H1 — no other title variants). Then the kept items, grouped by company (use the canonical `company` value as the `## ` heading). Format per item:
      ```
      - **<headline>** — <source> · <pubDate>
        <link>
