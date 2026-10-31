@@ -24,8 +24,10 @@ deduplicated by normalized URL (newest snapshot wins) and capped at
 ``--limit``. Layers ``agent_supplement`` / ``synthesis`` are accepted but not
 implemented yet: they write an empty result and exit 0.
 
-Fail-open per item, exit 0; exit 2 when the runtime has no API key, every verdict is null, or ``--max-consecutive-failures`` (default 5) calls fail in a row (unreachable/misconfigured runtime). Pure
-stdlib (uses ``scripts/ab_llm.py``).
+Fail-open per item, exit 0; exit 2 when the runtime has no API key, every verdict is null, or
+``--max-consecutive-failures`` (default 5) calls fail in a row (unreachable/misconfigured runtime).
+An exit-2 run leaves no ``--out`` file behind (a stale one from an earlier run is removed first), so
+the grader can never read a failed sim. Pure stdlib (uses ``scripts/ab_llm.py``).
 """
 
 from __future__ import annotations
@@ -324,6 +326,7 @@ def resolve_today(value: str | None) -> dt.date:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+    args.out.unlink(missing_ok=True)
     if args.layer not in IMPLEMENTED_LAYERS:
         print(f"layer {args.layer}: not implemented in this PR; writing an empty result")
         write_result(args.out, empty_result(args, implemented=False))
@@ -348,22 +351,23 @@ def main(argv: list[str] | None = None) -> int:
     tokens = ab_llm.usage_total(args.runtime) - usage_before
     if tokens > 0:
         result["usage"] = {"total_tokens": tokens}
-    write_result(args.out, result)
 
     failed = sum(1 for r in result["scenario_results"].values() if r["verdict"] is None)
     failed += sum(1 for r in result["window_results"] if r["verdict"] is None)
     print(
         f"{args.arm}/{args.runtime}: {len(cards)} scenarios, {len(items)} window candidates, "
-        f"{failed} null verdicts -> {args.out}"
+        f"{failed} null verdicts"
     )
     total = len(cards) + len(items)
     if total and failed == total:
         print(
             f"runtime {args.runtime} returned no usable verdict for any of {total} candidates; "
-            "it is unreachable or misconfigured (see ab_llm diagnostics above)",
+            "it is unreachable or misconfigured (see ab_llm diagnostics above); no result written",
             file=sys.stderr,
         )
         return 2
+    write_result(args.out, result)
+    print(f"wrote {args.out}")
     return 0
 
 

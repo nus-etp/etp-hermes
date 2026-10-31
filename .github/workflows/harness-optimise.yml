@@ -271,7 +271,7 @@ jobs:
             python3 scripts/harness/grade.py --champion "${champions[@]}" --proposal "${proposals[@]}" \
               --out-table data/harness/replay-table.md --out-verdict data/harness/verdict.json || status=$?
             if [ "$status" = 3 ]; then
-              warn "grade.py inconclusive: too few usable simulation verdicts"
+              warn "grade.py: every runtime unavailable (sims missing or null share over the limit); proposal not evaluated"
             elif [ "$status" != 0 ]; then
               warn "grade.py failed ($status)"
             fi
@@ -370,26 +370,36 @@ jobs:
           PROPOSAL_OK: ${{ steps.proposal.outputs.ok }}
         run: |
           accept=false
-          inconclusive=false
-          if [ "$PROPOSAL_OK" = "true" ] && [ -f data/harness/verdict.json ]; then
-            accept=$(python3 -c 'import json; print("true" if json.load(open("data/harness/verdict.json")).get("accept") is True else "false")' || echo false)
-            inconclusive=$(python3 -c 'import json; print("true" if json.load(open("data/harness/verdict.json")).get("inconclusive") is True else "false")' || echo false)
+          decision=reject
+          if [ "$PROPOSAL_OK" = "true" ]; then
+            if [ -f data/harness/verdict.json ]; then
+              decision=$(python3 -c 'import json; v = json.load(open("data/harness/verdict.json")); print(v.get("decision") or ("unavailable" if v.get("inconclusive") else ("accept" if v.get("accept") is True else "reject")))' || echo unavailable)
+            else
+              decision=unavailable
+              echo "::warning::no data/harness/verdict.json: every runtime's sim failed or grade.py crashed"
+            fi
           fi
+          if [ "$decision" = "accept" ]; then accept=true; fi
           unresolved="$(python3 scripts/harness/pr_body.py --unresolved || true)"
           if [ -n "$unresolved" ]; then
             echo "unresolved blocking findings:"
             echo "$unresolved"
             accept=false
+            if [ "$decision" = "accept" ]; then decision=reject; fi
           fi
+          inconclusive=false
+          if [ "$decision" = "unavailable" ]; then inconclusive=true; fi
           python3 scripts/harness/pr_body.py > /tmp/harness-body.md || echo "_PR body unavailable_" > /tmp/harness-body.md
           cat /tmp/harness-body.md >> "$GITHUB_STEP_SUMMARY"
           echo "accept=$accept" >> "$GITHUB_OUTPUT"
           echo "accept=$accept"
           echo "inconclusive=$inconclusive" >> "$GITHUB_OUTPUT"
           echo "inconclusive=$inconclusive"
-          if [ "$inconclusive" = "true" ]; then
-            reasons=$(python3 -c 'import json; print("; ".join(json.load(open("data/harness/verdict.json")).get("reasons") or []))' || echo "see verdict.json")
-            echo "::warning::harness verdict inconclusive, no rejection recorded: ${reasons}"
+          echo "decision=$decision" >> "$GITHUB_OUTPUT"
+          echo "decision=$decision"
+          if [ "$decision" = "unavailable" ]; then
+            reasons=$(python3 -c 'import json; print("; ".join(json.load(open("data/harness/verdict.json")).get("reasons") or []))' 2>/dev/null || echo "no verdict.json")
+            echo "::warning::proposal not evaluated (runtimes unavailable), no rejection recorded: ${reasons}"
           fi
 
       - name: Open or refresh PR
@@ -411,18 +421,16 @@ jobs:
               --body-file /tmp/harness-body.md --label "$HARNESS_LABEL" --assignee "$HARNESS_ASSIGNEE"
           fi
 
-      - name: Delete branch after inconclusive verdict
-        if: steps.bootstrap.outputs.ok == 'true' && steps.decide.outputs.accept != 'true' && steps.decide.outputs.inconclusive == 'true' && env.HARNESS_DRY_RUN != 'true'
+      - name: Keep proposal branch when runtimes are unavailable
+        if: steps.bootstrap.outputs.ok == 'true' && steps.decide.outputs.decision == 'unavailable' && env.HARNESS_DRY_RUN != 'true'
         continue-on-error: true
         run: |
-          git switch -q --detach "$BASE_SHA"
-          git branch -D "$HARNESS_BRANCH" || true
-          if git ls-remote --exit-code --heads origin "$HARNESS_BRANCH" >/dev/null 2>&1; then
-            git push origin --delete "$HARNESS_BRANCH"
-          fi
+          git push -f origin "$HARNESS_BRANCH"
+          echo "::warning::proposal not evaluated; kept on ${HARNESS_BRANCH} (no PR, no rejection) for a re-run when the runtimes recover"
+          echo "Proposal not evaluated (runtimes unavailable); kept on \`${HARNESS_BRANCH}\`." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Record rejection and delete branch
-        if: steps.bootstrap.outputs.ok == 'true' && steps.decide.outputs.accept != 'true' && steps.decide.outputs.inconclusive != 'true' && env.HARNESS_DRY_RUN != 'true'
+        if: steps.bootstrap.outputs.ok == 'true' && steps.decide.outputs.accept != 'true' && steps.decide.outputs.decision != 'unavailable' && env.HARNESS_DRY_RUN != 'true'
         continue-on-error: true
         run: |
           git switch -q --detach "$BASE_SHA"
@@ -456,3 +464,9 @@ jobs:
           path: data/harness/
           if-no-files-found: ignore
           retention-days: 14
+
+      - name: Fail the run when the proposal could not be evaluated
+        if: steps.decide.outputs.decision == 'unavailable'
+        run: |
+          echo "::error::harness-optimise could not evaluate the proposal: every simulation runtime was unavailable (see the replay table / sim logs)"
+          exit 1

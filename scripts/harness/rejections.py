@@ -58,6 +58,8 @@ def render_record(
     cluster_key = cluster.get("cluster") or "unknown"
     accept = verdict.get("accept")
     decision = "not available" if accept is None else ("accept" if accept else "reject")
+    if verdict.get("decision") == "unavailable":
+        decision = "unavailable (not evaluated)"
     unresolved = [str(finding.get("claim", "")) for finding in pr_body.unresolved_blocking(review, resolutions)]
     lines = [
         f"## {date} — {cluster_key} (run {run_id})",

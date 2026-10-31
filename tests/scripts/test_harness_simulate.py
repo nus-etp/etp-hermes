@@ -157,7 +157,10 @@ def test_all_null_verdicts_exit_2_with_loud_message(layout, monkeypatch, capsys)
     monkeypatch.setattr(simulate.ab_llm, "chat", lambda *a, **k: None)
     monkeypatch.setattr(simulate.ab_llm, "have_key", lambda runtime="deepseek": True)
     write_snapshot(layout["window"], "2026-10-02", [candidate("a"), candidate("b")])
+    layout["out"].parent.mkdir(parents=True, exist_ok=True)
+    layout["out"].write_text('{"stale": true}')
     assert run(layout) == 2
+    assert not layout["out"].exists()
     assert "unreachable or misconfigured" in capsys.readouterr().err
 
 
