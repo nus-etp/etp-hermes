@@ -1,0 +1,44 @@
+{
+  "cluster": "agent_supplement/false_keep/horizon-quantum-computing/morningstar.com",
+  "created_by": "write_scenarios@run 41192375636",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.59",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Horizon Quantum issues a clarification after \"incorrect information\" circulated on 14 September, stating 34,811,740 Class A and 19,744,585 Class B ordinary shares outstanding and that all business-combination lock-ups run to 19 March 2028, except one holder expiring 19 September 2027; the release does not name the source of the bad data' for Horizon Quantum Computing",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "agent_supplement-2026-10-31-0001",
+  "input": {
+    "candidate": {
+      "description": "Published 2026-09-15",
+      "matched": [
+        "Horizon Quantum Computing"
+      ],
+      "source": "morningstar.com (Business Wire)",
+      "title": "Horizon Quantum issues a clarification after \"incorrect information\" circulated on 14 September, stating 34,811,740 Class A and 19,744,585 Class B ordinary shares outstanding and that all business-combination lock-ups run to 19 March 2028, except one holder expiring 19 September 2027; the release does not name the source of the bad data",
+      "url": "https://morningstar.com/news/business-wire/20260915023971/horizon-quantum-clarifies-certain-information-regarding-the-company"
+    },
+    "companies": {
+      "Horizon Quantum Computing": {
+        "description": "Singapore-based privately-held quantum computing software startup. Distinct from any publicly-traded company sharing a similar name (NASDAQ:HQ ticker, Horizon Quantum Holdings, earnings releases, ticker-aggregator coverage from Zacks/TipRanks/MarketBeat/etc. must be excluded)."
+      }
+    }
+  },
+  "layer": "agent_supplement",
+  "origin": {
+    "date": "2026-10-31",
+    "judge": "jev",
+    "judge_confidence": 0.78,
+    "kind": "judge_disagreement",
+    "run_id": "41192375636",
+    "source": "2026-10-31.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 2 agent supplement: dynamic search that keeps only items new and material to the company",
+  "status": "active",
+  "version": 1
+}

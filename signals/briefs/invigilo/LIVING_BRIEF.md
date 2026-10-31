@@ -1,5 +1,5 @@
 # INVIGILO — LIVING BRIEF
-_Last updated: 2026-09-19 16:23 UTC_
+_Last updated: 2026-10-31 10:35 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -10,19 +10,28 @@ _Last material event: 2026-08-26 — Integrated technology partnership with HSI 
 ## Profile
 - Sector: AI / Deep tech
 - Region: Singapore
+- Founded: 2020
 - Stage / funding: Seed ($490K from NUS GRIP, NVIDIA Inception, BLOCK71)
+- Key people: Vishnu Saran (CEO, co-founder), Anand Kumar (CTO, co-founder)
+- Identifiers: UEN: 202031283D, [invigilo.ai](https://www.invigilo.ai)
 
 ## Funding history
 - **date unknown** — Seed, $490K — NUS Graduate Research Innovation Programme, NVIDIA Inception, BLOCK71 — [pitchbook.com](https://pitchbook.com/profiles/company/509812-57)
+
 _Total disclosed: $0.5M._
 
 ## Recent signals
-_none_
+- **2026-10-04** — Independent vendor profile documents Invigilo's commercial model, deployment options and data footprint, but flags that its outcome metrics are vendor-reported and unverified — [safetytechreview.com](https://safetytechreview.com/vendors/invigilo)
+  - Summary: Safety Tech Review published a desk-research vendor profile of Invigilo on 2026-10-04, tracing SafeKey from 40+ detected risk types on existing RTSP cameras through edge, fully on-premise or hybrid delivery, with Singapore and Saudi data residency claims and Milestone/Genetec VMS integrations. It reports a subscription priced on cameras, sites, detection scope and deployment model with no published price list, and says it found no public funding round — at odds with the PitchBook-recorded $490K seed carried in this brief's funding history. The reviewer marks the HDB case-study figures (30 cameras, 60% fewer incidents, 40% faster response, 8x more observations than manual patrols) as vendor-reported and unverified, the 85%+ accuracy claim as undefined, and notes no published DPA and no third-party user reviews.
+  - People: Vishnu Saran (CEO, co-founder), Anand Kumar (CTO, co-founder)
+  - Counterparties: Saipem, Hyundai E&C, Lendlease (named customers)
+  - Numbers: ~200 sites and 40+ risk types claimed; 50-person team per Straits Times; HDB pilot on 30 cameras; 60% fewer incidents and 40% faster response (vendor-reported); 85%+ accuracy, metric undefined
+  - Quote: "The main contractor is not named, and these figures are vendor-reported and have not been independently verified" — Safety Tech Review, vendor profile
 
 ## Older signals
 - **2026-09-14** — Straits Times feature on Singapore AI startups recaps INVIGILO's June 2026 selection as one of the first three JTC Innovative Procurement Partnership startups and reports a 60 per cent fall in safety incidents on one HDB project — [straitstimes.com](https://www.straitstimes.com/business/economy/singapore-start-ups-show-that-ai-isnt-just-a-big-tech-playground)
 - **2026-08-26** — Integrated technology partnership with HSI Donesafe pairing INVIGILO's AI CCTV-based risk detection with HSI Donesafe's enterprise EHS incident-management platform — [donesafe.com](https://www.donesafe.com/blog/company/ai-workplace-safety-invigilo-donesafe-partnership)
-  - Summary: HSI Donesafe (an enterprise EHS platform backed by HSI, serving 22,000+ organisations) and INVIGILO announced an integrated technology partnership: INVIGILO's computer-vision detection of 40+ workplace risk scenarios over existing CCTV feeds into HSI Donesafe's incident, investigation, corrective-action and compliance workflows. The joint offering targets construction, manufacturing, logistics and warehousing, plus mining, resources and energy, and will be showcased at OS+H Asia in Singapore.
+  - Summary: HSI Donesafe (an enterprise EHS platform backed by HSI, serving 22,000+ organisations) and INVIGILO announced an integrated technology partnership: INVIGILO's computer-vision detection of 40+ workplace risk scenarios over existing CCTV feeds into HSI Donesafe's incident, investigation, corrective-action and compliance workflows. The joint offering targets construction, manufacturing, logistics and warehousing, plus mining, resources and energy, and will be showcased at OS+H Asia in Singapore. The SG-regional version of the release keeps the Singapore and Asia-Pacific framing, announces no extension into HSI's wider global EHS customer base, and characterises the arrangement as an integrated technology partnership rather than a resale agreement.
   - People: Vishnu Saran (CEO and Co-founder, INVIGILO), Louise Minty (Partnerships Manager, HSI Donesafe)
   - Counterparties: HSI Donesafe (technology partner)
   - Numbers: 40+ workplace risk scenarios detected; HSI supports 22,000+ organisations
@@ -46,7 +55,7 @@ _none_
 - **2026-05-20** — Strategic partnership with Aespada to expand safety capabilities — [INVIGILO](https://www.invigilo.ai/post/invigilo-partnership-with-aespada)
 
 ## Open questions
-- What is the commercial outcome of the Galp pilot program?
 - What is the contract value of the JTC IPP award, and when does the pilot convert into the deployment option?
 - Will the Motorola Solutions | Avigilon Alta MOU convert into a commercial agreement, and does it signal expansion beyond the construction and industrial verticals in Southeast Asia?
-- Will the HSI Donesafe integration extend INVIGILO beyond Asia-Pacific into HSI's global EHS customer base, and is it a technology-integration or commercial resale arrangement?
+- What does SafeKey cost per camera and site, and which of the five layers are actually in production at reference deployments?
+- Does the 60 per cent incident-reduction figure hold up, given the HDB main contractor is unnamed and the metric is vendor-reported?

@@ -1,5 +1,5 @@
 # Horizon Quantum Computing — LIVING BRIEF
-_Last updated: 2026-10-19 23:16 UTC_
+_Last updated: 2026-10-31 10:35 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -26,7 +26,7 @@ _Total disclosed: $22.2M._
 _none_
 
 ## Older signals
-- **2026-09-15** — Horizon Quantum Holdings issued a share-count and lock-up clarification after what it called incorrect information in the market the previous day, confirming every SPAC-era lock-up from the 19 March 2026 dMY Squared business combination is still in force — [horizonquantum.com](https://www.horizonquantum.com/resources/newsroom/horizon-quantum-clarifies-certain-information-regarding-the-company) (Also reported by: [investors.horizonquantum.com](https://investors.horizonquantum.com/news-releases/news-release-details/horizon-quantum-clarifies-certain-information-regarding-company))
+- **2026-09-15** — Horizon Quantum Holdings issued a share-count and lock-up clarification after what it called incorrect information in the market the previous day, confirming every SPAC-era lock-up from the 19 March 2026 dMY Squared business combination is still in force — [horizonquantum.com](https://www.horizonquantum.com/resources/newsroom/horizon-quantum-clarifies-certain-information-regarding-the-company) (Also reported by: [investors.horizonquantum.com](https://investors.horizonquantum.com/news-releases/news-release-details/horizon-quantum-clarifies-certain-information-regarding-company), [morningstar.com](https://morningstar.com/news/business-wire/20260915023971/horizon-quantum-clarifies-certain-information-regarding-the-company))
   - Summary: In a Business Wire release dated 15 September 2026, Horizon Quantum Holdings Ltd. (Nasdaq: HQ) said it wished to clarify company information "in light of concerns that there may have been incorrect information in the market for a period yesterday." It reported 34,811,740 Class A ordinary shares and 19,744,585 Class B ordinary shares issued and outstanding as of 14 September 2026, and said the lock-up agreements signed in connection with its 19 March 2026 business combination with dMY Squared Technology Group remain in effect until the earlier of a liquidation, merger or similar change-of-control transaction, or 19 March 2028 — with one shareholder locked up for 18 months, to 19 September 2027. The investor-relations version of the same release repeats those figures and lock-up terms; neither version names who put the incorrect information into the market or what specifically was wrong in it.
   - Numbers: 34,811,740 Class A ordinary shares; 19,744,585 Class B ordinary shares (as of 2026-09-14); lock-ups to 2028-03-19, one holder to 2027-09-19
   - Quote: "in light of concerns that there may have been incorrect information in the market for a period yesterday" — Horizon Quantum Holdings Ltd., press release
