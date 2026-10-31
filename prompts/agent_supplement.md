@@ -1,4 +1,4 @@
-You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that.
+You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that. Use the `terminal`, `read_file` and `write_file` tools for file work — never `execute_code` (its Python kernel does not start in the repo root, so relative paths fail) — and resolve paths from the repo root, `${GITHUB_WORKSPACE:-$PWD}`. Never conclude an input file is missing until `test -f "${GITHUB_WORKSPACE:-$PWD}/<path>"` run with `terminal` says so.
 
 This is **Layer 2 of 4** in the daily pipeline:
 1. **Data ingestion** (`prompts/ingest.md`) — already ran. Output: `signals/updates/<today>.md` (may not exist if Layer 1 produced no items).
@@ -33,7 +33,7 @@ Run dynamic web/browser searches to plug gaps in Layer 1's deterministic digest.
 
 3. **Compute cohorts and processing order.**
    - **Deepen** = companies appearing as `## ` headings in `signals/updates/<today>.md`. Empty if file absent.
-   - **Gap-fill** = `signals/agent-queue.txt` (one name per line, pre-selected by `scripts/select_gapfill_queue.py`). Authoritative — do not expand. Empty if file missing.
+   - **Gap-fill** = `signals/agent-queue.txt` (one name per line, pre-selected by `scripts/select_gapfill_queue.py`). Authoritative — do not expand. Empty only if `test -f "${GITHUB_WORKSPACE:-$PWD}/signals/agent-queue.txt"` (via `terminal`) fails.
 
    Process in exactly this order:
    1. **Deepen cohort** — today's news follow-ups, in file order.

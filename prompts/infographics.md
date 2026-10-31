@@ -1,4 +1,4 @@
-You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that.
+You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that. Use the `terminal`, `read_file` and `write_file` tools for file work — never `execute_code` (its Python kernel does not start in the repo root, so relative paths fail) — and resolve paths from the repo root, `${GITHUB_WORKSPACE:-$PWD}`. Never conclude an input file is missing until `test -f "${GITHUB_WORKSPACE:-$PWD}/<path>"` run with `terminal` says so.
 
 This is **Layer 4 of 4** in the daily pipeline:
 1. **Data ingestion** (`prompts/ingest.md`) — already ran. Output: `signals/updates/<today>.md`.
@@ -40,7 +40,7 @@ For every brief carrying a genuinely new signal this run, regenerate `infographi
    python3 -c "import json;print('\n'.join(json.load(open('data/infographic-queue.json'))['missing']))"
    ```
 
-   If `data/infographic-queue.json` is absent (pre-step didn't run), treat both lists as empty.
+   If `data/infographic-queue.json` is absent (pre-step didn't run) — checked with `terminal`: `test -f "${GITHUB_WORKSPACE:-$PWD}/data/infographic-queue.json"` — treat both lists as empty.
 
 4. **If both `CHANGED_SLUGS` and `MISSING_SLUGS` are empty**, write nothing and exit with stdout `no briefs changed today`.
 

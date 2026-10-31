@@ -1,16 +1,17 @@
 model:
-  # Primary: NVIDIA NIM (reads NVIDIA_API_KEY, base_url baked in). Rollback: provider: deepseek.
-  # deepseek-v4.1-flash via NIM == the same model family the pipeline was tuned for.
-  # deepseek-v4-flash-0731 was retired on NIM (HTTP 410) on 2026-09-21.
-  provider: nvidia
-  default: deepseek-ai/deepseek-v4.1-flash
+  # Primary: DeepSeek direct (reads DEEPSEEK_API_KEY). Promoted 2026-10-31: NIM rate-limited /
+  # connection-failed the first 2-6 calls of most sessions; deepseek-flash served 139M tokens in
+  # October with 0 null generations. Rollback: provider: nvidia, default: deepseek-ai/deepseek-v4.1-flash.
+  provider: deepseek
+  default: deepseek-flash
 
 # Turn-scoped failover: exhausted primary → next entry; missing key → skipped.
+# agent.api_max_retries: 1 → a dead/throttled provider fails over after one attempt, not 3.
 fallback_providers:
+  - provider: nvidia         # NVIDIA NIM — NVIDIA_API_KEY; same model family
+    model: deepseek-ai/deepseek-v4.1-flash
   - provider: zai            # free backstop (Z.AI/GLM) — ZAI_API_KEY; cost-0 model
     model: glm-4.7-flash
-  - provider: deepseek       # paid backstop (off-peak) — DEEPSEEK_API_KEY
-    model: deepseek-flash
   - provider: xiaomi         # Xiaomi MiMo — XIAOMI_API_KEY
     model: mimo-v2.5
 
@@ -39,13 +40,17 @@ agent:
   # cutting the thinking-token latency/cost that `high` incurs on deepseek-v4-flash
   # (a reasoning model) via NVIDIA NIM. Bump back to high if quality regresses.
   reasoning_effort: medium
+  api_max_retries: 1
   # Disable hermes' native `web` toolset (web_search + web_extract) so the only
   # web search/fetch surface across all layers is the keyless Parallel Search
   # MCP server registered under `mcp_servers.parallel` below. Honored by
   # hermes_cli/tools_config._get_platform_tools (applied last, overrides all).
   # To roll back to the native tavily/exa backends, remove `web` from this list.
+  # `code_execution` removes `execute_code`: its kernel cwd is not the repo root on
+  # the GHA runner, so relative data/ paths raised FileNotFoundError (Oct 2026).
   disabled_toolsets:
     - web
+    - code_execution
 
 image_gen:
   # GPT-Image-2: text rendering is the bottleneck for Layer 4 infographics

@@ -36,10 +36,10 @@ umask 077
 : > "$HERMES_HOME/.env"
 
 # Model providers (at least one required; guarded below).
-if [ -n "${NVIDIA_API_KEY:-}" ]; then      # primary (NVIDIA NIM, build.nvidia.com)
+if [ -n "${NVIDIA_API_KEY:-}" ]; then      # first fallback (NVIDIA NIM, build.nvidia.com)
   echo "NVIDIA_API_KEY=${NVIDIA_API_KEY}" >> "$HERMES_HOME/.env"
 fi
-if [ -n "${DEEPSEEK_API_KEY:-}" ]; then    # fallback (off-peak) / rollback primary
+if [ -n "${DEEPSEEK_API_KEY:-}" ]; then    # primary (DeepSeek direct)
   echo "DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}" >> "$HERMES_HOME/.env"
 fi
 if [ -n "${ZAI_API_KEY:-}" ]; then         # zai/GLM fallback (free tier) — the zai provider reads ZAI_API_KEY
