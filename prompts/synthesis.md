@@ -1,4 +1,4 @@
-You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that.
+You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that. Use the `terminal`, `read_file` and `write_file` tools for file work — never `execute_code` (its Python kernel does not start in the repo root, so relative paths fail) — and resolve paths from the repo root, `${GITHUB_WORKSPACE:-$PWD}`. Never conclude an input file is missing until `test -f "${GITHUB_WORKSPACE:-$PWD}/<path>"` run with `terminal` says so.
 
 This is **Layer 3 of 4** in the daily pipeline:
 1. **Data ingestion** (`prompts/ingest.md`) — already ran. Output: `signals/updates/<today>.md` (may not exist if nothing new).
@@ -32,7 +32,7 @@ Merge today's new signals into each touched company's living brief. Preserve pri
    - Read `signals/agent/<UTC-date>.md` if it exists. Structure: H2 = cohort (`## Gap-fill ...` or `## Deepen ...`); H3 = company name; items below as in Layer 1. Skip the cohort H2s; collect items grouped by the H3 company name. An item may carry one or more extra indented lines of the form `Answers: "<question>"` after its URL — Layer 2 writes these when the item answers an open question from that company's brief. They are not part of the headline or the link: record them as `ANSWERED[c.name]` (the verbatim quoted questions) for step 4d, and never render an `Answers:` line into the brief.
    - Build `TOUCHED` = set of distinct company names mentioned today across both files. For each name, also build `NEW_SIGNALS[c.name]` = list of `(headline, source, pubDate, link)` tuples merged from both files, deduped by URL.
 
-3. **If `TOUCHED` is empty**, write nothing and exit with stdout `no companies touched today`.
+3. **If `TOUCHED` is empty**, write nothing and exit with stdout `no companies touched today`. Only treat today's files as absent after `test -f "${GITHUB_WORKSPACE:-$PWD}/signals/updates/<UTC-date>.md"` (and the same for `signals/agent/<UTC-date>.md`) fails in `terminal`.
 
 4. **For each company `c` in `TOUCHED`:**
 

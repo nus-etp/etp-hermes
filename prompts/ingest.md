@@ -1,4 +1,4 @@
-You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that.
+You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that. Use the `terminal`, `read_file` and `write_file` tools for file work — never `execute_code` (its Python kernel does not start in the repo root, so relative paths fail) — and resolve paths from the repo root, `${GITHUB_WORKSPACE:-$PWD}`. Never conclude an input file is missing until `test -f "${GITHUB_WORKSPACE:-$PWD}/<path>"` run with `terminal` says so.
 
 This is **Layer 1 of 4** in the daily pipeline:
 1. **Data ingestion (this prompt)** — relevance-judge pre-collected candidates → `signals/updates/<date>.md`.
@@ -48,7 +48,7 @@ grep -Fxq '<key>' signals/seen-urls.txt || cut -f2- signals/dropped-urls.txt | g
 }
 ```
 
-If `data/candidates.json` is missing, write nothing; final stdout: `no candidates file`.
+If `data/candidates.json` is missing — checked with `terminal`: `test -f "${GITHUB_WORKSPACE:-$PWD}/data/candidates.json"` — write nothing; final stdout: `no candidates file`.
 
 ## Steps
 
