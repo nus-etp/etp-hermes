@@ -373,6 +373,31 @@ def _jina_pre(url: str, items: list[dict[str, str]]) -> dict:
     }
 
 
+def test_blog_labelled_html_scrape_is_not_auto_kept(cc):
+    url = "https://nova.example/blog"
+    companies = [
+        {
+            "name": "Nova Health",
+            "aliases": [],
+            "description": "healthtech",
+            "sources": [{"type": "html_scrape", "label": "Blog", "url": url}],
+        }
+    ]
+    items = [{"headline": "UFS Explained", "link": "https://nova.example/ufs", "pre_extracted": True}]
+    out = cc.collect(
+        companies,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Nova Health": [url]}},
+        jina=_jina_pre(url, items),
+        seen=set(),
+        fetcher=_fetcher({}),
+    )
+    [cand] = out["candidates"]
+    assert cand["source"] == "Nova Health · Blog"
+    assert cand["source_kind"] == "html_scrape"
+    assert cand["pre_extracted"] is False
+
+
 def test_pre_extracted_under_cap_unchanged(cc):
     url = "https://nova.example/news"
     items = [
