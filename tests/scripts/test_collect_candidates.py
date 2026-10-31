@@ -525,6 +525,38 @@ def test_html_scrape_without_jina_goes_to_llm_list(cc):
     }
 
 
+def test_unchanged_html_scrape_not_listed_for_llm_fetch(cc):
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina={"per_company": {}, "extraction_failed": [], "deferred": []},
+        seen=set(),
+        fetcher=_fetcher({}),
+    )
+    assert out["llm_fetch_required"] == []
+    assert out["stats"]["llm_fetch_required"] == 0
+
+
+def test_changed_html_scrape_with_jina_items_not_listed_for_llm_fetch(cc):
+    url = "https://nova.example/news"
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Nova Health": [url]}},
+        jina={
+            "per_company": {
+                "Nova Health": {
+                    url: [{"headline": "Old post", "link": "https://nova.example/old"}]
+                }
+            }
+        },
+        seen={"https://nova.example/old"},
+        fetcher=_fetcher({}),
+    )
+    assert out["llm_fetch_required"] == []
+
+
 def test_fetch_failure_recorded_fail_open(cc):
     out = cc.collect(
         COMPANIES,

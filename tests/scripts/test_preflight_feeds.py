@@ -177,25 +177,115 @@ def test_body_unchanged_same_hash_marked_unchanged(preflight, tmp_repo, monkeypa
     assert changed["firehose"] == []
 
 
-def test_html_scrape_sources_always_changed_no_http(preflight, tmp_repo, monkeypatch) -> None:
-    companies = [
-        {
-            "name": "Acme",
-            "sources": [
-                {"type": "html_scrape", "label": "team", "url": "https://acme.example/team"},
-            ],
-        }
-    ]
+HTML_COMPANIES = [
+    {
+        "name": "Acme",
+        "sources": [
+            {"type": "html_scrape", "label": "news", "url": "https://acme.example/news"},
+        ],
+    }
+]
+HTML_URL = "https://acme.example/news"
 
-    def fail(*a, **kw):  # noqa: ANN001, ARG001
-        raise AssertionError("html_scrape sources must not be fetched in preflight")
 
-    monkeypatch.setattr(preflight.request, "urlopen", fail)
-    _write_inputs(tmp_repo, [], companies)
+def _html_page(nonce: str, headline: str = "Acme raises Series A") -> bytes:
+    return (
+        "<html><head><style>.x{color:red}</style>"
+        f'<script nonce="{nonce}">window.csrf="{nonce}";</script></head>'
+        f"<body><!-- cached {nonce} --><h2>{headline}</h2>"
+        f"<noscript>{nonce}</noscript>\n\n  </body></html>"
+    ).encode()
+
+
+def test_html_scrape_cold_cache_preflighted_and_changed(preflight, tmp_repo, monkeypatch) -> None:
+    body = _html_page("n1")
+    urlopen, calls = _make_urlopen({HTML_URL: [{"body": body, "headers": {}}]})
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, [], HTML_COMPANIES)
 
     assert preflight.main() == 0
     changed = json.loads((tmp_repo / "data" / "changed-sources.json").read_text())
-    assert changed["per_company"] == {"Acme": ["https://acme.example/team"]}
+    cache = json.loads((tmp_repo / "data" / "feed-cache.json").read_text())
+    assert changed["per_company"] == {"Acme": [HTML_URL]}
+    assert [url for url, _ in calls] == [HTML_URL]
+    assert cache[HTML_URL]["last_status"] == 200
+    assert cache[HTML_URL]["consecutive_failures"] == 0
+    assert cache[HTML_URL]["body_sha256"] == hashlib.sha256(
+        preflight.normalise_html(body)
+    ).hexdigest()
+
+
+def test_html_scrape_unchanged_excluded(preflight, tmp_repo, monkeypatch) -> None:
+    prior = {HTML_URL: {"body_sha256": preflight.body_digest(_html_page("n1"), True)}}
+    urlopen, _ = _make_urlopen({HTML_URL: [{"body": _html_page("n2"), "headers": {}}]})
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, [], HTML_COMPANIES, cache=prior)
+
+    assert preflight.main() == 0
+    changed = json.loads((tmp_repo / "data" / "changed-sources.json").read_text())
+    assert changed["per_company"] == {}
+
+
+def test_html_scrape_304_excluded(preflight, tmp_repo, monkeypatch) -> None:
+    prior = {HTML_URL: {"etag": '"v1"', "body_sha256": "abc"}}
+    not_modified = error.HTTPError(HTML_URL, 304, "Not Modified", hdrs=None, fp=io.BytesIO(b""))  # type: ignore[arg-type]
+    urlopen, calls = _make_urlopen({HTML_URL: [not_modified]})
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, [], HTML_COMPANIES, cache=prior)
+
+    assert preflight.main() == 0
+    changed = json.loads((tmp_repo / "data" / "changed-sources.json").read_text())
+    assert changed["per_company"] == {}
+    assert dict(calls[0][1]).get("If-none-match") == '"v1"'
+
+
+def test_html_scrape_content_change_detected(preflight, tmp_repo, monkeypatch) -> None:
+    prior = {HTML_URL: {"body_sha256": preflight.body_digest(_html_page("n1"), True)}}
+    new_body = _html_page("n2", headline="Acme opens Tokyo office")
+    urlopen, _ = _make_urlopen({HTML_URL: [{"body": new_body, "headers": {}}]})
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, [], HTML_COMPANIES, cache=prior)
+
+    assert preflight.main() == 0
+    changed = json.loads((tmp_repo / "data" / "changed-sources.json").read_text())
+    assert changed["per_company"] == {"Acme": [HTML_URL]}
+
+
+def test_html_scrape_network_error_fails_open_as_passthrough(
+    preflight, tmp_repo, monkeypatch, capsys
+) -> None:
+    prior = {HTML_URL: {"body_sha256": "abc", "consecutive_failures": 1}}
+    urlopen, _ = _make_urlopen({HTML_URL: [error.URLError("conn refused")]})
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, [], HTML_COMPANIES, cache=prior)
+
+    assert preflight.main() == 0
+    changed = json.loads((tmp_repo / "data" / "changed-sources.json").read_text())
+    cache = json.loads((tmp_repo / "data" / "feed-cache.json").read_text())
+    assert changed["per_company"] == {"Acme": [HTML_URL]}
+    assert cache[HTML_URL]["consecutive_failures"] == 2
+    assert "html_scrape_passthrough=1" in capsys.readouterr().err
+
+
+def test_normalise_html_ignores_script_nonces_and_whitespace(preflight) -> None:
+    first = preflight.body_digest(_html_page("abc123"), True)
+    second = preflight.body_digest(_html_page("zzz999").replace(b"\n\n  ", b" "), True)
+    assert first == second
+    assert preflight.body_digest(_html_page("abc123"), False) != preflight.body_digest(
+        _html_page("zzz999"), False
+    )
+
+
+def test_rss_body_hash_not_normalised(preflight, tmp_repo, monkeypatch) -> None:
+    feeds = [{"name": "Acme", "type": "firehose", "url": "https://acme.example/feed"}]
+    body = b"<rss>  <!-- x -->  </rss>"
+    urlopen, _ = _make_urlopen({"https://acme.example/feed": [{"body": body, "headers": {}}]})
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, feeds, [])
+
+    assert preflight.main() == 0
+    cache = json.loads((tmp_repo / "data" / "feed-cache.json").read_text())
+    assert cache["https://acme.example/feed"]["body_sha256"] == hashlib.sha256(body).hexdigest()
 
 
 def test_url_error_marks_changed_so_agent_retries(preflight, tmp_repo, monkeypatch) -> None:
