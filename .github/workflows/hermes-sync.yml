@@ -387,6 +387,20 @@ jobs:
         if: steps.layers.outputs.run_l1 == 'true'
         run: python3 scripts/filter_seen_updates.py --date "$RUN_DATE"
 
+      - name: Record silently omitted candidates as drops
+        # Deterministic post-Layer-1 backstop: any candidate in data/candidates.json
+        # whose dedup_key the ingest LLM neither kept (seen-urls / today's updates)
+        # nor recorded in dropped-urls.txt is appended there with today's date, so
+        # the collector stops re-presenting it every run. Fails open; skips when
+        # Layer 1 left no trace (no updates file, neither dedup file grew).
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        run: |
+          python3 scripts/record_unwritten_drops.py \
+            --date "$RUN_DATE" \
+            --seen-prerun data/seen-urls-prerun.txt \
+            --dropped-prerun data/dropped-urls-prerun.txt
+
       - name: Snapshot candidates for replay
         # Self-optimising harness memory: freeze today's Layer 1 input as
         # data/replay/<date>.json (committed, newest 30 kept) so proposals can
