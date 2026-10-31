@@ -100,6 +100,7 @@ JINA_FALLBACK_KINDS = {"firehose", "rss"}
 # can emit dozens of undated junk links straight into the published output, so
 # cap how many pre-extracted items are accepted per source URL per run.
 DEFAULT_PRE_EXTRACTED_SOURCE_CAP = 8
+JUDGED_HTML_SCRAPE_LABELS = {"blog"}
 
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
 
@@ -238,6 +239,10 @@ def parse_feed(body: bytes) -> list[dict[str, str]]:
         )
 
     return items
+
+
+def auto_keeps_pre_extracted(label: str) -> bool:
+    return label.strip().lower() not in JUDGED_HTML_SCRAPE_LABELS
 
 
 def within_window(pub: datetime | None, window: timedelta) -> bool:
@@ -477,7 +482,7 @@ def collect(
                                 "link": it["link"],
                                 "dedup_key": it["link"],
                                 "source_kind": "html_scrape",
-                                "pre_extracted": True,
+                                "pre_extracted": auto_keeps_pre_extracted(label),
                             },
                         )
                 else:
