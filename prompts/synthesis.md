@@ -25,7 +25,7 @@ Merge today's new signals into each touched company's living brief. Preserve pri
 
 ## Steps
 
-1. **Compute today's UTC date** as `<UTC-date>` (format `YYYY-MM-DD`). Compute today's UTC timestamp as `<UTC-timestamp>` (format `YYYY-MM-DD HH:MM UTC`).
+1. **Compute today's UTC date** as `<UTC-date>` (format `YYYY-MM-DD`): use the `RUN_DATE` environment variable (`echo "$RUN_DATE"` via the terminal tool) — the workflow pins it once at job start so every layer of a run that crosses midnight UTC agrees on one date; fall back to `date -u +%F` only when `RUN_DATE` is unset. Compute today's UTC timestamp as `<UTC-timestamp>` (format `YYYY-MM-DD HH:MM UTC`).
 
 2. **Collect today's signals.**
    - Read `signals/updates/<UTC-date>.md` if it exists. Parse it as: H2 (`## `) = company name (canonical, matches `c.name` in `data/touched-companies.json`); below each H2, a list of items in the format `- **<headline>** — <source> · <pubDate>\n  <link>`. There may also be `## Run at <time>` subheadings — those are not company names; treat them as section dividers and continue parsing the H2s that follow.
