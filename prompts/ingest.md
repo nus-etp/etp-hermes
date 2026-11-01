@@ -38,7 +38,7 @@ grep -Fxq '<key>' signals/seen-urls.txt || cut -f2- signals/dropped-urls.txt | g
       "pubDate": "...",                // may be empty
       "link": "...",
       "dedup_key": "...",              // recorded in seen-urls.txt (kept) or dropped-urls.txt (dropped)
-      "source_kind": "firehose | rss | github_org | lever_jobs | html_scrape",
+      "source_kind": "firehose | rss | github_org | lever_jobs | recruitee_jobs | html_scrape",
       "pre_extracted": true            // only on jina-extracted html_scrape items
     }, ...
   ],
@@ -54,7 +54,7 @@ If `data/candidates.json` is missing — checked with `terminal`: `test -f "${GI
 
 1. **Fallback fetches** (skip if both lists are empty):
    - For each entry in `llm_fetch_required`: fetch the `url` (an HTML page), extract items (title + absolute link + optional date) by reasoning about the structure described in `hint`. Resolve relative links against the page origin. For each extracted item dated within the last 14 days (or undated), run the membership check above on `<link>` — if it matches neither file, add a candidate `{company, headline, source: "<company> · <label>", pubDate, link, dedup_key: link, source_kind: "html_scrape"}`. If you cannot reliably extract items (JS-only render, structure changed), log and continue — do not fabricate.
-   - For each entry in `fetch_failed` with a `company`: retry the fetch once. `rss` → parse RSS/Atom, items within 14 days, dedup key = item link. `lever_jobs` → JSON postings within 30 days, dedup key = `lever://<slug>/<id>`, headline `<title> — <team>`. `github_org` → Atom, dedup key = entry id, skip bot/chore events. Firehose entries (`kind: "firehose"`) are lower-value: retry once, whole-word match title+description against the names in `companies` — but for a short (≤5 chars) or dictionary-word name (`Arch`, `Alpha`, `Assist`, `amble`), require the match in the *title*, mirroring the collector's guard — skip on any error. Always run the membership check above on the dedup key before adding.
+   - For each entry in `fetch_failed` with a `company`: retry the fetch once. `rss` → parse RSS/Atom, items within 14 days, dedup key = item link. `lever_jobs` → JSON postings within 30 days, dedup key = `lever://<slug>/<id>`, headline `<title> — <team>`. `recruitee_jobs` → JSON `{"offers": [...]}` with `published_at` within 30 days, dedup key = `recruitee://<subdomain>/<id>`, headline `<title> — <department>`, link = `careers_url`. `github_org` → Atom, dedup key = entry id, skip bot/chore events. Firehose entries (`kind: "firehose"`) are lower-value: retry once, whole-word match title+description against the names in `companies` — but for a short (≤5 chars) or dictionary-word name (`Arch`, `Alpha`, `Assist`, `amble`), require the match in the *title*, mirroring the collector's guard — skip on any error. Always run the membership check above on the dedup key before adding.
    - If a fetch fails again, log and continue — do not fail the run.
 
 2. **Relevance pass.** For each candidate (from the file + step 1), judge: *is this article clearly and primarily about its `company` as described in `companies[company]`?* Use only `headline`, `description`, `source` — do not fetch the `link`.

@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from urllib.parse import urlparse
 
-ALLOWED_SOURCE_TYPES = {"rss", "github_org", "lever_jobs", "html_scrape"}
+ALLOWED_SOURCE_TYPES = {"rss", "github_org", "lever_jobs", "recruitee_jobs", "html_scrape"}
 ALLOWED_IDENTIFIER_KEYS = {"crunchbase", "linkedin", "nus_cde", "sginnovate", "uen"}
 DATE_RE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")
 
@@ -130,6 +130,37 @@ def test_funding_rounds_shape(companies: list[dict]) -> None:
                 if not isinstance(v, list) or any(not isinstance(x, str) for x in v):
                     errors.append(f"{tag}: {k} must be list[str]")
     assert not errors, "funding_rounds violations:\n  - " + "\n  - ".join(errors)
+
+
+ALLOWED_STATUSES = {"inactive"}
+UEN_RE = re.compile(r"^(\d{8}[A-Z]|\d{9}[A-Z]|[ST]\d{2}[A-Z]{2}\d{4}[A-Z])$")
+
+
+def test_status_fields_shape(companies: list[dict]) -> None:
+    """Optional lifecycle fields. `status: inactive` marks a company that is
+    legally dead (e.g. ACRA struck off / in liquidation); scripts/select_gapfill_queue.py
+    skips it, firehose matching does not. An inactive entry must say why
+    (`status_reason`) and carry the registry `identifiers.uen` it was matched on."""
+    errors: list[str] = []
+    for c in companies:
+        name = c["name"]
+        status = c.get("status")
+        if status is not None and status not in ALLOWED_STATUSES:
+            errors.append(f"{name}: status {status!r} not in {sorted(ALLOWED_STATUSES)}")
+        reason = c.get("status_reason")
+        if reason is not None and (not isinstance(reason, str) or not reason.strip()):
+            errors.append(f"{name}: status_reason must be a non-empty string")
+        uen = (c.get("identifiers") or {}).get("uen")
+        if uen is not None and (not isinstance(uen, str) or not UEN_RE.match(uen)):
+            errors.append(f"{name}: uen {uen!r} is not a valid UEN")
+        if status == "inactive":
+            if reason is None:
+                errors.append(f"{name}: inactive entries need a status_reason")
+            if uen is None:
+                errors.append(f"{name}: inactive entries need identifiers.uen")
+        if status is None and reason is not None:
+            errors.append(f"{name}: status_reason without status")
+    assert not errors, "status violations:\n  - " + "\n  - ".join(errors)
 
 
 def test_identifiers_shape(companies: list[dict]) -> None:

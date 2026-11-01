@@ -2,7 +2,7 @@
 """Deterministic candidate collection for Layer 1 (ingest).
 
 Does everything in prompts/ingest.md steps 1-2.5 that needs no judgment:
-fetches changed firehose feeds and per-company rss/github_org/lever_jobs
+fetches changed firehose feeds and per-company rss/github_org/lever_jobs/recruitee_jobs
 sources, parses them, applies date windows, dedupes against
 signals/seen-urls.txt (permanent: published keys) and the non-expired half of
 signals/dropped-urls.txt (TTL'd: keys a relevance pass dropped), runs the
@@ -90,7 +90,7 @@ LEVER_WINDOW = _window_days("COLLECT_LEVER_DAYS", 30)
 # Parallel MCP web_fetch. A raw feed comes back as XML and is parsed as a feed;
 # anything else goes through the shared heading/link heuristic. Bounded per run
 # so a wave of dead feeds can't hammer the anonymous rate limit. Only firehose + rss are recovered this way —
-# github_org/lever_jobs need fields (author/id, JSON) Markdown can't carry, so
+# github_org/lever_jobs/recruitee_jobs need fields (author/id, JSON) Markdown can't carry, so
 # those stay in fetch_failed for the prompt to retry.
 DEFAULT_JINA_FALLBACK_BUDGET = 25
 JINA_FALLBACK_KINDS = {"firehose", "rss"}
@@ -202,7 +202,7 @@ def _strip_html(s: str) -> str:
 
 def parse_feed(body: bytes) -> list[dict[str, str]]:
     """Parse RSS 2.0 or Atom into [{title, link, description, pubDate, id, author}]."""
-    root = ET.fromstring(body)
+    root = ET.fromstring(body.lstrip())
     items: list[dict[str, str]] = []
 
     for item in root.iter("item"):  # RSS 2.0
@@ -270,6 +270,20 @@ def github_entry_keep(entry: dict[str, str]) -> bool:
 def lever_slug(url: str) -> str:
     path = parse.urlparse(url).path  # /v0/postings/<slug>
     return path.rstrip("/").rsplit("/", 1)[-1]
+
+
+def recruitee_slug(url: str) -> str:
+    host = parse.urlparse(url).hostname or ""
+    return host.split(".", 1)[0]
+
+
+def parse_recruitee_date(value: Any) -> datetime | None:
+    if not isinstance(value, str) or not value.strip():
+        return None
+    try:
+        return datetime.strptime(value.strip(), "%Y-%m-%d %H:%M:%S UTC").replace(tzinfo=timezone.utc)
+    except ValueError:
+        return parse_date(value)
 
 
 def collect(
@@ -611,6 +625,43 @@ def collect(
                             "link": p.get("hostedUrl", ""),
                             "dedup_key": key,
                             "source_kind": "lever_jobs",
+                        },
+                    )
+
+            elif stype == "recruitee_jobs":
+                try:
+                    payload = json.loads(body)
+                except json.JSONDecodeError as e:
+                    fetch_failed.append(
+                        {"url": url, "kind": stype, "company": name, "error": str(e)[:200]}
+                    )
+                    continue
+                offers = payload.get("offers") if isinstance(payload, dict) else None
+                slug = recruitee_slug(url)
+                for offer in offers if isinstance(offers, list) else []:
+                    key = f"recruitee://{slug}/{offer.get('id')}"
+                    if key in seen:
+                        continue
+                    published = parse_recruitee_date(offer.get("published_at"))
+                    if published is not None:
+                        if _now() - published > LEVER_WINDOW:
+                            continue
+                        pub_str = published.date().isoformat()
+                    else:
+                        pub_str = ""
+                    department = offer.get("department") or ""
+                    title = offer.get("title", "")
+                    headline = f"{title} — {department}" if department else title
+                    add(
+                        name,
+                        {
+                            "headline": headline,
+                            "description": "",
+                            "source": source_label,
+                            "pubDate": pub_str,
+                            "link": offer.get("careers_url", ""),
+                            "dedup_key": key,
+                            "source_kind": "recruitee_jobs",
                         },
                     )
 

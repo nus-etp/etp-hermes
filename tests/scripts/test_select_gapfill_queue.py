@@ -252,6 +252,50 @@ def test_main_writes_queue_entries_with_open_questions(
     ]
 
 
+def test_load_companies_skips_inactive(scripts_module_loader, tmp_repo: Path) -> None:
+    mod = scripts_module_loader("select_gapfill_queue")
+    path = tmp_repo / "data" / "companies.json"
+    path.write_text(
+        json.dumps(
+            [
+                {"name": "Alpha", "description": "x"},
+                {"name": "Bravo", "description": "x", "status": "inactive", "identifiers": {"uen": "201927613Z"}},
+                {"name": "Charlie", "description": "x", "status": "active"},
+            ]
+        )
+    )
+    assert mod.load_companies(path) == ["Alpha", "Charlie"]
+
+
+def test_main_never_queues_inactive_companies(scripts_module_loader, tmp_repo: Path) -> None:
+    mod = scripts_module_loader("select_gapfill_queue")
+    (tmp_repo / "data" / "companies.json").write_text(
+        json.dumps(
+            [
+                {"name": "Alpha", "description": "x"},
+                {
+                    "name": "Bravo",
+                    "description": "x",
+                    "status": "inactive",
+                    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+                    "identifiers": {"uen": "201927613Z"},
+                },
+            ]
+        )
+    )
+    _write_brief(tmp_repo, "bravo", "# Bravo — LIVING BRIEF\n## Open questions\n- Still operating?\n")
+    argv = sys.argv
+    sys.argv = ["select_gapfill_queue.py", "--repo-root", str(tmp_repo), "--date", "2026-05-20"]
+    try:
+        assert mod.main() == 0
+    finally:
+        sys.argv = argv
+
+    assert (tmp_repo / "signals" / "agent-queue.txt").read_text() == "Alpha\n"
+    entries = json.loads((tmp_repo / "data" / "agent-open-questions.json").read_text())
+    assert entries == [{"name": "Alpha", "open_questions": []}]
+
+
 def test_load_state_handles_missing_and_malformed(scripts_module_loader, tmp_repo: Path) -> None:
     mod = scripts_module_loader("select_gapfill_queue")
     assert mod.load_state(tmp_repo / "signals" / "absent.json") == {}

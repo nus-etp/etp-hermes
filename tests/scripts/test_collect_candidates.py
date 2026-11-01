@@ -223,6 +223,12 @@ def test_firehose_triage_rejects_substring_false_positive(cc):
     assert [c["link"] for c in out["candidates"]] == ["https://x.example/arch"]
 
 
+def test_parse_feed_tolerates_leading_whitespace(cc):
+    body = b"\n\n  <?xml version='1.0'?><rss><channel><item><title>Hello</title><link>https://x.test/a</link></item></channel></rss>"
+    items = cc.parse_feed(body)
+    assert [i["title"] for i in items] == ["Hello"]
+
+
 def test_firehose_skips_unchanged_feeds(cc):
     out = cc.collect(
         COMPANIES,
@@ -285,6 +291,95 @@ def test_lever_jobs_window_and_key(cc):
     [cand] = out["candidates"]
     assert cand["dedup_key"] == "lever://patsnap/abc"
     assert cand["headline"] == "ML Engineer — AI"
+
+
+def test_recruitee_jobs_window_and_key(cc):
+    now = datetime.now(timezone.utc)
+    fmt = "%Y-%m-%d %H:%M:%S UTC"
+    offers = json.dumps(
+        {
+            "offers": [
+                {
+                    "id": 2798211,
+                    "title": "Life Science specialist",
+                    "department": "SG - Life Sciences",
+                    "careers_url": "https://careers.patsnap.com/o/life-science-specialist",
+                    "published_at": now.strftime(fmt),
+                },
+                {
+                    "id": 2711718,
+                    "title": "Old role",
+                    "department": None,
+                    "careers_url": "https://careers.patsnap.com/o/old-role",
+                    "published_at": (now - timedelta(days=40)).strftime(fmt),
+                },
+            ]
+        }
+    ).encode()
+    url = "https://patsnap.recruitee.com/api/offers/"
+    companies = [
+        {
+            "name": "Patsnap",
+            "aliases": [],
+            "description": "IP analytics",
+            "sources": [{"type": "recruitee_jobs", "label": "careers", "url": url}],
+        }
+    ]
+    out = cc.collect(
+        companies,
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Patsnap": [url]}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({url: offers}),
+    )
+    [cand] = out["candidates"]
+    assert cand["dedup_key"] == "recruitee://patsnap/2798211"
+    assert cand["headline"] == "Life Science specialist — SG - Life Sciences"
+    assert cand["link"] == "https://careers.patsnap.com/o/life-science-specialist"
+    assert cand["pubDate"] == now.date().isoformat()
+    assert cand["source_kind"] == "recruitee_jobs"
+
+
+def test_recruitee_jobs_seen_and_bad_json(cc):
+    url = "https://patsnap.recruitee.com/api/offers/"
+    companies = [
+        {
+            "name": "Patsnap",
+            "aliases": [],
+            "description": "IP analytics",
+            "sources": [{"type": "recruitee_jobs", "label": "careers", "url": url}],
+        }
+    ]
+    changed = {"firehose": [], "per_company": {"Patsnap": [url]}}
+    offers = json.dumps({"offers": [{"id": 7, "title": "Undated role"}]}).encode()
+    seen_out = cc.collect(
+        companies,
+        FEEDS,
+        changed=changed,
+        jina=None,
+        seen={"recruitee://patsnap/7"},
+        fetcher=_fetcher({url: offers}),
+    )
+    assert seen_out["candidates"] == []
+    fresh_out = cc.collect(
+        companies,
+        FEEDS,
+        changed=changed,
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({url: offers}),
+    )
+    assert [c["pubDate"] for c in fresh_out["candidates"]] == [""]
+    bad_out = cc.collect(
+        companies,
+        FEEDS,
+        changed=changed,
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({url: b"<html>"}),
+    )
+    assert [e["kind"] for e in bad_out["fetch_failed"]] == ["recruitee_jobs"]
 
 
 def test_github_org_bot_and_chore_filter(cc):

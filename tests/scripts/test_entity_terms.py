@@ -26,6 +26,9 @@ def et(scripts_module_loader):
         "emerge",
         "venture",
         "quantum",
+        "seamless",
+        "orbits",
+        "renaissance",
     ],
 )
 def test_weak_terms(et, term: str) -> None:
