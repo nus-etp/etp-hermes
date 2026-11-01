@@ -1108,6 +1108,11 @@
         "type": "html_scrape",
         "label": "news",
         "url": "https://www.belli.ai/company/news"
+      },
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/belli-ai.atom"
       }
     ],
     "funding_rounds": [
@@ -1731,6 +1736,11 @@
         "type": "rss",
         "label": "blog",
         "url": "https://constructor.com/blog/rss.xml"
+      },
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/Constructor-io.atom"
       }
     ],
     "funding_rounds": [
@@ -2026,6 +2036,11 @@
         "type": "rss",
         "label": "blog",
         "url": "https://doinn.co/feed/"
+      },
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/Doinn.atom"
       }
     ],
     "funding_rounds": [],
@@ -2342,6 +2357,13 @@
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup (stylised name 'f1gures'). Limited public-English information beyond the directory listing — drop unrelated 'figures' / 'F1' Formula One mentions unless the article explicitly references this Hangar entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/f1gures.atom"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
@@ -3147,6 +3169,13 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore robotics startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/hivebotics.atom"
+      }
+    ],
     "funding_rounds": [
       {
         "date": null,
@@ -3281,6 +3310,13 @@
     "aliases": [],
     "description": "BLOCK71 Singapore-resident AI startup. Limited public-English information beyond the directory listing — drop unrelated 'iGOT' branded mentions (Indian government iGOT learning platform shares the name) unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/igot-ai.atom"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -3314,6 +3350,11 @@
         "type": "html_scrape",
         "label": "news",
         "url": "https://www.illumi.one/post"
+      },
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/illumi-one.atom"
       }
     ],
     "funding_rounds": [],
@@ -3378,6 +3419,11 @@
         "label": "blog",
         "url": "https://insightic.io/blog",
         "hint": "Card-based blog listing on insightic.io. Each card contains a thumbnail image (from /img/), a category badge ('insightic research', 'community resource', 'new partnership'), a clickable headline that links to the individual post URL, and a publication date in 'Day Mon DD YYYY' format (e.g. 'Tue Oct 31 2023') displayed below the headline. Resolve relative links against https://insightic.io/."
+      },
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/insightic.atom"
       }
     ],
     "funding_rounds": [],
@@ -4588,6 +4634,13 @@
     ],
     "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Palm' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/PalmVB.atom"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -4888,6 +4941,11 @@
         "type": "html_scrape",
         "label": "blog",
         "url": "https://www.pqcee.com/blog"
+      },
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/pqcee.atom"
       }
     ],
     "funding_rounds": [],
@@ -5458,6 +5516,11 @@
         "type": "html_scrape",
         "label": "blog",
         "url": "https://sales-mind.ai/en/blog"
+      },
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/SalesMindAI.atom"
       }
     ],
     "funding_rounds": [],
@@ -6025,6 +6088,13 @@
     "aliases": [],
     "description": "BLOCK71 Singapore-resident video / content-production startup. Drop unrelated namesakes unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "github_org",
+        "label": "github",
+        "url": "https://github.com/Storyvord.atom"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
