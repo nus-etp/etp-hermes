@@ -1,0 +1,925 @@
+{
+  "companies": {
+    "1cool": {
+      "display_name": "1COOL PTE. LTD.",
+      "employees": "",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "38146",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/38146",
+      "stage": "Pre-seed",
+      "uen": "202124192E"
+    },
+    "AProxy": {
+      "display_name": "APROXY PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "30565",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/30565",
+      "stage": "Pre-seed",
+      "uen": "202104344R"
+    },
+    "ARMAS TEC": {
+      "display_name": "ARMASTEC PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "37929",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/37929",
+      "stage": "Pre-seed",
+      "uen": "202144686E"
+    },
+    "Acoerela": {
+      "display_name": "ACOERELA PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "51810",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/51810",
+      "stage": "Pre-seed",
+      "uen": "202234149Z"
+    },
+    "Addlly AI": {
+      "display_name": "ADDLLY AI PTE. LTD.",
+      "employees": "11 - 50",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "52955",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/52955",
+      "stage": "Pre-seed",
+      "uen": "202308926M"
+    },
+    "AidMi": {
+      "display_name": "AIDMI PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "54701",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/54701",
+      "stage": "Pre-seed",
+      "uen": "202541887K"
+    },
+    "Ailytics": {
+      "display_name": "AILYTICS PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "30224",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/30224",
+      "stage": "Seed",
+      "uen": "202116187C"
+    },
+    "Airgorithm": {
+      "display_name": "AIRGORITHM PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "51357",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/51357",
+      "stage": "Pre-seed",
+      "uen": "202439550C"
+    },
+    "Ajentik AI": {
+      "display_name": "AJENTIK AI PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "51558",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/51558",
+      "stage": "Pre-seed",
+      "uen": "202446293K"
+    },
+    "Alluci Studio": {
+      "display_name": "ALLUCI STUDIO PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "49909",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/49909",
+      "stage": "Pre-seed",
+      "uen": "202424096E"
+    },
+    "Anomaly Bio": {
+      "display_name": "ANOMALY BIO PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "52325",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/52325",
+      "stage": "Pre-seed",
+      "uen": "202509228R"
+    },
+    "AquaViolet": {
+      "display_name": "AQUAVIOLET PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "51140",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/51140",
+      "stage": "Pre-seed",
+      "uen": "202206945K"
+    },
+    "Aurora Food": {
+      "display_name": "AURORAFOOD PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "30558",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/30558",
+      "stage": "Seed",
+      "uen": "202008803H"
+    },
+    "BEEX": {
+      "display_name": "BEEX PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "19058",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/19058",
+      "stage": "Pre-seed",
+      "uen": "201834961K"
+    },
+    "BioMetallica": {
+      "display_name": "BIOMETALLICA PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "46098",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/46098",
+      "stage": "Pre-seed",
+      "uen": "202240617E"
+    },
+    "CBE Eco-Solutions": {
+      "display_name": "CBE ECO-SOLUTIONS PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "26845",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/26845",
+      "stage": "Pre-seed",
+      "uen": "202004957E"
+    },
+    "CMED Health": {
+      "display_name": "CMED HEALTH PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "45853",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/45853",
+      "stage": "Seed",
+      "uen": "202029039H"
+    },
+    "CRecTech": {
+      "display_name": "CRECTECH PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "42109",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/42109",
+      "stage": "Pre-seed",
+      "uen": "202226171E"
+    },
+    "Carbonzeroed": {
+      "display_name": "CARBONZEROED PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "49077",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/49077",
+      "stage": "Pre-seed",
+      "uen": "202344818N"
+    },
+    "Cellivate Technologies": {
+      "display_name": "CELLIVATE TECHNOLOGIES",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "20150",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/20150",
+      "stage": "Pre-seed",
+      "uen": "201933761H"
+    },
+    "Chain Technology Development (SG)": {
+      "display_name": "CHAIN TECHNOLOGY DEVELOPMENT (SG) PTE. LTD.",
+      "employees": "51 - 100",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "31161",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/31161",
+      "stage": "Pre-seed",
+      "uen": "202113034C"
+    },
+    "ChemT Biotechnology": {
+      "display_name": "CHEMT BIOTECHNOLOGY PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "52907",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/52907",
+      "stage": "Pre-seed",
+      "uen": "202333687H"
+    },
+    "ConcreteAI": {
+      "display_name": "CONCRETEAI PRIVATE LIMITED",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "33568",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/33568",
+      "stage": "Pre-seed",
+      "uen": "202202783E"
+    },
+    "Connectingdna Global": {
+      "display_name": "CONNECTINGDNA GLOBAL PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "30174",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/30174",
+      "stage": "Pre-seed",
+      "uen": "202186111N"
+    },
+    "CoolestDC": {
+      "display_name": "COOLESTDC PTE. LTD.",
+      "employees": "",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "31087",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/31087",
+      "stage": "Pre-seed",
+      "uen": "202015697G"
+    },
+    "Craft Health": {
+      "display_name": "CRAFT HEALTH PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "17668",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/17668",
+      "stage": "Pre-seed",
+      "uen": "201916997N"
+    },
+    "Curated Culture": {
+      "display_name": "CURATED CULTURE PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "37671",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/37671",
+      "stage": "Pre-seed",
+      "uen": "202206670K"
+    },
+    "E3A Healthcare": {
+      "display_name": "E3A Healthcare Pte. Ltd.",
+      "employees": "",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "32106",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/32106",
+      "stage": "Pre-seed",
+      "uen": "201909030C"
+    },
+    "Ecovision Solutions": {
+      "display_name": "ECOVISION SOLUTIONS PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "48372",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/48372",
+      "stage": "Pre-seed",
+      "uen": "202407568N"
+    },
+    "Ecovolt": {
+      "display_name": "ECOVOLT TECHNOLOGIES PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "55668",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/55668",
+      "stage": "Pre-seed",
+      "uen": "202528515N"
+    },
+    "Eduville": {
+      "display_name": "EDUVILLE PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "53451",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/53451",
+      "stage": "Pre-seed",
+      "uen": "202504921Z"
+    },
+    "Eigen Sensor": {
+      "display_name": "EIGENSENSOR PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "44464",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/44464",
+      "stage": "Pre-seed",
+      "uen": "202329356R"
+    },
+    "Elgo AI": {
+      "display_name": "ELGO AI PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "49715",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/49715",
+      "stage": "Pre-seed",
+      "uen": "202423663E"
+    },
+    "FathomX": {
+      "display_name": "FathomX",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "32042",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/32042",
+      "stage": "Pre-series A",
+      "uen": "201929283D"
+    },
+    "FingerDance": {
+      "display_name": "FINGERDANCE PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "48500",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/48500",
+      "stage": "Pre-seed",
+      "uen": "202314641M"
+    },
+    "Flexii": {
+      "display_name": "FLEXII PTE. LTD.",
+      "employees": "11 - 50",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "47658",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/47658",
+      "stage": "Pre-seed",
+      "uen": "202310589K"
+    },
+    "Flyoro Technologies": {
+      "display_name": "FLYORO TECHNOLOGIES PTE. LTD.",
+      "employees": "",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "45321",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/45321",
+      "stage": "Pre-seed",
+      "uen": "202142441W"
+    },
+    "Forte Biotech": {
+      "display_name": "FORTE BIOTECH PTE. LTD.",
+      "employees": "11 - 50",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "40110",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/40110",
+      "stage": "Pre-seed",
+      "uen": "202120254E"
+    },
+    "Fronka Tech": {
+      "display_name": "FRONKA TECH PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "37261",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/37261",
+      "stage": "Seed",
+      "uen": "202013530G"
+    },
+    "GeoCore Solutions": {
+      "display_name": "GEOCORE SOLUTIONS PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "50206",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/50206",
+      "stage": "Pre-seed",
+      "uen": "202403920H"
+    },
+    "Green COP": {
+      "display_name": "GREEN COP PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "45049",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/45049",
+      "stage": "Pre-seed",
+      "uen": "202122862R"
+    },
+    "Hivebotics": {
+      "display_name": "HIVEBOTICS PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "38094",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/38094",
+      "stage": "Pre-seed",
+      "uen": "202224434W"
+    },
+    "Horizon Quantum Computing": {
+      "display_name": "HORIZON QUANTUM COMPUTING PTE. LTD.",
+      "employees": "",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "43887",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/43887",
+      "stage": "Pre-seed",
+      "uen": "201802755E"
+    },
+    "INVIGILO": {
+      "display_name": "Invigilo Technologies",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "32035",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/32035",
+      "stage": "Seed",
+      "uen": "202031283D"
+    },
+    "Idle Logic": {
+      "display_name": "IDLE LOGIC PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "53227",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/53227",
+      "stage": "Pre-seed",
+      "uen": "202443308R"
+    },
+    "Lincore": {
+      "display_name": "LINCORE PRIVATE LIMITED",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "51672",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/51672",
+      "stage": "Pre-seed",
+      "uen": "202428690M"
+    },
+    "M.i. Cloud Tech": {
+      "display_name": "M.I. CLOUD TECH PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "38125",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/38125",
+      "stage": "Pre-seed",
+      "uen": "202202504E"
+    },
+    "Magloy Tech": {
+      "display_name": "MAGLOY TECH PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "24434",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/24434",
+      "stage": "Seed",
+      "uen": "202003387Z"
+    },
+    "Marino Solar": {
+      "display_name": "MARINO SOLAR PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "37081",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/37081",
+      "stage": "Pre-seed",
+      "uen": "202216935R"
+    },
+    "MeMove": {
+      "display_name": "MEMOVE PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "48508",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/48508",
+      "stage": "Pre-seed",
+      "uen": "202347984D"
+    },
+    "MediVR": {
+      "display_name": "MEDIVR PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "30949",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/30949",
+      "stage": "Pre-seed",
+      "uen": "202133771W"
+    },
+    "MeetArts": {
+      "display_name": "MEETARTS PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "32389",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/32389",
+      "stage": "Pre-seed",
+      "uen": "202122913W"
+    },
+    "Microtube Technologies": {
+      "display_name": "Microtube Technologies PTE. LTD.",
+      "employees": "",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "32004",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/32004",
+      "stage": "Pre-seed",
+      "uen": "201838271G"
+    },
+    "Midori Climate Partner": {
+      "display_name": "MIDORI CLIMATE PARTNER PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "50037",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/50037",
+      "stage": "Pre-seed",
+      "uen": "202404620C"
+    },
+    "Motionlytics": {
+      "display_name": "MOTIONLYTICS PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "57085",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/57085",
+      "stage": "Pre-seed",
+      "uen": "202538720Z"
+    },
+    "NEU Battery Materials": {
+      "display_name": "NEU Battery Materials",
+      "employees": "",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "37849",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/37849",
+      "stage": "Pre-seed",
+      "uen": "202119965Z"
+    },
+    "NuSPACE": {
+      "display_name": "NuSpace Pte Ltd",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "32102",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/32102",
+      "stage": "Pre-seed",
+      "uen": "201839059R"
+    },
+    "NuSoil": {
+      "display_name": "NUSOIL PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "27571",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/27571",
+      "stage": "Pre-seed",
+      "uen": "201910763E"
+    },
+    "Pencil Labs": {
+      "display_name": "PENCIL LABS PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "53157",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/53157",
+      "stage": "Pre-seed",
+      "uen": "202421792N"
+    },
+    "Perfingo": {
+      "display_name": "PERFINGO PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "42370",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/42370",
+      "stage": "Pre-seed",
+      "uen": "202232781W"
+    },
+    "PharLyfe+": {
+      "display_name": "PHARLYFE+ PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "46692",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/46692",
+      "stage": "Pre-seed",
+      "uen": "202305471Z"
+    },
+    "Polar Cold": {
+      "display_name": "POLAR COLD PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "51538",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/51538",
+      "stage": "Pre-seed",
+      "uen": "202349497H"
+    },
+    "Prescience Presbyrobotics": {
+      "display_name": "PRESCIENCE PRESBYROBOTICS PRIVATE LIMITED",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "48590",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/48590",
+      "stage": "Pre-seed",
+      "uen": "202412166K"
+    },
+    "Qallix": {
+      "display_name": "QALLIX",
+      "employees": "11 - 50",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "39889",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/39889",
+      "stage": "Pre-seed",
+      "uen": "202222666N"
+    },
+    "RiDM": {
+      "display_name": "RIDM PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "50321",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/50321",
+      "stage": "Pre-seed",
+      "uen": "202308553Z"
+    },
+    "RizqX": {
+      "display_name": "RIZQX PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "49450",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/49450",
+      "stage": "Pre-seed",
+      "uen": "202334659H"
+    },
+    "Root Solution": {
+      "display_name": "ROOT SOLUTION PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "56763",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/56763",
+      "stage": "Pre-seed",
+      "uen": "202610033Z"
+    },
+    "SENSORI Healthcare": {
+      "display_name": "SENSORI HEALTHCARE PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "56783",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/56783",
+      "stage": "Pre-seed",
+      "uen": "202444208W"
+    },
+    "SINGROW": {
+      "display_name": "SINGROW PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "17531",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/17531",
+      "stage": "Pre-seed",
+      "uen": "201927365C"
+    },
+    "SafeLight": {
+      "display_name": "SAFELIGHT PTE. LTD.",
+      "employees": "",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "45391",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/45391",
+      "stage": "Pre-seed",
+      "uen": "202015301D"
+    },
+    "Scholarly": {
+      "display_name": "WHYCO PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "46438",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/46438",
+      "stage": "Pre-seed",
+      "uen": "202324923K"
+    },
+    "Softlabs": {
+      "display_name": "SOFTLABS PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "56729",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/56729",
+      "stage": "Pre-seed",
+      "uen": "202609829W"
+    },
+    "Somin": {
+      "display_name": "SOMIN PTE. LTD.",
+      "employees": "11 - 50",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "29809",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/29809",
+      "stage": "Pre-series A",
+      "uen": "201721105K"
+    },
+    "Soynergy": {
+      "display_name": "SOYNERGY PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "31953",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/31953",
+      "stage": "Pre-seed",
+      "uen": "201932503H"
+    },
+    "Synectify": {
+      "display_name": "SYNECTIFY PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "28801",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/28801",
+      "stage": "Pre-seed",
+      "uen": "202014421G"
+    },
+    "SystemEarth": {
+      "display_name": "SYSTEMEARTH PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "51759",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/51759",
+      "stage": "Pre-seed",
+      "uen": "202448792E"
+    },
+    "TEREDO Analytics": {
+      "display_name": "Teredo Analytics",
+      "employees": "",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "37850",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/37850",
+      "stage": "Pre-seed",
+      "uen": "201915383N"
+    },
+    "Tech Up Advance": {
+      "display_name": "TECH UP ADVANCE PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "44674",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/44674",
+      "stage": "Pre-seed",
+      "uen": "202313354W"
+    },
+    "The Moonbeam Co": {
+      "display_name": "THEMOONBEAM.CO PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "43342",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/43342",
+      "stage": "Pre-seed",
+      "uen": "202307776K"
+    },
+    "Tracework.AI": {
+      "display_name": "tracework.ai",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "51076",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/51076",
+      "stage": "Pre-seed",
+      "uen": "202428265K"
+    },
+    "Vibefam": {
+      "display_name": "VIBEFAM PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "44661",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/44661",
+      "stage": "Pre-seed",
+      "uen": "202312309M"
+    },
+    "WAVEBOOST": {
+      "display_name": "WAVEBOOST PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "20473",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/20473",
+      "stage": "Pre-seed",
+      "uen": "201928421W"
+    },
+    "Whyre Technologies": {
+      "display_name": "WHYRE TECHNOLOGIES PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "35018",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/35018",
+      "stage": "Pre-seed",
+      "uen": "202027794Z"
+    },
+    "XFolio": {
+      "display_name": "XFOLIO PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "43040",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/43040",
+      "stage": "Pre-seed",
+      "uen": "202229114K"
+    },
+    "Zoala": {
+      "display_name": "ZOALA PTE. LTD.",
+      "employees": "11 - 50",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "37015",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/37015",
+      "stage": "Pre-seed",
+      "uen": "202202046E"
+    },
+    "enlipsium": {
+      "display_name": "ENLIPSIUM PTE. LTD.",
+      "employees": "",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "41293",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/41293",
+      "stage": "Pre-seed",
+      "uen": "202001960M"
+    },
+    "illumi one": {
+      "display_name": "ILLUMI ONE PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "49891",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/49891",
+      "stage": "Pre-seed",
+      "uen": "202421256N"
+    },
+    "lalia": {
+      "display_name": "LALIA PRIVATE LIMITED",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "28709",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/28709",
+      "stage": "Pre-seed",
+      "uen": "202124763E"
+    },
+    "nusmetics": {
+      "display_name": "Nusmetics Pte. Ltd.",
+      "employees": "",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "32023",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/32023",
+      "stage": "Pre-seed",
+      "uen": "201933323C"
+    },
+    "pQCee": {
+      "display_name": "PQCEE PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "44259",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/44259",
+      "stage": "Pre-seed",
+      "uen": "202228798G"
+    },
+    "polybee": {
+      "display_name": "POLYBEE PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "uen",
+      "profile_id": "31132",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/31132",
+      "stage": "Pre-seed",
+      "uen": "201930630R"
+    },
+    "seamless": {
+      "display_name": "SEAMLESS XR PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "name",
+      "profile_id": "46661",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/46661",
+      "stage": "Pre-seed",
+      "uen": "202228176M"
+    }
+  },
+  "source": "https://www.startupsg.gov.sg/api/v0/search/profiles/startup"
+}

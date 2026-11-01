@@ -26,6 +26,9 @@ data/changed-sources.json
 data/jina-items.json
 data/jina-cache/
 
+# scripts/startupsg_snapshot.py diff items — per-run; the committed snapshot is data/startupsg/
+data/startupsg-items.json
+
 # per-run derived inputs for the layer prompts (collect-candidates.py, slice_companies.py, select_gapfill_queue.py)
 data/candidates.json
 data/agent-companies.json
