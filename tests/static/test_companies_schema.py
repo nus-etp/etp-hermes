@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from urllib.parse import urlparse
 
-ALLOWED_SOURCE_TYPES = {"rss", "github_org", "lever_jobs", "html_scrape"}
+ALLOWED_SOURCE_TYPES = {"rss", "github_org", "lever_jobs", "recruitee_jobs", "html_scrape"}
 ALLOWED_IDENTIFIER_KEYS = {"crunchbase", "linkedin", "nus_cde", "sginnovate", "uen"}
 DATE_RE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")
 
