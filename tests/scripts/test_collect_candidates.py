@@ -223,6 +223,11 @@ def test_firehose_triage_rejects_substring_false_positive(cc):
     assert [c["link"] for c in out["candidates"]] == ["https://x.example/arch"]
 
 
+def test_parse_date_accepts_spaced_offset(cc):
+    parsed = cc.parse_date("2026-10-31 09:09:53  +0800")
+    assert parsed == datetime(2026, 10, 31, 1, 9, 53, tzinfo=timezone.utc)
+
+
 def test_parse_feed_tolerates_leading_whitespace(cc):
     body = b"\n\n  <?xml version='1.0'?><rss><channel><item><title>Hello</title><link>https://x.test/a</link></item></channel></rss>"
     items = cc.parse_feed(body)

@@ -185,6 +185,9 @@ def fetch(url: str) -> bytes:
     raise last_exc
 
 
+SPACED_OFFSET_RE = re.compile(r"\s+([+-]\d{2}:?\d{2})$")
+
+
 def parse_date(value: str | None) -> datetime | None:
     """Parse RFC 822 (RSS) or ISO 8601 (Atom) dates. None when unparseable."""
     if not value:
@@ -196,7 +199,7 @@ def parse_date(value: str | None) -> datetime | None:
     except (TypeError, ValueError):
         pass
     try:
-        d = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        d = datetime.fromisoformat(SPACED_OFFSET_RE.sub(r"\1", value.replace("Z", "+00:00")))
         return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
     except ValueError:
         return None
