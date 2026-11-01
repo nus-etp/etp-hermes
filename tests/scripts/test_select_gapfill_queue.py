@@ -259,7 +259,7 @@ def test_load_companies_skips_inactive(scripts_module_loader, tmp_repo: Path) ->
         json.dumps(
             [
                 {"name": "Alpha", "description": "x"},
-                {"name": "Bravo", "description": "x", "status": "inactive", "uen": "201927613Z"},
+                {"name": "Bravo", "description": "x", "status": "inactive", "identifiers": {"uen": "201927613Z"}},
                 {"name": "Charlie", "description": "x", "status": "active"},
             ]
         )
@@ -278,7 +278,7 @@ def test_main_never_queues_inactive_companies(scripts_module_loader, tmp_repo: P
                     "description": "x",
                     "status": "inactive",
                     "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
-                    "uen": "201927613Z",
+                    "identifiers": {"uen": "201927613Z"},
                 },
             ]
         )
