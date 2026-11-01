@@ -126,3 +126,57 @@ def test_is_excluded(et) -> None:
     assert et.is_excluded(m, "Horizon Quantum Computing hires CTO", "") is False
     # Whole-word: "nasdaq" must not fire on a glued token.
     assert et.is_excluded(m, "xnasdaqy news", "") is False
+
+
+# --- CJK terms ----------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    ("term", "strong"),
+    [
+        ("奥松电子", True),
+        ("广州奥松电子股份有限公司", True),
+        ("子龙生物", True),
+        ("奥松", False),
+        ("科技", False),
+        ("智能", False),
+    ],
+)
+def test_cjk_terms_strong_from_three_characters(et, term: str, strong: bool) -> None:
+    assert et.term_is_strong(term) is strong
+    assert et.term_is_strong(term, curated=True) is strong
+
+
+def test_cjk_brand_in_chinese_headline_matches(et) -> None:
+    m = _matcher(et, name="Guangzhou Aosong Electronic", aliases=["奥松电子"])
+    assert et.match_kind(m, "奥松电子完成新一轮融资，加码温湿度传感器") == et.MATCH_STRONG
+    assert (
+        et.match_kind(m, "36氪早报", "广州奥松电子股份有限公司今日宣布扩产")
+        == et.MATCH_STRONG
+    )
+    assert et.match_kind(m, "传感器行业周报", "多家企业发布新品") == et.MATCH_NONE
+
+
+def test_cjk_short_term_is_title_only(et) -> None:
+    m = _matcher(et, name="Aosong", aliases=["奥松"])
+    assert et.match_kind(m, "奥松发布新品") == et.MATCH_WEAK_TITLE
+    assert et.match_kind(m, "行业快讯", "奥松大道旁新开一家咖啡店") == et.MATCH_WEAK_DESC
+
+
+def test_cjk_substring_false_positive_vetoed_by_exclude_term(et) -> None:
+    m = _matcher(
+        et,
+        name="Nanjing Zilong Biotechnology",
+        aliases=["子龙生物"],
+        exclude_terms=["金子龙生物"],
+    )
+    assert et.match_kind(m, "金子龙生物获千万元融资") == et.MATCH_STRONG
+    assert et.is_excluded(m, "金子龙生物获千万元融资") is True
+    assert et.is_excluded(m, "南京子龙生物完成A轮融资") is False
+
+
+def test_ascii_terms_stay_whole_word_alongside_cjk(et) -> None:
+    m = _matcher(et, name="Arch", aliases=["阿奇科技"])
+    assert et.match_kind(m, "New research lab opens") == et.MATCH_NONE
+    assert et.match_kind(m, "Arch ships v2") == et.MATCH_WEAK_TITLE
+    assert et.match_kind(m, "阿奇科技发布v2") == et.MATCH_STRONG

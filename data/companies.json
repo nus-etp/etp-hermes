@@ -833,7 +833,9 @@
   {
     "name": "Anlight Optoelectronic Technology",
     "aliases": [
-      "Anlight Optoelectronic Technology Inc Ltd"
+      "Anlight Optoelectronic Technology Inc Ltd",
+      "苏州安莱光电科技有限公司",
+      "安莱光电"
     ],
     "description": "BLOCK71 Suzhou-listed Chinese optoelectronic / LED technology venture. Limited public-English information beyond the directory listing — drop the many unrelated Suzhou LED/optoelectronics manufacturers (Radiant Opto-Electronics, Honglei, KingLight, HTP, etc.) unless the article explicitly references this BLOCK71 Suzhou entity.",
     "country": "China",
@@ -1520,7 +1522,9 @@
   {
     "name": "Chongqing AngLian Automobile Technology",
     "aliases": [
-      "AngLian Automobile Technology"
+      "AngLian Automobile Technology",
+      "重庆昂联汽车技术有限公司",
+      "昂联汽车"
     ],
     "description": "BLOCK71 Chongqing-resident Chinese automotive-technology venture. Limited public-English information beyond the directory listing — drop unrelated Chinese auto parts / OEM news unless the article explicitly references this BLOCK71 Chongqing entity.",
     "country": "China",
@@ -1551,7 +1555,12 @@
     "name": "Chongqing Hengyan Technology",
     "aliases": [
       "Hengyan Technology",
-      "Chongqing Hengyan Technology Co Ltd Ltd"
+      "Chongqing Hengyan Technology Co Ltd Ltd",
+      "重庆恒衍科技",
+      "恒衍科技"
+    ],
+    "exclude_terms": [
+      "广州恒衍"
     ],
     "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Hengyan' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
     "country": "China",
@@ -1571,7 +1580,8 @@
   {
     "name": "Chongqing Liaoyuanzhijian Technology",
     "aliases": [
-      "Liaoyuanzhijian Technology"
+      "Liaoyuanzhijian Technology",
+      "辽远智建"
     ],
     "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Liaoyuanzhijian' transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
     "country": "China",
@@ -1582,7 +1592,9 @@
     "name": "Chongqing Lixing Biomaterial",
     "aliases": [
       "Lixing Biomaterial",
-      "Chongqing Lixing"
+      "Chongqing Lixing",
+      "重庆立星生物材料有限公司",
+      "立星生物"
     ],
     "description": "BLOCK71 Chongqing-resident Chinese biomaterial venture. Limited public-English information beyond the directory listing — drop unrelated 'Lixing' (common Chinese surname/transliteration) news unless the article explicitly references this BLOCK71 Chongqing entity.",
     "country": "China",
@@ -1592,7 +1604,8 @@
   {
     "name": "Chongqing MaiKeTuo Technology",
     "aliases": [
-      "MaiKeTuo Technology"
+      "MaiKeTuo Technology",
+      "迈科拓"
     ],
     "description": "BLOCK71 Chongqing-resident Chinese technology venture (transliterated Mandarin: 'MaiKeTuo'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
     "country": "China",
@@ -1612,7 +1625,9 @@
   {
     "name": "Chongqing ShiWei Data Technology",
     "aliases": [
-      "ShiWei Data Technology"
+      "ShiWei Data Technology",
+      "重庆视位数据科技有限公司",
+      "视位数据"
     ],
     "description": "BLOCK71 Chongqing-resident Chinese data-technology venture (transliterated Mandarin: 'ShiWei'). Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
     "country": "China",
@@ -1643,7 +1658,8 @@
     "name": "Chongqing Unomove Technology",
     "aliases": [
       "Unomove",
-      "Chongqing Unomove"
+      "Chongqing Unomove",
+      "优诺智行"
     ],
     "description": "BLOCK71 Chongqing-resident Chinese mobility/technology venture (related to the BLOCK71 Singapore-listed Unomove (Suzhou) Co Ltd group). Limited public-English information beyond the directory listing — drop unrelated 'Uno' / 'Unomove' brand mentions unless the article explicitly references this BLOCK71 Chongqing entity.",
     "country": "China",
@@ -1653,7 +1669,8 @@
   {
     "name": "Chongqing XinGuYuChuang Technology",
     "aliases": [
-      "XinGuYuChuang Technology"
+      "XinGuYuChuang Technology",
+      "新固渝创"
     ],
     "description": "BLOCK71 Chongqing-resident Chinese technology venture. Limited public-English information beyond the directory listing — drop unrelated transliterations unless the article explicitly references this BLOCK71 Chongqing entity.",
     "country": "China",
@@ -3081,7 +3098,9 @@
     "aliases": [
       "Guangdong Zhaoyang",
       "Zhaoyang Air Compressor",
-      "Shenzhen Xinzhaoyang Air Compressor"
+      "Shenzhen Xinzhaoyang Air Compressor",
+      "广东朝杨科技有限公司",
+      "朝杨科技"
     ],
     "description": "BLOCK71 Guangzhou-listed Chinese industrial-equipment manufacturer (established 2003) producing screw air compressors and related accessories (oil seals, solenoid valves, intake valves, controllers) exported globally. Established SME rather than venture-stage startup; drop unrelated solar-tech 'Zhaoyang' brands and consumer-electronics mentions.",
     "country": "China",
@@ -3093,7 +3112,9 @@
     "aliases": [
       "Aosong Electronic",
       "Aosong (Guangzhou) Elec",
-      "Guangzhou Aosong Intelligent"
+      "Guangzhou Aosong Intelligent",
+      "广州奥松电子股份有限公司",
+      "奥松电子"
     ],
     "description": "BLOCK71 Guangzhou-listed Chinese sensor manufacturer specialising in temperature/humidity sensor modules (AHT25, AHT3001, DHT11, DHT20, AM2302) for home appliances and industrial monitoring; products distributed through LCSC/JLCPCB/Chipmall. Mature electronics manufacturer rather than venture-stage startup; drop generic IoT-sensor coverage that doesn't name Aosong.",
     "country": "China",
@@ -3104,7 +3125,9 @@
     "name": "Guangzhou Newsight Photoscope Technology",
     "aliases": [
       "Newsight Photoscope",
-      "Guangzhou Newsight"
+      "Guangzhou Newsight",
+      "广州新见探光科技有限公司",
+      "新见探光"
     ],
     "description": "BLOCK71 Guangzhou-listed Chinese optical-imaging/inspection startup. Limited public-English information available beyond the directory listing — drop unrelated 'Newsight Imaging' (Israeli CMOS sensor firm) and unrelated optical-inspection vendors unless they explicitly reference the Guangzhou/NUS GRTII entity.",
     "country": "China",
@@ -3115,7 +3138,9 @@
     "name": "Guangzhou WISHEE Technology",
     "aliases": [
       "WISHEE Technology",
-      "WISHEE AiEar"
+      "WISHEE AiEar",
+      "广州惟一智能科技有限公司",
+      "惟一智能"
     ],
     "description": "BLOCK71 Guangzhou / NUS GRTII-incubated Chinese AI-wearables startup building consumer AI headsets (WISHEE AiEar) integrating LLM voice assistants, 4G/WiFi connectivity, head-motion sensors and on-device apps for navigation and notes. Drop unrelated edtech / wishlist apps sharing the name.",
     "country": "China",
@@ -3188,7 +3213,9 @@
     "aliases": [
       "Haobotics Medical Technology (suzhou)",
       "Suzhou Haobotics Technology Service Consulting Partnership",
-      "Suzhou Haobotic Business Management Consulting Partnership"
+      "Suzhou Haobotic Business Management Consulting Partnership",
+      "豪博特医疗科技（苏州）有限公司",
+      "豪博特"
     ],
     "description": "BLOCK71 Suzhou-resident Chinese medical-robotics venture (with two related LP holding/management partnerships also listed in the BLOCK71 directory — folded here as aliases). Limited public-English information beyond the directory listing — drop unrelated 'Hao' / 'robotics' brand news unless it explicitly references this BLOCK71 Suzhou entity.",
     "country": "China",
@@ -3453,7 +3480,9 @@
     "name": "Huarundechuang Life Science",
     "aliases": [
       "Huarundechuang (jiangsu) Life Science",
-      "Huarundechuang"
+      "Huarundechuang",
+      "华润德创(江苏)生命科学有限公司",
+      "华润德创"
     ],
     "description": "BLOCK71 Suzhou-resident Chinese life-sciences venture (Jiangsu province). Limited public-English information beyond the directory listing — drop unrelated 'Huarun' (China Resources group) / 'dechuang' transliterations unless the article explicitly references this BLOCK71 Suzhou entity.",
     "country": "China",
@@ -3705,7 +3734,9 @@
     "name": "JN Medsys",
     "aliases": [
       "Clarity dPCR",
-      "Clarity Plus"
+      "Clarity Plus",
+      "嘉恩生物科技有限公司",
+      "嘉恩生物"
     ],
     "description": "BLOCK71 Guangzhou-listed Singapore biotech startup (founded 2010 by Johnson Ng) commercialising chip-based digital PCR — Clarity dPCR system (2016) and Clarity Plus (2020) with 45,000 partitions per reaction and 6-color detection; ProTect COVID-19 IVD kit. Drop unrelated 'JN' brands and PCR-vendor news unless it names JN Medsys.",
     "country": "China",
@@ -3714,7 +3745,10 @@
   },
   {
     "name": "Justra",
-    "aliases": [],
+    "aliases": [
+      "广州九爪智能科技有限公司",
+      "九爪智能"
+    ],
     "description": "BLOCK71 Guangzhou-listed startup. Limited public-English information available beyond the directory listing — drop unrelated 'Just' / legal-tech / consumer-brand mentions unless the article explicitly ties to BLOCK71 Guangzhou or NUS GRTII context.",
     "country": "China",
     "funding_rounds": [],
@@ -6251,6 +6285,9 @@
       "SOFTGRIDINC PTE LTD",
       "Softgridinc Pte. Ltd., (Guangzhou)"
     ],
+    "match_terms": [
+      "易卢笛"
+    ],
     "description": "BLOCK71 Guangzhou-listed Singapore IoT startup building lift/elevator safety-monitoring solutions — sensor arrays plus SCADA-style telemetry, big-data analytics and AI for precision maintenance and downtime reduction in elevator fleets. Drop unrelated 'smart grid' / power-grid news unless it names this entity.",
     "country": "China",
     "funding_rounds": [],
@@ -6557,7 +6594,9 @@
     "name": "Suzhou Mindel Biological Technology",
     "aliases": [
       "Mindel Biological Technology",
-      "Suzhou Mindel Biological Technology Co Ltd Ltd"
+      "Suzhou Mindel Biological Technology Co Ltd Ltd",
+      "苏州明德生物科技有限公司",
+      "苏州明德生物"
     ],
     "description": "BLOCK71 Suzhou-resident Chinese biological-technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Mindel' / 'Mindelo' (Cabo Verde city) and other namesakes unless the article explicitly references this BLOCK71 Suzhou entity.",
     "country": "China",
@@ -6578,7 +6617,9 @@
     "name": "Suzhou Sintelligent Electronic Technology",
     "aliases": [
       "Sintelligent Electronic Technology",
-      "Suzhou Sintelligent Electronic Technology Co Ltd Ltd"
+      "Suzhou Sintelligent Electronic Technology Co Ltd Ltd",
+      "苏州芯智瑞电子科技有限公司",
+      "芯智瑞电子"
     ],
     "description": "BLOCK71 Suzhou-resident Chinese intelligent-electronics venture. Limited public-English information beyond the directory listing — drop unrelated 'Sintelligent' branding (multiple unrelated firms share the portmanteau of 'sin'/'singapore' + 'intelligent') unless the article explicitly references this BLOCK71 Suzhou entity.",
     "country": "China",
@@ -7306,7 +7347,9 @@
     "name": "Yimiji Technology",
     "aliases": [
       "Yimiji",
-      "Yimiji Technology (Guangzhou)"
+      "Yimiji Technology (Guangzhou)",
+      "医觅吉科技（广州）有限公司",
+      "医觅吉"
     ],
     "description": "BLOCK71 Guangzhou / NUS GRTII-incubated Chinese medtech startup co-founded by Dr Zhou Jiayin, building AI-driven medical-image processing and analysis plus smart surgical-robotic technology to support diagnosis and treatment. Drop unrelated consumer/biology firms in Guangzhou sharing the 'Yi' prefix.",
     "country": "China",
@@ -7316,7 +7359,9 @@
   {
     "name": "Zhimou Information",
     "aliases": [
-      "Zhimou Information Pte"
+      "Zhimou Information Pte",
+      "苏州企智信息科技有限公司",
+      "知眸科技"
     ],
     "description": "BLOCK71 Suzhou-resident Singapore-incorporated information-technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Zhimou' transliterations unless the article explicitly references this BLOCK71 Suzhou entity.",
     "country": "China",
