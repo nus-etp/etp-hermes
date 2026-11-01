@@ -223,6 +223,12 @@ def test_firehose_triage_rejects_substring_false_positive(cc):
     assert [c["link"] for c in out["candidates"]] == ["https://x.example/arch"]
 
 
+def test_parse_feed_tolerates_leading_whitespace(cc):
+    body = b"\n\n  <?xml version='1.0'?><rss><channel><item><title>Hello</title><link>https://x.test/a</link></item></channel></rss>"
+    items = cc.parse_feed(body)
+    assert [i["title"] for i in items] == ["Hello"]
+
+
 def test_firehose_skips_unchanged_feeds(cc):
     out = cc.collect(
         COMPANIES,

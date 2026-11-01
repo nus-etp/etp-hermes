@@ -202,7 +202,7 @@ def _strip_html(s: str) -> str:
 
 def parse_feed(body: bytes) -> list[dict[str, str]]:
     """Parse RSS 2.0 or Atom into [{title, link, description, pubDate, id, author}]."""
-    root = ET.fromstring(body)
+    root = ET.fromstring(body.lstrip())
     items: list[dict[str, str]] = []
 
     for item in root.iter("item"):  # RSS 2.0

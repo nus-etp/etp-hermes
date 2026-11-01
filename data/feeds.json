@@ -263,5 +263,10 @@
     "name": "Nucleate Singapore",
     "type": "firehose",
     "url": "https://nucleatesingapore.substack.com/feed"
+  },
+  {
+    "name": "Asia Tech Daily",
+    "type": "firehose",
+    "url": "https://asiatechdaily.com/feed/"
   }
 ]
