@@ -183,9 +183,9 @@
         "url": "https://github.com/patsnap.atom"
       },
       {
-        "type": "lever_jobs",
+        "type": "recruitee_jobs",
         "label": "careers",
-        "url": "https://api.lever.co/v0/postings/patsnap?mode=json"
+        "url": "https://patsnap.recruitee.com/api/offers/"
       },
       {
         "type": "rss",
@@ -1940,11 +1940,11 @@
   {
     "name": "DANA Indonesia",
     "aliases": [
-      "DANA",
       "DANA Wallet",
+      "DANA e-wallet",
       "Dompet Digital Indonesia"
     ],
-    "description": "BLOCK71 Bandung-listed Indonesian e-wallet operated by Elang Andalan Nusantara (a 2017 JV between Emtek and Ant Group's API Investment). ~200M registered users; Bank Indonesia-licensed for electronic money, digital wallet, remittance and digital financial services; bill-pay, paylater, QR payments, e-commerce checkout. Drop unrelated 'DANA' acronyms (Dynamic Adaptive Network Architecture, etc.).",
+    "description": "BLOCK71 Bandung-listed Indonesian e-wallet operated by Elang Andalan Nusantara (a 2017 JV between Emtek and Ant Group's API Investment). ~200M registered users; Bank Indonesia-licensed for electronic money, digital wallet, remittance and digital financial services; bill-pay, paylater, QR payments, e-commerce checkout. Matched on 'DANA Indonesia' / 'DANA Wallet' / 'DANA e-wallet', never bare 'DANA': in Indonesian 'dana' means funds, so drop Indonesian-language items using the common word (dana pihak ketiga, penyaluran dana, dana pensiun) and unrelated 'DANA' acronyms (Dynamic Adaptive Network Architecture, etc.).",
     "country": "Indonesia",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Bandung-listed late-stage fintech (effectively part of the Ant International / Emtek group rather than a venture-stage independent). 20%+ YoY user growth 2023→2024. Track via Crunchbase 'DANA' profile and Ant International announcements."
@@ -3622,7 +3622,6 @@
   {
     "name": "LittleLives",
     "aliases": [
-      "Little",
       "LITTLELIVES INC PTE LTD"
     ],
     "description": "BLOCK71 Jakarta-listed Singapore preschool SaaS (founded 2011 by Sun Ho, NUS Computing alumna) running a holistic school-management system for early-childhood centres — attendance, time-in/out, temperature/height/weight, child portfolios, log books, fees, parent communication; ~1,000 schools across Singapore, Malaysia, China, Vietnam, Cambodia; MOE/ECDA-accredited, AECES Top Preschool Software. Made strategic acquisition of Illume Technology. Drop generic 'small / little lives' branding unless it names this entity.",
@@ -4426,7 +4425,17 @@
   {
     "name": "Orbits",
     "aliases": [],
-    "description": "BLOCK71 Singapore-resident startup. CRITICAL: 'Orbits' is extremely generic (multiple satellite / space / digital products share the name); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "exclude_terms": [
+      "satellite",
+      "satellites",
+      "spacecraft",
+      "low earth orbit",
+      "low earth orbits",
+      "orbital",
+      "space station",
+      "launch vehicle"
+    ],
+    "description": "BLOCK71 Singapore-resident startup. CRITICAL: 'Orbits' is extremely generic (multiple satellite / space / digital products share the name, and space-industry news uses 'orbits' as a plain noun); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
@@ -5045,7 +5054,19 @@
   {
     "name": "Renaissance",
     "aliases": [],
-    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. CRITICAL: 'Renaissance' is extremely generic (Renaissance Technologies hedge fund, Renaissance Re insurance, Renaissance Hotels, Renaissance learning); drop almost all 'Renaissance' news unless the article explicitly references the BLOCK71 / NUS Hangar entity.",
+    "exclude_terms": [
+      "renaissance technologies",
+      "renaissance capital",
+      "renaissance re",
+      "renaissancere",
+      "renaissance hotel",
+      "renaissance hotels",
+      "renaissance learning",
+      "harlem renaissance",
+      "renaissance fair",
+      "renaissance faire"
+    ],
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup. CRITICAL: 'Renaissance' is extremely generic (Renaissance Technologies hedge fund, Renaissance Capital, RenaissanceRe insurance, Renaissance Hotels, Renaissance Learning, 'a renaissance in …' as a plain word); drop almost all 'Renaissance' news unless the article explicitly references the BLOCK71 / NUS Hangar entity.",
     "country": "Singapore",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
@@ -5321,9 +5342,22 @@
   {
     "name": "seamless",
     "aliases": [
-      "seemless"
+      "Seamless XR"
     ],
-    "description": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English word — drop any item not clearly about this specific Singapore startup.",
+    "match_terms": [
+      "seamless.sg",
+      "Ajinkya Bhat"
+    ],
+    "exclude_terms": [
+      "seamless integration",
+      "seamless experience",
+      "seamless experiences",
+      "seamless transition",
+      "seamless connectivity",
+      "seamless payments",
+      "seamless access"
+    ],
+    "description": "Seamless XR — NUS GRIP-incubated Singapore deep-tech startup (soft-robotics / pneumatic micro-haptics; Artemis somatosensory assessment platform; CEO Ajinkya Bhat). 'Seamless' is a highly generic English word ('seamless integration', 'seamless experience') — drop any item not clearly about this specific Singapore startup.",
     "country": "Singapore",
     "sources": [
       {
@@ -5669,10 +5703,8 @@
   },
   {
     "name": "Soynergy",
-    "aliases": [
-      "Synergy"
-    ],
-    "description": "NUS GRIP-incubated Singapore food-tech startup. 'Synergy' is highly generic — drop any item not clearly about this specific Singapore startup.",
+    "aliases": [],
+    "description": "NUS GRIP-incubated Singapore food-tech startup. Matched on 'Soynergy' only; the common word 'synergy' is not an alias — drop any item not clearly about this specific Singapore startup.",
     "country": "Singapore",
     "sources": [
       {
