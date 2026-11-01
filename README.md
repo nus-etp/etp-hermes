@@ -2,6 +2,10 @@
 
 Daily company intelligence pipeline. [hermes-agent](https://hermes-agent.nousresearch.com) runs in GitHub Actions, executes three sequential prompts, and commits the outputs to `signals/`.
 
+## Why Hermeneut?
+
+A *hermeneut* is an interpreter, and the word shares a root with *hermeneutics*, the art of interpretation, which tradition ties to Hermes, the messenger god. The pipeline runs on hermes-agent and does the interpreter's job: it reads the day's scattered signals (news, filings, hiring, launches) and turns them into a living brief for each company.
+
 ## Setup
 
 1. **Watchlist.** Edit `data/companies.json` — `{name, aliases?, description, sources?, identifiers?}`. `description` is what the LLM uses to judge relevance; use it to call out unrelated same-name entities and ticker collisions.
