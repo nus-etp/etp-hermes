@@ -1,5 +1,5 @@
 # AIPath — LIVING BRIEF
-_Last updated: 2026-10-15 20:45 UTC_
+_Last updated: 2026-11-01 21:16 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -23,6 +23,11 @@ _No disclosed funding._
   - Quote: "AIPath scopes pricing per company after a working session." — AIPath, AI instructions page
 
 ## Older signals
+- **2026-09-19** — Packaged the same engine as a portfolio-wide product for VC funds, accelerators and angel syndicates, returning a ranked, evidence-graded growth shortlist for every portfolio company — [aipath.one](https://www.aipath.one/post/for-vc-accelerators-angel-investors-syndicates)
+  - Summary: The post sells AIPath to a fund rather than to one CEO: build a digital twin of each portfolio company, rank growth directions against the goal that matters at that company's stage, prove the strongest in the live market against a control, then write the result back into the twin so the next decision starts from what the last test proved. Each company gets three growth opportunities not on its roadmap, the initiatives that capture them with investment and return side by side, and one competitive gap; recommendations are graded as simulated, control-tested or market-observed so a partner can compare companies on one standard. AIPath says each company's twin sits in a separate secured instance so portfolio-level comparison never exposes one company's data to another, and that cohort deployment exists for accelerator batches. The post was updated 5 October 2026.
+  - People: David Isaac (Founder & CEO)
+  - Numbers: 3 growth opportunities per portfolio company; 45-minute live screen per company; USD 1M AI Agents Global Challenge prize pool (won, per AIPath)
+  - Quote: "A portfolio holds the growth decision fifty times over, and the fund bears the consequence of every one of them without holding the decision itself." — AIPath
 - **2026-09-18** — AIPath argued on an InnoLead panel that general-purpose AI platforms leave the CEO's growth-strategy decision uncovered, positioning its Growth Decision Intelligence tool as the missing specialised layer — [aipath.one](https://aipath.one/post/every-department-got-ai-business-tools)
   - Summary: In a founder-authored post, AIPath's David Isaac recapped an InnoLead LinkedIn Live held 17 September 2026 on whether specialised AI business tools still make sense once enterprises have bought general-purpose platforms such as Copilot or Claude. Isaac argued the gap is the CEO's growth-strategy decision: every department owns execution tools that start after the growth strategy already exists, while the person who funds them works off a slide and a spreadsheet. He said general assistants cannot supply state and action — they will not hold a ranking still between quarters or run a live market test — and pointed to the panel's shared conclusion that the enterprise stack will be both general and specialised, joined by an integration layer or protocol such as MCP.
   - People: David Isaac (Founder, AIPath), Scott Kirsner (host, InnoLead), Curtis Michelson (host, InnoLead), James Hantho (Aucctus)
@@ -47,7 +52,7 @@ _No disclosed funding._
 - **2026-07-02** — Tech in Asia features AIPath's AI-simulation approach to lowering customer acquisition cost — [techinasia.com](https://www.techinasia.com/lowering-customer-acquisition-cost-ai-simulation)
 
 ## Open questions
-- Does the Gartner Decision Intelligence category launch create a tailwind for AIPath's go-to-market?
 - Who are AIPath's initial design partners or reference customers?
 - Has any independent source validated AIPath's self-graded five-test comparison against the 35 tools it names?
 - Will the AI-instruction page measurably change how ChatGPT, Gemini and Perplexity describe AIPath, and how will AIPath verify that?
+- Has any fund or accelerator actually signed for the portfolio-wide deployment, and does it change AIPath's pricing model?

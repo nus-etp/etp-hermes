@@ -1,17 +1,17 @@
 # Ailytics — LIVING BRIEF
-_Last updated: 2026-09-18 16:59 UTC_
+_Last updated: 2026-11-01 21:16 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-NUS GRIP-incubated Singapore deep-tech startup developing AI-powered video analytics for heavy industries. Ailytics is building momentum through strategic partnerships (Japan expansion with Safie), industry recognition, and a major technology leap by integrating NVIDIA Cosmos 3 world models into its Ailyssa platform — unlocking spatio-temporal reasoning and SOP-verification capabilities that were previously unsolvable with traditional computer vision.
+NUS GRIP-incubated Singapore computer-vision company selling industrial-safety AI that runs on the CCTV cameras sites already own. A US$7.4M Series A led by Tin Men Capital — with SG Growth Capital's SEEDS and Japanese partner Safie participating — buys local teams in the US, Japan, Australia and the Gulf, and the company says deployments have grown from 70 projects in four countries to more than 400 across 15. The open question is conversion: Ailytics discloses no revenue or ARR, and deployments are not the same thing as paying customers.
 
-_Last material event: 2026-07-24 — Safie moved "Ailytics (SF)" to full commercial rollout for construction and manufacturing sites after confirming effectiveness in JR Kyushu and Obayashi pilots_
+_Last material event: 2026-10-27 — Raised US$7.4M (S$9.4M) Series A led by Tin Men Capital, with SG Growth Capital's SEEDS and Safie participating_
 
 ## Profile
 - Sector: AI / Deep tech
 - Region: Singapore
-- Stage / funding: Early-stage (seed + pre-seed)
-- Key people: Tan Wei Zhuang, Lenard (Co-Founder & CEO); Huang Shao-Ning (lead seed investor, early backer)
+- Stage / funding: Series A (2026); pre-Series A 2024; seed 2022
+- Key people: Tan Wei Zhuang, Lenard (Co-Founder & CEO); Prateek Manocha (Co-Founder & CTO); Huang Shao-Ning (lead seed investor, early backer)
 
 ## Funding history
 - **2022-04-01** — Seed, undisclosed — Huang Shao-Ning; National University of Singapore, AngelCentral — [ailytics.ai](https://ailytics.ai/ailytics-announces-seed-investment/)
@@ -20,7 +20,12 @@ _Last material event: 2026-07-24 — Safie moved "Ailytics (SF)" to full commerc
 _Total disclosed: $2.7M._
 
 ## Recent signals
-_none_
+- **2026-10-27** — Closed a US$7.4M (S$9.4M) Series A led by Tin Men Capital, with SG Growth Capital's SEEDS and Japanese camera maker Safie joining, to fund local teams in the US, Japan, Australia and the Gulf — [sbr.com.sg](https://sbr.com.sg/information-technology/news/ailytics-secures-9m-apac-us-and-gulf-expansion) (Also reported by: [apac.entrepreneur.com](https://apac.entrepreneur.com/business-news/singapores-ailytics-raises-7-4-mn-to-take-cctv-safety-ai-to-japan-the-us-and-the-gulf))
+  - Summary: Ailytics raised US$7.4M (S$9.4M) in a Series A led by Tin Men Capital, with SEEDS (the SG Growth Capital arm of Enterprise Singapore and EDB), Tokyo-listed cloud-camera company Safie, an unnamed large Japanese construction group, family offices and existing investors participating; valuation and stakes were not disclosed. The round is roughly 2.7x the US$2.7M pre-Series A of April 2024, also led by Tin Men, and follows growth from 70 projects in four countries to more than 400 deployments in 15. Proceeds fund expansion across Asia-Pacific, the US and the Gulf into manufacturing, logistics, oil and gas, maritime and mining, with local teams in the US, Japan, Australia and the Gulf; CEO Lenard Tan said Ailytics will target mid-sized US industrials that incumbents have priced out. Entrepreneur Asia Pacific cautions that projects and deployments are not necessarily paying customers, and that Ailytics has disclosed no revenue, ARR or profitability.
+  - People: Lenard Tan (Co-Founder & CEO), Prateek Manocha (Co-Founder & CTO), Jeremy Tan (Managing Partner, Tin Men Capital)
+  - Counterparties: Tin Men Capital (lead), SEEDS / SG Growth Capital, Safie, unnamed Japanese construction group; named customers: NatSteel, DHL, PaxOcean, Leonardo da Vinci International Airport, Changi Airport Terminal 5
+  - Numbers: US$7.4M / S$9.4M Series A; ~2.7x the 2024 US$2.7M round; 400+ deployments in 15 countries (from 70 projects in 4); 5.7M+ hazards detected; 500M+ sq m monitored; 1,000+ cameras at Changi T5; client churn under 1% (Tin Men)
+  - Quote: "The access to non-public data also enables the models to be sharper for these specific purposes, and all of this creates a truly defensible moat," — Jeremy Tan, Managing Partner, Tin Men Capital
 
 ## Older signals
 - **2026-07-28** — Named to the inaugural eight-company Dare to Scale cohort, the Enterprise Singapore–EDB–Endeavor programme launched alongside Endeavor's first Asia-Pacific Global Hub in Singapore — [indiplomacy.com](https://indiplomacy.com/2026/07/28/enterprisesg-edb-and-endeavor-launch-asia-pacific-global-hub-to-support-startup-growth-in-singapore) (Also reported by: [enterprisesg.gov.sg](https://www.enterprisesg.gov.sg/resources/media-centre/news/2026/july/global-founder-network-endeavor-launches-singapore-hub-to-spark-multiplier-effect))
@@ -51,6 +56,6 @@ _none_
 - **2026-05-20** — Published its 2025 retrospective marking five years of operations, reflecting on growth and milestones achieved — [ailyitics.ai](https://www.ailytics.ai/news/turning-five-our-2025-retrospective)
 
 ## Open questions
-- Is Ailytics currently fundraising for its next round, given the 2024 pre-seed and growing momentum?
-- What is the scope and timeline of Ailytics' US market entry, and will it go direct, through a reseller, or with a local partner?
+- What valuation did the US$7.4M Series A set, and what stakes did Safie and the unnamed Japanese construction group take?
 - What revenue does Ailytics book per Safie-branded deployment, and how much of total revenue does Japan now contribute?
+- What share of the 400+ deployments are paid contracts rather than pilots, and does any ARR figure exist?

@@ -1,5 +1,5 @@
 # dConstruct Robotics — LIVING BRIEF
-_Last updated: 2026-10-15 20:45 UTC_
+_Last updated: 2026-11-01 21:16 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -23,6 +23,11 @@ _No disclosed funding._
   - Quote: "Working from a common, accurate digital representation gives developers, consultants, contractors, and BCA officers greater confidence in assessing project readiness." — Gerald Ho, SoilBuild Construction
 
 ## Older signals
+- **2026-09-15** — Ran autonomous corridor inspections in live HDB blocks with township manager EM Services, including robot-to-lift integration so d.ASH-ER units work across storeys; EM Services is now scoping wider deployment — [beamp.sg](https://www.beamp.sg/stories/autonomous-robots-for-smarter-building-inspections)
+  - Summary: Under the BEAMP programme, dConstruct deployed d.ASH-ER robots to inspect common corridors and staircases in occupied HDB blocks managed by EM Services, whose property officers had been walking them by hand across hundreds of blocks. The robots built SLAM-based 3D models of the blocks and integrated with lift PLCs so they could inspect multiple storeys, with near-real-time video analytics classifying defects and hazards, remote tele-operation, and a management platform compliant with TR93 connectivity requirements. Public acceptance was handled with notices in void decks and lift lobbies. EM Services is now exploring wider use across similar inspection scenarios, and dConstruct says it will extend the platform into delivery, towing and broader inspection.
+  - People: Lim Chinn Hwa (CEO, dConstruct Robotics)
+  - Counterparties: EM Services (township manager), BEAMP (Padang & Co programme)
+  - Numbers: 6+ hours of continuous battery life per block run; multi-storey operation via lift PLC integration; TR93-compliant robotics management platform
 - **2026-09-14** — Straits Times feature details how the US$125M Series A is being deployed, naming a Persona AI humanoid partnership alongside the 42,000 sqm Punggol Digital District headquarters, with CEO Lim saying an IPO or M&A may be needed to fund scaling — [straitstimes.com](https://www.straitstimes.com/business/economy/singapore-start-ups-show-that-ai-isnt-just-a-big-tech-playground)
 - **2026-07-03** — dConstruct closed a $125M Series A round led by JRE Ventures, the flagship outcome of Singapore's RoboNexus accelerator inaugural cohort under the National Robotics Program — [technode.global](https://technode.global/2026/07/03/singapores-dconstruct-raises-125m-series-a-as-robonexus-accelerator-concludes-inaugural-cohort) (Also reported by: [ai-market-watch.com](https://www.ai-market-watch.com/company/dconstruct-robotics), [jtc.gov.sg](https://www.jtc.gov.sg/about-jtc/news-and-stories/industry-news/pdd-dconstruct-secures-usd125-million-series-a-funding))
   - Summary: dConstruct Technologies raised $125M in Series A funding led by JRE Ventures, with participation from SGInnovate, M7 Holdings, D.Camp, and the IMDA Spark Programme, marking the standout achievement of the inaugural RoboNexus accelerator cohort. The company will use the capital to scale its d.ASH autonomous robotics suite for GPS-denied environments and establish a 42,000 sqm global headquarters at Punggol Digital District (dC Plus), targeting completion by end-2026. The National Robotics Programme release (via JTC) names Boustead Projects, DSTA, SBS Transit, and Softbank Robotics Singapore among clients, and notes papers accepted at ICCV 2025 and CVPR 2026 plus an Australian patent for localisation and a Japanese patent for AutoDrive Level 2 vision-based autonomy.
@@ -42,6 +47,6 @@ _No disclosed funding._
 
 ## Open questions
 - What is the commercial structure of the Foxconn MOU — manufacturing partnership, joint development, or licensing?
-- Which disclosed clients (Boustead Projects, DSTA, SBS Transit, Softbank Robotics Singapore) are revenue-generating deployments versus pilots?
+- Which disclosed deployments — Boustead Projects, DSTA, SBS Transit, SoftBank Robotics Singapore, the BCA virtual inspection, the EM Services HDB work — are revenue-generating contracts rather than pilots?
 - Has the Persona AI partnership progressed beyond its launch showcase into any joint product, deployment or commercial arrangement?
-- Does the BCA virtual-inspection pilot convert into a standing inspection requirement — and repeat d.ASH volume — or remain a one-off reference project?
+- Does EM Services' scoping translate into a paid deployment, and over how many blocks?

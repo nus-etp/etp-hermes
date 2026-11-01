@@ -1,11 +1,11 @@
 # ChemT Biotechnology — LIVING BRIEF
-_Last updated: 2026-10-25 20:01 UTC_
+_Last updated: 2026-11-01 21:16 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 BLOCK71 Singapore-resident AI-driven biotechnology startup building an intelligence layer for biomanufacturing. Core assets are CelMo™, an AI-driven Virtual Cell platform simulating how cells respond to manufacturing conditions, and Chemplify™, an AI-designed small molecule for T-cell manufacturing (50% faster development, 3× scalability, 60% lower costs, 10× higher cell expansion yield). Co-founders Sun Jie and Wu Ling were named to the Prestige Singapore 40 Under 40 list for 2026, and the company has raised $5M total ($1M angel plus a $4M seed led by Wavemaker Ventures) — its first publicly disclosed funding.
 
-_Last material event: 2026-08-25 — Named to Forbes Asia 100 to Watch 2026 (Biotechnology & Healthcare category)_
+_Last material event: 2026-10-07 — Selected for TechCrunch Disrupt 2026's Startup Battlefield 200_
 
 ## Profile
 - Sector: Biotechnology
@@ -15,7 +15,10 @@ _Last material event: 2026-08-25 — Named to Forbes Asia 100 to Watch 2026 (Bio
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-10-07** — Selected as one of 200 startups in TechCrunch Disrupt 2026's Startup Battlefield 200, pitching to investors and TechCrunch editors in San Francisco on 13–15 October — [chemtbio.com](https://www.chemtbio.com/news19-1)
+  - Summary: ChemT announced it was chosen to exhibit at TechCrunch Disrupt 2026 as part of Startup Battlefield 200, which it describes as the world's preeminent startup competition; the 200 companies were picked from a review of thousands of applicants and went through training, masterclasses and investor introductions around the event at Moscone West on 13–15 October 2026. ChemT framed the selection around its virtual-cell pitch — tuning cells with intent rather than by trial and error to improve biomanufacturing outcomes. No commercial terms, customers or partners were announced with the selection.
+  - Numbers: 200 startups selected from thousands of applicants; Disrupt ran 13–15 October 2026
+  - Quote: "Our goal is simple: Move beyond trial-and-error to tuning the cells with intent, using virtual-cell intelligence to turn cellular insight into practical solutions to improve biomanufacturing outcomes." — ChemT Biotechnology
 
 ## Older signals
 - **2026-08-25** — ChemT named to Forbes Asia 100 to Watch 2026 in the Biotechnology & Healthcare category, its second major public recognition after the June Prestige 40 Under 40 nod — [chemtbio.com](https://www.chemtbio.com/news18-1)

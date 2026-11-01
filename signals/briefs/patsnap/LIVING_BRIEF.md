@@ -1,11 +1,11 @@
 # Patsnap — LIVING BRIEF
-_Last updated: 2026-10-20 20:46 UTC_
+_Last updated: 2026-11-01 21:16 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-Patsnap is a Singapore-headquartered IP intelligence and innovation analytics SaaS company that has confidentially filed for a dual listing in Hong Kong and Singapore, signaling its IPO readiness. The company is pursuing a multi-sector SaaS expansion beyond its core IP analytics base into life sciences and material science verticals, supported by aggressive hiring across AI product, life sciences, and semiconductor roles, and by domain-specific AI agents to embed its platform into customer workflows.
+Patsnap is a Singapore-headquartered IP intelligence and innovation analytics SaaS company that has confidentially filed for a dual listing in Hong Kong and Singapore. Growth now runs on two tracks: sector-specific AI products in life sciences and materials, and distribution of its patent and drug data into other vendors' research environments through MCP servers — the October launch of Lead Compound Analyzer and SAR Extractor inside Eureka Life Sciences and the BenchSci EMET integration being the clearest instances. Hiring continues across life sciences, materials AI and commercial roles, concentrated in Singapore.
 
-_Last material event: 2026-06-15 — Confidential dual IPO filing in Hong Kong and Singapore_
+_Last material event: 2026-10-28 — Launched Lead Compound Analyzer and SAR Extractor agents inside Eureka Life Sciences_
 
 ## Profile
 - Sector: SaaS
@@ -22,6 +22,13 @@ _Last material event: 2026-06-15 — Confidential dual IPO filing in Hong Kong a
 _Total disclosed: $351.6M._
 
 ## Recent signals
+- **2026-10-28** — Launched two AI agents, Lead Compound Analyzer and SAR Extractor, inside Eureka Life Sciences to pull structure-activity data out of small-molecule patents — [businesswire.com](https://www.businesswire.com/news/home/20261027520635/en/Patsnap-Launches-AI-Agents-to-Extract-SAR-Data-and-Identify-Lead-Compounds-From-Small-Molecule-Patents)
+- **2026-10-22** — Made its Life Sciences and Patent MCP servers available inside BenchSci's EMET agentic research environment, letting EMET users query Patsnap drug, target, clinical and patent data without leaving the workflow — [benchsci.com](https://www.benchsci.com/news/patsnap-now-available-in-benchsci-emet-as-companies-partner-to-integrate-patents)
+  - Summary: Patsnap and BenchSci said Patsnap's Life Sciences and Patent MCP (Model Context Protocol) servers are live in EMET, BenchSci's agentic research environment for preclinical drug discovery; scientists connect an existing Patsnap subscription and query Patsnap's drug, target, clinical, patent and literature records in place. BenchSci says its orchestration layer decides when Patsnap intelligence is relevant to a task rather than treating it as a plain connector. Access requires a Patsnap MCP subscription licensed directly through Patsnap, and the pair demoed the integration in a webinar on 29 October 2026. The release places it in a run of life-science moves — Patsnap's Life Sciences MCP servers, Synapse on FactSet Workstation in May 2026, and an Evolvus data partnership in August 2026.
+  - People: Will Phillips (Head of Life Sciences, Patsnap), Liran Belenzon (Co-Founder & CEO, BenchSci)
+  - Counterparties: BenchSci (partner)
+  - Numbers: 200M+ patents in Patsnap's dataset; EMET graph 850M+ nodes and 2.2B edges; 38M ontological entities; nearly 20,000 customer organisations in 50+ countries
+  - Quote: "Scientists do not want another tool. They want the right answer in the tool they already use." — Will Phillips, Head of Life Sciences, Patsnap
 - **2026-10-08** — Patsnap named Mark Davies, ex-Kiin Bio chief data and scientific officer and a nine-year BenevolentAI data executive, as Head of Product for its life sciences division, giving him the product strategy for its AI bio and chemistry intelligence tools — [patsnap.com](https://www.patsnap.com/resources/blog/press_release/patsnap-appoints-drug-discovery-data-leader-mark-davies-to-lead-life-sciences-product-strategy/)
   - Summary: Patsnap announced that Mark Davies has joined as Head of Product for its life sciences division, where he owns product strategy for its AI-powered bio and chemistry intelligence tools. Davies co-founded Kiin Bio as Chief Data and Scientific Officer, spent nine years at BenevolentAI as SVP of Informatics and Data, and earlier led development of the ChEMBL and SureChEMBL open chemistry databases. Patsnap frames the appointment as a deliberate policy of putting practising scientists and attorneys into product leadership, saying it deepens its bench in computational drug discovery specifically. The hire is the clearest sign yet that the life-sciences push is organised as a standing product function for the existing bio and chemistry intelligence suite, rather than staffing a single named launch.
   - People: Mark Davies (Head of Product, Life Sciences, Patsnap), Haydn Evans (SVP Strategy, Patsnap)
@@ -31,7 +38,7 @@ _Total disclosed: $351.6M._
   - Summary: Patsnap's blog post announcing the CAS (Chemical Abstracts Service, a division of the American Chemical Society) partnership now opens with an editorial note that the partnership concluded in 2026, indicating the collaboration announced earlier this year has ended. The retained body text describes combining CAS's human-curated scientific data with Patsnap's AI/ML and data-visualization technologies for life- and material-science customers; no reason or exact end date is given. The conclusion makes the partnership's commercial structure moot and retires the open question on how CAS data was being delivered.
 
 ### Hiring
-- **2026-08-12** — 50+ roles posted since May 2026 across Life Sciences, Material, and AI verticals plus account-management/sales roles in Singapore, Toronto, London, Shanghai, and North America; Aug 12 adds an AI Product Manager for IP/AI Agent products in Data & Technology, extending the AI-agent build-out ahead of the dual HK/SG IPO — [jobs.lever.co](https://jobs.lever.co/patsnap)
+- **2026-10-28** — Twelve roles posted 8–28 October, mostly Singapore-tagged, spanning a Materials AI technical lead, a life-sciences specialist plus life-science and product interns, and marketing, sales development, account management and IT support — an SG-weighted continuation of the life-sciences and materials build-out that has added 50+ roles since May 2026, rather than the earlier multi-city push — [careers.patsnap.com](https://careers.patsnap.com/o/technical-lead-materials-ai-engineering)
 - **2026-06-27** — Forward Deployed Engineer for Japan (Japanese required), configuring AI Agent workflows for IP, R&D, and innovation enterprise customers — [jobs.lever.co](https://jobs.lever.co/patsnap/e80dcb4a-0644-4883-95f3-8e6a0c01e846)
   - Summary: Patsnap is hiring a Forward Deployed Engineer (FDE) to work directly with enterprise customers in Japan, configuring and deploying AI Agent workflows across IP, R&D, innovation, and strategic intelligence use cases. Business-level Japanese is required, reflecting a dedicated customer-facing presence for the Japan market.
   - People: Forward Deployed Engineer (Japanese-speaking)
@@ -39,7 +46,6 @@ _Total disclosed: $351.6M._
 - **2026-06-15** — Life Science Scientist (PhD, Singapore, on-site) to build AI-native life sciences products, transitioning Patsnap from traditional SaaS into an intelligent ecosystem powered by MCPs, Skills, and Agents — [jobs.lever.co](https://jobs.lever.co/patsnap/d8ed208f-0d67-4c4f-be6b-14f10fe0f645)
   - Summary: Patsnap is hiring a PhD-level Life Science Scientist for its LS department in Singapore to translate complex life sciences problems into AI-native products, turning data assets (clinical trials, sequences, targets, deals, patents) into MCPs, Skills, and Agents.
   - Quote: "We are building the next generation of AI Native products for life sciences, moving Patsnap beyond a traditional SaaS platform into an intelligent product ecosystem powered by MCPs, Skills, and Agents." — Patsnap job posting
-- **2026-07-29** — Head of Legal — Legal — [jobs.lever.co](https://jobs.lever.co/patsnap/6e3c63ca-2745-495c-9455-dab5f8fc58ae)
 
 ## Older signals
 - **2026-09-09** — Patsnap appointed European and UK patent attorney Matthew Birch as AI Solutions Lead for its IP division, owning the roadmap for its agentic patent drafting products — [patsnap.com](https://www.patsnap.com/resources/blog/press_release/patsnap-appoints-european-patent-attorney-matthew-birch-to-lead-ai-drafting-products/)
@@ -74,5 +80,5 @@ _Total disclosed: $351.6M._
 
 ## Open questions
 - What is the expected valuation and timeline for the dual HK/Singapore IPO? Which exchange will be the primary listing?
-- Is the AI Agent Platform a new product line or an evolution of existing IP analytics? How does it differ from the core Patsnap offering?
 - Do the life-sciences and IP product-leadership appointments signal vertical divisions with their own roadmaps and P&Ls ahead of the dual IPO?
+- Does MCP distribution into third-party environments (BenchSci EMET, FactSet) convert into subscription revenue at scale, or is it a retention feature for existing accounts?

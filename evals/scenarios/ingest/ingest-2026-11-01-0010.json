@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/patsnap/careers.patsnap.com",
+  "created_by": "write_scenarios@run 41349732951",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.66",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Technical Lead, Materials AI & Engineering — Engineering' for Patsnap",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-01-0010",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Patsnap"
+      ],
+      "source": "Patsnap",
+      "title": "Technical Lead, Materials AI & Engineering — Engineering",
+      "url": "https://careers.patsnap.com/o/technical-lead-materials-ai-engineering"
+    },
+    "companies": {
+      "Patsnap": {
+        "description": "Singapore-headquartered IP intelligence and innovation analytics SaaS company."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-01",
+    "judge": "jev",
+    "judge_confidence": 0.86,
+    "kind": "judge_disagreement",
+    "run_id": "41349732951",
+    "source": "2026-11-01.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
