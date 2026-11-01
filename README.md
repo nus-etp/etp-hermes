@@ -1,4 +1,4 @@
-# etp-hermes
+# hermeneut
 
 Daily company intelligence pipeline. [hermes-agent](https://hermes-agent.nousresearch.com) runs in GitHub Actions, executes three sequential prompts, and commits the outputs to `signals/`.
 
