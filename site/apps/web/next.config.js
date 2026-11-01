@@ -1,8 +1,8 @@
 /** @type {import("next").NextConfig} */
 const config = {
   output: 'export',
-  basePath: '/etp-hermes',
-  assetPrefix: '/etp-hermes/',
+  basePath: '/hermeneut',
+  assetPrefix: '/hermeneut/',
   trailingSlash: true,
   images: { unoptimized: true },
   reactCompiler: true,

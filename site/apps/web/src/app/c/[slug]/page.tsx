@@ -13,7 +13,7 @@ import {
 
 import { Markdown } from '../../_components/markdown'
 
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '/etp-hermes'
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '/hermeneut'
 
 interface Params {
   params: Promise<{ slug: string }>
