@@ -16,7 +16,7 @@ For every brief carrying a genuinely new signal this run, regenerate `infographi
 
 ## Inputs
 
-- `data/infographic-queue.json` — `{"changed": [<slug>, ...], "missing": [<slug>, ...]}`, written by `scripts/select_infographic_queue.py`. `changed` = briefs carrying a new signal this run; `missing` = missing-infographic backfill, oldest-first, already stripped of anything in `changed`.
+- `data/infographic-queue.json` — `{"changed": [<slug>, ...], "missing": [<slug>, ...]}`, written by `scripts/select_infographic_queue.py`. `changed` = briefs carrying a new signal since their infographic was last drawn, whose image is at least 30 days old (each image is redrawn at most once a month), oldest image first; `missing` = missing-infographic backfill, oldest-first, already stripped of anything in `changed`.
 - The brief markdown itself, one file per queued slug: `signals/briefs/<slug>/LIVING_BRIEF.md`.
 
 ## Constants

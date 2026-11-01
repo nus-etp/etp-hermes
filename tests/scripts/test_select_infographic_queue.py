@@ -138,6 +138,9 @@ def _write(tmp_path: Path, slug: str, body: str, *, with_png: bool = True) -> No
         (d / "infographic.png").write_bytes(b"\x89PNG")
 
 
+DAY = 86400
+
+
 def test_select_partitions_changed_and_missing(mod, tmp_path, monkeypatch) -> None:
     # changed: has a new signal vs HEAD.
     _write(tmp_path, "changed-co", _brief(recent=SIGNAL_A + SIGNAL_B))
@@ -151,10 +154,10 @@ def test_select_partitions_changed_and_missing(mod, tmp_path, monkeypatch) -> No
         "missing-co": _brief(recent=SIGNAL_A),          # identical → not material
         "quiet-co": _brief(recent=SIGNAL_A),            # identical → not material
     }
-    monkeypatch.setattr(mod, "git_head_brief", lambda rel: heads[Path(rel).parent.name])
+    monkeypatch.setattr(mod, "git_brief_at", lambda rel, rev="HEAD": heads[Path(rel).parent.name])
     monkeypatch.setattr(mod, "git_last_commit_ts", lambda rel: 100)
 
-    queue = mod.select(tmp_path / "briefs")
+    queue = mod.select(tmp_path / "briefs", now=100 + 31 * DAY)
     assert queue["changed"] == ["changed-co"]
     assert queue["missing"] == ["missing-co"]
 
@@ -172,17 +175,17 @@ def test_select_missing_excludes_changed_and_sorts_oldest_first(mod, tmp_path, m
         "new-miss": _brief(recent=SIGNAL_A),  # not material
     }
     ts = {"aaa": 300, "old-miss": 100, "new-miss": 200}
-    monkeypatch.setattr(mod, "git_head_brief", lambda rel: heads[Path(rel).parent.name])
+    monkeypatch.setattr(mod, "git_brief_at", lambda rel, rev="HEAD": heads[Path(rel).parent.name])
     monkeypatch.setattr(mod, "git_last_commit_ts", lambda rel: ts[Path(rel).parent.name])
 
-    queue = mod.select(tmp_path / "briefs")
+    queue = mod.select(tmp_path / "briefs", now=300 + 31 * DAY)
     assert queue["changed"] == ["aaa"]
     assert queue["missing"] == ["old-miss", "new-miss"]  # 100 before 200; aaa excluded
 
 
 def test_main_writes_queue_json(mod, tmp_path, monkeypatch) -> None:
     _write(tmp_path, "changed-co", _brief(recent=SIGNAL_A + SIGNAL_B))
-    monkeypatch.setattr(mod, "git_head_brief", lambda rel: _brief(recent=SIGNAL_A))
+    monkeypatch.setattr(mod, "git_brief_at", lambda rel, rev="HEAD": _brief(recent=SIGNAL_A))
     monkeypatch.setattr(mod, "git_last_commit_ts", lambda rel: 100)
 
     out = tmp_path / "data" / "infographic-queue.json"
@@ -202,3 +205,96 @@ def test_main_writes_queue_json(mod, tmp_path, monkeypatch) -> None:
     assert rc == 0
     payload = json.loads(out.read_text())
     assert payload == {"changed": ["changed-co"], "missing": []}
+
+
+# ---- monthly cooldown -----------------------------------------------------
+
+
+def _git_stubs(mod, monkeypatch, *, png_ts, briefs_at):
+    monkeypatch.setattr(
+        mod,
+        "git_last_commit_ts",
+        lambda rel: png_ts.get(Path(rel).parent.name, 0) if rel.endswith("infographic.png") else 100,
+    )
+    monkeypatch.setattr(mod, "git_last_commit_sha", lambda rel: f"sha-{Path(rel).parent.name}")
+    monkeypatch.setattr(
+        mod, "git_brief_at", lambda rel, rev="HEAD": briefs_at[(Path(rel).parent.name, rev)]
+    )
+
+
+def test_select_skips_new_signal_while_image_is_cooling(mod, tmp_path, monkeypatch) -> None:
+    _write(tmp_path, "fresh", _brief(recent=SIGNAL_A + SIGNAL_B))
+    now = 1_000 * DAY
+    _git_stubs(
+        mod,
+        monkeypatch,
+        png_ts={"fresh": now - 10 * DAY},
+        briefs_at={("fresh", "sha-fresh"): _brief(recent=SIGNAL_A)},
+    )
+
+    queue = mod.select(tmp_path / "briefs", now=now)
+    assert queue["changed"] == []
+    assert queue["cooling"] == ["fresh"]
+
+
+def test_select_compares_against_brief_at_image_commit(mod, tmp_path, monkeypatch) -> None:
+    """A signal that landed during the cooldown (already in HEAD) still triggers the redraw."""
+    _write(tmp_path, "stale", _brief(recent=SIGNAL_A + SIGNAL_B))
+    now = 1_000 * DAY
+    _git_stubs(
+        mod,
+        monkeypatch,
+        png_ts={"stale": now - 40 * DAY},
+        briefs_at={
+            ("stale", "sha-stale"): _brief(recent=SIGNAL_A),
+            ("stale", "HEAD"): _brief(recent=SIGNAL_A + SIGNAL_B),
+        },
+    )
+
+    queue = mod.select(tmp_path / "briefs", now=now)
+    assert queue["changed"] == ["stale"]
+
+
+def test_select_old_image_without_new_signal_not_queued(mod, tmp_path, monkeypatch) -> None:
+    _write(tmp_path, "quiet", _brief(recent=SIGNAL_A))
+    now = 1_000 * DAY
+    _git_stubs(
+        mod,
+        monkeypatch,
+        png_ts={"quiet": now - 90 * DAY},
+        briefs_at={("quiet", "sha-quiet"): _brief(recent=SIGNAL_A)},
+    )
+
+    queue = mod.select(tmp_path / "briefs", now=now)
+    assert queue == {"changed": [], "missing": [], "cooling": []}
+
+
+def test_select_orders_changed_oldest_image_first(mod, tmp_path, monkeypatch) -> None:
+    _write(tmp_path, "aaa", _brief(recent=SIGNAL_A + SIGNAL_B))
+    _write(tmp_path, "bbb", _brief(recent=SIGNAL_A + SIGNAL_B))
+    now = 1_000 * DAY
+    _git_stubs(
+        mod,
+        monkeypatch,
+        png_ts={"aaa": now - 35 * DAY, "bbb": now - 60 * DAY},
+        briefs_at={
+            ("aaa", "sha-aaa"): _brief(recent=SIGNAL_A),
+            ("bbb", "sha-bbb"): _brief(recent=SIGNAL_A),
+        },
+    )
+
+    queue = mod.select(tmp_path / "briefs", now=now)
+    assert queue["changed"] == ["bbb", "aaa"]
+
+
+def test_select_missing_image_ignores_cooldown(mod, tmp_path, monkeypatch) -> None:
+    _write(tmp_path, "broken", _brief(recent=SIGNAL_A), with_png=False)
+    _git_stubs(
+        mod,
+        monkeypatch,
+        png_ts={},
+        briefs_at={("broken", "HEAD"): _brief(recent=SIGNAL_A)},
+    )
+
+    queue = mod.select(tmp_path / "briefs", now=1_000 * DAY)
+    assert queue["missing"] == ["broken"]

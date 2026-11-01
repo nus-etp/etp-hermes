@@ -18,11 +18,19 @@ by:" source appended to an existing signal all leave the set of signal
 identities unchanged and are correctly skipped. A brand-new brief that actually
 carries a signal is material (fizzdragon-style first-run creation).
 
+Each image is redrawn at most once per `--min-age-days` (default 30): a brief
+whose `infographic.png` was committed less than that long ago is skipped
+("cooling"). Once the image is old enough, the brief is compared against its
+own text *at the commit that last wrote the image*, not against HEAD, so new
+signals that landed during the cooldown still trigger exactly one redraw.
+Slugs past the per-run cap stay eligible on later runs for the same reason.
+
 Output `data/infographic-queue.json` (gitignored, regenerated per run):
 
     {"changed": [<slug>, ...], "missing": [<slug>, ...]}
 
-- `changed`  — briefs carrying a genuinely new signal this run.
+- `changed`  — briefs carrying a genuinely new signal since their image was
+               last drawn, image older than the cooldown; oldest image first.
 - `missing`  — briefs that have a `LIVING_BRIEF.md` but no `infographic.png`
                (a prior Layer 4 failure), oldest-first by last-commit time,
                with anything already in `changed` removed. Backfill.
@@ -42,6 +50,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -60,6 +69,8 @@ from normalize_briefs import (  # noqa: E402
 BRIEFS_DIR = REPO_ROOT / "signals" / "briefs"
 OUT_FILE = REPO_ROOT / "data" / "infographic-queue.json"
 BRIEF_NAME = "LIVING_BRIEF.md"
+PNG_NAME = "infographic.png"
+MIN_AGE_DAYS = 30
 
 
 def extract_recent(text: str) -> tuple[list[list[str]], list[list[str]], list[str]]:
@@ -115,11 +126,11 @@ def tail_key(tail: list[str]) -> str:
     return "\n".join(line.rstrip() for line in tail if line.strip())
 
 
-def git_head_brief(rel_path: str) -> str | None:
-    """Committed contents of a brief at HEAD, or None if untracked/absent."""
+def git_brief_at(rel_path: str, rev: str = "HEAD") -> str | None:
+    """Contents of a brief at `rev`, or None if untracked/absent there."""
     try:
         out = subprocess.run(
-            ["git", "show", f"HEAD:{rel_path}"],
+            ["git", "show", f"{rev}:{rel_path}"],
             cwd=REPO_ROOT,
             capture_output=True,
             text=True,
@@ -144,6 +155,28 @@ def git_last_commit_ts(rel_path: str) -> int:
         return 0
     ts = out.stdout.strip()
     return int(ts) if ts.isdigit() else 0
+
+
+def git_last_commit_sha(rel_path: str) -> str | None:
+    """Hash of the file's last commit; None when untracked or on git error."""
+    try:
+        out = subprocess.run(
+            ["git", "log", "-1", "--format=%H", "--", rel_path],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+        )
+    except OSError:
+        return None
+    sha = out.stdout.strip()
+    return sha or None
+
+
+def repo_relative(path: Path) -> str:
+    try:
+        return path.resolve().relative_to(REPO_ROOT).as_posix()
+    except ValueError:
+        return str(path)
 
 
 def signals_material_change(head_text: str | None, work_text: str) -> bool:
@@ -188,43 +221,58 @@ def signals_material_change(head_text: str | None, work_text: str) -> bool:
     return tail_key(work_tail) != tail_key(head_tail)
 
 
-def select(briefs_dir: Path) -> dict[str, list[str]]:
-    changed: list[str] = []
+def select(
+    briefs_dir: Path,
+    *,
+    now: float | None = None,
+    min_age_days: float = MIN_AGE_DAYS,
+) -> dict[str, list[str]]:
+    now = time.time() if now is None else now
+    changed: list[tuple[int, str]] = []
     missing: list[tuple[int, str]] = []
+    cooling: list[str] = []
 
     for path in sorted(briefs_dir.glob(f"*/{BRIEF_NAME}")):
         slug = path.parent.name
-        # `git show HEAD:<path>` needs a repo-relative path; a briefs-dir outside
-        # the repo (tests) can't be made relative, so fall back to the raw path.
-        try:
-            rel_path = path.resolve().relative_to(REPO_ROOT).as_posix()
-        except ValueError:
-            rel_path = str(path)
+        rel_path = repo_relative(path)
         try:
             work_text = path.read_text(encoding="utf-8")
         except OSError as exc:
             print(f"select_infographic_queue: SKIP {slug}: {exc}", file=sys.stderr)
             continue
 
-        head_text = git_head_brief(rel_path)
+        png_path = path.parent / PNG_NAME
+        has_png = png_path.exists()
+        baseline_rev = "HEAD"
+        png_ts = 0
+        if has_png:
+            png_rel = repo_relative(png_path)
+            png_ts = git_last_commit_ts(png_rel)
+            if png_ts and now - png_ts < min_age_days * 86400:
+                cooling.append(slug)
+                continue
+            baseline_rev = git_last_commit_sha(png_rel) or "HEAD"
+
+        baseline_text = git_brief_at(rel_path, baseline_rev)
         try:
-            is_material = signals_material_change(head_text, work_text)
+            is_material = signals_material_change(baseline_text, work_text)
         except Exception as exc:  # fail open: never abort the run on one brief
             print(f"select_infographic_queue: {slug}: assuming changed ({exc})", file=sys.stderr)
             is_material = True
 
         if is_material:
-            changed.append(slug)
+            changed.append((png_ts, slug))
             continue
 
-        # Backfill candidate: a committed brief whose image never landed.
-        if not (path.parent / "infographic.png").exists():
+        if not has_png:
             missing.append((git_last_commit_ts(rel_path), slug))
 
-    changed_set = set(changed)
+    changed.sort(key=lambda pair: pair[0])
     missing.sort(key=lambda pair: pair[0])  # oldest last-commit first
+    changed_slugs = [slug for _, slug in changed]
+    changed_set = set(changed_slugs)
     missing_slugs = [slug for _, slug in missing if slug not in changed_set]
-    return {"changed": changed, "missing": missing_slugs}
+    return {"changed": changed_slugs, "missing": missing_slugs, "cooling": cooling}
 
 
 def main() -> int:
@@ -239,16 +287,24 @@ def main() -> int:
         default=str(OUT_FILE),
         help="Where to write the queue JSON (default: data/infographic-queue.json).",
     )
+    parser.add_argument(
+        "--min-age-days",
+        type=float,
+        default=MIN_AGE_DAYS,
+        help=f"Redraw an existing infographic at most this often (default: {MIN_AGE_DAYS}).",
+    )
     args = parser.parse_args()
 
-    queue = select(Path(args.briefs_dir))
+    selection = select(Path(args.briefs_dir), min_age_days=args.min_age_days)
+    queue = {"changed": selection["changed"], "missing": selection["missing"]}
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(queue, indent=2) + "\n", encoding="utf-8")
 
     print(
         f"select_infographic_queue: {len(queue['changed'])} changed, "
-        f"{len(queue['missing'])} missing-backfill → {out_path}"
+        f"{len(queue['missing'])} missing-backfill, "
+        f"{len(selection['cooling'])} cooling (<{args.min_age_days:g}d) → {out_path}"
     )
     return 0
 
