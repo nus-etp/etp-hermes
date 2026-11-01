@@ -633,6 +633,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202104086E",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (AI for wastewater treatment optimization); likely received NUS GRIP seed grant (~SGD 250K) but no public equity round announced."
   },
@@ -735,6 +738,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore electric-mobility startup building a battery-swapping network for electric 2-wheelers, 3-wheelers, buggies and golf carts. Very generic name: drop the UK industrial motor/pump repair firm Alpha Electrics, electrician businesses, and any 'Alpha Electric' items not tied to Singapore battery swapping.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202138708G",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
   },
@@ -935,6 +941,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201907762K",
     "funding_rounds": [],
     "funding_notes": "NUS-linked video streaming startup; no public funding announcement found. Company appears to have ceased operations."
   },
@@ -1916,6 +1925,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202206700R",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company / NUS spin-off (2022); CycPowder material for water treatment. No publicly announced funding rounds found."
   },
@@ -2032,6 +2044,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202001444W",
     "funding_rounds": [
       {
         "date": "2019",
@@ -2172,6 +2187,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202114143N",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (automated egg-cooking machine). No publicly announced funding round found."
   },
@@ -2204,6 +2222,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore health-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202215495D",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (employee mental wellness via Emotion AI). No publicly announced funding round found."
   },
@@ -2236,6 +2257,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore energy-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201817599K",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company. No publicly announced funding round found."
   },
@@ -2323,6 +2347,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: In Liquidation - Creditors voluntary winding up (2026-10-14 snapshot)",
+    "uen": "201929283D",
     "funding_rounds": [
       {
         "date": "2021-04",
@@ -2680,6 +2707,9 @@
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore gig-economy / workspace startup. Limited public-English information beyond the directory listing — drop unrelated 'gig space' coworking / freelancer-marketplace brands unless the article explicitly references this Hangar entity.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202447775R",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
@@ -2744,6 +2774,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore food-tech startup (granular food quality control). Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202105152N",
     "funding_rounds": [],
     "funding_notes": "No publicly verifiable funding round found."
   },
@@ -2865,6 +2898,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201931231E",
     "funding_rounds": [
       {
         "date": null,
@@ -2974,6 +3010,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201920853E",
     "funding_rounds": [],
     "funding_notes": "HESEED PTE. LTD. (Singapore, incorporated 2019-06-28; UEN 201920853E) is currently struck off per sgpbusiness/recordowl. No public funding rounds found."
   },
@@ -3043,6 +3082,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup focused on online child safety. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202104787W",
     "funding_rounds": [],
     "funding_notes": "Digital safety platform for children's online activity. NUS GRIP portfolio; no other public funding rounds found."
   },
@@ -3051,6 +3093,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202134997N",
     "funding_rounds": [],
     "funding_notes": "No public funding information found in startup databases or news."
   },
@@ -3159,6 +3204,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202108799W",
     "funding_rounds": [],
     "funding_notes": "AI-enabled e-Sourcing platform for electronics BOM. NUS GRIP portfolio listing; no other public funding rounds found."
   },
@@ -3473,6 +3521,9 @@
     ],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: In Liquidation - Simplified Winding Up (2026-10-14 snapshot)",
+    "uen": "202124763E",
     "sources": [
       {
         "type": "html_scrape",
@@ -3835,6 +3886,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201613194E",
     "funding_rounds": [],
     "funding_notes": "Singapore startup community platform incorporated 16 May 2016 (UEN 201613194E); company status is currently 'struck off' per ACRA records. No publicly-announced funding round found."
   },
@@ -4020,6 +4074,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore consumer-tech startup. Drop generic 'mindful drinks' wellness articles unrelated to the Singapore startup.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202126708R",
     "funding_rounds": [],
     "funding_notes": "Singapore F&B startup upcycling spent coffee grounds; launched 2024. No publicly-announced venture funding round found."
   },
@@ -4068,6 +4125,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201928185N",
     "funding_rounds": [],
     "funding_notes": "NUS spin-off — automated singing-quality assessment platform — funded by NUS GRIP programme support. No publicly-announced external venture round found."
   },
@@ -4134,6 +4194,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202034028C",
     "funding_rounds": [],
     "funding_notes": "No verifiable public information found for an NUS GRIP startup named 'ndots'. No funding round announcement located."
   },
@@ -4218,6 +4281,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore energy-storage startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201909202N",
     "funding_rounds": [
       {
         "date": "2019",
@@ -4378,6 +4444,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore ophthalmology AI startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201934991M",
     "funding_rounds": [],
     "funding_notes": "Listed in NUS GRIP portfolio but no publicly-announced funding round with verifiable source found."
   },
@@ -4404,6 +4473,9 @@
     ],
     "description": "NUS GRIP-incubated Singapore cleantech startup tackling oil pollution; first product ZerOil is a membrane for oily wastewater treatment. Drop unrelated items where 'oleum' refers to the chemical (fuming sulfuric acid) or Latin phrases.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202010117K",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
   },
@@ -4412,6 +4484,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore driving-data analytics startup. Highly generic name — drop any item not clearly about this specific company.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202141519E",
     "funding_rounds": [],
     "funding_notes": "Listed in NUS GRIP portfolio (auto-insurance behavioral data platform) but no publicly-announced funding round with verifiable source found."
   },
@@ -4486,6 +4561,9 @@
     "aliases": [],
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup (pennycillin.co; play on 'penicillin' + 'penny' — likely affordable healthcare / antibiotic access). Limited public-English information beyond the directory listing — drop unrelated penicillin-research / pharmaceutical-pricing policy news unless it explicitly names Pennycillin.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202215480R",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
@@ -4984,6 +5062,9 @@
     ],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202103513Z",
     "funding_rounds": [],
     "funding_notes": "Not clearly confirmed in NUS GRIP public materials; no publicly-announced funding round with verifiable source found."
   },
@@ -4994,6 +5075,9 @@
     ],
     "description": "BLOCK71 Singapore-resident quantum-tech startup. Drop unrelated 'Qubit' / 'Qubit Dynamics' generic quantum-computing vendor mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202008311G",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -5031,6 +5115,9 @@
     ],
     "description": "NUS GRIP-incubated Singapore robotics-automation startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202100240M",
     "funding_rounds": [],
     "funding_notes": "NUS spin-off (founded 2021 by Tan Yan Zhi and Rayner Tan) developing modular mobile robots. Tracxn explicitly reports no funding raised."
   },
@@ -5039,6 +5126,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202121923N",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio (electrochemistry wastewater treatment). No publicly-announced individual funding round with verifiable source found."
   },
@@ -5067,6 +5157,9 @@
     ],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202003134N",
     "funding_rounds": [],
     "funding_notes": "Participated in NUS GRIP Run 3 (December 2019). 8 of 15 Run 3 teams received up to S$100k seed funding but ReoMex not explicitly named as a recipient in publicly available sources."
   },
@@ -5315,6 +5408,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore surveillance/IoT startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202121782K",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (HVAC fault detection software). No publicly verifiable funding round announcements found."
   },
@@ -5438,6 +5534,9 @@
     ],
     "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201922039C",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company. No publicly verifiable funding round announcements found."
   },
@@ -5504,6 +5603,9 @@
     ],
     "description": "NUS GRIP-incubated Singapore chemistry-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202114598K",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (PDH catalysts for petrochemical industry, product 'Singdro-1'). No publicly verifiable funding round announcements found."
   },
@@ -5634,6 +5736,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202012110G",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP portfolio company (sports performance/stride tracking for sprinters). No publicly verifiable funding round announcements found."
   },
@@ -6132,6 +6237,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201927613Z",
     "funding_rounds": [],
     "funding_notes": "Incorporated 2019 at NUS Enterprise Centre; ACRA status reported as struck off. No publicly-announced funding round located."
   },
@@ -6170,6 +6278,9 @@
     ],
     "description": "The Hangar (NUS Enterprise)-resident Singapore startup. Limited public-English information beyond the directory listing — drop unrelated 'uniad' (Unilever Ad / university-ad / unidad) brand mentions unless the article explicitly references this Hangar entity.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202301314R",
     "sources": [
       {
         "type": "html_scrape",
@@ -6204,6 +6315,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore medical-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202005734N",
     "funding_rounds": [
       {
         "date": null,
@@ -6358,6 +6472,9 @@
     ],
     "description": "NUS GRIP-incubated Singapore AI startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "202138744N",
     "funding_rounds": [],
     "funding_notes": "No publicly indexed information matching a NUS GRIP Singapore startup named 'Virtu AI'. Distinct from the US-based 'Virtue AI'."
   },
@@ -6517,6 +6634,9 @@
     ],
     "description": "NUS GRIP-incubated Singapore food-tech startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Gazetted To Be Struck Off (2026-10-14 snapshot)",
+    "uen": "202227405Z",
     "funding_rounds": [],
     "funding_notes": "NUS GRIP foodtech spin-off (incorporated 2022) repurposing meat by-products. No publicly-announced funding round located. Also listed in the BLOCK71 Suzhou BLOCK71 directory."
   },
@@ -6584,6 +6704,9 @@
     "aliases": [],
     "description": "NUS GRIP-incubated Singapore botanicals/wellness startup. Drop unrelated companies sharing the same name.",
     "country": "Singapore",
+    "status": "inactive",
+    "status_reason": "ACRA: Struck Off (2026-10-14 snapshot)",
+    "uen": "201925088D",
     "funding_rounds": [],
     "funding_notes": "Incorporated 2019 at 3 Research Link, Singapore; ACRA records show current operating status as struck off. No publicly-announced funding round located."
   }

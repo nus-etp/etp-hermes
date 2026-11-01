@@ -8,6 +8,9 @@ ordered list of names that the prompt consumes as its authoritative gap-fill
 cohort.
 
 Selection:
+  0. Exclude companies marked `"status": "inactive"` in companies.json (legally
+     dead per ACRA: struck off, in liquidation, dissolved). Firehose matching
+     still sees them; only proactive Layer 2 research skips them.
   1. Exclude companies "covered" in the last 7 UTC days (any `## <name>` H2 in
      a `signals/updates/<date>.md` file inside that window). Covered companies
      aren't gap-fill candidates today.
@@ -95,9 +98,16 @@ def load_open_questions(briefs_dir: Path, name: str, cap: int = OPEN_QUESTIONS_C
         return []
 
 
+INACTIVE_STATUS = "inactive"
+
+
+def is_inactive(company: dict) -> bool:
+    return company.get("status") == INACTIVE_STATUS
+
+
 def load_companies(path: Path) -> list[str]:
     data = json.loads(path.read_text())
-    return [c["name"] for c in data]
+    return [c["name"] for c in data if not is_inactive(c)]
 
 
 def load_state(path: Path) -> dict[str, str]:
@@ -208,7 +218,7 @@ def main() -> int:
         f"queue: {len(queue)}/{args.size} "
         f"({never_queried} never-queried, "
         f"{len(covered)} covered in last {COVERED_WINDOW_DAYS}d, "
-        f"{len(companies)} total watchlisted); "
+        f"{len(companies)} active watchlisted); "
         f"open questions: {total_questions} across {queued_with_questions} queued companies "
         f"({len(with_questions)} candidates had questions)"
     )
