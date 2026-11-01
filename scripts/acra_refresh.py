@@ -11,6 +11,7 @@ import tempfile
 import time
 import urllib.error
 import urllib.request
+from collections.abc import Sequence
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -173,7 +174,7 @@ def project_row(row: dict, companies: list[str], match_kind: str) -> dict:
     }
 
 
-def check_header(header: list[str] | None, source: str) -> None:
+def check_header(header: Sequence[str] | None, source: str) -> None:
     normalised = [column.strip() for column in header or []]
     if normalised != SOURCE_COLUMNS:
         raise AcraError(
@@ -222,7 +223,7 @@ def api_get(url: str, pace_seconds: float, opener=urllib.request.urlopen, sleep=
         sleep(pace_seconds)
         try:
             with opener(request_for(url), timeout=60) as response:
-                payload = json.load(response)
+                payload: dict = json.load(response)
         except urllib.error.HTTPError as error:
             if error.code != 429:
                 raise AcraError(f"GET {url} failed: HTTP {error.code}") from error
