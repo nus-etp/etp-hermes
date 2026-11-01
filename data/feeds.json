@@ -198,5 +198,70 @@
     "name": "Lowyat.NET",
     "type": "firehose",
     "url": "https://www.lowyat.net/feed/"
+  },
+  {
+    "name": "Entrepreneur Asia Pacific",
+    "type": "firehose",
+    "url": "https://apac.entrepreneur.com/feed/"
+  },
+  {
+    "name": "PR Newswire APAC",
+    "type": "firehose",
+    "url": "https://www.prnewswire.com/apac/rss/news-releases-list.rss"
+  },
+  {
+    "name": "PR Newswire APAC Business Technology",
+    "type": "firehose",
+    "url": "https://www.prnewswire.com/apac/rss/business-technology-latest-news/business-technology-latest-news-list.rss"
+  },
+  {
+    "name": "PR Newswire APAC Financial Services",
+    "type": "firehose",
+    "url": "https://www.prnewswire.com/apac/rss/financial-services-latest-news/financial-services-latest-news-list.rss"
+  },
+  {
+    "name": "PR Newswire APAC Health",
+    "type": "firehose",
+    "url": "https://www.prnewswire.com/apac/rss/health-latest-news/health-latest-news-list.rss"
+  },
+  {
+    "name": "PR Newswire APAC Environment",
+    "type": "firehose",
+    "url": "https://www.prnewswire.com/apac/rss/environment-latest-news/environment-latest-news-list.rss"
+  },
+  {
+    "name": "3D Printing Industry",
+    "type": "firehose",
+    "url": "https://3dprintingindustry.com/feed/"
+  },
+  {
+    "name": "Quantum Computing Report",
+    "type": "firehose",
+    "url": "https://quantumcomputingreport.com/feed/"
+  },
+  {
+    "name": "AsiaMD",
+    "type": "firehose",
+    "url": "https://asiamd.com/feed/"
+  },
+  {
+    "name": "Malaysia SME",
+    "type": "firehose",
+    "url": "https://www.malaysiasme.com.my/feed/"
+  },
+  {
+    "name": "Mothership",
+    "type": "firehose",
+    "url": "https://mothership.sg/feed/"
+  },
+  {
+    "name": "Carbon Herald",
+    "type": "firehose",
+    "url": "https://carbonherald.com/feed/"
+  },
+  {
+    "name": "Nucleate Singapore",
+    "type": "firehose",
+    "url": "https://nucleatesingapore.substack.com/feed"
   }
 ]
