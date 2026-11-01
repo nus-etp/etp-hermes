@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Preflight HTTP conditional-GET against ingest sources.
 
-Reads data/feeds.json + rss/github_org/lever_jobs/html_scrape entries from
+Reads data/feeds.json + rss/github_org/lever_jobs/recruitee_jobs/html_scrape entries from
 data/companies.json. Writes data/feed-cache.json (per-URL ETag /
 Last-Modified / body-SHA256) and data/changed-sources.json (whitelist of
 URLs the ingest prompt is allowed to fetch). html_scrape bodies are
@@ -30,7 +30,7 @@ COMPANIES_FILE = REPO_ROOT / "data" / "companies.json"
 CACHE_FILE = REPO_ROOT / "data" / "feed-cache.json"
 CHANGED_FILE = REPO_ROOT / "data" / "changed-sources.json"
 
-PREFLIGHTED_TYPES = {"rss", "github_org", "lever_jobs", "html_scrape"}
+PREFLIGHTED_TYPES = {"rss", "github_org", "lever_jobs", "recruitee_jobs", "html_scrape"}
 NORMALISED_TYPES = {"html_scrape"}
 HTML_VOLATILE_RE = re.compile(
     rb"<(script|style|noscript)\b[^>]*>.*?</\1\s*>|<!--.*?-->",
