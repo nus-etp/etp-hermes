@@ -520,6 +520,11 @@
         "label": "news",
         "url": "https://www.ailytics.ai/news",
         "hint": "Webflow CMS listing under div.collection-list-wrapper-2.w-dyn-list. Each item is a div.div-block-78 containing a category label in div.category, a headline in div.text-block-27 (treat as the title), and a date as plain text in div.text-block-29 (e.g. 'April 28, 2026'). About 6 items shown in reverse chronological order. Resolve relative item links against https://www.ailytics.ai/."
+      },
+      {
+        "type": "rss",
+        "label": "news",
+        "url": "https://www.ailytics.ai/feed.xml"
       }
     ],
     "funding_rounds": [
@@ -6576,6 +6581,13 @@
     ],
     "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Zoala' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "rss",
+        "label": "blog",
+        "url": "https://zoala.co/feed/"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
