@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="200" height="200" role="img" aria-label="Hermeneut: a little living brief wearing Hermes' winged hat, reading signals through a magnifying glass">
+  <defs>
+    <path id="wing" d="M78 70 C60 70 44 64 34 52 C44 52 52 54 58 56 C50 48 46 40 46 32 C56 38 62 46 68 54 C66 46 68 38 72 32 C78 42 80 56 80 68 Z"/>
+    <path id="foot-wing" d="M94 206 C84 204 78 198 76 192 C82 194 86 196 90 198 C86 193 86 189 88 186 C92 192 96 198 98 204 Z"/>
+    <path id="sparkle" d="M0 -7 Q1.5 -1.5 7 0 Q1.5 1.5 0 7 Q-1.5 1.5 -7 0 Q-1.5 -1.5 0 -7 Z"/>
+  </defs>
+
+  <circle cx="120" cy="120" r="112" fill="#efeafc"/>
+
+  <g fill="#f6c453">
+    <use href="#sparkle" transform="translate(40 150)"/>
+    <use href="#sparkle" transform="translate(206 70) scale(0.8)"/>
+    <use href="#sparkle" transform="translate(196 186) scale(0.6)"/>
+  </g>
+
+  <g fill="#ffffff" stroke="#3b3a5a" stroke-width="3" stroke-linejoin="round">
+    <use href="#foot-wing"/>
+    <use href="#foot-wing" transform="translate(240 0) scale(-1 1)"/>
+  </g>
+  <g stroke="#3b3a5a" stroke-width="4" stroke-linecap="round">
+    <line x1="104" y1="188" x2="102" y2="202"/>
+    <line x1="136" y1="188" x2="138" y2="202"/>
+  </g>
+  <g fill="#3b3a5a">
+    <ellipse cx="99" cy="205" rx="9" ry="5"/>
+    <ellipse cx="141" cy="205" rx="9" ry="5"/>
+  </g>
+
+  <path d="M72 142 Q56 134 52 116" fill="none" stroke="#3b3a5a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M168 146 L184 136" fill="none" stroke="#3b3a5a" stroke-width="4" stroke-linecap="round"/>
+
+  <rect x="70" y="72" width="100" height="118" rx="18" fill="#ffffff" stroke="#3b3a5a" stroke-width="4"/>
+  <g stroke="#c9c3e0" stroke-width="4" stroke-linecap="round">
+    <line x1="88" y1="152" x2="152" y2="152"/>
+    <line x1="88" y1="164" x2="146" y2="164"/>
+    <line x1="88" y1="176" x2="130" y2="176"/>
+  </g>
+
+  <ellipse cx="90" cy="130" rx="8" ry="5" fill="#f9a8c0" opacity="0.8"/>
+  <ellipse cx="150" cy="130" rx="8" ry="5" fill="#f9a8c0" opacity="0.8"/>
+  <circle cx="102" cy="116" r="7" fill="#3b3a5a"/>
+  <circle cx="138" cy="116" r="7" fill="#3b3a5a"/>
+  <circle cx="104.5" cy="113.5" r="2.4" fill="#ffffff"/>
+  <circle cx="140.5" cy="113.5" r="2.4" fill="#ffffff"/>
+  <path d="M112 128 Q120 136 128 128" fill="none" stroke="#3b3a5a" stroke-width="3.5" stroke-linecap="round"/>
+
+  <g fill="#ffffff" stroke="#3b3a5a" stroke-width="3" stroke-linejoin="round">
+    <use href="#wing"/>
+    <use href="#wing" transform="translate(240 0) scale(-1 1)"/>
+  </g>
+  <path d="M88 72 Q120 28 152 72 Z" fill="#f6c453" stroke="#3b3a5a" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="120" cy="74" rx="56" ry="10" fill="#f6c453" stroke="#3b3a5a" stroke-width="4"/>
+
+  <line x1="184" y1="136" x2="192" y2="126" stroke="#3b3a5a" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="202" cy="112" r="16" fill="#bfe3f5" fill-opacity="0.7" stroke="#3b3a5a" stroke-width="4"/>
+  <path d="M194 106 Q197 101 203 100" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+</svg>
