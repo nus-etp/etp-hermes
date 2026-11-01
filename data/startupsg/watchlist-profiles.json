@@ -130,6 +130,16 @@
       "stage": "Seed",
       "uen": "202008803H"
     },
+    "Autosave": {
+      "display_name": "Autosave Pte. Ltd.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "name",
+      "profile_id": "49969",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/49969",
+      "stage": "Pre-seed",
+      "uen": "202431449C"
+    },
     "BEEX": {
       "display_name": "BEEX PTE. LTD.",
       "employees": "1 - 10",
@@ -160,6 +170,16 @@
       "stage": "Pre-seed",
       "uen": "202004957E"
     },
+    "CIRTEC AI": {
+      "display_name": "CARBONZEROED PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "49077",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/49077",
+      "stage": "Pre-seed",
+      "uen": "202344818N"
+    },
     "CMED Health": {
       "display_name": "CMED HEALTH PTE. LTD.",
       "employees": "1 - 10",
@@ -179,16 +199,6 @@
       "profile_url": "https://www.startupsg.gov.sg/profiles/42109",
       "stage": "Pre-seed",
       "uen": "202226171E"
-    },
-    "Carbonzeroed": {
-      "display_name": "CARBONZEROED PTE. LTD.",
-      "employees": "1 - 10",
-      "has_funding_rounds": false,
-      "matched_on": "uen",
-      "profile_id": "49077",
-      "profile_url": "https://www.startupsg.gov.sg/profiles/49077",
-      "stage": "Pre-seed",
-      "uen": "202344818N"
     },
     "Cellivate Technologies": {
       "display_name": "CELLIVATE TECHNOLOGIES",
@@ -320,6 +330,16 @@
       "stage": "Pre-seed",
       "uen": "202329356R"
     },
+    "Eigenform": {
+      "display_name": "EIGENFORM PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "name",
+      "profile_id": "22304",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/22304",
+      "stage": "Seed",
+      "uen": "201902945E"
+    },
     "Elgo AI": {
       "display_name": "ELGO AI PTE. LTD.",
       "employees": "1 - 10",
@@ -450,6 +470,16 @@
       "stage": "Pre-seed",
       "uen": "202443308R"
     },
+    "InteractAI": {
+      "display_name": "MEDIVR PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": false,
+      "matched_on": "uen",
+      "profile_id": "30949",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/30949",
+      "stage": "Pre-seed",
+      "uen": "202133771W"
+    },
     "Lincore": {
       "display_name": "LINCORE PRIVATE LIMITED",
       "employees": "1 - 10",
@@ -499,16 +529,6 @@
       "profile_url": "https://www.startupsg.gov.sg/profiles/48508",
       "stage": "Pre-seed",
       "uen": "202347984D"
-    },
-    "MediVR": {
-      "display_name": "MEDIVR PTE. LTD.",
-      "employees": "1 - 10",
-      "has_funding_rounds": false,
-      "matched_on": "uen",
-      "profile_id": "30949",
-      "profile_url": "https://www.startupsg.gov.sg/profiles/30949",
-      "stage": "Pre-seed",
-      "uen": "202133771W"
     },
     "MeetArts": {
       "display_name": "MEETARTS PTE. LTD.",
@@ -669,6 +689,16 @@
       "profile_url": "https://www.startupsg.gov.sg/profiles/56763",
       "stage": "Pre-seed",
       "uen": "202610033Z"
+    },
+    "Roplus": {
+      "display_name": "ROPLUS PTE. LTD.",
+      "employees": "1 - 10",
+      "has_funding_rounds": true,
+      "matched_on": "name",
+      "profile_id": "40119",
+      "profile_url": "https://www.startupsg.gov.sg/profiles/40119",
+      "stage": "Pre-seed",
+      "uen": "202119813Z"
     },
     "SENSORI Healthcare": {
       "display_name": "SENSORI HEALTHCARE PTE. LTD.",
