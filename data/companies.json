@@ -777,7 +777,7 @@
   {
     "name": "Ambient Systems",
     "aliases": [],
-    "description": "NUS GRIP-incubated Singapore climate-tech startup. Drop unrelated companies sharing the same name.",
+    "description": "NUS GRIP-incubated climate-tech startup that pivoted to finance software: contract-backed 'gold actuals' for FP&A (ambientsystems.ai). The original Singapore entity was renamed Ambient Legacy Holdings Singapore and is struck off (ACRA, UEN 202123300C); the business continues via its Hong Kong subsidiary Ambient Systems Limited (2023). Drop unrelated companies sharing the same name.",
     "country": "Singapore",
     "identifiers": {
       "website": "https://www.ambientsystems.ai"
@@ -1276,12 +1276,19 @@
     "funding_notes": "Brain Pool Tech closed a total of S$900K in funding during the pandemic, led by ABC Dream Ventures."
   },
   {
-    "name": "Carbonzeroed",
+    "name": "CIRTEC AI",
     "aliases": [
-      "CARBONZEROED PTE LTD"
+      "CIRTEC.AI",
+      "CIRTEC AI PTE LTD",
+      "Carbonzeroed",
+      "CARBONZEROED PTE LTD",
+      "Carbon Zeroed"
     ],
-    "description": "The Hangar (NUS Enterprise)-resident Singapore climate-tech startup (incorporated 14 Nov 2023, HQ 10 Ubi Crescent #04-21 Ubi Techpark) providing engineering-design and consultancy services around energy management, clean-energy systems and Carbon Net Zero strategy execution; secondary activity in software/applications development. Drop generic 'carbon zero' / net-zero policy news unless it explicitly names Carbonzeroed.",
+    "description": "The Hangar (NUS Enterprise)-resident Singapore climate / energy-AI startup, formerly Carbonzeroed (ACRA rename; UEN 202344818N, incorporated 14 Nov 2023, Ubi Techpark). Broadened from carbon management to enterprise AI for energy, buildings and operational intelligence: a Circularity AI agent for emission tracking and compliance, plus power solutions and battery energy storage; offices in Singapore, Malaysia and the Philippines; MSFT-IMDA GenAIxDigital Leaders Programme vendor. Drop generic 'carbon zero' / net-zero policy news and the US medical-device maker Cirtec Medical unless the article names CIRTEC AI or Carbonzeroed.",
     "country": "Singapore",
+    "identifiers": {
+      "website": "https://cirtec.ai"
+    },
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
   },
@@ -1960,12 +1967,14 @@
     "sector": "Climate tech"
   },
   {
-    "name": "Creo.works",
+    "name": "Creo.Farm",
     "aliases": [
+      "CREO.FARM PTE LTD",
+      "Creo.works",
       "Creo.works Pte Ltd",
       "Creo Works"
     ],
-    "description": "The Hangar (NUS Enterprise)-resident Singapore creative / digital-services startup. Limited public-English information beyond the directory listing — drop generic 'creo' / 'creator-tools' brand mentions unless the article explicitly references this Hangar entity.",
+    "description": "The Hangar (NUS Enterprise)-resident Singapore 3D-printing startup, formerly Creo.works (ACRA rename; UEN 202322906E): a design workshop that designs, manufactures and customises 3D-printed projects and sells 3D printers and filament. Drop generic 'creo' / PTC Creo CAD software and creator-tools brand mentions unless the article explicitly references this company.",
     "country": "Singapore",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
@@ -3823,9 +3832,14 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
-    "name": "LEXIKAT",
-    "aliases": [],
-    "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "name": "Eigenform",
+    "aliases": [
+      "Eigenform AI",
+      "EIGENFORM PTE LTD",
+      "LEXIKAT",
+      "Vox Dei"
+    ],
+    "description": "NUS GRIP-incubated Singapore AI startup, formerly Lexikat (and before that Vox Dei; ACRA rename; UEN 201902945E), led by CEO Dr Jennifer Dodgson. Began as a drag-and-drop NLP text-analytics model builder; now an AI, data-science and analytics consultancy building custom local AI models for research and discovery. Drop the mathematical term 'eigenform' (modular forms) and unrelated namesakes unless the article references the Singapore company or Lexikat.",
     "country": "Singapore",
     "funding_rounds": [
       {
@@ -4149,10 +4163,17 @@
     "funding_notes": "No verifiable public information found for an NUS GRIP-incubated startup specifically named 'Medicert'. No funding round announcement located."
   },
   {
-    "name": "MediVR",
-    "aliases": [],
-    "description": "NUS GRIP-incubated Singapore medical-VR startup. Drop unrelated companies sharing the same name.",
+    "name": "InteractAI",
+    "aliases": [
+      "MediVR",
+      "INTERACTAI PTE LTD",
+      "MediVR Pte Ltd"
+    ],
+    "description": "NUS GRIP-incubated Singapore startup, formerly MediVR (ACRA rename; UEN 202133771W). Started in VR medical training and now builds a generative-AI virtual-human conversation platform for interpersonal-communication training (medical simulation such as serious-illness conversation drills, customer experience, education). Drop unrelated 'Interact AI' / conversational-AI vendors sharing the name unless the article references the Singapore company or MediVR.",
     "country": "Singapore",
+    "identifiers": {
+      "website": "https://www.interactai.live"
+    },
     "funding_rounds": [
       {
         "date": "2021",
@@ -4168,7 +4189,7 @@
         "source": "https://nusenterprise.medium.com/voices-of-venture-building-9659480bfa29"
       }
     ],
-    "funding_notes": "Now rebranded as InteractAI. Won SGD 50K Startup SG Founder Grant via Founder IGNITE pitch 2021. PitchBook/Tracxn list SMU Business Incubator, NUS GRIP and PIXEL as backers, but no priced equity round is publicly disclosed."
+    "funding_notes": "Rebranded from MediVR to InteractAI. Won SGD 50K Startup SG Founder Grant via Founder IGNITE pitch 2021. PitchBook/Tracxn list SMU Business Incubator, NUS GRIP and PIXEL as backers, but no priced equity round is publicly disclosed."
   },
   {
     "name": "MedvoraAI",
@@ -6215,11 +6236,14 @@
     "funding_notes": "NUS GRIP portfolio company (AI interior visualisation web app for designers). No publicly verifiable funding round announcements found. Also listed in the BLOCK71 BLOCK71 directory."
   },
   {
-    "name": "Spaceytales",
+    "name": "Thinklery",
     "aliases": [
+      "Thinklery Group",
+      "THINKLERY GROUP PTE LTD",
+      "Spaceytales",
       "Spaceytales Pte Ltd"
     ],
-    "description": "BLOCK71 Singapore-resident edtech / storytelling startup (likely children's AR / space-themed content). Drop unrelated namesakes unless the article explicitly references this BLOCK71 SG entity.",
+    "description": "BLOCK71 Singapore-resident edtech / children's learning-products startup, formerly Spaceytales (ACRA rename to Thinklery Group; UEN 202405942H; spaceytales.com now redirects to thinklery.com). Drop unrelated namesakes unless the article explicitly references Thinklery or Spaceytales.",
     "country": "Singapore",
     "identifiers": {
       "website": "https://thinklery.com"
@@ -6504,11 +6528,13 @@
     "funding_notes": "BLOCK71 Social Impact Hub portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / raiSE incubation support."
   },
   {
-    "name": "Telequotes",
+    "name": "Autosave",
     "aliases": [
+      "AUTOSAVE PTE LTD",
+      "Telequotes",
       "Telequotes Pte Ltd"
     ],
-    "description": "The Hangar (NUS Enterprise)-resident Singapore startup likely offering tele-quoting / virtual sales-quote workflows. Drop unrelated 'tele quotes' insurance brand mentions unless the article explicitly references this Hangar entity.",
+    "description": "The Hangar (NUS Enterprise)-resident Singapore startup registered as Telequotes in Aug 2024 and renamed Autosave (ACRA; UEN 202431449C); Autosave (autosave.club, founder Davidson Chua) runs an automotive community network of Telegram channels, media and car meets for brand campaigns. Drop the Singapore photo/video studio Autosave Productions (autosave.sg), the defunct Nigerian AutoSave and generic 'autosave' software mentions unless the article references this company or Telequotes.",
     "country": "Singapore",
     "funding_rounds": [],
     "funding_notes": "The Hangar (NUS Enterprise) portfolio company. No publicly verifiable equity funding round announced beyond NUS Hangar incubation support."
@@ -6639,11 +6665,13 @@
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
   {
-    "name": "TunaSolutions",
+    "name": "Tuna Media",
     "aliases": [
+      "TUNA MEDIA PTE LTD",
+      "TunaSolutions",
       "Tuna Solutions"
     ],
-    "description": "BLOCK71 Singapore-resident startup. Drop unrelated 'tuna' / fisheries-tech brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "description": "BLOCK71 Singapore-resident startup, registered as Tuna Solutions (earlier Participative Marketing) and renamed Tuna Media (ACRA; UEN 200908856G, Braddell Tech). Limited public information. Drop unrelated 'tuna' / fisheries-tech and Thai Tuna Advertising mentions unless the article explicitly references this Singapore entity.",
     "country": "Singapore",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
