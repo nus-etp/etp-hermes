@@ -1,0 +1,136 @@
+{
+  "base_url": "https://cloud.langfuse.com",
+  "by_environment": {
+    "eval": {
+      "countObservations": 210,
+      "countTraces": 90,
+      "days": 30,
+      "inputUsage": 38266,
+      "outputUsage": 12679,
+      "totalCost": 0.0,
+      "totalUsage": 50945
+    },
+    "harness": {
+      "countObservations": 1228,
+      "countTraces": 17,
+      "days": 4,
+      "inputUsage": 27851067,
+      "outputUsage": 510475,
+      "totalCost": 0.0,
+      "totalUsage": 28779690
+    },
+    "production": {
+      "countObservations": 3317,
+      "countTraces": 56,
+      "days": 15,
+      "inputUsage": 96597355,
+      "outputUsage": 1316089,
+      "totalCost": 0.0,
+      "totalUsage": 98714177
+    },
+    "production-agent": {
+      "countObservations": 1444,
+      "countTraces": 16,
+      "days": 15,
+      "inputUsage": 50530154,
+      "outputUsage": 490797,
+      "totalCost": 0.0,
+      "totalUsage": 51327532
+    },
+    "production-infographics": {
+      "countObservations": 226,
+      "countTraces": 11,
+      "days": 9,
+      "inputUsage": 2467422,
+      "outputUsage": 53905,
+      "totalCost": 0.0,
+      "totalUsage": 2539134
+    },
+    "production-ingest": {
+      "countObservations": 752,
+      "countTraces": 16,
+      "days": 15,
+      "inputUsage": 19085481,
+      "outputUsage": 284802,
+      "totalCost": 0.0,
+      "totalUsage": 19545504
+    },
+    "production-synthesis": {
+      "countObservations": 479,
+      "countTraces": 11,
+      "days": 10,
+      "inputUsage": 8345659,
+      "outputUsage": 176684,
+      "totalCost": 0.0,
+      "totalUsage": 8624491
+    }
+  },
+  "by_model": [
+    {
+      "countObservations": 4180,
+      "countTraces": 220,
+      "inputUsage": 0,
+      "model": "(unknown)",
+      "outputUsage": 0,
+      "totalCost": 0.0,
+      "totalUsage": 0
+    },
+    {
+      "countObservations": 584,
+      "countTraces": 70,
+      "inputUsage": 29696198,
+      "model": "deepseek-ai/deepseek-v4.1-flash",
+      "outputUsage": 596301,
+      "totalCost": 0.0,
+      "totalUsage": 30672308
+    },
+    {
+      "countObservations": 1800,
+      "countTraces": 62,
+      "inputUsage": 150530102,
+      "model": "deepseek-v4-flash",
+      "outputUsage": 1959859,
+      "totalCost": 0.0,
+      "totalUsage": 153861726
+    },
+    {
+      "countObservations": 120,
+      "countTraces": 90,
+      "inputUsage": 38266,
+      "model": "deepseek-chat",
+      "outputUsage": 12679,
+      "totalCost": 0.0,
+      "totalUsage": 50945
+    },
+    {
+      "countObservations": 927,
+      "countTraces": 104,
+      "inputUsage": 24650838,
+      "model": "glm-4.7-flash",
+      "outputUsage": 276592,
+      "totalCost": 0.0,
+      "totalUsage": 24996494
+    },
+    {
+      "countObservations": 45,
+      "countTraces": 45,
+      "inputUsage": 0,
+      "model": "deepseek-ai/deepseek-v4-flash-0731",
+      "outputUsage": 0,
+      "totalCost": 0.0,
+      "totalUsage": 0
+    }
+  ],
+  "from": "2026-10-01T00:00:00Z",
+  "month": "2026-10",
+  "to": "2026-11-01T00:00:00Z",
+  "totals": {
+    "countObservations": 7656,
+    "countTraces": 217,
+    "days": 30,
+    "inputUsage": 204915404,
+    "outputUsage": 2845431,
+    "totalCost": 0.0,
+    "totalUsage": 209581473
+  }
+}
