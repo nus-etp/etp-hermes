@@ -124,6 +124,10 @@ _GENERIC_BUSINESS = """
 
 COMMON_WORDS = frozenset((_COMMON_ENGLISH + _GENERIC_BUSINESS).split())
 
+CJK_STRONG_MIN_CHARS = 3
+
+_CJK_CHAR_RE = re.compile(r"[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uac00-\ud7af]")
+
 # Match verdicts returned by `match_kind`.
 MATCH_NONE = ""
 MATCH_STRONG = "strong"
@@ -154,6 +158,8 @@ def term_is_strong(term: str, *, curated: bool = False) -> bool:
     t = normalize_term(term)
     if not t:
         return False
+    if is_cjk_term(t):
+        return len(_CJK_CHAR_RE.findall(t)) >= CJK_STRONG_MIN_CHARS
     if any(ch.isdigit() for ch in t) or "." in t:
         return True
     if " " in t:
@@ -181,7 +187,13 @@ def build_term_matchers(terms: dict[str, list[str]]) -> dict[str, list[re.Patter
     }
 
 
+def is_cjk_term(term: str) -> bool:
+    return bool(_CJK_CHAR_RE.search(term))
+
+
 def _compile(term: str) -> re.Pattern[str]:
+    if is_cjk_term(term):
+        return re.compile(re.escape(term))
     return re.compile(rf"(?<!\w){re.escape(term)}(?!\w)")
 
 
