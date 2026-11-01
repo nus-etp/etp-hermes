@@ -8,7 +8,8 @@ signals/seen-urls.txt (permanent: published keys) and the non-expired half of
 signals/dropped-urls.txt (TTL'd: keys a relevance pass dropped), runs the
 entity-linked triage against company terms (name + aliases + match_terms,
 minus exclude_terms, with the generic-term guard from scripts/entity_terms.py),
-and folds in the pre-extracted html_scrape items from data/jina-items.json.
+and folds in the pre-extracted html_scrape items from data/jina-items.json
+and the Startup SG directory diff items from data/startupsg-items.json.
 
 Writes data/candidates.json. The ingest prompt then only performs the LLM
 relevance pass over the (small) candidate list instead of re-reading
@@ -52,6 +53,7 @@ FEEDS_FILE = REPO_ROOT / "data" / "feeds.json"
 COMPANIES_FILE = REPO_ROOT / "data" / "companies.json"
 CHANGED_FILE = REPO_ROOT / "data" / "changed-sources.json"
 JINA_ITEMS_FILE = REPO_ROOT / "data" / "jina-items.json"
+STARTUPSG_ITEMS_FILE = REPO_ROOT / "data" / "startupsg-items.json"
 SEEN_FILE = REPO_ROOT / "signals" / "seen-urls.txt"
 DROPPED_FILE = REPO_ROOT / "signals" / "dropped-urls.txt"
 OUT_FILE = REPO_ROOT / "data" / "candidates.json"
@@ -130,6 +132,16 @@ def _load_json(path: Path) -> Any:
         return json.load(f)
 
 
+def _load_optional_json(path: Path) -> Any:
+    if not path.exists():
+        return None
+    try:
+        return _load_json(path)
+    except (OSError, ValueError) as e:
+        print(f"collect-candidates: ignoring unreadable {path.name}: {e}", file=sys.stderr)
+        return None
+
+
 def load_seen(path: Path) -> set[str]:
     if not path.exists():
         return set()
@@ -173,6 +185,9 @@ def fetch(url: str) -> bytes:
     raise last_exc
 
 
+SPACED_OFFSET_RE = re.compile(r"\s+([+-]\d{2}:?\d{2})$")
+
+
 def parse_date(value: str | None) -> datetime | None:
     """Parse RFC 822 (RSS) or ISO 8601 (Atom) dates. None when unparseable."""
     if not value:
@@ -184,7 +199,7 @@ def parse_date(value: str | None) -> datetime | None:
     except (TypeError, ValueError):
         pass
     try:
-        d = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        d = datetime.fromisoformat(SPACED_OFFSET_RE.sub(r"\1", value.replace("Z", "+00:00")))
         return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
     except ValueError:
         return None
@@ -296,6 +311,7 @@ def collect(
     reader=None,
     jina_budget: int = DEFAULT_JINA_FALLBACK_BUDGET,
     pre_extracted_source_cap: int = DEFAULT_PRE_EXTRACTED_SOURCE_CAP,
+    startupsg: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     candidates: list[dict[str, Any]] = []
     fetch_failed: list[dict[str, str]] = []
@@ -665,6 +681,27 @@ def collect(
                         },
                     )
 
+    startupsg_candidates = 0
+    for it in (startupsg or {}).get("items") or []:
+        company = it.get("company")
+        key = it.get("dedup_key")
+        if company not in matchers or not key or key in seen:
+            continue
+        before = len(candidates)
+        add(
+            company,
+            {
+                "headline": it.get("headline", ""),
+                "description": it.get("description", ""),
+                "source": it.get("source") or "Startup SG",
+                "pubDate": it.get("pubDate", ""),
+                "link": it.get("link", ""),
+                "dedup_key": key,
+                "source_kind": "startupsg",
+            },
+        )
+        startupsg_candidates += len(candidates) - before
+
     matched = sorted({c["company"] for c in candidates})
     descriptions = {c["name"]: c.get("description", "") for c in companies if c["name"] in matched}
 
@@ -685,6 +722,7 @@ def collect(
             "jina_recovered": len(set(jina_state["recovered"])),
             "jina_candidates": jina_candidates,
             "pre_extracted_capped": pre_extracted_capped,
+            "startupsg_candidates": startupsg_candidates,
             "excluded_by_terms": suppressed["exclude_terms"],
             "weak_term_suppressed": suppressed["weak_term"],
         },
@@ -702,6 +740,7 @@ def main() -> int:
     else:
         changed = _load_json(CHANGED_FILE) if CHANGED_FILE.exists() else None
     jina = _load_json(JINA_ITEMS_FILE) if JINA_ITEMS_FILE.exists() else None
+    startupsg = _load_optional_json(STARTUPSG_ITEMS_FILE)
     # COLLECT_SEEN_FILE overrides the dedup list. The backfill points this at an
     # empty file so it re-collects items both arms already judged — the A/B is a
     # policy comparison, not a freshness check.
@@ -740,6 +779,7 @@ def main() -> int:
         reader=fetch_reader,
         jina_budget=jina_budget,
         pre_extracted_source_cap=pre_extracted_source_cap,
+        startupsg=startupsg,
     )
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -755,6 +795,7 @@ def main() -> int:
         f"jina_recovered={s['jina_recovered']} "
         f"jina_candidates={s['jina_candidates']} "
         f"pre_extracted_capped={s['pre_extracted_capped']} "
+        f"startupsg_candidates={s['startupsg_candidates']} "
         f"excluded_by_terms={s['excluded_by_terms']} "
         f"weak_term_suppressed={s['weak_term_suppressed']} "
         f"dropped_urls_pruned={pruned}",

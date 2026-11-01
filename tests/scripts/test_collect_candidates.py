@@ -223,6 +223,11 @@ def test_firehose_triage_rejects_substring_false_positive(cc):
     assert [c["link"] for c in out["candidates"]] == ["https://x.example/arch"]
 
 
+def test_parse_date_accepts_spaced_offset(cc):
+    parsed = cc.parse_date("2026-10-31 09:09:53  +0800")
+    assert parsed == datetime(2026, 10, 31, 1, 9, 53, tzinfo=timezone.utc)
+
+
 def test_parse_feed_tolerates_leading_whitespace(cc):
     body = b"\n\n  <?xml version='1.0'?><rss><channel><item><title>Hello</title><link>https://x.test/a</link></item></channel></rss>"
     items = cc.parse_feed(body)
@@ -457,6 +462,60 @@ def test_html_scrape_uses_jina_items(cc):
     assert cand["link"] == "https://nova.example/kl"
     assert cand["pre_extracted"] is True
     assert out["llm_fetch_required"] == []
+
+
+def _startupsg_item(company: str, key: str) -> dict[str, str]:
+    return {
+        "company": company,
+        "headline": f"{company} now lists investment stage Seed on Startup SG (was Pre-seed)",
+        "description": "Self-reported Startup SG directory profile.",
+        "source": "Startup SG",
+        "pubDate": "2026-11-01T13:00:00+00:00",
+        "link": "https://www.startupsg.gov.sg/profiles/123",
+        "dedup_key": key,
+        "source_kind": "startupsg",
+    }
+
+
+def test_startupsg_items_fold_in_for_judgment_with_dedup(cc):
+    startupsg = {
+        "items": [
+            _startupsg_item("Acme Robotics", "startupsg://202000001A/stage/seed"),
+            _startupsg_item("Acme Robotics", "startupsg://202000001A/funding/true"),
+            _startupsg_item("Acme Robotics", "startupsg://202000001A/employees/11-50"),
+            _startupsg_item("Not On Watchlist", "startupsg://202000002B/stage/seed"),
+        ]
+    }
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen={"startupsg://202000001A/funding/true", "startupsg://202000001A/employees/11-50"},
+        fetcher=_fetcher({}),
+        startupsg=startupsg,
+    )
+    [cand] = out["candidates"]
+    assert cand["company"] == "Acme Robotics"
+    assert cand["dedup_key"] == "startupsg://202000001A/stage/seed"
+    assert cand["source_kind"] == "startupsg"
+    assert cand["link"] == "https://www.startupsg.gov.sg/profiles/123"
+    assert "pre_extracted" not in cand
+    assert out["stats"]["startupsg_candidates"] == 1
+    assert out["companies"] == {"Acme Robotics": "SG robotics startup"}
+
+
+def test_startupsg_items_absent_is_noop(cc):
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),
+    )
+    assert out["candidates"] == []
+    assert out["stats"]["startupsg_candidates"] == 0
 
 
 def _jina_pre(url: str, items: list[dict[str, str]]) -> dict:

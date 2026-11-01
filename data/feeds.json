@@ -268,5 +268,30 @@
     "name": "Asia Tech Daily",
     "type": "firehose",
     "url": "https://asiatechdaily.com/feed/"
+  },
+  {
+    "name": "36Kr Newsflash",
+    "type": "firehose",
+    "url": "https://www.36kr.com/feed-newsflash"
+  },
+  {
+    "name": "36Kr",
+    "type": "firehose",
+    "url": "https://www.36kr.com/feed"
+  },
+  {
+    "name": "Huxiu",
+    "type": "firehose",
+    "url": "https://rss.huxiu.com/"
+  },
+  {
+    "name": "TMTPost",
+    "type": "firehose",
+    "url": "https://www.tmtpost.com/rss.xml"
+  },
+  {
+    "name": "Leiphone",
+    "type": "firehose",
+    "url": "https://www.leiphone.com/feed"
   }
 ]
