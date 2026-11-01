@@ -1,0 +1,41 @@
+{
+  "cluster": "ingest/false_keep/ro/roplus.sg",
+  "created_by": "harness-propose",
+  "expected": {
+    "company": null,
+    "reason": "a product-spec label on the company's own site reports no launch, customer or other company action, so it teaches the reader nothing new about the company",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Soft Gripper – Tofu Packing Line' for RO+",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-01-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "RO+"
+      ],
+      "source": "RO+ · blog",
+      "title": "Soft Gripper – Tofu Packing Line",
+      "url": "https://www.roplus.sg/2024/02/20/soft-gripper-tofu-packing-line"
+    },
+    "companies": {
+      "RO+": {
+        "description": "NUS GRIP-incubated Singapore automation startup. Very short brand — drop any item not clearly about this specific Singapore startup."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-01",
+    "kind": "judge_disagreement",
+    "source": "data/harness/cluster.json",
+    "note": "near-variant of the roplus.sg archive cluster: product-label headline, company-owned source, empty description"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
