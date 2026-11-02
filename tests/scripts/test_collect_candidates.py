@@ -1655,6 +1655,7 @@ def test_appstore_dev_caps_white_label_floods_newest_first(cc) -> None:
     assert out["stats"]["appstore_capped"] == 4
 
 
+<<<<<<< HEAD
 def _gebiz_item(company: str, key: str) -> dict[str, str]:
     return {
         "company": company,
@@ -1674,6 +1675,26 @@ def test_gebiz_items_fold_in_for_judgment_with_dedup(cc):
             _gebiz_item("Acme Robotics", "gebiz://T1/acmerobotics"),
             _gebiz_item("Acme Robotics", "gebiz://T2/acmerobotics"),
             _gebiz_item("Not On Watchlist", "gebiz://T3/other"),
+=======
+def test_masfid_items_fold_in_for_judgment_with_dedup(cc):
+    def item(company: str, key: str) -> dict[str, str]:
+        return {
+            "company": company,
+            "headline": f"{company} newly listed in the MAS directory as Major Payment Institution",
+            "description": "Activities: E-money Issuance Service.",
+            "source": "MAS Financial Institutions Directory",
+            "pubDate": "2026-11-02",
+            "link": "https://eservices.mas.gov.sg/fid/institution/detail/1-ACME",
+            "dedup_key": key,
+            "source_kind": "mas_fid",
+        }
+
+    masfid = {
+        "items": [
+            item("Acme Robotics", "masfid://acme-robotics/major-payment-institution/granted"),
+            item("Acme Robotics", "masfid://acme-robotics/full-bank/granted"),
+            item("Not On Watchlist", "masfid://not-on-watchlist/full-bank/granted"),
+>>>>>>> feat/mas-fid
         ]
     }
     out = cc.collect(
@@ -1681,6 +1702,7 @@ def test_gebiz_items_fold_in_for_judgment_with_dedup(cc):
         FEEDS,
         changed={"firehose": [], "per_company": {}},
         jina=None,
+<<<<<<< HEAD
         seen={"gebiz://T2/acmerobotics"},
         fetcher=_fetcher({}),
         gebiz=gebiz,
@@ -1690,3 +1712,14 @@ def test_gebiz_items_fold_in_for_judgment_with_dedup(cc):
     assert cand["source_kind"] == "gebiz"
     assert "pre_extracted" not in cand
     assert out["stats"]["gebiz_candidates"] == 1
+=======
+        seen={"masfid://acme-robotics/full-bank/granted"},
+        fetcher=_fetcher({}),
+        masfid=masfid,
+    )
+    [cand] = out["candidates"]
+    assert cand["dedup_key"] == "masfid://acme-robotics/major-payment-institution/granted"
+    assert cand["source_kind"] == "mas_fid"
+    assert "pre_extracted" not in cand
+    assert out["stats"]["masfid_candidates"] == 1
+>>>>>>> feat/mas-fid

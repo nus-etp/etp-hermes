@@ -36,6 +36,7 @@ data/sitemap-items.json
 
 # scripts/ipos_delta.py patent/trademark delta items — per-run
 data/ipos-items.json
+data/masfid-items.json
 
 # scripts/edgar_daily.py SEC EDGAR filing items — per-run
 data/edgar-items.json

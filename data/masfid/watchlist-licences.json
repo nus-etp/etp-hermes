@@ -1,0 +1,28 @@
+{
+  "companies": {
+    "LittleLives": {
+      "licences": {
+        "Standard Payment Institution": [
+          "Domestic Money Transfer Service",
+          "Merchant Acquisition Service"
+        ]
+      },
+      "register_name": "LITTLELIVES INC PTE. LTD.",
+      "slug": "253461-LITTLELIVES-INC-PTE-LTD",
+      "url": "https://eservices.mas.gov.sg/fid/institution/detail/253461-LITTLELIVES-INC-PTE-LTD"
+    },
+    "Qapita": {
+      "licences": {
+        "Capital Markets Services Licensee": [
+          "Collective Investment Schemes",
+          "Dealing In Capital Markets Products",
+          "Securities"
+        ]
+      },
+      "register_name": "QAPITA PTE. LTD.",
+      "slug": "219516-QAPITA-PTE-LTD",
+      "url": "https://eservices.mas.gov.sg/fid/institution/detail/219516-QAPITA-PTE-LTD"
+    }
+  },
+  "source": "https://eservices.mas.gov.sg/fid"
+}
