@@ -652,6 +652,42 @@ def test_ipos_items_fold_in_for_judgment_with_dedup(cc):
     assert out["stats"]["startupsg_candidates"] == 0
 
 
+def test_edgar_items_fold_in_for_judgment_with_dedup(cc):
+    def item(company: str, key: str) -> dict[str, str]:
+        return {
+            "company": company,
+            "headline": f"{company} files Form D",
+            "description": "SEC EDGAR filing.",
+            "source": "SEC EDGAR",
+            "pubDate": "2026-10-30",
+            "link": "https://www.sec.gov/Archives/edgar/data/1/000000000026000001/0000000000-26-000001-index.htm",
+            "dedup_key": key,
+            "source_kind": "edgar",
+        }
+
+    edgar = {
+        "items": [
+            item("Acme Robotics", "edgar://0000000000-26-000001"),
+            item("Acme Robotics", "edgar://0000000000-26-000002"),
+            item("Not On Watchlist", "edgar://0000000000-26-000003"),
+        ]
+    }
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen={"edgar://0000000000-26-000002"},
+        fetcher=_fetcher({}),
+        edgar=edgar,
+    )
+    [cand] = out["candidates"]
+    assert cand["dedup_key"] == "edgar://0000000000-26-000001"
+    assert cand["source_kind"] == "edgar"
+    assert "pre_extracted" not in cand
+    assert out["stats"]["edgar_candidates"] == 1
+
+
 def test_ipos_items_respect_exclude_terms(cc):
     companies = [dict(COMPANIES[0], exclude_terms=["robot vacuum"])]
     ipos = {

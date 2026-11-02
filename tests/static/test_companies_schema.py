@@ -16,7 +16,7 @@ ATS_PROVIDERS = {
     "manatal",
     "mycareersfuture",
 }
-ALLOWED_IDENTIFIER_KEYS = {"crunchbase", "linkedin", "nus_cde", "sginnovate", "uen", "website"}
+ALLOWED_IDENTIFIER_KEYS = {"cik", "crunchbase", "linkedin", "nus_cde", "sginnovate", "uen", "website"}
 DATE_RE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")
 
 
@@ -188,9 +188,9 @@ def test_identifiers_shape(companies: list[dict]) -> None:
             if k not in ALLOWED_IDENTIFIER_KEYS:
                 errors.append(f"{c['name']}: identifier key {k!r} not in {sorted(ALLOWED_IDENTIFIER_KEYS)}")
                 continue
-            if k == "uen":
+            if k in {"uen", "cik"}:
                 if not isinstance(v, str) or not v.strip():
-                    errors.append(f"{c['name']}: uen must be non-empty string")
+                    errors.append(f"{c['name']}: {k} must be non-empty string")
             else:
                 if not _is_url(v):
                     errors.append(f"{c['name']}: identifiers[{k}] must be http(s) URL, got {v!r}")

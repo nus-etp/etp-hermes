@@ -389,6 +389,13 @@ jobs:
         continue-on-error: true
         run: python3 scripts/ipos_delta.py
 
+      - name: Collect SEC EDGAR filings (Form D / S-1 / F-1 / F-4)
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        env:
+          SEC_EDGAR_USER_AGENT: ${{ secrets.SEC_EDGAR_USER_AGENT }}
+        run: python3 scripts/edgar_daily.py
+
       - name: Collect candidates (deterministic feed parse + dedup)
         # Fetches and parses every changed feed/source, applies date windows,
         # dedupes against signals/seen-urls.txt, and runs the substring
