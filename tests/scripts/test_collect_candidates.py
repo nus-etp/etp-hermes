@@ -516,6 +516,72 @@ def test_startupsg_items_absent_is_noop(cc):
     )
     assert out["candidates"] == []
     assert out["stats"]["startupsg_candidates"] == 0
+    assert out["stats"]["ipos_candidates"] == 0
+
+
+def _ipos_item(company: str, key: str, headline: str = "") -> dict[str, str]:
+    return {
+        "company": company,
+        "headline": headline or f"{company} files trademark 'ACME' (class 9)",
+        "description": "IPOS trade mark 40202600001A (Trade Mark).",
+        "source": "IPOS (data.gov.sg)",
+        "pubDate": "2026-10-30",
+        "link": f"https://data.gov.sg/api/action/datastore_search?k={key}",
+        "dedup_key": key,
+        "source_kind": "ipos",
+    }
+
+
+def test_ipos_items_fold_in_for_judgment_with_dedup(cc):
+    ipos = {
+        "items": [
+            _ipos_item("Acme Robotics", "ipos://trademark/40202600001A/pending-under-examination"),
+            _ipos_item("Acme Robotics", "ipos://patent/10202600002B/pending-published"),
+            _ipos_item("Not On Watchlist", "ipos://trademark/40202600003C/registered"),
+        ]
+    }
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen={"ipos://patent/10202600002B/pending-published"},
+        fetcher=_fetcher({}),
+        ipos=ipos,
+    )
+    [cand] = out["candidates"]
+    assert cand["company"] == "Acme Robotics"
+    assert cand["dedup_key"] == "ipos://trademark/40202600001A/pending-under-examination"
+    assert cand["source_kind"] == "ipos"
+    assert cand["source"] == "IPOS (data.gov.sg)"
+    assert "pre_extracted" not in cand
+    assert out["stats"]["ipos_candidates"] == 1
+    assert out["stats"]["startupsg_candidates"] == 0
+
+
+def test_ipos_items_respect_exclude_terms(cc):
+    companies = [dict(COMPANIES[0], exclude_terms=["robot vacuum"])]
+    ipos = {
+        "items": [
+            _ipos_item(
+                "Acme Robotics",
+                "ipos://patent/10202600004D/pending",
+                headline="Acme Robotics patent application: robot vacuum docking station",
+            )
+        ]
+    }
+    out = cc.collect(
+        companies,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),
+        ipos=ipos,
+    )
+    assert out["candidates"] == []
+    assert out["stats"]["ipos_candidates"] == 0
+    assert out["stats"]["excluded_by_terms"] == 1
 
 
 def _jina_pre(url: str, items: list[dict[str, str]]) -> dict:

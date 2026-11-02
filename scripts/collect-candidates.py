@@ -9,7 +9,8 @@ signals/dropped-urls.txt (TTL'd: keys a relevance pass dropped), runs the
 entity-linked triage against company terms (name + aliases + match_terms,
 minus exclude_terms, with the generic-term guard from scripts/entity_terms.py),
 and folds in the pre-extracted html_scrape items from data/jina-items.json
-and the Startup SG directory diff items from data/startupsg-items.json.
+the Startup SG directory diff items from data/startupsg-items.json and the
+IPOS patent/trademark delta items from data/ipos-items.json.
 
 Writes data/candidates.json. The ingest prompt then only performs the LLM
 relevance pass over the (small) candidate list instead of re-reading
@@ -54,6 +55,7 @@ COMPANIES_FILE = REPO_ROOT / "data" / "companies.json"
 CHANGED_FILE = REPO_ROOT / "data" / "changed-sources.json"
 JINA_ITEMS_FILE = REPO_ROOT / "data" / "jina-items.json"
 STARTUPSG_ITEMS_FILE = REPO_ROOT / "data" / "startupsg-items.json"
+IPOS_ITEMS_FILE = REPO_ROOT / "data" / "ipos-items.json"
 SEEN_FILE = REPO_ROOT / "signals" / "seen-urls.txt"
 DROPPED_FILE = REPO_ROOT / "signals" / "dropped-urls.txt"
 OUT_FILE = REPO_ROOT / "data" / "candidates.json"
@@ -312,6 +314,7 @@ def collect(
     jina_budget: int = DEFAULT_JINA_FALLBACK_BUDGET,
     pre_extracted_source_cap: int = DEFAULT_PRE_EXTRACTED_SOURCE_CAP,
     startupsg: dict[str, Any] | None = None,
+    ipos: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     candidates: list[dict[str, Any]] = []
     fetch_failed: list[dict[str, str]] = []
@@ -681,26 +684,31 @@ def collect(
                         },
                     )
 
-    startupsg_candidates = 0
-    for it in (startupsg or {}).get("items") or []:
-        company = it.get("company")
-        key = it.get("dedup_key")
-        if company not in matchers or not key or key in seen:
-            continue
-        before = len(candidates)
-        add(
-            company,
-            {
-                "headline": it.get("headline", ""),
-                "description": it.get("description", ""),
-                "source": it.get("source") or "Startup SG",
-                "pubDate": it.get("pubDate", ""),
-                "link": it.get("link", ""),
-                "dedup_key": key,
-                "source_kind": "startupsg",
-            },
-        )
-        startupsg_candidates += len(candidates) - before
+    def fold_registry_items(payload: dict[str, Any] | None, kind: str, default_source: str) -> int:
+        folded = 0
+        for it in (payload or {}).get("items") or []:
+            company = it.get("company")
+            key = it.get("dedup_key")
+            if company not in matchers or not key or key in seen:
+                continue
+            before = len(candidates)
+            add(
+                company,
+                {
+                    "headline": it.get("headline", ""),
+                    "description": it.get("description", ""),
+                    "source": it.get("source") or default_source,
+                    "pubDate": it.get("pubDate", ""),
+                    "link": it.get("link", ""),
+                    "dedup_key": key,
+                    "source_kind": kind,
+                },
+            )
+            folded += len(candidates) - before
+        return folded
+
+    startupsg_candidates = fold_registry_items(startupsg, "startupsg", "Startup SG")
+    ipos_candidates = fold_registry_items(ipos, "ipos", "IPOS (data.gov.sg)")
 
     matched = sorted({c["company"] for c in candidates})
     descriptions = {c["name"]: c.get("description", "") for c in companies if c["name"] in matched}
@@ -723,6 +731,7 @@ def collect(
             "jina_candidates": jina_candidates,
             "pre_extracted_capped": pre_extracted_capped,
             "startupsg_candidates": startupsg_candidates,
+            "ipos_candidates": ipos_candidates,
             "excluded_by_terms": suppressed["exclude_terms"],
             "weak_term_suppressed": suppressed["weak_term"],
         },
@@ -741,6 +750,7 @@ def main() -> int:
         changed = _load_json(CHANGED_FILE) if CHANGED_FILE.exists() else None
     jina = _load_json(JINA_ITEMS_FILE) if JINA_ITEMS_FILE.exists() else None
     startupsg = _load_optional_json(STARTUPSG_ITEMS_FILE)
+    ipos = _load_optional_json(IPOS_ITEMS_FILE)
     # COLLECT_SEEN_FILE overrides the dedup list. The backfill points this at an
     # empty file so it re-collects items both arms already judged — the A/B is a
     # policy comparison, not a freshness check.
@@ -780,6 +790,7 @@ def main() -> int:
         jina_budget=jina_budget,
         pre_extracted_source_cap=pre_extracted_source_cap,
         startupsg=startupsg,
+        ipos=ipos,
     )
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -796,6 +807,7 @@ def main() -> int:
         f"jina_candidates={s['jina_candidates']} "
         f"pre_extracted_capped={s['pre_extracted_capped']} "
         f"startupsg_candidates={s['startupsg_candidates']} "
+        f"ipos_candidates={s['ipos_candidates']} "
         f"excluded_by_terms={s['excluded_by_terms']} "
         f"weak_term_suppressed={s['weak_term_suppressed']} "
         f"dropped_urls_pruned={pruned}",

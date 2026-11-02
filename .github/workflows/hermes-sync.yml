@@ -349,6 +349,11 @@ jobs:
         continue-on-error: true
         run: python3 scripts/startupsg_snapshot.py
 
+      - name: Collect IPOS patent/trademark delta
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        run: python3 scripts/ipos_delta.py
+
       - name: Collect candidates (deterministic feed parse + dedup)
         # Fetches and parses every changed feed/source, applies date windows,
         # dedupes against signals/seen-urls.txt, and runs the substring
