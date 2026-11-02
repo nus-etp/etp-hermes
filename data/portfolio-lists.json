@@ -1,0 +1,27 @@
+[
+  {
+    "investor": "Antler",
+    "slug": "antler",
+    "url": "https://www.antler.co/portfolio",
+    "parser": "webflow_paginated"
+  },
+  {
+    "investor": "Iterative",
+    "slug": "iterative",
+    "url": "https://www.iterative.vc/companies",
+    "parser": "webflow_company_list"
+  },
+  {
+    "investor": "Google for Startups Accelerator: Southeast Asia",
+    "slug": "google-for-startups-sea",
+    "url": "https://startup.google.com/programs/accelerator/southeast-asia/",
+    "parser": "google_alumni"
+  },
+  {
+    "investor": "Wavemaker Partners",
+    "slug": "wavemaker",
+    "url": "https://wavemaker.vc/wp-json/wp/v2/wavemaker-portfolio",
+    "page_url": "https://wavemaker.vc/portfolio/",
+    "parser": "wp_json"
+  }
+]

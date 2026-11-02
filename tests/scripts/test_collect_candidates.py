@@ -516,6 +516,57 @@ def test_startupsg_items_absent_is_noop(cc):
     )
     assert out["candidates"] == []
     assert out["stats"]["startupsg_candidates"] == 0
+    assert out["stats"]["portfolio_candidates"] == 0
+
+
+def _portfolio_item(company: str, key: str, headline: str = "") -> dict[str, str]:
+    return {
+        "company": company,
+        "headline": headline or f"{company} appears in Antler portfolio",
+        "description": f"{company} is listed in the Antler portfolio.",
+        "source": "Antler",
+        "pubDate": "2026-11-02T13:00:00+00:00",
+        "link": "https://www.antler.co/portfolio",
+        "dedup_key": key,
+        "source_kind": "portfolio_list",
+    }
+
+
+def test_portfolio_items_fold_in_with_dedup_and_exclude_terms(cc):
+    companies = [
+        *COMPANIES,
+        {
+            "name": "Orbit Labs",
+            "aliases": [],
+            "description": "space startup",
+            "exclude_terms": ["ticker"],
+            "sources": [],
+        },
+    ]
+    portfolio = {
+        "items": [
+            _portfolio_item("Acme Robotics", "portfolio://antler/acme-robotics"),
+            _portfolio_item("Nova Health", "portfolio://antler/nova-health"),
+            _portfolio_item("Orbit Labs", "portfolio://antler/orbit-labs", "Orbit Labs ticker appears in Antler portfolio"),
+            _portfolio_item("Not On Watchlist", "portfolio://antler/not-on-watchlist"),
+        ]
+    }
+    out = cc.collect(
+        companies,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen={"portfolio://antler/nova-health"},
+        fetcher=_fetcher({}),
+        portfolio=portfolio,
+    )
+    [cand] = out["candidates"]
+    assert cand["company"] == "Acme Robotics"
+    assert cand["source_kind"] == "portfolio_list"
+    assert cand["source"] == "Antler"
+    assert "pre_extracted" not in cand
+    assert out["stats"]["portfolio_candidates"] == 1
+    assert out["stats"]["excluded_by_terms"] == 1
 
 
 def _jina_pre(url: str, items: list[dict[str, str]]) -> dict:
