@@ -55,7 +55,7 @@ jobs:
       - name: Prune ledger changes
         continue-on-error: true
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PR_BOT_TOKEN || secrets.GITHUB_TOKEN }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}

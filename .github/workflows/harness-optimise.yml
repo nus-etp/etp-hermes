@@ -406,7 +406,7 @@ jobs:
         if: steps.decide.outputs.accept == 'true' && env.HARNESS_DRY_RUN != 'true'
         continue-on-error: true
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PR_BOT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           rung=$(python3 -c 'import json; print(json.load(open("data/harness/proposal.json"))["rung"])')
           title="harness: ${CLUSTER_KEY} (rung ${rung})"
