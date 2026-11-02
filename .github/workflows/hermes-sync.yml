@@ -389,6 +389,16 @@ jobs:
         continue-on-error: true
         run: python3 scripts/ipos_delta.py
 
+      - name: Snapshot MAS Financial Institutions Directory
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u -d "$RUN_DATE" +%u)" = "1" ]; then
+            python3 scripts/mas_fid_snapshot.py
+          else
+            echo "not Monday; skipping MAS directory"
+          fi
+
       - name: Collect candidates (deterministic feed parse + dedup)
         # Fetches and parses every changed feed/source, applies date windows,
         # dedupes against signals/seen-urls.txt, and runs the substring
@@ -771,6 +781,7 @@ jobs:
             data/harness/judged/
             data/startupsg/
             data/portfolio-lists/
+            data/masfid/
             evals/scenarios/
           if-no-files-found: ignore
           retention-days: 1
@@ -824,7 +835,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add signals/ data/metrics/ hermes/memories/
-          for harness_path in data/replay data/harness/judged data/startupsg data/portfolio-lists evals/scenarios; do
+          for harness_path in data/replay data/harness/judged data/startupsg data/portfolio-lists data/masfid evals/scenarios; do
             if [ -e "$harness_path" ]; then
               git add "$harness_path"
             fi

@@ -1617,3 +1617,39 @@ def test_appstore_dev_caps_white_label_floods_newest_first(cc) -> None:
         "appstore://103/1.0",
     ]
     assert out["stats"]["appstore_capped"] == 4
+
+
+def test_masfid_items_fold_in_for_judgment_with_dedup(cc):
+    def item(company: str, key: str) -> dict[str, str]:
+        return {
+            "company": company,
+            "headline": f"{company} newly listed in the MAS directory as Major Payment Institution",
+            "description": "Activities: E-money Issuance Service.",
+            "source": "MAS Financial Institutions Directory",
+            "pubDate": "2026-11-02",
+            "link": "https://eservices.mas.gov.sg/fid/institution/detail/1-ACME",
+            "dedup_key": key,
+            "source_kind": "mas_fid",
+        }
+
+    masfid = {
+        "items": [
+            item("Acme Robotics", "masfid://acme-robotics/major-payment-institution/granted"),
+            item("Acme Robotics", "masfid://acme-robotics/full-bank/granted"),
+            item("Not On Watchlist", "masfid://not-on-watchlist/full-bank/granted"),
+        ]
+    }
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen={"masfid://acme-robotics/full-bank/granted"},
+        fetcher=_fetcher({}),
+        masfid=masfid,
+    )
+    [cand] = out["candidates"]
+    assert cand["dedup_key"] == "masfid://acme-robotics/major-payment-institution/granted"
+    assert cand["source_kind"] == "mas_fid"
+    assert "pre_extracted" not in cand
+    assert out["stats"]["masfid_candidates"] == 1
