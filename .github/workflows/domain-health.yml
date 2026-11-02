@@ -1,0 +1,56 @@
+name: domain-health
+
+on:
+  schedule:
+    - cron: '0 4 1 * *'
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Check only the first N domains (blank = all).'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: domain-health
+  cancel-in-progress: false
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: '3.11'
+
+      - name: Check watchlist domains
+        env:
+          DOMAIN_HEALTH_LIMIT: ${{ github.event.inputs.limit }}
+        run: |
+          if [ -n "$DOMAIN_HEALTH_LIMIT" ]; then
+            python3 scripts/domain_health.py --limit "$DOMAIN_HEALTH_LIMIT"
+          else
+            python3 scripts/domain_health.py
+          fi
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add signals/domain-health.md
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "chore(obs): domain health $(date -u +%Y-%m)"
+          for attempt in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push attempt ${attempt} rejected; rebasing..." >&2
+            git pull --rebase || { git rebase --abort; exit 1; }
+          done
+          exit 1
