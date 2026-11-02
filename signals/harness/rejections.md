@@ -43,3 +43,30 @@ Verdict reasons:
 Unresolved blocking findings:
 
 - none
+
+## 2026-11-02 — ingest/false_keep/patsnap/careers.patsnap.com (run 41367342851)
+
+- Run: https://github.com/nus-etp/hermenaut/actions/runs/41367342851
+- Rung: 2
+- Files: `prompts/ingest.md`
+- Verdict: reject
+
+Verdict reasons:
+
+- deepseek: scenarios failed: ingest-2026-06-19-0001, ingest-2026-06-19-0003, ingest-2026-06-19-0004, ingest-2026-06-20-0001, ingest-2026-06-20-0002, ingest-2026-06-21-0001, ingest-2026-06-22-0003, ingest-2026-06-22-0004, ingest-2026-06-22-0005, ingest-2026-06-22-0007, ingest-2026-06-22-0008, ingest-2026-06-23-0001, ingest-2026-06-24-0001, ingest-2026-06-24-0004, ingest-2026-06-24-0005, ingest-2026-06-24-0007, ingest-2026-06-24-0009, ingest-2026-06-24-0011, ingest-2026-06-24-0012, ingest-2026-06-24-0013, ingest-2026-06-26-0001, ingest-2026-06-26-0003, ingest-2026-06-26-0004, ingest-2026-06-26-0008, ingest-2026-06-26-0010, ingest-2026-06-26-0011, ingest-2026-06-26-0012, ingest-2026-06-26-0016, ingest-2026-06-26-0018, ingest-2026-06-26-0019, ingest-2026-06-26-0021, ingest-2026-06-26-0022, ingest-2026-06-26-0023, ingest-2026-06-28-0002, ingest-2026-06-28-0003, ingest-2026-06-28-0004
+
+Unresolved blocking findings:
+
+- none
+
+Replay table:
+
+## Replay table
+
+| runtime | scenarios passed | failing scenarios | champion right | proposal right | p | volume ratio | cost delta |
+|---|---|---|---|---|---|---|---|
+| deepseek | 71/107 | ingest-2026-06-19-0001, ingest-2026-06-19-0003, ingest-2026-06-19-0004, ingest-2026-06-20-0001, ingest-2026-06-20-0002, ingest-2026-06-21-0001, ingest-2026-06-22-0003, ingest-2026-06-22-0004, ingest-2026-06-22-0005, ingest-2026-06-22-0007, ingest-2026-06-22-0008, ingest-2026-06-23-0001, ingest-2026-06-24-0001, ingest-2026-06-24-0004, ingest-2026-06-24-0005, ingest-2026-06-24-0007, ingest-2026-06-24-0009, ingest-2026-06-24-0011, ingest-2026-06-24-0012, ingest-2026-06-24-0013, ingest-2026-06-26-0001, ingest-2026-06-26-0003, ingest-2026-06-26-0004, ingest-2026-06-26-0008, ingest-2026-06-26-0010, ingest-2026-06-26-0011, ingest-2026-06-26-0012, ingest-2026-06-26-0016, ingest-2026-06-26-0018, ingest-2026-06-26-0019, ingest-2026-06-26-0021, ingest-2026-06-26-0022, ingest-2026-06-26-0023, ingest-2026-06-28-0002, ingest-2026-06-28-0003, ingest-2026-06-28-0004 | 0 | 5 | 0.0625 | 0.667 | 0.0228 |
+
+**Decision: REJECT**
+
+- deepseek: scenarios failed: ingest-2026-06-19-0001, ingest-2026-06-19-0003, ingest-2026-06-19-0004, ingest-2026-06-20-0001, ingest-2026-06-20-0002, ingest-2026-06-21-0001, ingest-2026-06-22-0003, ingest-2026-06-22-0004, ingest-2026-06-22-0005, ingest-2026-06-22-0007, ingest-2026-06-22-0008, ingest-2026-06-23-0001, ingest-2026-06-24-0001, ingest-2026-06-24-0004, ingest-2026-06-24-0005, ingest-2026-06-24-0007, ingest-2026-06-24-0009, ingest-2026-06-24-0011, ingest-2026-06-24-0012, ingest-2026-06-24-0013, ingest-2026-06-26-0001, ingest-2026-06-26-0003, ingest-2026-06-26-0004, ingest-2026-06-26-0008, ingest-2026-06-26-0010, ingest-2026-06-26-0011, ingest-2026-06-26-0012, ingest-2026-06-26-0016, ingest-2026-06-26-0018, ingest-2026-06-26-0019, ingest-2026-06-26-0021, ingest-2026-06-26-0022, ingest-2026-06-26-0023, ingest-2026-06-28-0002, ingest-2026-06-28-0003, ingest-2026-06-28-0004
