@@ -8,7 +8,8 @@ UTC date replaces the last row instead of appending a duplicate.
 
 Sources:
   - GitHub org/user stats — only when the company has a `github_org` source.
-  - Lever open postings — only when the company has a `lever_jobs` source.
+  - Open job postings — only when the company has an `ats_jobs` source (or a
+    legacy `lever_jobs`/`recruitee_jobs` one); recorded as `jobs.open`.
   - Hacker News Algolia mention count (rolling 30 days) — all companies.
   - GDELT DOC 2.0 global news article count (rolling 7 days) — only when the
     company has at least one structured `sources` entry. Skipped for the
@@ -53,7 +54,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Iterable
 
-from user_agents import honest_ua
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import ats_jobs  # noqa: E402
+from user_agents import honest_ua  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 COMPANIES_PATH = REPO_ROOT / "data" / "companies.json"
@@ -166,11 +169,15 @@ def _gate(url: str) -> None:
         _GATE.before_request(url)
 
 
-def http_get_json(url: str, headers: dict[str, str] | None = None) -> Any:
+def http_get_bytes(url: str, headers: dict[str, str] | None = None) -> bytes:
     _gate(url)
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})})
     with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT_S) as resp:
-        return json.loads(resp.read().decode("utf-8", errors="replace"))
+        return resp.read()
+
+
+def http_get_json(url: str, headers: dict[str, str] | None = None) -> Any:
+    return json.loads(http_get_bytes(url, headers).decode("utf-8", errors="replace"))
 
 
 def parse_github_org(source_url: str) -> str | None:
@@ -224,12 +231,9 @@ def github_stats(org: str, token: str | None) -> dict[str, int | None] | None:
     return {"stars": stars, "followers": followers, "repos": public_repos}
 
 
-def lever_open_jobs(source_url: str) -> int | None:
+def ats_open_jobs(provider: str, source_url: str) -> int | None:
     try:
-        data = http_get_json(source_url)
-        if isinstance(data, list):
-            return len(data)
-        return None
+        return len(ats_jobs.fetch_postings(provider, source_url, http_get_bytes))
     except Exception:
         return None
 
@@ -305,6 +309,13 @@ def find_source(company: dict[str, Any], source_type: str) -> dict[str, Any] | N
     return None
 
 
+def find_ats_source(company: dict[str, Any]) -> dict[str, Any] | None:
+    for s in company.get("sources") or []:
+        if ats_jobs.is_ats_source(s):
+            return s
+    return None
+
+
 def collect_one(company: dict[str, Any], now: dt.datetime, gh_token: str | None) -> dict[str, Any]:
     name = company["name"]
     record: dict[str, Any] = {"date": now.strftime("%Y-%m-%d")}
@@ -315,9 +326,13 @@ def collect_one(company: dict[str, Any], now: dt.datetime, gh_token: str | None)
         if org:
             record["github"] = github_stats(org, gh_token)
 
-    lever_src = find_source(company, "lever_jobs")
-    if lever_src:
-        record["lever"] = {"open": lever_open_jobs(lever_src["url"])}
+    ats_src = find_ats_source(company)
+    if ats_src:
+        provider = ats_jobs.source_provider(ats_src)
+        record["jobs"] = {
+            "open": ats_open_jobs(provider, ats_src["url"]) if provider else None,
+            "provider": provider,
+        }
 
     record["hn_30d"] = hn_mentions_30d(name, now)
 

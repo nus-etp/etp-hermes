@@ -343,7 +343,8 @@ def test_recruitee_jobs_window_and_key(cc):
     assert cand["headline"] == "Life Science specialist — SG - Life Sciences"
     assert cand["link"] == "https://careers.patsnap.com/o/life-science-specialist"
     assert cand["pubDate"] == now.date().isoformat()
-    assert cand["source_kind"] == "recruitee_jobs"
+    assert cand["source_kind"] == "ats_jobs"
+    assert cand["provider"] == "recruitee"
 
 
 def test_recruitee_jobs_seen_and_bad_json(cc):

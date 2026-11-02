@@ -184,7 +184,8 @@
         "url": "https://github.com/patsnap.atom"
       },
       {
-        "type": "recruitee_jobs",
+        "type": "ats_jobs",
+        "provider": "recruitee",
         "label": "careers",
         "url": "https://patsnap.recruitee.com/api/offers/"
       },
@@ -316,6 +317,12 @@
         "label": "newsroom",
         "url": "https://www.horizonquantum.com/resources/newsroom",
         "hint": "Newsroom page lists press releases and media coverage as vertically-stacked cards. Each card has a headline (h4), descriptive text, a 'See more' link, and a publication date. Relative links resolve against https://www.horizonquantum.com/."
+      },
+      {
+        "type": "ats_jobs",
+        "provider": "mycareersfuture",
+        "label": "careers",
+        "url": "https://api.mycareersfuture.gov.sg/v2/jobs?uen=201802755E&limit=100"
       }
     ],
     "identifiers": {
@@ -692,6 +699,14 @@
     ],
     "description": "BLOCK71 Singapore-resident agentic-AI startup (play on 'agentic'). Drop generic 'agentic AI' hype articles unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "ats_jobs",
+        "provider": "mycareersfuture",
+        "label": "careers",
+        "url": "https://api.mycareersfuture.gov.sg/v2/jobs?uen=202446293K&limit=100"
+      }
+    ],
     "identifiers": {
       "uen": "202446293K"
     },
@@ -1144,6 +1159,12 @@
         "label": "blog",
         "url": "https://beex.sg/blogs/",
         "hint": "BeeX blog listing. Each post is a card with a featured image, author byline ('BeeX Team'), an h3-style headline link and a publication date below the headline (e.g. 'May 13, 2024'). Resolve relative links against https://beex.sg/."
+      },
+      {
+        "type": "ats_jobs",
+        "provider": "mycareersfuture",
+        "label": "careers",
+        "url": "https://api.mycareersfuture.gov.sg/v2/jobs?uen=201834961K&limit=100"
       }
     ],
     "identifiers": {
@@ -3560,6 +3581,12 @@
         "type": "github_org",
         "label": "github",
         "url": "https://github.com/hivebotics.atom"
+      },
+      {
+        "type": "ats_jobs",
+        "provider": "mycareersfuture",
+        "label": "careers",
+        "url": "https://api.mycareersfuture.gov.sg/v2/jobs?uen=202224434W&limit=100"
       }
     ],
     "funding_rounds": [
@@ -4798,6 +4825,12 @@
         "label": "newsroom",
         "url": "https://www.neumaterials.com/news",
         "hint": "News listing is vertically-stacked article cards; each card has a headline, publication date, brief description, and 'Read more' link. Relative links resolve against https://www.neumaterials.com/."
+      },
+      {
+        "type": "ats_jobs",
+        "provider": "mycareersfuture",
+        "label": "careers",
+        "url": "https://api.mycareersfuture.gov.sg/v2/jobs?uen=202119965Z&limit=100"
       }
     ],
     "identifiers": {
@@ -5481,6 +5514,12 @@
         "type": "github_org",
         "label": "github",
         "url": "https://github.com/pqcee.atom"
+      },
+      {
+        "type": "ats_jobs",
+        "provider": "mycareersfuture",
+        "label": "careers",
+        "url": "https://api.mycareersfuture.gov.sg/v2/jobs?uen=202228798G&limit=100"
       }
     ],
     "identifiers": {
@@ -6156,6 +6195,14 @@
     ],
     "description": "BLOCK71 Singapore-resident edtech / academic-tools startup. Drop unrelated 'Scholarly' brand mentions (Scholarly Kitchen, Scholarly Research) unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "ats_jobs",
+        "provider": "mycareersfuture",
+        "label": "careers",
+        "url": "https://api.mycareersfuture.gov.sg/v2/jobs?uen=202324923K&limit=100"
+      }
+    ],
     "identifiers": {
       "uen": "202324923K"
     },
@@ -6412,6 +6459,12 @@
         "label": "media",
         "url": "https://www.singrow.com/media",
         "hint": "Wix-hosted media/press listing for SINGROW (NUS agritech spin-off). Items are <div> grid tiles (no semantic <article>); each tile has the headline in <h4>, the publication date in <h4> below the title in 'DD Month YYYY' format, then a 'By <Publication Name>' attribution and a 'Read More' link. About 25+ external news items aggregated, newest-first. Resolve relative links against https://www.singrow.com."
+      },
+      {
+        "type": "ats_jobs",
+        "provider": "mycareersfuture",
+        "label": "careers",
+        "url": "https://api.mycareersfuture.gov.sg/v2/jobs?uen=201927365C&limit=100"
       }
     ],
     "identifiers": {

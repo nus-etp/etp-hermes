@@ -73,7 +73,7 @@ jobs:
           COLLECT_ALL_SOURCES: '1'
           COLLECT_FIREHOSE_DAYS: '90'
           COLLECT_PER_COMPANY_DAYS: '120'
-          COLLECT_LEVER_DAYS: '120'
+          COLLECT_ATS_DAYS: '120'
           COLLECT_SEEN_FILE: /tmp/empty-seen.txt
           COLLECT_DROPPED_FILE: /tmp/empty-dropped.txt
         run: |

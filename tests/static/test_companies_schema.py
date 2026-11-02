@@ -5,7 +5,17 @@ from __future__ import annotations
 import re
 from urllib.parse import urlparse
 
-ALLOWED_SOURCE_TYPES = {"rss", "github_org", "lever_jobs", "recruitee_jobs", "html_scrape"}
+ALLOWED_SOURCE_TYPES = {"rss", "github_org", "ats_jobs", "lever_jobs", "recruitee_jobs", "html_scrape"}
+ATS_PROVIDERS = {
+    "lever",
+    "recruitee",
+    "smartrecruiters",
+    "breezy",
+    "ashby",
+    "jazzhr",
+    "manatal",
+    "mycareersfuture",
+}
 ALLOWED_IDENTIFIER_KEYS = {"crunchbase", "linkedin", "nus_cde", "sginnovate", "uen", "website"}
 DATE_RE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")
 
@@ -47,6 +57,8 @@ def test_required_keys_and_types(companies: list[dict]) -> None:
             stype = s.get("type")
             if stype not in ALLOWED_SOURCE_TYPES:
                 errors.append(f"{name}: sources[{i}] type {stype!r} not in {sorted(ALLOWED_SOURCE_TYPES)}")
+            if stype == "ats_jobs" and s.get("provider") not in ATS_PROVIDERS:
+                errors.append(f"{name}: sources[{i}] ats_jobs provider {s.get('provider')!r} not in {sorted(ATS_PROVIDERS)}")
             if not _is_url(s.get("url")):
                 errors.append(f"{name}: sources[{i}] url not a valid http(s) URL: {s.get('url')!r}")
             label = s.get("label")

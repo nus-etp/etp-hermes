@@ -2,7 +2,7 @@
 """Deterministic candidate collection for Layer 1 (ingest).
 
 Does everything in prompts/ingest.md steps 1-2.5 that needs no judgment:
-fetches changed firehose feeds and per-company rss/github_org/lever_jobs/recruitee_jobs
+fetches changed firehose feeds and per-company rss/github_org/ats_jobs
 sources, parses them, applies date windows, dedupes against
 signals/seen-urls.txt (permanent: published keys) and the non-expired half of
 signals/dropped-urls.txt (TTL'd: keys a relevance pass dropped), runs the
@@ -32,11 +32,12 @@ from datetime import date, datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
-from urllib import error, parse, request
+from urllib import error, request
 
 # Make the sibling `jina_fallback` module importable both when run directly
 # (scripts/ is sys.path[0]) and under pytest's file-path module loader.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import ats_jobs  # noqa: E402
 import dropped_urls  # noqa: E402
 from entity_terms import (  # noqa: E402
     MATCH_WEAK_DESC,
@@ -84,7 +85,7 @@ def _window_days(env_name: str, default: int) -> timedelta:
 
 FIREHOSE_WINDOW = _window_days("COLLECT_FIREHOSE_DAYS", 7)
 PER_COMPANY_WINDOW = _window_days("COLLECT_PER_COMPANY_DAYS", 14)
-LEVER_WINDOW = _window_days("COLLECT_LEVER_DAYS", 30)
+ATS_WINDOW = _window_days("COLLECT_ATS_DAYS", _window_days("COLLECT_LEVER_DAYS", 30).days)
 
 
 # Reader fallback: when a firehose/rss feed's direct fetch or parse fails
@@ -92,7 +93,7 @@ LEVER_WINDOW = _window_days("COLLECT_LEVER_DAYS", 30)
 # Parallel MCP web_fetch. A raw feed comes back as XML and is parsed as a feed;
 # anything else goes through the shared heading/link heuristic. Bounded per run
 # so a wave of dead feeds can't hammer the anonymous rate limit. Only firehose + rss are recovered this way —
-# github_org/lever_jobs/recruitee_jobs need fields (author/id, JSON) Markdown can't carry, so
+# github_org/ats_jobs need fields (author/id, JSON) Markdown can't carry, so
 # those stay in fetch_failed for the prompt to retry.
 DEFAULT_JINA_FALLBACK_BUDGET = 25
 JINA_FALLBACK_KINDS = {"firehose", "rss"}
@@ -280,25 +281,6 @@ def github_entry_keep(entry: dict[str, str]) -> bool:
     if "pushed to" in title.lower() and GITHUB_CHORE_TITLE_RE.search(desc):
         return False
     return True
-
-
-def lever_slug(url: str) -> str:
-    path = parse.urlparse(url).path  # /v0/postings/<slug>
-    return path.rstrip("/").rsplit("/", 1)[-1]
-
-
-def recruitee_slug(url: str) -> str:
-    host = parse.urlparse(url).hostname or ""
-    return host.split(".", 1)[0]
-
-
-def parse_recruitee_date(value: Any) -> datetime | None:
-    if not isinstance(value, str) or not value.strip():
-        return None
-    try:
-        return datetime.strptime(value.strip(), "%Y-%m-%d %H:%M:%S UTC").replace(tzinfo=timezone.utc)
-    except ValueError:
-        return parse_date(value)
 
 
 def collect(
@@ -608,76 +590,39 @@ def collect(
                         },
                     )
 
-            elif stype == "lever_jobs":
-                try:
-                    postings = json.loads(body)
-                except json.JSONDecodeError as e:
-                    fetch_failed.append(
-                        {"url": url, "kind": stype, "company": name, "error": str(e)[:200]}
-                    )
+            elif ats_jobs.is_ats_source(s):
+                provider = ats_jobs.source_provider(s)
+                failure = {"url": url, "kind": stype, "company": name, "provider": provider or ""}
+                if provider is None:
+                    fetch_failed.append({**failure, "error": f"unknown ATS provider {s.get('provider')!r}"})
                     continue
-                slug = lever_slug(url)
-                for p in postings if isinstance(postings, list) else []:
-                    key = f"lever://{slug}/{p.get('id')}"
+                try:
+                    postings = ats_jobs.fetch_postings(provider, url, fetcher, first_body=body)
+                except (ValueError, error.URLError, TimeoutError, OSError) as e:
+                    fetch_failed.append({**failure, "error": str(e)[:200]})
+                    continue
+                for posting in postings:
+                    key = ats_jobs.dedup_key(provider, url, posting["id"])
                     if key in seen:
                         continue
-                    created = p.get("createdAt")
-                    if isinstance(created, (int, float)):
-                        pub = datetime.fromtimestamp(created / 1000, tz=timezone.utc)
-                        if _now() - pub > LEVER_WINDOW:
-                            continue
-                        pub_str = pub.date().isoformat()
-                    else:
-                        pub_str = ""
-                    team = (p.get("categories") or {}).get("team") or ""
-                    headline = f"{p.get('text', '')} — {team}" if team else p.get("text", "")
-                    add(
-                        name,
-                        {
-                            "headline": headline,
-                            "description": "",
-                            "source": source_label,
-                            "pubDate": pub_str,
-                            "link": p.get("hostedUrl", ""),
-                            "dedup_key": key,
-                            "source_kind": "lever_jobs",
-                        },
-                    )
-
-            elif stype == "recruitee_jobs":
-                try:
-                    payload = json.loads(body)
-                except json.JSONDecodeError as e:
-                    fetch_failed.append(
-                        {"url": url, "kind": stype, "company": name, "error": str(e)[:200]}
-                    )
-                    continue
-                offers = payload.get("offers") if isinstance(payload, dict) else None
-                slug = recruitee_slug(url)
-                for offer in offers if isinstance(offers, list) else []:
-                    key = f"recruitee://{slug}/{offer.get('id')}"
-                    if key in seen:
-                        continue
-                    published = parse_recruitee_date(offer.get("published_at"))
+                    published = posting["published"]
                     if published is not None:
-                        if _now() - published > LEVER_WINDOW:
+                        if _now() - published > ATS_WINDOW:
                             continue
                         pub_str = published.date().isoformat()
                     else:
                         pub_str = ""
-                    department = offer.get("department") or ""
-                    title = offer.get("title", "")
-                    headline = f"{title} — {department}" if department else title
                     add(
                         name,
                         {
-                            "headline": headline,
+                            "headline": ats_jobs.headline(posting),
                             "description": "",
                             "source": source_label,
                             "pubDate": pub_str,
-                            "link": offer.get("careers_url", ""),
+                            "link": posting["link"],
                             "dedup_key": key,
-                            "source_kind": "recruitee_jobs",
+                            "source_kind": ats_jobs.ATS_KIND,
+                            "provider": provider,
                         },
                     )
 
