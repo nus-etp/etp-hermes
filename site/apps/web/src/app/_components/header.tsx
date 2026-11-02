@@ -16,7 +16,7 @@ export function Header() {
           </span>
           <div className="flex flex-col leading-tight">
             <span className="prose-headline-base-medium tracking-tight">
-              hermeneut
+              hermenaut
             </span>
             <span className="prose-label-sm text-base-content-medium">
               {meta.totalCompanies} companies tracked

@@ -1,12 +1,12 @@
-<p align="center"><img src="docs/assets/hermeneut.svg" width="200" alt="Hermeneut mascot"></p>
+<p align="center"><img src="docs/assets/hermenaut.svg" width="200" alt="Hermenaut mascot"></p>
 
-# hermeneut
+# hermenaut
 
-Daily company intelligence pipeline for the NUSX watchlist. [hermes-agent](https://hermes-agent.nousresearch.com) runs in GitHub Actions and commits dated updates and per-company living briefs to `signals/`, published at https://nus-etp.github.io/hermeneut.
+Daily company intelligence pipeline for the NUSX watchlist. [hermes-agent](https://hermes-agent.nousresearch.com) runs in GitHub Actions and commits dated updates and per-company living briefs to `signals/`, published at https://nus-etp.github.io/hermenaut.
 
-## Why Hermeneut?
+## Why Hermenaut?
 
-A *hermeneut* is an interpreter, and the word shares a root with *hermeneutics*, the art of interpretation, which tradition ties to Hermes, the messenger god. The pipeline runs on hermes-agent and does the interpreter's job: it reads the day's scattered signals (news, filings, hiring, launches) and turns them into a living brief for each company.
+*Hermes*, the messenger god, plus *-naut*, the voyager (as in astronaut). The pipeline runs on hermes-agent and goes out every day to explore the watchlist's corner of the startup universe, gathering scattered signals (news, filings, hiring, launches) and bringing back a living brief for each company.
 
 ## Quick start
 

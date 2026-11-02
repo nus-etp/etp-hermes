@@ -17,7 +17,7 @@ export default function HomePage() {
       <section className="ring-base-divider-medium bg-base-canvas-alt rounded-2xl px-6 py-10 ring-1 sm:px-10 sm:py-14">
         <div className="flex flex-col gap-4">
           <span className="prose-label-sm text-base-content-brand bg-base-canvas-brand-subtle w-fit rounded-full px-3 py-1 font-mono text-xs tracking-wider uppercase">
-            hermeneut signals
+            hermenaut signals
           </span>
           <h1 className="text-base-content-strong max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
             Southeast Asia’s climate &amp; deep-tech companies, watched daily.

@@ -1,7 +1,7 @@
 [project]
-name = "hermeneut-evals"
+name = "hermenaut-evals"
 version = "0.0.0"
-description = "Evals and tests for the hermeneut daily pipeline."
+description = "Evals and tests for the hermenaut daily pipeline."
 requires-python = ">=3.11"
 
 [project.optional-dependencies]

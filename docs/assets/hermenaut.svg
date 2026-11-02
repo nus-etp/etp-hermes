@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="200" height="200" role="img" aria-label="Hermenaut: a little living brief in a winged space helmet, floating through space and scanning for signals with a magnifying glass">
+  <defs>
+    <clipPath id="space">
+      <circle cx="120" cy="120" r="112"/>
+    </clipPath>
+    <path id="wing" d="M76 92 C60 92 46 86 36 74 C46 74 54 76 60 78 C52 70 48 62 48 54 C58 60 64 68 70 76 C68 68 70 60 74 54 C80 64 82 78 82 90 Z"/>
+    <path id="sparkle" d="M0 -7 Q1.5 -1.5 7 0 Q1.5 1.5 0 7 Q-1.5 1.5 -7 0 Q-1.5 -1.5 0 -7 Z"/>
+  </defs>
+
+  <circle cx="120" cy="120" r="112" fill="#2b2850"/>
+
+  <g clip-path="url(#space)">
+    <g fill="#ffffff">
+      <circle cx="30" cy="104" r="1.6"/>
+      <circle cx="62" cy="30" r="1.4"/>
+      <circle cx="150" cy="22" r="1.8"/>
+      <circle cx="214" cy="112" r="1.4"/>
+      <circle cx="44" cy="190" r="1.8"/>
+      <circle cx="176" cy="216" r="1.4"/>
+      <circle cx="98" cy="222" r="1.2"/>
+      <circle cx="226" cy="150" r="1.2"/>
+    </g>
+    <g fill="#f6c453">
+      <use href="#sparkle" transform="translate(196 46) scale(0.9)"/>
+      <use href="#sparkle" transform="translate(34 146) scale(0.7)"/>
+      <use href="#sparkle" transform="translate(206 192) scale(0.6)"/>
+    </g>
+
+    <circle cx="50" cy="58" r="16" fill="#f9a8c0" stroke="#3b3a5a" stroke-width="3"/>
+    <path d="M38 52 Q50 48 62 54" fill="none" stroke="#e48aa6" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="50" cy="60" rx="28" ry="7" fill="none" stroke="#f6c453" stroke-width="3.5" transform="rotate(-18 50 60)"/>
+
+    <path d="M84 168 C56 186 40 214 24 244" fill="none" stroke="#efeafc" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/>
+  </g>
+
+  <g transform="rotate(-8 120 130)">
+    <g stroke="#3b3a5a" stroke-width="4" stroke-linecap="round">
+      <line x1="106" y1="190" x2="102" y2="210"/>
+      <line x1="134" y1="190" x2="140" y2="210"/>
+    </g>
+    <g fill="#ffffff" stroke="#3b3a5a" stroke-width="3">
+      <rect x="90" y="206" width="20" height="12" rx="6"/>
+      <rect x="132" y="206" width="20" height="12" rx="6"/>
+    </g>
+
+    <path d="M88 150 Q70 146 62 128" fill="none" stroke="#3b3a5a" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="61" cy="124" r="6" fill="#ffffff" stroke="#3b3a5a" stroke-width="3"/>
+    <path d="M152 156 L172 148" fill="none" stroke="#3b3a5a" stroke-width="4" stroke-linecap="round"/>
+
+    <rect x="84" y="56" width="72" height="138" rx="16" fill="#ffffff" stroke="#3b3a5a" stroke-width="4"/>
+    <g stroke="#c9c3e0" stroke-width="4" stroke-linecap="round">
+      <line x1="98" y1="158" x2="142" y2="158"/>
+      <line x1="98" y1="170" x2="138" y2="170"/>
+      <line x1="98" y1="182" x2="124" y2="182"/>
+    </g>
+    <circle cx="140" cy="148" r="4" fill="#f6c453"/>
+
+    <ellipse cx="102" cy="104" rx="7" ry="4.5" fill="#f9a8c0" opacity="0.8"/>
+    <ellipse cx="138" cy="104" rx="7" ry="4.5" fill="#f9a8c0" opacity="0.8"/>
+    <circle cx="108" cy="92" r="6.5" fill="#3b3a5a"/>
+    <circle cx="132" cy="92" r="6.5" fill="#3b3a5a"/>
+    <circle cx="110.3" cy="89.7" r="2.2" fill="#ffffff"/>
+    <circle cx="134.3" cy="89.7" r="2.2" fill="#ffffff"/>
+    <path d="M114 103 Q120 110 126 103" fill="none" stroke="#3b3a5a" stroke-width="3.5" stroke-linecap="round"/>
+
+    <g fill="#ffffff" stroke="#3b3a5a" stroke-width="3" stroke-linejoin="round">
+      <use href="#wing"/>
+      <use href="#wing" transform="translate(240 0) scale(-1 1)"/>
+    </g>
+    <circle cx="120" cy="92" r="44" fill="#bfe3f5" fill-opacity="0.35" stroke="#3b3a5a" stroke-width="4"/>
+    <path d="M92 74 Q100 58 118 54" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="88" cy="88" r="2.5" fill="#ffffff" opacity="0.9"/>
+    <rect x="80" y="128" width="80" height="12" rx="6" fill="#f6c453" stroke="#3b3a5a" stroke-width="4"/>
+    <line x1="120" y1="48" x2="120" y2="36" stroke="#3b3a5a" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="120" cy="33" r="5" fill="#f6c453" stroke="#3b3a5a" stroke-width="3"/>
+
+    <line x1="172" y1="148" x2="180" y2="138" stroke="#3b3a5a" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="190" cy="124" r="16" fill="#bfe3f5" fill-opacity="0.9" stroke="#3b3a5a" stroke-width="4"/>
+    <path d="M182 118 Q185 113 191 112" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
