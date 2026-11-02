@@ -1,4 +1,4 @@
-You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the etp-hermes repo root. All paths below are relative to that.
+You are running as a non-interactive agent inside a GitHub Actions runner. Your working directory is the hermeneut repo root. All paths below are relative to that.
 
 This is the **cluster session** of the self-optimising harness (`docs/self-optimising-harness.md` §5). A deterministic pre-step, `scripts/harness/cluster.py`, already grouped the active scenario cards under `evals/scenarios/` by failure cluster and picked the top one. Your only job is to **name its root cause**. You do not pick the fix — a later session does.
 

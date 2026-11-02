@@ -2,7 +2,7 @@
 
 # hermeneut
 
-Daily company intelligence pipeline for the NUS ETP watchlist. [hermes-agent](https://hermes-agent.nousresearch.com) runs in GitHub Actions and commits dated updates and per-company living briefs to `signals/`, published at https://nus-etp.github.io/hermeneut.
+Daily company intelligence pipeline for the NUSX watchlist. [hermes-agent](https://hermes-agent.nousresearch.com) runs in GitHub Actions and commits dated updates and per-company living briefs to `signals/`, published at https://nus-etp.github.io/hermeneut.
 
 ## Why Hermeneut?
 

@@ -14,7 +14,7 @@ The home page: hero stats (Companies / Living briefs / Daily digests) and a clie
 
 ## How to get to it (user POV)
 
-Open the site root, or click `Directory` / the `etp-hermes` logo in the header from any page.
+Open the site root, or click `Directory` / the `hermeneut` logo in the header from any page.
 
 ## Driving it with chrome-devtools
 

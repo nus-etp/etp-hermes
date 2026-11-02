@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Reads etp-hermes data + signals and emits JSON the Next app can statically
+// Reads hermeneut data + signals and emits JSON the Next app can statically
 // import. Copies brief infographics into public/ so they're served by the
 // static export at /etp-hermes/briefs/<slug>/infographic.png.
 

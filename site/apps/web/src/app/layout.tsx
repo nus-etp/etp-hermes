@@ -10,7 +10,7 @@ import { Footer } from './_components/footer'
 import { Header } from './_components/header'
 import { ClientProviders } from './provider'
 
-const SITE_NAME = 'etp-hermes'
+const SITE_NAME = 'hermeneut'
 const SITE_DESCRIPTION =
   'Daily intelligence on Southeast Asian climate, ag, and deep-tech companies.'
 

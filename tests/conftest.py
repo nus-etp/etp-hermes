@@ -1,4 +1,4 @@
-"""Shared fixtures for the etp-hermes test suites."""
+"""Shared fixtures for the hermeneut test suites."""
 
 from __future__ import annotations
 
@@ -59,7 +59,7 @@ def scripts_module_loader():
 
     def _load(stem: str):
         path = REPO_ROOT / "scripts" / f"{stem}.py"
-        mod_name = f"etp_hermes_scripts.{stem.replace('-', '_')}"
+        mod_name = f"hermeneut_scripts.{stem.replace('-', '_')}"
         if mod_name in sys.modules:
             return sys.modules[mod_name]
         spec = importlib.util.spec_from_file_location(mod_name, path)

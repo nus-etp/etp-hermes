@@ -252,7 +252,7 @@ def _session_id() -> str | None:
                 "params": {
                     "protocolVersion": MCP_PROTOCOL_VERSION,
                     "capabilities": {},
-                    "clientInfo": {"name": "etp-hermes-reader", "version": "1"},
+                    "clientInfo": {"name": "hermeneut-reader", "version": "1"},
                 },
             },
             None,

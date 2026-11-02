@@ -1,4 +1,4 @@
-# etp-hermes site feature map
+# hermeneut site feature map
 
 Routes are relative to `BASE_URL` (`http://127.0.0.1:<port>/etp-hermes`). Source: `site/apps/web/src/app/`.
 

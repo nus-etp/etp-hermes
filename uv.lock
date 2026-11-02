@@ -222,7 +222,7 @@ wheels = [
 ]
 
 [[package]]
-name = "etp-hermes-evals"
+name = "hermeneut-evals"
 version = "0.0.0"
 source = { editable = "." }
 

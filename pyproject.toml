@@ -1,7 +1,7 @@
 [project]
-name = "etp-hermes-evals"
+name = "hermeneut-evals"
 version = "0.0.0"
-description = "Evals and tests for the etp-hermes daily pipeline."
+description = "Evals and tests for the hermeneut daily pipeline."
 requires-python = ">=3.11"
 
 [project.optional-dependencies]
