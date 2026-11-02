@@ -516,6 +516,47 @@ def test_startupsg_items_absent_is_noop(cc):
     )
     assert out["candidates"] == []
     assert out["stats"]["startupsg_candidates"] == 0
+    assert out["stats"]["sitemap_candidates"] == 0
+
+
+def _sitemap_item(company: str, url: str) -> dict[str, str]:
+    return {
+        "company": company,
+        "headline": "Acme Raises Series A",
+        "description": "New page listed in the sitemap of Acme Robotics's own website acme.ai.",
+        "source": "acme.ai sitemap",
+        "pubDate": "2026-11-01T00:00:00+00:00",
+        "link": url,
+        "dedup_key": url,
+        "source_kind": "sitemap",
+        "sitemap_change": "new",
+    }
+
+
+def test_sitemap_items_fold_in_for_judgment_with_dedup(cc):
+    sitemap = {
+        "items": [
+            _sitemap_item("Acme Robotics", "https://acme.ai/blog/acme-raises-series-a/"),
+            _sitemap_item("Acme Robotics", "https://acme.ai/blog/already-published/"),
+            _sitemap_item("Not On Watchlist", "https://other.ai/blog/x/"),
+        ]
+    }
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen={"https://acme.ai/blog/already-published/"},
+        fetcher=_fetcher({}),
+        sitemap=sitemap,
+    )
+    [cand] = out["candidates"]
+    assert cand["company"] == "Acme Robotics"
+    assert cand["link"] == "https://acme.ai/blog/acme-raises-series-a/"
+    assert cand["source_kind"] == "sitemap"
+    assert cand["source"] == "acme.ai sitemap"
+    assert "pre_extracted" not in cand
+    assert out["stats"]["sitemap_candidates"] == 1
 
 
 def _jina_pre(url: str, items: list[dict[str, str]]) -> dict:
