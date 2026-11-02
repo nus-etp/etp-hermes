@@ -69,6 +69,9 @@ RUNTIME_ENV = (
     "DEEPSEEK_API_KEY", "DEEPSEEK_BASE_URL", "AB_JUDGE_MODEL",
     "NVIDIA_API_KEY", "NVIDIA_BASE_URL", "NVIDIA_MODEL",
     "ZAI_API_KEY", "ZAI_BASE_URL", "ZAI_MODEL",
+    "GEMINI_API_KEY", "GEMINI_BASE_URL", "GEMINI_MODEL",
+    "GROQ_API_KEY", "GROQ_BASE_URL", "GROQ_MODEL",
+    "KILOCODE_API_KEY", "KILOCODE_BASE_URL", "KILOCODE_MODEL",
 )
 
 
@@ -103,6 +106,11 @@ def test_default_runtime_is_deepseek_and_backward_compatible(mod, clean_env) -> 
         ("nvidia", "NVIDIA_API_KEY", "https://integrate.api.nvidia.com/v1/chat/completions",
          "deepseek-ai/deepseek-v4.1-flash"),
         ("zai", "ZAI_API_KEY", "https://api.z.ai/api/paas/v4/chat/completions", "glm-4.7-flash"),
+        ("gemini", "GEMINI_API_KEY", "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+         "gemini-3.6-flash"),
+        ("groq", "GROQ_API_KEY", "https://api.groq.com/openai/v1/chat/completions", "openai/gpt-oss-120b"),
+        ("kilocode", "KILOCODE_API_KEY", "https://api.kilo.ai/api/gateway/chat/completions",
+         "nvidia/nemotron-3-ultra-550b-a55b:free"),
     ],
 )
 def test_runtime_defaults(mod, clean_env, runtime, key_env, url, model) -> None:

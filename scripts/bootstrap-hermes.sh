@@ -48,6 +48,15 @@ fi
 if [ -n "${XIAOMI_API_KEY:-}" ]; then      # xiaomi fallback
   echo "XIAOMI_API_KEY=${XIAOMI_API_KEY}" >> "$HERMES_HOME/.env"
 fi
+if [ -n "${GEMINI_API_KEY:-}" ]; then      # gemini fallback (Google AI Studio free tier)
+  echo "GEMINI_API_KEY=${GEMINI_API_KEY}" >> "$HERMES_HOME/.env"
+fi
+if [ -n "${GROQ_API_KEY:-}" ]; then        # groq fallback (custom entry, key_env GROQ_API_KEY)
+  echo "GROQ_API_KEY=${GROQ_API_KEY}" >> "$HERMES_HOME/.env"
+fi
+if [ -n "${KILOCODE_API_KEY:-}" ]; then    # kilocode fallback (free model pool)
+  echo "KILOCODE_API_KEY=${KILOCODE_API_KEY}" >> "$HERMES_HOME/.env"
+fi
 
 if ! grep -qE '^(NVIDIA_API_KEY|DEEPSEEK_API_KEY)=' "$HERMES_HOME/.env"; then
   echo "no model provider key set (need NVIDIA_API_KEY or DEEPSEEK_API_KEY)" >&2

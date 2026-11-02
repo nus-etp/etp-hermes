@@ -8,10 +8,18 @@ model:
 # Turn-scoped failover: exhausted primary → next entry; missing key → skipped.
 # agent.api_max_retries: 1 → a dead/throttled provider fails over after one attempt, not 3.
 fallback_providers:
+  - provider: gemini         # Google AI Studio free tier — GEMINI_API_KEY; 1M context
+    model: gemini-3.6-flash
   - provider: nvidia         # NVIDIA NIM — NVIDIA_API_KEY; same model family
     model: deepseek-ai/deepseek-v4.1-flash
   - provider: zai            # free backstop (Z.AI/GLM) — ZAI_API_KEY; cost-0 model
     model: glm-4.7-flash
+  - provider: custom         # Groq free tier — GROQ_API_KEY; 1,000 req/day, small per-minute token cap
+    model: openai/gpt-oss-120b
+    base_url: https://api.groq.com/openai/v1
+    key_env: GROQ_API_KEY
+  - provider: kilocode       # Kilo Code gateway free pool — KILOCODE_API_KEY; 200 req/hr
+    model: nvidia/nemotron-3-ultra-550b-a55b:free
   - provider: xiaomi         # Xiaomi MiMo — XIAOMI_API_KEY
     model: mimo-v2.5
 
