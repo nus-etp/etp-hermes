@@ -15,6 +15,7 @@ ATS_PROVIDERS = {
     "jazzhr",
     "manatal",
     "mycareersfuture",
+    "jobstreet",
 }
 ALLOWED_IDENTIFIER_KEYS = {"cik", "crunchbase", "linkedin", "nus_cde", "sginnovate", "uen", "website"}
 DATE_RE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")

@@ -287,6 +287,38 @@ def test_mycareersfuture_parser_keeps_only_the_uen(ats) -> None:
     assert ats.dedup_key("mycareersfuture", url, "1a20c51b") == "mycareersfuture://201834961K/1a20c51b"
 
 
+def test_jobstreet_parser_filters_advertiser_and_pages(ats) -> None:
+    url = "https://sg.jobstreet.com/api/jobsearch/v5/search?siteKey=SG-Main&page=1&pageSize=2&advertiserid=60509686"
+    body = json.dumps(
+        {
+            "totalCount": 3,
+            "data": [
+                {
+                    "id": "95505209",
+                    "title": "Channel Sales Manager",
+                    "advertiser": {"id": "60509686", "description": "FLEXXON PTE. LTD."},
+                    "classifications": [{"classification": {"id": "1", "description": "Sales"}}],
+                    "listingDate": "2026-10-26T14:17:06Z",
+                },
+                {
+                    "id": "1",
+                    "title": "Other",
+                    "advertiser": {"id": "999"},
+                    "listingDate": "2026-10-26T14:17:06Z",
+                },
+            ],
+        }
+    ).encode()
+    postings, next_url = ats.parse_page("jobstreet", body, url)
+    [posting] = postings
+    assert ats.headline(posting) == "Channel Sales Manager — Sales"
+    assert posting["published"] == datetime(2026, 10, 26, 14, 17, 6, tzinfo=timezone.utc)
+    assert posting["link"] == "https://sg.jobstreet.com/job/95505209"
+    assert ats.dedup_key("jobstreet", url, "95505209") == "jobstreet://60509686/95505209"
+    assert "page=2" in next_url and "advertiserid=60509686" in next_url
+    assert ats.parse_page("jobstreet", body, next_url)[1] is None
+
+
 @pytest.mark.parametrize(
     ("provider", "body"),
     [
@@ -297,6 +329,7 @@ def test_mycareersfuture_parser_keeps_only_the_uen(ats) -> None:
         ("ashby", b"{}"),
         ("manatal", b"[]"),
         ("mycareersfuture", b'{"results": "x"}'),
+        ("jobstreet", b'{"data": "x"}'),
     ],
 )
 def test_parsers_reject_unexpected_shapes(ats, provider, body) -> None:

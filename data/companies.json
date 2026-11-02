@@ -19,6 +19,12 @@
         "type": "appstore_dev",
         "label": "App Store",
         "url": "https://apps.apple.com/developer/id548607290"
+      },
+      {
+        "type": "ats_jobs",
+        "provider": "jobstreet",
+        "label": "careers",
+        "url": "https://sg.jobstreet.com/api/jobsearch/v5/search?siteKey=SG-Main&advertiserid=60526790&pageSize=100&page=1"
       }
     ],
     "identifiers": {
@@ -2292,6 +2298,12 @@
         "type": "html_scrape",
         "label": "news",
         "url": "https://www.dconstruct.ai/news"
+      },
+      {
+        "type": "ats_jobs",
+        "provider": "jobstreet",
+        "label": "careers",
+        "url": "https://sg.jobstreet.com/api/jobsearch/v5/search?siteKey=SG-Main&advertiserid=63644137&pageSize=100&page=1"
       }
     ],
     "identifiers": {
@@ -2993,6 +3005,12 @@
         "type": "html_scrape",
         "label": "blog",
         "url": "https://www.flexxon.com/blog/"
+      },
+      {
+        "type": "ats_jobs",
+        "provider": "jobstreet",
+        "label": "careers",
+        "url": "https://sg.jobstreet.com/api/jobsearch/v5/search?siteKey=SG-Main&advertiserid=60509686&pageSize=100&page=1"
       }
     ],
     "identifiers": {
@@ -7152,6 +7170,12 @@
         "type": "appstore_dev",
         "label": "App Store",
         "url": "https://apps.apple.com/developer/id921378893"
+      },
+      {
+        "type": "ats_jobs",
+        "provider": "jobstreet",
+        "label": "careers",
+        "url": "https://sg.jobstreet.com/api/jobsearch/v5/search?siteKey=SG-Main&advertiserid=60536447&pageSize=100&page=1"
       }
     ],
     "identifiers": {
