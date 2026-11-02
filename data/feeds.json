@@ -293,5 +293,40 @@
     "name": "Leiphone",
     "type": "firehose",
     "url": "https://www.leiphone.com/feed"
+  },
+  {
+    "name": "Vietnam Investment Review",
+    "type": "firehose",
+    "url": "https://vir.com.vn/rss_feed/"
+  },
+  {
+    "name": "Vietnam.vn Science & Technology",
+    "type": "firehose",
+    "format": "html_scrape",
+    "url": "https://www.vietnam.vn/en/category/khoa-hoc-cong-nghe"
+  },
+  {
+    "name": "DealStreetAsia",
+    "type": "firehose",
+    "format": "html_scrape",
+    "url": "https://www.dealstreetasia.com/"
+  },
+  {
+    "name": "KrASIA",
+    "type": "firehose",
+    "format": "html_scrape",
+    "url": "https://kr-asia.com/"
+  },
+  {
+    "name": "Backscoop",
+    "type": "firehose",
+    "format": "html_scrape",
+    "url": "https://backscoop.com/"
+  },
+  {
+    "name": "BioSpectrum Asia",
+    "type": "firehose",
+    "format": "html_scrape",
+    "url": "https://www.biospectrumasia.com/"
   }
 ]

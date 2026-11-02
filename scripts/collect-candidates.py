@@ -46,7 +46,7 @@ from entity_terms import (  # noqa: E402
     is_excluded,
     match_kind,
 )
-from jina_fallback import as_feed_xml, extract_items, fetch_reader  # noqa: E402
+from jina_fallback import as_feed_xml, extract_html_links, extract_items, fetch_reader  # noqa: E402
 from user_agents import GATED_STATUSES, build_ladder  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -105,6 +105,7 @@ JINA_FALLBACK_KINDS = {"firehose", "rss"}
 # cap how many pre-extracted items are accepted per source URL per run.
 DEFAULT_PRE_EXTRACTED_SOURCE_CAP = 8
 JUDGED_HTML_SCRAPE_LABELS = {"blog"}
+HTML_SCRAPE_FORMAT = "html_scrape"
 
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
 
@@ -267,6 +268,16 @@ def within_window(pub: datetime | None, window: timedelta) -> bool:
     if pub is None:
         return True
     return _now() - pub <= window
+
+
+def html_listing_entries(body: bytes, url: str) -> list[dict[str, str]]:
+    links = extract_html_links(body.decode("utf-8", errors="replace"), url)
+    if not links:
+        raise ValueError("no article links found in html listing")
+    return [
+        {"title": it["headline"], "description": "", "pubDate": "", "link": it["link"]}
+        for it in links
+    ]
 
 
 def github_entry_keep(entry: dict[str, str]) -> bool:
@@ -433,8 +444,11 @@ def collect(
         if feed["url"] not in firehose_urls:
             continue
         try:
-            entries = parse_feed(fetcher(feed["url"]))
-        except (error.URLError, TimeoutError, OSError, ET.ParseError) as e:
+            if feed.get("format") == HTML_SCRAPE_FORMAT:
+                entries = html_listing_entries(fetcher(feed["url"]), feed["url"])
+            else:
+                entries = parse_feed(fetcher(feed["url"]))
+        except (error.URLError, TimeoutError, OSError, ET.ParseError, ValueError) as e:
             if jina_recover(
                 feed["url"],
                 kind="firehose",

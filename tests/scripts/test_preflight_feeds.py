@@ -226,6 +226,18 @@ def test_html_scrape_unchanged_excluded(preflight, tmp_repo, monkeypatch) -> Non
     assert changed["per_company"] == {}
 
 
+def test_html_scrape_firehose_hash_is_normalised(preflight, tmp_repo, monkeypatch) -> None:
+    feed = {"name": "Deal Site", "type": "firehose", "format": "html_scrape", "url": HTML_URL}
+    prior = {HTML_URL: {"body_sha256": preflight.body_digest(_html_page("n1"), True)}}
+    urlopen, _ = _make_urlopen({HTML_URL: [{"body": _html_page("n2"), "headers": {}}]})
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, [feed], [], cache=prior)
+
+    assert preflight.main() == 0
+    changed = json.loads((tmp_repo / "data" / "changed-sources.json").read_text())
+    assert changed["firehose"] == []
+
+
 def test_html_scrape_304_excluded(preflight, tmp_repo, monkeypatch) -> None:
     prior = {HTML_URL: {"etag": '"v1"', "body_sha256": "abc"}}
     not_modified = error.HTTPError(HTML_URL, 304, "Not Modified", hdrs=None, fp=io.BytesIO(b""))  # type: ignore[arg-type]

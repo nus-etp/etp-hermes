@@ -19,6 +19,7 @@ import resolves under pytest's file-path module loader.
 
 from __future__ import annotations
 
+import html
 import json
 import os
 import re
@@ -297,6 +298,10 @@ def fetch_reader(url: str) -> tuple[int, str]:
         raise error.URLError(f"reader: {e}") from e
 
 
+HTML_ANCHOR_RE = re.compile(r"<a\b[^>]*?\bhref=[\"']([^\"'#]+)[\"'][^>]*>(.*?)</a>", re.DOTALL | re.IGNORECASE)
+HTML_TAG_RE = re.compile(r"<[^>]+>")
+HTML_SKIP_BLOCK_RE = re.compile(r"<(script|style|noscript)\b.*?</\1>", re.DOTALL | re.IGNORECASE)
+MIN_ANCHOR_HEADLINE_WORDS = 5
 FENCED_BLOCK_RE = re.compile(r"^\s*```[\w-]*\n(.*?)\n```\s*$", re.DOTALL)
 BARE_AMPERSAND_RE = re.compile(r"&(?!#?\w+;)")
 
@@ -452,4 +457,30 @@ def extract_items(markdown: str, base_url: str) -> list[dict[str, Any]]:
             item["pubDate"] = date
         items.append(item)
 
+    return items
+
+
+def _bare_host(netloc: str) -> str:
+    host = netloc.lower()
+    return host[4:] if host.startswith("www.") else host
+
+
+def extract_html_links(page: str, base_url: str) -> list[dict[str, str]]:
+    body = HTML_SKIP_BLOCK_RE.sub(" ", page)
+    base_host = _bare_host(parse.urlparse(base_url).netloc)
+    items: list[dict[str, str]] = []
+    seen_links: set[str] = set()
+    for href, inner in HTML_ANCHOR_RE.findall(body):
+        headline = " ".join(html.unescape(HTML_TAG_RE.sub(" ", inner)).split())
+        if len(headline.split()) < MIN_ANCHOR_HEADLINE_WORDS or _is_nav_heading(headline):
+            continue
+        link = _resolve(html.unescape(href), base_url)
+        if not link or link in seen_links:
+            continue
+        if _bare_host(parse.urlparse(link).netloc) != base_host:
+            continue
+        if not _is_useful_news_link(link, base_url):
+            continue
+        seen_links.add(link)
+        items.append({"headline": headline, "link": link})
     return items

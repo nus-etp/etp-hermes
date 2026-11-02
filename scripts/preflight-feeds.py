@@ -161,7 +161,9 @@ def main() -> int:
     for feed in feeds:
         url = feed["url"]
         summary["checked"] += 1
-        changed, new_entry = check_url(url, cache.get(url))
+        changed, new_entry = check_url(
+            url, cache.get(url), normalise=feed.get("format") in NORMALISED_TYPES
+        )
         cache[url] = new_entry
         if new_entry.get("last_status", 0) <= 0:
             summary["errors"] += 1
