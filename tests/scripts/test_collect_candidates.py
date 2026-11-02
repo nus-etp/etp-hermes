@@ -1655,7 +1655,6 @@ def test_appstore_dev_caps_white_label_floods_newest_first(cc) -> None:
     assert out["stats"]["appstore_capped"] == 4
 
 
-<<<<<<< HEAD
 def _gebiz_item(company: str, key: str) -> dict[str, str]:
     return {
         "company": company,
@@ -1675,7 +1674,24 @@ def test_gebiz_items_fold_in_for_judgment_with_dedup(cc):
             _gebiz_item("Acme Robotics", "gebiz://T1/acmerobotics"),
             _gebiz_item("Acme Robotics", "gebiz://T2/acmerobotics"),
             _gebiz_item("Not On Watchlist", "gebiz://T3/other"),
-=======
+        ]
+    }
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen={"gebiz://T2/acmerobotics"},
+        fetcher=_fetcher({}),
+        gebiz=gebiz,
+    )
+    [cand] = out["candidates"]
+    assert cand["dedup_key"] == "gebiz://T1/acmerobotics"
+    assert cand["source_kind"] == "gebiz"
+    assert "pre_extracted" not in cand
+    assert out["stats"]["gebiz_candidates"] == 1
+
+
 def test_masfid_items_fold_in_for_judgment_with_dedup(cc):
     def item(company: str, key: str) -> dict[str, str]:
         return {
@@ -1694,7 +1710,6 @@ def test_masfid_items_fold_in_for_judgment_with_dedup(cc):
             item("Acme Robotics", "masfid://acme-robotics/major-payment-institution/granted"),
             item("Acme Robotics", "masfid://acme-robotics/full-bank/granted"),
             item("Not On Watchlist", "masfid://not-on-watchlist/full-bank/granted"),
->>>>>>> feat/mas-fid
         ]
     }
     out = cc.collect(
@@ -1702,17 +1717,6 @@ def test_masfid_items_fold_in_for_judgment_with_dedup(cc):
         FEEDS,
         changed={"firehose": [], "per_company": {}},
         jina=None,
-<<<<<<< HEAD
-        seen={"gebiz://T2/acmerobotics"},
-        fetcher=_fetcher({}),
-        gebiz=gebiz,
-    )
-    [cand] = out["candidates"]
-    assert cand["dedup_key"] == "gebiz://T1/acmerobotics"
-    assert cand["source_kind"] == "gebiz"
-    assert "pre_extracted" not in cand
-    assert out["stats"]["gebiz_candidates"] == 1
-=======
         seen={"masfid://acme-robotics/full-bank/granted"},
         fetcher=_fetcher({}),
         masfid=masfid,
@@ -1722,4 +1726,3 @@ def test_masfid_items_fold_in_for_judgment_with_dedup(cc):
     assert cand["source_kind"] == "mas_fid"
     assert "pre_extracted" not in cand
     assert out["stats"]["masfid_candidates"] == 1
->>>>>>> feat/mas-fid

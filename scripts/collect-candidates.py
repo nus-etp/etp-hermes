@@ -12,12 +12,10 @@ and folds in the pre-extracted html_scrape items from data/jina-items.json
 the Startup SG directory diff items from data/startupsg-items.json, and the
 company-website sitemap diff items from data/sitemap-items.json, the
 investor portfolio-list diff items from data/portfolio-items.json, and the
-IPOS patent/trademark delta items from data/ipos-items.json, and the
-<<<<<<< HEAD
-GeBIZ procurement award items from data/gebiz-items.json.
-=======
-MAS Financial Institutions Directory licence diff items from data/masfid-items.json.
->>>>>>> feat/mas-fid
+IPOS patent/trademark delta items from data/ipos-items.json, the SEC EDGAR
+filing items from data/edgar-items.json, the GeBIZ procurement award items
+from data/gebiz-items.json, and the MAS Financial Institutions Directory
+licence diff items from data/masfid-items.json.
 
 Writes data/candidates.json. The ingest prompt then only performs the LLM
 relevance pass over the (small) candidate list instead of re-reading
@@ -66,12 +64,9 @@ STARTUPSG_ITEMS_FILE = REPO_ROOT / "data" / "startupsg-items.json"
 SITEMAP_ITEMS_FILE = REPO_ROOT / "data" / "sitemap-items.json"
 PORTFOLIO_ITEMS_FILE = REPO_ROOT / "data" / "portfolio-items.json"
 IPOS_ITEMS_FILE = REPO_ROOT / "data" / "ipos-items.json"
-<<<<<<< HEAD
 EDGAR_ITEMS_FILE = REPO_ROOT / "data" / "edgar-items.json"
 GEBIZ_ITEMS_FILE = REPO_ROOT / "data" / "gebiz-items.json"
-=======
 MASFID_ITEMS_FILE = REPO_ROOT / "data" / "masfid-items.json"
->>>>>>> feat/mas-fid
 SEEN_FILE = REPO_ROOT / "signals" / "seen-urls.txt"
 DROPPED_FILE = REPO_ROOT / "signals" / "dropped-urls.txt"
 OUT_FILE = REPO_ROOT / "data" / "candidates.json"
@@ -380,12 +375,9 @@ def collect(
     sitemap: dict[str, Any] | None = None,
     portfolio: dict[str, Any] | None = None,
     ipos: dict[str, Any] | None = None,
-<<<<<<< HEAD
     edgar: dict[str, Any] | None = None,
     gebiz: dict[str, Any] | None = None,
-=======
     masfid: dict[str, Any] | None = None,
->>>>>>> feat/mas-fid
 ) -> dict[str, Any]:
     candidates: list[dict[str, Any]] = []
     fetch_failed: list[dict[str, str]] = []
@@ -775,12 +767,9 @@ def collect(
     sitemap_candidates = fold_items(sitemap, "sitemap", "Company sitemap")
     portfolio_candidates = fold_items(portfolio, "portfolio_list", "Investor portfolio")
     ipos_candidates = fold_items(ipos, "ipos", "IPOS (data.gov.sg)")
-<<<<<<< HEAD
     edgar_candidates = fold_items(edgar, "edgar", "SEC EDGAR")
     gebiz_candidates = fold_items(gebiz, "gebiz", "GeBIZ (data.gov.sg)")
-=======
     masfid_candidates = fold_items(masfid, "mas_fid", "MAS Financial Institutions Directory")
->>>>>>> feat/mas-fid
 
     matched = sorted({c["company"] for c in candidates})
     descriptions = {c["name"]: c.get("description", "") for c in companies if c["name"] in matched}
@@ -807,12 +796,9 @@ def collect(
             "sitemap_candidates": sitemap_candidates,
             "portfolio_candidates": portfolio_candidates,
             "ipos_candidates": ipos_candidates,
-<<<<<<< HEAD
             "edgar_candidates": edgar_candidates,
             "gebiz_candidates": gebiz_candidates,
-=======
             "masfid_candidates": masfid_candidates,
->>>>>>> feat/mas-fid
             "excluded_by_terms": suppressed["exclude_terms"],
             "weak_term_suppressed": suppressed["weak_term"],
         },
@@ -834,12 +820,9 @@ def main() -> int:
     sitemap = _load_optional_json(SITEMAP_ITEMS_FILE)
     portfolio = _load_optional_json(PORTFOLIO_ITEMS_FILE)
     ipos = _load_optional_json(IPOS_ITEMS_FILE)
-<<<<<<< HEAD
     edgar = _load_optional_json(EDGAR_ITEMS_FILE)
     gebiz = _load_optional_json(GEBIZ_ITEMS_FILE)
-=======
     masfid = _load_optional_json(MASFID_ITEMS_FILE)
->>>>>>> feat/mas-fid
     # COLLECT_SEEN_FILE overrides the dedup list. The backfill points this at an
     # empty file so it re-collects items both arms already judged — the A/B is a
     # policy comparison, not a freshness check.
@@ -882,12 +865,9 @@ def main() -> int:
         sitemap=sitemap,
         portfolio=portfolio,
         ipos=ipos,
-<<<<<<< HEAD
         edgar=edgar,
         gebiz=gebiz,
-=======
         masfid=masfid,
->>>>>>> feat/mas-fid
     )
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -907,12 +887,9 @@ def main() -> int:
         f"sitemap_candidates={s['sitemap_candidates']} "
         f"portfolio_candidates={s['portfolio_candidates']} "
         f"ipos_candidates={s['ipos_candidates']} "
-<<<<<<< HEAD
         f"edgar_candidates={s['edgar_candidates']} "
         f"gebiz_candidates={s['gebiz_candidates']} "
-=======
         f"masfid_candidates={s['masfid_candidates']} "
->>>>>>> feat/mas-fid
         f"excluded_by_terms={s['excluded_by_terms']} "
         f"weak_term_suppressed={s['weak_term_suppressed']} "
         f"dropped_urls_pruned={pruned}",
