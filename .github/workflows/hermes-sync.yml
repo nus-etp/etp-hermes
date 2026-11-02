@@ -308,6 +308,17 @@ jobs:
           restore-keys: |
             jina-cache-
 
+      - name: Restore sitemap cache
+        # Carries data/sitemap-cache.json (per-domain {page: lastmod} state,
+        # MB-scale) across runs; a cold cache re-seeds every domain with no items.
+        if: steps.layers.outputs.run_l1 == 'true'
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: data/sitemap-cache.json
+          key: sitemap-cache-${{ github.run_id }}
+          restore-keys: |
+            sitemap-cache-
+
       - name: Preflight feeds (conditional GET + body hash)
         # Emits data/changed-sources.json — the whitelist Layer 1 reads to
         # skip unchanged sources. Stdlib-only, so no uv setup needed.
@@ -348,6 +359,17 @@ jobs:
         if: steps.layers.outputs.run_l1 == 'true'
         continue-on-error: true
         run: python3 scripts/startupsg_snapshot.py
+
+      - name: Diff company sitemaps
+        # Discovers each watchlist company's own sitemap (robots.txt, then
+        # /sitemap.xml, /sitemap_index.xml), diffs {page: lastmod} against
+        # data/sitemap-cache.json and writes new/updated pages to
+        # data/sitemap-items.json for the normal Layer 1 judgment. Fails open
+        # per domain; exits 1 only when every domain is unreachable.
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        timeout-minutes: 30
+        run: python3 scripts/sitemap_diff.py
 
       - name: Collect candidates (deterministic feed parse + dedup)
         # Fetches and parses every changed feed/source, applies date windows,
@@ -703,6 +725,13 @@ jobs:
         with:
           path: data/jina-cache
           key: jina-cache-${{ github.run_id }}
+
+      - name: Save sitemap cache
+        if: always() && steps.layers.outputs.run_l1 == 'true' && hashFiles('data/sitemap-cache.json') != ''
+        uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: data/sitemap-cache.json
+          key: sitemap-cache-${{ github.run_id }}
 
       - name: Upload hermes artifact
         if: always()
