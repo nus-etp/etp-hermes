@@ -2,7 +2,7 @@
 """Deterministic candidate collection for Layer 1 (ingest).
 
 Does everything in prompts/ingest.md steps 1-2.5 that needs no judgment:
-fetches changed firehose feeds and per-company rss/github_org/lever_jobs/recruitee_jobs
+fetches changed firehose feeds and per-company rss/github_org/lever_jobs/recruitee_jobs/appstore_dev
 sources, parses them, applies date windows, dedupes against
 signals/seen-urls.txt (permanent: published keys) and the non-expired half of
 signals/dropped-urls.txt (TTL'd: keys a relevance pass dropped), runs the
@@ -105,6 +105,11 @@ DEFAULT_PRE_EXTRACTED_SOURCE_CAP = 8
 JUDGED_HTML_SCRAPE_LABELS = {"blog"}
 
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
+
+APPSTORE_LOOKUP_URL = "https://itunes.apple.com/lookup"
+APPSTORE_DEVELOPER_RE = re.compile(r"^/(?:(?P<country>[a-z]{2})/)?developer/(?:[^/]+/)?id(?P<artist_id>\d+)/?$")
+APPSTORE_NOTES_MAX_CHARS = 500
+DEFAULT_APPSTORE_SOURCE_CAP = 5
 
 # GitHub org Atom feeds mix releases and repo creations (signal) with bot
 # pushes and chores (noise). Filter the noise deterministically; the prompt's
@@ -292,6 +297,55 @@ def recruitee_slug(url: str) -> str:
     return host.split(".", 1)[0]
 
 
+def appstore_lookup_url(url: str) -> str:
+    parsed = parse.urlparse(url)
+    match = APPSTORE_DEVELOPER_RE.search(parsed.path)
+    if not match:
+        raise ValueError(f"not an App Store developer URL: {url}")
+    query = {"id": match.group("artist_id"), "entity": "software", "limit": "200"}
+    if match.group("country"):
+        query["country"] = match.group("country")
+    return f"{APPSTORE_LOOKUP_URL}?{parse.urlencode(query)}"
+
+
+def appstore_dedup_key(app: dict[str, Any]) -> str:
+    return f"appstore://{app.get('trackId')}/{app.get('version')}"
+
+
+def appstore_releases(payload: Any, seen: set[str]) -> list[tuple[datetime, dict[str, Any]]]:
+    results = payload.get("results") if isinstance(payload, dict) else None
+    releases: list[tuple[datetime, dict[str, Any]]] = []
+    for app in results if isinstance(results, list) else []:
+        if not isinstance(app, dict) or app.get("wrapperType") != "software":
+            continue
+        if not app.get("trackId") or not app.get("version"):
+            continue
+        if appstore_dedup_key(app) in seen:
+            continue
+        released_raw = app.get("currentVersionReleaseDate")
+        released = parse_date(released_raw) if isinstance(released_raw, str) else None
+        if released is None or not within_window(released, PER_COMPANY_WINDOW):
+            continue
+        releases.append((released, app))
+    releases.sort(key=lambda release: release[0], reverse=True)
+    return releases
+
+
+def appstore_release_notes(value: Any) -> str:
+    if not isinstance(value, str):
+        return ""
+    notes = re.sub(r"\s+", " ", value).strip()
+    if len(notes) > APPSTORE_NOTES_MAX_CHARS:
+        return notes[: APPSTORE_NOTES_MAX_CHARS - 1].rstrip() + "…"
+    return notes
+
+
+def appstore_track_url(value: Any) -> str:
+    if not isinstance(value, str):
+        return ""
+    return value.split("?", 1)[0]
+
+
 def parse_recruitee_date(value: Any) -> datetime | None:
     if not isinstance(value, str) or not value.strip():
         return None
@@ -312,12 +366,14 @@ def collect(
     jina_budget: int = DEFAULT_JINA_FALLBACK_BUDGET,
     pre_extracted_source_cap: int = DEFAULT_PRE_EXTRACTED_SOURCE_CAP,
     startupsg: dict[str, Any] | None = None,
+    appstore_source_cap: int = DEFAULT_APPSTORE_SOURCE_CAP,
 ) -> dict[str, Any]:
     candidates: list[dict[str, Any]] = []
     fetch_failed: list[dict[str, str]] = []
     llm_fetch_required: list[dict[str, str]] = []
     seen_this_run: set[tuple[str, str]] = set()  # (company, dedup_key)
     pre_extracted_capped = 0  # pre-extracted items dropped by the per-source cap
+    appstore_capped = 0
     suppressed = {"exclude_terms": 0, "weak_term": 0}
 
     matchers = build_company_matchers(companies)
@@ -528,6 +584,32 @@ def collect(
                     )
                 continue
 
+            if stype == "appstore_dev":
+                try:
+                    payload = json.loads(fetcher(appstore_lookup_url(url)))
+                except (error.URLError, TimeoutError, OSError, ValueError) as e:
+                    fetch_failed.append(
+                        {"url": url, "kind": stype, "company": name, "error": str(e)[:200]}
+                    )
+                    continue
+                releases = appstore_releases(payload, seen)
+                appstore_capped += max(0, len(releases) - appstore_source_cap)
+                for released, app in releases[:appstore_source_cap]:
+                    version = app["version"]
+                    add(
+                        name,
+                        {
+                            "headline": f"{app.get('trackName', '')} {version} released on the App Store",
+                            "description": appstore_release_notes(app.get("releaseNotes")),
+                            "source": source_label,
+                            "pubDate": released.date().isoformat(),
+                            "link": appstore_track_url(app.get("trackViewUrl")),
+                            "dedup_key": appstore_dedup_key(app),
+                            "source_kind": "appstore_dev",
+                        },
+                    )
+                continue
+
             try:
                 body = fetcher(url)
             except (error.URLError, TimeoutError, OSError) as e:
@@ -723,6 +805,7 @@ def collect(
             "jina_candidates": jina_candidates,
             "pre_extracted_capped": pre_extracted_capped,
             "startupsg_candidates": startupsg_candidates,
+            "appstore_capped": appstore_capped,
             "excluded_by_terms": suppressed["exclude_terms"],
             "weak_term_suppressed": suppressed["weak_term"],
         },

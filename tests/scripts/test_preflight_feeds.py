@@ -398,3 +398,17 @@ def test_per_company_sources_grouped_under_company_name(preflight, tmp_repo, mon
         "https://press.carousell.com/feed/",
         "https://github.com/carousell.atom",
     }
+
+
+
+def test_appstore_dev_passes_through_without_fetch(preflight, tmp_repo, monkeypatch) -> None:
+    url = "https://apps.apple.com/developer/id1234567890"
+    companies = [{"name": "Acme", "sources": [{"type": "appstore_dev", "label": "App Store", "url": url}]}]
+    urlopen, calls = _make_urlopen({})
+    monkeypatch.setattr(preflight.request, "urlopen", urlopen)
+    _write_inputs(tmp_repo, [], companies)
+
+    assert preflight.main() == 0
+    changed = json.loads((tmp_repo / "data" / "changed-sources.json").read_text())
+    assert changed["per_company"] == {"Acme": [url]}
+    assert calls == []
