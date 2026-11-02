@@ -14,6 +14,11 @@
         "type": "github_org",
         "label": "github",
         "url": "https://github.com/carousell.atom"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id548607290"
       }
     ],
     "identifiers": {
@@ -192,6 +197,11 @@
         "type": "rss",
         "label": "blog",
         "url": "https://www.patsnap.com/feed/"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/sg/developer/id1527513016"
       }
     ],
     "identifiers": {
@@ -542,6 +552,11 @@
         "type": "rss",
         "label": "news",
         "url": "https://www.ailytics.ai/feed.xml"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id6776461925"
       }
     ],
     "identifiers": {
@@ -616,6 +631,11 @@
         "type": "html_scrape",
         "label": "blog",
         "url": "https://aircity.ai/blog"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1684688963"
       }
     ],
     "identifiers": {
@@ -661,6 +681,13 @@
     ],
     "description": "NUS Enterprise@SSP-resident Singapore deep-tech startup (NUS School of Computing spin-out, 2025) building AiSee — a self-contained AI-powered wearable visual companion for the visually impaired with bone-conduction audio, on-device Meta Llama models, and capabilities like label-reading and text translation. Won the 2024 Meta Llama Impact Innovation Award; pre-orders at S$199. Drop generic 'AI see' / vision-AI hype unless it names this device.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/sg/developer/id1802161418"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 / NUS Enterprise@SSP portfolio company; Meta Llama Impact Innovation Award winner (2024). Pre-launch consumer device priced S$199; institutional deployments under discussion with museums and airports. No publicly verifiable equity funding round announced at time of writing."
   },
@@ -692,6 +719,13 @@
     ],
     "description": "BLOCK71 Singapore-resident agentic-AI startup (play on 'agentic'). Drop generic 'agentic AI' hype articles unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1818298507"
+      }
+    ],
     "identifiers": {
       "uen": "202446293K"
     },
@@ -998,6 +1032,11 @@
         "type": "html_scrape",
         "label": "blog",
         "url": "https://www.assemblrworld.com/blog/"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1425741171"
       }
     ],
     "identifiers": {
@@ -1381,6 +1420,13 @@
     ],
     "description": "BLOCK71 Singapore-resident caregiving / health-monitoring startup. Drop unrelated 'CareSense' brand mentions (multiple US patient-engagement vendors share the name) unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1775629558"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -1813,6 +1859,13 @@
     ],
     "description": "BLOCK71 Singapore-listed Swiss edtech startup (AG = Aktiengesellschaft / Swiss public limited company). Limited public-English information beyond the directory listing — drop unrelated 'Clever' brand edtech (multiple US edtech vendors share the name) mentions unless the article explicitly references this Swiss-incorporated entity at BLOCK71 SG.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1509727535"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio (Swiss HQ). No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -2385,6 +2438,11 @@
         "type": "rss",
         "label": "blog",
         "url": "https://www.ecomatcher.com/feed/"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1491332440"
       }
     ],
     "identifiers": {
@@ -2592,6 +2650,13 @@
     "aliases": [],
     "description": "BLOCK71 Vietnam portfolio startup. Drop unrelated companies sharing the same name.",
     "country": "Vietnam",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1741970641"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Vietnam portfolio company. No publicly verifiable funding round announcements found."
   },
@@ -2674,6 +2739,13 @@
     ],
     "description": "BLOCK71 Saigon-resident Vietnamese online-trading-technology startup. Limited public-English information beyond the directory listing — drop generic 'F5' (network appliances) and 'F5 refresh' branding unless the article explicitly references this BLOCK71 Saigon trading-tech entity.",
     "country": "Vietnam",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1842855162"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -2749,6 +2821,11 @@
         "type": "rss",
         "label": "blog",
         "url": "https://finan.one/rss.xml"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1608865741"
       }
     ],
     "identifiers": {
@@ -2844,6 +2921,11 @@
         "type": "html_scrape",
         "label": "news",
         "url": "https://fizzdragon.com/en-US/news"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1895456102"
       }
     ],
     "identifiers": {
@@ -2864,6 +2946,11 @@
         "type": "rss",
         "label": "blog",
         "url": "https://flexii.net/sg/feed/"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/sg/developer/id1702295281"
       }
     ],
     "identifiers": {
@@ -2970,6 +3057,11 @@
         "label": "news",
         "url": "https://www.fortebio.tech/news",
         "hint": "News listing at https://www.fortebio.tech/news. Each item is an <article>-style block with a category label and date in format 'Category | Year' or 'Category | Month YYYY' (e.g. 'Press | November 2025') rendered as plain text before the headline. Headlines are <h3>. A short description and 'Read more' link follow. Filterable categories: Awards, Press, Publications, Events, Announcements. Resolve relative links against https://www.fortebio.tech."
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1709450218"
       }
     ],
     "identifiers": {
@@ -3026,6 +3118,13 @@
     ],
     "description": "BLOCK71 Saigon-resident Vietnamese edtech startup (founded 2017 by Truong Vo Huu Thien, HCMC) — first Vietnamese company to design and manufacture educational robots in-country (G-Robot Maker, G-Robot Creator series) priced ~30-50% below imported equivalents. Partner to 50+ schools across HCMC, Hanoi, Hai Phong, Da Nang and beyond; products exported to Malaysia, Cambodia, Thailand, Laos and Singapore. 2018 Vietnam national startup-championship winner.",
     "country": "Vietnam",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1466592913"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable priced equity funding round announced beyond BLOCK71 / national startup-competition support."
   },
@@ -3254,6 +3353,13 @@
     ],
     "description": "BLOCK71 Guangzhou-listed Chinese sensor manufacturer specialising in temperature/humidity sensor modules (AHT25, AHT3001, DHT11, DHT20, AM2302) for home appliances and industrial monitoring; products distributed through LCSC/JLCPCB/Chipmall. Mature electronics manufacturer rather than venture-stage startup; drop generic IoT-sensor coverage that doesn't name Aosong.",
     "country": "China",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1156779664"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Guangzhou industry partner / mature sensor manufacturer with global distribution. No publicly verifiable equity funding round announced."
   },
@@ -3701,6 +3807,13 @@
     ],
     "description": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing — drop unrelated 'Idle Logic' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id6824047020"
+      }
+    ],
     "identifiers": {
       "uen": "202443308R"
     },
@@ -3963,6 +4076,11 @@
         "type": "html_scrape",
         "label": "blog",
         "url": "https://www.karlo.id/blog"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/id/developer/id1758698187"
       }
     ],
     "identifiers": {
@@ -4216,6 +4334,13 @@
     ],
     "description": "BLOCK71 Jakarta-listed Singapore preschool SaaS (founded 2011 by Sun Ho, NUS Computing alumna) running a holistic school-management system for early-childhood centres — attendance, time-in/out, temperature/height/weight, child portfolios, log books, fees, parent communication; ~1,000 schools across Singapore, Malaysia, China, Vietnam, Cambodia; MOE/ECDA-accredited, AECES Top Preschool Software. Made strategic acquisition of Illume Technology. Drop generic 'small / little lives' branding unless it names this entity.",
     "country": "Indonesia",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id603868808"
+      }
+    ],
     "identifiers": {
       "website": "https://www.littlelives.com"
     },
@@ -4276,6 +4401,13 @@
     ],
     "description": "BLOCK71 Singapore-resident startup. CRITICAL: 'Maestro Labs' is extremely generic (multiple ML / orchestration / music vendors share the name); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id6812778940"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -4504,6 +4636,11 @@
         "type": "rss",
         "label": "blog",
         "url": "https://www.memove.sg/blog-feed.xml"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/sg/developer/id6794243824"
       }
     ],
     "identifiers": {
@@ -4594,6 +4731,11 @@
         "type": "html_scrape",
         "label": "news",
         "url": "https://microtube.tech/news"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1676562771"
       }
     ],
     "identifiers": {
@@ -4761,6 +4903,13 @@
     ],
     "description": "BLOCK71 Saigon-resident Vietnamese nano-technology services startup. Limited public-English information beyond the directory listing — name is generic ('Nano' collides with countless unrelated tech / fintech / hardware brands worldwide); drop unless the article explicitly references this BLOCK71 Saigon entity.",
     "country": "Vietnam",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1556022972"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -5323,6 +5472,11 @@
         "type": "html_scrape",
         "label": "blog",
         "url": "https://www.pinhome.id/blog/"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1502834832"
       }
     ],
     "identifiers": {
@@ -6156,6 +6310,13 @@
     ],
     "description": "BLOCK71 Singapore-resident edtech / academic-tools startup. Drop unrelated 'Scholarly' brand mentions (Scholarly Kitchen, Scholarly Research) unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/sg/developer/id1716350820"
+      }
+    ],
     "identifiers": {
       "uen": "202324923K"
     },
@@ -6375,6 +6536,13 @@
     ],
     "description": "BLOCK71 Singapore-resident technology startup. Drop unrelated 'Sapiens' brand mentions (Sapiens International insurance software, etc.) unless the article explicitly references this BLOCK71 SG entity.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1819862180"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Singapore portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -6518,6 +6686,13 @@
     ],
     "description": "BLOCK71 Guangzhou-listed Singapore IoT startup building lift/elevator safety-monitoring solutions — sensor arrays plus SCADA-style telemetry, big-data analytics and AI for precision maintenance and downtime reduction in elevator fleets. Drop unrelated 'smart grid' / power-grid news unless it names this entity.",
     "country": "China",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1513280610"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Guangzhou / Singapore portfolio. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -6586,6 +6761,13 @@
     ],
     "description": "BLOCK71 Social Impact Hub-resident Singapore social-enterprise deep-tech startup (A*STAR Institute of Infocomm Research origin) building wearable-free, privacy-preserving sensing for elderly fall / abnormal-event detection — Lasso combines LiDAR with sound recognition; 1,000+ deployments across airports (Changi), nursing homes, malls. NCSS Techbooster trusted vendor. Drop generic 'audio AI' / acoustic-monitoring news unless it names SoundEye.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1629826273"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Social Impact Hub portfolio; NCSS Techbooster vendor. Deployments include Thye Hua Kwan Nursing Home, Bishan Home, Cerebral Palsy Alliance Singapore, Changi Airport Group. Public equity rounds not verified at time of writing.",
     "sector": "Digital health / IoT"
@@ -6647,6 +6829,11 @@
         "label": "blog",
         "url": "https://www.spacejot.app/blog",
         "hint": "Blog listing on Spacejot's web app. Each post is rendered with an h3 headline that links to /blog/<slug>, with the publication date (e.g. 'Jul 06, 2024') displayed adjacent to the title. Resolve relative links against https://www.spacejot.app/."
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1830140126"
       }
     ],
     "identifiers": {
@@ -6675,6 +6862,11 @@
         "type": "rss",
         "label": "blog",
         "url": "https://www.staffany.com/feed/"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1360658902"
       }
     ],
     "identifiers": {
@@ -6714,6 +6906,11 @@
         "type": "html_scrape",
         "label": "updates",
         "url": "https://stickem.sg/updates/"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1688320432"
       }
     ],
     "identifiers": {
@@ -6901,6 +7098,13 @@
     ],
     "description": "BLOCK71 Suzhou-listed Singapore preschool / childcare-school-management SaaS (HQ Singapore, Suzhou ops listed twice in directory — folded here) covering attendance, billing, e-enrollment, e-forms, finance, parent-school communication; >50% private-school market share in Singapore; ECDA-approved vendor; VAMS 4S sub-second attendance / temperature device; presence in Singapore, China (Suzhou), UAE, Australia and the Philippines. Drop generic 'taid' / 'tide' branding news unless it names Taidii.",
     "country": "Singapore",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id921378893"
+      }
+    ],
     "identifiers": {
       "website": "https://taidii.com"
     },
@@ -7095,6 +7299,13 @@
     ],
     "description": "BLOCK71 Saigon-resident Vietnamese service-corporation startup. Limited public-English information beyond the directory listing — drop unrelated mentions unless the article explicitly references this BLOCK71 Saigon entity.",
     "country": "Vietnam",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id987325174"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -7146,6 +7357,13 @@
     "aliases": [],
     "description": "BLOCK71 Japan portfolio startup. Drop unrelated companies sharing the same name.",
     "country": "Japan",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1034660889"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Japan portfolio company. No publicly verifiable funding round announcements found."
   },
@@ -7275,6 +7493,11 @@
         "type": "html_scrape",
         "label": "blog",
         "url": "https://vibefam.com/blog/"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1530134251"
       }
     ],
     "identifiers": {
@@ -7406,6 +7629,13 @@
     ],
     "description": "BLOCK71 Saigon-resident Vietnamese jobs platform targeting blue-collar / unskilled workers in Vietnam. Drop the larger 'ViecLamTot.com' (a Chợ Tốt vertical) and unrelated white-collar boards (VietnamWorks, etc.) unless the article explicitly references the BLOCK71 Saigon 'Việc Có' platform.",
     "country": "Vietnam",
+    "sources": [
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1466481697"
+      }
+    ],
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Saigon portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 incubation support."
   },
@@ -7638,6 +7868,11 @@
         "type": "rss",
         "label": "blog",
         "url": "https://zoala.co/feed/"
+      },
+      {
+        "type": "appstore_dev",
+        "label": "App Store",
+        "url": "https://apps.apple.com/developer/id1628699884"
       }
     ],
     "identifiers": {

@@ -1256,3 +1256,153 @@ def test_jina_fallback_tolerates_missing_description(cc):
     [cand] = out["candidates"]
     assert cand["description"] == ""
     assert cand["company"] == "Acme Robotics"
+
+
+
+def _appstore_companies(url: str) -> list[dict]:
+    return [
+        {
+            "name": "Acme Robotics",
+            "aliases": [],
+            "description": "Warehouse robots",
+            "sources": [{"type": "appstore_dev", "label": "App Store", "url": url}],
+        }
+    ]
+
+
+def test_appstore_lookup_url_carries_storefront(cc) -> None:
+    assert cc.appstore_lookup_url("https://apps.apple.com/developer/id42") == (
+        "https://itunes.apple.com/lookup?id=42&entity=software&limit=200"
+    )
+    assert cc.appstore_lookup_url("https://apps.apple.com/sg/developer/acme-pte-ltd/id42") == (
+        "https://itunes.apple.com/lookup?id=42&entity=software&limit=200&country=sg"
+    )
+    with pytest.raises(ValueError):
+        cc.appstore_lookup_url("https://apps.apple.com/app/id42")
+
+
+def test_appstore_dev_emits_recent_versions(cc) -> None:
+    now = datetime.now(timezone.utc)
+    url = "https://apps.apple.com/developer/id42"
+    payload = json.dumps(
+        {
+            "resultCount": 4,
+            "results": [
+                {"wrapperType": "artist", "artistId": 42, "artistName": "Acme Robotics Pte Ltd"},
+                {
+                    "wrapperType": "software",
+                    "trackId": 111,
+                    "trackName": "Acme Fleet",
+                    "version": "3.2.0",
+                    "releaseNotes": "New dashboard.\n\n  Bug fixes.",
+                    "currentVersionReleaseDate": (now - timedelta(days=2)).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                    "trackViewUrl": "https://apps.apple.com/us/app/acme-fleet/id111?uo=4",
+                },
+                {
+                    "wrapperType": "software",
+                    "trackId": 222,
+                    "trackName": "Acme Legacy",
+                    "version": "1.0",
+                    "currentVersionReleaseDate": (now - timedelta(days=90)).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                    "trackViewUrl": "https://apps.apple.com/us/app/acme-legacy/id222",
+                },
+                {"wrapperType": "software", "trackId": 333, "trackName": "Undated", "version": "2.0"},
+            ],
+        }
+    ).encode()
+    out = cc.collect(
+        _appstore_companies(url),
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Acme Robotics": [url]}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({cc.appstore_lookup_url(url): payload}),
+    )
+    [cand] = out["candidates"]
+    assert cand["company"] == "Acme Robotics"
+    assert cand["dedup_key"] == "appstore://111/3.2.0"
+    assert cand["headline"] == "Acme Fleet 3.2.0 released on the App Store"
+    assert cand["description"] == "New dashboard. Bug fixes."
+    assert cand["link"] == "https://apps.apple.com/us/app/acme-fleet/id111"
+    assert cand["pubDate"] == (now - timedelta(days=2)).date().isoformat()
+    assert cand["source"] == "Acme Robotics · App Store"
+    assert cand["source_kind"] == "appstore_dev"
+
+
+def test_appstore_dev_seen_and_failures_fail_open(cc) -> None:
+    now = datetime.now(timezone.utc)
+    url = "https://apps.apple.com/developer/id42"
+    lookup = cc.appstore_lookup_url(url)
+    changed = {"firehose": [], "per_company": {"Acme Robotics": [url]}}
+    payload = json.dumps(
+        {
+            "results": [
+                {
+                    "wrapperType": "software",
+                    "trackId": 111,
+                    "trackName": "Acme Fleet",
+                    "version": "3.2.0",
+                    "currentVersionReleaseDate": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                }
+            ]
+        }
+    ).encode()
+    seen_out = cc.collect(
+        _appstore_companies(url),
+        FEEDS,
+        changed=changed,
+        jina=None,
+        seen={"appstore://111/3.2.0"},
+        fetcher=_fetcher({lookup: payload}),
+    )
+    assert seen_out["candidates"] == []
+    assert seen_out["fetch_failed"] == []
+    bad_json = cc.collect(
+        _appstore_companies(url),
+        FEEDS,
+        changed=changed,
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({lookup: b"<html>"}),
+    )
+    assert [(e["kind"], e["url"]) for e in bad_json["fetch_failed"]] == [("appstore_dev", url)]
+    unreachable = cc.collect(
+        _appstore_companies(url),
+        FEEDS,
+        changed=changed,
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({}),
+    )
+    assert [e["kind"] for e in unreachable["fetch_failed"]] == ["appstore_dev"]
+    assert unreachable["candidates"] == []
+
+
+def test_appstore_dev_caps_white_label_floods_newest_first(cc) -> None:
+    now = datetime.now(timezone.utc)
+    url = "https://apps.apple.com/sg/developer/id42"
+    apps = [
+        {
+            "wrapperType": "software",
+            "trackId": 100 + day,
+            "trackName": f"School {day}",
+            "version": "1.0",
+            "currentVersionReleaseDate": (now - timedelta(days=day)).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        }
+        for day in range(1, 8)
+    ]
+    out = cc.collect(
+        _appstore_companies(url),
+        FEEDS,
+        changed={"firehose": [], "per_company": {"Acme Robotics": [url]}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({cc.appstore_lookup_url(url): json.dumps({"results": apps}).encode()}),
+        appstore_source_cap=3,
+    )
+    assert [c["dedup_key"] for c in out["candidates"]] == [
+        "appstore://101/1.0",
+        "appstore://102/1.0",
+        "appstore://103/1.0",
+    ]
+    assert out["stats"]["appstore_capped"] == 4
