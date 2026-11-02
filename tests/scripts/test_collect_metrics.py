@@ -124,22 +124,63 @@ def test_gdelt_rate_limit_text_returns_none_after_retries(scripts_module_loader,
     assert mod.gdelt_articles_7d("Acme") is None
 
 
-def test_lever_open_jobs_returns_len(scripts_module_loader, monkeypatch) -> None:
+def test_ats_open_jobs_returns_len(scripts_module_loader, monkeypatch) -> None:
     mod = scripts_module_loader("collect_metrics")
     urlopen = _urlopen_from(
         {"https://api.lever.co/v0/postings/acme": [{"id": 1}, {"id": 2}, {"id": 3}]}
     )
     monkeypatch.setattr(mod.urllib.request, "urlopen", urlopen)
-    assert mod.lever_open_jobs("https://api.lever.co/v0/postings/acme?mode=json") == 3
+    assert mod.ats_open_jobs("lever", "https://api.lever.co/v0/postings/acme?mode=json") == 3
 
 
-def test_lever_open_jobs_returns_none_when_not_list(scripts_module_loader, monkeypatch) -> None:
+def test_ats_open_jobs_returns_none_when_not_list(scripts_module_loader, monkeypatch) -> None:
     mod = scripts_module_loader("collect_metrics")
     urlopen = _urlopen_from(
         {"https://api.lever.co/v0/postings/acme": {"error": "bad"}}
     )
     monkeypatch.setattr(mod.urllib.request, "urlopen", urlopen)
-    assert mod.lever_open_jobs("https://api.lever.co/v0/postings/acme?mode=json") is None
+    assert mod.ats_open_jobs("lever", "https://api.lever.co/v0/postings/acme?mode=json") is None
+
+
+def test_collect_one_records_jobs_for_ats_and_legacy_kinds(scripts_module_loader, monkeypatch) -> None:
+    import datetime as dt
+
+    mod = scripts_module_loader("collect_metrics")
+    urlopen = _urlopen_from(
+        {
+            "https://hn.algolia.com/": {"nbHits": 0},
+            "https://api.gdeltproject.org/": {"articles": []},
+            "https://patsnap.recruitee.com/api/offers/": {"offers": [{"id": 1}, {"id": 2}]},
+            "https://api.lever.co/v0/postings/acme": [{"id": 1}],
+        }
+    )
+    monkeypatch.setattr(mod.urllib.request, "urlopen", urlopen)
+    monkeypatch.setattr(mod.time, "sleep", lambda _: None)
+    now = dt.datetime(2026, 11, 2, tzinfo=dt.timezone.utc)
+    ats = mod.collect_one(
+        {
+            "name": "Patsnap",
+            "sources": [
+                {
+                    "type": "ats_jobs",
+                    "provider": "recruitee",
+                    "url": "https://patsnap.recruitee.com/api/offers/",
+                }
+            ],
+        },
+        now,
+        gh_token=None,
+    )
+    assert ats["jobs"] == {"open": 2, "provider": "recruitee"}
+    legacy = mod.collect_one(
+        {
+            "name": "Acme",
+            "sources": [{"type": "lever_jobs", "url": "https://api.lever.co/v0/postings/acme"}],
+        },
+        now,
+        gh_token=None,
+    )
+    assert legacy["jobs"] == {"open": 1, "provider": "lever"}
 
 
 def test_iter_selected_filters_by_name_and_slug(scripts_module_loader) -> None:
@@ -213,6 +254,6 @@ def test_collect_one_records_date_and_hn(scripts_module_loader, monkeypatch) -> 
     assert rec["hn_30d"] == 5
     # No structured sources → gdelt not attempted.
     assert "gdelt_7d" not in rec
-    # No github_org / lever sources → those keys omitted.
+    # No github_org / ATS sources → those keys omitted.
     assert "github" not in rec
-    assert "lever" not in rec
+    assert "jobs" not in rec

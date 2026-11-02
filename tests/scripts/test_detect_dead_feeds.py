@@ -87,7 +87,7 @@ def test_main_writes_report_and_json(dd, tmp_path: Path, monkeypatch):
     assert dd.main() == 0
 
     out = json.loads((tmp_path / "data" / "dead-feeds.json").read_text())
-    assert out["stats"] == {"tracked": 1, "dead": 1, "stale": 0}
+    assert out["stats"] == {"tracked": 1, "dead": 1, "stale": 0, "empty": 0}
     assert out["dead"][0]["name"] == "Tech in Asia"
 
     report = (tmp_path / "signals" / "feed-health.md").read_text()
@@ -107,5 +107,5 @@ def test_main_missing_cache_is_empty_report(dd, tmp_path: Path, monkeypatch):
 
     assert dd.main() == 0
     out = json.loads((tmp_path / "data" / "dead-feeds.json").read_text())
-    assert out["stats"] == {"tracked": 0, "dead": 0, "stale": 0}
+    assert out["stats"] == {"tracked": 0, "dead": 0, "stale": 0, "empty": 0}
     assert "_None._" in (tmp_path / "signals" / "feed-health.md").read_text()

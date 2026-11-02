@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Preflight HTTP conditional-GET against ingest sources.
 
-Reads data/feeds.json + rss/github_org/lever_jobs/recruitee_jobs/html_scrape entries from
+Reads data/feeds.json + rss/github_org/ats_jobs/html_scrape entries from
 data/companies.json. Writes data/feed-cache.json (per-URL ETag /
 Last-Modified / body-SHA256) and data/changed-sources.json (whitelist of
 URLs the ingest prompt is allowed to fetch). html_scrape bodies are
@@ -22,7 +22,9 @@ from pathlib import Path
 from typing import Any
 from urllib import error, request
 
-from user_agents import GATED_STATUSES, build_ladder
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import ats_jobs  # noqa: E402
+from user_agents import GATED_STATUSES, build_ladder  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 FEEDS_FILE = REPO_ROOT / "data" / "feeds.json"
@@ -30,7 +32,7 @@ COMPANIES_FILE = REPO_ROOT / "data" / "companies.json"
 CACHE_FILE = REPO_ROOT / "data" / "feed-cache.json"
 CHANGED_FILE = REPO_ROOT / "data" / "changed-sources.json"
 
-PREFLIGHTED_TYPES = {"rss", "github_org", "lever_jobs", "recruitee_jobs", "html_scrape"}
+PREFLIGHTED_TYPES = {"rss", "github_org", "html_scrape", *ats_jobs.ATS_SOURCE_TYPES}
 NORMALISED_TYPES = {"html_scrape"}
 HTML_VOLATILE_RE = re.compile(
     rb"<(script|style|noscript)\b[^>]*>.*?</\1\s*>|<!--.*?-->",
@@ -73,7 +75,10 @@ def body_digest(body: bytes, normalise: bool) -> str:
 
 
 def check_url(
-    url: str, cache_entry: dict[str, Any] | None, normalise: bool = False
+    url: str,
+    cache_entry: dict[str, Any] | None,
+    normalise: bool = False,
+    ats_provider: str | None = None,
 ) -> tuple[bool, dict[str, Any]]:
     """Returns (changed, new_cache_entry). changed=True means the agent should process this URL."""
     headers = {"Accept": "*/*"}  # User-Agent is set per-attempt from UA_LADDER below
@@ -120,6 +125,12 @@ def check_url(
                     entry["last_changed"] = now
                 elif cache_entry and cache_entry.get("last_changed"):
                     entry["last_changed"] = cache_entry["last_changed"]
+                if ats_provider:
+                    entry.update(
+                        ats_jobs.empty_read_state(
+                            cache_entry, ats_jobs.count_postings(ats_provider, body, url)
+                        )
+                    )
                 return changed, entry
         except error.HTTPError as e:
             if e.code == 304:
@@ -127,6 +138,8 @@ def check_url(
                 entry["last_status"] = 304
                 entry["last_run"] = now
                 entry["consecutive_failures"] = 0  # 304 = reachable, content unchanged
+                if ats_provider:
+                    entry.update(ats_jobs.empty_read_state(cache_entry, entry.get("last_postings")))
                 return False, entry
             # 4xx/5xx: the server answered but didn't serve the feed — count it.
             last_result = _failure(e.code, f"HTTP {e.code}")
@@ -185,7 +198,10 @@ def main() -> int:
                 continue
             summary["checked"] += 1
             changed, new_entry = check_url(
-                url, cache.get(url), normalise=stype in NORMALISED_TYPES
+                url,
+                cache.get(url),
+                normalise=stype in NORMALISED_TYPES,
+                ats_provider=ats_jobs.source_provider(s),
             )
             cache[url] = new_entry
             if new_entry.get("last_status", 0) <= 0:

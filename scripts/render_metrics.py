@@ -49,18 +49,26 @@ def parse_date(s: str) -> dt.date:
     return dt.date.fromisoformat(s)
 
 
+LEGACY_PATHS = {("jobs", "open"): ["lever", "open"]}
+
+
+def _lookup(row: dict[str, Any], path: list[str]) -> Any:
+    v: Any = row
+    for key in path:
+        if not isinstance(v, dict):
+            return None
+        v = v.get(key)
+    return None if isinstance(v, dict) else v
+
+
 def extract_series(rows: list[dict[str, Any]], path: list[str]) -> tuple[list[dt.date], list[float | None]]:
     xs: list[dt.date] = []
     ys: list[float | None] = []
+    legacy = LEGACY_PATHS.get(tuple(path))
     for r in rows:
-        v: Any = r
-        for key in path:
-            if not isinstance(v, dict):
-                v = None
-                break
-            v = v.get(key)
-        if isinstance(v, dict):
-            v = None
+        v = _lookup(r, path)
+        if v is None and legacy:
+            v = _lookup(r, legacy)
         xs.append(parse_date(r["date"]))
         ys.append(v if (v is None or isinstance(v, (int, float))) else None)
     return xs, ys
@@ -106,7 +114,7 @@ def render_company(name: str, slug: str, rows: list[dict[str, Any]], render_date
     for label, color, path in (
         ("GitHub stars",   "#1f77b4", ["github", "stars"]),
         ("GitHub followers", "#9467bd", ["github", "followers"]),
-        ("Open jobs",      "#2ca02c", ["lever", "open"]),
+        ("Open jobs",      "#2ca02c", ["jobs", "open"]),
         ("HN mentions (30d)", "#ff7f0e", ["hn_30d"]),
         ("GDELT articles (7d)", "#d62728", ["gdelt_7d"]),
     ):
