@@ -395,7 +395,7 @@ jobs:
         if: steps.layers.outputs.run_l1 == 'true'
         continue-on-error: true
         env:
-          SEC_EDGAR_USER_AGENT: ${{ secrets.SEC_EDGAR_USER_AGENT }}
+          SEC_EDGAR_USER_AGENT: Hermenaut admin@nusx.edu.sg
         run: python3 scripts/edgar_daily.py
 
       - name: Collect GeBIZ procurement awards
