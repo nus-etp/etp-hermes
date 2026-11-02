@@ -28,6 +28,7 @@ data/jina-cache/
 
 # scripts/startupsg_snapshot.py diff items — per-run; the committed snapshot is data/startupsg/
 data/startupsg-items.json
+data/portfolio-items.json
 
 # scripts/sitemap_diff.py — per-domain {page: lastmod} state (GHA cache is source of truth) + per-run diff items
 data/sitemap-cache.json

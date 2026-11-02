@@ -25,6 +25,8 @@ def test_feeds_shape(feeds: list[dict]) -> None:
             errors.append(f"feeds[{i}] missing/empty name")
         if f.get("type") != "firehose":
             errors.append(f"feeds[{i}] ({name}) type must be 'firehose', got {f.get('type')!r}")
+        if f.get("format", "rss") not in {"rss", "html_scrape"}:
+            errors.append(f"feeds[{i}] ({name}) format must be 'rss' or 'html_scrape', got {f.get('format')!r}")
         url = f.get("url")
         if not _is_http_url(url):
             errors.append(f"feeds[{i}] ({name}) url not a valid http(s) URL: {url!r}")

@@ -518,6 +518,7 @@ def test_startupsg_items_absent_is_noop(cc):
     assert out["candidates"] == []
     assert out["stats"]["startupsg_candidates"] == 0
     assert out["stats"]["sitemap_candidates"] == 0
+    assert out["stats"]["portfolio_candidates"] == 0
 
 
 def _sitemap_item(company: str, url: str) -> dict[str, str]:
@@ -558,6 +559,56 @@ def test_sitemap_items_fold_in_for_judgment_with_dedup(cc):
     assert cand["source"] == "acme.ai sitemap"
     assert "pre_extracted" not in cand
     assert out["stats"]["sitemap_candidates"] == 1
+
+
+def _portfolio_item(company: str, key: str, headline: str = "") -> dict[str, str]:
+    return {
+        "company": company,
+        "headline": headline or f"{company} appears in Antler portfolio",
+        "description": f"{company} is listed in the Antler portfolio.",
+        "source": "Antler",
+        "pubDate": "2026-11-02T13:00:00+00:00",
+        "link": "https://www.antler.co/portfolio",
+        "dedup_key": key,
+        "source_kind": "portfolio_list",
+    }
+
+
+def test_portfolio_items_fold_in_with_dedup_and_exclude_terms(cc):
+    companies = [
+        *COMPANIES,
+        {
+            "name": "Orbit Labs",
+            "aliases": [],
+            "description": "space startup",
+            "exclude_terms": ["ticker"],
+            "sources": [],
+        },
+    ]
+    portfolio = {
+        "items": [
+            _portfolio_item("Acme Robotics", "portfolio://antler/acme-robotics"),
+            _portfolio_item("Nova Health", "portfolio://antler/nova-health"),
+            _portfolio_item("Orbit Labs", "portfolio://antler/orbit-labs", "Orbit Labs ticker appears in Antler portfolio"),
+            _portfolio_item("Not On Watchlist", "portfolio://antler/not-on-watchlist"),
+        ]
+    }
+    out = cc.collect(
+        companies,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen={"portfolio://antler/nova-health"},
+        fetcher=_fetcher({}),
+        portfolio=portfolio,
+    )
+    [cand] = out["candidates"]
+    assert cand["company"] == "Acme Robotics"
+    assert cand["source_kind"] == "portfolio_list"
+    assert cand["source"] == "Antler"
+    assert "pre_extracted" not in cand
+    assert out["stats"]["portfolio_candidates"] == 1
+    assert out["stats"]["excluded_by_terms"] == 1
 
 
 def _jina_pre(url: str, items: list[dict[str, str]]) -> dict:
@@ -877,6 +928,58 @@ def test_jina_fallback_recovers_unreachable_firehose(cc):
     assert out["fetch_failed"] == []
     assert out["jina_recovered"] == [FEEDS[0]["url"]]
     assert out["stats"]["jina_candidates"] == 1
+
+
+HTML_FIREHOSE = {"name": "Deal Site", "type": "firehose", "format": "html_scrape", "url": "https://deals.example/"}
+
+
+def _listing_page(*anchors: tuple[str, str]) -> bytes:
+    links = "".join(f'<a href="{href}"><h3>{text}</h3></a>' for href, text in anchors)
+    return (
+        "<html><head><script>var x = '<a href=\"/nope\">Acme Robotics hidden script link here</a>';</script></head>"
+        f"<body><nav><a href='/about'>About</a></nav>{links}</body></html>"
+    ).encode()
+
+
+def test_html_scrape_firehose_parses_listing_links_and_triages(cc):
+    page = _listing_page(
+        ("/stories/acme-raises-5m-123/", "Acme Robotics raises $5M Series A round"),
+        ("/stories/other-456/", "Some other company closes a funding round"),
+        ("https://elsewhere.example/acme", "Acme Robotics featured on an external site"),
+        ("/privacy-policy", "Read our privacy policy for Acme Robotics users"),
+    )
+    out = cc.collect(
+        COMPANIES,
+        [HTML_FIREHOSE],
+        changed=None,
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({HTML_FIREHOSE["url"]: page}),
+    )
+    [cand] = [c for c in out["candidates"] if c["source"] == "Deal Site"]
+    assert cand["company"] == "Acme Robotics"
+    assert cand["link"] == "https://deals.example/stories/acme-raises-5m-123/"
+    assert cand["headline"] == "Acme Robotics raises $5M Series A round"
+    assert cand["source_kind"] == "firehose"
+    assert cand["dedup_key"] == cand["link"]
+    assert "pre_extracted" not in cand
+
+
+def test_html_scrape_firehose_without_links_falls_back_to_reader(cc):
+    md = f"### [Acme Robotics opens Jakarta office](https://deals.example/jkt)\n\n{_recent_iso_date(1)}\n"
+    out = cc.collect(
+        COMPANIES,
+        [HTML_FIREHOSE],
+        changed={"firehose": [HTML_FIREHOSE["url"]], "per_company": {}},
+        jina=None,
+        seen=set(),
+        fetcher=_fetcher({HTML_FIREHOSE["url"]: b"<html><body><div id='app'></div></body></html>"}),
+        reader=_reader({HTML_FIREHOSE["url"]: md}),
+    )
+    [cand] = out["candidates"]
+    assert cand["link"] == "https://deals.example/jkt"
+    assert cand["via_jina_fallback"] is True
+    assert out["fetch_failed"] == []
 
 
 def test_reader_fallback_parses_raw_feed_xml(cc):

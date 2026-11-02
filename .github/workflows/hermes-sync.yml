@@ -371,6 +371,16 @@ jobs:
         timeout-minutes: 30
         run: python3 scripts/sitemap_diff.py
 
+      - name: Snapshot investor portfolio lists
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u -d "$RUN_DATE" +%u)" = "1" ]; then
+            python3 scripts/portfolio_lists.py
+          else
+            echo "not Monday; skipping portfolio lists"
+          fi
+
       - name: Collect candidates (deterministic feed parse + dedup)
         # Fetches and parses every changed feed/source, applies date windows,
         # dedupes against signals/seen-urls.txt, and runs the substring
@@ -752,6 +762,7 @@ jobs:
             data/replay/
             data/harness/judged/
             data/startupsg/
+            data/portfolio-lists/
             evals/scenarios/
           if-no-files-found: ignore
           retention-days: 1
@@ -805,7 +816,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add signals/ data/metrics/ hermes/memories/
-          for harness_path in data/replay data/harness/judged data/startupsg evals/scenarios; do
+          for harness_path in data/replay data/harness/judged data/startupsg data/portfolio-lists evals/scenarios; do
             if [ -e "$harness_path" ]; then
               git add "$harness_path"
             fi
