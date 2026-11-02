@@ -29,7 +29,7 @@ env:
   HARNESS_DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
   HARNESS_ASSIGNEE: luarss
   HARNESS_LABEL: 'harness:auto'
-  HARNESS_RUNTIMES: 'nvidia zai'
+  HARNESS_RUNTIMES: 'deepseek zai'
   HARNESS_CHAMPION_REF: origin/main
   HARNESS_MAX_REVIEW_ROUNDS: '2'
   HARNESS_SIM_TIMEOUT_SECS: '1500'

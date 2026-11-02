@@ -7,7 +7,7 @@ For every row in signals/harness/ledger.jsonl merged more than
 1. create a detached temp worktree at `--base` (default `main`) and
    `git revert --no-commit <merge_sha>` into it (conflict → skip the row);
 2. run `simulate.py` (layer from the cluster key) against the reverted
-   worktree on both runtimes (`nvidia`, `zai`), with `--prompt-path` inside
+   worktree on both runtimes (`deepseek`, `zai`), with `--prompt-path` inside
    the worktree and the *current* active scenario corpus + replay window;
 3. run `grade.py` with champion = current `--base` sims (computed once per
    layer per run, cached under data/harness/sim/prune/) and proposal = the
@@ -41,7 +41,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import ledger
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-RUNTIMES = ("nvidia", "zai")
+RUNTIMES = ("deepseek", "zai")
 INCONCLUSIVE_EXIT_CODE = 3
 PROMPT_FOR_LAYER = {
     "ingest": "prompts/ingest.md",

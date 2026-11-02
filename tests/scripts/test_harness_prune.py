@@ -140,13 +140,13 @@ def test_proposal_sims_point_into_worktree(tmp_path: Path) -> None:
     runner = FakeRunner(accept_prs={10})
     _run(tmp_path, runner)
     proposal_sims = [cmd for cmd in runner.scripts("simulate.py") if "proposal-" in _flag(cmd, "--out")]
-    assert sorted(_flag(cmd, "--runtime") for cmd in proposal_sims) == ["nvidia", "zai"]
+    assert sorted(_flag(cmd, "--runtime") for cmd in proposal_sims) == ["deepseek", "zai"]
     for cmd in proposal_sims:
         assert "harness-prune-" in _flag(cmd, "--prompt-path")
         assert _flag(cmd, "--prompt-path").endswith("prompts/ingest.md")
     grade = runner.scripts("grade.py")[0]
     champions = grade[grade.index("--champion") + 1 : grade.index("--proposal")]
-    assert [Path(p).name for p in champions] == ["champion-nvidia.json", "champion-zai.json"]
+    assert [Path(p).name for p in champions] == ["champion-deepseek.json", "champion-zai.json"]
 
 
 def test_rejected_revert_is_kept_without_pr(tmp_path: Path) -> None:
