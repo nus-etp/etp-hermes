@@ -14,6 +14,8 @@ import urllib.request
 from collections.abc import Sequence
 from pathlib import Path
 
+from user_agents import honest_ua
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 COMPANIES_PATH = REPO_ROOT / "data" / "companies.json"
 OUTPUT_CSV = REPO_ROOT / "data" / "acra" / "watchlist-entities.csv"
@@ -24,7 +26,7 @@ EXPECTED_DATASET_COUNT = 27
 METADATA_URL = "https://api-production.data.gov.sg/v2/public/api/collections/{collection_id}/metadata"
 INITIATE_URL = "https://api-open.data.gov.sg/v1/public/api/datasets/{dataset_id}/initiate-download"
 POLL_URL = "https://api-open.data.gov.sg/v1/public/api/datasets/{dataset_id}/poll-download"
-USER_AGENT = "hermeneut-acra-refresh/1.0 (+https://github.com/nus-etp/etp-hermes)"
+USER_AGENT = honest_ua("acra-refresh")
 RATE_LIMITED_CODE = 24
 RATE_LIMIT_BACKOFF_SECONDS = 12
 MAX_API_ATTEMPTS = 10
