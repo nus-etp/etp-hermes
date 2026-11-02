@@ -75,6 +75,12 @@ overrides:
   # an oversized array): eslint-plugin-react-hooks pins its own zod resolution
   # within a range the catalog bump doesn't dedupe against; force it too.
   'eslint-plugin-react-hooks>zod': '^4.6.7'
+  # GHSA-g3hv-75wg-m249 (minimatch denial of service via globparts
+  # amplification): affects both the eslint chain (minimatch@3) and the
+  # typescript-eslint chain (minimatch@10); no patched 3.x/10.x release
+  # exists, so both are forced to the fixed 11.x line. Dev-tooling only
+  # (eslint config globbing), not part of the shipped app.
+  minimatch: '>=11.0.1'
 
 publicHoistPattern:
   - '*prettier*'

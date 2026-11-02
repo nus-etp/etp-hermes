@@ -16,7 +16,10 @@ hermes-extras = [
 ]
 
 [build-system]
-requires = ["setuptools>=68"]
+# setuptools>=78.1.1: GHSA-5rjg-fvgr-3xxf / CVE-2025-47273 (path traversal in
+# PackageIndex.download allowing arbitrary file write). The >=68 floor
+# permitted installing vulnerable releases.
+requires = ["setuptools>=78.1.1"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
