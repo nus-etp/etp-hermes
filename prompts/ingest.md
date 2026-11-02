@@ -38,7 +38,7 @@ grep -Fxq '<key>' signals/seen-urls.txt || cut -f2- signals/dropped-urls.txt | g
       "pubDate": "...",                // may be empty
       "link": "...",
       "dedup_key": "...",              // recorded in seen-urls.txt (kept) or dropped-urls.txt (dropped)
-      "source_kind": "firehose | rss | github_org | ats_jobs | appstore_dev | html_scrape | startupsg | sitemap",
+      "source_kind": "firehose | rss | github_org | ats_jobs | appstore_dev | html_scrape | startupsg | sitemap | portfolio_list | ipos",
       "pre_extracted": true            // only on jina-extracted html_scrape items
     }, ...
   ],

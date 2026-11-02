@@ -34,6 +34,9 @@ data/portfolio-items.json
 data/sitemap-cache.json
 data/sitemap-items.json
 
+# scripts/ipos_delta.py patent/trademark delta items — per-run
+data/ipos-items.json
+
 # per-run derived inputs for the layer prompts (collect-candidates.py, slice_companies.py, select_gapfill_queue.py)
 data/candidates.json
 data/agent-companies.json
