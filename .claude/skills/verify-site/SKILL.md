@@ -1,6 +1,6 @@
 ---
 name: verify-site
-description: Launch and drive the hermeneut static website (site/apps/web — company directory, living-brief company pages, daily digests) in a headless Chrome to prove a change works the way a visitor sees it on GitHub Pages. Use after editing anything under site/, scripts/build-data.mjs inputs (data/companies.json, signals/briefs, signals/updates), or when asked to screenshot/check the site.
+description: Launch and drive the hermenaut static website (site/apps/web — company directory, living-brief company pages, daily digests) in a headless Chrome to prove a change works the way a visitor sees it on GitHub Pages. Use after editing anything under site/, scripts/build-data.mjs inputs (data/companies.json, signals/briefs, signals/updates), or when asked to screenshot/check the site.
 ---
 
 # verify-site
@@ -21,7 +21,7 @@ All helpers live in `.claude/skills/verify-site/scripts/` (run from the repo roo
 It prints:
 
 ```
-RUN_DIR=$TMPDIR/verify-hermeneut-site/<utc-stamp>-<pid>
+RUN_DIR=$TMPDIR/verify-hermenaut-site/<utc-stamp>-<pid>
 BASE_URL=http://127.0.0.1:<free port>/etp-hermes
 ```
 

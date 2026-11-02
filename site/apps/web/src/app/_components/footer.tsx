@@ -18,7 +18,7 @@ export function Footer() {
             href="https://github.com/luarss/etp-hermes"
             className="hover:text-base-content-default underline underline-offset-2"
           >
-            hermeneut
+            hermenaut
           </a>{' '}
           pipeline
         </span>

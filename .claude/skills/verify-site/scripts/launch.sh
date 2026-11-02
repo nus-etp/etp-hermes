@@ -8,7 +8,7 @@ SKILL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 REPO_ROOT="$(git -C "$SKILL_DIR" rev-parse --show-toplevel)"
 WEB_DIR="$REPO_ROOT/site/apps/web"
 tmp_root="${TMPDIR:-/tmp}"
-RUNS_ROOT="${VERIFY_SITE_RUNS:-${tmp_root%/}/verify-hermeneut-site}"
+RUNS_ROOT="${VERIFY_SITE_RUNS:-${tmp_root%/}/verify-hermenaut-site}"
 
 skip_build=0
 for arg in "$@"; do

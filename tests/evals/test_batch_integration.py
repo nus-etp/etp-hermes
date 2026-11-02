@@ -47,7 +47,7 @@ def test_batch_runner_produces_completed_trajectory(
     dataset = tmp_path / "prompts.jsonl"
     dataset.write_text(json.dumps({"prompt": prompt}) + "\n")
 
-    run_name = "hermeneut-eval-batch"
+    run_name = "hermenaut-eval-batch"
     cmd = [
         sys.executable,
         str(BATCH_RUNNER),
