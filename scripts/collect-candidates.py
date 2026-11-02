@@ -12,7 +12,8 @@ and folds in the pre-extracted html_scrape items from data/jina-items.json
 the Startup SG directory diff items from data/startupsg-items.json, and the
 company-website sitemap diff items from data/sitemap-items.json, the
 investor portfolio-list diff items from data/portfolio-items.json, and the
-IPOS patent/trademark delta items from data/ipos-items.json.
+IPOS patent/trademark delta items from data/ipos-items.json, and the
+GeBIZ procurement award items from data/gebiz-items.json.
 
 Writes data/candidates.json. The ingest prompt then only performs the LLM
 relevance pass over the (small) candidate list instead of re-reading
@@ -61,6 +62,7 @@ STARTUPSG_ITEMS_FILE = REPO_ROOT / "data" / "startupsg-items.json"
 SITEMAP_ITEMS_FILE = REPO_ROOT / "data" / "sitemap-items.json"
 PORTFOLIO_ITEMS_FILE = REPO_ROOT / "data" / "portfolio-items.json"
 IPOS_ITEMS_FILE = REPO_ROOT / "data" / "ipos-items.json"
+GEBIZ_ITEMS_FILE = REPO_ROOT / "data" / "gebiz-items.json"
 SEEN_FILE = REPO_ROOT / "signals" / "seen-urls.txt"
 DROPPED_FILE = REPO_ROOT / "signals" / "dropped-urls.txt"
 OUT_FILE = REPO_ROOT / "data" / "candidates.json"
@@ -369,6 +371,7 @@ def collect(
     sitemap: dict[str, Any] | None = None,
     portfolio: dict[str, Any] | None = None,
     ipos: dict[str, Any] | None = None,
+    gebiz: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     candidates: list[dict[str, Any]] = []
     fetch_failed: list[dict[str, str]] = []
@@ -758,6 +761,7 @@ def collect(
     sitemap_candidates = fold_items(sitemap, "sitemap", "Company sitemap")
     portfolio_candidates = fold_items(portfolio, "portfolio_list", "Investor portfolio")
     ipos_candidates = fold_items(ipos, "ipos", "IPOS (data.gov.sg)")
+    gebiz_candidates = fold_items(gebiz, "gebiz", "GeBIZ (data.gov.sg)")
 
     matched = sorted({c["company"] for c in candidates})
     descriptions = {c["name"]: c.get("description", "") for c in companies if c["name"] in matched}
@@ -784,6 +788,7 @@ def collect(
             "sitemap_candidates": sitemap_candidates,
             "portfolio_candidates": portfolio_candidates,
             "ipos_candidates": ipos_candidates,
+            "gebiz_candidates": gebiz_candidates,
             "excluded_by_terms": suppressed["exclude_terms"],
             "weak_term_suppressed": suppressed["weak_term"],
         },
@@ -805,6 +810,7 @@ def main() -> int:
     sitemap = _load_optional_json(SITEMAP_ITEMS_FILE)
     portfolio = _load_optional_json(PORTFOLIO_ITEMS_FILE)
     ipos = _load_optional_json(IPOS_ITEMS_FILE)
+    gebiz = _load_optional_json(GEBIZ_ITEMS_FILE)
     # COLLECT_SEEN_FILE overrides the dedup list. The backfill points this at an
     # empty file so it re-collects items both arms already judged — the A/B is a
     # policy comparison, not a freshness check.
@@ -847,6 +853,7 @@ def main() -> int:
         sitemap=sitemap,
         portfolio=portfolio,
         ipos=ipos,
+        gebiz=gebiz,
     )
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -866,6 +873,7 @@ def main() -> int:
         f"sitemap_candidates={s['sitemap_candidates']} "
         f"portfolio_candidates={s['portfolio_candidates']} "
         f"ipos_candidates={s['ipos_candidates']} "
+        f"gebiz_candidates={s['gebiz_candidates']} "
         f"excluded_by_terms={s['excluded_by_terms']} "
         f"weak_term_suppressed={s['weak_term_suppressed']} "
         f"dropped_urls_pruned={pruned}",
