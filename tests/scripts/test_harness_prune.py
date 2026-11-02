@@ -140,13 +140,13 @@ def test_proposal_sims_point_into_worktree(tmp_path: Path) -> None:
     runner = FakeRunner(accept_prs={10})
     _run(tmp_path, runner)
     proposal_sims = [cmd for cmd in runner.scripts("simulate.py") if "proposal-" in _flag(cmd, "--out")]
-    assert sorted(_flag(cmd, "--runtime") for cmd in proposal_sims) == ["deepseek", "zai"]
+    assert sorted(_flag(cmd, "--runtime") for cmd in proposal_sims) == ["deepseek", "gemini"]
     for cmd in proposal_sims:
         assert "harness-prune-" in _flag(cmd, "--prompt-path")
         assert _flag(cmd, "--prompt-path").endswith("prompts/ingest.md")
     grade = runner.scripts("grade.py")[0]
     champions = grade[grade.index("--champion") + 1 : grade.index("--proposal")]
-    assert [Path(p).name for p in champions] == ["champion-deepseek.json", "champion-zai.json"]
+    assert [Path(p).name for p in champions] == ["champion-deepseek.json", "champion-gemini.json"]
 
 
 def test_rejected_revert_is_kept_without_pr(tmp_path: Path) -> None:
@@ -188,7 +188,7 @@ def test_merge_commit_reverted_with_mainline(tmp_path: Path) -> None:
 
 def test_simulate_failure_skips_row(tmp_path: Path) -> None:
     _setup(tmp_path, [_row(10)])
-    runner = FakeRunner(accept_prs={10}, failing_runtime="zai")
+    runner = FakeRunner(accept_prs={10}, failing_runtime="gemini")
     report = _run(tmp_path, runner, "--open-prs")
     assert report["candidates"] == []
     assert "simulate" in report["skipped"][0]["reason"]

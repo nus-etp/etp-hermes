@@ -15,8 +15,10 @@ OpenAI-compatible provider.
 
 Runtimes: ``chat(..., runtime=...)`` / ``have_key(runtime)`` select the provider
 the self-optimising harness replays against (``docs/harness-interfaces.md``):
-``deepseek`` (the default, unchanged behaviour), ``nvidia`` and ``zai`` mirror
-the primary and first fallback in ``hermes/config.yaml``. Each runtime reads its
+``deepseek`` (the default, unchanged behaviour), ``gemini``, ``nvidia``, ``zai``,
+``groq`` and ``kilocode`` mirror the primary and fallbacks in ``hermes/config.yaml``.
+``kilocode``'s free models also answer without a key, but like every runtime it
+is skipped when its key is unset. Each runtime reads its
 base URL / key / model from env with the defaults in ``RUNTIMES``. Token usage
 the provider reports is accumulated per runtime and exposed by ``usage_total``.
 An unknown runtime behaves like a missing key (fail-open).
@@ -63,6 +65,29 @@ RUNTIMES: dict[str, Runtime] = {
         "ZAI_MODEL",
         "glm-4.7-flash",
         {"thinking": {"type": "disabled"}},
+    ),
+    "gemini": Runtime(
+        "GEMINI_BASE_URL",
+        "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+        "GEMINI_API_KEY",
+        "GEMINI_MODEL",
+        "gemini-3.6-flash",
+        {"reasoning_effort": "low"},
+    ),
+    "groq": Runtime(
+        "GROQ_BASE_URL",
+        "https://api.groq.com/openai/v1/chat/completions",
+        "GROQ_API_KEY",
+        "GROQ_MODEL",
+        "openai/gpt-oss-120b",
+        {"reasoning_effort": "low"},
+    ),
+    "kilocode": Runtime(
+        "KILOCODE_BASE_URL",
+        "https://api.kilo.ai/api/gateway/chat/completions",
+        "KILOCODE_API_KEY",
+        "KILOCODE_MODEL",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
     ),
 }
 
