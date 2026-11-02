@@ -73,6 +73,7 @@ THIRD_PARTY_HOSTS = (
     "applytojob.com",
     "careers-page.com",
     "mycareersfuture.gov.sg",
+    "jobstreet.com",
     "greenhouse.io",
     "workable.com",
     "arxiv.org",

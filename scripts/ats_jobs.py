@@ -248,6 +248,36 @@ def _mycareersfuture(body: bytes, url: str) -> tuple[list[Posting], str | None]:
     return out, next_url or None
 
 
+def _jobstreet(body: bytes, url: str) -> tuple[list[Posting], str | None]:
+    payload = _require(_json(body), dict, "jobstreet")
+    results = _require(payload.get("data"), list, "jobstreet")
+    advertiser = _query_value(url, "advertiserid")
+    out = []
+    for r in results:
+        if advertiser and str((r.get("advertiser") or {}).get("id") or "") != advertiser:
+            continue
+        classifications = r.get("classifications") or []
+        classification = (classifications[0].get("classification") or {}) if classifications else {}
+        job_id = r.get("id")
+        out.append(
+            _posting(
+                job_id,
+                r.get("title"),
+                classification.get("description"),
+                parse_iso(r.get("listingDate")),
+                f"https://sg.jobstreet.com/job/{job_id}",
+            )
+        )
+    page = int(_query_value(url, "page") or 1)
+    page_size = int(_query_value(url, "pageSize") or 0)
+    total = payload.get("totalCount")
+    if page_size and isinstance(total, int) and page * page_size < total and results:
+        query = parse.parse_qs(parse.urlparse(url).query)
+        query["page"] = [str(page + 1)]
+        return out, parse.urlparse(url)._replace(query=parse.urlencode(query, doseq=True)).geturl()
+    return out, None
+
+
 PROVIDERS: dict[str, tuple[Callable[[bytes, str], tuple[list[Posting], str | None]], Callable[[str], str]]] = {
     "lever": (_lever, _last_segment),
     "recruitee": (_recruitee, _host_label),
@@ -257,6 +287,7 @@ PROVIDERS: dict[str, tuple[Callable[[bytes, str], tuple[list[Posting], str | Non
     "jazzhr": (_jazzhr, _host_label),
     "manatal": (_manatal, lambda url: _segment_after(url, "c")),
     "mycareersfuture": (_mycareersfuture, lambda url: _query_value(url, "uen").upper()),
+    "jobstreet": (_jobstreet, lambda url: _query_value(url, "advertiserid")),
 }
 
 
