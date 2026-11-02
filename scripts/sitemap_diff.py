@@ -52,6 +52,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 COMPANIES_FILE = REPO_ROOT / "data" / "companies.json"
 STATE_FILE = REPO_ROOT / "data" / "sitemap-cache.json"
 ITEMS_FILE = REPO_ROOT / "data" / "sitemap-items.json"
+CHANGED_FILE = REPO_ROOT / "data" / "changed-sources.json"
 
 TIMEOUT_SECS = 20
 REQUEST_INTERVAL_SECS = 1.0
@@ -544,6 +545,80 @@ def page_lastmod_moved(
     return None
 
 
+def url_variants(url: str) -> list[str]:
+    parts = parse.urlsplit(url)
+    host = parts.netloc.lower()
+    bare = host.removeprefix("www.")
+    path = parts.path or "/"
+    paths = {path, path.rstrip("/") or "/", path.rstrip("/") + "/"}
+    variants = [
+        parse.urlunsplit((parts.scheme, netloc, candidate, parts.query, ""))
+        for netloc in (host, bare, "www." + bare)
+        for candidate in sorted(paths)
+    ]
+    return list(dict.fromkeys(variants))
+
+
+def html_scrape_urls(companies: list[dict[str, Any]]) -> list[tuple[str, str]]:
+    pairs: list[tuple[str, str]] = []
+    for company in companies:
+        name = company.get("name")
+        for source in company.get("sources") or []:
+            if name and source.get("type") == "html_scrape" and source.get("url"):
+                pairs.append((name, source["url"]))
+    return pairs
+
+
+def unmoved_lastmod_urls(
+    companies: list[dict[str, Any]],
+    previous: dict[str, dict[str, Any]],
+    current: dict[str, dict[str, Any]],
+    trusted_domains: set[str],
+) -> dict[str, list[str]]:
+    trusted_previous = {d: e for d, e in previous.items() if d in trusted_domains}
+    trusted_current = {d: e for d, e in current.items() if d in trusted_domains}
+    unmoved: dict[str, list[str]] = {}
+    for name, url in html_scrape_urls(companies):
+        verdicts = [
+            page_lastmod_moved(trusted_previous, trusted_current, variant)
+            for variant in url_variants(url)
+        ]
+        known = [verdict for verdict in verdicts if verdict is not None]
+        if known and not any(known):
+            unmoved.setdefault(name, []).append(url)
+    return unmoved
+
+
+def gate_changed_sources(changed_path: Path, unmoved: dict[str, list[str]]) -> int:
+    if not changed_path.exists():
+        return 0
+    try:
+        payload = json.loads(changed_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as e:
+        print(f"sitemap: cannot gate {changed_path}: {e}", file=sys.stderr)
+        return 0
+    per_company = payload.get("per_company")
+    if not isinstance(per_company, dict):
+        return 0
+    gated: dict[str, list[str]] = {}
+    for name, urls in list(per_company.items()):
+        skip = set(unmoved.get(name, []))
+        dropped = [url for url in urls if url in skip]
+        if not dropped:
+            continue
+        gated[name] = dropped
+        kept = [url for url in urls if url not in skip]
+        if kept:
+            per_company[name] = kept
+        else:
+            del per_company[name]
+    count = sum(len(urls) for urls in gated.values())
+    if count:
+        payload["sitemap_gated"] = gated
+        write_json(changed_path, payload)
+    return count
+
+
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -559,6 +634,7 @@ def run(
     window_days: int = DEFAULT_WINDOW_DAYS,
     limit: int | None = None,
     only: str | None = None,
+    changed_path: Path | None = None,
 ) -> int:
     moment = now or datetime.now(timezone.utc)
     stamp = moment.isoformat(timespec="seconds")
@@ -576,6 +652,7 @@ def run(
     items: list[dict[str, Any]] = []
     stats = {"domains": len(targets), "reached": 0, "with_sitemap": 0, "partial": 0, "seeded": 0}
     bulk_suppressed: list[str] = []
+    trusted_domains: set[str] = set()
     for domain, company in targets:
         result = crawl_domain(domain, fetcher, sleep)
         before = state.get(domain) or {}
@@ -589,6 +666,8 @@ def run(
         }
         if result["status"] != "unreachable":
             stats["reached"] += 1
+        if result["status"] == "ok":
+            trusted_domains.add(domain)
         if result["status"] in {"ok", "partial"}:
             stats["with_sitemap"] += 1
             current = result["urls"]
@@ -611,6 +690,10 @@ def run(
         )
 
     write_json(state_path, {"domains": dict(sorted(state.items()))})
+    stats["sitemap_gated"] = 0
+    if changed_path is not None:
+        unmoved = unmoved_lastmod_urls(companies, previous, state, trusted_domains)
+        stats["sitemap_gated"] = gate_changed_sources(changed_path, unmoved)
     all_unreachable = len(targets) >= ALARM_MIN_ATTEMPTS and stats["reached"] == 0
     write_json(
         items_path,
@@ -624,7 +707,8 @@ def run(
     print(
         f"sitemap: domains={stats['domains']} reached={stats['reached']} "
         f"with_sitemap={stats['with_sitemap']} partial={stats['partial']} seeded={stats['seeded']} "
-        f"bulk_suppressed={len(bulk_suppressed)} items={len(items)}",
+        f"bulk_suppressed={len(bulk_suppressed)} items={len(items)} "
+        f"sitemap_gated={stats['sitemap_gated']}",
         file=sys.stderr,
     )
     if all_unreachable:
@@ -641,6 +725,7 @@ def main() -> int:
     parser.add_argument("--window-days", type=int, default=DEFAULT_WINDOW_DAYS)
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--only", default=None)
+    parser.add_argument("--changed", type=Path, default=CHANGED_FILE)
     args = parser.parse_args()
     companies = json.loads(args.companies.read_text(encoding="utf-8"))
     return run(
@@ -650,6 +735,7 @@ def main() -> int:
         window_days=args.window_days,
         limit=args.limit,
         only=args.only,
+        changed_path=args.changed,
     )
 
 

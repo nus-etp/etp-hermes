@@ -369,3 +369,78 @@ def test_page_lastmod_moved(sd) -> None:
     assert sd.page_lastmod_moved(after, after, "https://acme.ai/x/") is False
     assert sd.page_lastmod_moved(before, after, "https://acme.ai/unknown/") is None
     assert sd.page_lastmod_moved({}, after, "https://acme.ai/x/") is None
+
+
+GATE_COMPANIES = [
+    {
+        "name": "Acme Robotics",
+        "aliases": [],
+        "country": "Singapore",
+        "identifiers": {"website": "https://www.acme.ai"},
+        "sources": [
+            {"type": "html_scrape", "url": "https://www.acme.ai/blog"},
+            {"type": "html_scrape", "url": "https://acme.ai/news/"},
+            {"type": "html_scrape", "url": "https://acme.ai/press/"},
+            {"type": "html_scrape", "url": "https://acme.ai/careers/"},
+        ],
+    }
+]
+
+
+def _gate_run(sd, tmp_path: Path, pages: dict[str, object], changed: dict[str, list[str]]):
+    changed_path = tmp_path / "changed.json"
+    changed_path.write_text(json.dumps({"firehose": [], "per_company": changed}))
+    sd.run(
+        GATE_COMPANIES,
+        tmp_path / "state.json",
+        tmp_path / "items.json",
+        fetcher=_fetcher(pages),
+        sleep=_no_sleep,
+        now=NOW,
+        changed_path=changed_path,
+    )
+    return json.loads(changed_path.read_text()), json.loads((tmp_path / "items.json").read_text())
+
+
+def test_gate_drops_html_scrape_urls_whose_lastmod_did_not_move(sd, tmp_path: Path) -> None:
+    base = {
+        "https://acme.ai/blog/": "2026-10-01",
+        "https://acme.ai/news/": "2026-10-01",
+        "https://acme.ai/press/": "2026-10-01",
+    }
+    changed = {"Acme Robotics": [s["url"] for s in GATE_COMPANIES[0]["sources"]]}
+    seeded_changed, _ = _gate_run(sd, tmp_path, _site(base), changed)
+    assert seeded_changed["per_company"] == changed
+    assert "sitemap_gated" not in seeded_changed
+
+    later = dict(base)
+    later["https://acme.ai/press/"] = "2026-11-01"
+    gated, items = _gate_run(sd, tmp_path, _site(later), changed)
+    assert gated["per_company"] == {
+        "Acme Robotics": ["https://acme.ai/press/", "https://acme.ai/careers/"]
+    }
+    assert gated["sitemap_gated"] == {
+        "Acme Robotics": ["https://www.acme.ai/blog", "https://acme.ai/news/"]
+    }
+    assert items["stats"]["sitemap_gated"] == 2
+
+
+def test_gate_fails_open_without_trusted_sitemap(sd, tmp_path: Path) -> None:
+    changed = {"Acme Robotics": ["https://www.acme.ai/blog"]}
+    _gate_run(sd, tmp_path, _site({"https://acme.ai/blog/": "2026-10-01"}), changed)
+    gated, items = _gate_run(sd, tmp_path, {}, changed)
+    assert gated["per_company"] == changed
+    assert items["stats"]["sitemap_gated"] == 0
+
+
+def test_gate_ignores_pages_without_lastmod(sd, tmp_path: Path) -> None:
+    changed = {"Acme Robotics": ["https://www.acme.ai/blog"]}
+    pages = _site({"https://acme.ai/blog/": ""})
+    _gate_run(sd, tmp_path, pages, changed)
+    gated, _ = _gate_run(sd, tmp_path, pages, changed)
+    assert gated["per_company"] == changed
+
+
+def test_gate_noop_without_changed_sources_file(sd, tmp_path: Path) -> None:
+    _code, items = _run(sd, tmp_path, _site({"https://acme.ai/blog/": "2026-10-01"}))
+    assert items["stats"]["sitemap_gated"] == 0

@@ -339,6 +339,19 @@ jobs:
         continue-on-error: true
         run: python3 scripts/detect-dead-feeds.py
 
+      - name: Diff company sitemaps
+        # Discovers each watchlist company's own sitemap (robots.txt, then
+        # /sitemap.xml, /sitemap_index.xml), diffs {page: lastmod} against
+        # data/sitemap-cache.json and writes new/updated pages to
+        # data/sitemap-items.json for the normal Layer 1 judgment. Fails open
+        # per domain; exits 1 only when every domain is unreachable. Runs
+        # before the reader prefetch because it also drops html_scrape URLs
+        # whose sitemap lastmod did not move from data/changed-sources.json.
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        timeout-minutes: 30
+        run: python3 scripts/sitemap_diff.py
+
       - name: Prefetch html_scrape via Parallel reader
         # For every html_scrape source listed as changed by preflight,
         # fetch the page through the keyless Parallel MCP web_fetch to get clean Markdown and
@@ -362,17 +375,6 @@ jobs:
         if: steps.layers.outputs.run_l1 == 'true'
         continue-on-error: true
         run: python3 scripts/startupsg_snapshot.py
-
-      - name: Diff company sitemaps
-        # Discovers each watchlist company's own sitemap (robots.txt, then
-        # /sitemap.xml, /sitemap_index.xml), diffs {page: lastmod} against
-        # data/sitemap-cache.json and writes new/updated pages to
-        # data/sitemap-items.json for the normal Layer 1 judgment. Fails open
-        # per domain; exits 1 only when every domain is unreachable.
-        if: steps.layers.outputs.run_l1 == 'true'
-        continue-on-error: true
-        timeout-minutes: 30
-        run: python3 scripts/sitemap_diff.py
 
       - name: Snapshot investor portfolio lists
         if: steps.layers.outputs.run_l1 == 'true'
