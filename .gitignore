@@ -49,6 +49,9 @@ data/dropped-urls-prerun.txt
 # the committed human report is signals/feed-health.md
 data/dead-feeds.json
 
+# domain_health.py machine output — the committed human report is signals/domain-health.md
+data/domain-health.json
+
 # creative-baoyu-infographic skill working tree (intermediates only; the
 # final PNG is copied into signals/briefs/<slug>/ by prompts/infographics.md)
 /infographic/
