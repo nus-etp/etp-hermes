@@ -1653,3 +1653,40 @@ def test_appstore_dev_caps_white_label_floods_newest_first(cc) -> None:
         "appstore://103/1.0",
     ]
     assert out["stats"]["appstore_capped"] == 4
+
+
+def _gebiz_item(company: str, key: str) -> dict[str, str]:
+    return {
+        "company": company,
+        "headline": f"{company} awarded National Parks Board tender: Remote sensing (S$1.34M)",
+        "description": "GeBIZ tender awarded.",
+        "source": "GeBIZ (data.gov.sg)",
+        "pubDate": "2025-03-21",
+        "link": f"https://data.gov.sg/api/action/datastore_search?k={key}",
+        "dedup_key": key,
+        "source_kind": "gebiz",
+    }
+
+
+def test_gebiz_items_fold_in_for_judgment_with_dedup(cc):
+    gebiz = {
+        "items": [
+            _gebiz_item("Acme Robotics", "gebiz://T1/acmerobotics"),
+            _gebiz_item("Acme Robotics", "gebiz://T2/acmerobotics"),
+            _gebiz_item("Not On Watchlist", "gebiz://T3/other"),
+        ]
+    }
+    out = cc.collect(
+        COMPANIES,
+        FEEDS,
+        changed={"firehose": [], "per_company": {}},
+        jina=None,
+        seen={"gebiz://T2/acmerobotics"},
+        fetcher=_fetcher({}),
+        gebiz=gebiz,
+    )
+    [cand] = out["candidates"]
+    assert cand["dedup_key"] == "gebiz://T1/acmerobotics"
+    assert cand["source_kind"] == "gebiz"
+    assert "pre_extracted" not in cand
+    assert out["stats"]["gebiz_candidates"] == 1

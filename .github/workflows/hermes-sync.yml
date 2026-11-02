@@ -395,6 +395,18 @@ jobs:
         env:
           SEC_EDGAR_USER_AGENT: ${{ secrets.SEC_EDGAR_USER_AGENT }}
         run: python3 scripts/edgar_daily.py
+      - name: Collect GeBIZ procurement awards
+        # The data.gov.sg GeBIZ dataset is republished in bulk, so read it
+        # weekly (Mondays UTC) and on workflow_dispatch; the committed
+        # data/gebiz snapshot keeps an award from being emitted twice.
+        if: steps.layers.outputs.run_l1 == 'true'
+        continue-on-error: true
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u -d "$RUN_DATE" +%u)" = "1" ]; then
+            python3 scripts/gebiz_awards.py
+          else
+            echo "not Monday; skipping GeBIZ awards"
+          fi
 
       - name: Collect candidates (deterministic feed parse + dedup)
         # Fetches and parses every changed feed/source, applies date windows,
@@ -831,7 +843,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add signals/ data/metrics/ hermes/memories/
-          for harness_path in data/replay data/harness/judged data/startupsg data/portfolio-lists evals/scenarios; do
+          for harness_path in data/replay data/harness/judged data/startupsg data/portfolio-lists data/gebiz evals/scenarios; do
             if [ -e "$harness_path" ]; then
               git add "$harness_path"
             fi
