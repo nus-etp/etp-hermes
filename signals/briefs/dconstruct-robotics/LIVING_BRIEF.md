@@ -1,5 +1,5 @@
 # dConstruct Robotics — LIVING BRIEF
-_Last updated: 2026-11-01 21:16 UTC_
+_Last updated: 2026-11-03 00:25 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -21,6 +21,9 @@ _No disclosed funding._
   - Counterparties: Building and Construction Authority (BCA), SoilBuild Construction
   - Numbers: ~5.54-hectare site scanned in ~6 hours by a two-person team; measured accuracy ~1 cm; virtual TOP workflow ~4 weeks vs an estimated up to 6 weeks traditionally; next sites — an HDB project and a >14-hectare mega site
   - Quote: "Working from a common, accurate digital representation gives developers, consultants, contractors, and BCA officers greater confidence in assessing project readiness." — Gerald Ho, SoilBuild Construction
+
+### Hiring
+- **2026-10-28** — Seven roles opened since 6 October: five engineering (embedded/electronics, LiDAR and visual SLAM, cloud, C/C++, project management) plus a project-finance executive and a cost accountant for an "AI and robotics company" → repeatable hardware delivery with unit-cost control, consistent with the US$125M Series A build-out rather than bespoke project work — [jobstreet.com](https://sg.jobstreet.com/job/95547277)
 
 ## Older signals
 - **2026-09-15** — Ran autonomous corridor inspections in live HDB blocks with township manager EM Services, including robot-to-lift integration so d.ASH-ER units work across storeys; EM Services is now scoping wider deployment — [beamp.sg](https://www.beamp.sg/stories/autonomous-robots-for-smarter-building-inspections)

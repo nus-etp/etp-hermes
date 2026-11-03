@@ -1,5 +1,5 @@
 # Vibefam — LIVING BRIEF
-_Last updated: 2026-09-18 16:59 UTC_
+_Last updated: 2026-11-03 00:25 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -16,7 +16,7 @@ _Last material event: 2026-06-18 — US$1M seed round led by a Singapore-based f
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-10-28** — Published three separately branded booking apps to the App Store within four days — Singapore Swim School, Martial House and Summit Academy — evidence of a repeatable client-app pipeline for its fitness and wellness venue customers rather than one flagship app — [apps.apple.com](https://apps.apple.com/us/app/singapore-swim-school/id6823066691)
 
 ## Older signals
 - **2026-07-08** — An NUS Computing alumni feature traces Vibefam from a 2021 student project to 700+ fitness locations and details Vibe AI's July 2026 launch as a WhatsApp/SMS booking agent needing no app download or portal login — [comp.nus.edu.sg](https://comp.nus.edu.sg/news/building-an-ai-powered-operating-system-for-the-gym-floor-two-nus-computing-graduates-rethinking-how-fitness-businesses-run)

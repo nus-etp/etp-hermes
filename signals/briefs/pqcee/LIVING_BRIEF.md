@@ -1,11 +1,11 @@
 # pQCee — LIVING BRIEF
-_Last updated: 2026-10-20 20:46 UTC_
+_Last updated: 2026-11-03 00:25 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
 pQCee is a Singapore-based post-quantum cybersecurity startup (founded 2022) building NIST-aligned quantum-safe encryption and key-lifecycle management tools, with a flagship SafeQuard™ document-protection product. In August 2026 the company signed a definitive share exchange agreement under which Vancouver-based digital-assets investment firm Universal Digital Inc. (CSE: LFG) will acquire all of pQCee's shares in a change-of-business transaction, alongside a concurrent US$5–10M private placement at a US$72.5M combined pre-money valuation. Closing is subject to shareholder and CSE approvals, with Universal Digital's shares suspended until the transaction completes or terminates.
 
-_Last material event: 2026-09-30 — Long stop date on the Universal Digital Inc. (CSE: LFG) share-exchange acquisition extended from 30 Sep to 30 Dec 2026 to complete the concurrent financing_
+_Last material event: 2026-10-29 — Carahsoft named Master Government Aggregator for US public-sector distribution_
 
 ## Profile
 - Sector: Cybersecurity / Quantum computing
@@ -19,7 +19,11 @@ _Last material event: 2026-09-30 — Long stop date on the Universal Digital Inc
 _No disclosed funding._
 
 ## Recent signals
-_none_
+- **2026-10-29** — Appointed Carahsoft as its Master Government Aggregator, giving pQCee its first US reseller channel into federal, state and local agencies plus education and healthcare buyers — [carahsoft.com](https://www.carahsoft.com/news/pqcee-and-carahsoft-partner-to-bring-quantum-safe-cybersecurity-solutions-to-the-public-sector-2026)
+  - Summary: pQCee and Carahsoft Technology Corp. announced a strategic partnership under which Carahsoft acts as pQCee's Master Government Aggregator, carrying its quantum-safe products to US federal, state and local agencies and to education and healthcare buyers through Carahsoft's reseller network and the TIPS and OMNIA Partners cooperative contracts. CEO Teik Guan Tan framed the deal around Executive Order 14412, which he says makes post-quantum migration a national-security and mission-readiness priority, and around harvest-now-decrypt-later risk. No order volume, revenue commitment or exclusivity term is disclosed, so the commercial effect depends on whether agencies buy through the listing.
+  - People: Teik Guan Tan (CEO, pQCee)
+  - Counterparties: Carahsoft Technology Corp. (Master Government Aggregator), TIPS and OMNIA Partners (cooperative purchasing contracts)
+  - Quote: "Our partnership with Carahsoft marks an important step in helping Government agencies prepare for the post-quantum era" — Teik Guan Tan, CEO, pQCee
 
 ## Older signals
 - **2026-09-30** — Universal Digital and pQCee extended the long stop date on their US$72.5M share-exchange acquisition from 30 September to 30 December 2026, citing the unfinished concurrent financing and remaining closing conditions, and flagging the risk the deal misses the new deadline — [sedar-filings-backup.thecse.com](https://sedar-filings-backup.thecse.com/000053666/06499347-00000001-000053666-universal09302026nr-PDF.pdf)
@@ -54,6 +58,6 @@ _none_
 
 ## Open questions
 - How does the deal's US$72.5M pre-money valuation and ~88% share issuance treat existing seed investors (SGInnovate, Lotus One, Wavemaker)?
-- Is the TechCreate integration a paid contract or a joint proof-of-concept?
+- Does the Carahsoft agreement carry volume commitments or exclusivity, and has any US agency bought through the listing yet?
 - What name will the resulting issuer carry, who will lead it, and when is the shareholder meeting expected to approve the change of business?
 - Will the concurrent financing close within the US$5–10M target before the 30 December long stop, and what happens to pQCee if it does not?

@@ -1,5 +1,5 @@
 # BEEX — LIVING BRIEF
-_Last updated: 2026-09-03 17:01 UTC_
+_Last updated: 2026-11-03 00:25 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -21,6 +21,9 @@ _Total disclosed: $9.8M._
 
 ## Recent signals
 - **date unknown** — BeeX publishes a technical explainer on autonomy levels in unmanned underwater vehicles, positioning A.IKANBILIS's integrated autonomy for inspection missions — [beex.sg](https://beex.sg/blogs/levels-of-autonomy-in-unmanned-underwater-vehicles-use-cases-limitations-and-a-ikanbilis-integrated-autonomy)
+
+### Hiring
+- **2026-10-18** — Three engineering openings in two days — robotics hardware, robotics autonomy software, and mechatronics for new product development — a new-build mix rather than field-service capacity, suggesting work on a successor platform to BETTA — [mycareersfuture.gov.sg](https://www.mycareersfuture.gov.sg/job/engineering/robotics-hardware-engineer-beex-1a20c51be4b70b4cb14c0ff69230baee)
 
 ## Older signals
 - **2026-08-21** — Copper Turtle, a UK defence-market specialist, will bring BeeX's hovering AUVs to naval forces across the UK and Europe for underwater infrastructure inspection, clearance diving and mine countermeasures — [copperturtle.co.uk](https://www.copperturtle.co.uk/insights/insights/beexcopperturtle) (Also reported by: [beex.sg](https://www.beex.sg/news/copper-turtle-announce-partnership-with-beex))

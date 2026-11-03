@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/carousell/sg.jobstreet.com",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.58",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Regional Marketing Director, Carousell — Marketing & Communications' for Carousell",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0007",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Carousell"
+      ],
+      "source": "Carousell",
+      "title": "Regional Marketing Director, Carousell — Marketing & Communications",
+      "url": "https://sg.jobstreet.com/job/95647378"
+    },
+    "companies": {
+      "Carousell": {
+        "description": "Singapore-headquartered online classifieds and consumer marketplace platform; the group also operates OneShift, Mudah, and Cho Tot."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.88,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

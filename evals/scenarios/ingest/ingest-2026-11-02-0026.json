@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/scholarly/mycareersfuture.gov.sg",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.42",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Specialist Mentor - English, Literature or Mathematics | Psychology, Counselling, Mental Health or SEN Background — Education and Training' for Scholarly",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0026",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Scholarly"
+      ],
+      "source": "Scholarly",
+      "title": "Specialist Mentor - English, Literature or Mathematics | Psychology, Counselling, Mental Health or SEN Background — Education and Training",
+      "url": "https://www.mycareersfuture.gov.sg/job/education-training/specialist-mentor-english-literature-mathematics-psychology-counselling-mental-health-sen-background-scholarly-77dd31b33280015935afdac5d31f019d"
+    },
+    "companies": {
+      "Scholarly": {
+        "description": "BLOCK71 Singapore-resident edtech / academic-tools startup. Drop unrelated 'Scholarly' brand mentions (Scholarly Kitchen, Scholarly Research) unless the article explicitly references this BLOCK71 SG entity."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.84,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

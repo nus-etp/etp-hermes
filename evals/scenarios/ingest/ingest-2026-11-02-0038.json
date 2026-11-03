@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/pqcee/mycareersfuture.gov.sg",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.68",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Associate Software Engineer — Information Technology' for pQCee",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0038",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "pQCee"
+      ],
+      "source": "pQCee",
+      "title": "Associate Software Engineer — Information Technology",
+      "url": "https://www.mycareersfuture.gov.sg/job/information-technology/associate-software-engineer-pqcee-160c42659d6a1448659daa3b2b8fbfe1"
+    },
+    "companies": {
+      "pQCee": {
+        "description": "BLOCK71 Singapore-resident post-quantum cybersecurity startup (founded 2022) building scalable encryption + key-lifecycle management; flagship SafeQuard™ document-protection tool (NIST-aligned post-quantum crypto); use cases span quantum-proofing docs, securing Web3 against quantum threats and protecting comms. Supported by the US$15M CyberSG Talent, Innovation and Growth (TIG) Collaboration Centre (NUS × CSA)."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.9,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

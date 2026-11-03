@@ -1,5 +1,5 @@
 # Flexxon — LIVING BRIEF
-_Last updated: 2026-10-22 23:17 UTC_
+_Last updated: 2026-11-03 00:25 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -17,12 +17,15 @@ _Last material event: 2026-10-20 — Made a strategic investment in Tech4Biz Sol
 _No disclosed funding._
 
 ## Recent signals
-- **2026-10-20** — Took a strategic stake in Tech4Biz Solutions, a Bengaluru cloud-infrastructure firm, to co-develop servers and data-centre builds with X-PHY security baked into the hardware rather than added after the fact — [x-phy.com](https://x-phy.com/flexxon-partners-with-tech4biz-solutions-to-co-develop-server-infrastructure-that-is-secure-by-default/)
+- **2026-10-20** — Took a strategic stake in Tech4Biz Solutions, a Bengaluru cloud-infrastructure firm, to co-develop servers and data-centre builds with X-PHY security baked into the hardware rather than added after the fact — [x-phy.com](https://x-phy.com/flexxon-partners-with-tech4biz-solutions-to-co-develop-server-infrastructure-that-is-secure-by-default/) (Also reported by: [prnewswire.com](https://www.prnewswire.com/apac/news-releases/flexxon-partners-with-tech4biz-solutions-to-co-develop-server-infrastructure-that-is-secure-by-default-302913346.html))
   - Summary: Flexxon announced a strategic investment in Tech4Biz Solutions, formalising a relationship of several years and extending joint development across Flexxon's X-PHY hardware security and Tech4Biz's Cloudtopiaa sovereign cloud and AI infrastructure platform. The immediate work is integrating X-PHY into Cloudtopiaa environments so server estates ship secured by default; Flexxon says development is already under way with commercial deployment expected in 2027. The tie-up targets governments, regulated enterprises, research institutions and data-centre operators first, in Singapore, India and North America, and is pitched at organisations bringing AI workloads — and the associated data, model and agent-memory risk — onto infrastructure they own. The release is Flexxon's own newsroom and discloses no investment amount or stake.
   - People: Camellia Chan (Co-founder & CEO, Flexxon), Yasha Khandelwal (Co-founder & CEO, Tech4Biz Solutions)
-  - Counterparties: Tech4Biz Solutions (strategic-investment target, co-development partner), Cloudtopiaa (Tech4Biz cloud platform)
+  - Counterparties: Tech4Biz Solutions (strategic-investment target, co-development partner), Cloudtopiaa (Tech4Biz cloud platform; production customers L&T Technology Services, Cognitive PRISM)
   - Numbers: commercial deployment targeted 2027; US$80B sovereign-cloud IaaS spend forecast for 2026, +35.6% YoY (Gartner, cited by Flexxon); 50+ patents
   - Quote: "We are building hardware that is secure by default, carrying that protection from devices into the servers and data centres enterprises now run themselves – the part of the stack where traditional security leaves the widest gaps." — Camellia Chan, Co-founder & CEO, Flexxon
+
+### Hiring
+- **2026-10-26** — Eight Singapore roles opened in October, weighted to channel sales and field support for the security line (two channel/BD managers, two field-application technicians, two technical product managers for cybersecurity) plus an application software engineer and an IT infrastructure engineer → distribution and pre-sales build-out for X-PHY, not core R&D — [jobstreet.com](https://sg.jobstreet.com/job/95505209)
 
 ## Older signals
 - **2026-08-14** — CEO Camellia Chan uses a vendor-bylined op-ed to argue that securing enterprise AI agents needs hardware-level controls, citing the Model Context Protocol vulnerability and a Meta agent data leak as evidence that software guardrails get bypassed — [techticker.net](https://techticker.net/2026/08/14/ai-agents-are-inside-the-enterprise-are-your-security-foundations-ready-for-them)

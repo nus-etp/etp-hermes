@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/ajentik-ai/mycareersfuture.gov.sg",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.63",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'DevSecOps Engineer — Information Technology' for Ajentik AI",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0001",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Ajentik AI"
+      ],
+      "source": "Ajentik AI",
+      "title": "DevSecOps Engineer — Information Technology",
+      "url": "https://www.mycareersfuture.gov.sg/job/information-technology/devsecops-engineer-ajentik-ai-64a6396d8d57b6ea92fca4ad10912d53"
+    },
+    "companies": {
+      "Ajentik AI": {
+        "description": "BLOCK71 Singapore-resident agentic-AI startup (play on 'agentic'). Drop generic 'agentic AI' hype articles unless the article explicitly references this BLOCK71 SG entity."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.84,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

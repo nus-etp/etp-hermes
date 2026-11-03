@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/taidii/sg.jobstreet.com",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.5",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'UI/ UX Designer [EdTech Products] — Design & Architecture' for Taidii",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0027",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Taidii"
+      ],
+      "source": "Taidii",
+      "title": "UI/ UX Designer [EdTech Products] — Design & Architecture",
+      "url": "https://sg.jobstreet.com/job/95412243"
+    },
+    "companies": {
+      "Taidii": {
+        "description": "BLOCK71 Suzhou-listed Singapore preschool / childcare-school-management SaaS (HQ Singapore, Suzhou ops listed twice in directory — folded here) covering attendance, billing, e-enrollment, e-forms, finance, parent-school communication; >50% private-school market share in Singapore; ECDA-approved vendor; VAMS 4S sub-second attendance / temperature device; presence in Singapore, China (Suzhou), UAE, Australia and the Philippines. Drop generic 'taid' / 'tide' branding news unless it names Taidii."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.88,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

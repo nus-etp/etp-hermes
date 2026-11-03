@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/vibefam/apps.apple.com",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.56",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Summit Academy 1.0.3 released on the App Store' for Vibefam",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0030",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Vibefam"
+      ],
+      "source": "Vibefam",
+      "title": "Summit Academy 1.0.3 released on the App Store",
+      "url": "https://apps.apple.com/us/app/summit-academy/id6817675912"
+    },
+    "companies": {
+      "Vibefam": {
+        "description": "BLOCK71 Singapore-resident community / wellness / events startup ('vibe' + 'fam'). Drop unrelated namesakes unless the article explicitly references this BLOCK71 SG entity."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.76,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

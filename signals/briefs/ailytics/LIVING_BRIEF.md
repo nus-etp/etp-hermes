@@ -1,5 +1,5 @@
 # Ailytics — LIVING BRIEF
-_Last updated: 2026-11-01 21:16 UTC_
+_Last updated: 2026-11-03 00:25 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,7 +20,7 @@ _Last material event: 2026-10-27 — Raised US$7.4M (S$9.4M) Series A led by Tin
 _Total disclosed: $2.7M._
 
 ## Recent signals
-- **2026-10-27** — Closed a US$7.4M (S$9.4M) Series A led by Tin Men Capital, with SG Growth Capital's SEEDS and Japanese camera maker Safie joining, to fund local teams in the US, Japan, Australia and the Gulf — [sbr.com.sg](https://sbr.com.sg/information-technology/news/ailytics-secures-9m-apac-us-and-gulf-expansion) (Also reported by: [apac.entrepreneur.com](https://apac.entrepreneur.com/business-news/singapores-ailytics-raises-7-4-mn-to-take-cctv-safety-ai-to-japan-the-us-and-the-gulf))
+- **2026-10-27** — Closed a US$7.4M (S$9.4M) Series A led by Tin Men Capital, with SG Growth Capital's SEEDS and Japanese camera maker Safie joining, to fund local teams in the US, Japan, Australia and the Gulf — [sbr.com.sg](https://sbr.com.sg/information-technology/news/ailytics-secures-9m-apac-us-and-gulf-expansion) (Also reported by: [apac.entrepreneur.com](https://apac.entrepreneur.com/business-news/singapores-ailytics-raises-7-4-mn-to-take-cctv-safety-ai-to-japan-the-us-and-the-gulf), [prnewswire.com](https://www.prnewswire.com/news-releases/tin-men-capital-leads-us7-4m-series-a-for-vision-ai-startup-ailytics-to-expand-across-apac-us-and-gulf-302918676.html), [backscoop.com](https://backscoop.com/startups/vision-ai-startup-ailytics-raises-7-4m-series-a-to-fuel-their-expansion))
   - Summary: Ailytics raised US$7.4M (S$9.4M) in a Series A led by Tin Men Capital, with SEEDS (the SG Growth Capital arm of Enterprise Singapore and EDB), Tokyo-listed cloud-camera company Safie, an unnamed large Japanese construction group, family offices and existing investors participating; valuation and stakes were not disclosed. The round is roughly 2.7x the US$2.7M pre-Series A of April 2024, also led by Tin Men, and follows growth from 70 projects in four countries to more than 400 deployments in 15. Proceeds fund expansion across Asia-Pacific, the US and the Gulf into manufacturing, logistics, oil and gas, maritime and mining, with local teams in the US, Japan, Australia and the Gulf; CEO Lenard Tan said Ailytics will target mid-sized US industrials that incumbents have priced out. Entrepreneur Asia Pacific cautions that projects and deployments are not necessarily paying customers, and that Ailytics has disclosed no revenue, ARR or profitability.
   - People: Lenard Tan (Co-Founder & CEO), Prateek Manocha (Co-Founder & CTO), Jeremy Tan (Managing Partner, Tin Men Capital)
   - Counterparties: Tin Men Capital (lead), SEEDS / SG Growth Capital, Safie, unnamed Japanese construction group; named customers: NatSteel, DHL, PaxOcean, Leonardo da Vinci International Airport, Changi Airport Terminal 5

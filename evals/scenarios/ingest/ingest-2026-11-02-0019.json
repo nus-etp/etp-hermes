@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/flexxon/sg.jobstreet.com",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.34",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'IT Infrastructure Engineer — Information & Communication Technology' for Flexxon",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0019",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Flexxon"
+      ],
+      "source": "Flexxon",
+      "title": "IT Infrastructure Engineer — Information & Communication Technology",
+      "url": "https://sg.jobstreet.com/job/95065990"
+    },
+    "companies": {
+      "Flexxon": {
+        "description": "BLOCK71 Silicon Valley-listed Singapore cybersecurity-hardware startup (founded 2007) building X-PHY, the world's first AI-embedded SSD with hardware-level threat detection and physical-tamper response. Co-founded by Camellia Chan and May Chng. Drop items that only mention generic flash-storage or unrelated 'X-PHY' physics content."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.9,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

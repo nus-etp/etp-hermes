@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/tuc-thoi-service-corporation/apps.apple.com",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.26",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Tài xế Aha 12.19 released on the App Store' for Tuc Thoi Service Corporation",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0029",
+  "input": {
+    "candidate": {
+      "description": "Đổi quà AhaBenefit & Quét mã QR hóa đơn! Bản cập nhật mới chính thức ra mắt Đổi Quà, giúp bác tài dùng xu tích điểm đổi ngay nhiều phần quà hấp dẫn. Việc chụp hóa đơn nay đã hỗ trợ quét mã QR/Barcode siêu tốc, tiết kiệm thời gian. Đồng thời, giao diện chi tiết đơn hàng cũng được tinh chỉnh để hiển thị trực quan và mượt mà hơn. Cập nhật app ngay nhé!",
+      "matched": [
+        "Tuc Thoi Service Corporation"
+      ],
+      "source": "Tuc Thoi Service Corporation",
+      "title": "Tài xế Aha 12.19 released on the App Store",
+      "url": "https://apps.apple.com/us/app/t%C3%A0i-x%E1%BA%BF-aha/id1234455868"
+    },
+    "companies": {
+      "Tuc Thoi Service Corporation": {
+        "description": "BLOCK71 Saigon-resident Vietnamese service-corporation startup. Limited public-English information beyond the directory listing — drop unrelated mentions unless the article explicitly references this BLOCK71 Saigon entity."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.84,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

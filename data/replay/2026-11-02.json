@@ -1,0 +1,1111 @@
+{
+  "candidates": [
+    {
+      "company": "Alpha",
+      "dedup_key": "https://www.businesstimes.com.sg/companies-markets/alpha-integrated-reit-ceo-karen-lee-steps-down",
+      "description": "She will remain with the manager until Mar 31, with CFO Goo Li Ling set to succeed her",
+      "headline": "Alpha Integrated Reit CEO Karen Lee steps down",
+      "link": "https://www.businesstimes.com.sg/companies-markets/alpha-integrated-reit-ceo-karen-lee-steps-down",
+      "pubDate": "Mon, 02 Nov 2026 04:49:10 +0000",
+      "source": "Business Times SG",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Tacniq",
+      "dedup_key": "https://technode.global/2026/11/02/tacniq-aashish-mehta-tactile-ai-physical-intelligence-qa/",
+      "description": "TacnIQ.ai CEO Aashish Mehta discusses tactile datasets, cross-sensor generalization, deployment reliability, safety and what it takes to scale physical AI.",
+      "headline": "TacnIQ.ai\u2019s Aashish Mehta on turning tactile AI into a platform for physical intelligence [Q&A]",
+      "link": "https://technode.global/2026/11/02/tacniq-aashish-mehta-tactile-ai-physical-intelligence-qa/",
+      "pubDate": "Mon, 02 Nov 2026 00:56:35 +0000",
+      "source": "TechNode Global",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Alpha",
+      "dedup_key": "https://sbr.com.sg/commercial-property/news/alpha-integrated-reit-ceo-karen-lee-exits-cfo-steps",
+      "description": "",
+      "headline": "Alpha Integrated REIT Management Pte Ltd., manager of AI REIT, has appointed Goo Li Ling as its CEO designate effective 2 November 2026.",
+      "link": "https://sbr.com.sg/commercial-property/news/alpha-integrated-reit-ceo-karen-lee-exits-cfo-steps",
+      "pubDate": "Mon, 02 Nov 2026 06:17:56 +0000",
+      "source": "Singapore Business Review",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Dana",
+      "dedup_key": "https://www.dealstreetasia.com/stories/lp-view-khazanah-dana-impak-497313/",
+      "description": "",
+      "headline": "Dana Impak takes 'first risk' but commercial discipline reigns",
+      "link": "https://www.dealstreetasia.com/stories/lp-view-khazanah-dana-impak-497313/",
+      "pubDate": "",
+      "source": "DealStreetAsia",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Ailytics",
+      "dedup_key": "https://kr-asia.com/deals-in-brief-stryv-raises-series-b-funding-tin-men-capital-backs-singapore-based-ailytics-anthropic-files-for-proposed-ipo-and-more",
+      "description": "",
+      "headline": "Deals in brief: Stryv raises Series B funding, Tin Men Capital backs Singapore-based Ailytics, Anthropic files for proposed IPO, and more",
+      "link": "https://kr-asia.com/deals-in-brief-stryv-raises-series-b-funding-tin-men-capital-backs-singapore-based-ailytics-anthropic-files-for-proposed-ipo-and-more",
+      "pubDate": "",
+      "source": "KrASIA",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "NEU Battery Materials",
+      "dedup_key": "https://kr-asia.com/deals-in-brief-neu-battery-materials-raises-usd-7-6-million-onebyzero-secures-series-a-funding-12-china-investments-and-more",
+      "description": "",
+      "headline": "Deals in brief: NEU Battery Materials raises USD 7.6 million, OneByZero secures Series A funding, 12 China investments, and more",
+      "link": "https://kr-asia.com/deals-in-brief-neu-battery-materials-raises-usd-7-6-million-onebyzero-secures-series-a-funding-12-china-investments-and-more",
+      "pubDate": "",
+      "source": "KrASIA",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Dana",
+      "dedup_key": "https://kr-asia.com/deals-in-brief-singapore-based-dtcpay-closes-series-a-round-01f-group-invests-in-dana-ten-china-investments-and-more",
+      "description": "",
+      "headline": "Deals in brief: Singapore-based dtcpay closes Series A round, 01F Group invests in Dana, ten China investments, and more",
+      "link": "https://kr-asia.com/deals-in-brief-singapore-based-dtcpay-closes-series-a-round-01f-group-invests-in-dana-ten-china-investments-and-more",
+      "pubDate": "",
+      "source": "KrASIA",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Hivebotics",
+      "dedup_key": "https://kr-asia.com/deals-in-brief-singapore-based-hivebotics-raises-series-a-funding-temasek-co-leads-investment-in-pixxel-11-china-deals-and-more",
+      "description": "",
+      "headline": "Deals in brief: Singapore-based Hivebotics raises Series A funding, Temasek co-leads investment in Pixxel, 11 China deals, and more",
+      "link": "https://kr-asia.com/deals-in-brief-singapore-based-hivebotics-raises-series-a-funding-temasek-co-leads-investment-in-pixxel-11-china-deals-and-more",
+      "pubDate": "",
+      "source": "KrASIA",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "BioActivX",
+      "dedup_key": "https://kr-asia.com/deals-in-brief-bioactivx-raises-pre-series-a-funding-smbc-and-singtel-innov8-back-fileai-latest-china-investments-and-more",
+      "description": "",
+      "headline": "Deals in brief: Bioactivx raises pre-Series A funding, SMBC and Singtel Innov8 back fileAI, latest China investments, and more",
+      "link": "https://kr-asia.com/deals-in-brief-bioactivx-raises-pre-series-a-funding-smbc-and-singtel-innov8-back-fileai-latest-china-investments-and-more",
+      "pubDate": "",
+      "source": "KrASIA",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Ailytics",
+      "dedup_key": "https://backscoop.com/startups/vision-ai-startup-ailytics-raises-7-4m-series-a-to-fuel-their-expansion",
+      "description": "",
+      "headline": "27 Oct 2026 Vision AI startup Ailytics raises $7.4M Series A to fuel their expansion AI",
+      "link": "https://backscoop.com/startups/vision-ai-startup-ailytics-raises-7-4m-series-a-to-fuel-their-expansion",
+      "pubDate": "",
+      "source": "Backscoop",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Dana",
+      "dedup_key": "https://backscoop.com/startups/global-investment-platform-01f-group-invests-in-indonesias-dana",
+      "description": "",
+      "headline": "22 Sept 2026 Global investment platform 01F Group invests in Indonesia\u2019s DANA Fintech",
+      "link": "https://backscoop.com/startups/global-investment-platform-01f-group-invests-in-indonesias-dana",
+      "pubDate": "",
+      "source": "Backscoop",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Carousell",
+      "dedup_key": "appstore://548607187/2.485.0",
+      "description": "Every week, we polish the app to help you buy, sell (or give for free!) better. This update includes bug fixes and performance improvements. Update your Carousell app to enjoy the latest improvements our engineers have been working hard on. Love Carousell? Rate and share us with your family and friends, so we can keep growing our community. Happy Carouselling!",
+      "headline": "Carousell: Snap-Sell, Chat-Buy 2.485.0 released on the App Store",
+      "link": "https://apps.apple.com/us/app/carousell-snap-sell-chat-buy/id548607187",
+      "pubDate": "2026-11-02",
+      "source": "Carousell \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Carousell",
+      "dedup_key": "jobstreet://60526790/95647378",
+      "description": "",
+      "headline": "Regional Marketing Director, Carousell \u2014 Marketing & Communications",
+      "link": "https://sg.jobstreet.com/job/95647378",
+      "provider": "jobstreet",
+      "pubDate": "2026-11-02",
+      "source": "Carousell \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Carousell",
+      "dedup_key": "jobstreet://60526790/95160868",
+      "description": "",
+      "headline": "Retail Sales Associate (Luxury) \u2014 Retail & Consumer Products",
+      "link": "https://sg.jobstreet.com/job/95160868",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-09",
+      "source": "Carousell \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Carousell",
+      "dedup_key": "jobstreet://60526790/95469016",
+      "description": "",
+      "headline": "Retail Operations \u2014 Retail & Consumer Products",
+      "link": "https://sg.jobstreet.com/job/95469016",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-23",
+      "source": "Carousell \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Carousell",
+      "dedup_key": "jobstreet://60526790/95358071",
+      "description": "",
+      "headline": "Senior Manager, Business Development \u2013 Carousell Luxury \u2014 Sales",
+      "link": "https://sg.jobstreet.com/job/95358071",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-19",
+      "source": "Carousell \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Carousell",
+      "dedup_key": "jobstreet://60526790/95124737",
+      "description": "",
+      "headline": "Business Manager, Luxury Watches \u2014 Sales",
+      "link": "https://sg.jobstreet.com/job/95124737",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-07",
+      "source": "Carousell \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Horizon Quantum Computing",
+      "dedup_key": "mycareersfuture://201802755E/3f2c7dba2d338045a259458b74ec66dc",
+      "description": "",
+      "headline": "Product Manager \u2014 Information Technology",
+      "link": "https://www.mycareersfuture.gov.sg/job/information-technology/product-manager-horizon-quantum-computing-3f2c7dba2d338045a259458b74ec66dc",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-15",
+      "source": "Horizon Quantum Computing \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Ailytics",
+      "dedup_key": "appstore://6776461923/1.6.0",
+      "description": "We're excited to introduce the AGo, Ailyssa mobile app, which provides real-time updates and site reconciliation. Ago brings core Ailyssa experience to iOS, giving your team on-the-ground access to the same platform they use on the web. We have improved the app stability and performance in this version (1.6.0).",
+      "headline": "Ailyssa Go 1.6.0 released on the App Store",
+      "link": "https://apps.apple.com/us/app/ailyssa-go/id6776461923",
+      "pubDate": "2026-10-28",
+      "source": "Ailytics \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "AiSee",
+      "dedup_key": "appstore://6743313850/1.2.0",
+      "description": "- \"Hey AiSee\" voice commands. Control the app with your voice. - Bus Scan is faster and announces buses more reliably, including when your phone is locked. - Describe now reads answers aloud as they arrive, and can listen for your next question on its own. - Better speech recognition. Your questions are now transcribed on your device. - Book Grab. Call Grab's assistive hotline in one step.",
+      "headline": "AiSee 1.2.0 released on the App Store",
+      "link": "https://apps.apple.com/sg/app/aisee/id6743313850",
+      "pubDate": "2026-10-31",
+      "source": "AiSee \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Ajentik AI",
+      "dedup_key": "mycareersfuture://202446293K/540cfdaeb8ce572b5feea4d4a9454e81",
+      "description": "",
+      "headline": "AI Engineer \u2014 Engineering",
+      "link": "https://www.mycareersfuture.gov.sg/job/engineering/ai-engineer-ajentik-ai-540cfdaeb8ce572b5feea4d4a9454e81",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-30",
+      "source": "Ajentik AI \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Ajentik AI",
+      "dedup_key": "mycareersfuture://202446293K/b3444cbbdc560fb58c606a0c2be363c0",
+      "description": "",
+      "headline": "BD Executive \u2014 Healthcare / Pharmaceutical",
+      "link": "https://www.mycareersfuture.gov.sg/job/healthcare/bd-executive-ajentik-ai-b3444cbbdc560fb58c606a0c2be363c0",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-30",
+      "source": "Ajentik AI \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Ajentik AI",
+      "dedup_key": "mycareersfuture://202446293K/64a6396d8d57b6ea92fca4ad10912d53",
+      "description": "",
+      "headline": "DevSecOps Engineer \u2014 Information Technology",
+      "link": "https://www.mycareersfuture.gov.sg/job/information-technology/devsecops-engineer-ajentik-ai-64a6396d8d57b6ea92fca4ad10912d53",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-30",
+      "source": "Ajentik AI \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Assemblr",
+      "dedup_key": "appstore://1505499586/1.9.1",
+      "description": "Say hello to Assemblr AI! Turn 2D images into 3D objects in just minutes. Teachers can create teaching tools faster, and students can bring their drawings to life in 3D. It\u2019s quick, easy, and fun. Try it now!",
+      "headline": "Assemblr EDU: Learn in 3D & AR 1.9.1 released on the App Store",
+      "link": "https://apps.apple.com/us/app/assemblr-edu-learn-in-3d-ar/id1505499586",
+      "pubDate": "2026-10-26",
+      "source": "Assemblr \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "BEEX",
+      "dedup_key": "mycareersfuture://201834961K/1a20c51be4b70b4cb14c0ff69230baee",
+      "description": "",
+      "headline": "Robotics Hardware Engineer \u2014 Engineering",
+      "link": "https://www.mycareersfuture.gov.sg/job/engineering/robotics-hardware-engineer-beex-1a20c51be4b70b4cb14c0ff69230baee",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-18",
+      "source": "BEEX \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "BEEX",
+      "dedup_key": "mycareersfuture://201834961K/a837d24cac58ed22124b41725eb5db6f",
+      "description": "",
+      "headline": "Mechatronics Engineer (New Product Development) \u2014 Engineering",
+      "link": "https://www.mycareersfuture.gov.sg/job/engineering/mechatronics-engineer-beex-a837d24cac58ed22124b41725eb5db6f",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-17",
+      "source": "BEEX \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "BEEX",
+      "dedup_key": "mycareersfuture://201834961K/003103199560c8ec02c04de1b4258f45",
+      "description": "",
+      "headline": "Robotics Autonomy Software Engineer \u2014 Engineering",
+      "link": "https://www.mycareersfuture.gov.sg/job/engineering/robotics-autonomy-software-engineer-beex-003103199560c8ec02c04de1b4258f45",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-17",
+      "source": "BEEX \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "BEEX",
+      "dedup_key": "mycareersfuture://201834961K/0d66ae2a34921036a29f47adbdfbe55b",
+      "description": "",
+      "headline": "Robotics Autonomy Software Engineer \u2014 Engineering",
+      "link": "https://www.mycareersfuture.gov.sg/job/engineering/robotics-autonomy-software-engineer-beex-0d66ae2a34921036a29f47adbdfbe55b",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-17",
+      "source": "BEEX \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "BEEX",
+      "dedup_key": "mycareersfuture://201834961K/8577db683dafdb8f2b6ce21fa416cb46",
+      "description": "",
+      "headline": "Robotics Hardware Engineer \u2014 Engineering",
+      "link": "https://www.mycareersfuture.gov.sg/job/engineering/robotics-hardware-engineer-beex-8577db683dafdb8f2b6ce21fa416cb46",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-17",
+      "source": "BEEX \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Constructor.io",
+      "dedup_key": "https://constructor.com/blog/the-ideal-search-and-discovery-solution-for-department-stores",
+      "description": "A long list of features and functionalities won't tell you   which search and product discovery solution is best for a department store  , but three questions will: Do shoppers find what they mean? Can merchandisers and product teams control the results? Will your product data hold up as shopping moves into new interfaces?",
+      "headline": "The Ideal Search and Discovery Solution for Department Stores | Constructor",
+      "link": "https://constructor.com/blog/the-ideal-search-and-discovery-solution-for-department-stores",
+      "pubDate": "Mon, 02 Nov 2026 22:12:23 GMT",
+      "source": "Constructor.io \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "dConstruct Robotics",
+      "dedup_key": "jobstreet://63644137/95547157",
+      "description": "",
+      "headline": "Finance Executive \u2013 Business & Project Finance Operations \u2014 Accounting",
+      "link": "https://sg.jobstreet.com/job/95547157",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-28",
+      "source": "dConstruct Robotics \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "dConstruct Robotics",
+      "dedup_key": "jobstreet://63644137/95547277",
+      "description": "",
+      "headline": "Project Manager \u2014 Engineering",
+      "link": "https://sg.jobstreet.com/job/95547277",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-28",
+      "source": "dConstruct Robotics \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "dConstruct Robotics",
+      "dedup_key": "jobstreet://63644137/95084407",
+      "description": "",
+      "headline": "Cost Accountant - AI and Robotics Company \u2014 Accounting",
+      "link": "https://sg.jobstreet.com/job/95084407",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-06",
+      "source": "dConstruct Robotics \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "dConstruct Robotics",
+      "dedup_key": "jobstreet://63644137/95269383",
+      "description": "",
+      "headline": "Cloud Engineer \u2014 Information & Communication Technology",
+      "link": "https://sg.jobstreet.com/job/95269383",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-14",
+      "source": "dConstruct Robotics \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "dConstruct Robotics",
+      "dedup_key": "jobstreet://63644137/95269375",
+      "description": "",
+      "headline": "Senior Embedded/Electronics Engineer \u2014 Engineering",
+      "link": "https://sg.jobstreet.com/job/95269375",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-14",
+      "source": "dConstruct Robotics \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "dConstruct Robotics",
+      "dedup_key": "jobstreet://63644137/95179575",
+      "description": "",
+      "headline": "C/C++ Software Engineer \u2014 Information & Communication Technology",
+      "link": "https://sg.jobstreet.com/job/95179575",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-09",
+      "source": "dConstruct Robotics \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "dConstruct Robotics",
+      "dedup_key": "jobstreet://63644137/95269371",
+      "description": "",
+      "headline": "LiDAR & Visual SLAM Engineer \u2014 Information & Communication Technology",
+      "link": "https://sg.jobstreet.com/job/95269371",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-14",
+      "source": "dConstruct Robotics \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "EcoMatcher",
+      "dedup_key": "appstore://1514362967/6.7.2",
+      "description": "A new version is ready! Update now for the latest features, better performance, and important security improvements.",
+      "headline": "TreeCorder 6.7.2 released on the App Store",
+      "link": "https://apps.apple.com/us/app/treecorder/id1514362967",
+      "pubDate": "2026-10-24",
+      "source": "EcoMatcher \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Finan",
+      "dedup_key": "appstore://6786673343/1.6.1028",
+      "description": "\u2022 New \"Share ad measurement data\" option in Settings: turn it on or off at any time. \u2022 Fixed an issue where the app could close unexpectedly on some devices. \u2022 Better stability and speed.",
+      "headline": "FinanOne: AI-Native Finance OS 1.6.1028 released on the App Store",
+      "link": "https://apps.apple.com/us/app/finanone-ai-native-finance-os/id6786673343",
+      "pubDate": "2026-10-31",
+      "source": "Finan \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Finan",
+      "dedup_key": "appstore://1560099589/4.0.38",
+      "description": "Phi\u00ean b\u1ea3n m\u1edbi \u0111\u00e3 \u0111\u01b0\u1ee3c c\u1eadp nh\u1eadt v\u1edbi nhi\u1ec1u c\u1ea3i ti\u1ebfn v\u01b0\u1ee3t tr\u1ed9i: - C\u1ea3i thi\u1ec7n hi\u1ec7u n\u0103ng v\u00e0 t\u1ed1i \u01b0u tr\u1ea3i nghi\u1ec7m \u1ee9ng d\u1ee5ng.",
+      "headline": "S\u1ed5 B\u00e1n H\u00e0ng: Qu\u1ea3n l\u00fd to\u00e0n di\u1ec7n 4.0.38 released on the App Store",
+      "link": "https://apps.apple.com/us/app/s%E1%BB%95-b%C3%A1n-h%C3%A0ng-qu%E1%BA%A3n-l%C3%BD-to%C3%A0n-di%E1%BB%87n/id1560099589",
+      "pubDate": "2026-10-28",
+      "source": "Finan \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Flexii",
+      "dedup_key": "appstore://6465077602/4.35.1",
+      "description": "\u2022 Fixed an upload error that could appear after finishing an AI interview, even though your interview was saved \u2022 All times are now shown in 24-hour format \u2022 Smoother sign-up, plus other fixes",
+      "headline": "Flexii - Flexible Jobs & Earn 4.35.1 released on the App Store",
+      "link": "https://apps.apple.com/sg/app/flexii-flexible-jobs-earn/id6465077602",
+      "pubDate": "2026-10-30",
+      "source": "Flexii \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "jobstreet://60509686/95505209",
+      "description": "",
+      "headline": "Channel and Sales Business Development Manager \u2014 Sales",
+      "link": "https://sg.jobstreet.com/job/95505209",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-26",
+      "source": "Flexxon \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "jobstreet://60509686/95213041",
+      "description": "",
+      "headline": "Field Application Technician \u2014 Engineering",
+      "link": "https://sg.jobstreet.com/job/95213041",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-12",
+      "source": "Flexxon \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "jobstreet://60509686/95065990",
+      "description": "",
+      "headline": "IT Infrastructure Engineer \u2014 Information & Communication Technology",
+      "link": "https://sg.jobstreet.com/job/95065990",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-05",
+      "source": "Flexxon \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "jobstreet://60509686/95214637",
+      "description": "",
+      "headline": "Channel Sales & Business Development Manager \u2014 Sales",
+      "link": "https://sg.jobstreet.com/job/95214637",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-12",
+      "source": "Flexxon \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "jobstreet://60509686/95334017",
+      "description": "",
+      "headline": "Field Application Technician \u2014 Manufacturing, Transport & Logistics",
+      "link": "https://sg.jobstreet.com/job/95334017",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-18",
+      "source": "Flexxon \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "jobstreet://60509686/95214487",
+      "description": "",
+      "headline": "Technical Product Manager - CyberSecurity Solution \u2014 Engineering",
+      "link": "https://sg.jobstreet.com/job/95214487",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-12",
+      "source": "Flexxon \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "jobstreet://60509686/95297049",
+      "description": "",
+      "headline": "Software Engineer - Application Development \u2014 Information & Communication Technology",
+      "link": "https://sg.jobstreet.com/job/95297049",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-15",
+      "source": "Flexxon \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Flexxon",
+      "dedup_key": "jobstreet://60509686/95189942",
+      "description": "",
+      "headline": "Technical Product Manager \u2013 Cybersecurity \u2014 Information & Communication Technology",
+      "link": "https://sg.jobstreet.com/job/95189942",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-11",
+      "source": "Flexxon \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Forte Biotech",
+      "dedup_key": "appstore://6476100387/2.0",
+      "description": "Aotomatic 2.0 is a big update. - Crop and harvest history for each pond: record part and final harvests, start a new crop and correct a harvest for up to 7 days. - RAPID tests and positives shown for each crop. - The pond form adds construction type, number of aerators and total aeration power. - Chat shows the time on every message and knows your pond, the time and your time zone. - Get your login code by WhatsApp, or by SMS if needed. - Clear permission requests in English and Vietnamese, inc\u2026",
+      "headline": "Aotomatic - Shrimp Farm Diary 2.0 released on the App Store",
+      "link": "https://apps.apple.com/us/app/aotomatic-shrimp-farm-diary/id6476100387",
+      "pubDate": "2026-10-21",
+      "source": "Forte Biotech \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Goodwhale",
+      "dedup_key": "https://goodwhale.com/big-tech-earnings-alphabet-intel-oil-nov-2026/",
+      "description": "Big tech earnings stole the spotlight this week. Big tech earnings dominated the week, with Alphabet falling 12.64% on Thursday, its worst day as a public company, and Intel dropping about 29% on Friday, its worst since 1974. The Nasdaq Composite lost 5.3% in October as investors began to worry about who pays for the AI build-out, while the Fed held at 3.75-4.00% in a 10-2 vote with two dissenters favouring a hike. Brent crude settled near $118 and the Straits Times Index closed at 5,376.74, dow",
+      "headline": "GoodWhale Weekly: Big Tech Earnings Rattle the Nasdaq, Intel Has Its Worst Day Since 1974, Brent Hits $117",
+      "link": "https://goodwhale.com/big-tech-earnings-alphabet-intel-oil-nov-2026/",
+      "pubDate": "Mon, 02 Nov 2026 02:17:14 +0000",
+      "source": "Goodwhale \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Hivebotics",
+      "dedup_key": "mycareersfuture://202224434W/ce0f0152d9606a6c7a573bd4061bd7f1",
+      "description": "",
+      "headline": "Field Deployment Technician \u2014 Engineering",
+      "link": "https://www.mycareersfuture.gov.sg/job/engineering/field-deployment-technician-hivebotics-ce0f0152d9606a6c7a573bd4061bd7f1",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-28",
+      "source": "Hivebotics \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Idle Logic",
+      "dedup_key": "appstore://6824047018/1.0",
+      "description": "",
+      "headline": "Idle: AI Salon & Spa Booking 1.0 released on the App Store",
+      "link": "https://apps.apple.com/us/app/idle-ai-salon-spa-booking/id6824047018",
+      "pubDate": "2026-10-28",
+      "source": "Idle Logic \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Karlo",
+      "dedup_key": "appstore://6748953884/1.3.4",
+      "description": "\u2022 Improvements and optimizations \u2022 Bug fixes",
+      "headline": "K-Fleet 1.3.4 released on the App Store",
+      "link": "https://apps.apple.com/id/app/k-fleet/id6748953884",
+      "pubDate": "2026-11-02",
+      "source": "Karlo \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Karlo",
+      "dedup_key": "appstore://6748953962/1.3.4",
+      "description": "\u2022 Improvements and optimizations \u2022 Bug fixes",
+      "headline": "K-Shipper 1.3.4 released on the App Store",
+      "link": "https://apps.apple.com/id/app/k-shipper/id6748953962",
+      "pubDate": "2026-11-02",
+      "source": "Karlo \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "LittleLives",
+      "dedup_key": "appstore://6752276737/1.5.19",
+      "description": "Improved stability and fixed several issues.",
+      "headline": "LittleLives for Parents 1.5.19 released on the App Store",
+      "link": "https://apps.apple.com/us/app/littlelives-for-parents/id6752276737",
+      "pubDate": "2026-10-30",
+      "source": "LittleLives \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "LittleLives",
+      "dedup_key": "appstore://6755920958/1.2.30",
+      "description": "Improved stability and fixed several issues.",
+      "headline": "LittleLives For Schools 1.2.30 released on the App Store",
+      "link": "https://apps.apple.com/us/app/littlelives-for-schools/id6755920958",
+      "pubDate": "2026-10-29",
+      "source": "LittleLives \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "LittleLives",
+      "dedup_key": "appstore://1158542738/2.9.7",
+      "description": "Bug fixes to enhance app stability and performance.",
+      "headline": "Little Family Room for Parents 2.9.7 released on the App Store",
+      "link": "https://apps.apple.com/us/app/little-family-room-for-parents/id1158542738",
+      "pubDate": "2026-10-21",
+      "source": "LittleLives \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "LittleLives",
+      "dedup_key": "appstore://1459842873/1.9.12",
+      "description": "Improved performance and bug fixes.",
+      "headline": "LittleLives for Teachers 1.9.12 released on the App Store",
+      "link": "https://apps.apple.com/us/app/littlelives-for-teachers/id1459842873",
+      "pubDate": "2026-10-20",
+      "source": "LittleLives \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Maestro Labs",
+      "dedup_key": "appstore://6813054762/1.1.0",
+      "description": "\u2022 Record in-person meetings with your iPhone. Tap Record, and TeamsMaestro turns the recording into notes, a summary and action items, like any other meeting.",
+      "headline": "TeamsMaestro: AI meeting notes 1.1.0 released on the App Store",
+      "link": "https://apps.apple.com/us/app/teamsmaestro-ai-meeting-notes/id6813054762",
+      "pubDate": "2026-10-23",
+      "source": "Maestro Labs \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "MeMove",
+      "dedup_key": "appstore://6794243822/1.3.8",
+      "description": "Order from a shop's own website and pay here: enter the shop's PIN on your Account screen, or tap the shop's link, to see your order and pay food and delivery together. Clearer order screens: every line of your order with its add-ons, the food and delivery amounts, and \"Preparing \u2014 your shop has your order\" once the shop is told. Riders: the shop's own order number now shows on the delivery card. The old scheduled-delivery and partner checkout screens are gone; a partner shop opens like any oth\u2026",
+      "headline": "MeMove Pick 1.3.8 released on the App Store",
+      "link": "https://apps.apple.com/sg/app/memove-pick/id6794243822",
+      "pubDate": "2026-10-29",
+      "source": "MeMove \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Microtube Technologies",
+      "dedup_key": "appstore://6817972422/1.0.1",
+      "description": "",
+      "headline": "ARIS Go: Workout Guide 1.0.1 released on the App Store",
+      "link": "https://apps.apple.com/us/app/aris-go-workout-guide/id6817972422",
+      "pubDate": "2026-10-26",
+      "source": "Microtube Technologies \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "NEU Battery Materials",
+      "dedup_key": "mycareersfuture://202119965Z/43dc28095fea4206f000d4c291563d2c",
+      "description": "",
+      "headline": "Process Engineer \u2014 Engineering",
+      "link": "https://www.mycareersfuture.gov.sg/job/engineering/process-engineer-neu-battery-materials-43dc28095fea4206f000d4c291563d2c",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-16",
+      "source": "NEU Battery Materials \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "NEU Battery Materials",
+      "dedup_key": "mycareersfuture://202119965Z/ebe189d9f2f8e9438d1d3f30d289bf7a",
+      "description": "",
+      "headline": "Research Scientist \u2014 Sciences / Laboratory / R&D",
+      "link": "https://www.mycareersfuture.gov.sg/job/sciences/research-scientist-neu-battery-materials-ebe189d9f2f8e9438d1d3f30d289bf7a",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-16",
+      "source": "NEU Battery Materials \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Pinhome",
+      "dedup_key": "appstore://1558641251/1.177.1",
+      "description": "Ceritakan kebutuhan layananmu atau tunjukkan fotonya dan kami akan bantu carikan layanan yang tepat lewat fitur konsultasi AI terbaru! Butuh bantuan terkait pesananmu? Sekarang kamu bisa chat langsung dengan Tim Customer Care Pinhome lebih mudah lewat aplikasi. Pinhome hadir buat bikin hidupmu lebih praktis! Mulai dari jual, beli, sewa, hingga rawat properti. Yuk, perbarui aplikasimu.",
+      "headline": "Pinhome: Properti, KPR & Jasa 1.177.1 released on the App Store",
+      "link": "https://apps.apple.com/us/app/pinhome-properti-kpr-jasa/id1558641251",
+      "pubDate": "2026-10-23",
+      "source": "Pinhome \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "pQCee",
+      "dedup_key": "mycareersfuture://202228798G/160c42659d6a1448659daa3b2b8fbfe1",
+      "description": "",
+      "headline": "Associate Software Engineer \u2014 Information Technology",
+      "link": "https://www.mycareersfuture.gov.sg/job/information-technology/associate-software-engineer-pqcee-160c42659d6a1448659daa3b2b8fbfe1",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-18",
+      "source": "pQCee \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "SalesMind AI",
+      "dedup_key": "https://sales-mind.ai/en/blog/post/ai-sales-funnel-layers",
+      "description": "",
+      "headline": "How to Build an AI Sales Funnel: The 4 Intelligence Layers",
+      "link": "https://sales-mind.ai/en/blog/post/ai-sales-funnel-layers",
+      "pre_extracted": false,
+      "pubDate": "",
+      "source": "SalesMind AI \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "SalesMind AI",
+      "dedup_key": "https://meet.sales-mind.ai/widget/booking/hlG0t56x4bZa8l3KWyEK?utm_source=website&utm_medium=webBlog&utm_campaign=demo&utm_content=ctaPrimary",
+      "description": "",
+      "headline": "Ready to Automate Your Sales Pipeline?",
+      "link": "https://meet.sales-mind.ai/widget/booking/hlG0t56x4bZa8l3KWyEK?utm_source=website&utm_medium=webBlog&utm_campaign=demo&utm_content=ctaPrimary",
+      "pre_extracted": false,
+      "pubDate": "",
+      "source": "SalesMind AI \u00b7 blog",
+      "source_kind": "html_scrape"
+    },
+    {
+      "company": "Scholarly",
+      "dedup_key": "mycareersfuture://202324923K/77dd31b33280015935afdac5d31f019d",
+      "description": "",
+      "headline": "Specialist Mentor - English, Literature or Mathematics | Psychology, Counselling, Mental Health or SEN Background \u2014 Education and Training",
+      "link": "https://www.mycareersfuture.gov.sg/job/education-training/specialist-mentor-english-literature-mathematics-psychology-counselling-mental-health-sen-background-scholarly-77dd31b33280015935afdac5d31f019d",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-07",
+      "source": "Scholarly \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Singapore Sapiens Technology",
+      "dedup_key": "appstore://6746299015/2.3.7",
+      "description": "Fixed some known issues",
+      "headline": "Agnes \u2014 Your AI for Life 2.3.7 released on the App Store",
+      "link": "https://apps.apple.com/us/app/agnes-your-ai-for-life/id6746299015",
+      "pubDate": "2026-10-24",
+      "source": "Singapore Sapiens Technology \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "SINGROW",
+      "dedup_key": "mycareersfuture://201927365C/b8876b6990d384518856690165fef45f",
+      "description": "",
+      "headline": "Supply Chain Senior Manager \u2014 Logistics / Supply Chain",
+      "link": "https://www.mycareersfuture.gov.sg/job/logistics/supply-chain-senior-manager-singrow-b8876b6990d384518856690165fef45f",
+      "provider": "mycareersfuture",
+      "pubDate": "2026-10-20",
+      "source": "SINGROW \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "StaffAny",
+      "dedup_key": "appstore://1360658903/1.175.0",
+      "description": "Minor changes and bug fixes",
+      "headline": "StaffAny Employee Scheduling 1.175.0 released on the App Store",
+      "link": "https://apps.apple.com/us/app/staffany-employee-scheduling/id1360658903",
+      "pubDate": "2026-10-22",
+      "source": "StaffAny \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Taidii",
+      "dedup_key": "appstore://6742486698/1.5",
+      "description": "1.Optimize some interfaces 2.Optimize data loading",
+      "headline": "ChildFirst Pre-School 1.5 released on the App Store",
+      "link": "https://apps.apple.com/us/app/childfirst-pre-school/id6742486698",
+      "pubDate": "2026-10-29",
+      "source": "Taidii \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Taidii",
+      "dedup_key": "appstore://6742477731/1.5",
+      "description": "1.Optimize some interfaces 2.Optimize data loading",
+      "headline": "Cambridge Pre-School 1.5 released on the App Store",
+      "link": "https://apps.apple.com/us/app/cambridge-pre-school/id6742477731",
+      "pubDate": "2026-10-29",
+      "source": "Taidii \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Taidii",
+      "dedup_key": "appstore://1022752190/4.31",
+      "description": "1.Optimize some interfaces 2.Optimize data loading",
+      "headline": "DiiBear 4.31 released on the App Store",
+      "link": "https://apps.apple.com/us/app/diibear/id1022752190",
+      "pubDate": "2026-10-21",
+      "source": "Taidii \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Taidii",
+      "dedup_key": "appstore://1049613932/3.88",
+      "description": "1. Optimize data loading 2. Optimize some interfaces",
+      "headline": "\u8fea\u8d1d\u513f 3.88 released on the App Store",
+      "link": "https://apps.apple.com/us/app/%E8%BF%AA%E8%B4%9D%E5%84%BF/id1049613932",
+      "pubDate": "2026-10-20",
+      "source": "Taidii \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Taidii",
+      "dedup_key": "appstore://1008055918/5.48",
+      "description": "1. Optimize data loading 2. Optimize some interfaces",
+      "headline": "Taidii Diilight 5.48 released on the App Store",
+      "link": "https://apps.apple.com/us/app/taidii-diilight/id1008055918",
+      "pubDate": "2026-10-20",
+      "source": "Taidii \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Taidii",
+      "dedup_key": "jobstreet://60536447/95412243",
+      "description": "",
+      "headline": "UI/ UX Designer [EdTech Products] \u2014 Design & Architecture",
+      "link": "https://sg.jobstreet.com/job/95412243",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-21",
+      "source": "Taidii \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Taidii",
+      "dedup_key": "jobstreet://60536447/95412276",
+      "description": "",
+      "headline": "Client Success Manager (SaaS / Project Management) \u2014 Sales",
+      "link": "https://sg.jobstreet.com/job/95412276",
+      "provider": "jobstreet",
+      "pubDate": "2026-10-21",
+      "source": "Taidii \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Tuc Thoi Service Corporation",
+      "dedup_key": "appstore://987325355/12.19",
+      "description": "Bug fixes and improvements",
+      "headline": "Ahamove 12.19 released on the App Store",
+      "link": "https://apps.apple.com/us/app/ahamove/id987325355",
+      "pubDate": "2026-11-02",
+      "source": "Tuc Thoi Service Corporation \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Tuc Thoi Service Corporation",
+      "dedup_key": "appstore://1546172032/7.45",
+      "description": "C\u1ea3i thi\u1ec7n hi\u1ec7u n\u0103ng \u1ee9ng d\u1ee5ng",
+      "headline": "T\u00e0i x\u1ebf OnWheel 7.45 released on the App Store",
+      "link": "https://apps.apple.com/us/app/t%C3%A0i-x%E1%BA%BF-onwheel/id1546172032",
+      "pubDate": "2026-10-30",
+      "source": "Tuc Thoi Service Corporation \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Tuc Thoi Service Corporation",
+      "dedup_key": "appstore://1234455868/12.19",
+      "description": "\u0110\u1ed5i qu\u00e0 AhaBenefit & Qu\u00e9t m\u00e3 QR h\u00f3a \u0111\u01a1n! B\u1ea3n c\u1eadp nh\u1eadt m\u1edbi ch\u00ednh th\u1ee9c ra m\u1eaft \u0110\u1ed5i Qu\u00e0, gi\u00fap b\u00e1c t\u00e0i d\u00f9ng xu t\u00edch \u0111i\u1ec3m \u0111\u1ed5i ngay nhi\u1ec1u ph\u1ea7n qu\u00e0 h\u1ea5p d\u1eabn. Vi\u1ec7c ch\u1ee5p h\u00f3a \u0111\u01a1n nay \u0111\u00e3 h\u1ed7 tr\u1ee3 qu\u00e9t m\u00e3 QR/Barcode si\u00eau t\u1ed1c, ti\u1ebft ki\u1ec7m th\u1eddi gian. \u0110\u1ed3ng th\u1eddi, giao di\u1ec7n chi ti\u1ebft \u0111\u01a1n h\u00e0ng c\u0169ng \u0111\u01b0\u1ee3c tinh ch\u1ec9nh \u0111\u1ec3 hi\u1ec3n th\u1ecb tr\u1ef1c quan v\u00e0 m\u01b0\u1ee3t m\u00e0 h\u01a1n. C\u1eadp nh\u1eadt app ngay nh\u00e9!",
+      "headline": "T\u00e0i x\u1ebf Aha 12.19 released on the App Store",
+      "link": "https://apps.apple.com/us/app/t%C3%A0i-x%E1%BA%BF-aha/id1234455868",
+      "pubDate": "2026-10-28",
+      "source": "Tuc Thoi Service Corporation \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Vibefam",
+      "dedup_key": "appstore://6740459734/1.0.5",
+      "description": "Bug fixes and improvements to notifications.",
+      "headline": "Ski.SG 1.0.5 released on the App Store",
+      "link": "https://apps.apple.com/us/app/ski-sg/id6740459734",
+      "pubDate": "2026-10-30",
+      "source": "Vibefam \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Vibefam",
+      "dedup_key": "appstore://1530134249/4.0.43",
+      "description": "Bug fixes and stability improvements to keep things running smoothly.",
+      "headline": "vibefam 4.0.43 released on the App Store",
+      "link": "https://apps.apple.com/us/app/vibefam/id1530134249",
+      "pubDate": "2026-10-29",
+      "source": "Vibefam \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Vibefam",
+      "dedup_key": "appstore://6823066691/1.0.2",
+      "description": "",
+      "headline": "Singapore Swim School 1.0.2 released on the App Store",
+      "link": "https://apps.apple.com/us/app/singapore-swim-school/id6823066691",
+      "pubDate": "2026-10-28",
+      "source": "Vibefam \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Vibefam",
+      "dedup_key": "appstore://6822994861/1.0.2",
+      "description": "",
+      "headline": "Martial House 1.0.2 released on the App Store",
+      "link": "https://apps.apple.com/us/app/martial-house/id6822994861",
+      "pubDate": "2026-10-27",
+      "source": "Vibefam \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Vibefam",
+      "dedup_key": "appstore://6817675912/1.0.3",
+      "description": "",
+      "headline": "Summit Academy 1.0.3 released on the App Store",
+      "link": "https://apps.apple.com/us/app/summit-academy/id6817675912",
+      "pubDate": "2026-10-25",
+      "source": "Vibefam \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Zoala",
+      "dedup_key": "appstore://1629544700/2.49.1",
+      "description": "Introducing our latest app update! We've made important bug fixes and improvements to the app. Enjoy the update!",
+      "headline": "Zoala 2.49.1 released on the App Store",
+      "link": "https://apps.apple.com/us/app/zoala/id1629544700",
+      "pubDate": "2026-10-30",
+      "source": "Zoala \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "AiRTS",
+      "dedup_key": "gebiz://GVT000ETT25000007/airts",
+      "description": "GeBIZ tender GVT000ETT25000007 awarded 2025-08-18 to AIRTS PTE. LTD. by Government Technology Agency (GovTech). Status: Awarded by Items; awarded amount: S$1. Tender description: Application Development & Support and ICT Professional Services (PR24-01108 - GVT(T)24014)",
+      "headline": "AiRTS awarded Government Technology Agency (GovTech) tender: Application Development & Support and ICT Professional Services (PR24-01108 - GVT(T)24014) (S$1)",
+      "link": "https://data.gov.sg/api/action/datastore_search?resource_id=d_acde1106003906a75c3fa052592f2fcb&filters=%7B%22tender_no%22%3A%22GVT000ETT25000007%22%2C%22supplier_name%22%3A%22AIRTS+PTE.+LTD.%22%7D",
+      "pubDate": "2025-08-18",
+      "source": "GeBIZ (data.gov.sg)",
+      "source_kind": "gebiz"
+    },
+    {
+      "company": "INVIGILO",
+      "dedup_key": "gebiz://GVT000ETT24000022/invigilotechnologies",
+      "description": "GeBIZ tender GVT000ETT24000022 awarded 2025-05-02 to INVIGILO TECHNOLOGIES PTE. LTD. by Government Technology Agency (GovTech). Status: Awarded by Items; awarded amount: S$114K. Tender description: REQUEST FOR PROPOSALS ON SAFESITE VA PILOT TRIAL OF COMPUTER VISION BASED WORKPLACE SAFETY FOR PUBLIC SECTOR CONSTRUCTION SITES (PR24-01278)",
+      "headline": "INVIGILO awarded Government Technology Agency (GovTech) tender: REQUEST FOR PROPOSALS ON SAFESITE VA PILOT TRIAL OF COMPUTER VISION BASED WORKPLACE SAFETY FOR PUBLIC SECTOR CONSTRUCTION SITES (PR24-01278) (S$114K)",
+      "link": "https://data.gov.sg/api/action/datastore_search?resource_id=d_acde1106003906a75c3fa052592f2fcb&filters=%7B%22tender_no%22%3A%22GVT000ETT24000022%22%2C%22supplier_name%22%3A%22INVIGILO+TECHNOLOGIES+PTE.+LTD.%22%7D",
+      "pubDate": "2025-05-02",
+      "source": "GeBIZ (data.gov.sg)",
+      "source_kind": "gebiz"
+    },
+    {
+      "company": "Ailytics",
+      "dedup_key": "gebiz://GVT000ETT24000022/ailytics",
+      "description": "GeBIZ tender GVT000ETT24000022 awarded 2025-05-02 to AILYTICS PTE. LTD. by Government Technology Agency (GovTech). Status: Awarded by Items; awarded amount: S$100K. Tender description: REQUEST FOR PROPOSALS ON SAFESITE VA PILOT TRIAL OF COMPUTER VISION BASED WORKPLACE SAFETY FOR PUBLIC SECTOR CONSTRUCTION SITES (PR24-01278)",
+      "headline": "Ailytics awarded Government Technology Agency (GovTech) tender: REQUEST FOR PROPOSALS ON SAFESITE VA PILOT TRIAL OF COMPUTER VISION BASED WORKPLACE SAFETY FOR PUBLIC SECTOR CONSTRUCTION SITES (PR24-01278) (S$100K)",
+      "link": "https://data.gov.sg/api/action/datastore_search?resource_id=d_acde1106003906a75c3fa052592f2fcb&filters=%7B%22tender_no%22%3A%22GVT000ETT24000022%22%2C%22supplier_name%22%3A%22AILYTICS+PTE.+LTD.%22%7D",
+      "pubDate": "2025-05-02",
+      "source": "GeBIZ (data.gov.sg)",
+      "source_kind": "gebiz"
+    },
+    {
+      "company": "Softgridinc",
+      "dedup_key": "gebiz://NPB000ETT24000083/softgridinc",
+      "description": "GeBIZ tender NPB000ETT24000083 awarded 2025-03-21 to SOFTGRIDINC PTE. LTD. by National Parks Board. Status: Awarded to Suppliers; awarded amount: S$1.34M. Tender description: Provision of Remote Sensing Services for Forest Cover Change Detection",
+      "headline": "Softgridinc awarded National Parks Board tender: Provision of Remote Sensing Services for Forest Cover Change Detection (S$1.34M)",
+      "link": "https://data.gov.sg/api/action/datastore_search?resource_id=d_acde1106003906a75c3fa052592f2fcb&filters=%7B%22tender_no%22%3A%22NPB000ETT24000083%22%2C%22supplier_name%22%3A%22SOFTGRIDINC+PTE.+LTD.%22%7D",
+      "pubDate": "2025-03-21",
+      "source": "GeBIZ (data.gov.sg)",
+      "source_kind": "gebiz"
+    }
+  ],
+  "companies": {
+    "AiRTS": "BLOCK71 Singapore-resident AI startup (name suggests real-time-systems / AI Real-Time-Streaming). Limited public-English information beyond the directory listing \u2014 drop unrelated 'airts' / 'arts' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "AiSee": "NUS Enterprise@SSP-resident Singapore deep-tech startup (NUS School of Computing spin-out, 2025) building AiSee \u2014 a self-contained AI-powered wearable visual companion for the visually impaired with bone-conduction audio, on-device Meta Llama models, and capabilities like label-reading and text translation. Won the 2024 Meta Llama Impact Innovation Award; pre-orders at S$199. Drop generic 'AI see' / vision-AI hype unless it names this device.",
+    "Ailytics": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "Ajentik AI": "BLOCK71 Singapore-resident agentic-AI startup (play on 'agentic'). Drop generic 'agentic AI' hype articles unless the article explicitly references this BLOCK71 SG entity.",
+    "Alpha": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic name \u2014 drop any item not clearly referring to a Singapore deep-tech startup of this exact name.",
+    "Assemblr": "BLOCK71 Social Impact Hub-listed Indonesian AR / 3D-content platform (HQ Bandung, SG offices at CT HUB2 and 336 Smith St) with Assemblr EDU for K-12 STEM AR experiences; 11,500+ teachers trained via the Assemblr Certified Trainer programme; joined the NUS Enterprise \u00d7 raiSE Technology for Sustainable Social Impact (TS2) cohort. Drop generic 'assembler' / IKEA-style assembly news unless it names this AR platform.",
+    "BEEX": "NUS GRIP-incubated Singapore autonomous-systems startup. Drop unrelated companies sharing the same name.",
+    "BioActivX": "BLOCK71 Suzhou-listed Singapore biotech startup (incorporated 2023; Suzhou ops via NUSRI translation institute; technical lead Dr Peili Teo \u2014 NUS / Caltech postdoc with Robert H. Grubbs) building Bioactiv\u2122 Matrix synthetic-acellular wound dressings using bioactive polymers that link oligopeptides to synthetic backbones for accelerated wound healing, reduced scarring and lower infection risk. Drop unrelated 'bioactive' wound-care marketing news unless it names BioactivX.",
+    "Carousell": "Singapore-headquartered online classifieds and consumer marketplace platform; the group also operates OneShift, Mudah, and Cho Tot.",
+    "Constructor.io": "BLOCK71 Silicon Valley-affiliated US enterprise-eCommerce search and product-discovery platform (NLP + ML ranking, personalized search/browse/recommendations) used by Sephora, Petco, Bonobos, Target Australia. Drop items about unrelated 'constructor pattern' programming content or construction firms.",
+    "Dana": "BLOCK71 Indonesia portfolio startup. Drop unrelated companies sharing the same name.",
+    "EcoMatcher": "BLOCK71 Bandung-listed Hong Kong-headquartered B-Corp (founded 2016 by Bas Fransen) operating a blockchain-tracked tree-planting / forest-management platform \u2014 TreeCorder data-capture app, TreeManager cloud system, Verra/Gold Standard carbon-certified TREES+ projects (partnership with VNV Advisory). Corporate customers include Grab and Procter & Gamble; ~50,000 customers globally. Drop generic 'eco' / matching-engine mentions.",
+    "Finan": "BLOCK71 Saigon-listed Singapore-headquartered (founders Hai Long Bui and Hai Nam Bui, mid-2021) SME-operating-system startup whose Vietnamese app SoBanHang gives micro-businesses sales/order/inventory/invoicing/cash-flow tools plus embedded financial services; >800K active business users, >US$5B transaction volume processed; Shinhan Store partnership with Shinhan Bank Vietnam. Drop generic 'finan' / 'finance' branding unless it names Finan / SoBanHang.",
+    "Flexii": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing \u2014 drop unrelated 'Flexi' / 'Flexii' brand mentions (Flexi loans, Flexi-Coil, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "Flexxon": "BLOCK71 Silicon Valley-listed Singapore cybersecurity-hardware startup (founded 2007) building X-PHY, the world's first AI-embedded SSD with hardware-level threat detection and physical-tamper response. Co-founded by Camellia Chan and May Chng. Drop items that only mention generic flash-storage or unrelated 'X-PHY' physics content.",
+    "Forte Biotech": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name.",
+    "Goodwhale": "BLOCK71 Social Impact Hub-resident Singapore B-Corp-certified fintech startup running a personalised investing-health platform for new retail investors \u2014 goal setting, portfolio coaching, sustainable / values-aligned investing tools. Drop pet/animal-care 'whale' brands or shipping news unless the article references the investing-health platform.",
+    "Hivebotics": "NUS GRIP-incubated Singapore robotics startup. Drop unrelated companies sharing the same name.",
+    "Horizon Quantum Computing": "Singapore-based privately-held quantum computing software startup. Distinct from any publicly-traded company sharing a similar name (NASDAQ:HQ ticker, Horizon Quantum Holdings, earnings releases, ticker-aggregator coverage from Zacks/TipRanks/MarketBeat/etc. must be excluded).",
+    "INVIGILO": "NUS Enterprise-incubated Singapore deep-tech worksite-safety AI startup (founder Vishnu Saran, NUS Material Science 2015). Invigilo Safekey\u2122 uses proprietary computer vision + language models for real-time worksite hazard detection (unsafe acts, near-misses) across construction sites, shipyards and manufacturing plants. Deployed by HDB, LTA, Hyundai E&C and others. Drop unrelated 'invigilator' / exam-proctoring tools and the unrelated 'Vigilo' brands.",
+    "Idle Logic": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing \u2014 drop unrelated 'Idle Logic' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "Karlo": "BLOCK71 Bandung-listed Indonesian logistics-tech platform (HQ Jakarta, office in Bandung) connecting shippers, transporters and drivers; 3,000+ fleets reported on the platform. Drop generic 'Karlo' brand mentions (it's a common name) unless the article references the Indonesian logistics platform.",
+    "LittleLives": "BLOCK71 Jakarta-listed Singapore preschool SaaS (founded 2011 by Sun Ho, NUS Computing alumna) running a holistic school-management system for early-childhood centres \u2014 attendance, time-in/out, temperature/height/weight, child portfolios, log books, fees, parent communication; ~1,000 schools across Singapore, Malaysia, China, Vietnam, Cambodia; MOE/ECDA-accredited, AECES Top Preschool Software. Made strategic acquisition of Illume Technology. Drop generic 'small / little lives' branding unless it names this entity.",
+    "Maestro Labs": "BLOCK71 Singapore-resident startup. CRITICAL: 'Maestro Labs' is extremely generic (multiple ML / orchestration / music vendors share the name); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "MeMove": "BLOCK71 Social Impact Hub-resident Singapore mobility/rehab venture (limited public-English information beyond the directory and a Facebook presence). Drop unrelated 'M:Move' / mobility-app branding unless the article references this BLOCK71 SIH entity. Likely focused on assistive-mobility for elderly / accessibility.",
+    "Microtube Technologies": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name.",
+    "NEU Battery Materials": "NUS GRIP-incubated Singapore battery-materials startup. Drop unrelated companies sharing the same name.",
+    "Pinhome": "BLOCK71 Bandung-listed Indonesian end-to-end proptech (founded January 2020 by ex-Gojek execs Dayu Dara Permata and Ahmed Aljunied): home search, transactions, conventional + sharia mortgage and refinancing, plus PinHome Home Service for cleaning, car wash and home maintenance. 1M+ housing inventories, 20+ banking partners. Generic 'pin home' wording \u2014 drop unrelated Pinterest / home-decor mentions.",
+    "SINGROW": "NUS GRIP-incubated Singapore agritech startup. Drop unrelated companies sharing the same name.",
+    "SalesMind AI": "BLOCK71 Singapore-resident sales-AI startup. Drop unrelated 'SalesMind' branded vendors (Salesmind.ai LinkedIn outreach, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "Scholarly": "BLOCK71 Singapore-resident edtech / academic-tools startup. Drop unrelated 'Scholarly' brand mentions (Scholarly Kitchen, Scholarly Research) unless the article explicitly references this BLOCK71 SG entity.",
+    "Singapore Sapiens Technology": "BLOCK71 Singapore-resident technology startup. Drop unrelated 'Sapiens' brand mentions (Sapiens International insurance software, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "Softgridinc": "BLOCK71 Guangzhou-listed Singapore IoT startup building lift/elevator safety-monitoring solutions \u2014 sensor arrays plus SCADA-style telemetry, big-data analytics and AI for precision maintenance and downtime reduction in elevator fleets. Drop unrelated 'smart grid' / power-grid news unless it names this entity.",
+    "StaffAny": "BLOCK71 Jakarta-listed Singapore HR-tech startup (founded by four NUS alumni) running a workforce-management app for hourly workers in F&B / retail \u2014 drag-and-drop rostering, time tracking, availability, payroll/accounting integration. ~100K+ shifts and ~700K hours tracked at the S$1M seed milestone; lead investor FreakOut Holdings; angels include ex-Zopim founders Lim Qing Ru, Kwok Yang Bin and Royston Tay plus Kenji Niwa.",
+    "Tacniq": "BLOCK71 Singapore-resident deep-tech tactile-sensor / Physical-AI startup (NUS spin-out, SGInnovate venture-built; founders Prof Harold Soh (NUS CS), Prof Benjamin Tee (NUS Enterprise AVP) and serial entrepreneur Aashish Mehta). Consumer product Kuushy = AI Posture-Coach smart cushion; B2B product Backy\u2122 = AI safety wearable detecting risky postures with real-time haptic feedback for logistics / manufacturing. Drop unrelated 'Tacniq' / 'tactic' brand mentions unless the article references this NUS / SGInnovate entity.",
+    "Taidii": "BLOCK71 Suzhou-listed Singapore preschool / childcare-school-management SaaS (HQ Singapore, Suzhou ops listed twice in directory \u2014 folded here) covering attendance, billing, e-enrollment, e-forms, finance, parent-school communication; >50% private-school market share in Singapore; ECDA-approved vendor; VAMS 4S sub-second attendance / temperature device; presence in Singapore, China (Suzhou), UAE, Australia and the Philippines. Drop generic 'taid' / 'tide' branding news unless it names Taidii.",
+    "Tuc Thoi Service Corporation": "BLOCK71 Saigon-resident Vietnamese service-corporation startup. Limited public-English information beyond the directory listing \u2014 drop unrelated mentions unless the article explicitly references this BLOCK71 Saigon entity.",
+    "Vibefam": "BLOCK71 Singapore-resident community / wellness / events startup ('vibe' + 'fam'). Drop unrelated namesakes unless the article explicitly references this BLOCK71 SG entity.",
+    "Zoala": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing \u2014 drop unrelated 'Zoala' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "dConstruct Robotics": "BLOCK71 Silicon Valley-listed Singapore deep-tech robotics startup building SLAM-based autonomous navigation and 3D digital-twin systems for construction, defense and logistics (d.ASH platform, d.ASH Nav self-driving stack, d.ASH Xplorer 3D mapping). Founded 2021 by Chinn Hwa Lim; signed MOU with Foxconn on SLAM/AMR manufacturing. Generic 'construct' wording \u2014 drop items about unrelated construction software or DIY robotics kits.",
+    "pQCee": "BLOCK71 Singapore-resident post-quantum cybersecurity startup (founded 2022) building scalable encryption + key-lifecycle management; flagship SafeQuard\u2122 document-protection tool (NIST-aligned post-quantum crypto); use cases span quantum-proofing docs, securing Web3 against quantum threats and protecting comms. Supported by the US$15M CyberSG Talent, Innovation and Growth (TIG) Collaboration Centre (NUS \u00d7 CSA)."
+  },
+  "fetch_failed": [
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "kind": "firehose",
+      "url": "https://thelowdown.momentum.asia/feed/"
+    },
+    {
+      "company": "Flow Coffee",
+      "error": "HTTP Error 404: Not Found",
+      "kind": "rss",
+      "url": "https://www.flowcoffee.sg/blog-feed.xml"
+    },
+    {
+      "company": "PharLyfe+",
+      "error": "HTTP Error 404: Not Found",
+      "kind": "rss",
+      "url": "https://pharlyfeplus.com/news-update/f.rss"
+    }
+  ],
+  "generated_at": "2026-11-03T00:16:48+00:00",
+  "jina_recovered": [
+    "https://mothership.sg/feed/",
+    "https://www.theedgesingapore.com/rss.xml"
+  ],
+  "llm_fetch_required": [
+    {
+      "company": "Belli AI",
+      "hint": "",
+      "label": "news",
+      "url": "https://www.belli.ai/company/news"
+    },
+    {
+      "company": "Cellivate Technologies",
+      "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/.",
+      "label": "press",
+      "url": "https://www.cellivatetech.com/recognition"
+    },
+    {
+      "company": "Craft Health",
+      "hint": "Craft Health 'Latest News' page is a chronological press/achievements timeline organised by year and month headers (e.g. '2021', then 'January 2021'). Each entry is a bullet line of plain text describing a media mention or award, often with an inline '[<Read_More>]' or named hyperlink to an external article. Dates come from the month/year section headings, not per-item. Resolve relative links against https://www.crafthealth.me/.",
+      "label": "news",
+      "url": "https://www.crafthealth.me/newsletter"
+    },
+    {
+      "company": "Finsey",
+      "hint": "",
+      "label": "blog",
+      "url": "https://finsey.vn/blog"
+    },
+    {
+      "company": "INVIGILO",
+      "hint": "",
+      "label": "news",
+      "url": "https://www.invigilo.ai/news"
+    },
+    {
+      "company": "Qapita",
+      "hint": "",
+      "label": "blog",
+      "url": "https://www.qapita.com/blog"
+    },
+    {
+      "company": "SENSORI Healthcare",
+      "hint": "SENSORI Healthcare news listing. Each item is an anchor (<a>) wrapping the entry with the headline rendered as an <h4> (e.g. 'SENSORI Healthcare Wins Third Prize at Two Innovation and Entrepreneurship Competitions') and the date below in YYYY-MM-DD format (e.g. '2025-12-03'). Items are tagged 'News' and ordered newest-first. Resolve relative links against https://www.sensorihealthcare.com.",
+      "label": "news",
+      "url": "https://www.sensorihealthcare.com/h-col-157.html"
+    },
+    {
+      "company": "SilentConvo",
+      "hint": "",
+      "label": "blog",
+      "url": "https://silentconvo.io/blog"
+    },
+    {
+      "company": "Soynergy",
+      "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com.",
+      "label": "news",
+      "url": "https://www.soynergy.com/category/news/"
+    },
+    {
+      "company": "Tacniq",
+      "hint": "",
+      "label": "media",
+      "url": "https://www.tacniq.ai/media"
+    }
+  ],
+  "stats": {
+    "appstore_capped": 0,
+    "candidates": 92,
+    "companies_matched": 41,
+    "edgar_candidates": 0,
+    "excluded_by_terms": 0,
+    "fetch_failed": 3,
+    "gebiz_candidates": 4,
+    "ipos_candidates": 0,
+    "jina_candidates": 0,
+    "jina_recovered": 2,
+    "llm_fetch_required": 10,
+    "masfid_candidates": 0,
+    "portfolio_candidates": 0,
+    "pre_extracted_capped": 0,
+    "sitemap_candidates": 0,
+    "startupsg_candidates": 0,
+    "weak_term_suppressed": 5
+  }
+}

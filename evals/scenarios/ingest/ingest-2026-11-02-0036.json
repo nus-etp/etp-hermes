@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/dconstruct-robotics/sg.jobstreet.com",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.43",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'C/C++ Software Engineer — Information & Communication Technology' for dConstruct Robotics",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0036",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "dConstruct Robotics"
+      ],
+      "source": "dConstruct Robotics",
+      "title": "C/C++ Software Engineer — Information & Communication Technology",
+      "url": "https://sg.jobstreet.com/job/95179575"
+    },
+    "companies": {
+      "dConstruct Robotics": {
+        "description": "BLOCK71 Silicon Valley-listed Singapore deep-tech robotics startup building SLAM-based autonomous navigation and 3D digital-twin systems for construction, defense and logistics (d.ASH platform, d.ASH Nav self-driving stack, d.ASH Xplorer 3D mapping). Founded 2021 by Chinn Hwa Lim; signed MOU with Foxconn on SLAM/AMR manufacturing. Generic 'construct' wording — drop items about unrelated construction software or DIY robotics kits."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.84,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

@@ -1,5 +1,5 @@
 # Pinhome — LIVING BRIEF
-_Last updated: 2026-10-31 20:38 UTC_
+_Last updated: 2026-11-03 00:25 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -18,7 +18,7 @@ _Last material event: 2026-10-27 — Launched Pinservice, a facility-management 
 _Total disclosed: $50.0M._
 
 ## Recent signals
-- **2026-10-27** — Pinhome launched Pinservice, a joint-operation facility-management business with Intercipta aimed at office towers, malls and industrial estates — its first move into corporate and commercial property — [propertiterkini.com](https://propertiterkini.com/pinhome-kelola-properti-komersial-pinservice/)
+- **2026-10-27** — Pinhome launched Pinservice, a joint-operation facility-management business with Intercipta aimed at office towers, malls and industrial estates — its first move into corporate and commercial property — [propertiterkini.com](https://propertiterkini.com/pinhome-kelola-properti-komersial-pinservice/) (Also reported by: [realestat.id](https://realestat.id/kolaborasi-pinhome-dan-intercipta-hadirkan-pinservice/))
   - Summary: PropertiTerkini reported Pinhome has widened its business from residential and SME home services into large-scale commercial property management through a service called Pinservice, run as a joint operation (kerja sama operasional) with Intercipta Corporation, a facility manager with more than 25 years in the sector. Offices are the first target segment, with shopping centres, retail and industrial facilities to follow. The offer bundles commercial and industrial cleaning and façade work, HVAC and M&E maintenance with energy-efficiency work, workplace management including reception and landscaping, and outsourced security, digital parking and retail staff, all tracked through a Pinhome dashboard with real-time attendance, defect reporting and electronic work plans. No contract value, revenue target or client list is disclosed.
   - People: Dayu Dara Permata (CEO and Founder, Pinhome), Jeffrey Yanuar (Founder, Intercipta)
   - Counterparties: Intercipta Corporation (joint-operation partner)

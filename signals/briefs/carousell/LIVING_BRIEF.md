@@ -1,5 +1,5 @@
 # Carousell — LIVING BRIEF
-_Last updated: 2026-10-04 20:11 UTC_
+_Last updated: 2026-11-03 00:25 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -27,7 +27,8 @@ _Last material event: 2026-09-07 — Carousell Autos launches Car Drops, Singapo
 _Total disclosed: $440.6M._
 
 ## Recent signals
-_none_
+### Hiring
+- **2026-11-02** — Five roles opened since 7 October, four of them in the luxury-resale lane — a business-development lead explicitly titled for "Carousell Luxury", a Business Manager for luxury watches and two luxury retail roles — plus a Regional Marketing Director, pointing at a staffed luxury-goods vertical with its own category ownership rather than general marketplace operations — [jobstreet.com](https://sg.jobstreet.com/job/95647378)
 
 ## Older signals
 - **2026-09-08** — Carousell Autos launches Car Drops, billed as Singapore's first consumer car auction: owner-listed cars drop daily and verified consumers bid online at dealer-level prices — [techinasia.com](https://www.techinasia.com/news/carousell-autos-launches-consumer-car-auction-singapore) (Also reported by: [oneshift.com](https://www.oneshift.com/articles/news/carousell-autos-launches-singapores-first-consumer-car-auction/), [press.carousell.com](https://press.carousell.com/2026/09/09/carousell-autos-launches-singapores-first-consumer-car-auction/))

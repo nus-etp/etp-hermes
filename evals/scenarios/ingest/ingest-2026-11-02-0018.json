@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/flexxon/sg.jobstreet.com",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.54",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Technical Product Manager – Cybersecurity — Information & Communication Technology' for Flexxon",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0018",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Flexxon"
+      ],
+      "source": "Flexxon",
+      "title": "Technical Product Manager – Cybersecurity — Information & Communication Technology",
+      "url": "https://sg.jobstreet.com/job/95189942"
+    },
+    "companies": {
+      "Flexxon": {
+        "description": "BLOCK71 Silicon Valley-listed Singapore cybersecurity-hardware startup (founded 2007) building X-PHY, the world's first AI-embedded SSD with hardware-level threat detection and physical-tamper response. Co-founded by Camellia Chan and May Chng. Drop items that only mention generic flash-storage or unrelated 'X-PHY' physics content."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.84,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

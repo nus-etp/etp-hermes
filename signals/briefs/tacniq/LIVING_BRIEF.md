@@ -1,5 +1,5 @@
 # Tacniq — LIVING BRIEF
-_Last updated: 2026-10-31 20:38 UTC_
+_Last updated: 2026-11-03 00:25 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -15,6 +15,7 @@ _Last material event: 2026-09-23 — Raised US$1.5M from In Group Holdings as pa
 _No disclosed funding._
 
 ## Recent signals
+- **2026-11-02** — Co-founder Aashish Mehta used a TechNode Global Q&A to pitch tactile AI as a platform for physical intelligence, framing the company beyond its Backy and TAC-02 products; the interview discloses no new commercial milestone — [technode.global](https://technode.global/2026/11/02/tacniq-aashish-mehta-tactile-ai-physical-intelligence-qa/)
 - **2026-10-05** — Trade-press review puts the Backy demo kit at US$199 on TacniQ's own store, listed sold out, with volume discounts for full deployments and no public TAC-02 price — a hardware sale with no visible subscription tier — [dynamicbusiness.com](https://dynamicbusiness.com/ai-tools/tacniq-ai-tactile-ai-tools-for-safety.html)
   - Summary: Dynamic Business published a vendor review of TacniQ.ai that traces its tactile foundation models, trained on wearable-collected data, into two products: the belt-worn Backy, which detects high-risk postures from force rather than motion alone and returns haptic feedback, and the TAC-02 robotic finger development kit. It is the first public pricing on the line: the Backy demo kit lists at US$199 on TacniQ's own store and is currently sold out, volume discounts apply to full deployments, and TAC-02 remains quote-only. The reviewer's substantive criticism is that unpublished pricing for robotics deployments may slow enterprise procurement; no customer names, contract values or subscription terms appear.
   - Numbers: US$199 Backy demo kit; 64 taxels on TAC-02; 1 kHz sampling; <2 ms slip-detection latency; no TAC-02 list price

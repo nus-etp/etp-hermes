@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/ajentik-ai/mycareersfuture.gov.sg",
+  "created_by": "write_scenarios@run 41548212460",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.71",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'BD Executive — Healthcare / Pharmaceutical' for Ajentik AI",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-02-0002",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Ajentik AI"
+      ],
+      "source": "Ajentik AI",
+      "title": "BD Executive — Healthcare / Pharmaceutical",
+      "url": "https://www.mycareersfuture.gov.sg/job/healthcare/bd-executive-ajentik-ai-b3444cbbdc560fb58c606a0c2be363c0"
+    },
+    "companies": {
+      "Ajentik AI": {
+        "description": "BLOCK71 Singapore-resident agentic-AI startup (play on 'agentic'). Drop generic 'agentic AI' hype articles unless the article explicitly references this BLOCK71 SG entity."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-02",
+    "judge": "jev",
+    "judge_confidence": 0.86,
+    "kind": "judge_disagreement",
+    "run_id": "41548212460",
+    "source": "2026-11-02.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
