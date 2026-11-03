@@ -3454,14 +3454,6 @@
     "funding_notes": "Waste heat recovery startup in NUS GRIP portfolio. No external funding announcement found."
   },
   {
-    "name": "Haiego",
-    "aliases": [],
-    "description": "BLOCK71 China portfolio startup. Drop unrelated companies sharing the same name.",
-    "country": "China",
-    "funding_rounds": [],
-    "funding_notes": "BLOCK71 China portfolio company. No publicly verifiable funding round announcements found."
-  },
-  {
     "name": "Hailego Group",
     "aliases": [
       "Hailego",
@@ -7932,14 +7924,6 @@
     "country": "China",
     "funding_rounds": [],
     "funding_notes": "BLOCK71 Suzhou portfolio company. No publicly verifiable equity funding round announced beyond BLOCK71 / NUSRI incubation support."
-  },
-  {
-    "name": "zhimouyun",
-    "aliases": [],
-    "description": "BLOCK71 China portfolio startup. Drop unrelated companies sharing the same name.",
-    "country": "China",
-    "funding_rounds": [],
-    "funding_notes": "BLOCK71 China portfolio company. No publicly verifiable funding round announcements found."
   },
   {
     "name": "Zhongchuangbo Technology",
