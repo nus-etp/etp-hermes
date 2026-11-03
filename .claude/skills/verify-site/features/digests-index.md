@@ -4,7 +4,7 @@ Grid of every `signals/updates/<date>.md`, newest first, each with an update cou
 
 ## Sub-features
 
-- One card per date: `h`-styled date, `<n> update(s)` badge (= distinct `##`/`###` headings, excluding `Run at …`), preview names joined by ` · ` or `No company updates`.
+- One card per date: date with a calendar icon (a styled `<span>`, not a heading), `<n> update(s)` badge (= distinct `##`/`###` headings, excluding `Run at …`), preview names joined by ` · ` or `No company updates`.
 - Card click → `/digests/<date>/`.
 
 ## How to get to it (user POV)
@@ -21,11 +21,11 @@ chrome-devtools evaluate_script '() => ({url: location.href, cards: [...document
 chrome-devtools take_screenshot --filePath "$RUN_DIR/evidence/digests-index-01.png" 2>/dev/null
 ```
 
-Oracle: `ls signals/updates/*.md | wc -l` equals `total` and `meta.totalDigests`; the first card is the newest file date.
+Oracle: `ls signals/updates | grep -cE '^[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$'` equals `total` and `meta.totalDigests`; the first card is the newest file date; a card's badge is `grep -E '^#{2,3} ' <file> | sed 's/^#* *//' | grep -vi '^run at' | sort -u | wc -l` (some files repeat a heading, so a raw `grep -c` over-counts).
 
-Proof: URL `/etp-hermes/digests/`, card count equals the oracle, first card date = newest update file, and a sampled card's update count equals the distinct `##`/`###` headings in that file.
+Proof: URL `/hermenaut/digests/`, card count equals the oracle, first card date = newest update file, and a sampled card's update count equals the distinct `##`/`###` headings in that file. Proved 2026-11-03: 66 cards, first `2026-11-02 28 updates AiRTS · AiSee · …`, `2026-10-31 1 update RoamAssist`.
 
 ## Gotchas
 
 - Only `signals/updates/` is shown; Layer 2 output (`signals/agent/<date>.md`) is not a digest here.
-- Dates are file names; a malformed file name still gets a card.
+- Dates are file names; `build-data.mjs` drops any file not named `YYYY-MM-DD.md`, so a malformed name gets no card and isn't counted.

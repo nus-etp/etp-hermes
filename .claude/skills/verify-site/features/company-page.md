@@ -5,13 +5,13 @@ One statically generated page per watchlist company. Source: `src/app/c/[slug]/p
 ## Sub-features
 
 - Header: `h1` company name, `Living brief` badge (when `hasBrief`), `aka <aliases>`, description, fact pills (Sector, Region, Latest funding, Latest signal).
-- With a brief: infographic `<img alt="<Name> infographic">` from `/etp-hermes/briefs/<slug>/infographic.png`, then the rendered `LIVING_BRIEF.md` starting at `## Thesis` (title, `_Last updated:_` and the embedded infographic line are stripped).
+- With a brief: infographic `<img alt="<Name> infographic">` from `/hermenaut/briefs/<slug>/infographic.png`, then the rendered `LIVING_BRIEF.md` starting at `## Thesis` (title, `_Last updated:_` and the embedded infographic line are stripped).
 - Without a brief: `Sources` pill links (external, `target=_blank`) and a `Funding history` table (Date/Stage/Amount/Investors).
 - `Back to directory` link.
 
 ## How to get to it (user POV)
 
-Click any card in the directory (`/`), or a company link inside a digest. Brief example: `horizon-quantum-computing`; no-brief examples: `1cool`, `1n-robotics`, `qubit-dynamics`.
+Click any card in the directory (`/`); digests do not link to company pages. Brief example: `horizon-quantum-computing`; no-brief examples with both sources and funding rows: `cellivate-technologies`, `curated-culture`, `enlipsium` (a no-brief company with neither, e.g. `1cool`, renders an empty body and proves nothing).
 
 ## Driving it with chrome-devtools
 
@@ -27,11 +27,12 @@ chrome-devtools take_screenshot --fullPage true --filePath "$RUN_DIR/evidence/co
 
 The image is `loading="lazy"`: scroll it into view (`evaluate_script '() => document.querySelector("main img").scrollIntoView()'`) before asserting `loaded`.
 
-Proof: URL is `/etp-hermes/c/<slug>/`, `h1` equals the company name, for a brief page the `h2`s match the `## ` headings of `signals/briefs/<slug>/LIVING_BRIEF.md` (Thesis, …, Funding history, Open questions) and the infographic loaded (`naturalWidth > 0`, no 404 in `list_network_requests`); for a no-brief page the `Sources`/`Funding history` sections match `sources.generated.json` / `funding.generated.json` for that slug.
+Proof: URL is `/hermenaut/c/<slug>/`, `h1` equals the company name, for a brief page the `h2`s match the `## ` headings of `signals/briefs/<slug>/LIVING_BRIEF.md` (Thesis, …, Funding history, Open questions) and the infographic loaded (`naturalWidth > 0`, no 404 in `list_network_requests`); for a no-brief page the `Sources`/`Funding history` sections match `sources.generated.json` / `funding.generated.json` for that slug. Proved 2026-11-03: Horizon Quantum Computing (6 brief `h2`s, infographic loaded, `Back to directory` → `/hermenaut/`), Cellivate Technologies (`Sources` + `Funding history`, 4 rows, no `<img>`).
 
 ## Gotchas
 
 - Slug is `toSlug(name)` from `build-data.mjs` (lowercase, NFKD, non-alnum → `-`); it is not the brief directory name if those ever diverge — check `companies.generated.json`.
 - A brief whose `infographic.png` is missing still renders the `<img>` (404). That is the documented Layer 3/4 decoupling, not a site bug — but report it.
 - An unknown slug is a build-time 404 (`notFound()`), served as `404.html` by Pages; `http.server` returns its own 404 instead, so don't assert on the 404 page body locally.
-- Brief markdown is rendered with `react-markdown` + `remark-gfm`; raw HTML in a brief is not rendered.
+- Brief markdown is rendered with `react-markdown` + `remark-gfm` (no `rehype-raw`).
+- There is no per-company `<title>`: every company page inherits the layout's `hermenaut`.

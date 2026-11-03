@@ -4,17 +4,17 @@ The home page: hero stats (Companies / Living briefs / Daily digests) and a clie
 
 ## Sub-features
 
-- Free-text search over name + aliases + description (active at ≥2 chars, case-insensitive substring); matches highlighted with `<mark>` in cards; `Clear search` (×) button.
+- Free-text search over name + aliases + description (active at ≥2 chars, case-insensitive substring); the first match in the card's name and description is wrapped in `<mark>` (aliases are not highlighted, so an alias-only hit shows no `<mark>`); `Clear search` (×) button.
 - `Living brief available` switch → `?brief=1`.
 - Multi-select chip filters: Sector, Region, Funding stage, Source type → `?sector=`, `?region=`, `?stage=`, `?source=` (comma-joined). Within a group = OR, across groups = AND.
-- Sort select: Relevance (brief first, then latest signal, then funding, then name), A–Z, Latest funding, Latest signal, Last updated → `?sort=`.
-- Count line `<n> of <total> companies · <k> filter(s) applied`; `Clear all filters`; empty state `No matches` with `Reset filters`.
+- Sort select: Relevance (brief first, then latest signal date desc, then latest funding date desc, then name), A–Z, Latest funding, Latest signal, Last updated → `?sort=` (the default `relevance` is never written to the URL).
+- Count line `<n> of <total> companies · <k> filter(s) applied`; `Clear all filters`; empty state `No matches` with `Reset filters` (both also reset the sort).
 - URL-state restore: loading `/?q=…&sector=…` reproduces the filtered view.
 - Card click → `/c/<slug>/`.
 
 ## How to get to it (user POV)
 
-Open the site root, or click `Directory` / the `hermenaut` logo in the header from any page.
+Open the site root, or click `Directory` / the logo (accessible name `hermenaut <n> companies tracked`) in the header from any page.
 
 ## Driving it with chrome-devtools
 
@@ -28,7 +28,7 @@ chrome-devtools evaluate_script '() => ({url: location.href, count: document.que
 chrome-devtools take_screenshot --filePath "$E/directory-02-search-quantum.png" 2>/dev/null
 ```
 
-Chip / switch: `grep -m1 'button "Singapore"'` or `grep -m1 'switch "Living brief available"'` in the snapshot, then `chrome-devtools click <uid>`. Sort: `grep -m1 'combobox'` then `chrome-devtools fill <uid> "A–Z"` (option label).
+Chip / switch: `grep -m1 'button "Singapore"'` or `grep -m1 'switch "Living brief available"'` in the snapshot, then `chrome-devtools click <uid>`. Sort: `grep -m1 'combobox "Sort"'` then `chrome-devtools fill <uid> "A–Z"` (option label).
 
 Oracle (expected search hits):
 
@@ -36,11 +36,11 @@ Oracle (expected search hits):
 python3 -c "import json,sys; q=sys.argv[1].lower(); c=json.load(open('site/apps/web/src/data/companies.generated.json')); print(len(c), sorted(x['name'] for x in c if q in (x['name']+' '+' '.join(x['aliases'])+' '+x['description']).lower()))" quantum
 ```
 
-Proof: URL gained `?q=quantum`, the count line reads `<oracle count> of <total> companies · 1 filter applied`, card names equal the oracle set (order follows the sort), and `mark` elements exist. Proved 2026-10-28: 4 of 488 — pQCee, Horizon Quantum Computing, Qarbotech, Qubit Dynamics.
+Proof: URL gained `?q=quantum`, the count line reads `<oracle count> of <total> companies · 1 filter applied`, card names equal the oracle set (order follows the sort), and `mark` elements exist. Proved 2026-10-28: 4 of 488 — pQCee, Horizon Quantum Computing, Qarbotech, Qubit Dynamics. Proved 2026-11-03 (search `quantum` + `Singapore` chip + sort `A–Z`): URL `/hermenaut/?q=quantum&region=Singapore&sort=name`, `3 of 515 companies · 2 filters applied`, Horizon Quantum Computing, pQCee, Qubit Dynamics.
 
 ## Gotchas
 
-- One-character queries are ignored by design (`ql.length >= 2`); they don't count as a filter.
+- One-character queries are ignored by design (`ql.length >= 2` on the trimmed query); they don't count as a filter. The filter-count uses the untrimmed query, so `?q=%20a` says `1 filter applied` while filtering nothing.
 - Filter state lives only in the URL (nuqs); there is no localStorage. A reload keeps it, navigating to `/` clears it.
 - Chip option lists are derived from the data at build time; a sector string with a typo shows up as its own chip, not as a bug in the UI.
 - The directory is inside `<Suspense>`: a static HTML fetch (curl) shows `Loading directory…` only — directory behaviour must be proved in the browser, after hydration.
