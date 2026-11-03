@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/ecomatcher/ecomatcher.com",
+  "created_by": "write_scenarios@run 41728909684",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.47",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Introducing Treechain blockchain for trees, finally' for EcoMatcher",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-03-0003",
+  "input": {
+    "candidate": {
+      "description": "Page updated in the sitemap of EcoMatcher's own website ecomatcher.com (lastmod 2026-11-03). Title derived from the URL slug; the page itself was not fetched.",
+      "matched": [
+        "EcoMatcher"
+      ],
+      "source": "ecomatcher.com sitemap",
+      "title": "Introducing Treechain blockchain for trees, finally",
+      "url": "https://www.ecomatcher.com/introducing-treechain-blockchain-for-trees-finally"
+    },
+    "companies": {
+      "EcoMatcher": {
+        "description": "BLOCK71 Bandung-listed Hong Kong-headquartered B-Corp (founded 2016 by Bas Fransen) operating a blockchain-tracked tree-planting / forest-management platform — TreeCorder data-capture app, TreeManager cloud system, Verra/Gold Standard carbon-certified TREES+ projects (partnership with VNV Advisory). Corporate customers include Grab and Procter & Gamble; ~50,000 customers globally. Drop generic 'eco' / matching-engine mentions."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-03",
+    "judge": "jev",
+    "judge_confidence": 0.9,
+    "kind": "judge_disagreement",
+    "run_id": "41728909684",
+    "source": "2026-11-03.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

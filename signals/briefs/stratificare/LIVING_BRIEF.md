@@ -1,5 +1,5 @@
 # Stratificare — LIVING BRIEF
-_Last updated: 2026-10-11 22:12 UTC_
+_Last updated: 2026-11-03 22:45 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -20,7 +20,10 @@ _Last material event: 2026-06-29 — S$500,000 Deep SAGE programme award from TI
 _Total disclosed: $0.7M._
 
 ## Recent signals
-_none_
+- **2026-11-03** — Reached the grand final of the 2026 UAiTED Innovation Competition in Taipei without taking the top award, and used the trip to pitch Taiwanese hospitals on bringing its tests to Taiwan — [stratificare.com](https://www.stratificare.com/post/stratificare-reaches-the-grand-final-of-the-2026-uaited-innovation-competition)
+  - Summary: StratifiCare said it was selected as a grand finalist at the 2026 UAiTED Innovation Competition, held 20 October 2026 at the Grand Mayfull Hotel in Taipei, and did not win; the company frames the finals as exposure, feedback and connections within Asia's innovation community. It says the team used the Taipei visit to engage top-tier hospitals with the aim of bringing StratifiCare to Taiwan's healthcare community, alongside five other finalist teams. No hospital partners, trial sites, regulatory steps or commercial terms are disclosed, and the post carries no product or funding news.
+  - Counterparties: UAiTED (competition organiser), Taoyuan Andong Startup Hub (host)
+  - Numbers: final held 2026-10-20; 6 finalist teams; no award won
 
 ## Older signals
 - **2026-09-30** — StratifiCare showcased its precision-diagnostics pipeline at the A5X Global Innovation & Venture Summit startup showcase on 24 September, courting global investors — [stratificare.com](https://www.stratificare.com/post/showcasing-our-vision-at-the-a5x-global-innovation-venture-summit-2026)
@@ -36,3 +39,4 @@ _none_
 ## Open questions
 - What is the regulatory/clinical-trial timeline for StratifiREY, and in which jurisdiction would it first seek approval?
 - When does the company expect its first recurring revenue, and from which market (China vs. Netherlands vs. Singapore)?
+- Does the Taipei hospital outreach turn into a named Taiwan partner or trial, and would Taiwan displace China or the Netherlands as the first commercial market?

@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/carousell/sg.jobstreet.com",
+  "created_by": "write_scenarios@run 41728909684",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.66",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Luxury Director, e-commerce & International — Sales' for Carousell",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-03-0002",
+  "input": {
+    "candidate": {
+      "description": "",
+      "matched": [
+        "Carousell"
+      ],
+      "source": "Carousell",
+      "title": "Luxury Director, e-commerce & International — Sales",
+      "url": "https://sg.jobstreet.com/job/95664344"
+    },
+    "companies": {
+      "Carousell": {
+        "description": "Singapore-headquartered online classifieds and consumer marketplace platform; the group also operates OneShift, Mudah, and Cho Tot."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-03",
+    "judge": "jev",
+    "judge_confidence": 0.82,
+    "kind": "judge_disagreement",
+    "run_id": "41728909684",
+    "source": "2026-11-03.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

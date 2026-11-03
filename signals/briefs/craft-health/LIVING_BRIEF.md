@@ -1,5 +1,5 @@
 # Craft Health — LIVING BRIEF
-_Last updated: 2026-11-01 21:16 UTC_
+_Last updated: 2026-11-03 22:45 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -19,7 +19,7 @@ _Last material event: 2026-10-01 — PharmaTher signs exclusive North American d
 _Total disclosed: $1.0M._
 
 ## Recent signals
-- **2026-10-29** — PharmaTher began building a portfolio of personalized 3D-printed peptide products on its M3DICINES platform using Craft Health's patent-pending CORR3CT colon-targeting technology, led by oral KPV and BPC-157 — [pharmather.com](https://www.pharmather.com/news-releases/pharmather-builds-portfolio-of-personalized-3d-printed-peptide-products-for-new-us-peptide-pathway-led-by-colon-targeted-kpv-and-bpc-157)
+- **2026-10-29** — PharmaTher began building a portfolio of personalized 3D-printed peptide products on its M3DICINES platform using Craft Health's patent-pending CORR3CT colon-targeting technology, led by oral KPV and BPC-157 — [pharmather.com](https://www.pharmather.com/news-releases/pharmather-builds-portfolio-of-personalized-3d-printed-peptide-products-for-new-us-peptide-pathway-led-by-colon-targeted-kpv-and-bpc-157) (Also reported by: [biospace.com](https://www.biospace.com/press-releases/pharmather-builds-portfolio-of-personalized-3d-printed-peptide-products-for-new-u-s-peptide-pathway-led-by-colon-targeted-kpv-and-bpc-157))
   - Summary: PharmaTher said its first personalized peptide products are oral, colon-targeted KPV and BPC-157, printed at room temperature on its M3DICINES platform using Craft Health's CORR3CT (COntRollable Release in 3D printed Colonic Targeting) pill-in-pill tablet to carry the dose past the stomach and release it in the colon. The timing follows an HHS enforcement-discretion policy, scheduled for Federal Register publication on 30 October 2026, that opens a conditional 503A compounding pathway for six peptides — of which only KPV and BPC-157 are covered for oral use. Production is to run at PD Labs, PharmaTher's US Center of Excellence, and the release's own risk factors say PharmaTher's rights to CraftMake and CORR3CT may be limited, non-exclusive or terminated, so this is not an exclusive licence over the technology.
   - People: Dr. Wei Jiang Goh (Co-Founder & CEO, Craft Health), Fabio Chianelli (Chairman & CEO, PharmaTher)
   - Counterparties: PharmaTher Holdings (development and commercialization partner), PD Labs (US 503A Center of Excellence), HHS (policy pathway)

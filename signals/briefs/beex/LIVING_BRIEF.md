@@ -1,11 +1,11 @@
 # BEEX — LIVING BRIEF
-_Last updated: 2026-11-03 00:25 UTC_
+_Last updated: 2026-11-03 22:45 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
-NUS GRIP-incubated Singapore autonomous underwater vehicle (AUV) startup building inspection and survey drones for the maritime industry. BEEX has progressed from seed funding through a Series A in 2025 and is now deploying its most advanced drone, BETTA, signaling product maturation and a push into global markets.
+NUS GRIP-incubated Singapore autonomous underwater vehicle (AUV) startup building inspection and survey drones for the maritime industry. BEEX has progressed from seed funding through a US$7.76M Series A in 2025 and now runs two distinct platforms: BETTA for commercial inspection and survey, and ALPHA, the defence-oriented vehicle it put through a live mine-neutralisation trial in the UK in September 2026. The commercial business is built on offshore energy, coastal and subsea-cable work; the sharper trajectory is European naval mine countermeasures, where BeeX has signed distribution partners in the UK and Nordics but has disclosed no defence order values.
 
-_Last material event: 2026-08-21 — Copper Turtle partnership to bring BeeX's autonomous underwater drones to naval forces across the UK and Europe_
+_Last material event: 2026-10-27 — ALPHA AUV demonstrated mine neutralisation in a Copper Turtle-hosted UK trial attended by UK MoD and Royal Navy representatives_
 
 ## Profile
 - Sector: Robotics
@@ -17,9 +17,14 @@ _Last material event: 2026-08-21 — Copper Turtle partnership to bring BeeX's a
 - **2021-11** — Seed, undisclosed — Cap Vista; Quest Ventures, IMC Ventures, SEEDS Capital, NUS Technology Holdings — [questventures.com](https://www.questventures.com/press/sg-based-underwater-robot-maker-beex-bags-seed-funding/)
 - **2023-11-15** — Bridge, $2M — Earth Venture Capital, ShipsFocus Ventures; SEEDS Capital, NUS Technology Holdings, Infinita VC — [technode.global](https://technode.global/2023/11/15/singapores-beex-raises-2m-in-funding-led-by-earth-venture-capital-shipsfocus-ventures/)
 - **2025-09-25** — Series A, $7.76M — ShipFocus Ventures, Earth Venture Capital; NUS Technology Holdings, SEEDS Capital, Infinita VC — [technode.global](https://technode.global/2025/09/25/singapores-beex-launches-7-76m-series-a-funding-round-to-fuel-global-expansion/)
+
 _Total disclosed: $9.8M._
 
 ## Recent signals
+- **2026-10-27** — Ran a closed-door UK mine-countermeasures demonstration of its new ALPHA AUV hosted by Copper Turtle, integrating Alford Technologies' neutralisers, Blueprint Subsea's acoustic firing and ELWAVE's electric sensing against a moored mine and a floating steel plate — [beex.sg](https://www.beex.sg/news/beex-demonstrates-alpha-auv-mine-countermeasures-capabilities-in-uk-x)
+  - Summary: BeeX published details of a 17 September 2026 UK demonstration hosted by defence-market partner Copper Turtle, in which its ALPHA AUV — operating semi-autonomously through a laptop interface — approached and hovered over two targets, affixed Alford Technologies' REDS neutralisers, confirmed charge readiness, retreated and fired, then used sonar and visual sensing for battle-damage assessment. Targets were a moored mine and a steel plate suspended from a buoy, chosen because the plate rotated unpredictably; partners on the day were Alford Technologies, Blueprint Subsea and ELWAVE. The company says the closed-door concept-of-operations event involved the UK Ministry of Defence, industry and academia, and that its Singapore engineering team reconfigured the mission capability remotely over Starlink — the groundwork, it argues, for issuing firing commands from anywhere.
+  - Counterparties: Copper Turtle (host and UK partner), Alford Technologies, Blueprint Subsea, ELWAVE, UK Ministry of Defence / Royal Navy
+  - Numbers: Demo 2026-09-17; 2 targets neutralised; REDS rated to 950 m operating depth
 - **date unknown** — BeeX publishes a technical explainer on autonomy levels in unmanned underwater vehicles, positioning A.IKANBILIS's integrated autonomy for inspection missions — [beex.sg](https://beex.sg/blogs/levels-of-autonomy-in-unmanned-underwater-vehicles-use-cases-limitations-and-a-ikanbilis-integrated-autonomy)
 
 ### Hiring
@@ -69,4 +74,6 @@ _Total disclosed: $9.8M._
 - **2026-05-20** — Demonstrated its A.IKANBILIS autonomous subsea inspection drone at Oceanology International 2026, a major global ocean technology trade show. — [news.google.com](https://news.google.com/rss/articles/CBMimwJBVV95cUxPS29FUW9kcWwtdUJMWVFIRGVHWnYtQVFEZXF6MVhWN1lsU0lFT00tUlJqV3lEMDNyQk5)
 
 ## Open questions
-_none open_
+- Did the September UK trial lead to a funded requirement, or is it still a concept-of-operations demonstration for the Royal Navy?
+- Is ALPHA a distinct product line from BETTA and A.IKANBILIS, or a defence configuration of the existing hovering AUV — and what does it cost per unit?
+- What revenue share and exclusivity terms sit behind the Copper Turtle and SepcoTech distribution agreements?

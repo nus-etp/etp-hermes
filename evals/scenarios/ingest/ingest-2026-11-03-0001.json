@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_keep/ailytics/apps.apple.com",
+  "created_by": "write_scenarios@run 41728909684",
+  "expected": {
+    "company": null,
+    "reason": "jev material=0.75",
+    "verdict": "drop"
+  },
+  "goal": "Drop 'Ailyssa Go 1.6.1 released on the App Store' for Ailytics",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-03-0001",
+  "input": {
+    "candidate": {
+      "description": "We're excited to introduce the AGo, Ailyssa mobile app, which provides real-time updates and site reconciliation. Ago brings core Ailyssa experience to iOS, giving your team on-the-ground access to the same platform they use on the web. We have improved the app stability and performance in this version (1.6.1).",
+      "matched": [
+        "Ailytics"
+      ],
+      "source": "Ailytics",
+      "title": "Ailyssa Go 1.6.1 released on the App Store",
+      "url": "https://apps.apple.com/us/app/ailyssa-go/id6776461923"
+    },
+    "companies": {
+      "Ailytics": {
+        "description": "NUS GRIP-incubated Singapore deep-tech startup. Drop unrelated companies sharing the same name."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-03",
+    "judge": "jev",
+    "judge_confidence": 0.74,
+    "kind": "judge_disagreement",
+    "run_id": "41728909684",
+    "source": "2026-11-03.jsonl",
+    "verdict_pipeline": "keep"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

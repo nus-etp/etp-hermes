@@ -1,5 +1,5 @@
 # SoundEye — LIVING BRIEF
-_Last updated: 2026-10-21 23:38 UTC_
+_Last updated: 2026-11-03 22:45 UTC_
 ![Infographic](infographic.png)
 
 ## Thesis
@@ -21,7 +21,7 @@ _none_
 
 ## Older signals
 - **2026-10-01** — Began LIGHTO deployments in HDB homes, extending its sensing platform from institutional care into residential public housing — [linkedin.com](https://linkedin.com/company/soundeye)
-- **2026-09-29** — Singapore General Hospital's Virtual Nursing Unit has run SoundEye's LASSO as a "Virtual Sitter" since December 2025, completing 90+ monitoring cases, cutting restraint use and recording no unwitnessed falls — [sgh.com.sg](https://www.sgh.com.sg/news/patient-care/more-help-keeping-an-eye-on-admitted-patients)
+- **2026-09-29** — Singapore General Hospital's Virtual Nursing Unit has run SoundEye's LASSO as a "Virtual Sitter" since December 2025, completing 90+ monitoring cases, cutting restraint use and recording no unwitnessed falls — [sgh.com.sg](https://www.sgh.com.sg/news/patient-care/more-help-keeping-an-eye-on-admitted-patients) (Also reported by: [singhealth.com.sg](https://www.singhealth.com.sg/news/patient-care/more-help-keeping-an-eye-on-admitted-patients))
   - Summary: SGH set up a Virtual Nursing Unit in December 2025 in which a central-hub nurse watches high-risk, disoriented or suicide-prevention patients through SoundEye's LASSO — a depth-imaging (non-camera) bedside device with a two-way audio link — and prompts ward staff to the bedside when a patient tries to get up unassisted. Across 90+ cases since the pilot began, two-thirds of patients were under some form of physical restraint and 53% of those had restraint points reduced; the remaining third were monitored with no restraint. SGH reports no unwitnessed falls or fall-related injuries and says the system returned more than 20,000 hours of bedside observation time. The service remains in its pilot phase, with SGH planning to extend it to more wards and add remote vital-signs and medication-checking.
   - People: Teo Kai Yunn (Assistant Director, Nursing Safety & Quality, Virtual Nursing, Singapore General Hospital)
   - Counterparties: Singapore General Hospital (customer)
