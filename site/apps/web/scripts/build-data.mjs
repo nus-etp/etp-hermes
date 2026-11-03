@@ -273,6 +273,231 @@ for (const c of companies) {
   }
 }
 
+// --- Build public-metrics payload -------------------------------------------
+
+const METRICS_DIR = join(DATA_DIR, 'metrics')
+const SIGNAL_WINDOW_DAYS = 90
+const JOBS_DELTA_DAYS = 30
+const buildDate = new Date().toISOString().slice(0, 10)
+
+function readJsonOr(path, fallback) {
+  try {
+    return JSON.parse(readUtf8(path))
+  } catch {
+    return fallback
+  }
+}
+
+function readMetricRows(slug) {
+  const path = join(METRICS_DIR, `${slug}.jsonl`)
+  if (!existsSync(path)) return []
+  return readUtf8(path)
+    .split('\n')
+    .filter((line) => line.trim())
+    .map((line) => {
+      try {
+        return JSON.parse(line)
+      } catch {
+        return undefined
+      }
+    })
+    .filter((row) => row && row.date)
+    .sort((a, b) => (a.date < b.date ? -1 : 1))
+}
+
+function readPath(row, path) {
+  let value = row
+  for (const key of path) {
+    if (value == null || typeof value !== 'object') return undefined
+    value = value[key]
+  }
+  return typeof value === 'number' ? value : undefined
+}
+
+function latestMetric(rows, paths) {
+  for (let i = rows.length - 1; i >= 0; i--) {
+    for (const path of paths) {
+      const value = readPath(rows[i], path)
+      if (value !== undefined) return { value, date: rows[i].date }
+    }
+  }
+  return undefined
+}
+
+function metricOnOrBefore(rows, paths, date) {
+  for (let i = rows.length - 1; i >= 0; i--) {
+    if (rows[i].date > date) continue
+    for (const path of paths) {
+      const value = readPath(rows[i], path)
+      if (value !== undefined) return value
+    }
+  }
+  return undefined
+}
+
+function shiftDate(date, days) {
+  const d = new Date(`${date}T00:00:00Z`)
+  d.setUTCDate(d.getUTCDate() + days)
+  return d.toISOString().slice(0, 10)
+}
+
+function parseCsv(text) {
+  const rows = []
+  let row = []
+  let field = ''
+  let quoted = false
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i]
+    if (quoted) {
+      if (ch === '"' && text[i + 1] === '"') {
+        field += '"'
+        i++
+      } else if (ch === '"') quoted = false
+      else field += ch
+    } else if (ch === '"') quoted = true
+    else if (ch === ',') {
+      row.push(field)
+      field = ''
+    } else if (ch === '\n') {
+      row.push(field.replace(/\r$/, ''))
+      rows.push(row)
+      row = []
+      field = ''
+    } else field += ch
+  }
+  if (field || row.length) {
+    row.push(field)
+    rows.push(row)
+  }
+  const [header, ...body] = rows
+  return body
+    .filter((r) => r.length === header.length)
+    .map((r) => Object.fromEntries(header.map((h, i) => [h, r[i]])))
+}
+
+function loadAcraByCompany() {
+  const path = join(DATA_DIR, 'acra', 'watchlist-entities.csv')
+  if (!existsSync(path)) return {}
+  const rank = (row) => (row.match === 'uen' ? 0 : 1) + (/^live/i.test(row.entity_status) ? 0 : 2)
+  const byCompany = {}
+  for (const row of parseCsv(readUtf8(path))) {
+    const current = byCompany[row.matched_company]
+    if (!current || rank(row) < rank(current)) byCompany[row.matched_company] = row
+  }
+  return byCompany
+}
+
+function loadBackersByCompany() {
+  const dir = join(DATA_DIR, 'portfolio-lists')
+  const byCompany = {}
+  if (!existsSync(dir)) return byCompany
+  for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+    const list = readJsonOr(join(dir, file), {})
+    for (const name of list.companies ?? []) {
+      ;(byCompany[name] ??= []).push(list.investor)
+    }
+  }
+  return byCompany
+}
+
+function countRecentSignals(md, sinceDate) {
+  let count = 0
+  for (const heading of ['Recent signals', 'Older signals']) {
+    const body = sectionBody(md, heading)
+    if (!body) continue
+    for (const line of body.split('\n')) {
+      const d = line.match(/^\s*-\s*\*\*(\d{4}-\d{2}-\d{2})\*\*/)
+      if (d && d[1] >= sinceDate) count++
+    }
+  }
+  return count
+}
+
+function employeesFloor(range) {
+  const m = String(range ?? '').match(/\d+/)
+  return m ? Number(m[0]) : undefined
+}
+
+function yearsSince(date) {
+  if (!date) return undefined
+  const ms = Date.parse(`${buildDate}T00:00:00Z`) - Date.parse(`${date}T00:00:00Z`)
+  return Number.isFinite(ms) ? Math.round((ms / (365.25 * 864e5)) * 10) / 10 : undefined
+}
+
+function loadCommonWords() {
+  const path = join(REPO_ROOT, 'scripts', 'entity_terms.py')
+  if (!existsSync(path)) return new Set()
+  const source = readUtf8(path)
+  const words = new Set()
+  for (const name of ['_COMMON_ENGLISH', '_GENERIC_BUSINESS']) {
+    const m = source.match(new RegExp(`^${name}\\s*=\\s*"""([\\s\\S]*?)"""`, 'm'))
+    if (m) for (const word of m[1].split(/\s+/)) if (word) words.add(word.toLowerCase())
+  }
+  return words
+}
+
+const WEAK_MAX_LEN = 5
+const commonWords = loadCommonWords()
+
+function nameIsAmbiguous(name) {
+  const term = String(name).trim().toLowerCase()
+  if (/[0-9.]/.test(term) || /\s/.test(term)) return false
+  return commonWords.has(term) || term.length <= WEAK_MAX_LEN
+}
+
+const acraByCompany = loadAcraByCompany()
+const startupSgByCompany = readJsonOr(join(DATA_DIR, 'startupsg', 'watchlist-profiles.json'), {}).companies ?? {}
+const masByCompany = readJsonOr(join(DATA_DIR, 'masfid', 'watchlist-licences.json'), {}).companies ?? {}
+const backersByCompany = loadBackersByCompany()
+const signalsSince = shiftDate(buildDate, -SIGNAL_WINDOW_DAYS)
+
+const JOBS_PATHS = [['jobs', 'open'], ['lever', 'open']]
+
+const metricsOut = companies.map((c) => {
+  const slug = toSlug(c.name)
+  const rows = readMetricRows(slug)
+  const rounds = Array.isArray(c.funding_rounds) ? c.funding_rounds : []
+  const disclosed = rounds.map((r) => r.amount_usd).filter((v) => typeof v === 'number' && v > 0)
+  const { latestFundingDate, latestFundingStage } = latestFunding(rounds)
+  const jobs = latestMetric(rows, JOBS_PATHS)
+  const jobsBefore = jobs ? metricOnOrBefore(rows, JOBS_PATHS, shiftDate(jobs.date, -JOBS_DELTA_DAYS)) : undefined
+  const acra = acraByCompany[c.name]
+  const startupSg = startupSgByCompany[c.name]
+  const mas = masByCompany[c.name]
+  const brief = briefsByDir[slug]
+
+  return {
+    slug,
+    name: c.name,
+    country: c.country ?? undefined,
+    sector: normalized.find((n) => n.slug === slug)?.sector,
+    inactive: c.status === 'inactive',
+    hasBrief: !!brief,
+    fundingUsd: disclosed.length ? disclosed.reduce((a, b) => a + b, 0) : undefined,
+    fundingRounds: rounds.length,
+    latestRoundStage: latestFundingStage ?? undefined,
+    latestRoundDate: latestFundingDate ?? undefined,
+    jobsOpen: jobs?.value,
+    jobsDelta30: jobs && jobsBefore !== undefined ? jobs.value - jobsBefore : undefined,
+    githubStars: latestMetric(rows, [['github', 'stars']])?.value,
+    githubFollowers: latestMetric(rows, [['github', 'followers']])?.value,
+    githubRepos: latestMetric(rows, [['github', 'repos']])?.value,
+    hn30d: latestMetric(rows, [['hn_30d']])?.value,
+    ambiguousName: nameIsAmbiguous(c.name),
+    news7d: latestMetric(rows, [['gdelt_7d']])?.value,
+    signals90d: brief ? countRecentSignals(brief.raw, signalsSince) : 0,
+    ageYears: yearsSince(acra?.registration_date),
+    registrationDate: acra?.registration_date || undefined,
+    acraStatus: acra?.entity_status || undefined,
+    employees: startupSg?.employees || undefined,
+    employeesFloor: employeesFloor(startupSg?.employees),
+    startupSgStage: startupSg?.stage || undefined,
+    backers: backersByCompany[c.name] ?? [],
+    masLicences: mas ? Object.keys(mas.licences ?? {}) : [],
+    metricsAsOf: rows.length ? rows[rows.length - 1].date : undefined,
+  }
+})
+
 // --- Write outputs ----------------------------------------------------------
 
 const meta = {
@@ -288,5 +513,6 @@ writeFileSync(join(OUT_DATA_DIR, 'digests.generated.json'), JSON.stringify(diges
 writeFileSync(join(OUT_DATA_DIR, 'funding.generated.json'), JSON.stringify(fundingOut))
 writeFileSync(join(OUT_DATA_DIR, 'sources.generated.json'), JSON.stringify(sourcesOut))
 writeFileSync(join(OUT_DATA_DIR, 'meta.generated.json'), JSON.stringify(meta))
+writeFileSync(join(OUT_DATA_DIR, 'metrics.generated.json'), JSON.stringify({ asOf: buildDate, signalWindowDays: SIGNAL_WINDOW_DAYS, companies: metricsOut }))
 
 console.log(`[build-data] ${meta.totalCompanies} companies, ${meta.totalBriefs} briefs, ${meta.totalDigests} digests`)

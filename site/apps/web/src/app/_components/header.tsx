@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BiNews, BiPulse } from 'react-icons/bi'
+import { BiBarChartAlt2, BiNews, BiPulse } from 'react-icons/bi'
 
 import { meta } from '~/lib/data'
 
@@ -29,6 +29,13 @@ export function Header() {
             className="hover:bg-base-canvas-alt-default rounded-md px-3 py-2 font-medium"
           >
             Directory
+          </Link>
+          <Link
+            href="/metrics/"
+            className="hover:bg-base-canvas-alt-default flex items-center gap-1.5 rounded-md px-3 py-2 font-medium"
+          >
+            <BiBarChartAlt2 className="h-4 w-4" />
+            Metrics
           </Link>
           <Link
             href="/digests/"

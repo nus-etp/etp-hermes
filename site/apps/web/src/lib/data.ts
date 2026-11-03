@@ -4,6 +4,7 @@ import digestsJson from '~/data/digests.generated.json'
 import fundingJson from '~/data/funding.generated.json'
 import sourcesJson from '~/data/sources.generated.json'
 import metaJson from '~/data/meta.generated.json'
+import metricsJson from '~/data/metrics.generated.json'
 
 export interface Company {
   slug: string
@@ -48,7 +49,45 @@ export interface Meta {
   totalDigests: number
 }
 
+export interface CompanyMetrics {
+  slug: string
+  name: string
+  country?: string
+  sector?: string
+  inactive: boolean
+  hasBrief: boolean
+  fundingUsd?: number
+  fundingRounds: number
+  latestRoundStage?: string
+  latestRoundDate?: string
+  jobsOpen?: number
+  jobsDelta30?: number
+  githubStars?: number
+  githubFollowers?: number
+  githubRepos?: number
+  hn30d?: number
+  ambiguousName: boolean
+  news7d?: number
+  signals90d: number
+  ageYears?: number
+  registrationDate?: string
+  acraStatus?: string
+  employees?: string
+  employeesFloor?: number
+  startupSgStage?: string
+  backers: string[]
+  masLicences: string[]
+  metricsAsOf?: string
+}
+
+export interface MetricsPayload {
+  asOf: string
+  signalWindowDays: number
+  companies: CompanyMetrics[]
+}
+
 export const companies = companiesJson as Company[]
+export const metrics: MetricsPayload = metricsJson
 export const briefs = briefsJson as Record<string, string>
 export const digests = digestsJson as Record<string, string>
 export const fundingRoundsBySlug = fundingJson as unknown as Record<string, FundingRound[]>
