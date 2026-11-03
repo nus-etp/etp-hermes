@@ -964,7 +964,10 @@
   },
   {
     "name": "Aptiv8",
-    "aliases": [],
+    "aliases": [
+      "重庆悦宸数智科技有限公司",
+      "悦宸数智"
+    ],
     "description": "BLOCK71 China portfolio startup. Drop unrelated companies sharing the same name.",
     "country": "China",
     "funding_rounds": [],
@@ -1315,7 +1318,9 @@
       "BIOACTIVX PTE LTD",
       "Bioactivx Pte Ltd (suzhou)",
       "Bioactiv Matrix",
-      "Suzhou Bioactivx Medical Technology"
+      "Suzhou Bioactivx Medical Technology",
+      "新恩德医疗科技",
+      "新恩德医疗"
     ],
     "description": "BLOCK71 Suzhou-listed Singapore biotech startup (incorporated 2023; Suzhou ops via NUSRI translation institute; technical lead Dr Peili Teo — NUS / Caltech postdoc with Robert H. Grubbs) building Bioactiv™ Matrix synthetic-acellular wound dressings using bioactive polymers that link oligopeptides to synthetic backbones for accelerated wound healing, reduced scarring and lower infection risk. Drop unrelated 'bioactive' wound-care marketing news unless it names BioactivX.",
     "country": "China",
@@ -2050,7 +2055,11 @@
   },
   {
     "name": "Corliber",
-    "aliases": [],
+    "aliases": [
+      "深圳市立心科学有限公司",
+      "立心（深圳）医疗器械有限公司",
+      "立心科学"
+    ],
     "description": "BLOCK71 China portfolio startup. Drop unrelated companies sharing the same name.",
     "country": "China",
     "funding_rounds": [],
@@ -2257,7 +2266,9 @@
   {
     "name": "Dalan Membrane Technology",
     "aliases": [
-      "Dalan Membrane Technology Co Ltd Ltd"
+      "Dalan Membrane Technology Co Ltd Ltd",
+      "苏州达蓝纳米科技有限公司",
+      "达蓝纳米"
     ],
     "description": "BLOCK71 Suzhou-resident Chinese membrane-technology venture (likely RO/NF/special-purpose membranes given the Suzhou industrial cluster). Limited public-English information beyond the directory listing — drop other Suzhou membrane firms (UltraClean, Feymer) unless the article explicitly references Dalan Membrane Technology.",
     "country": "China",
@@ -3453,7 +3464,10 @@
   {
     "name": "Hailego Group",
     "aliases": [
-      "Hailego"
+      "Hailego",
+      "海乐购科技跨境电商有限公司",
+      "厦门海乐购科技有限公司",
+      "海乐购"
     ],
     "description": "BLOCK71 Guangzhou-listed Chinese startup. Limited public-English information available beyond the directory listing — name is generic and may collide with logistics/e-commerce ventures of the same name; drop unless the article clearly identifies the BLOCK71 Guangzhou entity.",
     "country": "China",
@@ -3771,7 +3785,9 @@
   },
   {
     "name": "HOYO MedTech",
-    "aliases": [],
+    "aliases": [
+      "皓跃医疗"
+    ],
     "description": "BLOCK71 China portfolio startup. Drop unrelated companies sharing the same name.",
     "country": "China",
     "funding_rounds": [],
@@ -4751,7 +4767,10 @@
   },
   {
     "name": "metrohealth",
-    "aliases": [],
+    "aliases": [
+      "苏州医号线医药科技有限公司",
+      "医号线"
+    ],
     "description": "BLOCK71 China portfolio startup. Drop unrelated companies sharing the same name.",
     "country": "China",
     "funding_rounds": [],
@@ -7443,7 +7462,9 @@
   {
     "name": "Ultrapower Eco Clean",
     "aliases": [
-      "Ultrapower Eco Clean Pte"
+      "Ultrapower Eco Clean Pte",
+      "苏州容电环境科技有限公司",
+      "容电环境"
     ],
     "description": "BLOCK71 Suzhou-listed Singapore cleantech / eco-clean venture. Limited public-English information beyond the directory listing — drop unrelated 'Ultrapower' brands (industrial-cleaner chemistries, EV chargers) unless the article explicitly references this BLOCK71 Suzhou entity.",
     "country": "China",
@@ -7904,7 +7925,8 @@
     "aliases": [
       "Zhimou Information Pte",
       "苏州企智信息科技有限公司",
-      "知眸科技"
+      "知眸科技",
+      "知眸云"
     ],
     "description": "BLOCK71 Suzhou-resident Singapore-incorporated information-technology venture. Limited public-English information beyond the directory listing — drop unrelated 'Zhimou' transliterations unless the article explicitly references this BLOCK71 Suzhou entity.",
     "country": "China",
