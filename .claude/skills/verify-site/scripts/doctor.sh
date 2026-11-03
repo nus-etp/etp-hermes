@@ -7,7 +7,8 @@ fail=0
 ok()  { echo "ok    $*"; }
 bad() { echo "FAIL  $*"; fail=1; }
 
-[[ -d "$run_dir/www/etp-hermes" ]] || { echo "FAIL  $run_dir is not a launch.sh run dir"; exit 1; }
+base_path="$(cat "$run_dir/base_path" 2>/dev/null)"
+[[ -n "$base_path" && -d "$run_dir/www$base_path" ]] || { echo "FAIL  $run_dir is not a launch.sh run dir"; exit 1; }
 pid="$(cat "$run_dir/server.pid" 2>/dev/null)"
 port="$(cat "$run_dir/port" 2>/dev/null)"
 base_url="$(cat "$run_dir/base_url" 2>/dev/null)"
@@ -28,7 +29,7 @@ fi
 build_id="$(cat "$run_dir/build_id")"
 if grep -q "$build_id" <<<"$index"; then ok "served build id $build_id"; else bad "build id $build_id not referenced by served index"; fi
 
-chunk="$(grep -o '/etp-hermes/_next/static/chunks/[^"]*\.js' <<<"$index" | head -1)"
+chunk="$(grep -o "$base_path/_next/static/chunks/[^\"]*\\.js" <<<"$index" | head -1)"
 code="$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:$port$chunk")"
 if [[ "$code" == 200 ]]; then ok "JS chunk under basePath serves 200"; else bad "JS chunk $chunk returned $code (hydration will fail)"; fi
 

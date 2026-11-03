@@ -1,11 +1,11 @@
 ---
 name: verify-site
-description: Launch and drive the hermenaut static website (site/apps/web — company directory, living-brief company pages, daily digests) in a headless Chrome to prove a change works the way a visitor sees it on GitHub Pages. Use after editing anything under site/, scripts/build-data.mjs inputs (data/companies.json, signals/briefs, signals/updates), or when asked to screenshot/check the site.
+description: Launch and drive the hermenaut static website (site/apps/web — company directory, living-brief company pages, metrics dashboard, daily digests) in a headless Chrome to prove a change works the way a visitor sees it on GitHub Pages. Use after editing anything under site/, scripts/build-data.mjs inputs (data/companies.json, signals/briefs, signals/updates), or when asked to screenshot/check the site.
 ---
 
 # verify-site
 
-The user-facing product is the static Next.js export in `site/apps/web`, deployed by `.github/workflows/pages.yml` to GitHub Pages under the base path `/etp-hermes/`. Everything it shows is baked at build time by `site/apps/web/scripts/build-data.mjs` from `data/companies.json`, `signals/briefs/*/LIVING_BRIEF.md` (+ `infographic.png`) and `signals/updates/*.md`. There is no backend, no auth, no database: a data change is only visible after a rebuild.
+The user-facing product is the static Next.js export in `site/apps/web`, deployed by `.github/workflows/pages.yml` to GitHub Pages under the base path `/hermenaut/` (`basePath` in `site/apps/web/next.config.js`; the helpers read it from there, so a rename doesn't break them). Everything it shows is baked at build time by `site/apps/web/scripts/build-data.mjs` from `data/companies.json`, `signals/briefs/*/LIVING_BRIEF.md` (+ `infographic.png`) and `signals/updates/*.md`. There is no backend, no auth, no database: a data change is only visible after a rebuild.
 
 Other surfaces (not covered here): the Python pipeline scripts under `scripts/` (verify with `tests/scripts`, `uv run pytest tests/static tests/scripts -q`) and the `hermes -z` layers (need API keys, write to `signals/`; don't run them to verify site changes).
 
@@ -22,10 +22,10 @@ It prints:
 
 ```
 RUN_DIR=$TMPDIR/verify-hermenaut-site/<utc-stamp>-<pid>
-BASE_URL=http://127.0.0.1:<free port>/etp-hermes
+BASE_URL=http://127.0.0.1:<free port>/hermenaut
 ```
 
-What it does: `pnpm --filter @acme/web build` (runs `build-data.mjs` → `next build` static export to `site/apps/web/out`), copies `out/` into `RUN_DIR/www/etp-hermes/` (an immutable snapshot, so a later rebuild can't change what you're driving), and starts `python3 -m http.server` on a free 127.0.0.1 port. Ready = the index HTML contains `companies tracked`; it exits non-zero otherwise.
+What it does: `pnpm --filter @acme/web build` (runs `build-data.mjs` → `next build` static export to `site/apps/web/out`), reads `basePath` from `next.config.js` (saved as `RUN_DIR/base_path`), copies `out/` into `RUN_DIR/www/<basePath>/` (an immutable snapshot, so a later rebuild can't change what you're driving), and starts `python3 -m http.server` on a free 127.0.0.1 port. Ready = the index HTML contains `companies tracked`; it exits non-zero otherwise.
 
 - Use `--skip-build` only when you know `out/` reflects your change. After editing site code or `data/`/`signals/`, do the full build — `next dev` is *not* used because it skips the static export and basePath behaviour Pages depends on.
 - `site/package.json` asks for Node 24; Node 26 builds fine with a warning.
@@ -39,7 +39,7 @@ Run first, and whenever anything looks off:
 .claude/skills/verify-site/scripts/doctor.sh "$RUN_DIR"
 ```
 
-Read-only. Checks: server pid alive, port owned by that pid, index shows `<totalCompanies> companies tracked` matching the snapshot's `meta.json`, served HTML references the snapshot's build id, a `/etp-hermes/_next/static/chunks/*.js` chunk returns 200 (else nothing hydrates — the directory filters would be dead). Also prints the git HEAD the snapshot was built from vs. the current HEAD (if they differ, you're driving stale code — relaunch) and whether the `chrome-devtools` daemon is ours. Exit 0 = worth driving.
+Read-only. Checks: server pid alive, port owned by that pid, index shows `<totalCompanies> companies tracked` matching the snapshot's `meta.json`, served HTML references the snapshot's build id, a `<basePath>/_next/static/chunks/*.js` chunk returns 200 (else nothing hydrates — the directory filters would be dead). Also prints the git HEAD the snapshot was built from vs. the current HEAD (if they differ, you're driving stale code — relaunch) and whether the `chrome-devtools` daemon is ours. Exit 0 = worth driving.
 
 ## Drive
 
@@ -58,9 +58,9 @@ chrome-devtools take_screenshot --fullPage true --filePath "$RUN_DIR/evidence/<n
 - `browser.sh` starts the daemon (`start --headless --isolated`) only if none is running and marks it as ours; it opens the page in an isolated browser context named after the run. If doctor says the daemon was **not** started by this run, someone else owns it: don't `chrome-devtools start`/`stop` it, just use `browser.sh` (new page) and close your page when done.
 - uids (`uid=1_26`) change on every snapshot. Find them by stable labels, then act:
   `uid=$(chrome-devtools take_snapshot 2>/dev/null | grep -m1 'searchbox "Search companies' | grep -o 'uid=[^ ]*' | cut -d= -f2)`
-- Stable handles in this app: searchbox `aria-label="Search companies, aliases, descriptions"`; switch `"Living brief available"` (`role=switch`, `aria-checked`); filter chips are `button`s with `aria-pressed` inside `<fieldset>`s with legends `Sector`/`Region`/`Funding stage`/`Source type`; results region `section[aria-label="Company directory"]` (count text in its first `<p>`, cards are `article h3`); sort `<select>` labelled `Sort`; nav links `Directory` / `Daily digests`; back links `Back to directory` / `All digests`.
+- Stable handles in this app: searchbox `aria-label="Search companies, aliases, descriptions"`; switch `"Living brief available"` (`role=switch`, `aria-checked`); filter chips are `button`s with `aria-pressed` inside `<fieldset>`s with legends `Sector`/`Region`/`Funding stage`/`Source type`; results region `section[aria-label="Company directory"]` (count text in its first `<p>`, cards are `article h3`); sort `<select>` labelled `Sort`; nav links `Directory` / `Metrics` / `Daily digests`; back links `Back to directory` / `All digests`.
 - Every directory filter is mirrored into the URL query (`?q=`, `brief=1`, `sector=`, `region=`, `stage=`, `source=`, `sort=`), so asserting `location.href` + the count text is the cheapest state check.
-- Every internal URL ends with `/` (`trailingSlash: true`) and lives under `/etp-hermes/`.
+- Every internal URL ends with `/` (`trailingSlash: true`) and lives under the basePath (`/hermenaut/`).
 - Independent oracle: `site/apps/web/src/data/*.generated.json` is what the build baked in. Compute the expected result from it (python one-liner) and compare with what the page shows — don't just trust the page.
 - Strip the CLI noise with `2>/dev/null` (Node `ExperimentalWarning`, "Update available").
 
@@ -70,7 +70,7 @@ Write everything to `$RUN_DIR/evidence/` (survives cleanup). For a proof:
 
 - Screenshot **before** and **after** the action (`take_screenshot --filePath "$RUN_DIR/evidence/<feature>-NN-<step>.png"`), plus the `evaluate_script` JSON of the resulting state (URL, count text, card names) saved alongside (`> "$RUN_DIR/evidence/<feature>-NN.json"`).
 - Drive the real visitor path: type in the search box, click chips/links. Don't hand-craft query strings as the action under test (deep-linking is fine as a *separate* check of URL-state restore).
-- Cross-check against the generated JSON oracle, and for data/brief changes also confirm the input made it into the build: `grep` the changed text in `site/apps/web/src/data/*.generated.json` and in `RUN_DIR/www/etp-hermes/<route>/index.html`.
+- Cross-check against the generated JSON oracle, and for data/brief changes also confirm the input made it into the build: `grep` the changed text in `site/apps/web/src/data/*.generated.json` and in `RUN_DIR/www/hermenaut/<route>/index.html`.
 - Check `chrome-devtools list_console_messages` for hydration errors and `list_network_requests` for 404s (infographic PNGs, chunks) on the page you proved.
 - `--skip-build` is a test-mode shortcut: it proves nothing about your change unless you rebuilt. Say which you used.
 

@@ -6,7 +6,7 @@ Renders one day's `signals/updates/<date>.md` as markdown with older/newer navig
 
 - Markdown body (company `##` headings, item bullets with source links).
 - `← <older date>` / `<newer date> →` links at the bottom (absent at the ends of the range).
-- `All digests` back link.
+- `All digests` back link (at the top, above the markdown).
 
 ## How to get to it (user POV)
 
@@ -25,9 +25,10 @@ chrome-devtools evaluate_script '() => location.href' 2>/dev/null >> "$RUN_DIR/e
 chrome-devtools take_screenshot --fullPage true --filePath "$RUN_DIR/evidence/digest-01.png" 2>/dev/null
 ```
 
-Proof: headings equal `grep -E '^#{2,3} ' signals/updates/<date>.md`; the newest digest shows only `← <prev>`; clicking it lands on `/etp-hermes/digests/<prev>/` where `<prev>` is the next-older file in `signals/updates/`.
+Proof: headings equal `grep -E '^#{2,3} ' signals/updates/<date>.md`; the newest digest shows only `← <prev>`; clicking it lands on `/hermenaut/digests/<prev>/` where `<prev>` is the next-older file in `signals/updates/`. Proved 2026-11-03: 2026-11-01 shows `Ailytics`, `Patsnap`, nav `← 2026-10-31` / `2026-11-02 →`; 2026-11-02 shows only `← 2026-11-01`; `All digests` → `/hermenaut/digests/`.
 
 ## Gotchas
 
 - Dates without an updates file are skipped (no empty days), so "previous" is the previous *file*, not yesterday.
-- Company names in a digest are headings, not links to `/c/<slug>/`, unless the markdown itself links them.
+- Company names in a digest are headings, not links to `/c/<slug>/`. A root-relative markdown link (`[X](/c/x/)`) renders as a plain `<a>` without the basePath, so it would 404 on Pages.
+- An empty updates file still gets an index card (`No company updates`) but its detail page is `notFound()`.
