@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/carousell/techinasia.com",
+  "created_by": "write_scenarios@run 41925654812",
+  "expected": {
+    "company": "Carousell",
+    "reason": "jev material=0.91",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Carousell live-selling GMV up about 6x after regional push' for Carousell",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-04-0001",
+  "input": {
+    "candidate": {
+      "description": "Carousell said gross merchandise value (GMV) and bidder numbers rose about 6x in the first five months of the rollout.",
+      "matched": [
+        "Carousell"
+      ],
+      "source": "Tech in Asia",
+      "title": "Carousell live-selling GMV up about 6x after regional push",
+      "url": "https://www.techinasia.com/news/carousell-liveselling-gmv-6x-regional-push"
+    },
+    "companies": {
+      "Carousell": {
+        "description": "Singapore-headquartered online classifieds and consumer marketplace platform; the group also operates OneShift, Mudah, and Cho Tot."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-04",
+    "judge": "jev",
+    "judge_confidence": 0.94,
+    "kind": "judge_disagreement",
+    "run_id": "41925654812",
+    "source": "2026-11-04.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
