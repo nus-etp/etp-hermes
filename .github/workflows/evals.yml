@@ -82,6 +82,7 @@ jobs:
       - name: Run LLM eval suite
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           # Reuse the existing hermes Langfuse secrets so each eval's LLM calls
           # and pass/fail + precision/recall scores stream to Langfuse. Absent
           # secrets (e.g. forks) → _obs.py no-ops; the suite runs unchanged.
