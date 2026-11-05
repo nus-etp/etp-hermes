@@ -4,15 +4,33 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import time
 from typing import Sequence
-from urllib import request
+from urllib import error, request
 
 from tests.evals import _obs
 
 
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 DEFAULT_MODEL = "deepseek-chat"
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+GEMINI_MODEL = "gemini-3.6-flash"
+FAILOVER_STATUSES = frozenset({401, 402, 429, 500, 502, 503})
+
+
+def _post(url: str, key: str, payload: dict, timeout: float) -> dict:
+    req = request.Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {key}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    with request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode("utf-8"))
 
 
 def chat(
@@ -34,18 +52,17 @@ def chat(
         "max_tokens": max_tokens,
         "stream": False,
     }
-    req = request.Request(
-        DEEPSEEK_URL,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {key}",
-            "Content-Type": "application/json",
-        },
-        method="POST",
-    )
     t0 = time.monotonic()
-    with request.urlopen(req, timeout=timeout) as resp:
-        body = json.loads(resp.read().decode("utf-8"))
+    try:
+        body = _post(DEEPSEEK_URL, key, payload, timeout)
+    except error.HTTPError as http_error:
+        gemini_key = os.environ.get("GEMINI_API_KEY")
+        if http_error.code not in FAILOVER_STATUSES or not gemini_key:
+            raise
+        print(f"graders.chat: DeepSeek HTTP {http_error.code}, failing over to {GEMINI_MODEL}", file=sys.stderr)
+        model = GEMINI_MODEL
+        payload = {**payload, "model": model, "reasoning_effort": "low"}
+        body = _post(GEMINI_URL, gemini_key, payload, timeout)
     latency = time.monotonic() - t0
     content = body["choices"][0]["message"]["content"]
     _obs.record_generation(
