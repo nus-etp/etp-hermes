@@ -1,0 +1,447 @@
+{
+  "candidates": [
+    {
+      "company": "Emerge",
+      "dedup_key": "https://www.businesstimes.com.sg/companies-markets/capital-markets-currencies/dip-buyers-emerge-tech-stocks-traders-look-past-midterms-focus-fundamentals",
+      "description": "Analysts are \u2018watchful but bullish\u2019 on participants of the AI build-out",
+      "headline": "Dip buyers emerge for tech stocks as traders look past midterms, focus on fundamentals",
+      "link": "https://www.businesstimes.com.sg/companies-markets/capital-markets-currencies/dip-buyers-emerge-tech-stocks-traders-look-past-midterms-focus-fundamentals",
+      "pubDate": "Wed, 04 Nov 2026 09:37:08 +0000",
+      "source": "Business Times SG",
+      "source_kind": "firehose"
+    },
+    {
+      "company": "Carousell",
+      "dedup_key": "appstore://548607187/2.485.1",
+      "description": "Every week, we polish the app to help you buy, sell (or give for free!) better. This update includes bug fixes and performance improvements. Update your Carousell app to enjoy the latest improvements our engineers have been working hard on. Love Carousell? Rate and share us with your family and friends, so we can keep growing our community. Happy Carouselling!",
+      "headline": "Carousell: Snap-Sell, Chat-Buy 2.485.1 released on the App Store",
+      "link": "https://apps.apple.com/us/app/carousell-snap-sell-chat-buy/id548607187",
+      "pubDate": "2026-11-04",
+      "source": "Carousell \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "dConstruct Robotics",
+      "dedup_key": "jobstreet://63644137/95726897",
+      "description": "",
+      "headline": "UI/UX Software Engineer (C++) \u2014 Information & Communication Technology",
+      "link": "https://sg.jobstreet.com/job/95726897",
+      "provider": "jobstreet",
+      "pubDate": "2026-11-05",
+      "source": "dConstruct Robotics \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "dConstruct Robotics",
+      "dedup_key": "jobstreet://63644137/95726906",
+      "description": "",
+      "headline": "Senior DevOps Engineer \u2014 Information & Communication Technology",
+      "link": "https://sg.jobstreet.com/job/95726906",
+      "provider": "jobstreet",
+      "pubDate": "2026-11-05",
+      "source": "dConstruct Robotics \u00b7 careers",
+      "source_kind": "ats_jobs"
+    },
+    {
+      "company": "Doinn APAC",
+      "dedup_key": "https://doinn.co/blog/serviced-accommodation-management/",
+      "description": "Choosing the best serviced accommodation management system is no longer optional\u2014it is essential for survival. With the explosive growth of... \n The post  Serviced Accommodation Management: The Ops Guide | Doinn  appeared first on  Doinn .",
+      "headline": "Serviced Accommodation Management: The Ops Guide | Doinn",
+      "link": "https://doinn.co/blog/serviced-accommodation-management/",
+      "pubDate": "Thu, 05 Nov 2026 09:02:05 +0000",
+      "source": "Doinn APAC \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "Finan",
+      "dedup_key": "appstore://1560099589/4.0.39",
+      "description": "Phi\u00ean b\u1ea3n m\u1edbi \u0111\u00e3 \u0111\u01b0\u1ee3c c\u1eadp nh\u1eadt v\u1edbi nhi\u1ec1u c\u1ea3i ti\u1ebfn v\u01b0\u1ee3t tr\u1ed9i: - S\u0103n deal: xem v\u00e0 nh\u1eadn \u01b0u \u0111\u00e3i d\u00e0nh ri\u00eang cho c\u1eeda h\u00e0ng c\u1ee7a b\u1ea1n - \u01af\u1edbc t\u00ednh thu\u1ebf: nh\u1eadp doanh thu l\u00e0 bi\u1ebft ngay s\u1ed1 thu\u1ebf ph\u1ea3i n\u1ed9p - Mua loa thanh to\u00e1n ngay trong app, \u0111\u1eb7t h\u00e0ng v\u00e0 thanh to\u00e1n trong v\u00e0i b\u01b0\u1edbc - B\u00e1n h\u00e0ng khi m\u1ea5t m\u1ea1ng an to\u00e0n h\u01a1n, \u0111\u01a1n v\u00e0 ti\u1ec1n \u0111\u01b0\u1ee3c \u0111\u1ed3ng b\u1ed9 \u0111\u1ea7y \u0111\u1ee7 khi c\u00f3 m\u1ea1ng l\u1ea1i - S\u1eeda l\u1ed7i v\u00e0 c\u1ea3i thi\u1ec7n hi\u1ec7u n\u0103ng",
+      "headline": "S\u1ed5 B\u00e1n H\u00e0ng: Qu\u1ea3n l\u00fd to\u00e0n di\u1ec7n 4.0.39 released on the App Store",
+      "link": "https://apps.apple.com/us/app/s%E1%BB%95-b%C3%A1n-h%C3%A0ng-qu%E1%BA%A3n-l%C3%BD-to%C3%A0n-di%E1%BB%87n/id1560099589",
+      "pubDate": "2026-11-05",
+      "source": "Finan \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Flexii",
+      "dedup_key": "appstore://6465077602/4.36.0",
+      "description": "\u2022 See your certification progress for each shift, with clear steps when you need one to book \u2022 Get notified when a certificate is approved, and open it straight from the notification \u2022 AI interview results now show each score out of its maximum, with a clear Pass or Fail \u2022 A clearer shift cancellation screen that explains why when a cancel fails \u2022 Smoother chat and browsing, a security update, and fixes for sign-in, freezes and crashes",
+      "headline": "Flexii - Flexible Jobs & Earn 4.36.0 released on the App Store",
+      "link": "https://apps.apple.com/sg/app/flexii-flexible-jobs-earn/id6465077602",
+      "pubDate": "2026-11-05",
+      "source": "Flexii \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Idle Logic",
+      "dedup_key": "appstore://6824047018/1.0.3",
+      "description": "New in this update: - Send a form for a specific visit, and create one right from the booking - Split forms into sections, with questions that jump based on the answer - Walk-ins can fill in a form without a name on file, and the answer stays with the booking - Custom repeat patterns for bookings - Book anyway now shows everything in the way in one question, and repeats can skip the dates that clash - Fuller package history on each client, with the lines behind each figure - Pick a person on ea\u2026",
+      "headline": "Idle: AI Salon & Spa Booking 1.0.3 released on the App Store",
+      "link": "https://apps.apple.com/us/app/idle-ai-salon-spa-booking/id6824047018",
+      "pubDate": "2026-11-04",
+      "source": "Idle Logic \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "LittleLives",
+      "dedup_key": "appstore://6755920958/1.2.31",
+      "description": "Improved stability and fixed several issues.",
+      "headline": "LittleLives For Schools 1.2.31 released on the App Store",
+      "link": "https://apps.apple.com/us/app/littlelives-for-schools/id6755920958",
+      "pubDate": "2026-11-05",
+      "source": "LittleLives \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "LittleLives",
+      "dedup_key": "appstore://6752276737/1.5.20",
+      "description": "Improved stability and fixed several issues.",
+      "headline": "LittleLives for Parents 1.5.20 released on the App Store",
+      "link": "https://apps.apple.com/us/app/littlelives-for-parents/id6752276737",
+      "pubDate": "2026-11-05",
+      "source": "LittleLives \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Maestro Labs",
+      "dedup_key": "appstore://6813054762/1.2.0",
+      "description": "\u2022 Action items tab on every meeting: see what's open and what's done, and tick items off. \u2022 Microsoft calendars connected in the app now stay connected. \u2022 Fixes and improvements.",
+      "headline": "TeamsMaestro: AI meeting notes 1.2.0 released on the App Store",
+      "link": "https://apps.apple.com/us/app/teamsmaestro-ai-meeting-notes/id6813054762",
+      "pubDate": "2026-11-04",
+      "source": "Maestro Labs \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Skuling",
+      "dedup_key": "https://skuling.id/cara-menghitung-ukt-dari-gaji-orang-tua/",
+      "description": "Nggak bisa dipungkiri kalau salah satu hal yang menyebabkan orang Indonesia mikir seribu kali sebelum daftar kuliah adalah UKT alias Uang Kuliah Tunggal atau biaya pendidikan. Besaran UKT bervariasi antara Rp500.000 sampai puluhan juta rupiah per semester dan itu belum termasuk biaya beli buku, biaya kost dan lain sebagainya. Maka dari itu, nggak heran apabila [&#8230;]",
+      "headline": "Begini Cara Menghitung UKT dari Gaji Orang Tua",
+      "link": "https://skuling.id/cara-menghitung-ukt-dari-gaji-orang-tua/",
+      "pubDate": "Thu, 05 Nov 2026 02:00:00 +0000",
+      "source": "Skuling \u00b7 blog",
+      "source_kind": "rss"
+    },
+    {
+      "company": "StaffAny",
+      "dedup_key": "appstore://1360658903/1.176.0",
+      "description": "minor changes and bug fixes",
+      "headline": "StaffAny Employee Scheduling 1.176.0 released on the App Store",
+      "link": "https://apps.apple.com/us/app/staffany-employee-scheduling/id1360658903",
+      "pubDate": "2026-11-05",
+      "source": "StaffAny \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Vi\u1ec7c C\u00f3",
+      "dedup_key": "appstore://1466483111/2.168.0",
+      "description": "Improve performance and fix bugs",
+      "headline": "Viec.Co - Vi\u1ec7c l\u00e0m linh ho\u1ea1t 2.168.0 released on the App Store",
+      "link": "https://apps.apple.com/us/app/viec-co-vi%E1%BB%87c-l%C3%A0m-linh-ho%E1%BA%A1t/id1466483111",
+      "pubDate": "2026-11-04",
+      "source": "Vi\u1ec7c C\u00f3 \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Vi\u1ec7c C\u00f3",
+      "dedup_key": "appstore://1466481698/2.154.0",
+      "description": "Improve performance and fix bugs",
+      "headline": "Viec.Co Biz: Tuy\u1ec3n CTV th\u1eddi v\u1ee5 2.154.0 released on the App Store",
+      "link": "https://apps.apple.com/us/app/viec-co-biz-tuy%E1%BB%83n-ctv-th%E1%BB%9Di-v%E1%BB%A5/id1466481698",
+      "pubDate": "2026-11-04",
+      "source": "Vi\u1ec7c C\u00f3 \u00b7 App Store",
+      "source_kind": "appstore_dev"
+    },
+    {
+      "company": "Belli AI",
+      "dedup_key": "https://www.belli.ai/software/data-ontology",
+      "description": "New page listed in the sitemap of Belli AI's own website belli.ai. Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Data Ontology",
+      "link": "https://www.belli.ai/software/data-ontology",
+      "pubDate": "2026-11-05T22:41:34+00:00",
+      "source": "belli.ai sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Constructor.io",
+      "dedup_key": "https://constructor.com/agentic-lookbook",
+      "description": "New page listed in the sitemap of Constructor.io's own website constructor.com (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Agentic Lookbook",
+      "link": "https://constructor.com/agentic-lookbook",
+      "pubDate": "2026-11-05T00:00:00+00:00",
+      "source": "constructor.com sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Doinn APAC",
+      "dedup_key": "https://doinn.co/pt-pt/solucoes-para-co-living-software/",
+      "description": "Page updated in the sitemap of Doinn APAC's own website doinn.co (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Solucoes Para Co Living Software",
+      "link": "https://doinn.co/pt-pt/solucoes-para-co-living-software/",
+      "pubDate": "2026-11-05T17:17:30+00:00",
+      "source": "doinn.co sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Doinn APAC",
+      "dedup_key": "https://doinn.co/pt-pt/software-de-operacoes-de-hostels/",
+      "description": "Page updated in the sitemap of Doinn APAC's own website doinn.co (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Software De Operacoes De Hostels",
+      "link": "https://doinn.co/pt-pt/software-de-operacoes-de-hostels/",
+      "pubDate": "2026-11-05T17:16:45+00:00",
+      "source": "doinn.co sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Doinn APAC",
+      "dedup_key": "https://doinn.co/pt-pt/alojamento-local-software/",
+      "description": "Page updated in the sitemap of Doinn APAC's own website doinn.co (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Alojamento Local Software",
+      "link": "https://doinn.co/pt-pt/alojamento-local-software/",
+      "pubDate": "2026-11-05T17:13:54+00:00",
+      "source": "doinn.co sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Doinn APAC",
+      "dedup_key": "https://doinn.co/pt-pt/aplicacao-de-mensagens/",
+      "description": "Page updated in the sitemap of Doinn APAC's own website doinn.co (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Aplicacao De Mensagens",
+      "link": "https://doinn.co/pt-pt/aplicacao-de-mensagens/",
+      "pubDate": "2026-11-05T17:02:05+00:00",
+      "source": "doinn.co sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Doinn APAC",
+      "dedup_key": "https://doinn.co/pt-pt/sistema-de-gestao-de-clientes/",
+      "description": "Page updated in the sitemap of Doinn APAC's own website doinn.co (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Sistema De Gestao De Clientes",
+      "link": "https://doinn.co/pt-pt/sistema-de-gestao-de-clientes/",
+      "pubDate": "2026-11-05T17:01:41+00:00",
+      "source": "doinn.co sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "EcoMatcher",
+      "dedup_key": "https://www.ecomatcher.com/faq/",
+      "description": "Page updated in the sitemap of EcoMatcher's own website ecomatcher.com (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Faq",
+      "link": "https://www.ecomatcher.com/faq/",
+      "pubDate": "2026-11-05T05:09:43+00:00",
+      "source": "ecomatcher.com sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Horizon Quantum Computing",
+      "dedup_key": "https://www.horizonquantum.com/resources/newsroom/horizon-quantum-signs-non-binding-letter-of-intent-to-acquire-entropica-labs",
+      "description": "New page listed in the sitemap of Horizon Quantum Computing's own website horizonquantum.com (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Horizon Quantum Signs Non Binding Letter Of Intent To Acquire Entropica Labs",
+      "link": "https://www.horizonquantum.com/resources/newsroom/horizon-quantum-signs-non-binding-letter-of-intent-to-acquire-entropica-labs",
+      "pubDate": "2026-11-05T12:01:57+00:00",
+      "source": "horizonquantum.com sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Peris.ai",
+      "dedup_key": "https://www.peris.ai/news/dont-click-that-web-security-traps-to-avoid-at-all-costs",
+      "description": "New page listed in the sitemap of Peris.ai's own website peris.ai. Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Dont Click That Web Security Traps To Avoid At All Costs",
+      "link": "https://www.peris.ai/news/dont-click-that-web-security-traps-to-avoid-at-all-costs",
+      "pubDate": "2026-11-05T22:41:34+00:00",
+      "source": "peris.ai sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Peris.ai",
+      "dedup_key": "https://www.peris.ai/news",
+      "description": "New page listed in the sitemap of Peris.ai's own website peris.ai. Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "News",
+      "link": "https://www.peris.ai/news",
+      "pubDate": "2026-11-05T22:41:34+00:00",
+      "source": "peris.ai sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Peris.ai",
+      "dedup_key": "https://www.peris.ai/news/perisai-wins-korea-asean-ai-youth-festa-2026",
+      "description": "New page listed in the sitemap of Peris.ai's own website peris.ai (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Perisai Wins Korea Asean Ai Youth Festa 2026",
+      "link": "https://www.peris.ai/news/perisai-wins-korea-asean-ai-youth-festa-2026",
+      "pubDate": "2026-11-05T00:00:00+00:00",
+      "source": "peris.ai sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Peris.ai",
+      "dedup_key": "https://www.peris.ai/news/peris-ai-cybersecurity-wins-banking-finance-award-at-waicf-2025-advancing-ai-driven-cybersecurity-for-financial-institutions",
+      "description": "New page listed in the sitemap of Peris.ai's own website peris.ai (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Peris Ai Cybersecurity Wins Banking Finance Award At Waicf 2025 Advancing Ai Driven Cybersecurity For Financial Institutions",
+      "link": "https://www.peris.ai/news/peris-ai-cybersecurity-wins-banking-finance-award-at-waicf-2025-advancing-ai-driven-cybersecurity-for-financial-institutions",
+      "pubDate": "2026-11-05T00:00:00+00:00",
+      "source": "peris.ai sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Peris.ai",
+      "dedup_key": "https://www.peris.ai/blog/usd-6-3-billion-binance-devops-laptop-privileged-pipelines",
+      "description": "New page listed in the sitemap of Peris.ai's own website peris.ai (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Usd 6 3 Billion Binance Devops Laptop Privileged Pipelines",
+      "link": "https://www.peris.ai/blog/usd-6-3-billion-binance-devops-laptop-privileged-pipelines",
+      "pubDate": "2026-11-05T00:00:00+00:00",
+      "source": "peris.ai sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Qapita",
+      "dedup_key": "https://www.qapita.com/in/blog/what-is-portfolio-monitoring-complete-guide",
+      "description": "Page updated in the sitemap of Qapita's own website qapita.com (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "What Is Portfolio Monitoring Complete Guide",
+      "link": "https://www.qapita.com/in/blog/what-is-portfolio-monitoring-complete-guide",
+      "pubDate": "2026-11-05T11:42:47+00:00",
+      "source": "qapita.com sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Qapita",
+      "dedup_key": "https://www.qapita.com/in/blog/what-is-equity-compensation-complete-guide",
+      "description": "Page updated in the sitemap of Qapita's own website qapita.com (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "What Is Equity Compensation Complete Guide",
+      "link": "https://www.qapita.com/in/blog/what-is-equity-compensation-complete-guide",
+      "pubDate": "2026-11-05T11:42:47+00:00",
+      "source": "qapita.com sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Qapita",
+      "dedup_key": "https://www.qapita.com/in/blog/what-is-carried-interest-and-how-does-it-work",
+      "description": "Page updated in the sitemap of Qapita's own website qapita.com (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "What Is Carried Interest And How Does It Work",
+      "link": "https://www.qapita.com/in/blog/what-is-carried-interest-and-how-does-it-work",
+      "pubDate": "2026-11-05T11:42:47+00:00",
+      "source": "qapita.com sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Qapita",
+      "dedup_key": "https://www.qapita.com/in/blog/what-are-alternate-investment-funds---meaning-types-overview",
+      "description": "Page updated in the sitemap of Qapita's own website qapita.com (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "What Are Alternate Investment Funds Meaning Types Overview",
+      "link": "https://www.qapita.com/in/blog/what-are-alternate-investment-funds---meaning-types-overview",
+      "pubDate": "2026-11-05T11:42:47+00:00",
+      "source": "qapita.com sitemap",
+      "source_kind": "sitemap"
+    },
+    {
+      "company": "Qapita",
+      "dedup_key": "https://www.qapita.com/blog/registered-investment-advisor",
+      "description": "Page updated in the sitemap of Qapita's own website qapita.com (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "headline": "Registered Investment Advisor",
+      "link": "https://www.qapita.com/blog/registered-investment-advisor",
+      "pubDate": "2026-11-05T11:42:47+00:00",
+      "source": "qapita.com sitemap",
+      "source_kind": "sitemap"
+    }
+  ],
+  "companies": {
+    "Belli AI": "BLOCK71 Singapore-resident air-cargo software startup (founders ex-McKinsey, SpaceX, Boeing, Booking.com, AirAsia) digitising end-to-end airline cargo operations. Drop unrelated namesakes (Italian food brand, maternal-health apps named Belly/Bella) unless the article explicitly references the Singapore air-cargo Belli AI.",
+    "Carousell": "Singapore-headquartered online classifieds and consumer marketplace platform; the group also operates OneShift, Mudah, and Cho Tot.",
+    "Constructor.io": "BLOCK71 Silicon Valley-affiliated US enterprise-eCommerce search and product-discovery platform (NLP + ML ranking, personalized search/browse/recommendations) used by Sephora, Petco, Bonobos, Target Australia. Drop items about unrelated 'constructor pattern' programming content or construction firms.",
+    "Doinn APAC": "BLOCK71 Singapore-resident APAC arm of Doinn \u2014 an online marketplace connecting hosts / property-managers with cleaning, laundry and linen services. Drop unrelated 'Doinn' brand mentions unless the article explicitly references this BLOCK71 SG-listed APAC entity.",
+    "EcoMatcher": "BLOCK71 Bandung-listed Hong Kong-headquartered B-Corp (founded 2016 by Bas Fransen) operating a blockchain-tracked tree-planting / forest-management platform \u2014 TreeCorder data-capture app, TreeManager cloud system, Verra/Gold Standard carbon-certified TREES+ projects (partnership with VNV Advisory). Corporate customers include Grab and Procter & Gamble; ~50,000 customers globally. Drop generic 'eco' / matching-engine mentions.",
+    "Emerge": "NUS GRIP-incubated Singapore deep-tech startup. Highly generic English word \u2014 drop any item not clearly referring to the Singapore startup.",
+    "Finan": "BLOCK71 Saigon-listed Singapore-headquartered (founders Hai Long Bui and Hai Nam Bui, mid-2021) SME-operating-system startup whose Vietnamese app SoBanHang gives micro-businesses sales/order/inventory/invoicing/cash-flow tools plus embedded financial services; >800K active business users, >US$5B transaction volume processed; Shinhan Store partnership with Shinhan Bank Vietnam. Drop generic 'finan' / 'finance' branding unless it names Finan / SoBanHang.",
+    "Flexii": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing \u2014 drop unrelated 'Flexi' / 'Flexii' brand mentions (Flexi loans, Flexi-Coil, etc.) unless the article explicitly references this BLOCK71 SG entity.",
+    "Horizon Quantum Computing": "Singapore-based privately-held quantum computing software startup. Distinct from any publicly-traded company sharing a similar name (NASDAQ:HQ ticker, Horizon Quantum Holdings, earnings releases, ticker-aggregator coverage from Zacks/TipRanks/MarketBeat/etc. must be excluded).",
+    "Idle Logic": "BLOCK71 Singapore-resident startup. Limited public-English information beyond the directory listing \u2014 drop unrelated 'Idle Logic' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "LittleLives": "BLOCK71 Jakarta-listed Singapore preschool SaaS (founded 2011 by Sun Ho, NUS Computing alumna) running a holistic school-management system for early-childhood centres \u2014 attendance, time-in/out, temperature/height/weight, child portfolios, log books, fees, parent communication; ~1,000 schools across Singapore, Malaysia, China, Vietnam, Cambodia; MOE/ECDA-accredited, AECES Top Preschool Software. Made strategic acquisition of Illume Technology. Drop generic 'small / little lives' branding unless it names this entity.",
+    "Maestro Labs": "BLOCK71 Singapore-resident startup. CRITICAL: 'Maestro Labs' is extremely generic (multiple ML / orchestration / music vendors share the name); drop unrelated mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "Peris.ai": "BLOCK71 Singapore-resident cybersecurity-AI startup (peris.ai) building an agentic-AI security operations centre (AI-SOC) platform that cuts detection and response times for security teams; Google for Startups Accelerator Southeast Asia alumnus. Drop unrelated 'peris' brand mentions unless the article explicitly references this BLOCK71 SG entity.",
+    "Qapita": "BLOCK71 Silicon Valley-listed Singapore-headquartered equity-management platform (cap-table, ESOP administration, secondary-share workflows) founded 2019 by Ravi Ravulaparthi (CEO), Lakshman Gupta (COO) and Vamsee Mohan (CTO); serves ~2,700 SEA/India companies. Carta challenger now powering Schwab Private Issuer Equity Services in the US. Drop unrelated Qatar/Q-brands.",
+    "Skuling": "BLOCK71 Yogyakarta-resident Indonesian edutech startup building a gamified web learning platform \u2014 leaderboards, social discussion, performance analytics \u2014 targeting Indonesian primary/secondary education accessibility and engagement gaps. ~110,000 users across 502 of 514 Indonesian cities. Founded by Yudha Pratama Situmorang (Boston University Questrom MBA'24); 2024 Poets & Quants Most Disruptive MBA Startup. Drop generic 'schooling' / education-tech mentions.",
+    "StaffAny": "BLOCK71 Jakarta-listed Singapore HR-tech startup (founded by four NUS alumni) running a workforce-management app for hourly workers in F&B / retail \u2014 drag-and-drop rostering, time tracking, availability, payroll/accounting integration. ~100K+ shifts and ~700K hours tracked at the S$1M seed milestone; lead investor FreakOut Holdings; angels include ex-Zopim founders Lim Qing Ru, Kwok Yang Bin and Royston Tay plus Kenji Niwa.",
+    "Vi\u1ec7c C\u00f3": "BLOCK71 Saigon-resident Vietnamese jobs platform targeting blue-collar / unskilled workers in Vietnam. Drop the larger 'ViecLamTot.com' (a Ch\u1ee3 T\u1ed1t vertical) and unrelated white-collar boards (VietnamWorks, etc.) unless the article explicitly references the BLOCK71 Saigon 'Vi\u1ec7c C\u00f3' platform.",
+    "dConstruct Robotics": "BLOCK71 Silicon Valley-listed Singapore deep-tech robotics startup building SLAM-based autonomous navigation and 3D digital-twin systems for construction, defense and logistics (d.ASH platform, d.ASH Nav self-driving stack, d.ASH Xplorer 3D mapping). Founded 2021 by Chinn Hwa Lim; signed MOU with Foxconn on SLAM/AMR manufacturing. Generic 'construct' wording \u2014 drop items about unrelated construction software or DIY robotics kits."
+  },
+  "fetch_failed": [
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "kind": "firehose",
+      "url": "https://thelowdown.momentum.asia/feed/"
+    },
+    {
+      "company": "Flow Coffee",
+      "error": "HTTP Error 404: Not Found",
+      "kind": "rss",
+      "url": "https://www.flowcoffee.sg/blog-feed.xml"
+    },
+    {
+      "company": "PharLyfe+",
+      "error": "HTTP Error 404: Not Found",
+      "kind": "rss",
+      "url": "https://pharlyfeplus.com/news-update/f.rss"
+    }
+  ],
+  "generated_at": "2026-11-05T22:58:30+00:00",
+  "jina_recovered": [
+    "https://mothership.sg/feed/",
+    "https://www.theedgesingapore.com/rss.xml"
+  ],
+  "llm_fetch_required": [
+    {
+      "company": "Belli AI",
+      "hint": "",
+      "label": "news",
+      "url": "https://www.belli.ai/company/news"
+    },
+    {
+      "company": "Cellivate Technologies",
+      "hint": "Cellivate 'Recognition' page lists press features and awards. Each article entry is a clickable row with a date at the top-left (e.g. 'May 18, 2023'), then headline text, then publication attribution ('Published by TechNode Global', etc.). Resolve relative links against https://www.cellivatetech.com/.",
+      "label": "press",
+      "url": "https://www.cellivatetech.com/recognition"
+    },
+    {
+      "company": "Finsey",
+      "hint": "",
+      "label": "blog",
+      "url": "https://finsey.vn/blog"
+    },
+    {
+      "company": "SENSORI Healthcare",
+      "hint": "SENSORI Healthcare news listing. Each item is an anchor (<a>) wrapping the entry with the headline rendered as an <h4> (e.g. 'SENSORI Healthcare Wins Third Prize at Two Innovation and Entrepreneurship Competitions') and the date below in YYYY-MM-DD format (e.g. '2025-12-03'). Items are tagged 'News' and ordered newest-first. Resolve relative links against https://www.sensorihealthcare.com.",
+      "label": "news",
+      "url": "https://www.sensorihealthcare.com/h-col-157.html"
+    },
+    {
+      "company": "SilentConvo",
+      "hint": "",
+      "label": "blog",
+      "url": "https://silentconvo.io/blog"
+    },
+    {
+      "company": "Soynergy",
+      "hint": "Soynergy WordPress news category listing. Each post is a <div> block with a featured image, headline in <h2> link, and the publication date below in 'Month Day, Year' format (e.g. 'August 27, 2018'); a 'News' tag appears above the headline and a 'READ MORE' link follows. Note: archive is small and stale (last post 2018). Resolve relative links against https://www.soynergy.com.",
+      "label": "news",
+      "url": "https://www.soynergy.com/category/news/"
+    }
+  ],
+  "stats": {
+    "appstore_capped": 0,
+    "candidates": 34,
+    "companies_matched": 18,
+    "edgar_candidates": 0,
+    "excluded_by_terms": 0,
+    "fetch_failed": 3,
+    "gebiz_candidates": 0,
+    "ipos_candidates": 0,
+    "jina_candidates": 0,
+    "jina_recovered": 2,
+    "llm_fetch_required": 6,
+    "masfid_candidates": 0,
+    "portfolio_candidates": 0,
+    "pre_extracted_capped": 0,
+    "sitemap_candidates": 19,
+    "startupsg_candidates": 0,
+    "weak_term_suppressed": 2
+  }
+}

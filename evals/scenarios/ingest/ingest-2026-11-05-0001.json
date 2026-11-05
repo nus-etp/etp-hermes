@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/horizon-quantum-computing/horizonquantum.com",
+  "created_by": "write_scenarios@run 42122913122",
+  "expected": {
+    "company": "Horizon Quantum Computing",
+    "reason": "jev material=0.93",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'Horizon Quantum Signs Non Binding Letter Of Intent To Acquire Entropica Labs' for Horizon Quantum Computing",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-05-0001",
+  "input": {
+    "candidate": {
+      "description": "New page listed in the sitemap of Horizon Quantum Computing's own website horizonquantum.com (lastmod 2026-11-05). Title derived from the URL slug; the page itself was not fetched.",
+      "matched": [
+        "Horizon Quantum Computing"
+      ],
+      "source": "horizonquantum.com sitemap",
+      "title": "Horizon Quantum Signs Non Binding Letter Of Intent To Acquire Entropica Labs",
+      "url": "https://www.horizonquantum.com/resources/newsroom/horizon-quantum-signs-non-binding-letter-of-intent-to-acquire-entropica-labs"
+    },
+    "companies": {
+      "Horizon Quantum Computing": {
+        "description": "Singapore-based privately-held quantum computing software startup. Distinct from any publicly-traded company sharing a similar name (NASDAQ:HQ ticker, Horizon Quantum Holdings, earnings releases, ticker-aggregator coverage from Zacks/TipRanks/MarketBeat/etc. must be excluded)."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-05",
+    "judge": "jev",
+    "judge_confidence": 0.86,
+    "kind": "judge_disagreement",
+    "run_id": "42122913122",
+    "source": "2026-11-05.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}

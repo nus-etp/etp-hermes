@@ -15,17 +15,16 @@ _Last material event: 2026-10-05 — Completed Singapore's first full LiDAR-base
 _No disclosed funding._
 
 ## Recent signals
+### Hiring
+- **2026-10-28** — Seven roles opened since 6 October: five engineering (embedded/electronics, LiDAR and visual SLAM, cloud, C/C++, project management) plus a project-finance executive and a cost accountant for an "AI and robotics company" → repeatable hardware delivery with unit-cost control, consistent with the US$125M Series A build-out rather than bespoke project work — [jobstreet.com](https://sg.jobstreet.com/job/95547277)
+
+## Older signals
 - **2026-10-05** — BCA, SoilBuild Construction and dConstruct Robotics completed Singapore's first full LiDAR-based virtual inspection for an industrial project TOP, using d.ASH Pack capture and d.ASH Xplorer review at SoilBuild's Tampines Connection site — [dconstruct.ai](https://www.dconstruct.ai/news/lidar-based-virtual-inspection-project)
   - Summary: The Building and Construction Authority ran the exercise to test whether 3D LiDAR scanning could cut reliance on traditional inspection methods, with sandbox scans at Soitec and DB Schenker informing the first full LiDAR virtual inspection for an industrial Temporary Occupancy Permit. dConstruct scanned the Tampines Connection site with d.ASH Pack and BCA inspectors then reviewed and annotated the point cloud in d.ASH Xplorer, with SoilBuild's Architectural Qualified Person responding in the same environment. The outcomes contributed to the first edition of BCA's Guidebook for LiDAR Virtual Inspection; SoilBuild will next trial the workflow on an HDB site and a site spanning more than 14 hectares.
   - People: Gerald Ho (Project Director, Head of Digitalisation, SoilBuild Construction)
   - Counterparties: Building and Construction Authority (BCA), SoilBuild Construction
   - Numbers: ~5.54-hectare site scanned in ~6 hours by a two-person team; measured accuracy ~1 cm; virtual TOP workflow ~4 weeks vs an estimated up to 6 weeks traditionally; next sites — an HDB project and a >14-hectare mega site
   - Quote: "Working from a common, accurate digital representation gives developers, consultants, contractors, and BCA officers greater confidence in assessing project readiness." — Gerald Ho, SoilBuild Construction
-
-### Hiring
-- **2026-10-28** — Seven roles opened since 6 October: five engineering (embedded/electronics, LiDAR and visual SLAM, cloud, C/C++, project management) plus a project-finance executive and a cost accountant for an "AI and robotics company" → repeatable hardware delivery with unit-cost control, consistent with the US$125M Series A build-out rather than bespoke project work — [jobstreet.com](https://sg.jobstreet.com/job/95547277)
-
-## Older signals
 - **2026-09-15** — Ran autonomous corridor inspections in live HDB blocks with township manager EM Services, including robot-to-lift integration so d.ASH-ER units work across storeys; EM Services is now scoping wider deployment — [beamp.sg](https://www.beamp.sg/stories/autonomous-robots-for-smarter-building-inspections)
   - Summary: Under the BEAMP programme, dConstruct deployed d.ASH-ER robots to inspect common corridors and staircases in occupied HDB blocks managed by EM Services, whose property officers had been walking them by hand across hundreds of blocks. The robots built SLAM-based 3D models of the blocks and integrated with lift PLCs so they could inspect multiple storeys, with near-real-time video analytics classifying defects and hazards, remote tele-operation, and a management platform compliant with TR93 connectivity requirements. Public acceptance was handled with notices in void decks and lift lobbies. EM Services is now exploring wider use across similar inspection scenarios, and dConstruct says it will extend the platform into delivery, towing and broader inspection.
   - People: Lim Chinn Hwa (CEO, dConstruct Robotics)
