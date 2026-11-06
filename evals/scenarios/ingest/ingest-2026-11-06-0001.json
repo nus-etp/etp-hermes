@@ -1,0 +1,44 @@
+{
+  "cluster": "ingest/false_drop/cellivate-technologies/techinasia.com",
+  "created_by": "write_scenarios@run 42301067299",
+  "expected": {
+    "company": "Cellivate Technologies",
+    "reason": "jev material=0.75",
+    "verdict": "keep"
+  },
+  "goal": "Keep 'This startup makes lab cell growth animal-free' for Cellivate Technologies",
+  "graders": [
+    "verdict_match",
+    "blind_judge"
+  ],
+  "id": "ingest-2026-11-06-0001",
+  "input": {
+    "candidate": {
+      "description": "Cellivate Technologies uses magnetic fields to produce an animal-free serum replacer, solving a major bottleneck in lab cell growth.",
+      "matched": [
+        "Cellivate Technologies"
+      ],
+      "source": "Tech in Asia",
+      "title": "This startup makes lab cell growth animal-free",
+      "url": "https://www.techinasia.com/this-startup-makes-lab-cell-growth-animal-free"
+    },
+    "companies": {
+      "Cellivate Technologies": {
+        "description": "NUS GRIP-incubated Singapore biotech startup. Drop unrelated companies sharing the same name."
+      }
+    }
+  },
+  "layer": "ingest",
+  "origin": {
+    "date": "2026-11-06",
+    "judge": "jev",
+    "judge_confidence": 0.92,
+    "kind": "judge_disagreement",
+    "run_id": "42301067299",
+    "source": "2026-11-06.jsonl",
+    "verdict_pipeline": "drop"
+  },
+  "persona": "Layer 1 relevance pass over data/candidates.json",
+  "status": "active",
+  "version": 1
+}
